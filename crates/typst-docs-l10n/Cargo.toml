@@ -1,0 +1,22 @@
+[package]
+name = "typst-docs-l10n"
+description = "Extract docs typst for localization."
+categories = ["compilers", "command-line-utilities"]
+keywords = ["language", "typst"]
+authors.workspace = true
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+
+anyhow.workspace = true
+clap = { workspace = true, features = ["wrap_help"] }
+rayon.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

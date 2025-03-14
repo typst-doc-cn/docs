@@ -1,0 +1,71 @@
+[workspace.package]
+description = "Docs."
+authors = ["Myriad-Dreamin <camiyoru@gmail.com>"]
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+license = "Apache-2.0"
+homepage = "https://github.com/typst-doc-cn/docs"
+repository = "https://github.com/typst-doc-cn/docs"
+rust-version = "1.83"
+
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.dependencies]
+
+# Basic Infra
+anyhow = "1"
+
+# CLI
+clap = { version = "4.5", features = ["derive", "env", "unicode"] }
+
+# Asynchoronous and Multi-threading
+rayon = "1.10.0"
+
+# Data/Text Format and Processing
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Typst docs library
+docs = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinymist/v0.13.2" }
+
+[profile.release]
+# lto = true        # Enable link-time optimization
+codegen-units = 1 # Reduce number of codegen units to increase optimizations
+panic = "abort"   # Abort on panic
+
+[workspace.lints.rustdoc]
+broken_intra_doc_links = "warn"
+
+[workspace.lints.rust]
+missing_docs = "warn"
+missing_crate_level_docs = "warn"
+
+unexpected_cfgs = { level = "allow", check-cfg = [
+    'cfg(wasm_bindgen_unstable_test_coverage)',
+    'cfg(noop)',
+    'cfg(used_linker)',
+] }
+
+[workspace.lints.clippy]
+uninlined_format_args = "warn"
+missing_docs_in_private_items = "warn"
+missing_safety_doc = "warn"
+undocumented_unsafe_blocks = "warn"
+
+[workspace.metadata.typos.default]
+locale = "en-us"
+
+[workspace.metadata.typos.default.extend-words]
+labelled = "labelled"
+onces = "onces"
+withs = "withs"
+
+[workspace.metadata.typos.files]
+ignore-hidden = false
+extend-exclude = ["/.git", "fixtures"]
+
+# These patches use local `typst` for development.
+# docs = { path = "../typst/crates/typst" }
