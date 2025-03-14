@@ -494,675 +494,899 @@ zh = "YAML"
 
 [reference.description]
 en = "The Typst reference is a systematic and comprehensive guide to the Typst\ntypesetting language.\n"
+zh = "Typst 参考文档是对 Typst 排版语言的系统和全面的指南。\n"
 
 [reference.foundations.arguments.arguments.arguments.arguments.details]
 en = "The arguments to construct."
+zh = "构造的参数。"
 
 [reference.foundations.arguments.arguments.arguments.details]
 en = "Construct spreadable arguments in place.\n\nThis function behaves like `{let args(..sink) = sink}`.\n\n"
+zh = "在原地构造可展开的参数。\n\n此函数的行为类似于 `{let args(..sink) = sink}`。\n\n"
 
 [reference.foundations.arguments.arguments.arguments.oneliner]
 en = "Construct spreadable arguments in place."
+zh = "在原地构造可展开的参数。"
 
 [reference.foundations.arguments.arguments.arguments.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.arguments.arguments.at.default.details]
 en = "A default value to return if the key is invalid."
+zh = "如果键无效，则返回默认值。"
 
 [reference.foundations.arguments.arguments.at.details]
 en = "Returns the positional argument at the specified index, or the named\nargument with the specified name.\n\nIf the key is an [integer]($int), this is equivalent to first calling\n[`pos`]($arguments.pos) and then [`array.at`]. If it is a [string]($str),\nthis is equivalent to first calling [`named`]($arguments.named) and then\n[`dictionary.at`]."
+zh = "返回指定索引处的位置参数，或具有指定名称的命名参数。\n\n如果键是 [整数]($int)，这相当于先调用 [`pos`]($arguments.pos)，然后调用 [`array.at`]。如果是 [字符串]($str)，这相当于先调用 [`named`]($arguments.named)，然后调用 [`dictionary.at`]。"
 
 [reference.foundations.arguments.arguments.at.key.details]
 en = "The index or name of the argument to get."
+zh = "要获取的参数的索引或名称。"
 
 [reference.foundations.arguments.arguments.at.oneliner]
 en = "Returns the positional argument at the specified index, or the named"
+zh = "返回指定索引处的位置参数，或具有指定名称的命名参数。"
 
 [reference.foundations.arguments.arguments.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.arguments.arguments.details]
 en = "Captured arguments to a function.\n\n# Argument Sinks\nLike built-in functions, custom functions can also take a variable number of\narguments. You can specify an _argument sink_ which collects all excess\narguments as `..sink`. The resulting `sink` value is of the `arguments`\ntype. It exposes methods to access the positional and named arguments.\n\n```example\n#let format(title, ..authors) = {\n  let by = authors\n    .pos()\n    .join(\", \", last: \" and \")\n\n  [*#title* \\ _Written by #by;_]\n}\n\n#format(\"ArtosFlow\", \"Jane\", \"Joe\")\n```\n\n# Spreading\nInversely to an argument sink, you can _spread_ arguments, arrays and\ndictionaries into a function call with the `..spread` operator:\n\n```example\n#let array = (2, 3, 5)\n#calc.min(..array)\n#let dict = (fill: blue)\n#text(..dict)[Hello]\n```"
+zh = "捕获函数的参数。\n\n# 参数接收器\n像内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数接收器_，它将所有多余的参数收集为 `..sink`。生成的 `sink` 值是 `arguments` 类型。它提供了访问位置参数和命名参数的方法。\n\n```example\n#let format(title, ..authors) = {\n  let by = authors\n    .pos()\n    .join(\", \", last: \" and \")\n\n  [*#title* \\ _Written by #by;_]\n}\n\n#format(\"ArtosFlow\", \"Jane\", \"Joe\")\n```\n\n# 展开\n与参数接收器相反，您可以使用 `..spread` 操作符将参数、数组和字典展开到函数调用中：\n\n```example\n#let array = (2, 3, 5)\n#calc.min(..array)\n#let dict = (fill: blue)\n#text(..dict)[Hello]\n```"
 
 [reference.foundations.arguments.arguments.named.details]
 en = "Returns the captured named arguments as a dictionary."
+zh = "将捕获的命名参数作为字典返回。"
 
 [reference.foundations.arguments.arguments.named.oneliner]
 en = "Returns the captured named arguments as a dictionary."
+zh = "将捕获的命名参数作为字典返回。"
 
 [reference.foundations.arguments.arguments.named.title]
 en = "Named"
+zh = "命名"
 
 [reference.foundations.arguments.arguments.oneliner]
 en = "Captured arguments to a function."
+zh = "捕获函数的参数。"
 
 [reference.foundations.arguments.arguments.pos.details]
 en = "Returns the captured positional arguments as an array."
+zh = "将捕获的位置参数作为数组返回。"
 
 [reference.foundations.arguments.arguments.pos.oneliner]
 en = "Returns the captured positional arguments as an array."
+zh = "将捕获的位置参数作为数组返回。"
 
 [reference.foundations.arguments.arguments.pos.title]
 en = "Positional"
+zh = "位置"
 
 [reference.foundations.arguments.arguments.title]
 en = "Arguments"
+zh = "参数"
 
 [reference.foundations.arguments.description]
 en = "Documentation for the Arguments type."
+zh = "Arguments 类型的文档。"
 
 [reference.foundations.arguments.oneliner]
 en = "Captured arguments to a function."
+zh = "捕获函数的参数。"
 
 [reference.foundations.arguments.title]
 en = "Arguments"
+zh = "参数"
 
 [reference.foundations.array.array.all.details]
 en = "Whether the given function returns `{true}` for all items in the array."
+zh = "给定函数是否对数组中的所有项返回 `{true}`。"
 
 [reference.foundations.array.array.all.oneliner]
 en = "Whether the given function returns `{true}` for all items in the array."
+zh = "给定函数是否对数组中的所有项返回 `{true}`。"
 
 [reference.foundations.array.array.all.test.details]
 en = "The function to apply to each item. Must return a boolean."
+zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.all.title]
 en = "All"
+zh = "全部"
 
 [reference.foundations.array.array.any.details]
 en = "Whether the given function returns `{true}` for any item in the array."
+zh = "给定函数是否对数组中的任何项返回 `{true}`。"
 
 [reference.foundations.array.array.any.oneliner]
 en = "Whether the given function returns `{true}` for any item in the array."
+zh = "给定函数是否对数组中的任何项返回 `{true}`。"
 
 [reference.foundations.array.array.any.test.details]
 en = "The function to apply to each item. Must return a boolean."
+zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.any.title]
 en = "Any"
+zh = "任意"
 
 [reference.foundations.array.array.array.details]
 en = "Converts a value to an array.\n\nNote that this function is only intended for conversion of a collection-like\nvalue to an array, not for creation of an array from individual items. Use\nthe array syntax `(1, 2, 3)` (or `(1,)` for a single-element array) instead.\n\n"
+zh = "将值转换为数组。\n\n请注意，此函数仅用于将类似集合的值转换为数组，而不是用于从单个项创建数组。请使用数组语法 `(1, 2, 3)`（或 `(1,)` 用于单元素数组）。\n\n"
 
 [reference.foundations.array.array.array.oneliner]
 en = "Converts a value to an array."
+zh = "将值转换为数组。"
 
 [reference.foundations.array.array.array.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.array.array.array.value.details]
 en = "The value that should be converted to an array."
+zh = "应转换为数组的值。"
 
 [reference.foundations.array.array.at.default.details]
 en = "A default value to return if the index is out of bounds."
+zh = "如果索引超出范围，则返回默认值。"
 
 [reference.foundations.array.array.at.details]
 en = "Returns the item at the specified index in the array. May be used on the\nleft-hand side of an assignment. Returns the default value if the index\nis out of bounds or fails with an error if no default value was\nspecified."
+zh = "返回数组中指定索引处的项。可以用于赋值的左侧。如果索引超出范围，则返回默认值；如果未指定默认值，则失败并报错。"
 
 [reference.foundations.array.array.at.index.details]
 en = "The index at which to retrieve the item. If negative, indexes from\nthe back."
+zh = "要检索项的索引。如果为负数，则从后面开始索引。"
 
 [reference.foundations.array.array.at.oneliner]
 en = "Returns the item at the specified index in the array. May be used on the"
+zh = "返回数组中指定索引处的项。可以用于"
 
 [reference.foundations.array.array.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.array.array.chunks.chunk-size.details]
 en = "How many elements each chunk may at most contain."
+zh = "每个块最多可以包含多少元素。"
 
 [reference.foundations.array.array.chunks.details]
 en = "Splits an array into non-overlapping chunks, starting at the beginning,\nending with a single remainder chunk.\n\nAll chunks but the last have `chunk-size` elements.\nIf `exact` is set to `{true}`, the remainder is dropped if it\ncontains less than `chunk-size` elements.\n\n"
+zh = "将数组拆分为不重叠的块，从头开始，以一个剩余块结束。\n\n除最后一个块外，所有块都具有 `chunk-size` 元素。\n如果 `exact` 设置为 `{true}`，则如果剩余块包含的元素少于 `chunk-size`，则将其丢弃。\n\n"
 
 [reference.foundations.array.array.chunks.exact.details]
 en = "Whether to keep the remainder if its size is less than `chunk-size`."
+zh = "如果剩余块的大小小于 `chunk-size`，是否保留它。"
 
 [reference.foundations.array.array.chunks.oneliner]
 en = "Splits an array into non-overlapping chunks, starting at the beginning,"
+zh = "将数组拆分为不重叠的块，从头开始，"
 
 [reference.foundations.array.array.chunks.title]
 en = "Chunks"
+zh = "块"
 
 [reference.foundations.array.array.contains.details]
 en = "Whether the array contains the specified value.\n\nThis method also has dedicated syntax: You can write `{2 in (1, 2, 3)}`\ninstead of `{(1, 2, 3).contains(2)}`."
+zh = "数组是否包含指定的值。\n\n此方法还有专用语法：您可以写 `{2 in (1, 2, 3)}` 而不是 `{(1, 2, 3).contains(2)}`。"
 
 [reference.foundations.array.array.contains.oneliner]
 en = "Whether the array contains the specified value."
+zh = "数组是否包含指定的值。"
 
 [reference.foundations.array.array.contains.title]
 en = "Contains"
+zh = "包含"
 
 [reference.foundations.array.array.contains.value.details]
 en = "The value to search for."
+zh = "要搜索的值。"
 
 [reference.foundations.array.array.dedup.details]
 en = "Deduplicates all items in the array.\n\nReturns a new array with all duplicate items removed. Only the first\nelement of each duplicate is kept.\n\n"
+zh = "去除数组中的所有重复项。\n\n返回一个新数组，删除所有重复项。仅保留每个重复项的第一个元素。\n\n"
 
 [reference.foundations.array.array.dedup.key.details]
 en = "If given, applies this function to the elements in the array to\ndetermine the keys to deduplicate by."
+zh = "如果给定，将此函数应用于数组中的元素以确定去重的键。"
 
 [reference.foundations.array.array.dedup.oneliner]
 en = "Deduplicates all items in the array."
+zh = "去除数组中的所有重复项。"
 
 [reference.foundations.array.array.dedup.title]
 en = "Deduplicate"
+zh = "去重"
 
 [reference.foundations.array.array.details]
 en = "A sequence of values.\n\nYou can construct an array by enclosing a comma-separated sequence of values\nin parentheses. The values do not have to be of the same type.\n\nYou can access and update array items with the `.at()` method. Indices are\nzero-based and negative indices wrap around to the end of the array. You can\niterate over an array using a [for loop]($scripting/#loops). Arrays can be\nadded together with the `+` operator, [joined together]($scripting/#blocks)\nand multiplied with integers.\n\n**Note:** An array of length one needs a trailing comma, as in `{(1,)}`.\nThis is to disambiguate from a simple parenthesized expressions like `{(1 +\n2) * 3}`. An empty array is written as `{()}`.\n\n# Example\n```example\n#let values = (1, 7, 4, -3, 2)\n\n#values.at(0) \\\n#(values.at(0) = 3)\n#values.at(-1) \\\n#values.find(calc.even) \\\n#values.filter(calc.odd) \\\n#values.map(calc.abs) \\\n#values.rev() \\\n#(1, (2, 3)).flatten() \\\n#((\"A\", \"B\", \"C\")\n    .join(\", \", last: \" and \"))\n```"
+zh = "一系列值。\n\n您可以通过将以逗号分隔的值序列括在括号中来构造数组。值不必是相同类型。\n\n您可以使用 `.at()` 方法访问和更新数组项。索引是从零开始的，负索引从数组末尾开始。您可以使用 [for 循环]($scripting/#loops) 迭代数组。数组可以使用 `+` 运算符相加，[连接在一起]($scripting/#blocks) 并与整数相乘。\n\n**注意：** 长度为一的数组需要一个尾随逗号，如 `{(1,)}`。这是为了与简单的括号表达式（如 `{(1 + 2) * 3}`）区分开来。空数组写作 `{()}`。\n\n# 示例\n```example\n#let values = (1, 7, 4, -3, 2)\n\n#values.at(0) \\\n#(values.at(0) = 3)\n#values.at(-1) \\\n#values.find(calc.even) \\\n#values.filter(calc.odd) \\\n#values.map(calc.abs) \\\n#values.rev() \\\n#(1, (2, 3)).flatten() \\\n#((\"A\", \"B\", \"C\")\n    .join(\", \", last: \" and \"))\n```"
 
 [reference.foundations.array.array.enumerate.details]
 en = "Returns a new array with the values alongside their indices.\n\nThe returned array consists of `(index, value)` pairs in the form of\nlength-2 arrays. These can be [destructured]($scripting/#bindings) with\na let binding or for loop."
+zh = "返回一个包含值及其索引的新数组。\n\n返回的数组由 `(index, value)` 对组成，形式为长度为 2 的数组。这些可以通过 let 绑定或 for 循环进行[解构]($scripting/#bindings)。"
 
 [reference.foundations.array.array.enumerate.oneliner]
 en = "Returns a new array with the values alongside their indices."
+zh = "返回一个包含值及其索引的新数组。"
 
 [reference.foundations.array.array.enumerate.start.details]
 en = "The index returned for the first pair of the returned list."
+zh = "返回列表中第一个对的索引。"
 
 [reference.foundations.array.array.enumerate.title]
 en = "Enumerate"
+zh = "枚举"
 
 [reference.foundations.array.array.filter.details]
 en = "Produces a new array with only the items from the original one for which\nthe given function returns true."
+zh = "生成一个新数组，其中仅包含给定函数返回 true 的原始数组中的项。"
 
 [reference.foundations.array.array.filter.oneliner]
 en = "Produces a new array with only the items from the original one for which"
+zh = "生成一个新数组，其中仅包含给定函数返回 true 的原始数组中的项。"
 
 [reference.foundations.array.array.filter.test.details]
 en = "The function to apply to each item. Must return a boolean."
+zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.filter.title]
 en = "Filter"
+zh = "过滤"
 
 [reference.foundations.array.array.find.details]
 en = "Searches for an item for which the given function returns `{true}` and\nreturns the first match or `{none}` if there is no match."
+zh = "搜索给定函数返回 `{true}` 的项，并返回第一个匹配项，如果没有匹配项，则返回 `{none}`。"
 
 [reference.foundations.array.array.find.oneliner]
 en = "Searches for an item for which the given function returns `{true}` and"
+zh = "搜索给定函数返回 `{true}` 的项，并返回第一个匹配项，如果没有匹配项，则返回 `{none}`。"
 
 [reference.foundations.array.array.find.searcher.details]
 en = "The function to apply to each item. Must return a boolean."
+zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.find.title]
 en = "Find"
+zh = "查找"
 
 [reference.foundations.array.array.first.details]
 en = "Returns the first item in the array. May be used on the left-hand side\nof an assignment. Fails with an error if the array is empty."
+zh = "返回数组中的第一个项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.first.oneliner]
 en = "Returns the first item in the array. May be used on the left-hand side"
+zh = "返回数组中的第一个项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.first.title]
 en = "First"
+zh = "第一个"
 
 [reference.foundations.array.array.flatten.details]
 en = "Combine all nested arrays into a single flat one."
+zh = "将所有嵌套数组合并为一个单一的平面数组。"
 
 [reference.foundations.array.array.flatten.oneliner]
 en = "Combine all nested arrays into a single flat one."
+zh = "将所有嵌套数组合并为一个单一的平面数组。"
 
 [reference.foundations.array.array.flatten.title]
 en = "Flatten"
+zh = "扁平化"
 
 [reference.foundations.array.array.fold.details]
 en = "Folds all items into a single value using an accumulator function."
+zh = "使用累加器函数将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.folder.details]
 en = "The folding function. Must have two parameters: One for the\naccumulated value and one for an item."
+zh = "折叠函数。必须有两个参数：一个用于累加值，一个用于项。"
 
 [reference.foundations.array.array.fold.init.details]
 en = "The initial value to start with."
+zh = "开始时的初始值。"
 
 [reference.foundations.array.array.fold.oneliner]
 en = "Folds all items into a single value using an accumulator function."
+zh = "使用累加器函数将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.title]
 en = "Fold"
+zh = "折叠"
 
 [reference.foundations.array.array.insert.details]
 en = "Inserts a value into the array at the specified index, shifting all\nsubsequent elements to the right. Fails with an error if the index is\nout of bounds.\n\nTo replace an element of an array, use [`at`]($array.at)."
+zh = "在指定索引处将一个值插入数组，所有后续元素向右移动。如果索引超出范围，则失败并报错。\n\n要替换数组的元素，请使用 [`at`]($array.at)。"
 
 [reference.foundations.array.array.insert.index.details]
 en = "The index at which to insert the item. If negative, indexes from\nthe back."
+zh = "插入项的索引。如果为负数，则从后面开始索引。"
 
 [reference.foundations.array.array.insert.oneliner]
 en = "Inserts a value into the array at the specified index, shifting all"
+zh = "在指定索引处将一个值插入数组，所有后续元素向右移动。"
 
 [reference.foundations.array.array.insert.title]
 en = "Insert"
+zh = "插入"
 
 [reference.foundations.array.array.insert.value.details]
 en = "The value to insert into the array."
+zh = "要插入数组的值。"
 
 [reference.foundations.array.array.intersperse.details]
 en = "Returns an array with a copy of the separator value placed between\nadjacent elements."
+zh = "返回一个数组，在相邻元素之间放置分隔符值的副本。"
 
 [reference.foundations.array.array.intersperse.oneliner]
 en = "Returns an array with a copy of the separator value placed between"
+zh = "返回一个数组，在相邻元素之间放置分隔符值的副本。"
 
 [reference.foundations.array.array.intersperse.separator.details]
 en = "The value that will be placed between each adjacent element."
+zh = "将放置在每个相邻元素之间的值。"
 
 [reference.foundations.array.array.intersperse.title]
 en = "Intersperse"
+zh = "间隔"
 
 [reference.foundations.array.array.join.details]
 en = "Combine all items in the array into one."
+zh = "将数组中的所有项组合成一个。"
 
 [reference.foundations.array.array.join.last.details]
 en = "An alternative separator between the last two items."
+zh = "最后两项之间的替代分隔符。"
 
 [reference.foundations.array.array.join.oneliner]
 en = "Combine all items in the array into one."
+zh = "将数组中的所有项组合成一个。"
 
 [reference.foundations.array.array.join.separator.details]
 en = "A value to insert between each item of the array."
+zh = "要插入数组每项之间的值。"
 
 [reference.foundations.array.array.join.title]
 en = "Join"
+zh = "连接"
 
 [reference.foundations.array.array.last.details]
 en = "Returns the last item in the array. May be used on the left-hand side of\nan assignment. Fails with an error if the array is empty."
+zh = "返回数组中的最后一项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.last.oneliner]
 en = "Returns the last item in the array. May be used on the left-hand side of"
+zh = "返回数组中的最后一项。可以用于赋值的左侧。"
 
 [reference.foundations.array.array.last.title]
 en = "Last"
+zh = "最后"
 
 [reference.foundations.array.array.len.details]
 en = "The number of values in the array."
+zh = "数组中的值的数量。"
 
 [reference.foundations.array.array.len.oneliner]
 en = "The number of values in the array."
+zh = "数组中的值的数量。"
 
 [reference.foundations.array.array.len.title]
 en = "Length"
+zh = "长度"
 
 [reference.foundations.array.array.map.details]
 en = "Produces a new array in which all items from the original one were\ntransformed with the given function."
+zh = "生成一个新数组，其中原始数组中的所有项都通过给定函数进行了转换。"
 
 [reference.foundations.array.array.map.mapper.details]
 en = "The function to apply to each item."
+zh = "应用于每个项的函数。"
 
 [reference.foundations.array.array.map.oneliner]
 en = "Produces a new array in which all items from the original one were"
+zh = "生成一个新数组，其中原始数组中的所有项都"
 
 [reference.foundations.array.array.map.title]
 en = "Map"
+zh = "映射"
 
 [reference.foundations.array.array.oneliner]
 en = "A sequence of values."
+zh = "一系列值。"
 
 [reference.foundations.array.array.pop.details]
 en = "Removes the last item from the array and returns it. Fails with an error\nif the array is empty."
+zh = "移除数组中的最后一项并返回它。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.pop.oneliner]
 en = "Removes the last item from the array and returns it. Fails with an error"
+zh = "移除数组中的最后一项并返回它。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.pop.title]
 en = "Pop"
+zh = "弹出"
 
 [reference.foundations.array.array.position.details]
 en = "Searches for an item for which the given function returns `{true}` and\nreturns the index of the first match or `{none}` if there is no match."
+zh = "搜索给定函数返回 `{true}` 的项，并返回第一个匹配项的索引，如果没有匹配项，则返回 `{none}`。"
 
 [reference.foundations.array.array.position.oneliner]
 en = "Searches for an item for which the given function returns `{true}` and"
+zh = "搜索给定函数返回 `{true}` 的项，并返回第一个匹配项的索引，如果没有匹配项，则返回 `{none}`。"
 
 [reference.foundations.array.array.position.searcher.details]
 en = "The function to apply to each item. Must return a boolean."
+zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.position.title]
 en = "Position"
+zh = "位置"
 
 [reference.foundations.array.array.product.default.details]
 en = "What to return if the array is empty. Must be set if the array can\nbe empty."
+zh = "如果数组为空，则返回什么。如果数组可能为空，则必须设置。"
 
 [reference.foundations.array.array.product.details]
 en = "Calculates the product all items (works for all types that can be\nmultiplied)."
+zh = "计算所有项的乘积（适用于所有可以相乘的类型）。"
 
 [reference.foundations.array.array.product.oneliner]
 en = "Calculates the product all items (works for all types that can be"
+zh = "计算所有项的乘积（适用于所有可以相乘的类型）。"
 
 [reference.foundations.array.array.product.title]
 en = "Product"
+zh = "乘积"
 
 [reference.foundations.array.array.push.details]
 en = "Adds a value to the end of the array."
+zh = "将一个值添加到数组的末尾。"
 
 [reference.foundations.array.array.push.oneliner]
 en = "Adds a value to the end of the array."
+zh = "将一个值添加到数组的末尾。"
 
 [reference.foundations.array.array.push.title]
 en = "Push"
+zh = "推入"
 
 [reference.foundations.array.array.push.value.details]
 en = "The value to insert at the end of the array."
+zh = "要插入数组末尾的值。"
 
 [reference.foundations.array.array.range.details]
 en = "Create an array consisting of a sequence of numbers.\n\nIf you pass just one positional parameter, it is interpreted as the\n`end` of the range. If you pass two, they describe the `start` and `end`\nof the range.\n\nThis function is available both in the array function's scope and\nglobally.\n\n"
+zh = "创建一个由一系列数字组成的数组。\n\n如果只传递一个位置参数，则将其解释为范围的 `end`。如果传递两个参数，则它们描述范围的 `start` 和 `end`。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
 
 [reference.foundations.array.array.range.end.details]
 en = "The end of the range (exclusive)."
+zh = "范围的结束（不包括）。"
 
 [reference.foundations.array.array.range.oneliner]
 en = "Create an array consisting of a sequence of numbers."
+zh = "创建一个由一系列数字组成的数组。"
 
 [reference.foundations.array.array.range.start.details]
 en = "The start of the range (inclusive)."
+zh = "范围的开始（包括）。"
 
 [reference.foundations.array.array.range.step.details]
 en = "The distance between the generated numbers."
+zh = "生成的数字之间的距离。"
 
 [reference.foundations.array.array.range.title]
 en = "Range"
+zh = "范围"
 
 [reference.foundations.array.array.reduce.details]
 en = "Reduces the elements to a single one, by repeatedly applying a reducing\noperation.\n\nIf the array is empty, returns `{none}`, otherwise, returns the result\nof the reduction.\n\nThe reducing function is a closure with two arguments: an \"accumulator\",\nand an element.\n\nFor arrays with at least one element, this is the same as [`array.fold`]\nwith the first element of the array as the initial accumulator value,\nfolding every subsequent element into it."
+zh = "通过反复应用减少操作，将元素减少为一个。\n\n如果数组为空，则返回 `{none}`，否则返回减少的结果。\n\n减少函数是一个带有两个参数的闭包：“累加器”和一个元素。\n\n对于至少有一个元素的数组，这与 [`array.fold`] 相同，第一个元素作为初始累加器值，将每个后续元素折叠到其中。"
 
 [reference.foundations.array.array.reduce.oneliner]
 en = "Reduces the elements to a single one, by repeatedly applying a reducing"
+zh = "通过反复应用减少操作，将元素减少为一个。"
 
 [reference.foundations.array.array.reduce.reducer.details]
 en = "The reducing function. Must have two parameters: One for the\naccumulated value and one for an item."
+zh = "减少函数。必须有两个参数：一个用于累加值，一个用于项。"
 
 [reference.foundations.array.array.reduce.title]
 en = "Reduce"
+zh = "减少"
 
 [reference.foundations.array.array.remove.default.details]
 en = "A default value to return if the index is out of bounds."
+zh = "如果索引超出范围，则返回默认值。"
 
 [reference.foundations.array.array.remove.details]
 en = "Removes the value at the specified index from the array and return it."
+zh = "从数组中删除指定索引处的值并返回它。"
 
 [reference.foundations.array.array.remove.index.details]
 en = "The index at which to remove the item. If negative, indexes from\nthe back."
+zh = "要删除项的索引。如果为负数，则从后面开始索引。"
 
 [reference.foundations.array.array.remove.oneliner]
 en = "Removes the value at the specified index from the array and return it."
+zh = "从数组中删除指定索引处的值并返回它。"
 
 [reference.foundations.array.array.remove.title]
 en = "Remove"
+zh = "删除"
 
 [reference.foundations.array.array.rev.details]
 en = "Return a new array with the same items, but in reverse order."
+zh = "返回一个包含相同项的新数组，但顺序相反。"
 
 [reference.foundations.array.array.rev.oneliner]
 en = "Return a new array with the same items, but in reverse order."
+zh = "返回一个包含相同项的新数组，但顺序相反。"
 
 [reference.foundations.array.array.rev.title]
 en = "Reverse"
+zh = "反转"
 
 [reference.foundations.array.array.slice.count.details]
 en = "The number of items to extract. This is equivalent to passing\n`start + count` as the `end` position. Mutually exclusive with `end`."
+zh = "要提取的项数。这相当于传递 `start + count` 作为 `end` 位置。与 `end` 互斥。"
 
 [reference.foundations.array.array.slice.details]
 en = "Extracts a subslice of the array. Fails with an error if the start or end\nindex is out of bounds."
+zh = "提取数组的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.array.array.slice.end.details]
 en = "The end index (exclusive). If omitted, the whole slice until the end\nof the array is extracted. If negative, indexes from the back."
+zh = "结束索引（不包括）。如果省略，则提取直到数组末尾的整个切片。如果为负数，则从后面开始索引。"
 
 [reference.foundations.array.array.slice.oneliner]
 en = "Extracts a subslice of the array. Fails with an error if the start or end"
+zh = "提取数组的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.array.array.slice.start.details]
 en = "The start index (inclusive). If negative, indexes from the back."
+zh = "开始索引（包括）。如果为负数，则从后面开始索引。"
 
 [reference.foundations.array.array.slice.title]
 en = "Slice"
+zh = "切片"
 
 [reference.foundations.array.array.sorted.details]
 en = "Return a sorted version of this array, optionally by a given key\nfunction. The sorting algorithm used is stable.\n\nReturns an error if two values could not be compared or if the key\nfunction (if given) yields an error.\n\nTo sort according to multiple criteria at once, e.g. in case of equality\nbetween some criteria, the key function can return an array. The results\nare in lexicographic order.\n\n"
+zh = "返回此数组的排序版本，可选地通过给定的键函数。使用的排序算法是稳定的。\n\n如果两个值无法比较或键函数（如果给定）产生错误，则返回错误。\n\n要根据多个标准同时排序，例如在某些标准相等的情况下，键函数可以返回一个数组。结果按字典顺序排列。\n\n"
 
 [reference.foundations.array.array.sorted.key.details]
 en = "If given, applies this function to the elements in the array to\ndetermine the keys to sort by."
+zh = "如果给定，将此函数应用于数组中的元素以确定排序的键。"
 
 [reference.foundations.array.array.sorted.oneliner]
 en = "Return a sorted version of this array, optionally by a given key"
+zh = "返回此数组的排序版本，可选地通过给定的键"
 
 [reference.foundations.array.array.sorted.title]
 en = "Sorted"
+zh = "排序"
 
 [reference.foundations.array.array.split.at.details]
 en = "The value to split at."
+zh = "要拆分的值。"
 
 [reference.foundations.array.array.split.details]
 en = "Split the array at occurrences of the specified value."
+zh = "在指定值出现的位置拆分数组。"
 
 [reference.foundations.array.array.split.oneliner]
 en = "Split the array at occurrences of the specified value."
+zh = "在指定值出现的位置拆分数组。"
 
 [reference.foundations.array.array.split.title]
 en = "Split"
+zh = "拆分"
 
 [reference.foundations.array.array.sum.default.details]
 en = "What to return if the array is empty. Must be set if the array can\nbe empty."
+zh = "如果数组为空，则返回什么。如果数组可能为空，则必须设置。"
 
 [reference.foundations.array.array.sum.details]
 en = "Sums all items (works for all types that can be added)."
+zh = "求和所有项（适用于所有可以相加的类型）。"
 
 [reference.foundations.array.array.sum.oneliner]
 en = "Sums all items (works for all types that can be added)."
+zh = "求和所有项（适用于所有可以相加的类型）。"
 
 [reference.foundations.array.array.sum.title]
 en = "Sum"
+zh = "求和"
 
 [reference.foundations.array.array.title]
 en = "Array"
+zh = "数组"
 
 [reference.foundations.array.array.to-dict.details]
 en = "Converts an array of pairs into a dictionary.\nThe first value of each pair is the key, the second the value.\n\nIf the same key occurs multiple times, the last value is selected.\n\n"
+zh = "将一对对数组转换为字典。\n每对的第一个值是键，第二个是值。\n\n如果同一个键出现多次，则选择最后一个值。\n\n"
 
 [reference.foundations.array.array.to-dict.oneliner]
 en = "Converts an array of pairs into a dictionary."
+zh = "将一对对数组转换为字典。"
 
 [reference.foundations.array.array.to-dict.title]
 en = "To Dict"
+zh = "转换为字典"
 
 [reference.foundations.array.array.windows.details]
 en = "Returns sliding windows of `window-size` elements over an array.\n\nIf the array length is less than `window-size`, this will return an empty array.\n\n"
+zh = "返回数组上 `window-size` 元素的滑动窗口。\n\n如果数组长度小于 `window-size`，则返回一个空数组。\n\n"
 
 [reference.foundations.array.array.windows.oneliner]
 en = "Returns sliding windows of `window-size` elements over an array."
+zh = "返回数组上 `window-size` 元素的滑动窗口。"
 
 [reference.foundations.array.array.windows.title]
 en = "Windows"
+zh = "窗口"
 
 [reference.foundations.array.array.windows.window-size.details]
 en = "How many elements each window will contain."
+zh = "每个窗口包含多少元素。"
 
 [reference.foundations.array.array.zip.details]
 en = "Zips the array with other arrays.\n\nReturns an array of arrays, where the `i`th inner array contains all the\n`i`th elements from each original array.\n\nIf the arrays to be zipped have different lengths, they are zipped up to\nthe last element of the shortest array and all remaining elements are\nignored.\n\nThis function is variadic, meaning that you can zip multiple arrays\ntogether at once: `{(1, 2).zip((\"A\", \"B\"), (10, 20))}` yields\n`{((1, \"A\", 10), (2, \"B\", 20))}`."
+zh = "将数组与其他数组拉链。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要拉链的数组长度不同，则拉链到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此函数是可变参数的，意味着您可以一次将多个数组拉链在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
 
 [reference.foundations.array.array.zip.exact.details]
 en = "Whether all arrays have to have the same length.\nFor example, `{(1, 2).zip((1, 2, 3), exact: true)}` produces an\nerror."
+zh = "是否所有数组必须具有相同的长度。\n例如，`{(1, 2).zip((1, 2, 3), exact: true)}` 会产生错误。"
 
 [reference.foundations.array.array.zip.oneliner]
 en = "Zips the array with other arrays."
+zh = "将数组与其他数组拉链。"
 
 [reference.foundations.array.array.zip.others.details]
 en = "The arrays to zip with."
+zh = "要拉链的数组。"
 
 [reference.foundations.array.array.zip.title]
 en = "Zip"
+zh = "拉链"
 
 [reference.foundations.array.description]
 en = "Documentation for the Array type."
+zh = "数组类型的文档。"
 
 [reference.foundations.array.oneliner]
 en = "A sequence of values."
+zh = "一系列值。"
 
 [reference.foundations.array.title]
 en = "Array"
+zh = "数组"
 
 [reference.foundations.assert.assert.condition.details]
 en = "The condition that must be true for the assertion to pass."
+zh = "断言通过必须为真的条件。"
 
 [reference.foundations.assert.assert.details]
 en = "Ensures that a condition is fulfilled.\n\nFails with an error if the condition is not fulfilled. Does not\nproduce any output in the document.\n\nIf you wish to test equality between two values, see\n[`assert.eq`]($assert.eq) and [`assert.ne`]($assert.ne).\n\n# Example\n```typ\n#assert(1 < 2, message: \"math broke\")\n```"
+zh = "确保条件得到满足。\n\n如果条件不满足，则失败并报错。在文档中不产生任何输出。\n\n如果您希望测试两个值之间的相等性，请参见 [`assert.eq`]($assert.eq) 和 [`assert.ne`]($assert.ne)。\n\n# 示例\n```typ\n#assert(1 < 2, message: \"math broke\")\n```"
 
 [reference.foundations.assert.assert.eq.details]
 en = "Ensures that two values are equal.\n\nFails with an error if the first value is not equal to the second. Does not\nproduce any output in the document.\n\n"
+zh = "确保两个值相等。\n\n如果第一个值不等于第二个值，则失败并报错。在文档中不产生任何输出。\n\n"
 
 [reference.foundations.assert.assert.eq.left.details]
 en = "The first value to compare."
+zh = "要比较的第一个值。"
 
 [reference.foundations.assert.assert.eq.message.details]
 en = "An optional message to display on error instead of the representations\nof the compared values."
+zh = "在错误时显示的可选消息，而不是比较值的表示。"
 
 [reference.foundations.assert.assert.eq.oneliner]
 en = "Ensures that two values are equal."
+zh = "确保两个值相等。"
 
 [reference.foundations.assert.assert.eq.right.details]
 en = "The second value to compare."
+zh = "要比较的第二个值。"
 
 [reference.foundations.assert.assert.eq.title]
 en = "Assert Equal"
+zh = "断言相等"
 
 [reference.foundations.assert.assert.message.details]
 en = "The error message when the assertion fails."
+zh = "断言失败时的错误消息。"
 
 [reference.foundations.assert.assert.ne.details]
 en = "Ensures that two values are not equal.\n\nFails with an error if the first value is equal to the second. Does not\nproduce any output in the document.\n\n"
+zh = "确保两个值不相等。\n\n如果第一个值等于第二个值，则失败并报错。在文档中不产生任何输出。\n\n"
 
 [reference.foundations.assert.assert.ne.left.details]
 en = "The first value to compare."
+zh = "要比较的第一个值。"
 
 [reference.foundations.assert.assert.ne.message.details]
 en = "An optional message to display on error instead of the representations\nof the compared values."
+zh = "在错误时显示的可选消息，而不是比较值的表示。"
 
 [reference.foundations.assert.assert.ne.oneliner]
 en = "Ensures that two values are not equal."
+zh = "确保两个值不相等。"
 
 [reference.foundations.assert.assert.ne.right.details]
 en = "The second value to compare."
+zh = "要比较的第二个值。"
 
 [reference.foundations.assert.assert.ne.title]
 en = "Assert Not Equal"
+zh = "断言不相等"
 
 [reference.foundations.assert.assert.oneliner]
 en = "Ensures that a condition is fulfilled."
+zh = "确保条件得到满足。"
 
 [reference.foundations.assert.assert.title]
 en = "Assert"
+zh = "断言"
 
 [reference.foundations.assert.description]
 en = "Documentation for the `assert` function."
+zh = "`assert` 函数的文档。"
 
 [reference.foundations.assert.oneliner]
 en = "Ensures that a condition is fulfilled."
+zh = "确保条件得到满足。"
 
 [reference.foundations.assert.title]
 en = "Assert"
+zh = "断言"
 
 [reference.foundations.auto.auto.details]
 en = "A value that indicates a smart default.\n\nThe auto type has exactly one value: `{auto}`.\n\nParameters that support the `{auto}` value have some smart default or\ncontextual behaviour. A good example is the [text direction]($text.dir)\nparameter. Setting it to `{auto}` lets Typst automatically determine the\ndirection from the [text language]($text.lang)."
+zh = "表示智能默认值的值。\n\nauto 类型只有一个值：`{auto}`。\n\n支持 `{auto}` 值的参数具有一些智能默认或上下文行为。一个很好的例子是 [文本方向]($text.dir) 参数。将其设置为 `{auto}` 让 Typst 自动从 [文本语言]($text.lang) 中确定方向。"
 
 [reference.foundations.auto.auto.oneliner]
 en = "A value that indicates a smart default."
+zh = "表示智能默认值的值。"
 
 [reference.foundations.auto.auto.title]
 en = "Auto"
+zh = "自动"
 
 [reference.foundations.auto.description]
 en = "Documentation for the Auto type."
+zh = "Auto 类型的文档。"
 
 [reference.foundations.auto.oneliner]
 en = "A value that indicates a smart default."
+zh = "表示智能默认值的值。"
 
 [reference.foundations.auto.title]
 en = "Auto"
+zh = "自动"
 
 [reference.foundations.bool.bool.details]
 en = "A type with two states.\n\nThe boolean type has two values: `{true}` and `{false}`. It denotes whether\nsomething is active or enabled.\n\n# Example\n```example\n#false \\\n#true \\\n#(1 < 2)\n```"
+zh = "具有两种状态的类型。\n\n布尔类型有两个值：`{true}` 和 `{false}`。它表示某物是否处于活动或启用状态。\n\n# 示例\n```example\n#false \\\n#true \\\n#(1 < 2)\n```"
 
 [reference.foundations.bool.bool.oneliner]
 en = "A type with two states."
+zh = "具有两种状态的类型。"
 
 [reference.foundations.bool.bool.title]
 en = "Boolean"
+zh = "布尔"
 
 [reference.foundations.bool.description]
 en = "Documentation for the Boolean type."
+zh = "布尔类型的文档。"
 
 [reference.foundations.bool.oneliner]
 en = "A type with two states."
+zh = "具有两种状态的类型。"
 
 [reference.foundations.bool.title]
 en = "Boolean"
+zh = "布尔"
 
 [reference.foundations.bytes.bytes.at.default.details]
 en = "A default value to return if the index is out of bounds."
+zh = "如果索引超出范围，则返回默认值。"
 
 [reference.foundations.bytes.bytes.at.details]
 en = "Returns the byte at the specified index. Returns the default value if\nthe index is out of bounds or fails with an error if no default value\nwas specified."
+zh = "返回指定索引处的字节。如果索引超出范围，则返回默认值；如果未指定默认值，则失败并报错。"
 
 [reference.foundations.bytes.bytes.at.index.details]
 en = "The index at which to retrieve the byte."
+zh = "要检索字节的索引。"
 
 [reference.foundations.bytes.bytes.at.oneliner]
 en = "Returns the byte at the specified index. Returns the default value if"
+zh = "返回指定索引处的字节。如果索引超出范围，则返回默认值。"
 
 [reference.foundations.bytes.bytes.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.bytes.bytes.bytes.details]
 en = "Converts a value to bytes.\n\n- Strings are encoded in UTF-8.\n- Arrays of integers between `{0}` and `{255}` are converted directly. The\n  dedicated byte representation is much more efficient than the array\n  representation and thus typically used for large byte buffers (e.g. image\n  data).\n\n"
+zh = "将值转换为字节。\n\n- 字符串以 UTF-8 编码。\n- 介于 `{0}` 和 `{255}` 之间的整数数组直接转换。专用字节表示比数组表示更有效，因此通常用于大型字节缓冲区（例如图像数据）。\n\n"
 
 [reference.foundations.bytes.bytes.bytes.oneliner]
 en = "Converts a value to bytes."
+zh = "将值转换为字节。"
 
 [reference.foundations.bytes.bytes.bytes.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.bytes.bytes.bytes.value.details]
 en = "The value that should be converted to bytes."
+zh = "应转换为字节的值。"
 
 [reference.foundations.bytes.bytes.details]
 en = "A sequence of bytes.\n\nThis is conceptually similar to an array of [integers]($int) between `{0}`\nand `{255}`, but represented much more efficiently. You can iterate over it\nusing a [for loop]($scripting/#loops).\n\nYou can convert\n- a [string]($str) or an [array] of integers to bytes with the [`bytes`]\n  constructor\n- bytes to a string with the [`str`] constructor, with UTF-8 encoding\n- bytes to an array of integers with the [`array`] constructor\n\nWhen [reading]($read) data from a file, you can decide whether to load it\nas a string or as raw bytes.\n\n```example\n#bytes((123, 160, 22, 0)) \\\n#bytes(\"Hello 😃\")\n\n#let data = read(\n  \"rhino.png\",\n  encoding: none,\n)\n\n// Magic bytes.\n#array(data.slice(0, 4)) \\\n#str(data.slice(1, 4))\n```"
+zh = "一系列字节。\n\n这在概念上类似于介于 `{0}` 和 `{255}` 之间的 [整数]($int) 数组，但表示更有效。您可以使用 [for 循环]($scripting/#loops) 迭代它。\n\n您可以将\n- [字符串]($str) 或整数 [数组] 转换为字节，使用 [`bytes`] 构造函数\n- 字节转换为字符串，使用 [`str`] 构造函数，使用 UTF-8 编码\n- 字节转换为整数数组，使用 [`array`] 构造函数\n\n当从文件中 [读取]($read) 数据时，您可以决定是将其加载为字符串还是原始字节。\n\n```example\n#bytes((123, 160, 22, 0)) \\\n#bytes(\"Hello 😃\")\n\n#let data = read(\n  \"rhino.png\",\n  encoding: none,\n)\n\n// 魔术字节。\n#array(data.slice(0, 4)) \\\n#str(data.slice(1, 4))\n```"
 
 [reference.foundations.bytes.bytes.len.details]
 en = "The length in bytes."
+zh = "字节长度。"
 
 [reference.foundations.bytes.bytes.len.oneliner]
 en = "The length in bytes."
+zh = "字节长度。"
 
 [reference.foundations.bytes.bytes.len.title]
 en = "Length"
+zh = "长度"
 
 [reference.foundations.bytes.bytes.oneliner]
 en = "A sequence of bytes."
+zh = "一系列字节。"
 
 [reference.foundations.bytes.bytes.slice.count.details]
 en = "The number of items to extract. This is equivalent to passing\n`start + count` as the `end` position. Mutually exclusive with\n`end`."
+zh = "要提取的项数。这相当于传递 `start + count` 作为 `end` 位置。与 `end` 互斥。"
 
 [reference.foundations.bytes.bytes.slice.details]
 en = "Extracts a subslice of the bytes. Fails with an error if the start or\nend index is out of bounds."
+zh = "提取字节的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.bytes.bytes.slice.end.details]
 en = "The end index (exclusive). If omitted, the whole slice until the end\nis extracted."
+zh = "结束索引（不包括）。如果省略，则提取直到末尾的整个切片。"
 
 [reference.foundations.bytes.bytes.slice.oneliner]
 en = "Extracts a subslice of the bytes. Fails with an error if the start or"
+zh = "提取字节的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.bytes.bytes.slice.start.details]
 en = "The start index (inclusive)."
+zh = "开始索引（包括）。"
 
 [reference.foundations.bytes.bytes.slice.title]
 en = "Slice"
+zh = "切片"
 
 [reference.foundations.bytes.bytes.title]
 en = "Bytes"
+zh = "字节"
 
 [reference.foundations.bytes.description]
 en = "Documentation for the Bytes type."
+zh = "字节类型的文档。"
 
 [reference.foundations.bytes.oneliner]
 en = "A sequence of bytes."
+zh = "一系列字节。"
 
 [reference.foundations.bytes.title]
 en = "Bytes"
+zh = "字节"
 
 [reference.foundations.calc.calc.abs.details]
 en = "Calculates the absolute value of a numeric value.\n\n"
