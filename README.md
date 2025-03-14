@@ -1,1 +1,3 @@
-## Typst 文档翻译
+## Typst Docs Translations
+
+Localization for typst-docs.
