@@ -66,324 +66,431 @@ en = "How to deal with content that reacts to its location in the document.\n"
 
 [reference.context.title]
 en = "Context"
+zh = "上下文"
 
 [reference.data-loading.cbor.cbor.decode.data.details]
 en = "CBOR data."
+zh = "CBOR 数据。"
 
 [reference.data-loading.cbor.cbor.decode.deprecation]
 en = "`cbor.decode` is deprecated, directly pass bytes to `cbor` instead"
+zh = "`cbor.decode` 已弃用，请直接将字节传递给 `cbor`。"
 
 [reference.data-loading.cbor.cbor.decode.details]
 en = "Reads structured data from CBOR bytes."
+zh = "从 CBOR 字节中读取结构化数据。"
 
 [reference.data-loading.cbor.cbor.decode.oneliner]
 en = "Reads structured data from CBOR bytes."
+zh = "从 CBOR 字节中读取结构化数据。"
 
 [reference.data-loading.cbor.cbor.decode.title]
 en = "Decode CBOR"
+zh = "解码 CBOR"
 
 [reference.data-loading.cbor.cbor.details]
 en = "Reads structured data from a CBOR file.\n\nThe file must contain a valid CBOR serialization. Mappings will be\nconverted into Typst dictionaries, and sequences will be converted into\nTypst arrays. Strings and booleans will be converted into the Typst\nequivalents, null-values (`null`, `~` or empty ``) will be converted into\n`{none}`, and numbers will be converted to floats or integers depending on\nwhether they are whole numbers.\n\nBe aware that integers larger than 2<sup>63</sup>-1 will be converted to\nfloating point numbers, which may result in an approximative value."
+zh = "从 CBOR 文件中读取结构化数据。\n\n文件必须包含有效的 CBOR 序列化。映射将被转换为 Typst 字典，序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。"
 
 [reference.data-loading.cbor.cbor.encode.details]
 en = "Encode structured data into CBOR bytes."
+zh = "将结构化数据编码为 CBOR 字节。"
 
 [reference.data-loading.cbor.cbor.encode.oneliner]
 en = "Encode structured data into CBOR bytes."
+zh = "将结构化数据编码为 CBOR 字节。"
 
 [reference.data-loading.cbor.cbor.encode.title]
 en = "Encode CBOR"
+zh = "编码 CBOR"
 
 [reference.data-loading.cbor.cbor.encode.value.details]
 en = "Value to be encoded."
+zh = "要编码的值。"
 
 [reference.data-loading.cbor.cbor.oneliner]
 en = "Reads structured data from a CBOR file."
+zh = "从 CBOR 文件中读取结构化数据。"
 
 [reference.data-loading.cbor.cbor.source.details]
 en = "A [path]($syntax/#paths) to a CBOR file or raw CBOR bytes."
+zh = "CBOR 文件的 [路径]($syntax/#paths) 或原始 CBOR 字节。"
 
 [reference.data-loading.cbor.cbor.title]
 en = "CBOR"
+zh = "CBOR"
 
 [reference.data-loading.cbor.description]
 en = "Documentation for the `cbor` function."
+zh = "`cbor` 函数的文档。"
 
 [reference.data-loading.cbor.oneliner]
 en = "Reads structured data from a CBOR file."
+zh = "从 CBOR 文件中读取结构化数据。"
 
 [reference.data-loading.cbor.title]
 en = "CBOR"
+zh = "CBOR"
 
 [reference.data-loading.csv.csv.decode.data.details]
 en = "CSV data."
+zh = "CSV 数据。"
 
 [reference.data-loading.csv.csv.decode.delimiter.details]
 en = "The delimiter that separates columns in the CSV file.\nMust be a single ASCII character."
+zh = "分隔 CSV 文件中列的分隔符。\n必须是单个 ASCII 字符。"
 
 [reference.data-loading.csv.csv.decode.deprecation]
 en = "`csv.decode` is deprecated, directly pass bytes to `csv` instead"
+zh = "`csv.decode` 已弃用，请直接将字节传递给 `csv`。"
 
 [reference.data-loading.csv.csv.decode.details]
 en = "Reads structured data from a CSV string/bytes."
+zh = "从 CSV 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.csv.csv.decode.oneliner]
 en = "Reads structured data from a CSV string/bytes."
+zh = "从 CSV 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.csv.csv.decode.row-type.details]
 en = "How to represent the file's rows.\n\n- If set to `array`, each row is represented as a plain array of\n  strings.\n- If set to `dictionary`, each row is represented as a dictionary\n  mapping from header keys to strings. This option only makes sense\n  when a header row is present in the CSV file."
+zh = "如何表示文件的行。\n\n- 如果设置为 `array`，每行表示为一个简单的字符串数组。\n- 如果设置为 `dictionary`，每行表示为一个字典，将标题键映射到字符串。这种选项仅在 CSV 文件中存在标题行时有意义。"
 
 [reference.data-loading.csv.csv.decode.title]
 en = "Decode CSV"
+zh = "解码 CSV"
 
 [reference.data-loading.csv.csv.delimiter.details]
 en = "The delimiter that separates columns in the CSV file.\nMust be a single ASCII character."
+zh = "分隔 CSV 文件中列的分隔符。\n必须是单个 ASCII 字符。"
 
 [reference.data-loading.csv.csv.details]
 en = "Reads structured data from a CSV file.\n\nThe CSV file will be read and parsed into a 2-dimensional array of strings:\nEach row in the CSV file will be represented as an array of strings, and all\nrows will be collected into a single array. Header rows will not be\nstripped.\n\n# Example\n```example\n#let results = csv(\"example.csv\")\n\n#table(\n  columns: 2,\n  [*Condition*], [*Result*],\n  ..results.flatten(),\n)\n```"
+zh = "从 CSV 文件中读取结构化数据。\n\nCSV 文件将被读取并解析为二维字符串数组：\nCSV 文件中的每一行将表示为一个字符串数组，所有行将被收集到一个数组中。标题行不会被删除。\n\n# 示例\n```example\n#let results = csv(\"example.csv\")\n\n#table(\n  columns: 2,\n  [*Condition*], [*Result*],\n  ..results.flatten(),\n)\n```"
 
 [reference.data-loading.csv.csv.oneliner]
 en = "Reads structured data from a CSV file."
+zh = "从 CSV 文件中读取结构化数据。"
 
 [reference.data-loading.csv.csv.row-type.details]
 en = "How to represent the file's rows.\n\n- If set to `array`, each row is represented as a plain array of\n  strings.\n- If set to `dictionary`, each row is represented as a dictionary\n  mapping from header keys to strings. This option only makes sense when\n  a header row is present in the CSV file."
+zh = "如何表示文件的行。\n\n- 如果设置为 `array`，每行表示为一个简单的字符串数组。\n- 如果设置为 `dictionary`，每行表示为一个字典，将标题键映射到字符串。这种选项仅在 CSV 文件中存在标题行时有意义。"
 
 [reference.data-loading.csv.csv.source.details]
 en = "A [path]($syntax/#paths) to a CSV file or raw CSV bytes."
+zh = "CSV 文件的 [路径]($syntax/#paths) 或原始 CSV 字节。"
 
 [reference.data-loading.csv.csv.title]
 en = "CSV"
+zh = "CSV"
 
 [reference.data-loading.csv.description]
 en = "Documentation for the `csv` function."
+zh = "`csv` 函数的文档。"
 
 [reference.data-loading.csv.oneliner]
 en = "Reads structured data from a CSV file."
+zh = "从 CSV 文件中读取结构化数据。"
 
 [reference.data-loading.csv.title]
 en = "CSV"
+zh = "CSV"
 
 [reference.data-loading.data-loading.details]
 en = "Data loading from external files.\n\nThese functions help you with loading and embedding data, for example from the\nresults of an experiment.\n"
+zh = "从外部文件加载数据。\n\n这些函数可以帮助您加载和嵌入数据，例如实验结果中的数据。\n"
 
 [reference.data-loading.data-loading.title]
 en = "Data Loading"
+zh = "数据加载"
 
 [reference.data-loading.description]
 en = "Documentation for functions related to Data Loading in Typst."
+zh = "Typst 中与数据加载相关的函数文档。"
 
 [reference.data-loading.json.description]
 en = "Documentation for the `json` function."
+zh = "`json` 函数的文档。"
 
 [reference.data-loading.json.json.decode.data.details]
 en = "JSON data."
+zh = "JSON 数据。"
 
 [reference.data-loading.json.json.decode.deprecation]
 en = "`json.decode` is deprecated, directly pass bytes to `json` instead"
+zh = "`json.decode` 已弃用，请直接将字节传递给 `json`。"
 
 [reference.data-loading.json.json.decode.details]
 en = "Reads structured data from a JSON string/bytes."
+zh = "从 JSON 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.json.json.decode.oneliner]
 en = "Reads structured data from a JSON string/bytes."
+zh = "从 JSON 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.json.json.decode.title]
 en = "Decode JSON"
+zh = "解码 JSON"
 
 [reference.data-loading.json.json.details]
 en = "Reads structured data from a JSON file.\n\nThe file must contain a valid JSON value, such as object or array. JSON\nobjects will be converted into Typst dictionaries, and JSON arrays will be\nconverted into Typst arrays. Strings and booleans will be converted into the\nTypst equivalents, `null` will be converted into `{none}`, and numbers will\nbe converted to floats or integers depending on whether they are whole\nnumbers.\n\nBe aware that integers larger than 2<sup>63</sup>-1 will be converted to\nfloating point numbers, which may result in an approximative value.\n\nThe function returns a dictionary, an array or, depending on the JSON file,\nanother JSON data type.\n\nThe JSON files in the example contain objects with the keys `temperature`,\n`unit`, and `weather`.\n\n# Example\n```example\n#let forecast(day) = block[\n  #box(square(\n    width: 2cm,\n    inset: 8pt,\n    fill: if day.weather == \"sunny\" {\n      yellow\n    } else {\n      aqua\n    },\n    align(\n      bottom + right,\n      strong(day.weather),\n    ),\n  ))\n  #h(6pt)\n  #set text(22pt, baseline: -8pt)\n  #day.temperature °#day.unit\n]\n\n#forecast(json(\"monday.json\"))\n#forecast(json(\"tuesday.json\"))\n```"
+zh = "从 JSON 文件中读取结构化数据。\n\n文件必须包含有效的 JSON 值，例如对象或数组。JSON 对象将被转换为 Typst 字典，JSON 数组将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，`null` 将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n该函数返回一个字典、数组或其他 JSON 数据类型，具体取决于 JSON 文件。\n\n示例中的 JSON 文件包含键 `temperature`、`unit` 和 `weather` 的对象。\n\n# 示例\n```example\n#let forecast(day) = block[\n  #box(square(\n    width: 2cm,\n    inset: 8pt,\n    fill: if day.weather == \"sunny\" {\n      yellow\n    } else {\n      aqua\n    },\n    align(\n      bottom + right,\n      strong(day.weather),\n    ),\n  ))\n  #h(6pt)\n  #set text(22pt, baseline: -8pt)\n  #day.temperature °#day.unit\n]\n\n#forecast(json(\"monday.json\"))\n#forecast(json(\"tuesday.json\"))\n```"
 
 [reference.data-loading.json.json.encode.details]
 en = "Encodes structured data into a JSON string."
+zh = "将结构化数据编码为 JSON 字符串。"
 
 [reference.data-loading.json.json.encode.oneliner]
 en = "Encodes structured data into a JSON string."
+zh = "将结构化数据编码为 JSON 字符串。"
 
 [reference.data-loading.json.json.encode.pretty.details]
 en = "Whether to pretty print the JSON with newlines and indentation."
+zh = "是否使用换行和缩进美化打印 JSON。"
 
 [reference.data-loading.json.json.encode.title]
 en = "Encode JSON"
+zh = "编码 JSON"
 
 [reference.data-loading.json.json.encode.value.details]
 en = "Value to be encoded."
+zh = "要编码的值。"
 
 [reference.data-loading.json.json.oneliner]
 en = "Reads structured data from a JSON file."
+zh = "从 JSON 文件中读取结构化数据。"
 
 [reference.data-loading.json.json.source.details]
 en = "A [path]($syntax/#paths) to a JSON file or raw JSON bytes."
+zh = "JSON 文件的 [路径]($syntax/#paths) 或原始 JSON 字节。"
 
 [reference.data-loading.json.json.title]
 en = "JSON"
+zh = "JSON"
 
 [reference.data-loading.json.oneliner]
 en = "Reads structured data from a JSON file."
+zh = "从 JSON 文件中读取结构化数据。"
 
 [reference.data-loading.json.title]
 en = "JSON"
+zh = "JSON"
 
 [reference.data-loading.read.description]
 en = "Documentation for the `read` function."
+zh = "`read` 函数的文档。"
 
 [reference.data-loading.read.oneliner]
 en = "Reads plain text or data from a file."
+zh = "从文件中读取纯文本或数据。"
 
 [reference.data-loading.read.read.details]
 en = "Reads plain text or data from a file.\n\nBy default, the file will be read as UTF-8 and returned as a [string]($str).\n\nIf you specify `{encoding: none}`, this returns raw [bytes] instead.\n\n# Example\n```example\nAn example for a HTML file: \\\n#let text = read(\"example.html\")\n#raw(text, lang: \"html\")\n\nRaw bytes:\n#read(\"tiger.jpg\", encoding: none)\n```"
+zh = "从文件中读取纯文本或数据。\n\n默认情况下，文件将以 UTF-8 读取并返回为 [字符串]($str)。\n\n如果指定 `{encoding: none}`，则返回原始 [字节]。\n\n# 示例\n```example\nHTML 文件示例： \\\n#let text = read(\"example.html\")\n#raw(text, lang: \"html\")\n\n原始字节：\n#read(\"tiger.jpg\", encoding: none)\n```"
 
 [reference.data-loading.read.read.encoding.details]
 en = "The encoding to read the file with.\n\nIf set to `{none}`, this function returns raw bytes."
+zh = "读取文件的编码。\n\n如果设置为 `{none}`，此函数返回原始字节。"
 
 [reference.data-loading.read.read.oneliner]
 en = "Reads plain text or data from a file."
+zh = "从文件中读取纯文本或数据。"
 
 [reference.data-loading.read.read.path.details]
 en = "Path to a file.\n\nFor more details, see the [Paths section]($syntax/#paths)."
+zh = "文件路径。\n\n更多详情，请参见 [路径部分]($syntax/#paths)。"
 
 [reference.data-loading.read.read.title]
 en = "Read"
+zh = "读取"
 
 [reference.data-loading.read.title]
 en = "Read"
+zh = "读取"
 
 [reference.data-loading.title]
 en = "Data Loading"
+zh = "数据加载"
 
 [reference.data-loading.toml.description]
 en = "Documentation for the `toml` function."
+zh = "`toml` 函数的文档。"
 
 [reference.data-loading.toml.oneliner]
 en = "Reads structured data from a TOML file."
+zh = "从 TOML 文件中读取结构化数据。"
 
 [reference.data-loading.toml.title]
 en = "TOML"
+zh = "TOML"
 
 [reference.data-loading.toml.toml.decode.data.details]
 en = "TOML data."
+zh = "TOML 数据。"
 
 [reference.data-loading.toml.toml.decode.deprecation]
 en = "`toml.decode` is deprecated, directly pass bytes to `toml` instead"
+zh = "`toml.decode` 已弃用，请直接将字节传递给 `toml`。"
 
 [reference.data-loading.toml.toml.decode.details]
 en = "Reads structured data from a TOML string/bytes."
+zh = "从 TOML 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.toml.toml.decode.oneliner]
 en = "Reads structured data from a TOML string/bytes."
+zh = "从 TOML 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.toml.toml.decode.title]
 en = "Decode TOML"
+zh = "解码 TOML"
 
 [reference.data-loading.toml.toml.details]
 en = "Reads structured data from a TOML file.\n\nThe file must contain a valid TOML table. TOML tables will be converted into\nTypst dictionaries, and TOML arrays will be converted into Typst arrays.\nStrings, booleans and datetimes will be converted into the Typst equivalents\nand numbers will be converted to floats or integers depending on whether\nthey are whole numbers.\n\nThe TOML file in the example consists of a table with the keys `title`,\n`version`, and `authors`.\n\n# Example\n```example\n#let details = toml(\"details.toml\")\n\nTitle: #details.title \\\nVersion: #details.version \\\nAuthors: #(details.authors\n  .join(\", \", last: \" and \"))\n```"
+zh = "从 TOML 文件中读取结构化数据。\n\n文件必须包含有效的 TOML 表。TOML 表将被转换为 Typst 字典，TOML 数组将被转换为 Typst 数组。字符串、布尔值和日期时间将被转换为 Typst 等效值，数字将根据是否为整数转换为浮点数或整数。\n\n示例中的 TOML 文件包含 `title`、`version` 和 `authors` 键的表。\n\n# 示例\n```example\n#let details = toml(\"details.toml\")\n\nTitle: #details.title \\\nVersion: #details.version \\\nAuthors: #(details.authors\n  .join(\", \", last: \" and \"))\n```"
 
 [reference.data-loading.toml.toml.encode.details]
 en = "Encodes structured data into a TOML string."
+zh = "将结构化数据编码为 TOML 字符串。"
 
 [reference.data-loading.toml.toml.encode.oneliner]
 en = "Encodes structured data into a TOML string."
+zh = "将结构化数据编码为 TOML 字符串。"
 
 [reference.data-loading.toml.toml.encode.pretty.details]
 en = "Whether to pretty-print the resulting TOML."
+zh = "是否美化打印生成的 TOML。"
 
 [reference.data-loading.toml.toml.encode.title]
 en = "Encode TOML"
+zh = "编码 TOML"
 
 [reference.data-loading.toml.toml.encode.value.details]
 en = "Value to be encoded."
+zh = "要编码的值。"
 
 [reference.data-loading.toml.toml.oneliner]
 en = "Reads structured data from a TOML file."
+zh = "从 TOML 文件中读取结构化数据。"
 
 [reference.data-loading.toml.toml.source.details]
 en = "A [path]($syntax/#paths) to a TOML file or raw TOML bytes."
+zh = "TOML 文件的 [路径]($syntax/#paths) 或原始 TOML 字节。"
 
 [reference.data-loading.toml.toml.title]
 en = "TOML"
+zh = "TOML"
 
 [reference.data-loading.xml.description]
 en = "Documentation for the `xml` function."
+zh = "`xml` 函数的文档。"
 
 [reference.data-loading.xml.oneliner]
 en = "Reads structured data from an XML file."
+zh = "从 XML 文件中读取结构化数据。"
 
 [reference.data-loading.xml.title]
 en = "XML"
+zh = "XML"
 
 [reference.data-loading.xml.xml.decode.data.details]
 en = "XML data."
+zh = "XML 数据。"
 
 [reference.data-loading.xml.xml.decode.deprecation]
 en = "`xml.decode` is deprecated, directly pass bytes to `xml` instead"
+zh = "`xml.decode` 已弃用，请直接将字节传递给 `xml`。"
 
 [reference.data-loading.xml.xml.decode.details]
 en = "Reads structured data from an XML string/bytes."
+zh = "从 XML 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.xml.xml.decode.oneliner]
 en = "Reads structured data from an XML string/bytes."
+zh = "从 XML 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.xml.xml.decode.title]
 en = "Decode XML"
+zh = "解码 XML"
 
 [reference.data-loading.xml.xml.details]
 en = "Reads structured data from an XML file.\n\nThe XML file is parsed into an array of dictionaries and strings. XML nodes\ncan be elements or strings. Elements are represented as dictionaries with\nthe following keys:\n\n- `tag`: The name of the element as a string.\n- `attrs`: A dictionary of the element's attributes as strings.\n- `children`: An array of the element's child nodes.\n\nThe XML file in the example contains a root `news` tag with multiple\n`article` tags. Each article has a `title`, `author`, and `content` tag. The\n`content` tag contains one or more paragraphs, which are represented as `p`\ntags.\n\n# Example\n```example\n#let find-child(elem, tag) = {\n  elem.children\n    .find(e => \"tag\" in e and e.tag == tag)\n}\n\n#let article(elem) = {\n  let title = find-child(elem, \"title\")\n  let author = find-child(elem, \"author\")\n  let pars = find-child(elem, \"content\")\n\n  heading(title.children.first())\n  text(10pt, weight: \"medium\")[\n    Published by\n    #author.children.first()\n  ]\n\n  for p in pars.children {\n    if (type(p) == \"dictionary\") {\n      parbreak()\n      p.children.first()\n    }\n  }\n}\n\n#let data = xml(\"example.xml\")\n#for elem in data.first().children {\n  if (type(elem) == \"dictionary\") {\n    article(elem)\n  }\n}\n```"
+zh = "从 XML 文件中读取结构化数据。\n\nXML 文件被解析为字典和字符串数组。XML 节点可以是元素或字符串。元素表示为具有以下键的字典：\n\n- `tag`：元素的名称，字符串类型。\n- `attrs`：元素属性的字典，字符串类型。\n- `children`：元素子节点的数组。\n\n示例中的 XML 文件包含一个根 `news` 标签，其中有多个 `article` 标签。每个文章都有一个 `title`、`author` 和 `content` 标签。`content` 标签包含一个或多个段落，表示为 `p` 标签。\n\n# 示例\n```example\n#let find-child(elem, tag) = {\n  elem.children\n    .find(e => \"tag\" in e and e.tag == tag)\n}\n\n#let article(elem) = {\n  let title = find-child(elem, \"title\")\n  let author = find-child(elem, \"author\")\n  let pars = find-child(elem, \"content\")\n\n  heading(title.children.first())\n  text(10pt, weight: \"medium\")[\n    Published by\n    #author.children.first()\n  ]\n\n  for p in pars.children {\n    if (type(p) == \"dictionary\") {\n      parbreak()\n      p.children.first()\n    }\n  }\n}\n\n#let data = xml(\"example.xml\")\n#for elem in data.first().children {\n  if (type(elem) == \"dictionary\") {\n    article(elem)\n  }\n}\n```"
 
 [reference.data-loading.xml.xml.oneliner]
 en = "Reads structured data from an XML file."
+zh = "从 XML 文件中读取结构化数据。"
 
 [reference.data-loading.xml.xml.source.details]
 en = "A [path]($syntax/#paths) to an XML file or raw XML bytes."
+zh = "XML 文件的 [路径]($syntax/#paths) 或原始 XML 字节。"
 
 [reference.data-loading.xml.xml.title]
 en = "XML"
+zh = "XML"
 
 [reference.data-loading.yaml.description]
 en = "Documentation for the `yaml` function."
+zh = "`yaml` 函数的文档。"
 
 [reference.data-loading.yaml.oneliner]
 en = "Reads structured data from a YAML file."
+zh = "从 YAML 文件中读取结构化数据。"
 
 [reference.data-loading.yaml.title]
 en = "YAML"
+zh = "YAML"
 
 [reference.data-loading.yaml.yaml.decode.data.details]
 en = "YAML data."
+zh = "YAML 数据。"
 
 [reference.data-loading.yaml.yaml.decode.deprecation]
 en = "`yaml.decode` is deprecated, directly pass bytes to `yaml` instead"
+zh = "`yaml.decode` 已弃用，请直接将字节传递给 `yaml`。"
 
 [reference.data-loading.yaml.yaml.decode.details]
 en = "Reads structured data from a YAML string/bytes."
+zh = "从 YAML 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.yaml.yaml.decode.oneliner]
 en = "Reads structured data from a YAML string/bytes."
+zh = "从 YAML 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.yaml.yaml.decode.title]
 en = "Decode YAML"
+zh = "解码 YAML"
 
 [reference.data-loading.yaml.yaml.details]
 en = "Reads structured data from a YAML file.\n\nThe file must contain a valid YAML object or array. YAML mappings will be\nconverted into Typst dictionaries, and YAML sequences will be converted into\nTypst arrays. Strings and booleans will be converted into the Typst\nequivalents, null-values (`null`, `~` or empty ``) will be converted into\n`{none}`, and numbers will be converted to floats or integers depending on\nwhether they are whole numbers. Custom YAML tags are ignored, though the\nloaded value will still be present.\n\nBe aware that integers larger than 2<sup>63</sup>-1 will be converted to\nfloating point numbers, which may give an approximative value.\n\nThe YAML files in the example contain objects with authors as keys,\neach with a sequence of their own submapping with the keys\n\"title\" and \"published\"\n\n# Example\n```example\n#let bookshelf(contents) = {\n  for (author, works) in contents {\n    author\n    for work in works [\n      - #work.title (#work.published)\n    ]\n  }\n}\n\n#bookshelf(\n  yaml(\"scifi-authors.yaml\")\n)\n```"
+zh = "从 YAML 文件中读取结构化数据。\n\n文件必须包含有效的 YAML 对象或数组。YAML 映射将被转换为 Typst 字典，YAML 序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。自定义 YAML 标签将被忽略，但加载的值仍然存在。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n示例中的 YAML 文件包含以作者为键的对象，每个作者都有一个包含键 \"title\" 和 \"published\" 的子映射序列。\n\n# 示例\n```example\n#let bookshelf(contents) = {\n  for (author, works) in contents {\n    author\n    for work in works [\n      - #work.title (#work.published)\n    ]\n  }\n}\n\n#bookshelf(\n  yaml(\"scifi-authors.yaml\")\n)\n```"
 
 [reference.data-loading.yaml.yaml.encode.details]
 en = "Encode structured data into a YAML string."
+zh = "将结构化数据编码为 YAML 字符串。"
 
 [reference.data-loading.yaml.yaml.encode.oneliner]
 en = "Encode structured data into a YAML string."
+zh = "将结构化数据编码为 YAML 字符串。"
 
 [reference.data-loading.yaml.yaml.encode.title]
 en = "Encode YAML"
+zh = "编码 YAML"
 
 [reference.data-loading.yaml.yaml.encode.value.details]
 en = "Value to be encoded."
+zh = "要编码的值。"
 
 [reference.data-loading.yaml.yaml.oneliner]
 en = "Reads structured data from a YAML file."
+zh = "从 YAML 文件中读取结构化数据。"
 
 [reference.data-loading.yaml.yaml.source.details]
 en = "A [path]($syntax/#paths) to a YAML file or raw YAML bytes."
+zh = "YAML 文件的 [路径]($syntax/#paths) 或原始 YAML 字节。"
 
 [reference.data-loading.yaml.yaml.title]
 en = "YAML"
+zh = "YAML"
 
 [reference.description]
 en = "The Typst reference is a systematic and comprehensive guide to the Typst\ntypesetting language.\n"
