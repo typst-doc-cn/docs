@@ -18,6 +18,9 @@ members = ["crates/*"]
 # Basic Infra
 anyhow = "1"
 
+# Testing
+insta = "1.41"
+
 # CLI
 clap = { version = "4.5", features = ["derive", "env", "unicode"] }
 
@@ -28,8 +31,13 @@ rayon = "1.10.0"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
-# Typst docs library
-docs = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinymist/v0.13.2" }
+# Typst library
+typst = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinymist/v0.13.2" }
+typst-docs = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinymist/v0.13.2" }
+typst-render = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinymist/v0.13.2" }
+
+# Tinymist
+tinymist-l10n = { path = "../../rust/tinymist/crates/tinymist-l10n/" }
 
 [profile.release]
 # lto = true        # Enable link-time optimization

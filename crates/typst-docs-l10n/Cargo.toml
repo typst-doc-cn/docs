@@ -16,7 +16,12 @@ rust-version.workspace = true
 anyhow.workspace = true
 clap = { workspace = true, features = ["wrap_help"] }
 rayon.workspace = true
+serde.workspace = true
 serde_json.workspace = true
+typst-docs.workspace = true
+typst.workspace = true
+typst-render.workspace = true
+tinymist-l10n.workspace = true
 
 [lints]
 workspace = true
