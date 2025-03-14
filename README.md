@@ -1,3 +1,3 @@
-## Typst Docs Translations
+## Typst Docs Localization
 
-Localization for typst-docs.
+Localization for `typst-docs`.
