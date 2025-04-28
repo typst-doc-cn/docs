@@ -67,7 +67,6 @@ impl<'a> GenContext<'a> {
             .transations
             .get(key)
             .unwrap_or_else(|| panic!("Missing translation for {key}"));
-        eprintln!("Getting {key}");
         dict.get("zh")
             .or_else(|| dict.get("en"))
             .map(|s| s.as_str())

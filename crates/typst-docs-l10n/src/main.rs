@@ -188,41 +188,7 @@ fn make(args: MakeArgs) -> anyhow::Result<()> {
         .flat_map(|page| ctx.generate_page(&page).transpose())
         .collect::<anyhow::Result<Vec<_>>>()?;
 
-    let mut result = r#"
-#import "@preview/cmarker:0.1.5": render
-#let render-md = render.with(
-  scope: (image: (path, alt: none) => (path: path, alt: alt))
-)
-
-#align(center)[
-  #set text(size: 36pt)
-  Typst官方文档翻译
-]
-#set heading(numbering: "1.")
-
-#pagebreak()
-
-== Bad <guides.page-setup-guide.bodycolumns>
-
-== Bad <guides.table-guide.bodycolumn-sizes>
-
-== Bad <guides.table-guide.bodystrokes>
-
-== Bad <guides.table-guide.bodyfills>
-
-== Bad <guides.table-guide.bodystroke-functions>
-
-== Bad <guides.table-guide.bodyimporting-data>
-
-== Bad <guides.table-guide.bodyindividual-lines>
-
-== Bad <guides.table-guide.bodyalignment>
-
-== Bad <reference.syntax.bodyescapes>
-
-"#
-    .to_string();
-
+    let mut result = include_str!("template.typ").to_string();
     for page in typst_pages {
         let page = ctx.get_page(page);
         page.write(&ctx, &mut result)?;

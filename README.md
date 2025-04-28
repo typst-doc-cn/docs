@@ -16,8 +16,14 @@ cargo run --bin typst-docs-l10n -- translate
 cargo run --bin typst-docs-l10n -- make
 ```
 
+## Building Pdf Output
+
 ```bash
-typst compile ./target/typst-docs/docs.zh.typ "./target/typst-docs/Typst Docs v0.13.1 zh version.pdf"
+curl -L https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.1.5/source-han-serif-font-assets.tar.gz | tar -xvz -C assets/fonts
+```
+
+```bash
+typst compile --font-path assets/fonts ./target/typst-docs/docs.zh.typ "./target/typst-docs/Typst Docs v0.13.1 zh version.pdf"
 # Windows
 explorer.exe "./target/typst-docs/Typst Docs v0.13.1 zh version.pdf"
 ```
