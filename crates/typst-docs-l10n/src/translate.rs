@@ -29,11 +29,6 @@ pub fn check_page(page: PageMdModel, translations: &mut TranslationPairs) {
     check_body(page.body, &k, translations);
 }
 
-/// Convert a path to a dot path.
-fn to_dot_path(path: &str) -> String {
-    path.trim_matches('/').replace("/", ".")
-}
-
 /// Check the body for translations.
 fn check_body(body: BodyMdModel, k: &str, translations: &mut TranslationPairs) {
     match body {

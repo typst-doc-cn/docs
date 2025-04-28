@@ -7,9 +7,10 @@ use std::path::PathBuf;
 
 use clap::Parser;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
-use tinymist_l10n::update_disk_translations;
+use tinymist_l10n::{load_translations, update_disk_translations, TranslationMapSet};
 use typst_docs::provide;
-use typst_docs_l10n::generate::CliResolver;
+use typst_docs_l10n::generate::GenContext;
+use typst_docs_l10n::resolve::CliResolver;
 use typst_docs_l10n::translate::check_page;
 use typst_docs_l10n::PageMdModel;
 
@@ -20,18 +21,22 @@ fn main() -> anyhow::Result<()> {
     match args {
         Command::Generate(args) => generate(args),
         Command::Translate(args) => translate(args),
+        Command::Make(args) => make(args),
     }
 }
 
 /// The command line arguments.
 #[derive(Parser, Debug)]
 enum Command {
-    /// Generate the JSON representation of the documentation.
+    /// Generates the JSON representation of the documentation.
     #[clap()]
     Generate(GenerateArgs),
-    /// Update the translations of the documentation.
+    /// Updates the translations of the documentation.
     #[clap()]
     Translate(TranslateArgs),
+    /// Makes a typst document.
+    #[clap()]
+    Make(MakeArgs),
 }
 
 /// Generates the JSON representation of the documentation. This can be used to
@@ -110,9 +115,9 @@ struct TranslateArgs {
     #[arg(long, default_value = "dist/docs.json")]
     docs_file: PathBuf,
 
-    /// The output directory for the translated documentation.
+    /// The directory for the translated documentation.
     #[arg(long, default_value = "locales/docs")]
-    out_dir: PathBuf,
+    translation_dir: PathBuf,
 }
 
 /// Updates the translations of the documentation.
@@ -132,8 +137,100 @@ fn translate(args: TranslateArgs) -> anyhow::Result<()> {
         })
         .collect::<Vec<_>>();
 
-    std::fs::create_dir_all(&args.out_dir)?;
-    update_disk_translations(doc_translations, &args.out_dir.join("typst-docs.toml"))?;
+    std::fs::create_dir_all(&args.translation_dir)?;
+    update_disk_translations(
+        doc_translations,
+        &args.translation_dir.join("typst-docs.toml"),
+    )?;
+
+    Ok(())
+}
+
+/// Arguments to make a typst document.
+#[derive(Parser, Debug)]
+struct MakeArgs {
+    /// The JSON file containing the documentation.
+    #[arg(long, default_value = "dist/docs.json")]
+    docs_file: PathBuf,
+
+    /// The directory for the translated documentation.
+    #[arg(long, default_value = "locales/docs")]
+    translation_dir: PathBuf,
+
+    /// The output directory for the typst document.
+    #[arg(long, short, default_value = "target/typst-docs")]
+    output_dir: PathBuf,
+}
+
+/// Makes a typst document.
+fn make(args: MakeArgs) -> anyhow::Result<()> {
+    let json = fs::read_to_string(&args.docs_file)?;
+    let pages: Vec<PageMdModel> = serde_json::from_str(&json)?;
+
+    let translations_path = args.translation_dir.join("typst-docs.toml");
+    let translations_str = fs::read_to_string(&translations_path)?;
+    let raw = load_translations(&translations_str)?;
+
+    // todo: key first
+    let mut translations = TranslationMapSet::default();
+    for (lang, value) in raw {
+        for (key, value) in value {
+            translations
+                .entry(key)
+                .or_default()
+                .insert(lang.clone(), value);
+        }
+    }
+
+    let mut ctx = GenContext::new(&translations);
+    let typst_pages = pages
+        .into_iter()
+        .flat_map(|page| ctx.generate_page(&page).transpose())
+        .collect::<anyhow::Result<Vec<_>>>()?;
+
+    let mut result = r#"
+#import "@preview/cmarker:0.1.5": render
+#let render-md = render.with(
+  scope: (image: (path, alt: none) => (path: path, alt: alt))
+)
+
+#align(center)[
+  #set text(size: 36pt)
+  Typst官方文档翻译
+]
+#set heading(numbering: "1.")
+
+#pagebreak()
+
+== Bad <guides.page-setup-guide.bodycolumns>
+
+== Bad <guides.table-guide.bodycolumn-sizes>
+
+== Bad <guides.table-guide.bodystrokes>
+
+== Bad <guides.table-guide.bodyfills>
+
+== Bad <guides.table-guide.bodystroke-functions>
+
+== Bad <guides.table-guide.bodyimporting-data>
+
+== Bad <guides.table-guide.bodyindividual-lines>
+
+== Bad <guides.table-guide.bodyalignment>
+
+== Bad <reference.syntax.bodyescapes>
+
+"#
+    .to_string();
+
+    for page in typst_pages {
+        let page = ctx.get_page(page);
+        page.write(&ctx, &mut result)?;
+    }
+
+    std::fs::create_dir_all(&args.output_dir)?;
+    let output_path = args.output_dir.join("docs.zh.typ");
+    fs::write(&output_path, &*result)?;
 
     Ok(())
 }

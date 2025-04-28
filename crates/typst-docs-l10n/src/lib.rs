@@ -8,6 +8,7 @@ use typst_docs::{
 };
 
 pub mod generate;
+pub mod resolve;
 pub mod translate;
 
 /// Details about a documentation page and its children.
@@ -423,4 +424,9 @@ impl From<SymbolModel> for SymbolMdModel {
             deprecation: symbol.deprecation.map(Into::into),
         }
     }
+}
+
+/// Convert a path to a dot path.
+fn to_dot_path(path: &str) -> String {
+    path.trim_matches('/').replace("/", ".")
 }

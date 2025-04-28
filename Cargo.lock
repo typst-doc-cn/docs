@@ -1843,7 +1843,7 @@ dependencies = [
 
 [[package]]
 name = "tinymist-l10n"
-version = "0.13.8"
+version = "0.13.12-rc4"
 dependencies = [
  "anyhow",
  "clap",
