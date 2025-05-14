@@ -7,6 +7,7 @@ use typst_docs::{
     SymbolModel, SymbolsModel, TypeModel,
 };
 
+pub mod convert;
 pub mod generate;
 pub mod resolve;
 pub mod translate;

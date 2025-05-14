@@ -4,7 +4,7 @@ use core::fmt;
 
 use tinymist_l10n::TranslationMapSet;
 
-use crate::*;
+use crate::{convert::md_to_typst, *};
 
 /// A typed index for a Typst page.
 #[derive(Debug, Clone, Copy)]
@@ -264,10 +264,9 @@ impl TypstContent {
                 write!(result, "```````html\n{html}\n```````\n")?;
             }
             TypstContent::Md(prefix, md) => {
-                write!(
-                    result,
-                    "#render-md(label-prefix: {prefix:?}, ```````md\n{md}\n```````)\n"
-                )?;
+                let _ = prefix;
+                let t = md_to_typst(md)?;
+                writeln!(result, "{t}")?;
             }
             TypstContent::Typ(typ) => result.push_str(typ),
             TypstContent::Seq(seq) => {

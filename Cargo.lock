@@ -1843,7 +1843,7 @@ dependencies = [
 
 [[package]]
 name = "tinymist-l10n"
-version = "0.13.12-rc4"
+version = "0.13.12"
 dependencies = [
  "anyhow",
  "clap",
@@ -1999,6 +1999,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap",
+ "pulldown-cmark",
  "rayon",
  "serde",
  "serde_json",

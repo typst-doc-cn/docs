@@ -1,6 +1,3 @@
-#import "@preview/cmarker:0.1.5": render
-#let render-md = render.with(scope: (image: (path, alt: none) => (path: path, alt: alt)))
-
 #set heading(numbering: "1.")
 #set par(justify: true)
 #set text(
@@ -41,3 +38,15 @@
 == Bad reference `<guides.table-guide.bodyalignment>` <guides.table-guide.bodyalignment>
 
 == Bad reference `<reference.syntax.bodyescapes>` <reference.syntax.bodyescapes>
+
+#show raw.where(lang: "example"): it => {
+  raw(
+    lang: "typ",
+    align: it.align,
+    block: it.block,
+    syntaxes: it.syntaxes,
+    tab-size: it.tab-size,
+    theme: it.theme,
+    it.text,
+  )
+}
