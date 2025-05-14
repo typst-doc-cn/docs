@@ -38,7 +38,8 @@ typst-docs = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinym
 typst-render = { git = "https://github.com/Myriad-Dreamin/typst.git", tag = "tinymist/v0.13.2" }
 
 # Tinymist
-tinymist-l10n = { path = "../../rust/tinymist/crates/tinymist-l10n/" }
+tinymist-l10n = "0.13.12"
+# tinymist-l10n = { path = "../../rust/tinymist/crates/tinymist-l10n/" }
 
 [profile.release]
 # lto = true        # Enable link-time optimization

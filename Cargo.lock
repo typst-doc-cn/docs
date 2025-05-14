@@ -1844,6 +1844,8 @@ dependencies = [
 [[package]]
 name = "tinymist-l10n"
 version = "0.13.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1a7c30b8f249c3bfb507d5253c71d80feb85ec08a1c53ce12fd7cf8bf04fa79e"
 dependencies = [
  "anyhow",
  "clap",
