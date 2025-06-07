@@ -13,7 +13,7 @@ Please install the Rust toolchain. Then you can build the `typst-docs-l10n` crat
 cargo build crates/typst-docs-l10n
 ```
 
-See the [README.md](./crates/typst-docs-l10n/README.md) for usage of the `typst-docs-l10n` CLI.
+See the [README.md](./README.md) for usage of the `typst-docs-l10n` CLI.
 
 ### Contributing to `locales/docs`
 
