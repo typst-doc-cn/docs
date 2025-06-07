@@ -27,3 +27,7 @@ typst compile --font-path assets/fonts ./target/typst-docs/docs.zh.typ "./target
 # Windows
 explorer.exe "./target/typst-docs/Typst Docs v0.13.1 zh version.pdf"
 ```
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
