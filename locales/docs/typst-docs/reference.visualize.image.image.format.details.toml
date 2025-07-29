@@ -9,7 +9,7 @@ only need to specify this when providing raw bytes as the
 format automatically, but that's not always possible)."""
 
 [[main]]
-en = """Supported formats are `{\"png\"}`, `{\"jpg\"}`, `{\"gif\"}`, `{\"svg\"}` as well
+en = """Supported formats are `{\\"png\\"}`, `{\\"jpg\\"}`, `{\\"gif\\"}`, `{\\"svg\\"}` as well
 as raw pixel data. Embedding PDFs as images is
 [not currently supported](https://github.com/typst/typst/issues/145)."""
 
@@ -17,10 +17,10 @@ as raw pixel data. Embedding PDFs as images is
 en = """When providing raw pixel data as the `source`, you must specify a
 dictionary with the following keys as the `format`:
 - `encoding` ([str]): The encoding of the pixel data. One of:
-  - `{\"rgb8\"}` (three 8-bit channels: red, green, blue)
-  - `{\"rgba8\"}` (four 8-bit channels: red, green, blue, alpha)
-  - `{\"luma8\"}` (one 8-bit channel)
-  - `{\"lumaa8\"}` (two 8-bit channels: luma and alpha)
+  - `{\\"rgb8\\"}` (three 8-bit channels: red, green, blue)
+  - `{\\"rgba8\\"}` (four 8-bit channels: red, green, blue, alpha)
+  - `{\\"luma8\\"}` (one 8-bit channel)
+  - `{\\"lumaa8\\"}` (two 8-bit channels: luma and alpha)
 - `width` ([int]): The pixel width of the image.
 - `height` ([int]): The pixel height of the image."""
 

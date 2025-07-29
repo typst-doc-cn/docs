@@ -19,11 +19,11 @@ en = """Once constructed, you can get the name of a label using
 en = """# Example
 ```example
 #show <a>: set text(blue)
-#show label(\"b\"): set text(red)"""
+#show label(\\"b\\"): set text(red)"""
 
 [[main]]
 en = """= Heading <a>
-*Strong* #label(\"b\")
+*Strong* #label(\\"b\\")
 ```"""
 
 [[main]]
@@ -35,7 +35,7 @@ name can contain letters, numbers, `_`, `-`, `:`, and `.`."""
 [[main]]
 en = """Note that there is a syntactical difference when using the dedicated syntax
 for this function. In the code below, the `[<a>]` terminates the heading and
-thus attaches to the heading itself, whereas the `[#label(\"b\")]` is part of
+thus attaches to the heading itself, whereas the `[#label(\\"b\\")]` is part of
 the heading and thus attaches to the heading's text."""
 
 [[main]]
@@ -44,8 +44,8 @@ en = """```typ
 = Introduction <a>"""
 
 [[main]]
-en = """// Equivalent to `#heading[Conclusion #label(\"b\")]`.
-= Conclusion #label(\"b\")
+en = """// Equivalent to `#heading[Conclusion #label(\\"b\\")]`.
+= Conclusion #label(\\"b\\")
 ```"""
 
 [[main]]

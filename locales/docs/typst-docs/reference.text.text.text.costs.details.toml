@@ -1,6 +1,6 @@
 
 [[main]]
-en = """The \"cost\" of various choices when laying out text. A higher cost means
+en = """The \\"cost\\" of various choices when laying out text. A higher cost means
 the layout engine will make the choice less often. Costs are specified
 as a ratio of the default cost, so `{50%}` will make text layout twice
 as eager to make a given choice, while `{200%}` will make it half as
@@ -17,7 +17,7 @@ en = """Currently, the following costs can be customized:
 en = """Hyphenation is generally avoided by placing the whole word on the next
 line, so a higher hyphenation cost can result in awkward justification
 spacing. Note: Hyphenation costs will only be applied when the
-[`linebreaks`]($par.linebreaks) are set to \"optimized\". (For example
+[`linebreaks`]($par.linebreaks) are set to \\"optimized\\". (For example
 by default implied by [`justify`]($par.justify).)"""
 
 [[main]]

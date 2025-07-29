@@ -12,11 +12,11 @@ en = """# Example
 #show link: underline"""
 
 [[main]]
-en = """https://example.com \\"""
+en = """https://example.com \\\\"""
 
 [[main]]
-en = """#link(\"https://example.com\") \\
-#link(\"https://example.com\")[
+en = """#link(\\"https://example.com\\") \\\\
+#link(\\"https://example.com\\")[
   See example.com
 ]
 ```"""

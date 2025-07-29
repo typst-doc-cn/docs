@@ -50,7 +50,7 @@ I am #amazed(color: purple)[amazed]!
 [[main]]
 en = """Templates now work by wrapping our whole document in a custom function like
 `amazed`. But wrapping a whole document in a giant function call would be
-cumbersome! Instead, we can use an \"everything\" show rule to achieve the same
+cumbersome! Instead, we can use an \\"everything\\" show rule to achieve the same
 with cleaner code. To write such a show rule, put a colon directly behind the
 show keyword and then provide a function. This function is given the rest of the
 document as a parameter. The function can then do anything with this content.
@@ -84,8 +84,8 @@ that content block."""
 [[main]]
 en = """```example
 #let template(doc) = [
-  #set text(font: \"Inria Serif\")
-  #show \"something cool\": [Typst]
+  #set text(font: \\"Inria Serif\\")
+  #show \\"something cool\\": [Typst]
   #doc
 ]"""
 
@@ -107,7 +107,7 @@ previous chapter."""
 en = """```example
 #let conf(title, doc) = {
   set page(
-    paper: \"us-letter\",
+    paper: \\"us-letter\\",
 >>> margin: auto,
     header: align(
       right + horizon,
@@ -118,7 +118,7 @@ en = """```example
   )
   set par(justify: true)
   set text(
-    font: \"Libertinus Serif\",
+    font: \\"Libertinus Serif\\",
     size: 11pt,
   )"""
 
@@ -131,7 +131,7 @@ en = """  // Heading show rules.
 >>>    align(center,
 >>>      text(
 >>>        13pt,
->>>        weight: \"regular\",
+>>>        weight: \\"regular\\",
 >>>        smallcaps(it.body),
 >>>      )
 >>>    ),
@@ -141,8 +141,8 @@ en = """  // Heading show rules.
 >>>  ): it => box(
 >>>    text(
 >>>      11pt,
->>>      weight: \"regular\",
->>>      style: \"italic\",
+>>>      weight: \\"regular\\",
+>>>      style: \\"italic\\",
 >>>      it.body + [.],
 >>>    )
 >>>  )"""
@@ -210,14 +210,14 @@ en = """```typ
   title: [Towards Improved Modelling],
   authors: (
     (
-      name: \"Theresa Tungsten\",
-      affiliation: \"Artos Institute\",
-      email: \"tung@artos.edu\",
+      name: \\"Theresa Tungsten\\",
+      affiliation: \\"Artos Institute\\",
+      email: \\"tung@artos.edu\\",
     ),
     (
-      name: \"Eugene Deklan\",
-      affiliation: \"Honduras State\",
-      email: \"e.deklan@hstate.hn\",
+      name: \\"Eugene Deklan\\",
+      affiliation: \\"Honduras State\\",
+      email: \\"e.deklan@hstate.hn\\",
     ),
   ),
   abstract: lorem(80),
@@ -285,15 +285,15 @@ en = """  let count = authors.len()
     columns: (1fr,) * ncols,
     row-gutter: 24pt,
     ..authors.map(author => [
-      #author.name \\
-      #author.affiliation \\
-      #link(\"mailto:\" + author.email)
+      #author.name \\\\
+      #author.affiliation \\\\
+      #link(\\"mailto:\\" + author.email)
     ]),
   )"""
 
 [[main]]
 en = """  par(justify: false)[
-    *Abstract* \\
+    *Abstract* \\\\
     #abstract
   ]"""
 
@@ -329,16 +329,16 @@ en = """```example:single
 >>>   abstract: [],
 >>>   doc,
 >>> ) = {
->>>  set text(font: \"Libertinus Serif\", 11pt)
+>>>  set text(font: \\"Libertinus Serif\\", 11pt)
 >>>  set par(justify: true)
 >>>  set page(
->>>    \"us-letter\",
+>>>    \\"us-letter\\",
 >>>    margin: auto,
 >>>    header: align(
 >>>      right + horizon,
 >>>      title
 >>>    ),
->>>    numbering: \"1\",
+>>>    numbering: \\"1\\",
 >>>    columns: 2,
 >>>  )
 >>>
@@ -348,7 +348,7 @@ en = """```example:single
 >>>    align(center,
 >>>      text(
 >>>        13pt,
->>>        weight: \"regular\",
+>>>        weight: \\"regular\\",
 >>>        smallcaps(it.body),
 >>>      )
 >>>    ),
@@ -358,8 +358,8 @@ en = """```example:single
 >>>  ): it => box(
 >>>    text(
 >>>      11pt,
->>>      weight: \"regular\",
->>>      style: \"italic\",
+>>>      weight: \\"regular\\",
+>>>      style: \\"italic\\",
 >>>      it.body + [.],
 >>>    )
 >>>  )
@@ -367,7 +367,7 @@ en = """```example:single
 >>>  place(
 >>>    top,
 >>>    float: true,
->>>    scope: \"parent\",
+>>>    scope: \\"parent\\",
 >>>    clearance: 2em,
 >>>    {
 >>>      set align(center)
@@ -377,34 +377,34 @@ en = """```example:single
 >>>        columns: (1fr,) * count,
 >>>        row-gutter: 24pt,
 >>>        ..authors.map(author => [
->>>          #author.name \\
->>>          #author.affiliation \\
->>>          #link(\"mailto:\" + author.email)
+>>>          #author.name \\\\
+>>>          #author.affiliation \\\\
+>>>          #link(\\"mailto:\\" + author.email)
 >>>        ]),
 >>>      )
 >>>      par(justify: false)[
->>>        *Abstract* \\
+>>>        *Abstract* \\\\
 >>>        #abstract
 >>>      ]
 >>>    },
 >>>  )
 >>>  doc
 >>>}
-<<< #import \"conf.typ\": conf
+<<< #import \\"conf.typ\\": conf
 #show: conf.with(
   title: [
     Towards Improved Modelling
   ],
   authors: (
     (
-      name: \"Theresa Tungsten\",
-      affiliation: \"Artos Institute\",
-      email: \"tung@artos.edu\",
+      name: \\"Theresa Tungsten\\",
+      affiliation: \\"Artos Institute\\",
+      email: \\"tung@artos.edu\\",
     ),
     (
-      name: \"Eugene Deklan\",
-      affiliation: \"Honduras State\",
-      email: \"e.deklan@hstate.hn\",
+      name: \\"Eugene Deklan\\",
+      affiliation: \\"Honduras State\\",
+      email: \\"e.deklan@hstate.hn\\",
     ),
   ),
   abstract: lorem(80),

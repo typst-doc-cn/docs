@@ -9,18 +9,18 @@ the active [text language]($text.lang)."""
 [[main]]
 en = """# Example
 ```example
-\"This is in quotes.\""""
+\\"This is in quotes.\\""""
 
 [[main]]
-en = """#set text(lang: \"de\")
-\"Das ist in Anführungszeichen.\""""
+en = """#set text(lang: \\"de\\")
+\\"Das ist in Anführungszeichen.\\""""
 
 [[main]]
-en = """#set text(lang: \"fr\")
-\"C'est entre guillemets.\"
+en = """#set text(lang: \\"fr\\")
+\\"C'est entre guillemets.\\"
 ```"""
 
 [[main]]
 en = """# Syntax
 This function also has dedicated syntax: The normal quote characters
-(`'` and `\"`). Typst automatically makes your quotes smart."""
+(`'` and `\\"`). Typst automatically makes your quotes smart."""

@@ -22,7 +22,7 @@ outline, you can set the `outlined` parameter to `{false}`."""
 [[main]]
 en = """# Example
 ```example
-#set heading(numbering: \"1.a)\")"""
+#set heading(numbering: \\"1.a)\\")"""
 
 [[main]]
 en = """= Introduction

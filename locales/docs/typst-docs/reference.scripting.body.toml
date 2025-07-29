@@ -18,9 +18,9 @@ be interpreted as text, the expression can forcibly be ended with a semicolon
 
 [[main]]
 en = """```example
-#emph[Hello] \\
-#emoji.face \\
-#\"hello\".len()
+#emph[Hello] \\\\
+#emoji.face \\\\
+#\\"hello\\".len()
 ```"""
 
 [[main]]
@@ -37,7 +37,7 @@ To structure your code and embed markup into it, Typst provides two kinds of
 _blocks:_"""
 
 [[main]]
-en = """- **Code block:** `{{ let x = 1; x + 2 }}` \\
+en = """- **Code block:** `{{ let x = 1; x + 2 }}` \\\\
   When writing code, you'll probably want to split up your computation into
   multiple statements, create some intermediate variables and so on. Code blocks
   let you write multiple expressions where one is expected. The individual
@@ -47,7 +47,7 @@ en = """- **Code block:** `{{ let x = 1; x + 2 }}` \\
   bindings yield `{none}`, which can be joined with any value without effect."""
 
 [[main]]
-en = """- **Content block:** `{[*Hey* there!]}` \\
+en = """- **Content block:** `{[*Hey* there!]}` \\\\
   With content blocks, you can handle markup/content as a programmatic value,
   store it in variables and pass it to [functions]($function). Content
   blocks are delimited by square brackets and can contain arbitrary markup. A
@@ -82,7 +82,7 @@ is no containing block)."""
 
 [[main]]
 en = """```example
-#let name = \"Typst\"
+#let name = \\"Typst\\"
 This is #name's documentation.
 It explains #name."""
 
@@ -110,9 +110,9 @@ The last element is #b."""
 
 [[main]]
 en = """#let books = (
-  Shakespeare: \"Hamlet\",
-  Homer: \"The Odyssey\",
-  Austen: \"Persuasion\",
+  Shakespeare: \\"Hamlet\\",
+  Homer: \\"The Odyssey\\",
+  Austen: \\"Persuasion\\",
 )"""
 
 [[main]]
@@ -206,7 +206,7 @@ together into one larger array."""
 
 [[main]]
 en = """```example
-#for c in \"ABC\" [
+#for c in \\"ABC\\" [
   #c is a letter.
 ]"""
 
@@ -222,26 +222,26 @@ en = """#let n = 2
 en = """For loops can iterate over a variety of collections:"""
 
 [[main]]
-en = """- `{for value in array {..}}` \\
+en = """- `{for value in array {..}}` \\\\
   Iterates over the items in the [array]. The destructuring syntax described in
   [Let binding]($scripting/#bindings) can also be used here."""
 
 [[main]]
-en = """- `{for pair in dict {..}}` \\
+en = """- `{for pair in dict {..}}` \\\\
   Iterates over the key-value pairs of the [dictionary]. The pairs can also be
   destructured by using `{for (key, value) in dict {..}}`. It is more efficient
   than `{for pair in dict.pairs() {..}}` because it doesn't create a temporary
   array of all key-value pairs."""
 
 [[main]]
-en = """- `{for letter in \"abc\" {..}}` \\
+en = """- `{for letter in \\"abc\\" {..}}` \\\\
   Iterates over the characters of the [string]($str). Technically, it iterates
   over the grapheme clusters of the string. Most of the time, a grapheme cluster
   is just a single codepoint. However, a grapheme cluster could contain multiple
   codepoints, like a flag emoji."""
 
 [[main]]
-en = """- `{for byte in bytes(\"😀\") {..}}` \\
+en = """- `{for byte in bytes(\\"😀\\") {..}}` \\\\
   Iterates over the [bytes], which can be converted from a [string]($str) or
   [read] from a file without encoding. Each byte value is an [integer]($int)
   between `{0}` and `{255}`."""
@@ -253,8 +253,8 @@ the latter skips ahead to the next iteration of the loop."""
 
 [[main]]
 en = """```example
-#for letter in \"abc nope\" {
-  if letter == \" \" {
+#for letter in \\"abc nope\\" {
+  if letter == \\" \\" {
     break
   }"""
 
@@ -291,13 +291,13 @@ en = """The value in question can be either:
 [[main]]
 en = """```example
 #let it = [= Heading]
-#it.body \\
-#it.depth \\
+#it.body \\\\
+#it.depth \\\\
 #it.fields()"""
 
 [[main]]
-en = """#let dict = (greet: \"Hello\")
-#dict.greet \\
+en = """#let dict = (greet: \\"Hello\\")
+#dict.greet \\\\
 #emoji.face"""
 
 [[main]]
@@ -311,8 +311,8 @@ the following two equivalent ways:"""
 
 [[main]]
 en = """```example
-#str.len(\"abc\") is the same as
-#\"abc\".len()
+#str.len(\\"abc\\") is the same as
+#\\"abc\\".len()
 ```"""
 
 [[main]]
@@ -324,17 +324,17 @@ methods."""
 [[main]]
 en = """```example
 #let values = (1, 2, 3, 4)
-#values.pop() \\
-#values.len() \\"""
+#values.pop() \\\\
+#values.len() \\\\"""
 
 [[main]]
-en = """#(\"a, b, c\"
-    .split(\", \")
+en = """#(\\"a, b, c\\"
+    .split(\\", \\")
     .join[ --- ])"""
 
 [[main]]
-en = """#\"abc\".len() is the same as
-#str.len(\"abc\")
+en = """#\\"abc\\".len() is the same as
+#str.len(\\"abc\\")
 ```"""
 
 [[main]]
@@ -351,23 +351,23 @@ module can refer to the content and definitions of another module in multiple
 ways:"""
 
 [[main]]
-en = """- **Including:** `{include \"bar.typ\"}` \\
+en = """- **Including:** `{include \\"bar.typ\\"}` \\\\
   Evaluates the file at the path `bar.typ` and returns the resulting [content]."""
 
 [[main]]
-en = """- **Import:** `{import \"bar.typ\"}` \\
+en = """- **Import:** `{import \\"bar.typ\\"}` \\\\
   Evaluates the file at the path `bar.typ` and inserts the resulting [module]
   into the current scope as `bar` (filename without extension). You can use the
-  `as` keyword to rename the imported module: `{import \"bar.typ\" as baz}`. You
-  can import nested items using dot notation: `{import \"bar.typ\": baz.a}`."""
+  `as` keyword to rename the imported module: `{import \\"bar.typ\\" as baz}`. You
+  can import nested items using dot notation: `{import \\"bar.typ\\": baz.a}`."""
 
 [[main]]
-en = """- **Import items:** `{import \"bar.typ\": a, b}` \\
+en = """- **Import items:** `{import \\"bar.typ\\": a, b}` \\\\
   Evaluates the file at the path `bar.typ`, extracts the values of the variables
   `a` and `b` (that need to be defined in `bar.typ`, e.g. through `{let}`
   bindings) and defines them in the current file. Replacing `a, b` with `*`
   loads all variables defined in a module. You can use the `as` keyword to
-  rename the individual items: `{import \"bar.typ\": a as one, b as two}`"""
+  rename the individual items: `{import \\"bar.typ\\": a as one, b as two}`"""
 
 [[main]]
 en = """Instead of a path, you can also use a [module value]($module), as shown in the
@@ -388,7 +388,7 @@ and a version."""
 [[main]]
 en = """```example
 >>> #let add(x, y) = x + y
-<<< #import \"@preview/example:0.1.0\": add
+<<< #import \\"@preview/example:0.1.0\\": add
 #add(2, 7)
 ```"""
 
@@ -426,9 +426,9 @@ en = """| Operator   | Effect                          | Arity  | Precedence |
 |  `{>=}`    | Check greater-than or equal     | Binary |     4      |
 |  `{in}`    | Check if in collection          | Binary |     4      |
 | `{not in}` | Check if not in collection      | Binary |     4      |
-|  `{not}`   | Logical \"not\"                   | Unary  |     3      |
-|  `{and}`   | Short-circuiting logical \"and\"  | Binary |     3      |
-|  `{or}`    | Short-circuiting logical \"or\"   | Binary |     2      |
+|  `{not}`   | Logical \\"not\\"                   | Unary  |     3      |
+|  `{and}`   | Short-circuiting logical \\"and\\"  | Binary |     3      |
+|  `{or}`    | Short-circuiting logical \\"or\\"   | Binary |     2      |
 |  `{=}`     | Assignment                      | Binary |     1      |
 |  `{+=}`    | Add-Assignment                  | Binary |     1      |
 |  `{-=}`    | Subtraction-Assignment          | Binary |     1      |

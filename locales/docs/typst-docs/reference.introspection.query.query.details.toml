@@ -16,8 +16,8 @@ using the [`outline`] function."""
 en = """To do this, we first query for all headings in the document at level 1 and
 where `outlined` is true. Querying only for headings at level 1 ensures
 that, for the purpose of this example, sub-headings are not included in the
-table of contents. The `outlined` field is used to exclude the \"Table of
-Contents\" heading itself."""
+table of contents. The `outlined` field is used to exclude the \\"Table of
+Contents\\" heading itself."""
 
 [[main]]
 en = """Note that we open a `context` to be able to use the `query` function."""
@@ -29,7 +29,7 @@ en = """```example
 >>>  height: 180pt,
 >>>  margin: (top: 20pt, bottom: 35pt)
 >>> )
-#set page(numbering: \"1\")"""
+#set page(numbering: \\"1\\")"""
 
 [[main]]
 en = """#heading(outlined: false)[
@@ -48,7 +48,7 @@ en = """#heading(outlined: false)[
       loc.page-numbering(),
       ..counter(page).at(loc),
     )
-    [#chapter.body #h(1fr) #nr \\ ]
+    [#chapter.body #h(1fr) #nr \\\\ ]
   }
 }"""
 
@@ -113,18 +113,18 @@ returns the resulting elements in serialized form. Consider the following
 
 [[main]]
 en = """```typ
-#metadata(\"This is a note\") <note>
+#metadata(\\"This is a note\\") <note>
 ```"""
 
 [[main]]
 en = """You can execute a query on it as follows using Typst's CLI:
 ```sh
-$ typst query example.typ \"<note>\"
+$ typst query example.typ \\"<note>\\"
 [
   {
-    \"func\": \"metadata\",
-    \"value\": \"This is a note\",
-    \"label\": \"<note>\"
+    \\"func\\": \\"metadata\\",
+    \\"value\\": \\"This is a note\\",
+    \\"label\\": \\"<note>\\"
   }
 ]
 ```"""
@@ -137,8 +137,8 @@ argument."""
 
 [[main]]
 en = """```sh
-$ typst query example.typ \"<note>\" --field value
-[\"This is a note\"]
+$ typst query example.typ \\"<note>\\" --field value
+[\\"This is a note\\"]
 ```"""
 
 [[main]]
@@ -147,6 +147,6 @@ flag to extract just it."""
 
 [[main]]
 en = """```sh
-$ typst query example.typ \"<note>\" --field value --one
-\"This is a note\"
+$ typst query example.typ \\"<note>\\" --field value --one
+\\"This is a note\\"
 ```"""

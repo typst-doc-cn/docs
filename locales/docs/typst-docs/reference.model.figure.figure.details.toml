@@ -16,7 +16,7 @@ are complex systems."""
 
 [[main]]
 en = """#figure(
-  image(\"glacier.jpg\", width: 80%),
+  image(\\"glacier.jpg\\", width: 80%),
   caption: [A curious figure.],
 ) <glacier>
 ```"""

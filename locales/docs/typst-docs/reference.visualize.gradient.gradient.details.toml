@@ -35,7 +35,7 @@ en = """# Examples
 [[main]]
 en = """Gradients are also supported on text, but only when setting the
 [relativeness]($gradient.relative) to either `{auto}` (the default value) or
-`{\"parent\"}`. To create word-by-word or glyph-by-glyph gradients, you can
+`{\\"parent\\"}`. To create word-by-word or glyph-by-glyph gradients, you can
 wrap the words or characters of your text in [boxes]($box) manually or
 through a [show rule]($styling/#show-rules)."""
 
@@ -111,17 +111,17 @@ en = """|           Color space           | Perceptually uniform? |
 
 [[main]]
 en = """```preview
->>> #set text(fill: white, font: \"IBM Plex Sans\", 8pt)
+>>> #set text(fill: white, font: \\"IBM Plex Sans\\", 8pt)
 >>> #set block(spacing: 0pt)
 #let spaces = (
-  (\"Oklab\", color.oklab),
-  (\"Oklch\", color.oklch),
-  (\"linear-RGB\", color.linear-rgb),
-  (\"sRGB\", color.rgb),
-  (\"CMYK\", color.cmyk),
-  (\"HSL\", color.hsl),
-  (\"HSV\", color.hsv),
-  (\"Grayscale\", color.luma),
+  (\\"Oklab\\", color.oklab),
+  (\\"Oklch\\", color.oklch),
+  (\\"linear-RGB\\", color.linear-rgb),
+  (\\"sRGB\\", color.rgb),
+  (\\"CMYK\\", color.cmyk),
+  (\\"HSL\\", color.hsl),
+  (\\"HSV\\", color.hsv),
+  (\\"Grayscale\\", color.luma),
 )"""
 
 [[main]]

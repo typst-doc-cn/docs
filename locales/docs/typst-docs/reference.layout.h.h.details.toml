@@ -10,7 +10,7 @@ according to their relative fractions."""
 [[main]]
 en = """# Example
 ```example
-First #h(1cm) Second \\
+First #h(1cm) Second \\\\
 First #h(30%) Second
 ```"""
 
@@ -22,13 +22,13 @@ gets space based on the ratio of its fraction to the sum of all fractions."""
 
 [[main]]
 en = """```example
-First #h(1fr) Second \\
-First #h(1fr) Second #h(1fr) Third \\
+First #h(1fr) Second \\\\
+First #h(1fr) Second #h(1fr) Third \\\\
 First #h(2fr) Second #h(1fr) Third
 ```"""
 
 [[main]]
 en = """# Mathematical Spacing { #math-spacing }
 In [mathematical formulas]($category/math), you can additionally use these
-constants to add spacing between elements: `thin` (1/6\u{a0}em), `med` (2/9\u{a0}em),
-`thick` (5/18\u{a0}em), `quad` (1\u{a0}em), `wide` (2\u{a0}em)."""
+constants to add spacing between elements: `thin` (1/6\\u{a0}em), `med` (2/9\\u{a0}em),
+`thick` (5/18\\u{a0}em), `quad` (1\\u{a0}em), `wide` (2\\u{a0}em)."""

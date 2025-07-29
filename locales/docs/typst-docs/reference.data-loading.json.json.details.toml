@@ -29,7 +29,7 @@ en = """# Example
   #box(square(
     width: 2cm,
     inset: 8pt,
-    fill: if day.weather == \"sunny\" {
+    fill: if day.weather == \\"sunny\\" {
       yellow
     } else {
       aqua
@@ -45,6 +45,6 @@ en = """# Example
 ]"""
 
 [[main]]
-en = """#forecast(json(\"monday.json\"))
-#forecast(json(\"tuesday.json\"))
+en = """#forecast(json(\\"monday.json\\"))
+#forecast(json(\\"tuesday.json\\"))
 ```"""

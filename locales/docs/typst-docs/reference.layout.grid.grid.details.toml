@@ -60,7 +60,7 @@ en = """```example
 // area of cells.
 #set rect(
   inset: 8pt,
-  fill: rgb(\"e4e5ea\"),
+  fill: rgb(\\"e4e5ea\\"),
   width: 100%,
 )"""
 
@@ -75,7 +75,7 @@ en = """#grid(
   rect(height: 100%)[Fixed height],
   grid.cell(
     colspan: 2,
-    image(\"tiger.jpg\", width: 100%),
+    image(\\"tiger.jpg\\", width: 100%),
   ),
 )
 ```"""

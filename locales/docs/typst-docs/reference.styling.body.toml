@@ -21,9 +21,9 @@ are optional. In the example below, we use two set rules to change the
 
 [[main]]
 en = """```example
-#set heading(numbering: \"I.\")
+#set heading(numbering: \\"I.\\")
 #set text(
-  font: \"New Computer Modern\"
+  font: \\"New Computer Modern\\"
 )"""
 
 [[main]]
@@ -98,14 +98,14 @@ that formats headings for a fantasy encyclopedia."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \"(I)\")
+#set heading(numbering: \\"(I)\\")
 #show heading: it => [
   #set align(center)
-  #set text(font: \"Inria Serif\")
-  \\~ #emph(it.body)
+  #set text(font: \\"Inria Serif\\")
+  \\\\~ #emph(it.body)
      #counter(heading).display(
        it.numbering
-     ) \\~
+     ) \\\\~
 ]"""
 
 [[main]]
@@ -133,34 +133,34 @@ take a number of other _selectors_ that define what to apply the transformation
 to:"""
 
 [[main]]
-en = """- **Everything:** `{show: rest => ..}` \\
+en = """- **Everything:** `{show: rest => ..}` \\\\
   Transform everything after the show rule. This is useful to apply a more
   complex layout to your whole document without wrapping everything in a giant
   function call."""
 
 [[main]]
-en = """- **Text:** `{show \"Text\": ..}` \\
+en = """- **Text:** `{show \\"Text\\": ..}` \\\\
   Style, transform or replace text."""
 
 [[main]]
-en = """- **Regex:** `{show regex(\"\\w+\"): ..}` \\
+en = """- **Regex:** `{show regex(\\"\\\\w+\\"): ..}` \\\\
   Select and transform text with a regular expression for even more flexibility.
   See the documentation of the [`regex` type]($regex) for details."""
 
 [[main]]
-en = """- **Function with fields:** `{show heading.where(level: 1): ..}` \\
+en = """- **Function with fields:** `{show heading.where(level: 1): ..}` \\\\
   Transform only elements that have the specified fields. For example, you might
   want to only change the style of level-1 headings."""
 
 [[main]]
-en = """- **Label:** `{show <intro>: ..}` \\
+en = """- **Label:** `{show <intro>: ..}` \\\\
   Select and transform elements that have the specified label. See the
   documentation of the [`label` type]($label) for more details."""
 
 [[main]]
 en = """```example
-#show \"Project\": smallcaps
-#show \"badly\": \"great\""""
+#show \\"Project\\": smallcaps
+#show \\"badly\\": \\"great\\""""
 
 [[main]]
 en = """We started Project in 2019

@@ -67,7 +67,7 @@ water).
 ```"""
 
 [[main]]
-en = """<div class=\"info-box\">"""
+en = """<div class=\\"info-box\\">"""
 
 [[main]]
 en = """Want to know in more technical terms what is happening here?"""
@@ -120,11 +120,11 @@ font. For the purposes of the example, we'll also set another page size."""
 [[main]]
 en = """```example
 #set page(
-  paper: \"a6\",
+  paper: \\"a6\\",
   margin: (x: 1.8cm, y: 1.5cm),
 )
 #set text(
-  font: \"New Computer Modern\",
+  font: \\"New Computer Modern\\",
   size: 10pt
 )
 #set par(
@@ -156,7 +156,7 @@ en = """>>> Glacier displacement is influenced
 
 [[main]]
 en = """#align(center + bottom)[
-  #image(\"glacier.jpg\", width: 70%)"""
+  #image(\\"glacier.jpg\\", width: 70%)"""
 
 [[main]]
 en = """  *Glaciers form an important
@@ -180,7 +180,7 @@ specified separate margins for each side by passing a dictionary with the keys
 
 [[main]]
 en = """Next is the set [`text`] set rule. Here, we set the font size to `{10pt}` and
-font family to `{\"New Computer Modern\"}`. The Typst app comes with many fonts
+font family to `{\\"New Computer Modern\\"}`. The Typst app comes with many fonts
 that you can try for your document. When you are in the text function's argument
 list, you can discover the available fonts in the autocomplete panel."""
 
@@ -202,8 +202,8 @@ can do this by setting the `numbering` parameter of the [`heading`] function."""
 
 [[main]]
 en = """```example
->>> #set text(font: \"New Computer Modern\")
-#set heading(numbering: \"1.\")"""
+>>> #set text(font: \\"New Computer Modern\\")
+#set heading(numbering: \\"1.\\")"""
 
 [[main]]
 en = """= Introduction
@@ -219,15 +219,15 @@ en = """== Methods
 ```"""
 
 [[main]]
-en = """We specified the string `{\"1.\"}` as the numbering parameter. This tells Typst to
+en = """We specified the string `{\\"1.\\"}` as the numbering parameter. This tells Typst to
 number the headings with arabic numerals and to put a dot between the number of
 each level. We can also use [letters, roman numerals, and symbols]($numbering)
 for our headings:"""
 
 [[main]]
 en = """```example
->>> #set text(font: \"New Computer Modern\")
-#set heading(numbering: \"1.a\")"""
+>>> #set text(font: \\"New Computer Modern\\")
+#set heading(numbering: \\"1.a\\")"""
 
 [[main]]
 en = """= Introduction
@@ -248,7 +248,7 @@ This function takes a number as an argument and generates that many words of
 _Lorem Ipsum_ text."""
 
 [[main]]
-en = """<div class=\"info-box\">"""
+en = """<div class=\\"info-box\\">"""
 
 [[main]]
 en = """Did you wonder why the headings and text set rules apply to all text and headings,
@@ -268,7 +268,7 @@ to be fixed: The report you are writing is intended for a larger project and
 that project's name should always be accompanied by a logo, even in prose."""
 
 [[main]]
-en = """You consider your options. You could add an `[#image(\"logo.svg\")]` call before
+en = """You consider your options. You could add an `[#image(\\"logo.svg\\")]` call before
 every instance of the logo using search and replace. That sounds very tedious.
 Instead, you could maybe
 [define a custom function]($function/#defining-functions) that always yields the
@@ -282,9 +282,9 @@ whole document."""
 
 [[main]]
 en = """```example
-#show \"ArtosFlow\": name => box[
+#show \\"ArtosFlow\\": name => box[
   #box(image(
-    \"logo.svg\",
+    \\"logo.svg\\",
     height: 0.7em,
   ))
   #name

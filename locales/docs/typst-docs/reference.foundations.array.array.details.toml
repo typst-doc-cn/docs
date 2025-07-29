@@ -24,14 +24,14 @@ en = """# Example
 #let values = (1, 7, 4, -3, 2)"""
 
 [[main]]
-en = """#values.at(0) \\
+en = """#values.at(0) \\\\
 #(values.at(0) = 3)
-#values.at(-1) \\
-#values.find(calc.even) \\
-#values.filter(calc.odd) \\
-#values.map(calc.abs) \\
-#values.rev() \\
-#(1, (2, 3)).flatten() \\
-#((\"A\", \"B\", \"C\")
-    .join(\", \", last: \" and \"))
+#values.at(-1) \\\\
+#values.find(calc.even) \\\\
+#values.filter(calc.odd) \\\\
+#values.map(calc.abs) \\\\
+#values.rev() \\\\
+#(1, (2, 3)).flatten() \\\\
+#((\\"A\\", \\"B\\", \\"C\\")
+    .join(\\", \\", last: \\" and \\"))
 ```"""

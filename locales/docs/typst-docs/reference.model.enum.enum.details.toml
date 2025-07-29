@@ -34,7 +34,7 @@ en = """Function call.
 en = """You can easily switch all your enumerations to a different numbering style
 with a set rule.
 ```example
-#set enum(numbering: \"a)\")"""
+#set enum(numbering: \\"a)\\")"""
 
 [[main]]
 en = """+ Starting off ...

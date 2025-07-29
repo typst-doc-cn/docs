@@ -14,11 +14,11 @@ of the supported syntax."""
 en = """# Example
 ```example
 // Works with string methods.
-#\"a,b;c\".split(regex(\"[,;]\"))"""
+#\\"a,b;c\\".split(regex(\\"[,;]\\"))"""
 
 [[main]]
 en = """// Works with show rules.
-#show regex(\"\\d+\"): set text(red)"""
+#show regex(\\"\\\\d+\\"): set text(red)"""
 
 [[main]]
 en = """The numbers 1 to 10.

@@ -51,14 +51,14 @@ en = """The example below demonstrates some of the most common table options.
   table.header(
     [], [*Volume*], [*Parameters*],
   ),
-  image(\"cylinder.svg\"),
+  image(\\"cylinder.svg\\"),
   $ pi h (D^2 - d^2) / 4 $,
   [
-    $h$: height \\
-    $D$: outer radius \\
+    $h$: height \\\\
+    $D$: outer radius \\\\
     $d$: inner radius
   ],
-  image(\"tetrahedron.svg\"),
+  image(\\"tetrahedron.svg\\"),
   $ sqrt(2) / 12 a^3 $,
   [$a$: edge length]
 )
@@ -71,8 +71,8 @@ the appearance and the position of each cell."""
 [[main]]
 en = """```example
 >>> #set page(width: auto)
->>> #set text(font: \"IBM Plex Sans\")
->>> #let gray = rgb(\"#565565\")
+>>> #set text(font: \\"IBM Plex Sans\\")
+>>> #let gray = rgb(\\"#565565\\")
 >>>
 #set table(
   stroke: none,

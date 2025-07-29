@@ -11,7 +11,7 @@ caption."""
 [[main]]
 en = """# Example
 ```example
-#set heading(numbering: \"1.\")
+#set heading(numbering: \\"1.\\")
 #outline()"""
 
 [[main]]
@@ -49,7 +49,7 @@ en = """```example
 
 [[main]]
 en = """#figure(
-  image(\"tiger.jpg\"),
+  image(\\"tiger.jpg\\"),
   caption: [A nice figure!],
 )
 ```"""

@@ -1,37 +1,25 @@
+
 [[main]]
 en = """A fixed-point decimal number type."""
-zh = """一个定点小数类型。"""
 
 [[main]]
 en = """This type should be used for precise arithmetic operations on numbers
 represented in base 10. A typical use case is representing currency."""
-zh = """这个类型应该用于对以十进制表示的数字进行精确的算术运算。一个典型的用例是表示货币。"""
 
 [[main]]
 en = """# Example
 ```example
-Decimal: #(decimal(\"0.1\") + decimal(\"0.2\")) \\
+Decimal: #(decimal(\\"0.1\\") + decimal(\\"0.2\\")) \\\\
 Float: #(0.1 + 0.2)
-```"""
-
-zh = """# 示例
-```example
-十进制: #(decimal(\"0.1\") + decimal(\"0.2\")) \\
-浮点数: #(0.1 + 0.2)
 ```"""
 
 [[main]]
 en = """# Construction and casts
 To create a decimal number, use the `{decimal(string)}` constructor, such as
-in `{decimal(\"3.141592653\")}` **(note the double quotes!)**. This
+in `{decimal(\\"3.141592653\\")}` **(note the double quotes!)**. This
 constructor preserves all given fractional digits, provided they are
 representable as per the limits specified below (otherwise, an error is
 raised)."""
-zh = """# 构造和转换
-要创建一个十进制数字，请使用 `{decimal(string)}` 构造函数，例如
-`{decimal(\"3.141592653\")}` **（注意双引号！）**。这个
-构造函数保留了所有给定的小数位，只要它们
-在下面指定的限制范围内（否则，将引发错误）。"""
 
 [[main]]
 en = """You can also convert any [integer]($int) to a decimal with the
@@ -42,27 +30,22 @@ warning will be raised if Typst detects that there was an accidental `float`
 to `decimal` cast through its constructor, e.g. if writing `{decimal(3.14)}`
 (note the lack of double quotes, indicating this is an accidental `float`
 cast and therefore imprecise). It is recommended to use strings for
-constant decimal values instead (e.g. `{decimal(\"3.14\")}`)."""
-zh = """你也可以使用 `{decimal(int)}` 构造函数将任何 [整数]($int) 转换为十进制数，例如 `{decimal(59)}`。但是，请注意，从 [浮点数]($float) 构造十进制数虽然是支持的，但**这是一个不精确的转换，因此不推荐使用。** 如果 Typst 检测到通过其构造函数发生了意外的 `float` 到 `decimal` 的转换，将会发出警告，例如如果写 `{decimal(3.14)}`（注意缺少双引号，表示这是一个意外的 `float` 转换，因此是不精确的）。建议使用字符串来表示常量十进制值（例如 `{decimal(\"3.14\")}`）。"""
+constant decimal values instead (e.g. `{decimal(\\"3.14\\")}`)."""
 
 [[main]]
 en = """The precision of a `float` to `decimal` cast can be slightly improved by
 rounding the result to 15 digits with [`calc.round`]($calc.round), but there
 are still no precision guarantees for that kind of conversion."""
-zh = """将 `float` 转换为 `decimal` 的精度可以通过使用 [`calc.round`]($calc.round) 将结果四舍五入到 15 位数字来稍微提高，但对于这种转换仍然没有精度保证。"""
 
 [[main]]
 en = """# Operations
 Basic arithmetic operations are supported on two decimals and on pairs of
 decimals and integers."""
-zh = """# 运算
-对两个十进制数以及十进制数和整数的对进行基本的算术运算是支持的。"""
 
 [[main]]
 en = """Built-in operations between `float` and `decimal` are not supported in order
 to guard against accidental loss of precision. They will raise an error
 instead."""
-zh = """不支持 `float` 和 `decimal` 之间的内置运算，以防止意外丢失精度。相反，它们将引发错误。"""
 
 [[main]]
 en = """Certain `calc` functions, such as trigonometric functions and power between
@@ -71,7 +54,6 @@ two real numbers, are also only supported for `float` (although raising
 imprecise operations with the `{float(decimal)}` constructor, which casts
 the `decimal` number into a `float`, allowing for operations without
 precision guarantees."""
-zh = """某些 `calc` 函数，例如三角函数和两个实数之间的幂运算，也仅支持 `float`（尽管支持将 `decimal` 提升到整数指数）。你可以选择使用 `{float(decimal)}` 构造函数来进行可能不精确的运算，该构造函数将 `decimal` 数字转换为 `float`，允许进行没有精度保证的运算。"""
 
 [[main]]
 en = """# Displaying decimals
@@ -79,15 +61,12 @@ To display a decimal, simply insert the value into the document. To only
 display a certain number of digits, [round]($calc.round) the decimal first.
 Localized formatting of decimals and other numbers is not yet supported, but
 planned for the future."""
-zh = """# 显示十进制数
-要显示一个十进制数，只需将值插入文档中。要仅显示一定数量的数字，请先对十进制数进行 [四舍五入]($calc.round)。目前尚不支持十进制数和其他数字的本地化格式化，但计划在未来实现。"""
 
 [[main]]
 en = """You can convert decimals to strings using the [`str`] constructor. This way,
 you can post-process the displayed representation, e.g. to replace the
 period with a comma (as a stand-in for proper built-in localization to
 languages that use the comma)."""
-zh = """你可以使用 [`str`] 构造函数将十进制数转换为字符串。这样，你可以对显示的表示进行后处理，例如将小数点替换为逗号（作为使用逗号的语言的适当内置本地化的替代）。"""
 
 [[main]]
 en = """# Precision and limits
@@ -98,13 +77,6 @@ minimum `decimal` numbers have a value of `{79228162514264337593543950335}`
 and `{-79228162514264337593543950335}` respectively. In contrast with
 [`float`], this type does not support infinity or NaN, so overflowing or
 underflowing operations will raise an error."""
-zh = """# 精度和限制
-`decimal` 数字的有效数字限制为 28 到 29 位十进制数字。这
-包括小数点前后数字的总和。因此，具有更多小数位的数字具有更小的范围。最大和
-最小的 `decimal` 数字分别为 `{79228162514264337593543950335}`
-和 `{-79228162514264337593543950335}`。与
-[`float`] 不同，这种类型不支持无穷大或 NaN，因此溢出或
-下溢操作将引发错误。"""
 
 [[main]]
 en = """Typical operations between `decimal` numbers, such as addition,
@@ -118,6 +90,3 @@ but also when multiplying by numbers between 0 and 1, as both operations can
 push a number's fractional digits beyond the limits described above, leading
 to rounding. When those two operations do not surpass the digit limits, they
 are fully precise."""
-zh = """`decimal` 数字之间的典型操作，如加法、
-乘法和对整数的 [幂运算]($calc.pow)，由于其定点表示，具有很高的精度。
-但是，请注意，在某些边缘情况下，乘法和除法可能不会保留所有数字：虽然它们被认为是精确的，但超过上述限制的数字将被四舍五入并丢失，因此可能会导致超过最大可表示数字的精度损失。请注意，这种行为不仅在除法时可以观察到，在乘以介于 0 和 1 之间的数字时也会发生，因为这两种操作都可能将数字的小数位推到上述限制之外，导致四舍五入。当这两种操作没有超过数字限制时，它们是完全精确的。"""

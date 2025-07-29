@@ -21,7 +21,7 @@ each item in the array corresponds to one level."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \"1.\")"""
+#set heading(numbering: \\"1.\\")"""
 
 [[main]]
 en = """= Introduction
@@ -38,7 +38,7 @@ it either with a provided or with an automatically inferred [numbering]."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \"1.\")"""
+#set heading(numbering: \\"1.\\")"""
 
 [[main]]
 en = """= Introduction
@@ -52,7 +52,7 @@ The current value is: #context {
 
 [[main]]
 en = """Or in roman numerals: #context {
-  counter(heading).display(\"I\")
+  counter(heading).display(\\"I\\")
 }
 ```"""
 
@@ -78,7 +78,7 @@ second update."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \"1.\")"""
+#set heading(numbering: \\"1.\\")"""
 
 [[main]]
 en = """= Introduction
@@ -114,7 +114,7 @@ en = """```example
 >>>   height: 100pt,
 >>>   margin: (bottom: 24pt, rest: 16pt),
 >>> )
-#set page(numbering: \"(i)\")"""
+#set page(numbering: \\"(i)\\")"""
 
 [[main]]
 en = """= Preface
@@ -122,7 +122,7 @@ The preface is numbered with
 roman numerals."""
 
 [[main]]
-en = """#set page(numbering: \"1 / 1\")
+en = """#set page(numbering: \\"1 / 1\\")
 #counter(page).update(1)"""
 
 [[main]]
@@ -140,10 +140,10 @@ key. This key identifies the counter globally."""
 
 [[main]]
 en = """```example
-#let mine = counter(\"mycounter\")
-#context mine.display() \\
+#let mine = counter(\\"mycounter\\")
+#context mine.display() \\\\
 #mine.step()
-#context mine.display() \\
+#context mine.display() \\\\
 #mine.update(c => c * 3)
 #context mine.display()
 ```"""
@@ -159,7 +159,7 @@ contents."""
 
 [[main]]
 en = """```example
-#let c = counter(\"theorem\")
+#let c = counter(\\"theorem\\")
 #let theorem(it) = block[
   #c.step()
   *Theorem #context c.display():*
@@ -191,13 +191,13 @@ particular location in the document."""
 
 [[main]]
 en = """```example
-#let mine = counter(\"mycounter\")"""
+#let mine = counter(\\"mycounter\\")"""
 
 [[main]]
 en = """= Values
 #context [
-  Value here: #mine.get() \\
-  At intro: #mine.at(<intro>) \\
+  Value here: #mine.get() \\\\
+  At intro: #mine.at(<intro>) \\\\
   Final value: #mine.final()
 ]"""
 

@@ -30,12 +30,12 @@ based on what discipline you're working in:"""
 [[main]]
 en = """| Fields          | Typical Styles                                         |
 |-----------------|--------------------------------------------------------|
-| Engineering, IT | `{\"ieee\"}`                                             |
-| Psychology, Life Sciences | `{\"apa\"}`                                    |
-| Social sciences | `{\"chicago-author-date\"}`                              |
-| Humanities      | `{\"mla\"}`, `{\"chicago-notes\"}`, `{\"harvard-cite-them-right\"}` |
-| Economics       | `{\"harvard-cite-them-right\"}`                          |
-| Physics         | `{\"american-physics-society\"}`                         |"""
+| Engineering, IT | `{\\"ieee\\"}`                                             |
+| Psychology, Life Sciences | `{\\"apa\\"}`                                    |
+| Social sciences | `{\\"chicago-author-date\\"}`                              |
+| Humanities      | `{\\"mla\\"}`, `{\\"chicago-notes\\"}`, `{\\"harvard-cite-them-right\\"}` |
+| Economics       | `{\\"harvard-cite-them-right\\"}`                          |
+| Physics         | `{\\"american-physics-society\\"}`                         |"""
 
 [[main]]
 en = """# Example
@@ -48,5 +48,5 @@ en = """Multiple sources say ...
 @arrgh @netwok."""
 
 [[main]]
-en = """#bibliography(\"works.bib\")
+en = """#bibliography(\\"works.bib\\")
 ```"""

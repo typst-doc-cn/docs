@@ -25,7 +25,7 @@ Check the docs for more details.
 [[main]]
 en = """The footnote automatically attaches itself to the preceding word, even if
 there is a space before it in the markup. To force space, you can use the
-string `[#\" \"]` or explicit [horizontal spacing]($h)."""
+string `[#\\" \\"]` or explicit [horizontal spacing]($h)."""
 
 [[main]]
 en = """By giving a label to a footnote, you can have multiple references to it."""

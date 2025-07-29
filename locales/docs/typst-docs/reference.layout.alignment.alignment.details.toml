@@ -44,7 +44,7 @@ components, respectively (as yet another `alignment`). They may be `{none}`."""
 
 [[main]]
 en = """```example
-#(top + right).x \\
-#left.x \\
+#(top + right).x \\\\
+#left.x \\\\
 #left.y (none)
 ```"""

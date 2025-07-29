@@ -32,9 +32,9 @@ en = """```example:single
 [[main]]
 en = """#place(
   top + center,
-  scope: \"parent\",
+  scope: \\"parent\\",
   float: true,
-  text(1.4em, weight: \"bold\")[
+  text(1.4em, weight: \\"bold\\")[
     My document
   ],
 )"""

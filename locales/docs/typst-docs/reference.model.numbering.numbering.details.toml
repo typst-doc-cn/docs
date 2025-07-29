@@ -15,14 +15,14 @@ suffix are repeated as-is."""
 [[main]]
 en = """# Example
 ```example
-#numbering(\"1.1)\", 1, 2, 3) \\
-#numbering(\"1.a.i\", 1, 2) \\
-#numbering(\"I – 1\", 12, 2) \\
+#numbering(\\"1.1)\\", 1, 2, 3) \\\\
+#numbering(\\"1.a.i\\", 1, 2) \\\\
+#numbering(\\"I – 1\\", 12, 2) \\\\
 #numbering(
   (..nums) => nums
     .pos()
     .map(str)
-    .join(\".\") + \")\",
+    .join(\\".\\") + \\")\\",
   1, 2, 3,
 )
 ```"""
@@ -39,7 +39,7 @@ is the same as the one described below for the
 en = """The following example illustrates that a numbering function is just a
 regular [function] that accepts numbers and returns [`content`].
 ```example
-#let unary(.., last) = \"|\" * last
+#let unary(.., last) = \\"|\\" * last
 #set heading(numbering: unary)
 = First heading
 = Second heading

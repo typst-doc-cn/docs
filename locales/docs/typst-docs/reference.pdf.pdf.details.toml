@@ -66,9 +66,9 @@ en = """- Which pages to export by specifying `--pages` followed by a comma-sepa
 [[main]]
 en = """## Web App
 Click the quick download button at the top right to export a PDF with default
-settings. For further configuration, click \"File\" > \"Export as\" > \"PDF\" or click
-the downwards-facing arrow next to the quick download button and select \"Export
-as PDF\". When exporting to PDF, you have the following configuration options:"""
+settings. For further configuration, click \\"File\\" > \\"Export as\\" > \\"PDF\\" or click
+the downwards-facing arrow next to the quick download button and select \\"Export
+as PDF\\". When exporting to PDF, you have the following configuration options:"""
 
 [[main]]
 en = """- Which PDF standards Typst should enforce conformance with. By default, Typst
@@ -76,8 +76,8 @@ en = """- Which PDF standards Typst should enforce conformance with. By default,
   `A-3b`."""
 
 [[main]]
-en = """- Which pages to export. Valid options are \"All pages\", \"Current page\", and
-  \"Custom ranges\". Custom ranges are a comma-separated list of numbers or
+en = """- Which pages to export. Valid options are \\"All pages\\", \\"Current page\\", and
+  \\"Custom ranges\\". Custom ranges are a comma-separated list of numbers or
   dash-separated number ranges. Ranges can be half-open. Example: `2,3,7-9,11-`."""
 
 [[main]]

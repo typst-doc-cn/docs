@@ -27,13 +27,13 @@ en = """# Example
 
 [[main]]
 en = """An image is of type
-#type(image(\"glacier.jpg\")).
+#type(image(\\"glacier.jpg\\")).
 ```"""
 
 [[main]]
 en = """The type of `10` is `int`. Now, what is the type of `int` or even `type`?
 ```example
-#type(int) \\
+#type(int) \\\\
 #type(type)
 ```"""
 
@@ -44,7 +44,7 @@ type. Compatibility with the old way will remain until Typst 0.14 to give
 package authors time to upgrade."""
 
 [[main]]
-en = """- Checks like `{int == \"integer\"}` evaluate to `{true}`
+en = """- Checks like `{int == \\"integer\\"}` evaluate to `{true}`
 - Adding/joining a type and string will yield a string
 - The `{in}` operator on a type and a dictionary will evaluate to `{true}`
   if the dictionary has a string key matching the type's name"""

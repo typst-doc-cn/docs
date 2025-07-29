@@ -26,17 +26,17 @@ inserted / declared."""
 en = """# Example
 ```example
 #let dict = (
-  name: \"Typst\",
+  name: \\"Typst\\",
   born: 2019,
 )"""
 
 [[main]]
-en = """#dict.name \\
+en = """#dict.name \\\\
 #(dict.launch = 20)
-#dict.len() \\
-#dict.keys() \\
-#dict.values() \\
-#dict.at(\"born\") \\
-#dict.insert(\"city\", \"Berlin \")
-#(\"name\" in dict)
+#dict.len() \\\\
+#dict.keys() \\\\
+#dict.values() \\\\
+#dict.at(\\"born\\") \\\\
+#dict.insert(\\"city\\", \\"Berlin \\")
+#(\\"name\\" in dict)
 ```"""

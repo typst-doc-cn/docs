@@ -10,7 +10,7 @@ opening dollar sign and one space before the closing dollar sign."""
 [[main]]
 en = """# Example
 ```example
-#set text(font: \"New Computer Modern\")"""
+#set text(font: \\"New Computer Modern\\")"""
 
 [[main]]
 en = """Let $a$, $b$, and $c$ be the side

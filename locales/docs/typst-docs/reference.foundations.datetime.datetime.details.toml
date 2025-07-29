@@ -17,9 +17,9 @@ en = """# Example
 )"""
 
 [[main]]
-en = """#date.display() \\
+en = """#date.display() \\\\
 #date.display(
-  \"y:[year repr:last_two]\"
+  \\"y:[year repr:last_two]\\"
 )"""
 
 [[main]]
@@ -30,9 +30,9 @@ en = """#let time = datetime(
 )"""
 
 [[main]]
-en = """#time.display() \\
+en = """#time.display() \\\\
 #time.display(
-  \"h:[hour repr:12][period]\"
+  \\"h:[hour repr:12][period]\\"
 )
 ```"""
 
@@ -56,8 +56,8 @@ offset datetime:
 #let two-days-later = date + two-days"""
 
 [[main]]
-en = """#date.display() \\
-#two-days-earlier.display() \\
+en = """#date.display() \\\\
+#two-days-earlier.display() \\\\
 #two-days-later.display()
 ```"""
 

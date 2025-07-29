@@ -23,9 +23,9 @@ en = """# Example
 #rect(width: 1in)"""
 
 [[main]]
-en = """#(3em + 5pt).em \\
-#(20pt).em \\
-#(40em + 2pt).abs \\
+en = """#(3em + 5pt).em \\\\
+#(20pt).em \\\\
+#(40em + 2pt).abs \\\\
 #(5em).abs
 ```"""
 

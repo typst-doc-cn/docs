@@ -15,9 +15,9 @@ you can use the [hash syntax]($scripting/#expressions)."""
 [[main]]
 en = """```example
 $ A = pi r^2 $
-$ \"area\" = pi dot \"radius\"^2 $
+$ \\"area\\" = pi dot \\"radius\\"^2 $
 $ cal(A) :=
-    { x in RR | x \"is natural\" } $
+    { x in RR | x \\"is natural\\" } $
 #let x = 5
 $ #x < 17 $
 ```"""
@@ -44,17 +44,17 @@ _alignment points_ (`&`) which are then aligned."""
 [[main]]
 en = """```example
 $ sum_(k=0)^n k
-    &= 1 + ... + n \\
+    &= 1 + ... + n \\\\
     &= (n(n+1)) / 2 $
 ```"""
 
 [[main]]
 en = """# Function calls
 Math mode supports special function calls without the hash prefix. In these
-\"math calls\", the argument list works a little differently than in code:"""
+\\"math calls\\", the argument list works a little differently than in code:"""
 
 [[main]]
-en = """- Within them, Typst is still in \"math mode\". Thus, you can write math directly
+en = """- Within them, Typst is still in \\"math mode\\". Thus, you can write math directly
   into them, but need to use hash syntax to pass code expressions (except for
   strings, which are available in the math syntax).
 - They support positional and named arguments, as well as argument spreading.
@@ -65,11 +65,11 @@ en = """- Within them, Typst is still in \"math mode\". Thus, you can write math
 [[main]]
 en = """```example
 $ frac(a^2, 2) $
-$ vec(1, 2, delim: \"[\") $
+$ vec(1, 2, delim: \\"[\\") $
 $ mat(1, 2; 3, 4) $
 $ mat(..#range(1, 5).chunks(2)) $
 $ lim_x =
-    op(\"lim\", limits: #true)_x $
+    op(\\"lim\\", limits: #true)_x $
 ```"""
 
 [[main]]
@@ -87,17 +87,17 @@ en = """# Alignment
 When equations include multiple _alignment points_ (`&`), this creates blocks of
 alternatingly right- and left-aligned columns. In the example below, the
 expression `(3x + y) / 7` is right-aligned and `= 9` is left-aligned. The word
-\"given\" is also left-aligned because `&&` creates two alignment points in a row,
+\\"given\\" is also left-aligned because `&&` creates two alignment points in a row,
 alternating the alignment twice. `& &` and `&&` behave exactly the same way.
-Meanwhile, \"multiply by 7\" is right-aligned because just one `&` precedes it.
+Meanwhile, \\"multiply by 7\\" is right-aligned because just one `&` precedes it.
 Each alignment point simply alternates between right-aligned/left-aligned."""
 
 [[main]]
 en = """```example
-$ (3x + y) / 7 &= 9 && \"given\" \\
-  3x + y &= 63 & \"multiply by 7\" \\
-  3x &= 63 - y && \"subtract y\" \\
-  x &= 21 - y/3 & \"divide by 3\" $
+$ (3x + y) / 7 &= 9 && \\"given\\" \\\\
+  3x + y &= 63 & \\"multiply by 7\\" \\\\
+  3x &= 63 - y && \\"subtract y\\" \\\\
+  x &= 21 - y/3 & \\"divide by 3\\" $
 ```"""
 
 [[main]]
@@ -108,7 +108,7 @@ typesetting maths."""
 
 [[main]]
 en = """```example
-#show math.equation: set text(font: \"Fira Math\")
+#show math.equation: set text(font: \\"Fira Math\\")
 $ sum_(i in NN) 1 + i $
 ```"""
 

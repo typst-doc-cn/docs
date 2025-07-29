@@ -21,7 +21,7 @@ that printing, reading files, or similar things are not supported."""
 [[main]]
 en = """# Example
 ```example
-#let myplugin = plugin(\"hello.wasm\")
+#let myplugin = plugin(\\"hello.wasm\\")
 #let concat(a, b) = str(
   myplugin.concatenate(
     bytes(a),
@@ -30,14 +30,14 @@ en = """# Example
 )"""
 
 [[main]]
-en = """#concat(\"hello\", \"world\")
+en = """#concat(\\"hello\\", \\"world\\")
 ```"""
 
 [[main]]
 en = """Since the plugin function returns a module, it can be used with import
 syntax:
 ```typ
-#import plugin(\"hello.wasm\"): concatenate
+#import plugin(\\"hello.wasm\\"): concatenate
 ```"""
 
 [[main]]
@@ -127,7 +127,7 @@ Plugin modules need to import two functions that are provided by the
 runtime. (Types and functions are described using WAT syntax.)"""
 
 [[main]]
-en = """- `(import \"typst_env\" \"wasm_minimal_protocol_write_args_to_buffer\" (func
+en = """- `(import \\"typst_env\\" \\"wasm_minimal_protocol_write_args_to_buffer\\" (func
   (param i32)))`"""
 
 [[main]]
@@ -139,7 +139,7 @@ en = """  Writes the arguments for the current function into a plugin-allocated
   the arguments, one after another."""
 
 [[main]]
-en = """- `(import \"typst_env\" \"wasm_minimal_protocol_send_result_to_host\" (func
+en = """- `(import \\"typst_env\\" \\"wasm_minimal_protocol_send_result_to_host\\" (func
   (param i32 i32)))`"""
 
 [[main]]

@@ -32,7 +32,7 @@ en = """```example
 
 [[main]]
 en = """#set page(
-  paper: \"iso-b7\",
+  paper: \\"iso-b7\\",
   header: rect(fill: aqua)[Header],
   footer: rect(fill: aqua)[Footer],
   number-align: center,
@@ -60,15 +60,15 @@ en = """## Customize page size and margins { #customize-margins }
 Typst's default page size is A4 paper. Depending on your region and your use
 case, you will want to change this. You can do this by using the
 [`{page}`]($page) set rule and passing it a string argument to use a common page
-size. Options include the complete ISO 216 series (e.g. `\"iso-a4\"`, `\"iso-c2\"`),
-customary US formats like `\"us-legal\"` or `\"us-letter\"`, and more. Check out the
+size. Options include the complete ISO 216 series (e.g. `\\"iso-a4\\"`, `\\"iso-c2\\"`),
+customary US formats like `\\"us-legal\\"` or `\\"us-letter\\"`, and more. Check out the
 reference for the [page's paper argument]($page.paper) to learn about all
 available options."""
 
 [[main]]
 en = """```example
 >>> #set page(margin: auto)
-#set page(\"us-letter\")"""
+#set page(\\"us-letter\\")"""
 
 [[main]]
 en = """This page likes freedom.
@@ -155,7 +155,7 @@ and explicitly set where the `inside` and `outside` are, set the
 en = """```typ
 // Produce a book bound on the right,
 // even though it is set in Spanish.
-#set text(lang: \"es\")
+#set text(lang: \\"es\\")
 #set page(binding: right)
 ```"""
 
@@ -176,7 +176,7 @@ values:"""
 
 [[main]]
 en = """```example
->>> #set page(\"a5\", margin: (x: 2.5cm, y: 3cm))
+>>> #set page(\\"a5\\", margin: (x: 2.5cm, y: 3cm))
 #set page(header: [
   _Lisa Strassner's Thesis_
   #h(1fr)
@@ -200,7 +200,7 @@ conditionally remove the header on the first page:"""
 
 [[main]]
 en = """```typ
->>> #set page(\"a5\", margin: (x: 2.5cm, y: 3cm))
+>>> #set page(\\"a5\\", margin: (x: 2.5cm, y: 3cm))
 #set page(header: context {
   if counter(page).get().first() > 1 [
     _Lisa Strassner's Thesis_
@@ -236,7 +236,7 @@ label exists on the current page:"""
 
 [[main]]
 en = """```typ
->>> #set page(\"a5\", margin: (x: 2.5cm, y: 3cm))
+>>> #set page(\\"a5\\", margin: (x: 2.5cm, y: 3cm))
 #set page(header: context {
   let page-counter =
   let matches = query(<big-table>)
@@ -281,8 +281,8 @@ pages to be numbered."""
 
 [[main]]
 en = """```example
->>> #set page(\"iso-b6\", margin: 1.75cm)
-#set page(numbering: \"1\")"""
+>>> #set page(\\"iso-b6\\", margin: 1.75cm)
+#set page(numbering: \\"1\\")"""
 
 [[main]]
 en = """This is a numbered page.
@@ -291,14 +291,14 @@ en = """This is a numbered page.
 [[main]]
 en = """Above, you can check out the simplest conceivable example. It adds a single
 Arabic page number at the center of the footer. You can specify other characters
-than `\"1\"` to get other numerals. For example, `\"i\"` will yield lowercase Roman
+than `\\"1\\"` to get other numerals. For example, `\\"i\\"` will yield lowercase Roman
 numerals. Any character that is not interpreted as a number will be output
 as-is. For example, put dashes around your page number by typing this:"""
 
 [[main]]
 en = """```example
->>> #set page(\"iso-b6\", margin: 1.75cm)
-#set page(numbering: \"— 1 —\")"""
+>>> #set page(\\"iso-b6\\", margin: 1.75cm)
+#set page(numbering: \\"— 1 —\\")"""
 
 [[main]]
 en = """This is a — numbered — page.
@@ -310,8 +310,8 @@ the string."""
 
 [[main]]
 en = """```example
->>> #set page(\"iso-b6\", margin: 1.75cm)
-#set page(numbering: \"1 of 1\")"""
+>>> #set page(\\"iso-b6\\", margin: 1.75cm)
+#set page(numbering: \\"1 of 1\\")"""
 
 [[main]]
 en = """This is one of many numbered pages.
@@ -338,12 +338,12 @@ a custom footer with page numbers and more."""
 
 [[main]]
 en = """```example
->>> #set page(\"iso-b6\", margin: 1.75cm)
+>>> #set page(\\"iso-b6\\", margin: 1.75cm)
 #set page(footer: context [
   *American Society of Proceedings*
   #h(1fr)
   #counter(page).display(
-    \"1/1\",
+    \\"1/1\\",
     both: true,
   )
 ])"""
@@ -365,7 +365,7 @@ circle for each page."""
 
 [[main]]
 en = """```example
->>> #set page(\"iso-b6\", margin: 1.75cm)
+>>> #set page(\\"iso-b6\\", margin: 1.75cm)
 #set page(footer: context [
   *Fun Typography Club*
   #h(1fr)
@@ -477,7 +477,7 @@ en = """#lorem(30)
 en = """Very commonly, scientific papers have a single-column title and abstract, while
 the main body is set in two-columns. To achieve this effect, Typst's [`place`
 function]($place) can temporarily escape the two-column layout by specifying
-`{float: true}` and `{scope: \"parent\"}`:"""
+`{float: true}` and `{scope: \\"parent\\"}`:"""
 
 [[main]]
 en = """```example:single
@@ -489,8 +489,8 @@ en = """```example:single
 en = """#place(
   top + center,
   float: true,
-  scope: \"parent\",
-  text(1.4em, weight: \"bold\")[
+  scope: \\"parent\\",
+  text(1.4em, weight: \\"bold\\")[
     Impacts of Odobenidae
   ],
 )"""
@@ -551,7 +551,7 @@ them. Typst will revert to the page settings from the set rule after the call.""
 
 [[main]]
 en = """```example
->>> #set page(\"a6\")
+>>> #set page(\\"a6\\")
 #page(flipped: true)[
   = Multiplication table"""
 

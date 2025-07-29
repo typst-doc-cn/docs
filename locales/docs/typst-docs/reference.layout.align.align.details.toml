@@ -10,9 +10,9 @@ Let's start with centering our content horizontally:
 #set align(center)"""
 
 [[main]]
-en = """Centered text, a sight to see \\
-In perfect balance, visually \\
-Not left nor right, it stands alone \\
+en = """Centered text, a sight to see \\\\
+In perfect balance, visually \\\\
+Not left nor right, it stands alone \\\\
 A work of art, a visual throne
 ```"""
 
@@ -23,8 +23,8 @@ en = """To center something vertically, use _horizon_ alignment:
 #set align(horizon)"""
 
 [[main]]
-en = """Vertically centered, \\
-the stage had entered, \\
+en = """Vertically centered, \\\\
+the stage had entered, \\\\
 a new paragraph.
 ```"""
 
@@ -39,8 +39,8 @@ Though left in the beginning ..."""
 
 [[main]]
 en = """#align(right + bottom)[
-  ... they were right in the end, \\
-  and with addition had gotten, \\
+  ... they were right in the end, \\\\
+  and with addition had gotten, \\\\
   the paragraph to the bottom!
 ]
 ```"""
@@ -54,10 +54,10 @@ them. This way, you can create intricate layouts:"""
 en = """```example
 #align(center, block[
   #set align(left)
-  Though centered together \\
-  alone \\
-  we \\
-  are \\
+  Though centered together \\\\
+  alone \\\\
+  we \\\\
+  are \\\\
   left.
 ])
 ```"""

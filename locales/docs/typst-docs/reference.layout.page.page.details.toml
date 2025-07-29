@@ -19,7 +19,7 @@ this and related functions to set up a document with many examples."""
 en = """# Example
 ```example
 >>> #set page(margin: auto)
-#set page(\"us-letter\")"""
+#set page(\\"us-letter\\")"""
 
 [[main]]
 en = """There you go, US friends!

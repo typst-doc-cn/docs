@@ -16,16 +16,16 @@ en = """```typ
 #let x = 0
 #let compute(expr) = {
   x = eval(
-    expr.replace(\"x\", str(x))
+    expr.replace(\\"x\\", str(x))
   )
   [New value is #x. ]
 }"""
 
 [[main]]
-en = """#compute(\"10\") \\
-#compute(\"x + 3\") \\
-#compute(\"x * 2\") \\
-#compute(\"x - 5\")
+en = """#compute(\\"10\\") \\\\
+#compute(\\"x + 3\\") \\\\
+#compute(\\"x * 2\\") \\\\
+#compute(\\"x - 5\\")
 ```"""
 
 [[main]]
@@ -44,7 +44,7 @@ following example:"""
 
 [[main]]
 en = """```example
-#set heading(numbering: \"1.\")
+#set heading(numbering: \\"1.\\")
 #let template(body) = [
   = Outline
   ...
@@ -89,19 +89,19 @@ en = """Our initial example would now look like this:"""
 
 [[main]]
 en = """```example
-#let s = state(\"x\", 0)
+#let s = state(\\"x\\", 0)
 #let compute(expr) = [
   #s.update(x =>
-    eval(expr.replace(\"x\", str(x)))
+    eval(expr.replace(\\"x\\", str(x)))
   )
   New value is #context s.get().
 ]"""
 
 [[main]]
-en = """#compute(\"10\") \\
-#compute(\"x + 3\") \\
-#compute(\"x * 2\") \\
-#compute(\"x - 5\")
+en = """#compute(\\"10\\") \\\\
+#compute(\\"x + 3\\") \\\\
+#compute(\\"x * 2\\") \\\\
+#compute(\\"x - 5\\")
 ```"""
 
 [[main]]
@@ -115,10 +115,10 @@ but they still show the correct results:"""
 
 [[main]]
 en = """```example
->>> #let s = state(\"x\", 0)
+>>> #let s = state(\\"x\\", 0)
 >>> #let compute(expr) = [
 >>>   #s.update(x =>
->>>     eval(expr.replace(\"x\", str(x)))
+>>>     eval(expr.replace(\\"x\\", str(x)))
 >>>   )
 >>>   New value is #context s.get().
 >>> ]
@@ -126,13 +126,13 @@ en = """```example
 
 [[main]]
 en = """#let more = [
-  #compute(\"x * 2\") \\
-  #compute(\"x - 5\")
+  #compute(\\"x * 2\\") \\\\
+  #compute(\\"x - 5\\")
 ]"""
 
 [[main]]
-en = """#compute(\"10\") \\
-#compute(\"x + 3\") \\
+en = """#compute(\\"10\\") \\\\
+#compute(\\"x + 3\\") \\\\
 #more
 ```"""
 
@@ -151,10 +151,10 @@ methods gives us the value of the state at the end of the document."""
 
 [[main]]
 en = """```example
->>> #let s = state(\"x\", 0)
+>>> #let s = state(\\"x\\", 0)
 >>> #let compute(expr) = [
 >>>   #s.update(x => {
->>>     eval(expr.replace(\"x\", str(x)))
+>>>     eval(expr.replace(\\"x\\", str(x)))
 >>>   })
 >>>   New value is #context s.get().
 >>> ]
@@ -165,11 +165,11 @@ en = """Value at `<here>` is
 #context s.at(<here>)"""
 
 [[main]]
-en = """#compute(\"10\") \\
-#compute(\"x + 3\") \\
-*Here.* <here> \\
-#compute(\"x * 2\") \\
-#compute(\"x - 5\")
+en = """#compute(\\"10\\") \\\\
+#compute(\\"x + 3\\") \\\\
+*Here.* <here> \\\\
+#compute(\\"x * 2\\") \\\\
+#compute(\\"x - 5\\")
 ```"""
 
 [[main]]
@@ -189,7 +189,7 @@ simply gives up after a few attempts."""
 [[main]]
 en = """```example
 // This is bad!
-#let s = state(\"x\", 1)
+#let s = state(\\"x\\", 1)
 #context s.update(s.final() + 1)
 #context s.get()
 ```"""

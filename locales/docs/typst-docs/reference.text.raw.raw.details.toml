@@ -19,7 +19,7 @@ would be ```c int main()``` in C."""
 [[main]]
 en = """```rust
 fn main() {
-    println!(\"Hello World!\");
+    println!(\\"Hello World!\\");
 }
 ```"""
 
@@ -34,7 +34,7 @@ also trimmed.
 en = """You can also construct a [`raw`] element programmatically from a string (and
 provide the language tag via the optional [`lang`]($raw.lang) argument).
 ```example
-#raw(\"fn \" + \"main() {}\", lang: \"rust\")
+#raw(\\"fn \\" + \\"main() {}\\", lang: \\"rust\\")
 ```"""
 
 [[main]]
