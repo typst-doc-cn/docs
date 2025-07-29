@@ -1,0 +1,28 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "dependencies": {
+    "@lexical/clipboard": "^0.33.1",
+    "@lexical/dragon": "0.33.1",
+    "@lexical/history": "0.33.1",
+    "@lexical/list": "0.33.1",
+    "@lexical/markdown": "^0.33.1",
+    "@lexical/rich-text": "0.33.1",
+    "@lexical/utils": "0.33.1",
+    "js-toml": "^1.0.1",
+    "lexical": "^0.33.1",
+    "vite": "^7.0.6"
+  }
+}

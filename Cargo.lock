@@ -2006,6 +2006,7 @@ dependencies = [
  "serde",
  "serde_json",
  "tinymist-l10n",
+ "toml",
  "typst",
  "typst-docs",
  "typst-render",

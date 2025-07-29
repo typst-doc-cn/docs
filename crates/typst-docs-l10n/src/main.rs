@@ -8,8 +8,11 @@ use std::path::{Path, PathBuf};
 use anyhow::Context;
 use clap::Parser;
 use rayon::iter::{IntoParallelIterator, IntoParallelRefMutIterator, ParallelIterator};
-use std::io::Write;
-use tinymist_l10n::{load_translations, update_disk_translations, TranslationMapSet};
+use std::io::{Read, Write};
+use tinymist_l10n::{
+    deserialize, load_translations, serialize_translations, update_disk_translations,
+    TranslationMap, TranslationMapSet,
+};
 use typst_docs::provide;
 use typst_docs_l10n::generate::GenContext;
 use typst_docs_l10n::resolve::CliResolver;
@@ -24,6 +27,7 @@ fn main() -> anyhow::Result<()> {
         Command::Generate(args) => generate(args),
         Command::Translate(args) => translate(args),
         Command::Make(args) => make(args),
+        Command::Save(args) => save(args),
     }
 }
 
@@ -39,6 +43,9 @@ enum Command {
     /// Makes a typst document.
     #[clap()]
     Make(MakeArgs),
+    /// Saves the translations to disk.
+    #[clap()]
+    Save(SaveArgs),
 }
 
 /// Generates the JSON representation of the documentation. This can be used to
@@ -169,24 +176,10 @@ fn write_large_translate(sub_docs: &Path, k: &str, v: &mut String) {
 
     println!("Writing large translation to {path:?}");
 
-    let mut file = fs::File::create(&path)
-        .with_context(|| {
-            format!(
-                "Failed to create file for large translation: {}",
-                path.display()
-            )
-        })
-        .unwrap();
-
     let pars = v.split(MARKDOWN_PAR_SEP).collect::<Vec<_>>();
-    for par in pars.iter() {
-        if par.contains("\"\"\"") {
-            write!(file, "\n[[main]]\nen = {par:?}\n").unwrap();
-        } else {
-            let part = format!("{par:?}").replace("\\n", "\n");
-            write!(file, "\n[[main]]\nen = \"\"{part}\"\"\n").unwrap();
-        }
-    }
+    init_large_translation(&path, &pars)
+        .with_context(|| format!("Failed to store large translation file: {path:?}"))
+        .unwrap();
 
     *v = serde_json::to_string(&format!("{{{{{}}}}}", rel_path.display())).unwrap();
 }
@@ -242,6 +235,152 @@ fn make(args: MakeArgs) -> anyhow::Result<()> {
     std::fs::create_dir_all(&args.output_dir)?;
     let output_path = args.output_dir.join("docs.zh.typ");
     fs::write(&output_path, &*result)?;
+
+    Ok(())
+}
+
+/// Arguments to save changes.
+#[derive(Parser, Debug)]
+struct SaveArgs {
+    /// The directory for the translated documentation.
+    #[arg(long, default_value = "locales/docs")]
+    translation_dir: PathBuf,
+}
+
+fn save(args: SaveArgs) -> anyhow::Result<()> {
+    let input = std::io::stdin();
+    let mut input = input.lock();
+    let mut input_buffer = String::new();
+    input
+        .read_to_string(&mut input_buffer)
+        .with_context(|| "Failed to read from standard input")?;
+    let translated: Translated =
+        serde_json::from_str(&input_buffer).with_context(|| "Failed to parse input as JSON")?;
+
+    if translated.file == "typst-docs.toml" {
+        let translation_file = args.translation_dir.join("typst-docs.toml");
+
+        let existing_translations_str =
+            fs::read_to_string(&translation_file).with_context(|| {
+                format!(
+                    "Failed to read existing translations: {}",
+                    translation_file.display()
+                )
+            })?;
+
+        let mut existing_translations = deserialize(&existing_translations_str, true)?;
+
+        for pair in translated.translates {
+            let entry = existing_translations.entry(pair.path).or_default();
+            entry.insert(
+                "zh".to_owned(),
+                serde_json::to_string(&pair.content).unwrap(),
+            );
+        }
+
+        // Writes translations
+        let result = serialize_translations(existing_translations);
+        std::fs::write(translation_file, result)?;
+    } else {
+        let translation_file = args.translation_dir.join(translated.file);
+
+        let existing_translations_str =
+            fs::read_to_string(&translation_file).with_context(|| {
+                format!(
+                    "Failed to read existing translations: {}",
+                    translation_file.display()
+                )
+            })?;
+
+        let mut existing_translations =
+            toml::from_str::<LargeTranslationFile>(&existing_translations_str)
+                .with_context(|| "Failed to parse existing translations")?;
+
+        for pair in translated.translates {
+            println!("Saving translation: {} -> {}", pair.path, pair.content);
+            if let Some((_sub, maybe_number)) = pair.path.rsplit_once('.') {
+                let number = maybe_number.parse::<usize>();
+                if let Ok(number) = number {
+                    let entry = existing_translations.main.get_mut(number).unwrap();
+                    entry.insert("zh".to_owned(), pair.content);
+                }
+            }
+        }
+
+        store_large_translation_file(&translation_file, &existing_translations.main)?;
+        // println!(
+        //     "Saved translations to {} {existing_translations:#?}",
+        //     translation_file.display()
+        // );
+    }
+
+    Ok(())
+}
+
+/// Translated content structure.
+#[derive(Debug, serde::Deserialize)]
+struct Translated {
+    /// The file path of the translation.
+    file: String,
+    /// The translated content.
+    translates: Vec<TranslatedPair>,
+}
+
+/// A pair of translated content.
+#[derive(Debug, serde::Deserialize)]
+struct TranslatedPair {
+    /// The path to the translation.
+    path: String,
+    /// The translated content.
+    content: String,
+}
+
+/// The large translated file.
+#[derive(Debug, serde::Deserialize)]
+struct LargeTranslationFile {
+    /// The translations.
+    main: Vec<TranslationMap>,
+}
+
+fn init_large_translation(path: &Path, pars: &[&str]) -> anyhow::Result<()> {
+    let mut file = fs::File::create(path)?;
+    for par in pars.iter() {
+        if par.contains("\"\"\"") {
+            let content = serde_json::to_string(par).unwrap();
+            write!(file, "\n[[main]]\nen = {content}\n")?;
+        } else {
+            let content = serde_json::to_string(par).unwrap();
+            let content = content.replace("\\n", "\n").replace("\\\"", "\"");
+            write!(file, "\n[[main]]\nen = \"\"{content}\"\"\n")?;
+        }
+    }
+
+    Ok(())
+}
+
+/// Stores a large translation file.
+fn store_large_translation_file(path: &Path, pars: &[TranslationMap]) -> anyhow::Result<()> {
+    let mut file = fs::File::create(path)?;
+    for par in pars.iter() {
+        write!(file, "\n[[main]]\n")?;
+        let mut store_one = |lang: &str| {
+            let Some(content) = par.get(lang) else {
+                return Ok(());
+            };
+            if content.contains("\"\"\"") {
+                let content = serde_json::to_string(content).unwrap();
+                writeln!(file, "{lang} = {content:?}")?;
+            } else {
+                let content = serde_json::to_string(content).unwrap();
+                let content = content.replace("\\n", "\n").replace("\\\"", "\"");
+                writeln!(file, "{lang} = \"\"{content}\"\"")?;
+            }
+            anyhow::Ok(())
+        };
+
+        store_one("en")?;
+        store_one("zh")?;
+    }
 
     Ok(())
 }

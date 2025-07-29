@@ -23,6 +23,7 @@ pulldown-cmark.workspace = true
 typst.workspace = true
 typst-render.workspace = true
 tinymist-l10n.workspace = true
+toml = "0.8"
 
 [lints]
 workspace = true
