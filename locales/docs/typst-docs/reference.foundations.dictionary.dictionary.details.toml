@@ -23,20 +23,21 @@ loop]($scripting/#loops). This will iterate in the order the pairs were
 inserted / declared."""
 
 [[main]]
-en = """# Example
-```example
-#let dict = (
-  name: \\"Typst\\",
-  born: 2019,
-)"""
+en = """# Example"""
 
 [[main]]
-en = """#dict.name \\\\
+en = """```example
+#let dict = (
+  name: "Typst",
+  born: 2019,
+)
+
+#dict.name \\
 #(dict.launch = 20)
-#dict.len() \\\\
-#dict.keys() \\\\
-#dict.values() \\\\
-#dict.at(\\"born\\") \\\\
-#dict.insert(\\"city\\", \\"Berlin \\")
-#(\\"name\\" in dict)
+#dict.len() \\
+#dict.keys() \\
+#dict.values() \\
+#dict.at("born") \\
+#dict.insert("city", "Berlin ")
+#("name" in dict)
 ```"""

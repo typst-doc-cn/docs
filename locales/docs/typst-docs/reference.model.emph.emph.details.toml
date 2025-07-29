@@ -3,24 +3,24 @@
 en = """Emphasizes content by toggling italics."""
 
 [[main]]
-en = """- If the current [text style]($text.style) is `{\\"normal\\"}`, this turns it
-  into `{\\"italic\\"}`.
-- If it is already `{\\"italic\\"}` or `{\\"oblique\\"}`, it turns it back to
-  `{\\"normal\\"}`."""
+en = """- If the current [text style]($text.style) is `{"normal"}`, this turns it
+  into `{"italic"}`.
+- If it is already `{"italic"}` or `{"oblique"}`, it turns it back to
+  `{"normal"}`."""
 
 [[main]]
-en = """# Example
-```example
-This is _emphasized._ \\\\
-This is #emph[too.]"""
+en = """# Example"""
 
 [[main]]
-en = """#show emph: it => {
+en = """```example
+This is _emphasized._ \\
+This is #emph[too.]
+
+#show emph: it => {
   text(blue, it.body)
-}"""
+}
 
-[[main]]
-en = """This is _emphasized_ differently.
+This is _emphasized_ differently.
 ```"""
 
 [[main]]

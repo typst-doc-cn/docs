@@ -14,8 +14,7 @@ en = """Typst supports:
 - HSV through the [`color.hsv` function]($color.hsv)"""
 
 [[main]]
-en = """
-# Example"""
+en = """# Example"""
 
 [[main]]
 en = """```example
@@ -33,20 +32,20 @@ en = """| Color     | Definition         |
 | `gray`    | `{luma(170)}`      |
 | `silver`  | `{luma(221)}`      |
 | `white`   | `{luma(255)}`      |
-| `navy`    | `{rgb(\\"#001f3f\\")}` |
-| `blue`    | `{rgb(\\"#0074d9\\")}` |
-| `aqua`    | `{rgb(\\"#7fdbff\\")}` |
-| `teal`    | `{rgb(\\"#39cccc\\")}` |
-| `eastern` | `{rgb(\\"#239dad\\")}` |
-| `purple`  | `{rgb(\\"#b10dc9\\")}` |
-| `fuchsia` | `{rgb(\\"#f012be\\")}` |
-| `maroon`  | `{rgb(\\"#85144b\\")}` |
-| `red`     | `{rgb(\\"#ff4136\\")}` |
-| `orange`  | `{rgb(\\"#ff851b\\")}` |
-| `yellow`  | `{rgb(\\"#ffdc00\\")}` |
-| `olive`   | `{rgb(\\"#3d9970\\")}` |
-| `green`   | `{rgb(\\"#2ecc40\\")}` |
-| `lime`    | `{rgb(\\"#01ff70\\")}` |"""
+| `navy`    | `{rgb("#001f3f")}` |
+| `blue`    | `{rgb("#0074d9")}` |
+| `aqua`    | `{rgb("#7fdbff")}` |
+| `teal`    | `{rgb("#39cccc")}` |
+| `eastern` | `{rgb("#239dad")}` |
+| `purple`  | `{rgb("#b10dc9")}` |
+| `fuchsia` | `{rgb("#f012be")}` |
+| `maroon`  | `{rgb("#85144b")}` |
+| `red`     | `{rgb("#ff4136")}` |
+| `orange`  | `{rgb("#ff851b")}` |
+| `yellow`  | `{rgb("#ffdc00")}` |
+| `olive`   | `{rgb("#3d9970")}` |
+| `green`   | `{rgb("#2ecc40")}` |
+| `lime`    | `{rgb("#01ff70")}` |"""
 
 [[main]]
 en = """The predefined colors and the most important color constructors are
@@ -56,15 +55,14 @@ either `color.red` or just `red`."""
 [[main]]
 en = """```preview
 #let colors = (
-  \\"black\\", \\"gray\\", \\"silver\\", \\"white\\",
-  \\"navy\\", \\"blue\\", \\"aqua\\", \\"teal\\",
-  \\"eastern\\", \\"purple\\", \\"fuchsia\\",
-  \\"maroon\\", \\"red\\", \\"orange\\", \\"yellow\\",
-  \\"olive\\", \\"green\\", \\"lime\\",
-)"""
+  "black", "gray", "silver", "white",
+  "navy", "blue", "aqua", "teal",
+  "eastern", "purple", "fuchsia",
+  "maroon", "red", "orange", "yellow",
+  "olive", "green", "lime",
+)
 
-[[main]]
-en = """#set text(font: \\"PT Sans\\")
+#set text(font: "PT Sans")
 #set page(width: auto)
 #grid(
   columns: 9,
@@ -119,19 +117,17 @@ or create a package with other presets that are useful to you!"""
 [[main]]
 en = """```preview
 #set page(width: auto, height: auto)
-#set text(font: \\"PT Sans\\", size: 8pt)"""
+#set text(font: "PT Sans", size: 8pt)
 
-[[main]]
-en = """#let maps = (
-  \\"turbo\\", \\"cividis\\", \\"rainbow\\", \\"spectral\\",
-  \\"viridis\\", \\"inferno\\", \\"magma\\", \\"plasma\\",
-  \\"rocket\\", \\"mako\\", \\"vlag\\", \\"icefire\\",
-  \\"flare\\", \\"crest\\",
-)"""
+#let maps = (
+  "turbo", "cividis", "rainbow", "spectral",
+  "viridis", "inferno", "magma", "plasma",
+  "rocket", "mako", "vlag", "icefire",
+  "flare", "crest",
+)
 
-[[main]]
-en = """#stack(dir: ltr, spacing: 3pt, ..maps.map((name) => {
-  let map = eval(\\"color.map.\\" + name)
+#stack(dir: ltr, spacing: 3pt, ..maps.map((name) => {
+  let map = eval("color.map." + name)
   stack(
     dir: ttb,
     block(

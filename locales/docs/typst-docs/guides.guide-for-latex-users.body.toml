@@ -1,7 +1,6 @@
 
 [[main]]
-en = """
-# Guide for LaTeX users { # }
+en = """# Guide for LaTeX users { # }
 This page is a good starting point if you have used LaTeX before and want to try
 out Typst. We will explore the main differences between these two systems from a
 user perspective. Although Typst is not built upon LaTeX and has a different
@@ -43,16 +42,15 @@ en = """## How do I create a new, empty document? { #getting-started }
 That's easy. You just create a new, empty text file (the file extension is
 `.typ`). No boilerplate is needed to get started. Simply start by writing your
 text. It will be set on an empty A4-sized page. If you are using the web app,
-click \\"+ Empty document\\" to create a new project with a file and enter the
+click "+ Empty document" to create a new project with a file and enter the
 editor. [Paragraph breaks]($parbreak) work just as they do in LaTeX, just use a
 blank line."""
 
 [[main]]
 en = """```example
-Hey there!"""
+Hey there!
 
-[[main]]
-en = """Here are two paragraphs. The
+Here are two paragraphs. The
 output is shown to the right.
 ```"""
 
@@ -64,9 +62,9 @@ start your project in Typst."""
 
 [[main]]
 en = """## How do I create section headings, emphasis, ...? { #elements }
-LaTeX uses the command `\\\\section` to create a section heading. Nested headings
-are indicated with `\\\\subsection`, `\\\\subsubsection`, etc. Depending on your
-document class, there is also `\\\\part` or `\\\\chapter`."""
+LaTeX uses the command `\\section` to create a section heading. Nested headings
+are indicated with `\\subsection`, `\\subsubsection`, etc. Depending on your
+document class, there is also `\\part` or `\\chapter`."""
 
 [[main]]
 en = """In Typst, [headings]($heading) are less verbose: You prefix the line with the
@@ -87,13 +85,13 @@ equivalents. You can also check out the [full syntax cheat sheet]($syntax)."""
 [[main]]
 en = """| Element          | LaTeX                     | Typst                  | See        |
 |:-----------------|:--------------------------|:-----------------------|:-----------|
-| Strong emphasis  | `\\\\textbf{strong}`         | `[*strong*]`           | [`strong`] |
-| Emphasis         | `\\\\emph{emphasis}`         | `[_emphasis_]`         | [`emph`]   |
-| Monospace / code | `\\\\texttt{print(1)}`       | ``[`print(1)`]``       | [`raw`]    |
-| Link             | `\\\\url{https://typst.app}` | `[https://typst.app/]` | [`link`]   |
-| Label            | `\\\\label{intro}`           | `[<intro>]`            | [`label`]  |
-| Reference        | `\\\\ref{intro}`             | `[@intro]`             | [`ref`]    |
-| Citation         | `\\\\cite{humphrey97}`       | `[@humphrey97]`        | [`cite`]   |
+| Strong emphasis  | `\\textbf{strong}`         | `[*strong*]`           | [`strong`] |
+| Emphasis         | `\\emph{emphasis}`         | `[_emphasis_]`         | [`emph`]   |
+| Monospace / code | `\\texttt{print(1)}`       | ``[`print(1)`]``       | [`raw`]    |
+| Link             | `\\url{https://typst.app}` | `[https://typst.app/]` | [`link`]   |
+| Label            | `\\label{intro}`           | `[<intro>]`            | [`label`]  |
+| Reference        | `\\ref{intro}`             | `[@intro]`             | [`ref`]    |
+| Citation         | `\\cite{humphrey97}`       | `[@humphrey97]`        | [`cite`]   |
 | Bullet list      | `itemize` environment     | `[- List]`             | [`list`]   |
 | Numbered list    | `enumerate` environment   | `[+ List]`             | [`enum`]   |
 | Term list        | `description` environment | `[/ Term: List]`       | [`terms`]  |
@@ -112,11 +110,11 @@ To write this list in Typst..."""
 
 [[main]]
 en = """```latex
-\\\\begin{itemize}
-  \\\\item Fast
-  \\\\item Flexible
-  \\\\item Intuitive
-\\\\end{itemize}
+\\begin{itemize}
+  \\item Fast
+  \\item Flexible
+  \\item Intuitive
+\\end{itemize}
 ```"""
 
 [[main]]
@@ -144,7 +142,7 @@ en = """## How do I use a command? { #commands }
 LaTeX heavily relies on commands (prefixed by backslashes). It uses these
 _macros_ to affect the typesetting process and to insert and manipulate content.
 Some commands accept arguments, which are most frequently enclosed in curly
-braces: `\\\\cite{rasmus}`."""
+braces: `\\cite{rasmus}`."""
 
 [[main]]
 en = """Typst differentiates between [markup mode and code mode]($scripting/#blocks).
@@ -165,18 +163,15 @@ normal value for a variable."""
 [[main]]
 en = """```example
 First, a rectangle:
-#rect()"""
+#rect()
 
-[[main]]
-en = """Let me show how to do
-#underline([_underlined_ text])"""
+Let me show how to do
+#underline([_underlined_ text])
 
-[[main]]
-en = """We can also do some maths:
-#calc.max(3, 2 * 4)"""
+We can also do some maths:
+#calc.max(3, 2 * 4)
 
-[[main]]
-en = """And finally a little loop:
+And finally a little loop:
 #for x in range(3) [
   Hi #x.
 ]
@@ -193,7 +188,7 @@ specified in the [reference]."""
 [[main]]
 en = """### Arguments
 A function can have multiple arguments. Some arguments are positional, i.e., you
-just provide the value: The function `[#lower(\\"SCREAM\\")]` returns its argument
+just provide the value: The function `[#lower("SCREAM")]` returns its argument
 in all-lowercase. Many functions use named arguments instead of positional
 arguments to increase legibility. For example, the dimensions and stroke of a
 rectangle are defined with named arguments:"""
@@ -213,12 +208,12 @@ en = """You specify a named argument by first entering its name (above, it's `wi
 `red`). You can find the available named arguments in the [reference
 page]($reference) for each function or in the autocomplete panel when typing.
 Named arguments are similar to how some LaTeX environments are configured, for
-example, you would type `\\\\begin{enumerate}[label={\\\\alph*)}]` to start a list
+example, you would type `\\begin{enumerate}[label={\\alph*)}]` to start a list
 with the labels `a)`, `b)`, and so on."""
 
 [[main]]
 en = """Often, you want to provide some [content] to a function. For example, the LaTeX
-command `\\\\underline{Alternative A}` would translate to
+command `\\underline{Alternative A}` would translate to
 `[#underline([Alternative A])]` in Typst. The square brackets indicate that a
 value is [content]. Within these brackets, you can use normal markup.
 However, that's a lot of parentheses for a pretty simple construct. This is why
@@ -228,10 +223,9 @@ parentheses if they would end up empty)."""
 [[main]]
 en = """```example
 Typst is an #underline[alternative]
-to LaTeX."""
+to LaTeX.
 
-[[main]]
-en = """#rect(fill: aqua)[Get started here!]
+#rect(fill: aqua)[Get started here!]
 ```"""
 
 [[main]]
@@ -245,7 +239,7 @@ types, you have to be in code mode!"""
 en = """| Data type                       | Example                           |
 |:--------------------------------|:----------------------------------|
 | [Content]($content)             | `{[*fast* typesetting]}`          |
-| [String]($str)                  | `{\\"Pietro S. Author\\"}`            |
+| [String]($str)                  | `{"Pietro S. Author"}`            |
 | [Integer]($int)                 | `{23}`                            |
 | [Floating point number]($float) | `{1.459}`                         |
 | [Absolute length]($length)      | `{12pt}`, `{5in}`, `{0.3cm}`, ... |
@@ -266,53 +260,48 @@ en = """You can also store values, including functions, in your own
 [variables]($scripting/#bindings). This can be useful to perform computations on
 them, create reusable automations, or reference a value multiple times. The
 variable binding is accomplished with the let keyword, which works similar to
-`\\
+`\
 ewcommand`:"""
 
 [[main]]
 en = """```example
 // Store the integer `5`.
-#let five = 5"""
+#let five = 5
 
-[[main]]
-en = """// Define a function that
+// Define a function that
 // increments a value.
-#let inc(i) = i + 1"""
+#let inc(i) = i + 1
 
-[[main]]
-en = """// Reference the variables.
-I have #five fingers."""
+// Reference the variables.
+I have #five fingers.
 
-[[main]]
-en = """If I had one more, I'd have
+If I had one more, I'd have
 #inc(five) fingers. Whoa!
 ```"""
 
 [[main]]
 en = """### Commands to affect the remaining document { #rules }
-In LaTeX, some commands like `\\\\textbf{bold text}` receive an argument in curly
-braces and only affect that argument. Other commands such as `\\\\bfseries bold
+In LaTeX, some commands like `\\textbf{bold text}` receive an argument in curly
+braces and only affect that argument. Other commands such as `\\bfseries bold
 text` act as switches (LaTeX calls this a declaration), altering the appearance
 of all subsequent content within the document or current scope."""
 
 [[main]]
 en = """In Typst, the same function can be used both to affect the appearance for the
 remainder of the document, a block (or scope), or just its arguments. For
-example, `[#text(weight: \\"bold\\")[bold text]]` will only embolden its argument,
-while `[#set text(weight: \\"bold\\")]` will embolden any text until the end of the
+example, `[#text(weight: "bold")[bold text]]` will only embolden its argument,
+while `[#set text(weight: "bold")]` will embolden any text until the end of the
 current block, or, if there is none, document. The effects of a function are
 immediately obvious based on whether it is used in a call or a
 [set rule.]($styling/#set-rules)"""
 
 [[main]]
 en = """```example
-I am starting out with small text."""
+I am starting out with small text.
 
-[[main]]
-en = """#set text(14pt)"""
+#set text(14pt)
 
-[[main]]
-en = """This is a bit #text(18pt)[larger,]
+This is a bit #text(18pt)[larger,]
 don't you think?
 ```"""
 
@@ -322,10 +311,9 @@ default argument values of their respective function:"""
 
 [[main]]
 en = """```example
-#set enum(numbering: \\"I.\\")"""
+#set enum(numbering: "I.")
 
-[[main]]
-en = """Good results can only be obtained by
+Good results can only be obtained by
 + following best practices
 + being aware of current results
   of other researchers
@@ -338,30 +326,29 @@ en = """The `+` is syntactic sugar (think of it as an abbreviation) for a call t
 [Most syntax is linked to a function in this way.]($syntax) If you need to style
 an element beyond what its arguments enable, you can completely redefine its
 appearance with a [show rule]($styling/#show-rules) (somewhat comparable to
-`\\\\renewcommand`)."""
+`\\renewcommand`)."""
 
 [[main]]
-en = """You can achieve the effects of LaTeX commands like `\\\\textbf`, `\\\\textsf`,
-`\\\\rmfamily`, `\\\\mdseries`, and `\\\\itshape` with the [`font`]($text.font),
+en = """You can achieve the effects of LaTeX commands like `\\textbf`, `\\textsf`,
+`\\rmfamily`, `\\mdseries`, and `\\itshape` with the [`font`]($text.font),
 [`style`]($text.style), and [`weight`]($text.weight) arguments of the `text`
 function. The text function can be used in a set rule (declaration style) or
-with a content argument. To replace `\\\\textsc`, you can use the [`smallcaps`]
+with a content argument. To replace `\\textsc`, you can use the [`smallcaps`]
 function, which renders its content argument as smallcaps. Should you want to
-use it declaration style (like `\\\\scshape`), you can use an
+use it declaration style (like `\\scshape`), you can use an
 [_everything_ show rule]($styling/#show-rules) that applies the function to the
 rest of the scope:"""
 
 [[main]]
 en = """```example
-#show: smallcaps"""
+#show: smallcaps
 
-[[main]]
-en = """Boisterous Accusations
+Boisterous Accusations
 ```"""
 
 [[main]]
 en = """## How do I load a document class? { #templates }
-In LaTeX, you start your main `.tex` file with the `\\\\documentclass{article}`
+In LaTeX, you start your main `.tex` file with the `\\documentclass{article}`
 command to define how your document is supposed to look. In that command, you
 may have replaced `article` with another value such as `report` and `amsart` to
 select a different look."""
@@ -382,16 +369,16 @@ en = """```example:single
 >>>   abstract: [],
 >>>   doc,
 >>> ) = {
->>>   set text(font: \\"Libertinus Serif\\", 11pt)
+>>>   set text(font: "Libertinus Serif", 11pt)
 >>>   set par(justify: true)
 >>>   set page(
->>>     \\"us-letter\\",
+>>>     "us-letter",
 >>>     margin: auto,
 >>>     header: align(
 >>>       right + horizon,
 >>>       title
 >>>     ),
->>>     numbering: \\"1\\",
+>>>     numbering: "1",
 >>>     columns: 2
 >>>   )
 >>>
@@ -401,7 +388,7 @@ en = """```example:single
 >>>     align(center,
 >>>       text(
 >>>         13pt,
->>>         weight: \\"regular\\",
+>>>         weight: "regular",
 >>>         smallcaps(it.body),
 >>>       )
 >>>     ),
@@ -411,13 +398,13 @@ en = """```example:single
 >>>   ): it => box(
 >>>     text(
 >>>       11pt,
->>>       weight: \\"regular\\",
->>>       style: \\"italic\\",
+>>>       weight: "regular",
+>>>       style: "italic",
 >>>       it.body + [.],
 >>>     )
 >>>   )
 >>>
->>>   place(top, float: true, scope: \\"parent\\", {
+>>>   place(top, float: true, scope: "parent", {
 >>>     set align(center)
 >>>     text(17pt, title)
 >>>
@@ -426,14 +413,14 @@ en = """```example:single
 >>>       columns: (1fr,) * count,
 >>>       row-gutter: 24pt,
 >>>       ..authors.map(author => [
->>>         #author.name \\\\
->>>         #author.affiliation \\\\
->>>         #link(\\"mailto:\\" + author.email)
+>>>         #author.name \\
+>>>         #author.affiliation \\
+>>>         #link("mailto:" + author.email)
 >>>       ]),
 >>>     )
 >>>
 >>>     par(justify: false)[
->>>       *Abstract* \\\\
+>>>       *Abstract* \\
 >>>       #abstract
 >>>     ]
 >>>   })
@@ -441,28 +428,27 @@ en = """```example:single
 >>>   set align(left)
 >>>   doc
 >>> }
-<<< #import \\"conf.typ\\": conf
+<<< #import "conf.typ": conf
 #show: conf.with(
   title: [
     Towards Improved Modelling
   ],
   authors: (
     (
-      name: \\"Theresa Tungsten\\",
-      affiliation: \\"Artos Institute\\",
-      email: \\"tung@artos.edu\\",
+      name: "Theresa Tungsten",
+      affiliation: "Artos Institute",
+      email: "tung@artos.edu",
     ),
     (
-      name: \\"Eugene Deklan\\",
-      affiliation: \\"Honduras State\\",
-      email: \\"e.deklan@hstate.hn\\",
+      name: "Eugene Deklan",
+      affiliation: "Honduras State",
+      email: "e.deklan@hstate.hn",
     ),
   ),
   abstract: lorem(80),
-)"""
+)
 
-[[main]]
-en = """Let's get started writing this
+Let's get started writing this
 article by putting insightful
 paragraphs right here!
 >>> #lorem(500)
@@ -479,7 +465,7 @@ start writing our article right away!"""
 [[main]]
 en = """You can also use templates from Typst Universe (which is Typst's equivalent of
 CTAN) using an import statement like this: `[#import
-\\"@preview/elsearticle:0.2.1\\": elsearticle]`. Check the documentation of an
+"@preview/elsearticle:0.2.1": elsearticle]`. Check the documentation of an
 individual template to learn the name of its template function. Templates and
 packages from Typst Universe are automatically downloaded when you first use
 them."""
@@ -499,11 +485,11 @@ They are shorter and more readable than the corresponding LaTeX `.sty` files by
 orders of magnitude, so give it a try!"""
 
 [[main]]
-en = """<div class=\\"info-box\\">"""
+en = """<div class="info-box">"""
 
 [[main]]
-en = """Functions are Typst's \\"commands\\" and can transform their arguments to an output
-value, including document _content._ Functions are \\"pure\\", which means that they
+en = """Functions are Typst's "commands" and can transform their arguments to an output
+value, including document _content._ Functions are "pure", which means that they
 cannot have any effects beyond creating an output value / output content. This
 is in stark contrast to LaTeX macros that can have arbitrary effects on your
 document."""
@@ -518,7 +504,7 @@ show rule.
 
 [[main]]
 en = """## How do I load packages? { #packages }
-Typst is \\"batteries included,\\" so the equivalent of many popular LaTeX packages
+Typst is "batteries included," so the equivalent of many popular LaTeX packages
 is built right-in. Below, we compiled a table with frequently loaded packages
 and their corresponding Typst functions."""
 
@@ -528,16 +514,16 @@ en = """| LaTeX Package                   | Typst Alternative                   
 | graphicx, svg                   | [`image`] function                         |
 | tabularx                        | [`table`], [`grid`] functions              |
 | fontenc, inputenc, unicode-math | Just start writing!                        |
-| babel, polyglossia              | [`text`]($text.lang) function: `[#set text(lang: \\"zh\\")]` |
+| babel, polyglossia              | [`text`]($text.lang) function: `[#set text(lang: "zh")]` |
 | amsmath                         | [Math mode]($category/math)                |
 | amsfonts, amssymb               | [`sym`]($category/symbols) module and [syntax]($syntax/#math) |
 | geometry, fancyhdr              | [`page`] function                          |
-| xcolor                          | [`text`]($text.fill) function: `[#set text(fill: rgb(\\"#0178A4\\"))]` |
+| xcolor                          | [`text`]($text.fill) function: `[#set text(fill: rgb("#0178A4"))]` |
 | hyperref                        | [`link`] function                          |
 | bibtex, biblatex, natbib        | [`cite`], [`bibliography`] functions       |
 | lstlisting, minted              | [`raw`] function and syntax                |
 | parskip                         | [`block`]($block.spacing) and [`par`]($par.first-line-indent) functions |
-| csquotes                        | Set the [`text`]($text.lang) language and type `[\\"]` or `[']` |
+| csquotes                        | Set the [`text`]($text.lang) language and type `["]` or `[']` |
 | caption                         | [`figure`] function                        |
 | enumitem                        | [`list`], [`enum`], [`terms`] functions    |"""
 
@@ -550,7 +536,7 @@ you can just write:"""
 
 [[main]]
 en = """```typ
-#import \\"@preview/cetz:0.2.1\\"
+#import "@preview/cetz:0.2.1"
 ```"""
 
 [[main]]
@@ -579,10 +565,9 @@ and its enclosing dollar signs."""
 [[main]]
 en = """```example
 The sum of the numbers from
-$1$ to $n$ is:"""
+$1$ to $n$ is:
 
-[[main]]
-en = """$ sum_(k=1)^n k = (n(n+1))/2 $
+$ sum_(k=1)^n k = (n(n+1))/2 $
 ```"""
 
 [[main]]
@@ -609,12 +594,12 @@ multiletter text in your expression instead, enclose it in double quotes:"""
 
 [[main]]
 en = """```example
-$ delta \\"if\\" x <= 5 $
+$ delta "if" x <= 5 $
 ```"""
 
 [[main]]
 en = """In Typst, delimiters will scale automatically for their expressions, just as if
-`\\\\left` and `\\\\right` commands were implicitly inserted in LaTeX. You can
+`\\left` and `\\right` commands were implicitly inserted in LaTeX. You can
 customize delimiter behaviour using the [`lr` function]($math.lr). To
 prevent a pair of delimiters from scaling, you can escape them with backslashes."""
 
@@ -641,10 +626,10 @@ you can also call functions without these special characters:"""
 [[main]]
 en = """```example
 $ f(x, y) := cases(
-  1 \\"if\\" (x dot y)/2 <= 0,
-  2 \\"if\\" x \\"is even\\",
-  3 \\"if\\" x in NN,
-  4 \\"else\\",
+  1 "if" (x dot y)/2 <= 0,
+  2 "if" x "is even",
+  3 "if" x in NN,
+  4 "else",
 ) $
 ```"""
 
@@ -695,7 +680,7 @@ $ mat(
 ```"""
 
 [[main]]
-en = """## How do I get the \\"LaTeX look?\\" { #latex-look }
+en = """## How do I get the "LaTeX look?" { #latex-look }
 Papers set in LaTeX have an unmistakeable look. This is mostly due to their
 font, Computer Modern, justification, narrow line spacing, and wide margins."""
 
@@ -704,7 +689,7 @@ en = """The example below
 - sets wide [margins]($page.margin)
 - enables [justification]($par.justify), [tighter lines]($par.leading) and
   [first-line-indent]($par.first-line-indent)
-- [sets the font]($text.font) to \\"New Computer Modern\\", an OpenType derivative of
+- [sets the font]($text.font) to "New Computer Modern", an OpenType derivative of
   Computer Modern for both text and [code blocks]($raw)
 - disables paragraph [spacing]($block.spacing)
 - increases [spacing]($block.spacing) around [headings]($heading)"""
@@ -713,8 +698,8 @@ en = """The example below
 en = """```typ
 #set page(margin: 1.75in)
 #set par(leading: 0.55em, spacing: 0.55em, first-line-indent: 1.8em, justify: true)
-#set text(font: \\"New Computer Modern\\")
-#show raw: set text(font: \\"New Computer Modern Mono\\")
+#set text(font: "New Computer Modern")
+#show raw: set text(font: "New Computer Modern Mono")
 #show heading: set block(above: 1.4em, below: 1em)
 ```"""
 
@@ -744,8 +729,8 @@ Alternatively, you can use the [`cite`] function."""
 
 [[main]]
 en = """Alternative forms for your citation, such as year only and citations for natural
-use in prose (cf. `\\\\citet` and `\\\\textcite`) are available with
-[`[#cite(<key>, form: \\"prose\\")]`]($cite.form)."""
+use in prose (cf. `\\citet` and `\\textcite`) are available with
+[`[#cite(<key>, form: "prose")]`]($cite.form)."""
 
 [[main]]
 en = """You can find more information on the documentation page of the [`bibliography`]

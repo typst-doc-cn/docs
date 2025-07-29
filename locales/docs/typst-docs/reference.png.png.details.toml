@@ -61,8 +61,8 @@ en = """- Which pages to export by specifying `--pages` followed by a comma-sepa
 
 [[main]]
 en = """## Web App
-Click \\"File\\" > \\"Export as\\" > \\"PNG\\" or click the downwards-facing arrow next to
-the quick download button and select \\"Export as PNG\\". When exporting to PNG, you
+Click "File" > "Export as" > "PNG" or click the downwards-facing arrow next to
+the quick download button and select "Export as PNG". When exporting to PNG, you
 have the following configuration options:"""
 
 [[main]]
@@ -70,7 +70,7 @@ en = """- The resolution at which the pages should be rendered, as a number of p
   per inch. The default is `144`."""
 
 [[main]]
-en = """- Which pages to export. Valid options are \\"All pages\\", \\"Current page\\", and
-  \\"Custom ranges\\". Custom ranges are a comma-separated list of numbers or
+en = """- Which pages to export. Valid options are "All pages", "Current page", and
+  "Custom ranges". Custom ranges are a comma-separated list of numbers or
   dash-separated number ranges. Ranges can be half-open. Example: `2,3,7-9,11-`.
 """

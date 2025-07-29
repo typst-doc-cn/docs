@@ -1,7 +1,6 @@
 
 [[main]]
-en = """
-# Page setup guide
+en = """# Page setup guide
 Your page setup is a big part of the first impression your document gives. Line
 lengths, margins, and columns influence
 [appearance](https://practicaltypography.com/page-margins.html) and
@@ -28,18 +27,16 @@ en = """```example
   inset: 4pt,
 )
 >>> #set text(6pt)
->>> #set page(margin: auto)"""
+>>> #set page(margin: auto)
 
-[[main]]
-en = """#set page(
-  paper: \\"iso-b7\\",
+#set page(
+  paper: "iso-b7",
   header: rect(fill: aqua)[Header],
   footer: rect(fill: aqua)[Footer],
   number-align: center,
-)"""
+)
 
-[[main]]
-en = """#rect(fill: aqua.lighten(40%))
+#rect(fill: aqua.lighten(40%))
 ```"""
 
 [[main]]
@@ -60,18 +57,17 @@ en = """## Customize page size and margins { #customize-margins }
 Typst's default page size is A4 paper. Depending on your region and your use
 case, you will want to change this. You can do this by using the
 [`{page}`]($page) set rule and passing it a string argument to use a common page
-size. Options include the complete ISO 216 series (e.g. `\\"iso-a4\\"`, `\\"iso-c2\\"`),
-customary US formats like `\\"us-legal\\"` or `\\"us-letter\\"`, and more. Check out the
+size. Options include the complete ISO 216 series (e.g. `"iso-a4"`, `"iso-c2"`),
+customary US formats like `"us-legal"` or `"us-letter"`, and more. Check out the
 reference for the [page's paper argument]($page.paper) to learn about all
 available options."""
 
 [[main]]
 en = """```example
 >>> #set page(margin: auto)
-#set page(\\"us-letter\\")"""
+#set page("us-letter")
 
-[[main]]
-en = """This page likes freedom.
+This page likes freedom.
 ```"""
 
 [[main]]
@@ -81,10 +77,9 @@ named arguments [`width`]($page.width) and [`height`]($page.height) instead."""
 [[main]]
 en = """```example
 >>> #set page(margin: auto)
-#set page(width: 12cm, height: 12cm)"""
+#set page(width: 12cm, height: 12cm)
 
-[[main]]
-en = """This page is a square.
+This page is a square.
 ```"""
 
 [[main]]
@@ -108,10 +103,9 @@ en = """```example
   top: 3cm,
   bottom: 2cm,
   x: 1.5cm,
-))"""
+))
 
-[[main]]
-en = """#lorem(100)
+#lorem(100)
 ```"""
 
 [[main]]
@@ -155,7 +149,7 @@ and explicitly set where the `inside` and `outside` are, set the
 en = """```typ
 // Produce a book bound on the right,
 // even though it is set in Spanish.
-#set text(lang: \\"es\\")
+#set text(lang: "es")
 #set page(binding: right)
 ```"""
 
@@ -176,15 +170,14 @@ values:"""
 
 [[main]]
 en = """```example
->>> #set page(\\"a5\\", margin: (x: 2.5cm, y: 3cm))
+>>> #set page("a5", margin: (x: 2.5cm, y: 3cm))
 #set page(header: [
   _Lisa Strassner's Thesis_
   #h(1fr)
   National Academy of Sciences
-])"""
+])
 
-[[main]]
-en = """#lorem(150)
+#lorem(150)
 ```"""
 
 [[main]]
@@ -200,17 +193,16 @@ conditionally remove the header on the first page:"""
 
 [[main]]
 en = """```typ
->>> #set page(\\"a5\\", margin: (x: 2.5cm, y: 3cm))
+>>> #set page("a5", margin: (x: 2.5cm, y: 3cm))
 #set page(header: context {
   if counter(page).get().first() > 1 [
     _Lisa Strassner's Thesis_
     #h(1fr)
     National Academy of Sciences
   ]
-})"""
+})
 
-[[main]]
-en = """#lorem(150)
+#lorem(150)
 ```"""
 
 [[main]]
@@ -236,29 +228,26 @@ label exists on the current page:"""
 
 [[main]]
 en = """```typ
->>> #set page(\\"a5\\", margin: (x: 2.5cm, y: 3cm))
+>>> #set page("a5", margin: (x: 2.5cm, y: 3cm))
 #set page(header: context {
   let page-counter =
   let matches = query(<big-table>)
   let current = counter(page).get()
   let has-table = matches.any(m =>
     counter(page).at(m.location()) == current
-  )"""
+  )
 
-[[main]]
-en = """  if not has-table [
+  if not has-table [
     _Lisa Strassner's Thesis_
     #h(1fr)
     National Academy of Sciences
   ]
-}))"""
+}))
 
-[[main]]
-en = """#lorem(100)
-#pagebreak()"""
+#lorem(100)
+#pagebreak()
 
-[[main]]
-en = """#table(
+#table(
   columns: 2 * (1fr,),
   [A], [B],
   [C], [D],
@@ -281,27 +270,25 @@ pages to be numbered."""
 
 [[main]]
 en = """```example
->>> #set page(\\"iso-b6\\", margin: 1.75cm)
-#set page(numbering: \\"1\\")"""
+>>> #set page("iso-b6", margin: 1.75cm)
+#set page(numbering: "1")
 
-[[main]]
-en = """This is a numbered page.
+This is a numbered page.
 ```"""
 
 [[main]]
 en = """Above, you can check out the simplest conceivable example. It adds a single
 Arabic page number at the center of the footer. You can specify other characters
-than `\\"1\\"` to get other numerals. For example, `\\"i\\"` will yield lowercase Roman
+than `"1"` to get other numerals. For example, `"i"` will yield lowercase Roman
 numerals. Any character that is not interpreted as a number will be output
 as-is. For example, put dashes around your page number by typing this:"""
 
 [[main]]
 en = """```example
->>> #set page(\\"iso-b6\\", margin: 1.75cm)
-#set page(numbering: \\"— 1 —\\")"""
+>>> #set page("iso-b6", margin: 1.75cm)
+#set page(numbering: "— 1 —")
 
-[[main]]
-en = """This is a — numbered — page.
+This is a — numbered — page.
 ```"""
 
 [[main]]
@@ -310,11 +297,10 @@ the string."""
 
 [[main]]
 en = """```example
->>> #set page(\\"iso-b6\\", margin: 1.75cm)
-#set page(numbering: \\"1 of 1\\")"""
+>>> #set page("iso-b6", margin: 1.75cm)
+#set page(numbering: "1 of 1")
 
-[[main]]
-en = """This is one of many numbered pages.
+This is one of many numbered pages.
 ```"""
 
 [[main]]
@@ -338,18 +324,17 @@ a custom footer with page numbers and more."""
 
 [[main]]
 en = """```example
->>> #set page(\\"iso-b6\\", margin: 1.75cm)
+>>> #set page("iso-b6", margin: 1.75cm)
 #set page(footer: context [
   *American Society of Proceedings*
   #h(1fr)
   #counter(page).display(
-    \\"1/1\\",
+    "1/1",
     both: true,
   )
-])"""
+])
 
-[[main]]
-en = """This page has a custom footer.
+This page has a custom footer.
 ```"""
 
 [[main]]
@@ -365,7 +350,7 @@ circle for each page."""
 
 [[main]]
 en = """```example
->>> #set page(\\"iso-b6\\", margin: 1.75cm)
+>>> #set page("iso-b6", margin: 1.75cm)
 #set page(footer: context [
   *Fun Typography Club*
   #h(1fr)
@@ -380,10 +365,9 @@ en = """```example
     inset: (bottom: 1pt),
     circles.join(h(1pt))
   )
-])"""
+])
 
-[[main]]
-en = """This page has a custom footer.
+This page has a custom footer.
 ```"""
 
 [[main]]
@@ -439,10 +423,9 @@ value of the [`here`] function:"""
 
 [[main]]
 en = """```example
-#counter(page).update(n => n + 5)"""
+#counter(page).update(n => n + 5)
 
-[[main]]
-en = """// This returns one even though the
+// This returns one even though the
 // page counter was incremented by 5.
 #context here().page()
 ```"""
@@ -467,36 +450,33 @@ the `gutter` parameter."""
 en = """```example
 >>> #set page(height: 120pt)
 #set page(columns: 2)
-#set columns(gutter: 12pt)"""
+#set columns(gutter: 12pt)
 
-[[main]]
-en = """#lorem(30)
+#lorem(30)
 ```"""
 
 [[main]]
 en = """Very commonly, scientific papers have a single-column title and abstract, while
 the main body is set in two-columns. To achieve this effect, Typst's [`place`
 function]($place) can temporarily escape the two-column layout by specifying
-`{float: true}` and `{scope: \\"parent\\"}`:"""
+`{float: true}` and `{scope: "parent"}`:"""
 
 [[main]]
 en = """```example:single
 >>> #set page(height: 180pt)
 #set page(columns: 2)
-#set par(justify: true)"""
+#set par(justify: true)
 
-[[main]]
-en = """#place(
+#place(
   top + center,
   float: true,
-  scope: \\"parent\\",
-  text(1.4em, weight: \\"bold\\")[
+  scope: "parent",
+  text(1.4em, weight: "bold")[
     Impacts of Odobenidae
   ],
-)"""
+)
 
-[[main]]
-en = """== About seals in the wild
+== About seals in the wild
 #lorem(80)
 ```"""
 
@@ -539,8 +519,7 @@ balance columns manually by placing [`[#colbreak()]`]($colbreak) at an
 appropriate spot in your markup, creating the desired column break manually."""
 
 [[main]]
-en = """
-## One-off modifications
+en = """## One-off modifications
 You do not need to override your page settings if you need to insert a single
 page with a different setup. For example, you may want to insert a page that's
 flipped to landscape to insert a big table or change the margin and columns for
@@ -551,12 +530,11 @@ them. Typst will revert to the page settings from the set rule after the call.""
 
 [[main]]
 en = """```example
->>> #set page(\\"a6\\")
+>>> #set page("a6")
 #page(flipped: true)[
-  = Multiplication table"""
+  = Multiplication table
 
-[[main]]
-en = """  #table(
+  #table(
     columns: 5 * (1fr,),
     ..for x in range(1, 10) {
       for y in range(1, 6) {

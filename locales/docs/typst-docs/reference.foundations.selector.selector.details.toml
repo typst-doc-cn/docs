@@ -28,15 +28,16 @@ en = """Multiple selectors can be combined using the methods shown below. Howeve
 not all kinds of selectors are supported in all places, at the moment."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 #context query(
   heading.where(level: 1)
     .or(heading.where(level: 2))
-)"""
+)
 
-[[main]]
-en = """= This will be found
+= This will be found
 == So will this
 === But this will not.
 ```"""

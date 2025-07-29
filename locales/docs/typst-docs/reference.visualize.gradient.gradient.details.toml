@@ -20,8 +20,10 @@ en = """A gradient can be used for the following purposes:
   `{gradient.linear(..).sample(50%)}`"""
 
 [[main]]
-en = """# Examples
-```example
+en = """# Examples"""
+
+[[main]]
+en = """```example
 >>> #set square(size: 50pt)
 #stack(
   dir: ltr,
@@ -35,7 +37,7 @@ en = """# Examples
 [[main]]
 en = """Gradients are also supported on text, but only when setting the
 [relativeness]($gradient.relative) to either `{auto}` (the default value) or
-`{\\"parent\\"}`. To create word-by-word or glyph-by-glyph gradients, you can
+`{"parent"}`. To create word-by-word or glyph-by-glyph gradients, you can
 wrap the words or characters of your text in [boxes]($box) manually or
 through a [show rule]($styling/#show-rules)."""
 
@@ -47,10 +49,9 @@ en = """```example
 #let rainbow(content) = {
   set text(fill: gradient.linear(..color.map.rainbow))
   box(content)
-}"""
+}
 
-[[main]]
-en = """This is a gradient on text, but with a #rainbow[twist]!
+This is a gradient on text, but with a #rainbow[twist]!
 ```"""
 
 [[main]]
@@ -111,21 +112,20 @@ en = """|           Color space           | Perceptually uniform? |
 
 [[main]]
 en = """```preview
->>> #set text(fill: white, font: \\"IBM Plex Sans\\", 8pt)
+>>> #set text(fill: white, font: "IBM Plex Sans", 8pt)
 >>> #set block(spacing: 0pt)
 #let spaces = (
-  (\\"Oklab\\", color.oklab),
-  (\\"Oklch\\", color.oklch),
-  (\\"linear-RGB\\", color.linear-rgb),
-  (\\"sRGB\\", color.rgb),
-  (\\"CMYK\\", color.cmyk),
-  (\\"HSL\\", color.hsl),
-  (\\"HSV\\", color.hsv),
-  (\\"Grayscale\\", color.luma),
-)"""
+  ("Oklab", color.oklab),
+  ("Oklch", color.oklch),
+  ("linear-RGB", color.linear-rgb),
+  ("sRGB", color.rgb),
+  ("CMYK", color.cmyk),
+  ("HSL", color.hsl),
+  ("HSV", color.hsv),
+  ("Grayscale", color.luma),
+)
 
-[[main]]
-en = """#for (name, space) in spaces {
+#for (name, space) in spaces {
   block(
     width: 100%,
     inset: 4pt,

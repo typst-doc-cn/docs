@@ -17,9 +17,9 @@ function."""
 
 [[main]]
 en = """```example
-#sym.arrow.r \\\\
-#sym.gt.eq.not \\\\
-$gt.eq.not$ \\\\
+#sym.arrow.r \\
+#sym.gt.eq.not \\
+$gt.eq.not$ \\
 #emoji.face.halo
 ```"""
 
@@ -31,7 +31,7 @@ see its available variants."""
 
 [[main]]
 en = """```example
-$arrow.l$ \\\\
-$arrow.r$ \\\\
+$arrow.l$ \\
+$arrow.r$ \\
 $arrow.t.quad$
 ```"""

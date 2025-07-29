@@ -18,11 +18,13 @@ floating point numbers, which may give an approximative value."""
 [[main]]
 en = """The YAML files in the example contain objects with authors as keys,
 each with a sequence of their own submapping with the keys
-\\"title\\" and \\"published\\""""
+"title" and "published""""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 #let bookshelf(contents) = {
   for (author, works) in contents {
     author
@@ -30,10 +32,9 @@ en = """# Example
       - #work.title (#work.published)
     ]
   }
-}"""
+}
 
-[[main]]
-en = """#bookshelf(
-  yaml(\\"scifi-authors.yaml\\")
+#bookshelf(
+  yaml("scifi-authors.yaml")
 )
 ```"""

@@ -48,10 +48,10 @@ panic = "abort"   # Abort on panic
 
 [workspace.lints.rustdoc]
 broken_intra_doc_links = "warn"
+missing_crate_level_docs = "warn"
 
 [workspace.lints.rust]
 missing_docs = "warn"
-missing_crate_level_docs = "warn"
 
 unexpected_cfgs = { level = "allow", check-cfg = [
     'cfg(wasm_bindgen_unstable_test_coverage)',

@@ -21,6 +21,3 @@ en = """These components are also available using the
 [[main]]
 en = """Note that CMYK colors are not currently supported when PDF/A output is
 enabled."""
-
-[[main]]
-en = """"""

@@ -7,21 +7,21 @@ en = """Displays a sequence of items vertically, with each item introduced by a
 marker."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 Normal list.
 - Text
 - Math
 - Layout
-- ..."""
+- ...
 
-[[main]]
-en = """Multiple lines.
+Multiple lines.
 - This list item spans multiple
-  lines because it is indented."""
+  lines because it is indented.
 
-[[main]]
-en = """Function call.
+Function call.
 #list(
   [Foundations],
   [Calculate],

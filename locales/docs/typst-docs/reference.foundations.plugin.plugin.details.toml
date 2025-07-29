@@ -19,25 +19,28 @@ en = """For security reasons, plugins run in isolation from your system. This me
 that printing, reading files, or similar things are not supported."""
 
 [[main]]
-en = """# Example
-```example
-#let myplugin = plugin(\\"hello.wasm\\")
+en = """# Example"""
+
+[[main]]
+en = """```example
+#let myplugin = plugin("hello.wasm")
 #let concat(a, b) = str(
   myplugin.concatenate(
     bytes(a),
     bytes(b),
   )
-)"""
+)
 
-[[main]]
-en = """#concat(\\"hello\\", \\"world\\")
+#concat("hello", "world")
 ```"""
 
 [[main]]
 en = """Since the plugin function returns a module, it can be used with import
-syntax:
-```typ
-#import plugin(\\"hello.wasm\\"): concatenate
+syntax:"""
+
+[[main]]
+en = """```typ
+#import plugin("hello.wasm"): concatenate
 ```"""
 
 [[main]]
@@ -127,11 +130,11 @@ Plugin modules need to import two functions that are provided by the
 runtime. (Types and functions are described using WAT syntax.)"""
 
 [[main]]
-en = """- `(import \\"typst_env\\" \\"wasm_minimal_protocol_write_args_to_buffer\\" (func
+en = """- `(import "typst_env" "wasm_minimal_protocol_write_args_to_buffer" (func
   (param i32)))`"""
 
 [[main]]
-en = """  Writes the arguments for the current function into a plugin-allocated
+en = """Writes the arguments for the current function into a plugin-allocated
   buffer. When a plugin function is called, it [receives the
   lengths](#exports) of its input buffers as arguments. It should then
   allocate a buffer whose capacity is at least the sum of these lengths. It
@@ -139,11 +142,11 @@ en = """  Writes the arguments for the current function into a plugin-allocated
   the arguments, one after another."""
 
 [[main]]
-en = """- `(import \\"typst_env\\" \\"wasm_minimal_protocol_send_result_to_host\\" (func
+en = """- `(import "typst_env" "wasm_minimal_protocol_send_result_to_host" (func
   (param i32 i32)))`"""
 
 [[main]]
-en = """  Sends the output of the current function to the host (Typst). The first
+en = """Sends the output of the current function to the host (Typst). The first
   parameter shall be a pointer to a buffer (`ptr`), while the second is the
   length of that buffer (`len`). The memory pointed at by `ptr` can be freed
   immediately after this function returns. If the message should be

@@ -16,11 +16,12 @@ en = """The [Guide for Page Setup]($guides/page-setup-guide) explains how to use
 this and related functions to set up a document with many examples."""
 
 [[main]]
-en = """# Example
-```example
->>> #set page(margin: auto)
-#set page(\\"us-letter\\")"""
+en = """# Example"""
 
 [[main]]
-en = """There you go, US friends!
+en = """```example
+>>> #set page(margin: auto)
+#set page("us-letter")
+
+There you go, US friends!
 ```"""

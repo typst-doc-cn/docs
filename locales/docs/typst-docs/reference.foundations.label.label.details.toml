@@ -16,14 +16,15 @@ en = """Once constructed, you can get the name of a label using
 [`str`]($str/#constructor)."""
 
 [[main]]
-en = """# Example
-```example
-#show <a>: set text(blue)
-#show label(\\"b\\"): set text(red)"""
+en = """# Example"""
 
 [[main]]
-en = """= Heading <a>
-*Strong* #label(\\"b\\")
+en = """```example
+#show <a>: set text(blue)
+#show label("b"): set text(red)
+
+= Heading <a>
+*Strong* #label("b")
 ```"""
 
 [[main]]
@@ -35,17 +36,16 @@ name can contain letters, numbers, `_`, `-`, `:`, and `.`."""
 [[main]]
 en = """Note that there is a syntactical difference when using the dedicated syntax
 for this function. In the code below, the `[<a>]` terminates the heading and
-thus attaches to the heading itself, whereas the `[#label(\\"b\\")]` is part of
+thus attaches to the heading itself, whereas the `[#label("b")]` is part of
 the heading and thus attaches to the heading's text."""
 
 [[main]]
 en = """```typ
 // Equivalent to `#heading[Introduction] <a>`.
-= Introduction <a>"""
+= Introduction <a>
 
-[[main]]
-en = """// Equivalent to `#heading[Conclusion #label(\\"b\\")]`.
-= Conclusion #label(\\"b\\")
+// Equivalent to `#heading[Conclusion #label("b")]`.
+= Conclusion #label("b")
 ```"""
 
 [[main]]

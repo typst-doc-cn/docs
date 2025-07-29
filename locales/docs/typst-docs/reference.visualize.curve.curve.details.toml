@@ -24,8 +24,10 @@ en = """Bézier curve control points can be skipped by passing `{none}` or
 automatically mirrored from the preceding segment by passing `{auto}`."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 #curve(
   fill: blue.lighten(80%),
   stroke: blue,

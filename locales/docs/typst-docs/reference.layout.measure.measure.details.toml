@@ -30,11 +30,10 @@ en = """For this reason, you can only measure when context is available."""
 en = """```example
 #let thing(body) = context {
   let size = measure(body)
-  [Width of \\"#body\\" is #size.width]
-}"""
+  [Width of "#body" is #size.width]
+}
 
-[[main]]
-en = """#thing[Hey] \\\\
+#thing[Hey] \\
 #thing[Welcome]
 ```"""
 

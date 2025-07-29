@@ -23,6 +23,3 @@ en = """  - A [`location`] (typically retrieved from [`here`], [`locate`] or
 en = """  - A dictionary with a `page` key of type [integer]($int) and `x` and
     `y` coordinates of type [length]. Pages are counted from one, and
     the coordinates are relative to the page's top left corner."""
-
-[[main]]
-en = """"""

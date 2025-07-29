@@ -16,18 +16,18 @@ en = """Within math mode, function calls have special behaviour. See the
 [math documentation]($category/math) for more details."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 // Call a function.
-#list([A], [B])"""
+#list([A], [B])
 
-[[main]]
-en = """// Named arguments and trailing
+// Named arguments and trailing
 // content blocks.
-#enum(start: 2)[A][B]"""
+#enum(start: 2)[A][B]
 
-[[main]]
-en = """// Version without parentheses.
+// Version without parentheses.
 #list[A][B]
 ```"""
 
@@ -89,17 +89,15 @@ en = """```example
     fill: fill,
     inset: 8pt,
     radius: 4pt,
-    [*Warning:\\\\ #body*],
+    [*Warning:\\ #body*],
   )
-}"""
+}
 
-[[main]]
-en = """#alert[
+#alert[
   Danger is imminent!
-]"""
+]
 
-[[main]]
-en = """#alert(fill: blue)[
+#alert(fill: blue)[
   KEEP OFF TRACKS
 ]
 ```"""
@@ -109,7 +107,7 @@ en = """# Importing functions
 Functions can be imported from one file ([`module`]($scripting/#modules)) into
 another using `{import}`. For example, assume that we have defined the `alert`
 function from the previous example in a file called `foo.typ`. We can import
-it into another file by writing `{import \\"foo.typ\\": alert}`."""
+it into another file by writing `{import "foo.typ": alert}`."""
 
 [[main]]
 en = """# Unnamed functions { #unnamed }
@@ -122,14 +120,14 @@ for settable properties that take functions like the page function's
 
 [[main]]
 en = """```example
-#show \\"once?\\": it => [#it #it]
+#show "once?": it => [#it #it]
 once?
 ```"""
 
 [[main]]
 en = """# Note on function purity
 In Typst, all functions are _pure._ This means that for the same
-arguments, they always return the same result. They cannot \\"remember\\" things to
+arguments, they always return the same result. They cannot "remember" things to
 produce another value when they are called a second time."""
 
 [[main]]

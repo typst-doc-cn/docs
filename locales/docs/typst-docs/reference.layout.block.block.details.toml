@@ -14,8 +14,10 @@ for more details."""
 [[main]]
 en = """# Examples
 With a block, you can give a background to content while still allowing it
-to break across multiple pages.
-```example
+to break across multiple pages."""
+
+[[main]]
+en = """```example
 #set page(height: 100pt)
 #block(
   fill: luma(230),
@@ -27,14 +29,15 @@ to break across multiple pages.
 
 [[main]]
 en = """Blocks are also useful to force elements that would otherwise be inline to
-become block-level, especially when writing show rules.
-```example
-#show heading: it => it.body
-= Blockless
-More text."""
+become block-level, especially when writing show rules."""
 
 [[main]]
-en = """#show heading: it => block(it.body)
+en = """```example
+#show heading: it => it.body
+= Blockless
+More text.
+
+#show heading: it => block(it.body)
 = Blocky
 More text.
 ```"""

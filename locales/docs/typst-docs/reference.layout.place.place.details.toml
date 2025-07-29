@@ -23,20 +23,20 @@ margins, you can use `place` in [`page.foreground`]($page.foreground) or
 [`page.background`]($page.background)."""
 
 [[main]]
-en = """# Examples
-```example
-#set page(height: 120pt)
-Hello, world!"""
+en = """# Examples"""
 
 [[main]]
-en = """#rect(
+en = """```example
+#set page(height: 120pt)
+Hello, world!
+
+#rect(
   width: 100%,
   height: 2cm,
   place(horizon + right, square()),
-)"""
+)
 
-[[main]]
-en = """#place(
+#place(
   top + left,
   dx: -5pt,
   square(size: 5pt, fill: red),
@@ -64,10 +64,9 @@ en = """```example
   box(place(..args))
   sym.wj
   h(0pt, weak: true)
-}"""
+}
 
-[[main]]
-en = """A placed #annotate(square(), dy: 2pt)
+A placed #annotate(square(), dy: 2pt)
 square in my text.
 ```"""
 

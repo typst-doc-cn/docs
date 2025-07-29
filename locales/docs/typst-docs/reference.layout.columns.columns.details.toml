@@ -27,18 +27,16 @@ parent-scoped floating placement:"""
 
 [[main]]
 en = """```example:single
-#set page(columns: 2, height: 150pt)"""
+#set page(columns: 2, height: 150pt)
 
-[[main]]
-en = """#place(
+#place(
   top + center,
-  scope: \\"parent\\",
+  scope: "parent",
   float: true,
-  text(1.4em, weight: \\"bold\\")[
+  text(1.4em, weight: "bold")[
     My document
   ],
-)"""
+)
 
-[[main]]
-en = """#lorem(40)
+#lorem(40)
 ```"""

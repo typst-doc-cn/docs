@@ -21,10 +21,9 @@ each item in the array corresponds to one level."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \\"1.\\")"""
+#set heading(numbering: "1.")
 
-[[main]]
-en = """= Introduction
+= Introduction
 Raw value of heading counter is
 #context counter(heading).get()
 ```"""
@@ -38,21 +37,18 @@ it either with a provided or with an automatically inferred [numbering]."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \\"1.\\")"""
+#set heading(numbering: "1.")
 
-[[main]]
-en = """= Introduction
-Some text here."""
+= Introduction
+Some text here.
 
-[[main]]
-en = """= Background
+= Background
 The current value is: #context {
   counter(heading).display()
-}"""
+}
 
-[[main]]
-en = """Or in roman numerals: #context {
-  counter(heading).display(\\"I\\")
+Or in roman numerals: #context {
+  counter(heading).display("I")
 }
 ```"""
 
@@ -78,24 +74,20 @@ second update."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \\"1.\\")"""
+#set heading(numbering: "1.")
 
-[[main]]
-en = """= Introduction
-#counter(heading).step()"""
+= Introduction
+#counter(heading).step()
 
-[[main]]
-en = """= Background
+= Background
 #counter(heading).update(3)
-#counter(heading).update(n => n * 2)"""
+#counter(heading).update(n => n * 2)
 
-[[main]]
-en = """= Analysis
+= Analysis
 Let's skip 7.1.
-#counter(heading).step(level: 2)"""
+#counter(heading).step(level: 2)
 
-[[main]]
-en = """== Analysis
+== Analysis
 Still at #context {
   counter(heading).display()
 }
@@ -114,19 +106,16 @@ en = """```example
 >>>   height: 100pt,
 >>>   margin: (bottom: 24pt, rest: 16pt),
 >>> )
-#set page(numbering: \\"(i)\\")"""
+#set page(numbering: "(i)")
 
-[[main]]
-en = """= Preface
+= Preface
 The preface is numbered with
-roman numerals."""
+roman numerals.
 
-[[main]]
-en = """#set page(numbering: \\"1 / 1\\")
-#counter(page).update(1)"""
+#set page(numbering: "1 / 1")
+#counter(page).update(1)
 
-[[main]]
-en = """= Main text
+= Main text
 Here, the counter is reset to one.
 We also display both the current
 page and total number of pages in
@@ -140,10 +129,10 @@ key. This key identifies the counter globally."""
 
 [[main]]
 en = """```example
-#let mine = counter(\\"mycounter\\")
-#context mine.display() \\\\
+#let mine = counter("mycounter")
+#context mine.display() \\
 #mine.step()
-#context mine.display() \\\\
+#context mine.display() \\
 #mine.update(c => c * 3)
 #context mine.display()
 ```"""
@@ -159,15 +148,14 @@ contents."""
 
 [[main]]
 en = """```example
-#let c = counter(\\"theorem\\")
+#let c = counter("theorem")
 #let theorem(it) = block[
   #c.step()
   *Theorem #context c.display():*
   #it
-]"""
+]
 
-[[main]]
-en = """#theorem[$1 = 1$]
+#theorem[$1 = 1$]
 #theorem[$2 < 3$]
 ```"""
 
@@ -191,25 +179,21 @@ particular location in the document."""
 
 [[main]]
 en = """```example
-#let mine = counter(\\"mycounter\\")"""
+#let mine = counter("mycounter")
 
-[[main]]
-en = """= Values
+= Values
 #context [
-  Value here: #mine.get() \\\\
-  At intro: #mine.at(<intro>) \\\\
+  Value here: #mine.get() \\
+  At intro: #mine.at(<intro>) \\
   Final value: #mine.final()
-]"""
+]
 
-[[main]]
-en = """#mine.update(n => n + 3)"""
+#mine.update(n => n + 3)
 
-[[main]]
-en = """= Introduction <intro>
-#lorem(10)"""
+= Introduction <intro>
+#lorem(10)
 
-[[main]]
-en = """#mine.step()
+#mine.step()
 #mine.step()
 ```"""
 

@@ -48,12 +48,12 @@ en = """- Which pages to export by specifying `--pages` followed by a comma-sepa
 
 [[main]]
 en = """## Web App
-Click \\"File\\" > \\"Export as\\" > \\"SVG\\" or click the downwards-facing arrow next to
-the quick download button and select \\"Export as SVG\\". When exporting to SVG, you
+Click "File" > "Export as" > "SVG" or click the downwards-facing arrow next to
+the quick download button and select "Export as SVG". When exporting to SVG, you
 have the following configuration options:"""
 
 [[main]]
-en = """- Which pages to export. Valid options are \\"All pages\\", \\"Current page\\", and
-  \\"Custom ranges\\". Custom ranges are a comma-separated list of numbers or
+en = """- Which pages to export. Valid options are "All pages", "Current page", and
+  "Custom ranges". Custom ranges are a comma-separated list of numbers or
   dash-separated number ranges. Ranges can be half-open. Example: `2,3,7-9,11-`.
 """

@@ -1,7 +1,6 @@
 
 [[main]]
-en = """
-# Writing in Typst
+en = """# Writing in Typst
 Let's get started! Suppose you got assigned to write a technical report for
 university. It will contain prose, maths, headings, and figures. To get started,
 you create a new project on the Typst app. You'll be taken to the editor where
@@ -102,7 +101,7 @@ show up on the page, we use Typst's [`image`] function."""
 
 [[main]]
 en = """```example
-#image(\\"glacier.jpg\\")
+#image("glacier.jpg")
 ```"""
 
 [[main]]
@@ -124,7 +123,7 @@ they are separated by commas, so we first need to put a comma behind the path.""
 
 [[main]]
 en = """```example
-#image(\\"glacier.jpg\\", width: 70%)
+#image("glacier.jpg", width: 70%)
 ```"""
 
 [[main]]
@@ -152,7 +151,7 @@ enclose it in square brackets. This construct is called a _content block._"""
 [[main]]
 en = """```example
 #figure(
-  image(\\"glacier.jpg\\", width: 70%),
+  image("glacier.jpg", width: 70%),
   caption: [
     _Glaciers_ form an important part
     of the earth's climate system.
@@ -172,11 +171,10 @@ make them referenceable."""
 en = """```example
 Glaciers as the one shown in
 @glaciers will cease to exist if
-we don't take action soon!"""
+we don't take action soon!
 
-[[main]]
-en = """#figure(
-  image(\\"glacier.jpg\\", width: 70%),
+#figure(
+  image("glacier.jpg", width: 70%),
   caption: [
     _Glaciers_ form an important part
     of the earth's climate system.
@@ -185,7 +183,7 @@ en = """#figure(
 ```"""
 
 [[main]]
-en = """<div class=\\"info-box\\">"""
+en = """<div class="info-box">"""
 
 [[main]]
 en = """So far, we've passed content blocks (markup in square brackets) and strings
@@ -229,10 +227,9 @@ document. Typst supports different citation and bibliography styles. Consult the
 en = """```example
 = Methods
 We follow the glacier melting models
-established in @glacier-melt."""
+established in @glacier-melt.
 
-[[main]]
-en = """#bibliography(\\"works.bib\\")
+#bibliography("works.bib")
 ```"""
 
 [[main]]
@@ -256,10 +253,9 @@ start and end:"""
 [[main]]
 en = """```example
 The flow rate of a glacier is
-defined by the following equation:"""
+defined by the following equation:
 
-[[main]]
-en = """$ Q = rho A v + C $
+$ Q = rho A v + C $
 ```"""
 
 [[main]]
@@ -276,10 +272,9 @@ enclose it in quotes:"""
 [[main]]
 en = """```example
 The flow rate of a glacier is given
-by the following equation:"""
+by the following equation:
 
-[[main]]
-en = """$ Q = rho A v + \\"time offset\\" $
+$ Q = rho A v + "time offset" $
 ```"""
 
 [[main]]
@@ -288,10 +283,9 @@ then specify the range of the summation in sub- and superscripts:"""
 
 [[main]]
 en = """```example
-Total displaced soil by glacial flow:"""
+Total displaced soil by glacial flow:
 
-[[main]]
-en = """$ 7.32 beta +
+$ 7.32 beta +
   sum_(i=0)^nabla Q_i / 2 $
 ```"""
 
@@ -310,10 +304,9 @@ sub-expressions with the appropriate notation."""
 
 [[main]]
 en = """```example
-Total displaced soil by glacial flow:"""
+Total displaced soil by glacial flow:
 
-[[main]]
-en = """$ 7.32 beta +
+$ 7.32 beta +
   sum_(i=0)^nabla
     (Q_i (a_i - epsilon)) / 2 $
 ```"""

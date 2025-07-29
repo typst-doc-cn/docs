@@ -23,13 +23,15 @@ en = """The JSON files in the example contain objects with the keys `temperature
 `unit`, and `weather`."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 #let forecast(day) = block[
   #box(square(
     width: 2cm,
     inset: 8pt,
-    fill: if day.weather == \\"sunny\\" {
+    fill: if day.weather == "sunny" {
       yellow
     } else {
       aqua
@@ -42,9 +44,8 @@ en = """# Example
   #h(6pt)
   #set text(22pt, baseline: -8pt)
   #day.temperature °#day.unit
-]"""
+]
 
-[[main]]
-en = """#forecast(json(\\"monday.json\\"))
-#forecast(json(\\"tuesday.json\\"))
+#forecast(json("monday.json"))
+#forecast(json("tuesday.json"))
 ```"""

@@ -1,7 +1,6 @@
 
 [[main]]
-en = """
-# Table guide
+en = """# Table guide
 Tables are a great way to present data to your readers in an easily readable,
 compact, and organized manner. They are not only used for numerical values, but
 also survey responses, task planning, schedules, and more. Because of this wide
@@ -100,10 +99,9 @@ quickly becomes useful if your document contains multiple tables!"""
 
 [[main]]
 en = """```example
-#show table.cell.where(y: 0): strong"""
+#show table.cell.where(y: 0): strong
 
-[[main]]
-en = """#table(
+#table(
   columns: 2,
   table.header[Amount][Ingredient],
   [360g], [Baking flour],
@@ -207,24 +205,21 @@ en = """Let's take a look at a captioned table and how to reference it in prose:
 [[main]]
 en = """```example
 >>> #set page(width: 14cm)
-#show table.cell.where(y: 0): set text(weight: \\"bold\\")"""
+#show table.cell.where(y: 0): set text(weight: "bold")
 
-[[main]]
-en = """#figure(
+#figure(
   table(
     columns: 4,
-    stroke: none,"""
+    stroke: none,
 
-[[main]]
-en = """    table.header[Test Item][Specification][Test Result][Compliance],
+    table.header[Test Item][Specification][Test Result][Compliance],
     [Voltage], [220V ± 5%], [218V], [Pass],
     [Current], [5A ± 0.5A], [4.2A], [Fail],
   ),
   caption: [Probe results for design A],
-) <probe-a>"""
+) <probe-a>
 
-[[main]]
-en = """The results from @probe-a show that the design is not yet optimal.
+The results from @probe-a show that the design is not yet optimal.
 We will show how its performance can be improved in this section.
 ```"""
 
@@ -270,37 +265,31 @@ en = """Let's start with an example of a horizontally striped table:"""
 [[main]]
 en = """```example
 >>> #set page(width: 16cm)
-#set text(font: \\"IBM Plex Sans\\")"""
+#set text(font: "IBM Plex Sans")
 
-[[main]]
-en = """// Medium bold table header.
-#show table.cell.where(y: 0): set text(weight: \\"medium\\")"""
+// Medium bold table header.
+#show table.cell.where(y: 0): set text(weight: "medium")
 
-[[main]]
-en = """// Bold titles.
-#show table.cell.where(x: 1): set text(weight: \\"bold\\")"""
+// Bold titles.
+#show table.cell.where(x: 1): set text(weight: "bold")
 
-[[main]]
-en = """// See the strokes section for details on this!
+// See the strokes section for details on this!
 #let frame(stroke) = (x, y) => (
   left: if x > 0 { 0pt } else { stroke },
   right: stroke,
   top: if y < 2 { stroke } else { 0pt },
   bottom: stroke,
-)"""
+)
 
-[[main]]
-en = """#set table(
-  fill: (rgb(\\"EAF2F5\\"), none),
-  stroke: frame(rgb(\\"21222C\\")),
-)"""
+#set table(
+  fill: (rgb("EAF2F5"), none),
+  stroke: frame(rgb("21222C")),
+)
 
-[[main]]
-en = """#table(
-  columns: (0.4fr, 1fr, 1fr, 1fr),"""
+#table(
+  columns: (0.4fr, 1fr, 1fr, 1fr),
 
-[[main]]
-en = """  table.header[Month][Title][Author][Genre],
+  table.header[Month][Title][Author][Genre],
   [January], [The Great Gatsby], [F. Scott Fitzgerald], [Classic],
   [February], [To Kill a Mockingbird], [Harper Lee], [Drama],
   [March], [1984], [George Orwell], [Dystopian],
@@ -309,7 +298,7 @@ en = """  table.header[Month][Title][Author][Genre],
 ```"""
 
 [[main]]
-en = """This example shows a book club reading list. The line `{fill: (rgb(\\"EAF2F5\\"),
+en = """This example shows a book club reading list. The line `{fill: (rgb("EAF2F5"),
  none)}` in `table`'s set rule is all that is needed to add striped columns. It
 tells Typst to alternate between coloring columns with a light blue (in the
 [`rgb`]($color.rgb) function call) and nothing (`{none}`). Note that we
@@ -331,9 +320,9 @@ horizontal stripes instead:"""
 [[main]]
 en = """```example
 >>> #set page(width: 16cm)
->>> #set text(font: \\"IBM Plex Sans\\")
->>> #show table.cell.where(x: 1): set text(weight: \\"medium\\")
->>> #show table.cell.where(y: 0): set text(weight: \\"bold\\")
+>>> #set text(font: "IBM Plex Sans")
+>>> #show table.cell.where(x: 1): set text(weight: "medium")
+>>> #show table.cell.where(y: 0): set text(weight: "bold")
 >>>
 >>> #let frame(stroke) = (x, y) => (
 >>>   left: if x > 0 { 0pt } else { stroke },
@@ -343,8 +332,8 @@ en = """```example
 >>> )
 >>>
 #set table(
-  fill: (_, y) => if calc.odd(y) { rgb(\\"EAF2F5\\") },
-  stroke: frame(rgb(\\"21222C\\")),
+  fill: (_, y) => if calc.odd(y) { rgb("EAF2F5") },
+  stroke: frame(rgb("21222C")),
 )
 >>>
 >>> #table(
@@ -377,9 +366,9 @@ something like this:"""
 [[main]]
 en = """```example
 >>> #set page(width: 16cm)
->>> #set text(font: \\"IBM Plex Sans\\")
->>> #show table.cell.where(x: 1): set text(weight: \\"medium\\")
->>> #show table.cell.where(y: 0): set text(weight: \\"bold\\")
+>>> #set text(font: "IBM Plex Sans")
+>>> #show table.cell.where(x: 1): set text(weight: "medium")
+>>> #show table.cell.where(y: 0): set text(weight: "bold")
 >>>
 >>> #let frame(stroke) = (x, y) => (
 >>>   left: if x > 0 { 0pt } else { stroke },
@@ -389,8 +378,8 @@ en = """```example
 >>> )
 >>>
 #set table(
-  fill: (_, y) => (none, rgb(\\"EAF2F5\\"), rgb(\\"DDEAEF\\")).at(calc.rem(y, 3)),
-  stroke: frame(rgb(\\"21222C\\")),
+  fill: (_, y) => (none, rgb("EAF2F5"), rgb("DDEAEF")).at(calc.rem(y, 3)),
+  stroke: frame(rgb("21222C")),
 )
 >>>
 >>> #table(
@@ -419,9 +408,9 @@ en = """Finally, here is a bonus example that uses the _stroke_ to achieve strip
 [[main]]
 en = """```example
 >>> #set page(width: 16cm)
->>> #set text(font: \\"IBM Plex Sans\\")
->>> #show table.cell.where(x: 1): set text(weight: \\"medium\\")
->>> #show table.cell.where(y: 0): set text(weight: \\"bold\\")
+>>> #set text(font: "IBM Plex Sans")
+>>> #show table.cell.where(x: 1): set text(weight: "medium")
+>>> #show table.cell.where(y: 0): set text(weight: "bold")
 >>>
 >>> #let frame(stroke) = (x, y) => (
 >>>   left: if x > 0 { 0pt } else { stroke },
@@ -467,20 +456,17 @@ colored in the color of their party."""
 [[main]]
 en = """```example
 >>> #set page(width: 10cm)
-#set text(font: \\"Roboto\\")"""
+#set text(font: "Roboto")
 
-[[main]]
-en = """#let cdu(name) = ([CDU], table.cell(fill: black, text(fill: white, name)))
+#let cdu(name) = ([CDU], table.cell(fill: black, text(fill: white, name)))
 #let spd(name) = ([SPD], table.cell(fill: red, text(fill: white, name)))
-#let fdp(name) = ([FDP], table.cell(fill: yellow, name))"""
+#let fdp(name) = ([FDP], table.cell(fill: yellow, name))
 
-[[main]]
-en = """#table(
+#table(
   columns: (auto, auto, 1fr),
-  stroke: (x: none),"""
+  stroke: (x: none),
 
-[[main]]
-en = """  table.header[Tenure][Party][President],
+  table.header[Tenure][Party][President],
   [1949-1959], ..fdp[Theodor Heuss],
   [1959-1969], ..cdu[Heinrich Lübke],
   [1969-1974], ..spd[Gustav Heinemann],
@@ -555,7 +541,7 @@ en = """Let's start by modifying the color and thickness of the stroke:"""
 en = """```example
 #table(
   columns: 4,
-  stroke: 0.5pt + rgb(\\"666675\\"),
+  stroke: 0.5pt + rgb("666675"),
   [*Monday*], [11.5], [13.0], [4.0],
   [*Tuesday*], [8.0], [14.5], [5.0],
   [*Wednesday*], [9.0], [18.5], [13.0],
@@ -579,10 +565,9 @@ is useful if you are writing a template or want to style your whole document."""
 [[main]]
 en = """```typ
 // Renders the exact same as the last example
-#set table(stroke: 0.5pt + rgb(\\"666675\\"))"""
+#set table(stroke: 0.5pt + rgb("666675"))
 
-[[main]]
-en = """#table(
+#table(
   columns: 4,
   [*Monday*], [11.5], [13.0], [4.0],
   [*Tuesday*], [8.0], [14.5], [5.0],
@@ -650,10 +635,9 @@ en = """Let's take a look at the following example from the reference:"""
 
 [[main]]
 en = """```example
-#set table.hline(stroke: 0.6pt)"""
+#set table.hline(stroke: 0.6pt)
 
-[[main]]
-en = """#table(
+#table(
   stroke: none,
   columns: (auto, 1fr),
   // Morning schedule abridged.
@@ -679,10 +663,9 @@ move them to a different position by adding the `y` (for `hline`) or `x` (for
 
 [[main]]
 en = """```typ
-#set table.hline(stroke: 0.6pt)"""
+#set table.hline(stroke: 0.6pt)
 
-[[main]]
-en = """#table(
+#table(
   stroke: none,
   columns: (auto, 1fr),
   // Morning schedule abridged.
@@ -754,22 +737,19 @@ en = """```example
 >>> #set page(width: 16cm)
 #table(
   columns: 3,
-  stroke: (x: none),"""
+  stroke: (x: none),
 
-[[main]]
-en = """  [], [*High Neuroticism*], [*Low Neuroticism*],"""
+  [], [*High Neuroticism*], [*Low Neuroticism*],
 
-[[main]]
-en = """  [*High Agreeableness*],
+  [*High Agreeableness*],
   table.cell(stroke: orange + 2pt)[
-    _Sensitive_ \\\\ Prone to emotional distress but very empathetic.
+    _Sensitive_ \\ Prone to emotional distress but very empathetic.
   ],
-  [_Compassionate_ \\\\ Caring and stable, often seen as a supportive figure.],"""
+  [_Compassionate_ \\ Caring and stable, often seen as a supportive figure.],
 
-[[main]]
-en = """  [*Low Agreeableness*],
-  [_Contentious_ \\\\ Competitive and easily agitated.],
-  [_Detached_ \\\\ Independent and calm, may appear aloof.],
+  [*Low Agreeableness*],
+  [_Contentious_ \\ Competitive and easily agitated.],
+  [_Detached_ \\ Independent and calm, may appear aloof.],
 )
 ```"""
 
@@ -797,12 +777,11 @@ very first and last line."""
 
 [[main]]
 en = """```example
-#show table.cell.where(x: 0): set text(style: \\"italic\\")
-#show table.cell.where(y: 0): set text(style: \\"normal\\", weight: \\"bold\\")
-#set table(stroke: (_, y) => if y > 0 { (top: 0.8pt) })"""
+#show table.cell.where(x: 0): set text(style: "italic")
+#show table.cell.where(y: 0): set text(style: "normal", weight: "bold")
+#set table(stroke: (_, y) => if y > 0 { (top: 0.8pt) })
 
-[[main]]
-en = """#table(
+#table(
   columns: 3,
   align: center + horizon,
   table.header[Technique][Advantage][Drawback],
@@ -827,17 +806,16 @@ below the first row:"""
 [[main]]
 en = """```example
 >>> #show table.cell: it => if it.x == 0 and it.y > 0 {
->>>   set text(style: \\"italic\\")
+>>>   set text(style: "italic")
 >>>   it
 >>> } else {
 >>>   it
 >>> }
 >>>
 >>> #show table.cell.where(y: 0): strong
-#set table(stroke: (_, y) => if y == 0 { (bottom: 1pt) })"""
+#set table(stroke: (_, y) => if y == 0 { (bottom: 1pt) })
 
-[[main]]
-en = """<<< // Table as seen above
+<<< // Table as seen above
 >>> #table(
 >>>   columns: 3,
 >>>   align: center + horizon,
@@ -859,7 +837,7 @@ en = """The next example shows how to draw all but the outer lines:"""
 [[main]]
 en = """```example
 >>> #show table.cell: it => if it.x == 0 and it.y > 0 {
->>>   set text(style: \\"italic\\")
+>>>   set text(style: "italic")
 >>>   it
 >>> } else {
 >>>   it
@@ -869,10 +847,9 @@ en = """```example
 #set table(stroke: (x, y) => (
   left: if x > 0 { 0.8pt },
   top: if y > 0 { 0.8pt },
-))"""
+))
 
-[[main]]
-en = """<<< // Table as seen above
+<<< // Table as seen above
 >>> #table(
 >>>   columns: 3,
 >>>   align: center + horizon,
@@ -896,7 +873,7 @@ calendar."""
 [[main]]
 en = """```example
 >>> #show table.cell: it => if it.x == 0 and it.y > 0 {
->>>   set text(style: \\"italic\\")
+>>>   set text(style: "italic")
 >>>   it
 >>> } else {
 >>>   it
@@ -904,14 +881,13 @@ en = """```example
 >>>
 >>> #show table.cell.where(y: 0): strong
 #set table(stroke: (x, y) => (
-  left: if x == 0 or y > 0 { 1pt } else {\\u{a0}0pt },
+  left: if x == 0 or y > 0 { 1pt } else { 0pt },
   right: 1pt,
-  top: if y <= 1 { 1pt } else {\\u{a0}0pt },
+  top: if y <= 1 { 1pt } else { 0pt },
   bottom: 1pt,
-))"""
+))
 
-[[main]]
-en = """<<< // Table as seen above
+<<< // Table as seen above
 >>> #table(
 >>>   columns: 3,
 >>>   align: center + horizon,
@@ -991,18 +967,16 @@ everything else by providing an array in the `align` argument:"""
 [[main]]
 en = """```example
 >>> #set page(width: 12cm)
-#set text(font: \\"IBM Plex Sans\\")
-#show table.cell.where(y: 0): set text(weight: \\"bold\\")"""
+#set text(font: "IBM Plex Sans")
+#show table.cell.where(y: 0): set text(weight: "bold")
 
-[[main]]
-en = """#table(
+#table(
   columns: 4,
   align: (right, left, left, left),
   fill: (_, y) => if calc.odd(y) { green.lighten(90%) },
-  stroke: none,"""
+  stroke: none,
 
-[[main]]
-en = """  table.header[Day][Location][Hotel or Apartment][Activities],
+  table.header[Day][Location][Hotel or Apartment][Activities],
   [1], [Paris, France], [Hôtel de l'Europe], [Arrival, Evening River Cruise],
   [2], [Paris, France], [Hôtel de l'Europe], [Louvre Museum, Eiffel Tower],
   [3], [Lyon, France], [Lyon City Hotel], [City Tour, Local Cuisine Tasting],
@@ -1018,20 +992,18 @@ bottom-aligned. Let's use a function instead to do so:"""
 [[main]]
 en = """```example
 >>> #set page(width: 12cm)
-#set text(font: \\"IBM Plex Sans\\")
-#show table.cell.where(y: 0): set text(weight: \\"bold\\")"""
+#set text(font: "IBM Plex Sans")
+#show table.cell.where(y: 0): set text(weight: "bold")
 
-[[main]]
-en = """#table(
+#table(
   columns: 4,
   align: (x, y) =>
     if x == 0 { right } else { left } +
     if y == 0 { bottom } else { top },
   fill: (_, y) => if calc.odd(y) { green.lighten(90%) },
-  stroke: none,"""
+  stroke: none,
 
-[[main]]
-en = """  table.header[Day][Location][Hotel or Apartment][Activities],
+  table.header[Day][Location][Hotel or Apartment][Activities],
   [1], [Paris, France], [Hôtel de l'Europe], [Arrival, Evening River Cruise],
   [2], [Paris, France], [Hôtel de l'Europe], [Louvre Museum, Eiffel Tower],
 <<<  // ... remaining days omitted
@@ -1074,16 +1046,14 @@ en = """```example
 >>> #set page(width: 22cm)
 #let ofi = [Office]
 #let rem = [_Remote_]
-#let lea = [*On leave*]"""
+#let lea = [*On leave*]
 
-[[main]]
-en = """#show table.cell.where(y: 0): set text(
+#show table.cell.where(y: 0): set text(
   fill: white,
-  weight: \\"bold\\",
-)"""
+  weight: "bold",
+)
 
-[[main]]
-en = """#table(
+#table(
   columns: 6 * (1fr,),
   align: (x, y) => if x == 0 or y == 0 { left } else { center },
   stroke: (x, y) => (
@@ -1091,10 +1061,9 @@ en = """#table(
     left: if y == 0 and x > 0 { white } else { black },
     rest: black,
   ),
-  fill: (_, y) => if y == 0 { black },"""
+  fill: (_, y) => if y == 0 { black },
 
-[[main]]
-en = """  table.header(
+  table.header(
     [Team member],
     [Monday],
     [Tuesday],
@@ -1117,8 +1086,8 @@ en = """  table.header(
 ```"""
 
 [[main]]
-en = """In the example, we first define variables with \\"Office\\", \\"Remote\\", and \\"On
-leave\\" so we don't have to write these labels out every time. We can then use
+en = """In the example, we first define variables with "Office", "Remote", and "On
+leave" so we don't have to write these labels out every time. We can then use
 these variables in the table body either directly or in a `table.cell` call if
 the team member spends multiple consecutive days in office, remote, or on leave."""
 
@@ -1162,28 +1131,25 @@ on the right of the table."""
 
 [[main]]
 en = """```example
-#set page(\\"a5\\", columns: 2, numbering: \\"— 1 —\\")
+#set page("a5", columns: 2, numbering: "— 1 —")
 >>> #set page(margin: auto)
-#show table.cell.where(y: 0): set text(weight: \\"bold\\")"""
+#show table.cell.where(y: 0): set text(weight: "bold")
 
-[[main]]
-en = """#rotate(
+#rotate(
   -90deg,
-  reflow: true,"""
+  reflow: true,
 
-[[main]]
-en = """  table(
+  table(
     columns: (1fr,) + 5 * (auto,),
     inset: (x: 0.6em,),
     stroke: (_, y) => (
       x: 1pt,
-      top: if y <= 1 { 1pt } else {\\u{a0}0pt },
+      top: if y <= 1 { 1pt } else { 0pt },
       bottom: 1pt,
     ),
-    align: (left, right, right, right, right, left),"""
+    align: (left, right, right, right, right, left),
 
-[[main]]
-en = """    table.header(
+    table.header(
       [Student Name],
       [Assignment 1], [Assignment 2],
       [Mid-term], [Final Exam],
@@ -1196,15 +1162,13 @@ en = """    table.header(
     [Zhang Wei], [93%], [89%], [90%], [91%], [A-],
     [Marina Musterfrau], [96%], [91%], [74%], [69%], [B-],
   ),
-)"""
+)
 
-[[main]]
-en = """#lorem(80)
+#lorem(80)
 ```"""
 
 [[main]]
-en = """
-What we have here is a two-column document on ISO A5 paper with page numbers on
+en = """What we have here is a two-column document on ISO A5 paper with page numbers on
 the bottom. The table has six columns and contains a few customizations to
 [stroke](#strokes), alignment and spacing. But the most important part is that
 the table is wrapped in a call to the `rotate` function with the `reflow`
@@ -1226,24 +1190,22 @@ upright:"""
 
 [[main]]
 en = """```example
-#set page(\\"a5\\", numbering: \\"— 1 —\\")
+#set page("a5", numbering: "— 1 —")
 >>> #set page(margin: auto)
-#show table.cell.where(y: 0): set text(weight: \\"bold\\")"""
+#show table.cell.where(y: 0): set text(weight: "bold")
 
-[[main]]
-en = """#page(flipped: true)[
+#page(flipped: true)[
   #table(
     columns: (1fr,) + 5 * (auto,),
     inset: (x: 0.6em,),
     stroke: (_, y) => (
       x: 1pt,
-      top: if y <= 1 { 1pt } else {\\u{a0}0pt },
+      top: if y <= 1 { 1pt } else { 0pt },
       bottom: 1pt,
     ),
-    align: (left, right, right, right, right, left),"""
+    align: (left, right, right, right, right, left),
 
-[[main]]
-en = """    table.header(
+    table.header(
       [Student Name],
       [Assignment 1], [Assignment 2],
       [Mid-term], [Final Exam],
@@ -1255,10 +1217,9 @@ en = """    table.header(
     [Maria Garcia], [88%], [84%], [89%], [85%], [B+],
     [Zhang Wei], [93%], [89%], [90%], [91%], [A-],
     [Marina Musterfrau], [96%], [91%], [74%], [69%], [B-],
-  )"""
+  )
 
-[[main]]
-en = """  #pad(x: 15%, top: 1.5em)[
+  #pad(x: 15%, top: 1.5em)[
     = Winter 2023/24 results
     #lorem(80)
   ]
@@ -1291,18 +1252,16 @@ look:"""
 [[main]]
 en = """```example
 #set page(width: 9cm, height: 6cm)
-#show table.cell.where(y: 0): set text(weight: \\"bold\\")
-#show figure: set block(breakable: true)"""
+#show table.cell.where(y: 0): set text(weight: "bold")
+#show figure: set block(breakable: true)
 
-[[main]]
-en = """#figure(
+#figure(
   caption: [Training regimen for Marathon],
   table(
     columns: 3,
-    fill: (_, y) => if y == 0 { gray.lighten(75%) },"""
+    fill: (_, y) => if y == 0 { gray.lighten(75%) },
 
-[[main]]
-en = """    table.header[Week][Distance (km)][Time (hh:mm:ss)],
+    table.header[Week][Distance (km)][Time (hh:mm:ss)],
     [1], [5],  [00:30:00],
     [2], [7],  [00:45:00],
     [3], [10], [01:00:00],
@@ -1333,8 +1292,8 @@ data in a table."""
 
 [[main]]
 en = """The most common file format for tabular data is CSV. You can obtain a CSV file
-from Excel by choosing \\"Save as\\" in the _File_ menu and choosing the file format
-\\"CSV UTF-8 (Comma-delimited) (.csv)\\". Save the file and, if you are using the
+from Excel by choosing "Save as" in the _File_ menu and choosing the file format
+"CSV UTF-8 (Comma-delimited) (.csv)". Save the file and, if you are using the
 web app, upload it to your project."""
 
 [[main]]
@@ -1342,7 +1301,7 @@ en = """In our case, we will be building a table about Moore's Law. For this pur
 are using a statistic with [how many transistors the average microprocessor
 consists of per year from Our World in
 Data](https://ourworldindata.org/grapher/transistors-per-microprocessor). Let's
-start by pressing the \\"Download\\" button to get a CSV file with the raw data."""
+start by pressing the "Download" button to get a CSV file with the raw data."""
 
 [[main]]
 en = """Be sure to move the file to your project or somewhere Typst can see it, if you
@@ -1361,7 +1320,7 @@ World,OWID_WRL,1974,6097.5625
 en = """The file starts with a header and contains four columns: Entity (which is to
 whom the metric applies), Code, the year, and the number of transistors per
 microprocessor. Only the last two columns change between each row, so we can
-disregard \\"Entity\\" and \\"Code\\"."""
+disregard "Entity" and "Code"."""
 
 [[main]]
 en = """First, let's start by loading this file with the [`csv`] function. It accepts
@@ -1369,7 +1328,7 @@ the file name of the file we want to load as a string argument:"""
 
 [[main]]
 en = """```typ
-#let moore = csv(\\"moore.csv\\")
+#let moore = csv("moore.csv")
 ```"""
 
 [[main]]
@@ -1381,10 +1340,9 @@ from the array:"""
 
 [[main]]
 en = """```example
-#let moore = csv(\\"moore.csv\\")"""
+#let moore = csv("moore.csv")
 
-[[main]]
-en = """#moore.slice(0, 3)
+#moore.slice(0, 3)
 ```"""
 
 [[main]]
@@ -1398,10 +1356,9 @@ that we can use with the table function."""
 
 [[main]]
 en = """```example
-#let moore = csv(\\"moore.csv\\")"""
+#let moore = csv("moore.csv")
 
-[[main]]
-en = """#table(
+#table(
   columns: 2,
   ..for (.., year, count) in moore {
     (year, count)
@@ -1428,10 +1385,9 @@ style:"""
 
 [[main]]
 en = """```typ
-#let moore = csv(\\"moore.csv\\")"""
+#let moore = csv("moore.csv")
 
-[[main]]
-en = """#table(
+#table(
    columns: moore.first().len(),
    ..moore.map(m => m.slice(2)).flatten(),
 )
@@ -1456,27 +1412,24 @@ our data logarithmically to make it more digestible:"""
 
 [[main]]
 en = """```example
-#let moore = csv(\\"moore.csv\\")
+#let moore = csv("moore.csv")
 #let moore-log = moore.slice(1).map(m => {
   let (.., year, count) = m
   let log = calc.log(float(count))
   let rounded = str(calc.round(log, digits: 2))
   (year, rounded)
-})"""
+})
 
-[[main]]
-en = """#show table.cell.where(x: 0): strong"""
+#show table.cell.where(x: 0): strong
 
-[[main]]
-en = """#table(
+#table(
    columns: moore-log.first().len(),
    align: right,
-   fill: (_, y) => if calc.odd(y) { rgb(\\"D7D9E0\\") },
-   stroke: none,"""
+   fill: (_, y) => if calc.odd(y) { rgb("D7D9E0") },
+   stroke: none,
 
-[[main]]
-en = """   table.header[Year][Transistor count ($log_10$)],
-   table.hline(stroke: rgb(\\"4D4C5B\\")),
+   table.header[Year][Transistor count ($log_10$)],
+   table.hline(stroke: rgb("4D4C5B")),
    ..moore-log.flatten(),
 )
 ```"""

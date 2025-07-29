@@ -19,6 +19,10 @@ use typst_docs_l10n::resolve::CliResolver;
 use typst_docs_l10n::translate::check_page;
 use typst_docs_l10n::PageMdModel;
 
+use crate::split::split_markdown;
+
+mod split;
+
 /// The main function
 fn main() -> anyhow::Result<()> {
     let args = Command::parse();
@@ -174,9 +178,8 @@ fn write_large_translate(sub_docs: &Path, k: &str, v: &mut String) {
     let path = sub_docs.join(&k);
     let rel_path = Path::new("typst-docs").join(&k);
 
-    println!("Writing large translation to {path:?}");
+    let pars = split_markdown(v);
 
-    let pars = v.split(MARKDOWN_PAR_SEP).collect::<Vec<_>>();
     init_large_translation(&path, &pars)
         .with_context(|| format!("Failed to store large translation file: {path:?}"))
         .unwrap();
@@ -297,7 +300,6 @@ fn save(args: SaveArgs) -> anyhow::Result<()> {
                 .with_context(|| "Failed to parse existing translations")?;
 
         for pair in translated.translates {
-            println!("Saving translation: {} -> {}", pair.path, pair.content);
             if let Some((_sub, maybe_number)) = pair.path.rsplit_once('.') {
                 let number = maybe_number.parse::<usize>();
                 if let Ok(number) = number {
@@ -308,10 +310,6 @@ fn save(args: SaveArgs) -> anyhow::Result<()> {
         }
 
         store_large_translation_file(&translation_file, &existing_translations.main)?;
-        // println!(
-        //     "Saved translations to {} {existing_translations:#?}",
-        //     translation_file.display()
-        // );
     }
 
     Ok(())

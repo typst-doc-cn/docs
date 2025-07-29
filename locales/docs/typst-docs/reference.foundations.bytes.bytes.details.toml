@@ -20,17 +20,15 @@ as a string or as raw bytes."""
 
 [[main]]
 en = """```example
-#bytes((123, 160, 22, 0)) \\\\
-#bytes(\\"Hello 😃\\")"""
+#bytes((123, 160, 22, 0)) \\
+#bytes("Hello 😃")
 
-[[main]]
-en = """#let data = read(
-  \\"rhino.png\\",
+#let data = read(
+  "rhino.png",
   encoding: none,
-)"""
+)
 
-[[main]]
-en = """// Magic bytes.
-#array(data.slice(0, 4)) \\\\
+// Magic bytes.
+#array(data.slice(0, 4)) \\
 #str(data.slice(1, 4))
 ```"""

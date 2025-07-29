@@ -20,14 +20,15 @@ starting it with a zero followed by either `x`, `o`, or `b`."""
 en = """You can convert a value to an integer with this type's constructor."""
 
 [[main]]
-en = """# Example
-```example
-#(1 + 2) \\\\
-#(2 - 5) \\\\
-#(3 + 4 < 8)"""
+en = """# Example"""
 
 [[main]]
-en = """#0xff \\\\
-#0o10 \\\\
+en = """```example
+#(1 + 2) \\
+#(2 - 5) \\
+#(3 + 4 < 8)
+
+#0xff \\
+#0o10 \\
 #0b1001
 ```"""

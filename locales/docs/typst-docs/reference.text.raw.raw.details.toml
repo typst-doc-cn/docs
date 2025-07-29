@@ -13,28 +13,53 @@ Adding `rbx` to `rcx` gives
 the desired result."""
 
 [[main]]
-en = """What is ```rust fn main()``` in Rust
-would be ```c int main()``` in C."""
+en = """What is"""
+
+[[main]]
+en = """```rust fn main()```"""
+
+[[main]]
+en = """in Rust
+would be"""
+
+[[main]]
+en = """```c int main()```"""
+
+[[main]]
+en = """in C."""
 
 [[main]]
 en = """```rust
 fn main() {
-    println!(\\"Hello World!\\");
+    println!("Hello World!");
 }
 ```"""
 
 [[main]]
-en = """This has ``` `backticks` ``` in it
-(but the spaces are trimmed). And
-``` here``` the leading space is
+en = """This has"""
+
+[[main]]
+en = """``` `backticks` ```"""
+
+[[main]]
+en = """in it
+(but the spaces are trimmed). And"""
+
+[[main]]
+en = """``` here```"""
+
+[[main]]
+en = """the leading space is
 also trimmed.
 ````"""
 
 [[main]]
 en = """You can also construct a [`raw`] element programmatically from a string (and
-provide the language tag via the optional [`lang`]($raw.lang) argument).
-```example
-#raw(\\"fn \\" + \\"main() {}\\", lang: \\"rust\\")
+provide the language tag via the optional [`lang`]($raw.lang) argument)."""
+
+[[main]]
+en = """```example
+#raw("fn " + "main() {}", lang: "rust")
 ```"""
 
 [[main]]

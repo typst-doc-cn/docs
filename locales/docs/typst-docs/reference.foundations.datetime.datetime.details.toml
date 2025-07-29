@@ -8,38 +8,39 @@ constructor function or getting the current date with
 [`datetime.today`]($datetime.today)."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 #let date = datetime(
   year: 2020,
   month: 10,
   day: 4,
-)"""
+)
 
-[[main]]
-en = """#date.display() \\\\
+#date.display() \\
 #date.display(
-  \\"y:[year repr:last_two]\\"
-)"""
+  "y:[year repr:last_two]"
+)
 
-[[main]]
-en = """#let time = datetime(
+#let time = datetime(
   hour: 18,
   minute: 2,
   second: 23,
-)"""
+)
 
-[[main]]
-en = """#time.display() \\\\
+#time.display() \\
 #time.display(
-  \\"h:[hour repr:12][period]\\"
+  "h:[hour repr:12][period]"
 )
 ```"""
 
 [[main]]
 en = """# Datetime and Duration
-You can get a [duration] by subtracting two datetime:
-```example
+You can get a [duration] by subtracting two datetime:"""
+
+[[main]]
+en = """```example
 #let first-of-march = datetime(day: 1, month: 3, year: 2024)
 #let first-of-jan = datetime(day: 1, month: 1, year: 2024)
 #let distance = first-of-march - first-of-jan
@@ -48,16 +49,17 @@ You can get a [duration] by subtracting two datetime:
 
 [[main]]
 en = """You can also add/subtract a datetime and a duration to retrieve a new,
-offset datetime:
-```example
+offset datetime:"""
+
+[[main]]
+en = """```example
 #let date = datetime(day: 1, month: 3, year: 2024)
 #let two-days = duration(days: 2)
 #let two-days-earlier = date - two-days
-#let two-days-later = date + two-days"""
+#let two-days-later = date + two-days
 
-[[main]]
-en = """#date.display() \\\\
-#two-days-earlier.display() \\\\
+#date.display() \\
+#two-days-earlier.display() \\
 #two-days-later.display()
 ```"""
 

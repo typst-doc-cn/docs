@@ -9,17 +9,17 @@ and page number will be displayed in the outline alongside its title or
 caption."""
 
 [[main]]
-en = """# Example
-```example
-#set heading(numbering: \\"1.\\")
-#outline()"""
+en = """# Example"""
 
 [[main]]
-en = """= Introduction
-#lorem(5)"""
+en = """```example
+#set heading(numbering: "1.")
+#outline()
 
-[[main]]
-en = """= Methods
+= Introduction
+#lorem(5)
+
+= Methods
 == Setup
 #lorem(10)
 ```"""
@@ -45,11 +45,10 @@ en = """```example
 #outline(
   title: [List of Figures],
   target: figure.where(kind: image),
-)"""
+)
 
-[[main]]
-en = """#figure(
-  image(\\"tiger.jpg\\"),
+#figure(
+  image("tiger.jpg"),
   caption: [A nice figure!],
 )
 ```"""
@@ -76,13 +75,11 @@ them with normal block-spacing rules:"""
 en = """```example
 #show outline.entry.where(
   level: 1
-): set block(above: 1.2em)"""
+): set block(above: 1.2em)
 
-[[main]]
-en = """#outline()"""
+#outline()
 
-[[main]]
-en = """= About ACME Corp.
+= About ACME Corp.
 == History
 === Origins
 = Products
@@ -101,8 +98,10 @@ en = """For this reason, various helper functions are provided. You can mix and
 match these to compose an entry from just the parts you like."""
 
 [[main]]
-en = """The default show rule for an outline entry looks like this[^1]:
-```typ
+en = """The default show rule for an outline entry looks like this[^1]:"""
+
+[[main]]
+en = """```typ
 #show outline.entry: it => link(
   it.element.location(),
   it.indented(it.prefix(), it.inner()),
@@ -136,13 +135,11 @@ en = """```example
   // Keep just the body, dropping
   // the fill and the page.
   it.indented(it.prefix(), it.body()),
-)"""
+)
 
-[[main]]
-en = """#outline()"""
+#outline()
 
-[[main]]
-en = """= About ACME Corp.
+= About ACME Corp.
 == History
 ```"""
 

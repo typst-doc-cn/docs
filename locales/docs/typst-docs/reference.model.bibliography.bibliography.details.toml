@@ -30,23 +30,23 @@ based on what discipline you're working in:"""
 [[main]]
 en = """| Fields          | Typical Styles                                         |
 |-----------------|--------------------------------------------------------|
-| Engineering, IT | `{\\"ieee\\"}`                                             |
-| Psychology, Life Sciences | `{\\"apa\\"}`                                    |
-| Social sciences | `{\\"chicago-author-date\\"}`                              |
-| Humanities      | `{\\"mla\\"}`, `{\\"chicago-notes\\"}`, `{\\"harvard-cite-them-right\\"}` |
-| Economics       | `{\\"harvard-cite-them-right\\"}`                          |
-| Physics         | `{\\"american-physics-society\\"}`                         |"""
+| Engineering, IT | `{"ieee"}`                                             |
+| Psychology, Life Sciences | `{"apa"}`                                    |
+| Social sciences | `{"chicago-author-date"}`                              |
+| Humanities      | `{"mla"}`, `{"chicago-notes"}`, `{"harvard-cite-them-right"}` |
+| Economics       | `{"harvard-cite-them-right"}`                          |
+| Physics         | `{"american-physics-society"}`                         |"""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 This was already noted by
-pirates long ago. @arrgh"""
+pirates long ago. @arrgh
 
-[[main]]
-en = """Multiple sources say ...
-@arrgh @netwok."""
+Multiple sources say ...
+@arrgh @netwok.
 
-[[main]]
-en = """#bibliography(\\"works.bib\\")
+#bibliography("works.bib")
 ```"""

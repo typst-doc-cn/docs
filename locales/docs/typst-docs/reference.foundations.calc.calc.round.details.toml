@@ -22,6 +22,3 @@ en = """In addition, this function can error if there is an attempt to round bey
 the maximum or minimum integer or `decimal`. If the number is a `float`,
 such an attempt will cause `{float.inf}` or `{-float.inf}` to be returned
 for maximum and minimum respectively."""
-
-[[main]]
-en = """"""

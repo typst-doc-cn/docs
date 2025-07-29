@@ -79,24 +79,24 @@ word. This is, for example, what [non-`tight`]($list.tight) lists do to
 force their items to become paragraphs."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 #set par(
   first-line-indent: 1em,
   spacing: 0.65em,
   justify: true,
-)"""
+)
 
-[[main]]
-en = """We proceed by contradiction.
+We proceed by contradiction.
 Suppose that there exists a set
 of positive integers $a$, $b$, and
 $c$ that satisfies the equation
 $a^n + b^n = c^n$ for some
-integer value of $n > 2$."""
+integer value of $n > 2$.
 
-[[main]]
-en = """Without loss of generality,
+Without loss of generality,
 let $a$ be the smallest of the
 three integers. Then, we ...
 ```"""

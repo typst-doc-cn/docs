@@ -7,16 +7,18 @@ en = """This type should be used for precise arithmetic operations on numbers
 represented in base 10. A typical use case is representing currency."""
 
 [[main]]
-en = """# Example
-```example
-Decimal: #(decimal(\\"0.1\\") + decimal(\\"0.2\\")) \\\\
+en = """# Example"""
+
+[[main]]
+en = """```example
+Decimal: #(decimal("0.1") + decimal("0.2")) \\
 Float: #(0.1 + 0.2)
 ```"""
 
 [[main]]
 en = """# Construction and casts
 To create a decimal number, use the `{decimal(string)}` constructor, such as
-in `{decimal(\\"3.141592653\\")}` **(note the double quotes!)**. This
+in `{decimal("3.141592653")}` **(note the double quotes!)**. This
 constructor preserves all given fractional digits, provided they are
 representable as per the limits specified below (otherwise, an error is
 raised)."""
@@ -30,7 +32,7 @@ warning will be raised if Typst detects that there was an accidental `float`
 to `decimal` cast through its constructor, e.g. if writing `{decimal(3.14)}`
 (note the lack of double quotes, indicating this is an accidental `float`
 cast and therefore imprecise). It is recommended to use strings for
-constant decimal values instead (e.g. `{decimal(\\"3.14\\")}`)."""
+constant decimal values instead (e.g. `{decimal("3.14")}`)."""
 
 [[main]]
 en = """The precision of a `float` to `decimal` cast can be slightly improved by

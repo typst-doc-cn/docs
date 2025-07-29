@@ -7,20 +7,20 @@ en = """Automatically turns into an appropriate opening or closing quote based o
 the active [text language]($text.lang)."""
 
 [[main]]
-en = """# Example
-```example
-\\"This is in quotes.\\""""
+en = """# Example"""
 
 [[main]]
-en = """#set text(lang: \\"de\\")
-\\"Das ist in Anführungszeichen.\\""""
+en = """```example
+"This is in quotes."
 
-[[main]]
-en = """#set text(lang: \\"fr\\")
-\\"C'est entre guillemets.\\"
+#set text(lang: "de")
+"Das ist in Anführungszeichen."
+
+#set text(lang: "fr")
+"C'est entre guillemets."
 ```"""
 
 [[main]]
 en = """# Syntax
 This function also has dedicated syntax: The normal quote characters
-(`'` and `\\"`). Typst automatically makes your quotes smart."""
+(`'` and `"`). Typst automatically makes your quotes smart."""

@@ -7,16 +7,16 @@ en = """By default, links do not look any different from normal text. However,
 you can easily apply a style of your choice with a show rule."""
 
 [[main]]
-en = """# Example
-```example
-#show link: underline"""
+en = """# Example"""
 
 [[main]]
-en = """https://example.com \\\\"""
+en = """```example
+#show link: underline
 
-[[main]]
-en = """#link(\\"https://example.com\\") \\\\
-#link(\\"https://example.com\\")[
+https://example.com \\
+
+#link("https://example.com") \\
+#link("https://example.com")[
   See example.com
 ]
 ```"""

@@ -21,8 +21,10 @@ instance, have been reset after a preface."""
 [[main]]
 en = """# Examples
 Determining the current position in the document in combination with the
-[`position`]($location.position) method:
-```example
+[`position`]($location.position) method:"""
+
+[[main]]
+en = """```example
 #context [
   I am located at
   #here().position()
@@ -30,19 +32,21 @@ Determining the current position in the document in combination with the
 ```"""
 
 [[main]]
-en = """Running a [query] for elements before the current position:
-```example
-= Introduction
-= Background"""
+en = """Running a [query] for elements before the current position:"""
 
 [[main]]
-en = """There are
+en = """```example
+= Introduction
+= Background
+
+There are
 #context query(
   selector(heading).before(here())
 ).len()
-headings before me."""
+headings before me.
+
+= Conclusion
+```"""
 
 [[main]]
-en = """= Conclusion
-```
-Refer to the [`selector`] type for more details on before/after selectors."""
+en = """Refer to the [`selector`] type for more details on before/after selectors."""

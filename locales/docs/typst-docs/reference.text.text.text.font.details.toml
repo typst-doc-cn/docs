@@ -11,7 +11,7 @@ en = """- `name` (required): The font family name.
 - `covers` (optional): Defines the Unicode codepoints for which the
   family shall be used. This can be:
   - A predefined coverage set:
-    - `{\\"latin-in-cjk\\"}` covers all codepoints except for those which
+    - `{"latin-in-cjk"}` covers all codepoints except for those which
       exist in Latin fonts, but should preferrably be taken from CJK
       fonts.
   - A [regular expression]($regex) that defines exactly which codepoints
@@ -29,7 +29,7 @@ en = """The collection of available fonts differs by platform:"""
 
 [[main]]
 en = """- In the web app, you can see the list of available fonts by clicking on
-  the \\"Ag\\" button. You can provide additional fonts by uploading `.ttf`
+  the "Ag" button. You can provide additional fonts by uploading `.ttf`
   or `.otf` files into your project. They will be discovered
   automatically. The priority is: project fonts > server fonts."""
 
@@ -43,6 +43,3 @@ en = """- Locally, Typst uses your installed system fonts or embedded fonts in
   `typst fonts` to see the fonts that Typst has discovered on your
   system. Note that you can pass the `--ignore-system-fonts` parameter
   to the CLI to ensure Typst won't search for system fonts."""
-
-[[main]]
-en = """"""

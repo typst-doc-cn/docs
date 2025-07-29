@@ -1,7 +1,6 @@
 
 [[main]]
-en = """
-# Advanced Styling
+en = """# Advanced Styling
 In the previous two chapters of this tutorial, you have learned how to write a
 document in Typst and how to change its formatting. The report you wrote
 throughout the last two chapters got a straight A and your supervisor wants to
@@ -60,21 +59,20 @@ Let's start by writing some set rules for the document."""
 en = """```example
 #set page(
 >>>  margin: auto,
-  paper: \\"us-letter\\",
+  paper: "us-letter",
   header: align(right)[
     A fluid dynamic model for
     glacier flow
   ],
-  numbering: \\"1\\",
+  numbering: "1",
 )
 #set par(justify: true)
 #set text(
-  font: \\"Libertinus Serif\\",
+  font: "Libertinus Serif",
   size: 11pt,
-)"""
+)
 
-[[main]]
-en = """#lorem(600)
+#lorem(600)
 ```"""
 
 [[main]]
@@ -91,8 +89,8 @@ the right."""
 [[main]]
 en = """Last but not least is the `numbering` argument. Here, we can provide a
 [numbering pattern]($numbering) that defines how to number the pages. By
-setting into to `{\\"1\\"}`, Typst only displays the bare page number. Setting it to
-`{\\"(1/1)\\"}` would have displayed the current page and total number of pages
+setting into to `{"1"}`, Typst only displays the bare page number. Setting it to
+`{"(1/1)"}` would have displayed the current page and total number of pages
 surrounded by parentheses. And we could even have provided a completely custom
 function here to format things to our liking."""
 
@@ -104,7 +102,7 @@ align it and increase its font weight by enclosing it in `[*stars*]`."""
 [[main]]
 en = """```example
 >>> #set page(width: 300pt, margin: 30pt)
->>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 #align(center, text(17pt)[
   *A fluid dynamic model
   for glacier flow*
@@ -120,7 +118,7 @@ supervisor, we'll add our own and their name."""
 [[main]]
 en = """```example
 >>> #set page(width: 300pt, margin: 30pt)
->>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 >>>
 >>> #align(center, text(17pt)[
 >>>   *A fluid dynamic model
@@ -129,14 +127,14 @@ en = """```example
 #grid(
   columns: (1fr, 1fr),
   align(center)[
-    Therese Tungsten \\\\
-    Artos Institute \\\\
-    #link(\\"mailto:tung@artos.edu\\")
+    Therese Tungsten \\
+    Artos Institute \\
+    #link("mailto:tung@artos.edu")
   ],
   align(center)[
-    Dr. John Doe \\\\
-    Artos Institute \\\\
-    #link(\\"mailto:doe@artos.edu\\")
+    Dr. John Doe \\
+    Artos Institute \\
+    #link("mailto:doe@artos.edu")
   ]
 )
 ```"""
@@ -160,16 +158,16 @@ be set ragged and centered."""
 
 [[main]]
 en = """```example:0,0,612,317.5
->>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 >>> #set par(justify: true)
 >>> #set page(
->>>   \\"us-letter\\",
+>>>   "us-letter",
 >>>   margin: auto,
 >>>   header: align(right + horizon)[
 >>>     A fluid dynamic model for
 >>>     glacier flow
 >>>   ],
->>>   numbering: \\"1\\",
+>>>   numbering: "1",
 >>> )
 >>>
 >>> #align(center, text(17pt)[
@@ -180,23 +178,22 @@ en = """```example:0,0,612,317.5
 >>> #grid(
 >>>   columns: (1fr, 1fr),
 >>>   align(center)[
->>>     Therese Tungsten \\\\
->>>     Artos Institute \\\\
->>>     #link(\\"mailto:tung@artos.edu\\")
+>>>     Therese Tungsten \\
+>>>     Artos Institute \\
+>>>     #link("mailto:tung@artos.edu")
 >>>   ],
 >>>   align(center)[
->>>     Dr. John Doe \\\\
->>>     Artos Institute \\\\
->>>     #link(\\"mailto:doe@artos.edu\\")
+>>>     Dr. John Doe \\
+>>>     Artos Institute \\
+>>>     #link("mailto:doe@artos.edu")
 >>>   ]
 >>> )
 >>>
-<<< ..."""
+<<< ...
 
-[[main]]
-en = """#align(center)[
+#align(center)[
   #set par(justify: false)
-  *Abstract* \\\\
+  *Abstract* \\
   #lorem(80)
 ]
 >>> #lorem(600)
@@ -219,51 +216,46 @@ en = """```example:single
 #let title = [
   A fluid dynamic model
   for glacier flow
-]"""
+]
 
-[[main]]
-en = """<<< ..."""
+<<< ...
 
-[[main]]
-en = """>>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 >>> #set par(justify: true)
 #set page(
->>>   \\"us-letter\\",
+>>>   "us-letter",
 >>>   margin: auto,
   header: align(
     right + horizon,
     title
   ),
 <<<   ...
->>>   numbering: \\"1\\",
-)"""
+>>>   numbering: "1",
+)
 
-[[main]]
-en = """#align(center, text(17pt)[
+#align(center, text(17pt)[
   *#title*
-])"""
+])
 
-[[main]]
-en = """<<< ..."""
+<<< ...
 
-[[main]]
-en = """>>> #grid(
+>>> #grid(
 >>>   columns: (1fr, 1fr),
 >>>   align(center)[
->>>     Therese Tungsten \\\\
->>>     Artos Institute \\\\
->>>     #link(\\"mailto:tung@artos.edu\\")
+>>>     Therese Tungsten \\
+>>>     Artos Institute \\
+>>>     #link("mailto:tung@artos.edu")
 >>>   ],
 >>>   align(center)[
->>>     Dr. John Doe \\\\
->>>     Artos Institute \\\\
->>>     #link(\\"mailto:doe@artos.edu\\")
+>>>     Dr. John Doe \\
+>>>     Artos Institute \\
+>>>     #link("mailto:doe@artos.edu")
 >>>   ]
 >>> )
 >>>
 >>> #align(center)[
 >>>   #set par(justify: false)
->>>   *Abstract* \\\\
+>>>   *Abstract* \\
 >>>   #lorem(80)
 >>> ]
 >>>
@@ -317,61 +309,57 @@ en = """```example:single
 >>>   for glacier flow
 >>> ]
 >>>
->>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 >>> #set par(justify: true)
 >>>
 #set page(
 >>> margin: auto,
-  paper: \\"us-letter\\",
+  paper: "us-letter",
   header: align(
     right + horizon,
     title
   ),
-  numbering: \\"1\\",
+  numbering: "1",
   columns: 2,
-)"""
+)
 
-[[main]]
-en = """#place(
+#place(
   top + center,
   float: true,
-  scope: \\"parent\\",
+  scope: "parent",
   clearance: 2em,
 )[
 >>>  #text(
 >>>    17pt,
->>>    weight: \\"bold\\",
+>>>    weight: "bold",
 >>>    title,
 >>>  )
 >>>
 >>>  #grid(
 >>>    columns: (1fr, 1fr),
 >>>    [
->>>      Therese Tungsten \\\\
->>>      Artos Institute \\\\
->>>      #link(\\"mailto:tung@artos.edu\\")
+>>>      Therese Tungsten \\
+>>>      Artos Institute \\
+>>>      #link("mailto:tung@artos.edu")
 >>>    ],
 >>>    [
->>>      Dr. John Doe \\\\
->>>      Artos Institute \\\\
->>>      #link(\\"mailto:doe@artos.edu\\")
+>>>      Dr. John Doe \\
+>>>      Artos Institute \\
+>>>      #link("mailto:doe@artos.edu")
 >>>    ]
 >>>  )
-<<<   ..."""
+<<<   ...
 
-[[main]]
-en = """  #par(justify: false)[
-    *Abstract* \\\\
+  #par(justify: false)[
+    *Abstract* \\
     #lorem(80)
   ]
-]"""
+]
 
-[[main]]
-en = """= Introduction
-#lorem(300)"""
+= Introduction
+#lorem(300)
 
-[[main]]
-en = """= Related Work
+= Related Work
 #lorem(200)
 ```"""
 
@@ -393,55 +381,54 @@ en = """```example:50,250,265,270
 >>>   for glacier flow
 >>> ]
 >>>
->>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 >>> #set par(justify: true)
 >>> #set page(
->>>   \\"us-letter\\",
+>>>   "us-letter",
 >>>   margin: auto,
 >>>   header: align(
 >>>     right + horizon,
 >>>     title
 >>>   ),
->>>   numbering: \\"1\\",
+>>>   numbering: "1",
 >>>   columns: 2,
 >>> )
 #show heading: it => [
   #set align(center)
-  #set text(13pt, weight: \\"regular\\")
+  #set text(13pt, weight: "regular")
   #block(smallcaps(it.body))
-]"""
+]
 
-[[main]]
-en = """<<< ...
+<<< ...
 >>>
 >>> #place(
 >>>   top + center,
 >>>   float: true,
->>>   scope: \\"parent\\",
+>>>   scope: "parent",
 >>>   clearance: 2em,
 >>> )[
 >>>   #text(
 >>>     17pt,
->>>     weight: \\"bold\\",
+>>>     weight: "bold",
 >>>     title,
 >>>   )
 >>>
 >>>   #grid(
 >>>     columns: (1fr, 1fr),
 >>>     [
->>>       Therese Tungsten \\\\
->>>       Artos Institute \\\\
->>>       #link(\\"mailto:tung@artos.edu\\")
+>>>       Therese Tungsten \\
+>>>       Artos Institute \\
+>>>       #link("mailto:tung@artos.edu")
 >>>     ],
 >>>     [
->>>       Dr. John Doe \\\\
->>>       Artos Institute \\\\
->>>       #link(\\"mailto:doe@artos.edu\\")
+>>>       Dr. John Doe \\
+>>>       Artos Institute \\
+>>>       #link("mailto:doe@artos.edu")
 >>>     ]
 >>>   )
 >>>
 >>>   #par(justify: false)[
->>>     *Abstract* \\\\
+>>>     *Abstract* \\
 >>>     #lorem(80)
 >>>   ]
 >>> ]
@@ -458,12 +445,12 @@ en = """This looks great! We used a show rule that applies to all headings. We g
 function that gets passed the heading as a parameter. That parameter can be used
 as content but it also has some fields like `title`, `numbers`, and `level` from
 which we can compose a custom look. Here, we are center-aligning, setting the
-font weight to `{\\"regular\\"}` because headings are bold by default, and use the
+font weight to `{"regular"}` because headings are bold by default, and use the
 [`smallcaps`] function to render the heading's title in small capitals."""
 
 [[main]]
 en = """The only remaining problem is that all headings look the same now. The
-\\"Motivation\\" and \\"Problem Statement\\" subsections ought to be italic run in
+"Motivation" and "Problem Statement" subsections ought to be italic run in
 headers, but right now, they look indistinguishable from the section headings. We
 can fix that by using a `where` selector on our set rule: This is a
 [method]($scripting/#methods) we can call on headings (and other
@@ -477,16 +464,16 @@ en = """```example:50,250,265,245
 >>>   for glacier flow
 >>> ]
 >>>
->>> #set text(font: \\"Libertinus Serif\\", 11pt)
+>>> #set text(font: "Libertinus Serif", 11pt)
 >>> #set par(justify: true)
 >>> #set page(
->>>   \\"us-letter\\",
+>>>   "us-letter",
 >>>   margin: auto,
 >>>   header: align(
 >>>     right + horizon,
 >>>     title
 >>>   ),
->>>   numbering: \\"1\\",
+>>>   numbering: "1",
 >>>   columns: 2,
 >>> )
 >>>
@@ -494,48 +481,47 @@ en = """```example:50,250,265,245
   level: 1
 ): it => block(width: 100%)[
   #set align(center)
-  #set text(13pt, weight: \\"regular\\")
+  #set text(13pt, weight: "regular")
   #smallcaps(it.body)
-]"""
+]
 
-[[main]]
-en = """#show heading.where(
+#show heading.where(
   level: 2
 ): it => text(
   size: 11pt,
-  weight: \\"regular\\",
-  style: \\"italic\\",
+  weight: "regular",
+  style: "italic",
   it.body + [.],
 )
 >>>
 >>> #place(
 >>>   top + center,
 >>>   float: true,
->>>   scope: \\"parent\\",
+>>>   scope: "parent",
 >>>   clearance: 2em,
 >>> )[
 >>>   #text(
 >>>     17pt,
->>>     weight: \\"bold\\",
+>>>     weight: "bold",
 >>>     title,
 >>>   )
 >>>
 >>>  #grid(
 >>>    columns: (1fr, 1fr),
 >>>    [
->>>      Therese Tungsten \\\\
->>>      Artos Institute \\\\
->>>      #link(\\"mailto:tung@artos.edu\\")
+>>>      Therese Tungsten \\
+>>>      Artos Institute \\
+>>>      #link("mailto:tung@artos.edu")
 >>>    ],
 >>>    [
->>>      Dr. John Doe \\\\
->>>      Artos Institute \\\\
->>>      #link(\\"mailto:doe@artos.edu\\")
+>>>      Dr. John Doe \\
+>>>      Artos Institute \\
+>>>      #link("mailto:doe@artos.edu")
 >>>    ]
 >>>  )
 >>>
 >>>   #par(justify: false)[
->>>     *Abstract* \\\\
+>>>     *Abstract* \\
 >>>     #lorem(80)
 >>>   ]
 >>> ]
@@ -573,9 +559,9 @@ the conference! The finished paper looks like this:"""
 
 [[main]]
 en = """<img
-  src=\\"3-advanced-paper.png\\"
-  alt=\\"The finished paper\\"
-  style=\\"box-shadow: 0 4px 12px rgb(89 85 101 / 20%); width: 500px; max-width: 100%; display: block; margin: 24px auto;\\"
+  src="3-advanced-paper.png"
+  alt="The finished paper"
+  style="box-shadow: 0 4px 12px rgb(89 85 101 / 20%); width: 500px; max-width: 100%; display: block; margin: 24px auto;"
 >"""
 
 [[main]]

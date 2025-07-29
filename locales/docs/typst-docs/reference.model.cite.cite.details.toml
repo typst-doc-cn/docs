@@ -7,21 +7,20 @@ en = """Before you starting citing, you need to add a [bibliography] somewhere i
 your document."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 This was already noted by
-pirates long ago. @arrgh"""
+pirates long ago. @arrgh
 
-[[main]]
-en = """Multiple sources say ...
-@arrgh @netwok."""
+Multiple sources say ...
+@arrgh @netwok.
 
-[[main]]
-en = """You can also call `cite`
-explicitly. #cite(<arrgh>)"""
+You can also call `cite`
+explicitly. #cite(<arrgh>)
 
-[[main]]
-en = """#bibliography(\\"works.bib\\")
+#bibliography("works.bib")
 ```"""
 
 [[main]]
@@ -31,8 +30,8 @@ not recognized by the `<>` syntax, you can explicitly call `label` instead."""
 [[main]]
 en = """```typ
 Computer Modern is an example of a modernist serif typeface.
-#cite(label(\\"DBLP:books/lib/Knuth86a\\")).
->>> #bibliography(\\"works.bib\\")
+#cite(label("DBLP:books/lib/Knuth86a")).
+>>> #bibliography("works.bib")
 ```"""
 
 [[main]]

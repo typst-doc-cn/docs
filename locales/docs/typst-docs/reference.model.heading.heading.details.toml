@@ -20,16 +20,16 @@ en = """Independently of the numbering, Typst can also automatically generate an
 outline, you can set the `outlined` parameter to `{false}`."""
 
 [[main]]
-en = """# Example
-```example
-#set heading(numbering: \\"1.a)\\")"""
+en = """# Example"""
 
 [[main]]
-en = """= Introduction
-In recent years, ..."""
+en = """```example
+#set heading(numbering: "1.a)")
 
-[[main]]
-en = """== Preliminaries
+= Introduction
+In recent years, ...
+
+== Preliminaries
 To start, ...
 ```"""
 

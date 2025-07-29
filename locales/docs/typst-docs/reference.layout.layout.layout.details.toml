@@ -18,7 +18,7 @@ en = """```example
     block(width: size.width, text),
   )
   This text is #height high with
-  the current page width: \\\\
+  the current page width: \\
   #text
 ])
 ```"""

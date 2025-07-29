@@ -24,6 +24,3 @@ en = """You can set the kind to be an element function or a string. If you set
 it to an element function other than [`{table}`]($table), [`{raw}`](raw)
 or [`{image}`](image), you will need to manually specify the figure's
 supplement."""
-
-[[main]]
-en = """"""

@@ -16,16 +16,17 @@ en = """- Points: `{72pt}`
 en = """You can multiply lengths with and divide them by integers and floats."""
 
 [[main]]
-en = """# Example
-```example
-#rect(width: 20pt)
-#rect(width: 2em)
-#rect(width: 1in)"""
+en = """# Example"""
 
 [[main]]
-en = """#(3em + 5pt).em \\\\
-#(20pt).em \\\\
-#(40em + 2pt).abs \\\\
+en = """```example
+#rect(width: 20pt)
+#rect(width: 2em)
+#rect(width: 1in)
+
+#(3em + 5pt).em \\
+#(20pt).em \\
+#(40em + 2pt).abs \\
 #(5em).abs
 ```"""
 

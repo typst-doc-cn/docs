@@ -492,15 +492,15 @@ fn main() {
 ## Another Heading
 "#;
 
-        let expected = r##"
-#heading(depth: 1)[Hello World]
-#par[This is a test.]
+        let expected = r##"#heading(depth: 1)[Hello World];
+
+This is a test.
 ``````rust
 fn main() {
     println!("Hello, world!");
 }
 ``````
-#heading(depth: 2)[Another Heading]"##;
+#heading(depth: 2)[Another Heading];"##;
 
         let result = md_to_typst(input).unwrap();
         assert_eq!(result, expected);

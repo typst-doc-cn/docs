@@ -11,15 +11,15 @@ en = """[See here](https://docs.rs/regex/latest/regex/#syntax) for a specificati
 of the supported syntax."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 // Works with string methods.
-#\\"a,b;c\\".split(regex(\\"[,;]\\"))"""
+#"a,b;c".split(regex("[,;]"))
 
-[[main]]
-en = """// Works with show rules.
-#show regex(\\"\\\\d+\\"): set text(red)"""
+// Works with show rules.
+#show regex("\\d+"): set text(red)
 
-[[main]]
-en = """The numbers 1 to 10.
+The numbers 1 to 10.
 ```"""

@@ -8,18 +8,18 @@ becomes block-level through the presence of at least one space after the
 opening dollar sign and one space before the closing dollar sign."""
 
 [[main]]
-en = """# Example
-```example
-#set text(font: \\"New Computer Modern\\")"""
+en = """# Example"""
 
 [[main]]
-en = """Let $a$, $b$, and $c$ be the side
+en = """```example
+#set text(font: "New Computer Modern")
+
+Let $a$, $b$, and $c$ be the side
 lengths of right-angled triangle.
 Then, we know that:
-$ a^2 + b^2 = c^2 $"""
+$ a^2 + b^2 = c^2 $
 
-[[main]]
-en = """Prove by induction:
+Prove by induction:
 $ sum_(k=1)^n k = (n(n+1)) / 2 $
 ```"""
 

@@ -6,38 +6,38 @@ en = """A numbered list."""
 en = """Displays a sequence of items vertically and numbers them consecutively."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 Automatically numbered:
 + Preparations
 + Analysis
-+ Conclusions"""
++ Conclusions
 
-[[main]]
-en = """Manually numbered:
+Manually numbered:
 2. What is the first step?
 5. I am confused.
-+  Moving on ..."""
++  Moving on ...
 
-[[main]]
-en = """Multiple lines:
+Multiple lines:
 + This enum item has multiple
   lines because the next line
-  is indented."""
+  is indented.
 
-[[main]]
-en = """Function call.
+Function call.
 #enum[First][Second]
 ```"""
 
 [[main]]
 en = """You can easily switch all your enumerations to a different numbering style
-with a set rule.
-```example
-#set enum(numbering: \\"a)\\")"""
+with a set rule."""
 
 [[main]]
-en = """+ Starting off ...
+en = """```example
+#set enum(numbering: "a)")
+
++ Starting off ...
 + Don't forget step two
 ```"""
 

@@ -14,13 +14,14 @@ en = """Errors if there are no bounds on the available space, as it would create
 infinite content."""
 
 [[main]]
-en = """# Example
-```example
-Sign on the dotted line:
-#box(width: 1fr, repeat[.])"""
+en = """# Example"""
 
 [[main]]
-en = """#set text(10pt)
+en = """```example
+Sign on the dotted line:
+#box(width: 1fr, repeat[.])
+
+#set text(10pt)
 #v(8pt, weak: true)
 #align(right)[
   Berlin, the 22nd of December, 2022

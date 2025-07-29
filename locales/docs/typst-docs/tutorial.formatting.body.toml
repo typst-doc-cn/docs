@@ -1,7 +1,6 @@
 
 [[main]]
-en = """
-# Formatting
+en = """# Formatting
 So far, you have written a report with some text, a few equations and images.
 However, it still looks very plain. Your teaching assistant does not yet know
 that you are using a new typesetting system, and you want your report to fit in
@@ -52,10 +51,9 @@ properties you want to set, and a list of arguments in parentheses."""
 
 [[main]]
 en = """```example
-#set par(justify: true)"""
+#set par(justify: true)
 
-[[main]]
-en = """= Background
+= Background
 In the case of glaciers, fluid
 dynamics principles can be used
 to understand how the movement
@@ -67,7 +65,7 @@ water).
 ```"""
 
 [[main]]
-en = """<div class=\\"info-box\\">"""
+en = """<div class="info-box">"""
 
 [[main]]
 en = """Want to know in more technical terms what is happening here?"""
@@ -120,28 +118,26 @@ font. For the purposes of the example, we'll also set another page size."""
 [[main]]
 en = """```example
 #set page(
-  paper: \\"a6\\",
+  paper: "a6",
   margin: (x: 1.8cm, y: 1.5cm),
 )
 #set text(
-  font: \\"New Computer Modern\\",
+  font: "New Computer Modern",
   size: 10pt
 )
 #set par(
   justify: true,
   leading: 0.52em,
-)"""
+)
 
-[[main]]
-en = """= Introduction
+= Introduction
 In this report, we will explore the
 various factors that influence fluid
 dynamics in glaciers and how they
 contribute to the formation and
-behaviour of these natural structures."""
+behaviour of these natural structures.
 
-[[main]]
-en = """>>> Glacier displacement is influenced
+>>> Glacier displacement is influenced
 >>> by a number of factors, including
 >>> + The climate
 >>> + The topography
@@ -152,14 +148,12 @@ en = """>>> Glacier displacement is influenced
 >>> dynamics, and will explore the
 >>> influence of these factors on the
 >>> movement of large bodies of ice.
-<<< ..."""
+<<< ...
 
-[[main]]
-en = """#align(center + bottom)[
-  #image(\\"glacier.jpg\\", width: 70%)"""
+#align(center + bottom)[
+  #image("glacier.jpg", width: 70%)
 
-[[main]]
-en = """  *Glaciers form an important
+  *Glaciers form an important
   part of the earth's climate
   system.*
 ]
@@ -180,7 +174,7 @@ specified separate margins for each side by passing a dictionary with the keys
 
 [[main]]
 en = """Next is the set [`text`] set rule. Here, we set the font size to `{10pt}` and
-font family to `{\\"New Computer Modern\\"}`. The Typst app comes with many fonts
+font family to `{"New Computer Modern"}`. The Typst app comes with many fonts
 that you can try for your document. When you are in the text function's argument
 list, you can discover the available fonts in the autocomplete panel."""
 
@@ -202,43 +196,37 @@ can do this by setting the `numbering` parameter of the [`heading`] function."""
 
 [[main]]
 en = """```example
->>> #set text(font: \\"New Computer Modern\\")
-#set heading(numbering: \\"1.\\")"""
+>>> #set text(font: "New Computer Modern")
+#set heading(numbering: "1.")
 
-[[main]]
-en = """= Introduction
-#lorem(10)"""
+= Introduction
+#lorem(10)
 
-[[main]]
-en = """== Background
-#lorem(12)"""
+== Background
+#lorem(12)
 
-[[main]]
-en = """== Methods
+== Methods
 #lorem(15)
 ```"""
 
 [[main]]
-en = """We specified the string `{\\"1.\\"}` as the numbering parameter. This tells Typst to
+en = """We specified the string `{"1."}` as the numbering parameter. This tells Typst to
 number the headings with arabic numerals and to put a dot between the number of
 each level. We can also use [letters, roman numerals, and symbols]($numbering)
 for our headings:"""
 
 [[main]]
 en = """```example
->>> #set text(font: \\"New Computer Modern\\")
-#set heading(numbering: \\"1.a\\")"""
+>>> #set text(font: "New Computer Modern")
+#set heading(numbering: "1.a")
 
-[[main]]
-en = """= Introduction
-#lorem(10)"""
+= Introduction
+#lorem(10)
 
-[[main]]
-en = """== Background
-#lorem(12)"""
+== Background
+#lorem(12)
 
-[[main]]
-en = """== Methods
+== Methods
 #lorem(15)
 ```"""
 
@@ -248,7 +236,7 @@ This function takes a number as an argument and generates that many words of
 _Lorem Ipsum_ text."""
 
 [[main]]
-en = """<div class=\\"info-box\\">"""
+en = """<div class="info-box">"""
 
 [[main]]
 en = """Did you wonder why the headings and text set rules apply to all text and headings,
@@ -268,7 +256,7 @@ to be fixed: The report you are writing is intended for a larger project and
 that project's name should always be accompanied by a logo, even in prose."""
 
 [[main]]
-en = """You consider your options. You could add an `[#image(\\"logo.svg\\")]` call before
+en = """You consider your options. You could add an `[#image("logo.svg")]` call before
 every instance of the logo using search and replace. That sounds very tedious.
 Instead, you could maybe
 [define a custom function]($function/#defining-functions) that always yields the
@@ -282,16 +270,15 @@ whole document."""
 
 [[main]]
 en = """```example
-#show \\"ArtosFlow\\": name => box[
+#show "ArtosFlow": name => box[
   #box(image(
-    \\"logo.svg\\",
+    "logo.svg",
     height: 0.7em,
   ))
   #name
-]"""
+]
 
-[[main]]
-en = """This report is embedded in the
+This report is embedded in the
 ArtosFlow project. ArtosFlow is a
 project of the Artos Institute.
 ```"""

@@ -14,14 +14,12 @@ en = """```example
 #let format(title, ..authors) = {
   let by = authors
     .pos()
-    .join(\\", \\", last: \\" and \\")"""
+    .join(", ", last: " and ")
 
-[[main]]
-en = """  [*#title* \\\\ _Written by #by;_]
-}"""
+  [*#title* \\ _Written by #by;_]
+}
 
-[[main]]
-en = """#format(\\"ArtosFlow\\", \\"Jane\\", \\"Joe\\")
+#format("ArtosFlow", "Jane", "Joe")
 ```"""
 
 [[main]]

@@ -9,8 +9,10 @@ content value by enclosing markup in square brackets. This is also how you
 pass content to functions."""
 
 [[main]]
-en = """# Example
-```example
+en = """# Example"""
+
+[[main]]
+en = """```example
 Type of *Hello!* is
 #type([*Hello!*])
 ```"""

@@ -27,6 +27,3 @@ memory, not in WebAssembly globals. If your plugin relies on changes to
 globals being visible after transition, you might want to avoid use of
 the transition API for now. We hope to lift this limitation in the
 future."""
-
-[[main]]
-en = """"""

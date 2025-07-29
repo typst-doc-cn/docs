@@ -9,14 +9,15 @@ containing tables."""
 
 [[main]]
 en = """# Examples
-The example below shows a basic figure with an image:
-```example
-@glacier shows a glacier. Glaciers
-are complex systems."""
+The example below shows a basic figure with an image:"""
 
 [[main]]
-en = """#figure(
-  image(\\"glacier.jpg\\", width: 80%),
+en = """```example
+@glacier shows a glacier. Glaciers
+are complex systems.
+
+#figure(
+  image("glacier.jpg", width: 80%),
   caption: [A curious figure.],
 ) <glacier>
 ```"""
@@ -50,8 +51,10 @@ float to the top or bottom of the page, you can use the
 [[main]]
 en = """If your figure is too large and its contents are breakable across pages
 (e.g. if it contains a large table), then you can make the figure itself
-breakable across pages as well with this show rule:
-```typ
+breakable across pages as well with this show rule:"""
+
+[[main]]
+en = """```typ
 #show figure: set block(breakable: true)
 ```"""
 
@@ -67,10 +70,9 @@ all captions:"""
 
 [[main]]
 en = """```example
-#show figure.caption: emph"""
+#show figure.caption: emph
 
-[[main]]
-en = """#figure(
+#figure(
   rect[Hello],
   caption: [I am emphasized!],
 )
@@ -86,10 +88,9 @@ following show-set rule:"""
 en = """```example
 #show figure.where(
   kind: table
-): set figure.caption(position: top)"""
+): set figure.caption(position: top)
 
-[[main]]
-en = """#figure(
+#figure(
   table(columns: 2)[A][B][C][D],
   caption: [I'm up here],
 )

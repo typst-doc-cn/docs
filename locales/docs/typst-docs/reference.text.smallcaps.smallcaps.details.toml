@@ -3,9 +3,11 @@
 en = """Displays text in small capitals."""
 
 [[main]]
-en = """# Example
-```example
-Hello \\\\
+en = """# Example"""
+
+[[main]]
+en = """```example
+Hello \\
 #smallcaps[Hello]
 ```"""
 
@@ -19,7 +21,7 @@ appearance of the text in smallcaps:"""
 
 [[main]]
 en = """```typ
-#show smallcaps: set text(font: \\"Latin Modern Roman Caps\\")
+#show smallcaps: set text(font: "Latin Modern Roman Caps")
 ```"""
 
 [[main]]
@@ -35,16 +37,14 @@ our headings and disable the standard bold font."""
 [[main]]
 en = """```example
 #set par(justify: true)
-#set heading(numbering: \\"I.\\")"""
+#set heading(numbering: "I.")
 
-[[main]]
-en = """#show heading: smallcaps
+#show heading: smallcaps
 #show heading: set align(center)
 #show heading: set text(
-  weight: \\"regular\\"
-)"""
+  weight: "regular"
+)
 
-[[main]]
-en = """= Introduction
+= Introduction
 #lorem(40)
 ```"""

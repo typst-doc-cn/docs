@@ -1,6 +1,6 @@
 
 [[main]]
-en = """<div class=\\"info-box\\">"""
+en = """<div class="info-box">"""
 
 [[main]]
 en = """Typst's HTML export is currently under active development. The feature is still

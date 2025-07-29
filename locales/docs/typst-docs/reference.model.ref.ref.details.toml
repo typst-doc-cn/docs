@@ -4,12 +4,12 @@ en = """A reference to a label or bibliography."""
 
 [[main]]
 en = """Takes a label and cross-references it. There are two kind of references,
-determined by its [`form`]($ref.form): `{\\"normal\\"}` and `{\\"page\\"}`."""
+determined by its [`form`]($ref.form): `{"normal"}` and `{"page"}`."""
 
 [[main]]
-en = """The default, a `{\\"normal\\"}` reference, produces a textual reference to a
+en = """The default, a `{"normal"}` reference, produces a textual reference to a
 label. For example, a reference to a heading will yield an appropriate
-string such as \\"Section 1\\" for a reference to the first heading. The
+string such as "Section 1" for a reference to the first heading. The
 references are also links to the respective element. Reference syntax can
 also be used to [cite] from a bibliography."""
 
@@ -27,47 +27,45 @@ en = """If you just want to link to a labelled element and not get an automatic
 textual reference, consider using the [`link`] function instead."""
 
 [[main]]
-en = """A `{\\"page\\"}` reference produces a page reference to a label, displaying the
+en = """A `{"page"}` reference produces a page reference to a label, displaying the
 page number at its location. You can use the
 [page's supplement]($page.supplement) to modify the text before the page
-number. Unlike a `{\\"normal\\"}` reference, the label can be attached to any
+number. Unlike a `{"normal"}` reference, the label can be attached to any
 element."""
 
 [[main]]
-en = """# Example
-```example
-#set page(numbering: \\"1\\")
-#set heading(numbering: \\"1.\\")
-#set math.equation(numbering: \\"(1)\\")"""
+en = """# Example"""
 
 [[main]]
-en = """= Introduction <intro>
+en = """```example
+#set page(numbering: "1")
+#set heading(numbering: "1.")
+#set math.equation(numbering: "(1)")
+
+= Introduction <intro>
 Recent developments in
 typesetting software have
 rekindled hope in previously
 frustrated researchers. @distress
 As shown in @results (see
-#ref(<results>, form: \\"page\\")),
-we ..."""
+#ref(<results>, form: "page")),
+we ...
 
-[[main]]
-en = """= Results <results>
+= Results <results>
 We discuss our approach in
-comparison with others."""
+comparison with others.
 
-[[main]]
-en = """== Performance <perf>
+== Performance <perf>
 @slow demonstrates what slow
 software looks like.
-$ T(n) = O(2^n) $ <slow>"""
+$ T(n) = O(2^n) $ <slow>
 
-[[main]]
-en = """#bibliography(\\"works.bib\\")
+#bibliography("works.bib")
 ```"""
 
 [[main]]
 en = """# Syntax
-This function also has dedicated syntax: A `{\\"normal\\"}` reference to a
+This function also has dedicated syntax: A `{"normal"}` reference to a
 label can be created by typing an `@` followed by the name of the label
 (e.g. `[= Introduction <intro>]` can be referenced by typing `[@intro]`)."""
 
@@ -84,11 +82,10 @@ always need to handle that case in your code."""
 
 [[main]]
 en = """```example
-#set heading(numbering: \\"1.\\")
-#set math.equation(numbering: \\"(1)\\")"""
+#set heading(numbering: "1.")
+#set math.equation(numbering: "(1)")
 
-[[main]]
-en = """#show ref: it => {
+#show ref: it => {
   let eq = math.equation
   let el = it.element
   if el != none and el.func() == eq {
@@ -101,10 +98,9 @@ en = """#show ref: it => {
     // Other references as usual.
     it
   }
-}"""
+}
 
-[[main]]
-en = """= Beginnings <beginning>
+= Beginnings <beginning>
 In @beginning we prove @pythagoras.
 $ a^2 + b^2 = c^2 $ <pythagoras>
 ```"""
