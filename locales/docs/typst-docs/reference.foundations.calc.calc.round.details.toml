@@ -1,0 +1,27 @@
+
+[[main]]
+en = """Rounds a number to the nearest integer away from zero."""
+
+[[main]]
+en = """Optionally, a number of decimal places can be specified."""
+
+[[main]]
+en = """If the number of digits is negative, its absolute value will indicate the
+amount of significant integer digits to remove before the decimal point."""
+
+[[main]]
+en = """Note that this function will return the same type as the operand. That is,
+applying `round` to a [`float`] will return a `float`, and to a [`decimal`],
+another `decimal`. You may explicitly convert the output of this function to
+an integer with [`int`], but note that such a conversion will error if the
+`float` or `decimal` is larger than the maximum 64-bit signed integer or
+smaller than the minimum integer."""
+
+[[main]]
+en = """In addition, this function can error if there is an attempt to round beyond
+the maximum or minimum integer or `decimal`. If the number is a `float`,
+such an attempt will cause `{float.inf}` or `{-float.inf}` to be returned
+for maximum and minimum respectively."""
+
+[[main]]
+en = """"""

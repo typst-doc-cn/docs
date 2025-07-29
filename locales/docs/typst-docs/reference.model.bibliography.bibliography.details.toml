@@ -1,0 +1,52 @@
+
+[[main]]
+en = """A bibliography / reference listing."""
+
+[[main]]
+en = """You can create a new bibliography by calling this function with a path
+to a bibliography file in either one of two formats:"""
+
+[[main]]
+en = """- A Hayagriva `.yml` file. Hayagriva is a new bibliography file format
+  designed for use with Typst. Visit its
+  [documentation](https://github.com/typst/hayagriva/blob/main/docs/file-format.md)
+  for more details.
+- A BibLaTeX `.bib` file."""
+
+[[main]]
+en = """As soon as you add a bibliography somewhere in your document, you can start
+citing things with reference syntax (`[@key]`) or explicit calls to the
+[citation]($cite) function (`[#cite(<key>)]`). The bibliography will only
+show entries for works that were referenced in the document."""
+
+[[main]]
+en = """# Styles
+Typst offers a wide selection of built-in
+[citation and bibliography styles]($bibliography.style). Beyond those, you
+can add and use custom [CSL](https://citationstyles.org/) (Citation Style
+Language) files. Wondering which style to use? Here are some good defaults
+based on what discipline you're working in:"""
+
+[[main]]
+en = """| Fields          | Typical Styles                                         |
+|-----------------|--------------------------------------------------------|
+| Engineering, IT | `{\"ieee\"}`                                             |
+| Psychology, Life Sciences | `{\"apa\"}`                                    |
+| Social sciences | `{\"chicago-author-date\"}`                              |
+| Humanities      | `{\"mla\"}`, `{\"chicago-notes\"}`, `{\"harvard-cite-them-right\"}` |
+| Economics       | `{\"harvard-cite-them-right\"}`                          |
+| Physics         | `{\"american-physics-society\"}`                         |"""
+
+[[main]]
+en = """# Example
+```example
+This was already noted by
+pirates long ago. @arrgh"""
+
+[[main]]
+en = """Multiple sources say ...
+@arrgh @netwok."""
+
+[[main]]
+en = """#bibliography(\"works.bib\")
+```"""

@@ -163,10 +163,9 @@ fn translate(args: TranslateArgs) -> anyhow::Result<()> {
 
 /// Writes a large translation text to a file.
 fn write_large_translate(sub_docs: &Path, k: &str, v: &mut String) {
-    let mut path = sub_docs.join(k);
-    path.set_extension("toml");
-    let mut rel_path = Path::new("typst-docs").join(k);
-    rel_path.set_extension("toml");
+    let k = format!("{k}.toml");
+    let path = sub_docs.join(&k);
+    let rel_path = Path::new("typst-docs").join(&k);
 
     println!("Writing large translation to {path:?}");
 

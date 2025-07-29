@@ -17,7 +17,7 @@ en = "\n# Guides\nWelcome to the Guides section! Here, you'll find helpful mater
 en = "Guides for Typst."
 
 [guides.guide-for-latex-users.body]
-en = "{{typst-docs/guides.guide-for-latex-users.toml}}"
+en = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
 
 [guides.guide-for-latex-users.description]
 en = "Are you a LaTeX user? This guide explains the differences and\nsimilarities between Typst and LaTeX so you can get started quickly.\n"
@@ -26,7 +26,7 @@ en = "Are you a LaTeX user? This guide explains the differences and\nsimilaritie
 en = "Guide for LaTeX users"
 
 [guides.page-setup-guide.body]
-en = "{{typst-docs/guides.page-setup-guide.toml}}"
+en = "{{typst-docs/guides.page-setup-guide.body.toml}}"
 
 [guides.page-setup-guide.description]
 en = "An in-depth guide to setting page dimensions, margins, and page numbers in\nTypst. Learn how to create appealing and clear layouts and get there quickly.\n"
@@ -35,7 +35,7 @@ en = "An in-depth guide to setting page dimensions, margins, and page numbers in
 en = "Page setup guide"
 
 [guides.table-guide.body]
-en = "{{typst-docs/guides.table-guide.toml}}"
+en = "{{typst-docs/guides.table-guide.body.toml}}"
 
 [guides.table-guide.description]
 en = "Not sure how to change table strokes? Need to rotate a table? This guide\nexplains all you need to know about tables in Typst.\n"
@@ -63,7 +63,7 @@ en = "\n# Reference\nThis reference documentation is a comprehensive guide to al
 zh = "\n# 参考\n本参考文档是对 Typst 所有语法、概念、类型和函数的全面指南。如果您完全不熟悉 Typst，我们建议您从 [教程] 开始，然后返回参考以根据需要了解更多关于 Typst 的功能。\n\n## 语言\n参考文献部分介绍了 [Typst 的语法]($syntax) 并包含有关涉及到的概念的信息\n[样式文档,]($styling) 使用\n[Typst 的脚本功能.]($scripting)\n\n## 函数\n第二部分包括关于用于插入、样式、转换和布局内容的所有函数的章节\n和 Typst 文档中的内容。每个函数都用其目的的描述进行文档编制，参数列表，以及如何使用它的示例。\n\n参考文献的最后一部分解释了在 Typst 的代码模式中使用的所有函数，以操纵和转换数据。与前面的部分一样，每个函数都用其目的的描述进行文档编制，参数列表，以及如何使用它的示例。"
 
 [reference.context.body]
-en = "{{typst-docs/reference.context.toml}}"
+en = "{{typst-docs/reference.context.body.toml}}"
 
 [reference.context.description]
 en = "How to deal with content that reacts to its location in the document.\n"
@@ -238,7 +238,7 @@ en = "Decode JSON"
 zh = "解码 JSON"
 
 [reference.data-loading.json.json.details]
-en = "{{typst-docs/reference.data-loading.json.json.toml}}"
+en = "{{typst-docs/reference.data-loading.json.json.details.toml}}"
 zh = "从 JSON 文件中读取结构化数据。\n\n文件必须包含有效的 JSON 值，例如对象或数组。JSON 对象将被转换为 Typst 字典，JSON 数组将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，`null` 将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n该函数返回一个字典、数组或其他 JSON 数据类型，具体取决于 JSON 文件。\n\n示例中的 JSON 文件包含键 `temperature`、`unit` 和 `weather` 的对象。\n\n# 示例\n```example\n#let forecast(day) = block[\n  #box(square(\n    width: 2cm,\n    inset: 8pt,\n    fill: if day.weather == \"sunny\" {\n      yellow\n    } else {\n      aqua\n    },\n    align(\n      bottom + right,\n      strong(day.weather),\n    ),\n  ))\n  #h(6pt)\n  #set text(22pt, baseline: -8pt)\n  #day.temperature °#day.unit\n]\n\n#forecast(json(\"monday.json\"))\n#forecast(json(\"tuesday.json\"))\n```"
 
 [reference.data-loading.json.json.encode.details]
@@ -418,7 +418,7 @@ en = "Decode XML"
 zh = "解码 XML"
 
 [reference.data-loading.xml.xml.details]
-en = "{{typst-docs/reference.data-loading.xml.xml.toml}}"
+en = "{{typst-docs/reference.data-loading.xml.xml.details.toml}}"
 zh = "从 XML 文件中读取结构化数据。\n\nXML 文件被解析为字典和字符串数组。XML 节点可以是元素或字符串。元素表示为具有以下键的字典：\n\n- `tag`：元素的名称，字符串类型。\n- `attrs`：元素属性的字典，字符串类型。\n- `children`：元素子节点的数组。\n\n示例中的 XML 文件包含一个根 `news` 标签，其中有多个 `article` 标签。每个文章都有一个 `title`、`author` 和 `content` 标签。`content` 标签包含一个或多个段落，表示为 `p` 标签。\n\n# 示例\n```example\n#let find-child(elem, tag) = {\n  elem.children\n    .find(e => \"tag\" in e and e.tag == tag)\n}\n\n#let article(elem) = {\n  let title = find-child(elem, \"title\")\n  let author = find-child(elem, \"author\")\n  let pars = find-child(elem, \"content\")\n\n  heading(title.children.first())\n  text(10pt, weight: \"medium\")[\n    Published by\n    #author.children.first()\n  ]\n\n  for p in pars.children {\n    if (type(p) == \"dictionary\") {\n      parbreak()\n      p.children.first()\n    }\n  }\n}\n\n#let data = xml(\"example.xml\")\n#for elem in data.first().children {\n  if (type(elem) == \"dictionary\") {\n    article(elem)\n  }\n}\n```"
 
 [reference.data-loading.xml.xml.oneliner]
@@ -466,7 +466,7 @@ en = "Decode YAML"
 zh = "解码 YAML"
 
 [reference.data-loading.yaml.yaml.details]
-en = "{{typst-docs/reference.data-loading.yaml.yaml.toml}}"
+en = "{{typst-docs/reference.data-loading.yaml.yaml.details.toml}}"
 zh = "从 YAML 文件中读取结构化数据。\n\n文件必须包含有效的 YAML 对象或数组。YAML 映射将被转换为 Typst 字典，YAML 序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。自定义 YAML 标签将被忽略，但加载的值仍然存在。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n示例中的 YAML 文件包含以作者为键的对象，每个作者都有一个包含键 \"title\" 和 \"published\" 的子映射序列。\n\n# 示例\n```example\n#let bookshelf(contents) = {\n  for (author, works) in contents {\n    author\n    for work in works [\n      - #work.title (#work.published)\n    ]\n  }\n}\n\n#bookshelf(\n  yaml(\"scifi-authors.yaml\")\n)\n```"
 
 [reference.data-loading.yaml.yaml.encode.details]
@@ -538,7 +538,7 @@ en = "At"
 zh = "在"
 
 [reference.foundations.arguments.arguments.details]
-en = "{{typst-docs/reference.foundations.arguments.arguments.toml}}"
+en = "{{typst-docs/reference.foundations.arguments.arguments.details.toml}}"
 zh = "捕获函数的参数。\n\n# 参数接收器\n像内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数接收器_，它将所有多余的参数收集为 `..sink`。生成的 `sink` 值是 `arguments` 类型。它提供了访问位置参数和命名参数的方法。\n\n```example\n#let format(title, ..authors) = {\n  let by = authors\n    .pos()\n    .join(\", \", last: \" and \")\n\n  [*#title* \\ _Written by #by;_]\n}\n\n#format(\"ArtosFlow\", \"Jane\", \"Joe\")\n```\n\n# 展开\n与参数接收器相反，您可以使用 `..spread` 操作符将参数、数组和字典展开到函数调用中：\n\n```example\n#let array = (2, 3, 5)\n#calc.min(..array)\n#let dict = (fill: blue)\n#text(..dict)[Hello]\n```"
 
 [reference.foundations.arguments.arguments.named.details]
@@ -706,7 +706,7 @@ en = "Deduplicate"
 zh = "去重"
 
 [reference.foundations.array.array.details]
-en = "{{typst-docs/reference.foundations.array.array.toml}}"
+en = "{{typst-docs/reference.foundations.array.array.details.toml}}"
 zh = "一系列值。\n\n您可以通过将以逗号分隔的值序列括在括号中来构造数组。值不必是相同类型。\n\n您可以使用 `.at()` 方法访问和更新数组项。索引是从零开始的，负索引从数组末尾开始。您可以使用 [for 循环]($scripting/#loops) 迭代数组。数组可以使用 `+` 运算符相加，[连接在一起]($scripting/#blocks) 并与整数相乘。\n\n**注意：** 长度为一的数组需要一个尾随逗号，如 `{(1,)}`。这是为了与简单的括号表达式（如 `{(1 + 2) * 3}`）区分开来。空数组写作 `{()}`。\n\n# 示例\n```example\n#let values = (1, 7, 4, -3, 2)\n\n#values.at(0) \\\n#(values.at(0) = 3)\n#values.at(-1) \\\n#values.find(calc.even) \\\n#values.filter(calc.odd) \\\n#values.map(calc.abs) \\\n#values.rev() \\\n#(1, (2, 3)).flatten() \\\n#((\"A\", \"B\", \"C\")\n    .join(\", \", last: \" and \"))\n```"
 
 [reference.foundations.array.array.enumerate.details]
@@ -1334,7 +1334,7 @@ en = "The value that should be converted to bytes."
 zh = "应转换为字节的值。"
 
 [reference.foundations.bytes.bytes.details]
-en = "{{typst-docs/reference.foundations.bytes.bytes.toml}}"
+en = "{{typst-docs/reference.foundations.bytes.bytes.details.toml}}"
 zh = "一系列字节。\n\n这在概念上类似于介于 `{0}` 和 `{255}` 之间的 [整数]($int) 数组，但表示更有效。您可以使用 [for 循环]($scripting/#loops) 迭代它。\n\n您可以将\n- [字符串]($str) 或整数 [数组] 转换为字节，使用 [`bytes`] 构造函数\n- 字节转换为字符串，使用 [`str`] 构造函数，使用 UTF-8 编码\n- 字节转换为整数数组，使用 [`array`] 构造函数\n\n当从文件中 [读取]($read) 数据时，您可以决定是将其加载为字符串还是原始字节。\n\n```example\n#bytes((123, 160, 22, 0)) \\\n#bytes(\"Hello 😃\")\n\n#let data = read(\n  \"rhino.png\",\n  encoding: none,\n)\n\n// 魔术字节。\n#array(data.slice(0, 4)) \\\n#str(data.slice(1, 4))\n```"
 
 [reference.foundations.bytes.bytes.len.details]
@@ -1802,7 +1802,7 @@ en = "The expression to take the root of"
 en = "Root"
 
 [reference.foundations.calc.calc.round.details]
-en = "{{typst-docs/reference.foundations.calc.calc.round.toml}}"
+en = "{{typst-docs/reference.foundations.calc.calc.round.details.toml}}"
 
 [reference.foundations.calc.calc.round.digits.details]
 en = "If positive, the number of decimal places.\n\nIf negative, the number of significant integer digits that should be\nremoved before the decimal point."
@@ -1916,7 +1916,7 @@ en = "Access the specified field on the content. Returns the default value if"
 en = "At"
 
 [reference.foundations.content.content.details]
-en = "{{typst-docs/reference.foundations.content.content.toml}}"
+en = "{{typst-docs/reference.foundations.content.content.details.toml}}"
 
 [reference.foundations.content.content.fields.details]
 en = "Returns the fields of this content.\n\n"
@@ -2009,7 +2009,7 @@ en = "The day if it was specified, or `{none}` for times without a date."
 en = "Day"
 
 [reference.foundations.datetime.datetime.details]
-en = "{{typst-docs/reference.foundations.datetime.datetime.toml}}"
+en = "{{typst-docs/reference.foundations.datetime.datetime.details.toml}}"
 
 [reference.foundations.datetime.datetime.display.details]
 en = "Displays the datetime in a specified format.\n\nDepending on whether you have defined just a date, a time or both, the\ndefault format will be different. If you specified a date, it will be\n`[[year]-[month]-[day]]`. If you specified a time, it will be\n`[[hour]:[minute]:[second]]`. In the case of a datetime, it will be\n`[[year]-[month]-[day] [hour]:[minute]:[second]]`.\n\nSee the [format syntax]($datetime/#format) for more information."
@@ -2126,7 +2126,7 @@ en = "Construct"
 en = "The value that should be converted to a decimal."
 
 [reference.foundations.decimal.decimal.details]
-en = "{{typst-docs/reference.foundations.decimal.decimal.toml}}"
+en = "{{typst-docs/reference.foundations.decimal.decimal.details.toml}}"
 
 [reference.foundations.decimal.decimal.oneliner]
 en = "A fixed-point decimal number type."
@@ -2165,7 +2165,7 @@ en = "Returns the value associated with the specified key in the dictionary."
 en = "At"
 
 [reference.foundations.dictionary.dictionary.details]
-en = "{{typst-docs/reference.foundations.dictionary.dictionary.toml}}"
+en = "{{typst-docs/reference.foundations.dictionary.dictionary.details.toml}}"
 
 [reference.foundations.dictionary.dictionary.dictionary.details]
 en = "Converts a value into a dictionary.\n\nNote that this function is only intended for conversion of a\ndictionary-like value to a dictionary, not for creation of a dictionary\nfrom individual pairs. Use the dictionary syntax `(key: value)` instead.\n\n"
@@ -2468,7 +2468,7 @@ en = "Foundations"
 en = "Documentation for the Function type."
 
 [reference.foundations.function.function.details]
-en = "{{typst-docs/reference.foundations.function.function.toml}}"
+en = "{{typst-docs/reference.foundations.function.function.details.toml}}"
 
 [reference.foundations.function.function.oneliner]
 en = "A mapping from argument values to a return value."
@@ -2582,7 +2582,7 @@ en = "The right-hand operand of the bitwise XOR."
 en = "Bitwise XOR"
 
 [reference.foundations.int.int.details]
-en = "{{typst-docs/reference.foundations.int.int.toml}}"
+en = "{{typst-docs/reference.foundations.int.int.details.toml}}"
 
 [reference.foundations.int.int.from-bytes.bytes.details]
 en = "The bytes that should be converted to an integer.\n\nMust be of length at most 8 so that the result fits into a 64-bit\nsigned integer."
@@ -2654,7 +2654,7 @@ en = "Integer"
 en = "Documentation for the Label type."
 
 [reference.foundations.label.label.details]
-en = "{{typst-docs/reference.foundations.label.label.toml}}"
+en = "{{typst-docs/reference.foundations.label.label.details.toml}}"
 
 [reference.foundations.label.label.label.details]
 en = "Creates a label from a string."
@@ -2744,7 +2744,7 @@ en = "Documentation for the `plugin` function."
 en = "Loads a WebAssembly module."
 
 [reference.foundations.plugin.plugin.details]
-en = "{{typst-docs/reference.foundations.plugin.plugin.toml}}"
+en = "{{typst-docs/reference.foundations.plugin.plugin.details.toml}}"
 
 [reference.foundations.plugin.plugin.oneliner]
 en = "Loads a WebAssembly module."
@@ -2759,7 +2759,7 @@ en = "Plugin"
 en = "The byte buffers to call the function with."
 
 [reference.foundations.plugin.plugin.transition.details]
-en = "{{typst-docs/reference.foundations.plugin.plugin.transition.toml}}"
+en = "{{typst-docs/reference.foundations.plugin.plugin.transition.details.toml}}"
 
 [reference.foundations.plugin.plugin.transition.func.details]
 en = "The plugin function to call."
@@ -2780,7 +2780,7 @@ en = "Documentation for the Regex type."
 en = "A regular expression."
 
 [reference.foundations.regex.regex.details]
-en = "{{typst-docs/reference.foundations.regex.regex.toml}}"
+en = "{{typst-docs/reference.foundations.regex.regex.details.toml}}"
 
 [reference.foundations.regex.regex.oneliner]
 en = "A regular expression."
@@ -2873,7 +2873,7 @@ en = "Returns a modified selector that will only match elements that occur"
 en = "Before"
 
 [reference.foundations.selector.selector.details]
-en = "{{typst-docs/reference.foundations.selector.selector.toml}}"
+en = "{{typst-docs/reference.foundations.selector.selector.details.toml}}"
 
 [reference.foundations.selector.selector.oneliner]
 en = "A filter for selecting elements within the document."
@@ -2960,7 +2960,7 @@ en = "The pattern to search for."
 en = "Contains"
 
 [reference.foundations.str.str.details]
-en = "{{typst-docs/reference.foundations.str.str.toml}}"
+en = "{{typst-docs/reference.foundations.str.str.details.toml}}"
 
 [reference.foundations.str.str.ends-with.details]
 en = "Whether the string ends with the specified pattern."
@@ -3191,7 +3191,7 @@ en = "Documentation for the Symbol type."
 en = "A Unicode symbol."
 
 [reference.foundations.symbol.symbol.details]
-en = "{{typst-docs/reference.foundations.symbol.symbol.toml}}"
+en = "{{typst-docs/reference.foundations.symbol.symbol.details.toml}}"
 
 [reference.foundations.symbol.symbol.oneliner]
 en = "A Unicode symbol."
@@ -3236,7 +3236,7 @@ en = "Documentation for the `target` function."
 en = "Returns the current export target."
 
 [reference.foundations.target.target.details]
-en = "{{typst-docs/reference.foundations.target.target.toml}}"
+en = "{{typst-docs/reference.foundations.target.target.details.toml}}"
 
 [reference.foundations.target.target.oneliner]
 en = "Returns the current export target."
@@ -3260,7 +3260,7 @@ en = "Describes a kind of value."
 en = "Type"
 
 [reference.foundations.type.type.details]
-en = "{{typst-docs/reference.foundations.type.type.toml}}"
+en = "{{typst-docs/reference.foundations.type.type.details.toml}}"
 
 [reference.foundations.type.type.oneliner]
 en = "Describes a kind of value."
@@ -3374,7 +3374,7 @@ en = "An element that lays out its content as an inline SVG."
 en = "Frame"
 
 [reference.html.html.details]
-en = "{{typst-docs/reference.html.html.toml}}"
+en = "{{typst-docs/reference.html.html.details.toml}}"
 
 [reference.html.html.title]
 en = "HTML"
@@ -3407,7 +3407,7 @@ en = "Create a new counter identified by a key."
 en = "Construct"
 
 [reference.introspection.counter.counter.details]
-en = "{{typst-docs/reference.introspection.counter.counter.toml}}"
+en = "{{typst-docs/reference.introspection.counter.counter.details.toml}}"
 
 [reference.introspection.counter.counter.display.both.details]
 en = "If enabled, displays the current and final top-level count together.\nBoth can be styled through a single numbering pattern. This is used\nby the page numbering property to display the current and total\nnumber of pages when a pattern like `{\"1 / 1\"}` is given."
@@ -3488,7 +3488,7 @@ en = "Documentation for functions related to Introspection in Typst."
 en = "Documentation for the `here` function."
 
 [reference.introspection.here.here.details]
-en = "{{typst-docs/reference.introspection.here.here.toml}}"
+en = "{{typst-docs/reference.introspection.here.here.details.toml}}"
 
 [reference.introspection.here.here.oneliner]
 en = "Provides the current location in the document."
@@ -3602,7 +3602,7 @@ en = "Documentation for the `query` function."
 en = "Finds elements in the document."
 
 [reference.introspection.query.query.details]
-en = "{{typst-docs/reference.introspection.query.query.toml}}"
+en = "{{typst-docs/reference.introspection.query.query.details.toml}}"
 
 [reference.introspection.query.query.oneliner]
 en = "Finds elements in the document."
@@ -3635,7 +3635,7 @@ en = "The place at which the state's value should be retrieved."
 en = "At"
 
 [reference.introspection.state.state.details]
-en = "{{typst-docs/reference.introspection.state.state.toml}}"
+en = "{{typst-docs/reference.introspection.state.state.details.toml}}"
 
 [reference.introspection.state.state.final.details]
 en = "Retrieves the value of the state at the end of the document."
@@ -3701,7 +3701,7 @@ en = "The [alignment] along both axes.\n\n"
 en = "The content to align."
 
 [reference.layout.align.align.details]
-en = "{{typst-docs/reference.layout.align.align.toml}}"
+en = "{{typst-docs/reference.layout.align.align.details.toml}}"
 
 [reference.layout.align.align.oneliner]
 en = "Aligns content horizontally and vertically."
@@ -3728,7 +3728,7 @@ en = "The axis this alignment belongs to."
 en = "Axis"
 
 [reference.layout.alignment.alignment.details]
-en = "{{typst-docs/reference.layout.alignment.alignment.toml}}"
+en = "{{typst-docs/reference.layout.alignment.alignment.details.toml}}"
 
 [reference.layout.alignment.alignment.inv.details]
 en = "The inverse alignment.\n\n"
@@ -3806,7 +3806,7 @@ en = "Whether the block can be broken and continue on the next page.\n\n"
 en = "Whether to clip the content inside the block.\n\nClipping is useful when the block's content is larger than the block itself,\nas any content that exceeds the block's bounds will be hidden.\n\n"
 
 [reference.layout.block.block.details]
-en = "{{typst-docs/reference.layout.block.block.toml}}"
+en = "{{typst-docs/reference.layout.block.block.details.toml}}"
 
 [reference.layout.block.block.fill.details]
 en = "The block's background color. See the\n[rectangle's documentation]($rect.fill) for more details."
@@ -3926,7 +3926,7 @@ en = "The content that should be layouted into the columns."
 en = "The number of columns."
 
 [reference.layout.columns.columns.details]
-en = "{{typst-docs/reference.layout.columns.columns.toml}}"
+en = "{{typst-docs/reference.layout.columns.columns.details.toml}}"
 
 [reference.layout.columns.columns.gutter.details]
 en = "The size of the gutter space between each column."
@@ -4076,7 +4076,7 @@ en = "The gaps between columns."
 en = "The column sizes.\n\nEither specify a track size array or provide an integer to create a grid\nwith that many `{auto}`-sized columns. Note that opposed to rows and\ngutters, providing a single track size will only ever create a single\ncolumn."
 
 [reference.layout.grid.grid.details]
-en = "{{typst-docs/reference.layout.grid.grid.toml}}"
+en = "{{typst-docs/reference.layout.grid.grid.details.toml}}"
 
 [reference.layout.grid.grid.fill.details]
 en = "How to fill the cells.\n\nThis can be a color or a function that returns a color. The function\nreceives the cells' column and row indices, starting from zero. This can\nbe used to implement striped grids.\n\n"
@@ -4193,7 +4193,7 @@ en = "Documentation for the `h` function."
 en = "How much spacing to insert."
 
 [reference.layout.h.h.details]
-en = "{{typst-docs/reference.layout.h.h.toml}}"
+en = "{{typst-docs/reference.layout.h.h.details.toml}}"
 
 [reference.layout.h.h.oneliner]
 en = "Inserts horizontal spacing into a paragraph."
@@ -4238,7 +4238,7 @@ en = "Documentation for the `layout` function."
 en = "Arranging elements on the page in different ways.\n\nBy combining layout functions, you can create complex and automatic layouts.\n"
 
 [reference.layout.layout.layout.details]
-en = "{{typst-docs/reference.layout.layout.layout.toml}}"
+en = "{{typst-docs/reference.layout.layout.layout.details.toml}}"
 
 [reference.layout.layout.layout.func.details]
 en = "A function to call with the outer container's size. Its return value is\ndisplayed in the document.\n\nThe container's size is given as a [dictionary] with the keys `width`\nand `height`.\n\nThis function is called once for each time the content returned by\n`layout` appears in the document. This makes it possible to generate\ncontent that depends on the dimensions of its container."
@@ -4268,7 +4268,7 @@ en = "Converts this length to centimeters."
 en = "Centimeters"
 
 [reference.layout.length.length.details]
-en = "{{typst-docs/reference.layout.length.length.toml}}"
+en = "{{typst-docs/reference.layout.length.length.details.toml}}"
 
 [reference.layout.length.length.inches.details]
 en = "Converts this length to inches.\n\nFails with an error if this length has non-zero `em` units. See the\n[`pt`]($length.pt) method for more details."
@@ -4325,7 +4325,7 @@ en = "Documentation for the `measure` function."
 en = "The content whose size to measure."
 
 [reference.layout.measure.measure.details]
-en = "{{typst-docs/reference.layout.measure.measure.toml}}"
+en = "{{typst-docs/reference.layout.measure.measure.details.toml}}"
 
 [reference.layout.measure.measure.height.details]
 en = "The height available to layout the content.\n\nSetting this to `{auto}` indicates infinite available height."
@@ -4433,7 +4433,7 @@ en = "The contents of the page(s).\n\nMultiple pages will be created if the cont
 en = "How many columns the page has.\n\nIf you need to insert columns into a page or other container, you can\nalso use the [`columns` function]($columns).\n\n"
 
 [reference.layout.page.page.details]
-en = "{{typst-docs/reference.layout.page.page.toml}}"
+en = "{{typst-docs/reference.layout.page.page.details.toml}}"
 
 [reference.layout.page.page.fill.details]
 en = "The page's background fill.\n\nSetting this to something non-transparent instructs the printer to color\nthe complete page. If you are considering larger production runs, it may\nbe more environmentally friendly and cost-effective to source pre-dyed\npages and not set this property.\n\nWhen set to `{none}`, the background becomes transparent. Note that PDF\npages will still appear with a (usually white) background in viewers,\nbut they are actually transparent. (If you print them, no color is used\nfor the background.)\n\nThe default of `{auto}` results in `{none}` for PDF output, and\n`{white}` for PNG and SVG.\n\n"
@@ -4526,7 +4526,7 @@ en = "The content to place."
 en = "The spacing between the placed element and other elements in a floating\nlayout.\n\nHas no effect if `float` is `{false}`."
 
 [reference.layout.place.place.details]
-en = "{{typst-docs/reference.layout.place.place.toml}}"
+en = "{{typst-docs/reference.layout.place.place.details.toml}}"
 
 [reference.layout.place.place.dx.details]
 en = "The horizontal displacement of the placed content.\n\n"
@@ -4604,7 +4604,7 @@ en = "Repeats content to the available space."
 en = "The content to repeat."
 
 [reference.layout.repeat.repeat.details]
-en = "{{typst-docs/reference.layout.repeat.repeat.toml}}"
+en = "{{typst-docs/reference.layout.repeat.repeat.details.toml}}"
 
 [reference.layout.repeat.repeat.gap.details]
 en = "The gap between each instance of the body."
@@ -5000,7 +5000,7 @@ en = "Whether the equation is displayed as a separate block."
 en = "The contents of the equation."
 
 [reference.math.equation.equation.details]
-en = "{{typst-docs/reference.math.equation.equation.toml}}"
+en = "{{typst-docs/reference.math.equation.equation.details.toml}}"
 
 [reference.math.equation.equation.number-align.details]
 en = "The alignment of the equation numbering.\n\nBy default, the alignment is `{end + horizon}`. For the horizontal\ncomponent, you can use `{right}`, `{left}`, or `{start}` and `{end}`\nof the text direction; for the vertical component, you can use\n`{top}`, `{horizon}`, or `{bottom}`.\n\n"
@@ -5204,7 +5204,7 @@ en = "A matrix."
 en = "Matrix"
 
 [reference.math.math.details]
-en = "{{typst-docs/reference.math.math.toml}}"
+en = "{{typst-docs/reference.math.math.details.toml}}"
 
 [reference.math.math.title]
 en = "Math"
@@ -5726,7 +5726,7 @@ en = "A column vector."
 en = "Vector"
 
 [reference.model.bibliography.bibliography.details]
-en = "{{typst-docs/reference.model.bibliography.bibliography.toml}}"
+en = "{{typst-docs/reference.model.bibliography.bibliography.details.toml}}"
 
 [reference.model.bibliography.bibliography.full.details]
 en = "Whether to include all works from the given bibliography files, even\nthose that weren't cited in the document.\n\nTo selectively add individual cited works without showing them, you can\nalso use the `cite` function with [`form`]($cite.form) set to `{none}`."
@@ -5756,7 +5756,7 @@ en = "A bibliography / reference listing."
 en = "Bibliography"
 
 [reference.model.cite.cite.details]
-en = "{{typst-docs/reference.model.cite.cite.toml}}"
+en = "{{typst-docs/reference.model.cite.cite.details.toml}}"
 
 [reference.model.cite.cite.form.details]
 en = "The kind of citation to produce. Different forms are useful in different\nscenarios: A normal citation is useful as a source at the end of a\nsentence, while a \"prose\" citation is more suitable for inclusion in the\nflow of text.\n\nIf set to `{none}`, the cited work is included in the bibliography, but\nnothing will be displayed.\n\n"
@@ -5828,7 +5828,7 @@ en = "Documentation for the `emph` function."
 en = "The content to emphasize."
 
 [reference.model.emph.emph.details]
-en = "{{typst-docs/reference.model.emph.emph.toml}}"
+en = "{{typst-docs/reference.model.emph.emph.details.toml}}"
 
 [reference.model.emph.emph.oneliner]
 en = "Emphasizes content by toggling italics."
@@ -5852,7 +5852,7 @@ en = "The space between the numbering and the body of each item."
 en = "The numbered list's items.\n\nWhen using the enum syntax, adjacent items are automatically collected\ninto enumerations, even through constructs like for loops.\n\n"
 
 [reference.model.enum.enum.details]
-en = "{{typst-docs/reference.model.enum.enum.toml}}"
+en = "{{typst-docs/reference.model.enum.enum.details.toml}}"
 
 [reference.model.enum.enum.full.details]
 en = "Whether to display the full numbering, including the numbers of\nall parent enumerations.\n\n\n"
@@ -5930,13 +5930,13 @@ en = "The separator which will appear between the number and body.\n\nIf set to 
 en = "Caption"
 
 [reference.model.figure.figure.details]
-en = "{{typst-docs/reference.model.figure.figure.toml}}"
+en = "{{typst-docs/reference.model.figure.figure.details.toml}}"
 
 [reference.model.figure.figure.gap.details]
 en = "The vertical gap between the body and caption."
 
 [reference.model.figure.figure.kind.details]
-en = "{{typst-docs/reference.model.figure.figure.kind.toml}}"
+en = "{{typst-docs/reference.model.figure.figure.kind.details.toml}}"
 
 [reference.model.figure.figure.numbering.details]
 en = "How to number the figure. Accepts a\n[numbering pattern or function]($numbering)."
@@ -5972,7 +5972,7 @@ en = "Documentation for the `footnote` function."
 en = "The content to put into the footnote. Can also be the label of another\nfootnote this one should point to."
 
 [reference.model.footnote.footnote.details]
-en = "{{typst-docs/reference.model.footnote.footnote.toml}}"
+en = "{{typst-docs/reference.model.footnote.footnote.details.toml}}"
 
 [reference.model.footnote.footnote.entry.clearance.details]
 en = "The amount of clearance between the document body and the separator.\n\n"
@@ -6026,7 +6026,7 @@ en = "Whether the heading should appear as a bookmark in the exported PDF's\nout
 en = "The relative nesting depth of the heading, starting from one. This is\ncombined with `{offset}` to compute the actual `{level}`.\n\nThis is set by the heading syntax, such that `[== Heading]` creates a\nheading with logical depth of 2, but actual level `{offset + 2}`. If you\nconstruct a heading manually, you should typically prefer this over\nsetting the absolute level."
 
 [reference.model.heading.heading.details]
-en = "{{typst-docs/reference.model.heading.heading.toml}}"
+en = "{{typst-docs/reference.model.heading.heading.details.toml}}"
 
 [reference.model.heading.heading.hanging-indent.details]
 en = "The indent all but the first line of a heading should have.\n\nThe default value of `{auto}` indicates that the subsequent heading\nlines will be indented based on the width of the numbering.\n\n"
@@ -6065,10 +6065,10 @@ en = "Documentation for the `link` function."
 en = "The content that should become a link.\n\nIf `dest` is an URL string, the parameter can be omitted. In this case,\nthe URL will be shown as the link."
 
 [reference.model.link.link.dest.details]
-en = "{{typst-docs/reference.model.link.link.dest.toml}}"
+en = "{{typst-docs/reference.model.link.link.dest.details.toml}}"
 
 [reference.model.link.link.details]
-en = "{{typst-docs/reference.model.link.link.toml}}"
+en = "{{typst-docs/reference.model.link.link.details.toml}}"
 
 [reference.model.link.link.oneliner]
 en = "Links to a URL or a location in the document."
@@ -6092,7 +6092,7 @@ en = "The spacing between the marker and the body of each item."
 en = "The bullet list's children.\n\nWhen using the list syntax, adjacent items are automatically collected\ninto lists, even through constructs like for loops.\n\n"
 
 [reference.model.list.list.details]
-en = "{{typst-docs/reference.model.list.list.toml}}"
+en = "{{typst-docs/reference.model.list.list.details.toml}}"
 
 [reference.model.list.list.indent.details]
 en = "The indent of each item."
@@ -6140,10 +6140,10 @@ en = "Model"
 en = "Documentation for the `numbering` function."
 
 [reference.model.numbering.numbering.details]
-en = "{{typst-docs/reference.model.numbering.numbering.toml}}"
+en = "{{typst-docs/reference.model.numbering.numbering.details.toml}}"
 
 [reference.model.numbering.numbering.numbering.details]
-en = "{{typst-docs/reference.model.numbering.numbering.numbering.toml}}"
+en = "{{typst-docs/reference.model.numbering.numbering.numbering.details.toml}}"
 
 [reference.model.numbering.numbering.numbers.details]
 en = "The numbers to apply the numbering to. Must be positive.\n\nIf `numbering` is a pattern and more numbers than counting symbols are\ngiven, the last counting symbol with its prefix is repeated."
@@ -6170,7 +6170,7 @@ en = "A table of contents, figures, or other elements."
 en = "The maximum level up to which elements are included in the outline. When\nthis argument is `{none}`, all elements are included.\n\n"
 
 [reference.model.outline.outline.details]
-en = "{{typst-docs/reference.model.outline.outline.toml}}"
+en = "{{typst-docs/reference.model.outline.outline.details.toml}}"
 
 [reference.model.outline.outline.entry.body.details]
 en = "The content which is displayed in place of the referred element at its\nentry in the outline. For a heading, this is its\n[`body`]($heading.body); for a figure a caption and for equations, it is\nempty."
@@ -6272,7 +6272,7 @@ en = "A logical subdivison of textual content."
 en = "The contents of the paragraph."
 
 [reference.model.par.par.details]
-en = "{{typst-docs/reference.model.par.par.toml}}"
+en = "{{typst-docs/reference.model.par.par.details.toml}}"
 
 [reference.model.par.par.first-line-indent.details]
 en = "The indent the first line of a paragraph should have.\n\nBy default, only the first line of a consecutive paragraph will be\nindented (not the first one in the document or container, and not\nparagraphs immediately following other block-level elements).\n\nIf you want to indent all paragraphs instead, you can pass a dictionary\ncontaining the `amount` of indent as a length and the pair\n`{all: true}`. When `all` is omitted from the dictionary, it defaults to\n`{false}`.\n\nBy typographic convention, paragraph breaks are indicated either by some\nspace between paragraphs or by indented first lines. Consider\n- reducing the [paragraph `spacing`]($par.spacing) to the\n  [`leading`]($par.leading) using `{set par(spacing: 0.65em)}`\n- increasing the [block `spacing`]($block.spacing) (which inherits the\n  paragraph spacing by default) to the original paragraph spacing using\n  `{set block(spacing: 1.2em)}`\n\n"
@@ -6359,7 +6359,7 @@ en = "Whether this is a block quote.\n\n"
 en = "The quote."
 
 [reference.model.quote.quote.details]
-en = "{{typst-docs/reference.model.quote.quote.toml}}"
+en = "{{typst-docs/reference.model.quote.quote.details.toml}}"
 
 [reference.model.quote.quote.oneliner]
 en = "Displays a quote alongside an optional attribution."
@@ -6380,7 +6380,7 @@ en = "Documentation for the `ref` function."
 en = "A reference to a label or bibliography."
 
 [reference.model.ref.ref.details]
-en = "{{typst-docs/reference.model.ref.ref.toml}}"
+en = "{{typst-docs/reference.model.ref.ref.details.toml}}"
 
 [reference.model.ref.ref.form.details]
 en = "The kind of reference to produce.\n\n"
@@ -6482,7 +6482,7 @@ en = "The gaps between columns. Takes precedence over `gutter`. See the\n[grid d
 en = "The column sizes. See the [grid documentation]($grid) for more\ninformation on track sizing."
 
 [reference.model.table.table.details]
-en = "{{typst-docs/reference.model.table.table.toml}}"
+en = "{{typst-docs/reference.model.table.table.details.toml}}"
 
 [reference.model.table.table.fill.details]
 en = "How to fill the cells.\n\nThis can be a color or a function that returns a color. The function\nreceives the cells' column and row indices, starting from zero. This can\nbe used to implement striped tables.\n\n"
@@ -6680,7 +6680,7 @@ en = "A file that will be embedded into the output PDF."
 en = "Embed"
 
 [reference.pdf.pdf.details]
-en = "{{typst-docs/reference.pdf.pdf.toml}}"
+en = "{{typst-docs/reference.pdf.pdf.details.toml}}"
 
 [reference.pdf.pdf.title]
 en = "PDF"
@@ -6692,7 +6692,7 @@ en = "PDF"
 en = "Documentation for functions related to PNG in Typst."
 
 [reference.png.png.details]
-en = "{{typst-docs/reference.png.png.toml}}"
+en = "{{typst-docs/reference.png.png.details.toml}}"
 
 [reference.png.png.title]
 en = "PNG"
@@ -6701,7 +6701,7 @@ en = "PNG"
 en = "PNG"
 
 [reference.scripting.body]
-en = "{{typst-docs/reference.scripting.toml}}"
+en = "{{typst-docs/reference.scripting.body.toml}}"
 
 [reference.scripting.description]
 en = "Automate your document with Typst's scripting capabilities."
@@ -6710,7 +6710,7 @@ en = "Automate your document with Typst's scripting capabilities."
 en = "Scripting"
 
 [reference.styling.body]
-en = "{{typst-docs/reference.styling.toml}}"
+en = "{{typst-docs/reference.styling.body.toml}}"
 
 [reference.styling.description]
 en = "All concepts needed to style your document with Typst."
@@ -6722,7 +6722,7 @@ en = "Styling"
 en = "Documentation for functions related to SVG in Typst."
 
 [reference.svg.svg.details]
-en = "{{typst-docs/reference.svg.svg.toml}}"
+en = "{{typst-docs/reference.svg.svg.details.toml}}"
 
 [reference.svg.svg.title]
 en = "SVG"
@@ -6800,7 +6800,7 @@ en = "Symbols"
 en = "Symbols"
 
 [reference.syntax.body]
-en = "{{typst-docs/reference.syntax.toml}}"
+en = "{{typst-docs/reference.syntax.body.toml}}"
 
 [reference.syntax.description]
 en = "A compact reference for Typst's syntax. Learn more about the language within\nmarkup, math, and code mode.\n"
@@ -6962,7 +6962,7 @@ en = "The horizontal alignment that each line in a raw block should have.\nThis 
 en = "Whether the raw text is displayed as a separate block.\n\nIn markup mode, using one-backtick notation makes this `{false}`.\nUsing three-backtick notation makes it `{true}` if the enclosed content\ncontains at least one line break.\n\n"
 
 [reference.text.raw.raw.details]
-en = "{{typst-docs/reference.text.raw.raw.toml}}"
+en = "{{typst-docs/reference.text.raw.raw.details.toml}}"
 
 [reference.text.raw.raw.lang.details]
 en = "The language to syntax-highlight in.\n\nApart from typical language tags known from Markdown, this supports the\n`{\"typ\"}`, `{\"typc\"}`, and `{\"typm\"}` tags for\n[Typst markup]($reference/syntax/#markup),\n[Typst code]($reference/syntax/#code), and\n[Typst math]($reference/syntax/#math), respectively.\n\n"
@@ -7022,7 +7022,7 @@ en = "Whether to turn uppercase letters into small capitals as well.\n\nUnless o
 en = "The content to display in small capitals."
 
 [reference.text.smallcaps.smallcaps.details]
-en = "{{typst-docs/reference.text.smallcaps.smallcaps.toml}}"
+en = "{{typst-docs/reference.text.smallcaps.smallcaps.details.toml}}"
 
 [reference.text.smallcaps.smallcaps.oneliner]
 en = "Displays text in small capitals."
@@ -7043,7 +7043,7 @@ en = "A language-aware quote that reacts to its context."
 en = "Whether to use alternative quotes.\n\nDoes nothing for languages that don't have alternative quotes, or if\nexplicit quotes were set.\n\n"
 
 [reference.text.smartquote.smartquote.details]
-en = "{{typst-docs/reference.text.smartquote.smartquote.toml}}"
+en = "{{typst-docs/reference.text.smartquote.smartquote.details.toml}}"
 
 [reference.text.smartquote.smartquote.double.details]
 en = "Whether this should be a double quote."
@@ -7181,7 +7181,7 @@ en = "The bottom end of the conceptual frame around the text used for layout\nan
 en = "Whether to automatically insert spacing between CJK and Latin characters.\n\n"
 
 [reference.text.text.text.costs.details]
-en = "{{typst-docs/reference.text.text.text.costs.toml}}"
+en = "{{typst-docs/reference.text.text.text.costs.details.toml}}"
 
 [reference.text.text.text.details]
 en = "Customizes the look and layout of text in a variety of ways.\n\nThis function is used frequently, both with set rules and directly. While\nthe set rule is often the simpler choice, calling the `text` function\ndirectly can be useful when passing text as an argument to another function.\n\n# Example\n```example\n#set text(18pt)\nWith a set rule.\n\n#emph(text(blue)[\n  With a function call.\n])\n```"
@@ -7202,7 +7202,7 @@ en = "Raw OpenType features to apply.\n\n- If given an array of strings, sets th
 en = "The glyph fill paint.\n\n"
 
 [reference.text.text.text.font.details]
-en = "{{typst-docs/reference.text.text.text.font.toml}}"
+en = "{{typst-docs/reference.text.text.text.font.details.toml}}"
 
 [reference.text.text.text.fractions.details]
 en = "Whether to turn numbers into fractions. Setting this to `{true}`\nenables the OpenType `frac` font feature.\n\nIt is not advisable to enable this property globally as it will mess\nwith all appearances of numbers after a slash (e.g., in URLs). Instead,\nenable it locally when you want a fraction.\n\n"
@@ -7391,7 +7391,7 @@ en = "Alternatively: The color to convert to CMYK.\n\nIf this is given, the indi
 en = "The cyan component."
 
 [reference.visualize.color.color.cmyk.details]
-en = "{{typst-docs/reference.visualize.color.color.cmyk.toml}}"
+en = "{{typst-docs/reference.visualize.color.color.cmyk.details.toml}}"
 
 [reference.visualize.color.color.cmyk.key.details]
 en = "The key component."
@@ -7445,7 +7445,7 @@ en = "Decreases the saturation of a color by a given factor."
 en = "Desaturate"
 
 [reference.visualize.color.color.details]
-en = "{{typst-docs/reference.visualize.color.color.toml}}"
+en = "{{typst-docs/reference.visualize.color.color.details.toml}}"
 
 [reference.visualize.color.color.hsl.alpha.details]
 en = "The alpha component."
@@ -7772,7 +7772,7 @@ en = "Whether the `control-start`, `control-end`, and `end` coordinates are\nrel
 en = "Curve Cubic Segment"
 
 [reference.visualize.curve.curve.details]
-en = "{{typst-docs/reference.visualize.curve.curve.toml}}"
+en = "{{typst-docs/reference.visualize.curve.curve.details.toml}}"
 
 [reference.visualize.curve.curve.fill-rule.details]
 en = "The drawing rule used to fill the curve.\n\n"
@@ -7934,7 +7934,7 @@ en = "The color [stops](#stops) of the gradient."
 en = "Conic"
 
 [reference.visualize.gradient.gradient.details]
-en = "{{typst-docs/reference.visualize.gradient.gradient.toml}}"
+en = "{{typst-docs/reference.visualize.gradient.gradient.details.toml}}"
 
 [reference.visualize.gradient.gradient.focal-center.details]
 en = "Returns the focal-center of this gradient.\n\nReturns `{none}` if the gradient is not radial."
@@ -8165,7 +8165,7 @@ en = "A raster or vector graphic.\n\nYou can wrap the image in a [`figure`] to g
 en = "How the image should adjust itself to a given area (the area is defined\nby the `width` and `height` fields). Note that `fit` doesn't visually\nchange anything if the area's aspect ratio is the same as the image's\none.\n\n"
 
 [reference.visualize.image.image.format.details]
-en = "{{typst-docs/reference.visualize.image.image.format.toml}}"
+en = "{{typst-docs/reference.visualize.image.image.format.details.toml}}"
 
 [reference.visualize.image.image.height.details]
 en = "The height of the image."
@@ -8408,7 +8408,7 @@ en = "Documentation for the Stroke type."
 en = "Defines how to draw a line."
 
 [reference.visualize.stroke.stroke.details]
-en = "{{typst-docs/reference.visualize.stroke.stroke.toml}}"
+en = "{{typst-docs/reference.visualize.stroke.stroke.details.toml}}"
 
 [reference.visualize.stroke.stroke.oneliner]
 en = "Defines how to draw a line."
@@ -8453,7 +8453,7 @@ en = "Documentation for the Tiling type."
 en = "A repeating tiling fill."
 
 [reference.visualize.tiling.tiling.details]
-en = "{{typst-docs/reference.visualize.tiling.tiling.toml}}"
+en = "{{typst-docs/reference.visualize.tiling.tiling.details.toml}}"
 
 [reference.visualize.tiling.tiling.oneliner]
 en = "A repeating tiling fill."
@@ -8495,7 +8495,7 @@ en = "Drawing and data visualization.\n\nIf you want to create more advanced dra
 en = "Visualize"
 
 [tutorial.advanced-styling.body]
-en = "{{typst-docs/tutorial.advanced-styling.toml}}"
+en = "{{typst-docs/tutorial.advanced-styling.body.toml}}"
 
 [tutorial.advanced-styling.description]
 en = "Typst's tutorial."
@@ -8504,13 +8504,13 @@ en = "Typst's tutorial."
 en = "Advanced Styling"
 
 [tutorial.body]
-en = "{{typst-docs/tutorial.toml}}"
+en = "{{typst-docs/tutorial.body.toml}}"
 
 [tutorial.description]
 en = "Typst's tutorial."
 
 [tutorial.formatting.body]
-en = "{{typst-docs/tutorial.formatting.toml}}"
+en = "{{typst-docs/tutorial.formatting.body.toml}}"
 
 [tutorial.formatting.description]
 en = "Typst's tutorial."
@@ -8519,7 +8519,7 @@ en = "Typst's tutorial."
 en = "Formatting"
 
 [tutorial.making-a-template.body]
-en = "{{typst-docs/tutorial.making-a-template.toml}}"
+en = "{{typst-docs/tutorial.making-a-template.body.toml}}"
 
 [tutorial.making-a-template.description]
 en = "Typst's tutorial."
@@ -8534,7 +8534,7 @@ en = "Tutorial"
 zh = "教程"
 
 [tutorial.writing-in-typst.body]
-en = "{{typst-docs/tutorial.writing-in-typst.toml}}"
+en = "{{typst-docs/tutorial.writing-in-typst.body.toml}}"
 
 [tutorial.writing-in-typst.description]
 en = "Typst's tutorial."

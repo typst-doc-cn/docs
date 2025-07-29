@@ -1,0 +1,96 @@
+
+[[main]]
+en = """A figure with an optional caption."""
+
+[[main]]
+en = """Automatically detects its kind to select the correct counting track. For
+example, figures containing images will be numbered separately from figures
+containing tables."""
+
+[[main]]
+en = """# Examples
+The example below shows a basic figure with an image:
+```example
+@glacier shows a glacier. Glaciers
+are complex systems."""
+
+[[main]]
+en = """#figure(
+  image(\"glacier.jpg\", width: 80%),
+  caption: [A curious figure.],
+) <glacier>
+```"""
+
+[[main]]
+en = """You can also insert [tables]($table) into figures to give them a caption.
+The figure will detect this and automatically use a separate counter."""
+
+[[main]]
+en = """```example
+#figure(
+  table(
+    columns: 4,
+    [t], [1], [2], [3],
+    [y], [0.3s], [0.4s], [0.8s],
+  ),
+  caption: [Timing results],
+)
+```"""
+
+[[main]]
+en = """This behaviour can be overridden by explicitly specifying the figure's
+`kind`. All figures of the same kind share a common counter."""
+
+[[main]]
+en = """# Figure behaviour
+By default, figures are placed within the flow of content. To make them
+float to the top or bottom of the page, you can use the
+[`placement`]($figure.placement) argument."""
+
+[[main]]
+en = """If your figure is too large and its contents are breakable across pages
+(e.g. if it contains a large table), then you can make the figure itself
+breakable across pages as well with this show rule:
+```typ
+#show figure: set block(breakable: true)
+```"""
+
+[[main]]
+en = """See the [block]($block.breakable) documentation for more information about
+breakable and non-breakable blocks."""
+
+[[main]]
+en = """# Caption customization
+You can modify the appearance of the figure's caption with its associated
+[`caption`]($figure.caption) function. In the example below, we emphasize
+all captions:"""
+
+[[main]]
+en = """```example
+#show figure.caption: emph"""
+
+[[main]]
+en = """#figure(
+  rect[Hello],
+  caption: [I am emphasized!],
+)
+```"""
+
+[[main]]
+en = """By using a [`where`]($function.where) selector, we can scope such rules to
+specific kinds of figures. For example, to position the caption above
+tables, but keep it below for all other kinds of figures, we could write the
+following show-set rule:"""
+
+[[main]]
+en = """```example
+#show figure.where(
+  kind: table
+): set figure.caption(position: top)"""
+
+[[main]]
+en = """#figure(
+  table(columns: 2)[A][B][C][D],
+  caption: [I'm up here],
+)
+```"""

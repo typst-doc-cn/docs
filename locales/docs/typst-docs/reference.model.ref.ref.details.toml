@@ -1,0 +1,110 @@
+
+[[main]]
+en = """A reference to a label or bibliography."""
+
+[[main]]
+en = """Takes a label and cross-references it. There are two kind of references,
+determined by its [`form`]($ref.form): `{\"normal\"}` and `{\"page\"}`."""
+
+[[main]]
+en = """The default, a `{\"normal\"}` reference, produces a textual reference to a
+label. For example, a reference to a heading will yield an appropriate
+string such as \"Section 1\" for a reference to the first heading. The
+references are also links to the respective element. Reference syntax can
+also be used to [cite] from a bibliography."""
+
+[[main]]
+en = """As the default form requires a supplement and numbering, the label must be
+attached to a _referenceable element_. Referenceable elements include
+[headings]($heading), [figures]($figure), [equations]($math.equation), and
+[footnotes]($footnote). To create a custom referenceable element like a
+theorem, you can create a figure of a custom [`kind`]($figure.kind) and
+write a show rule for it. In the future, there might be a more direct way
+to define a custom referenceable element."""
+
+[[main]]
+en = """If you just want to link to a labelled element and not get an automatic
+textual reference, consider using the [`link`] function instead."""
+
+[[main]]
+en = """A `{\"page\"}` reference produces a page reference to a label, displaying the
+page number at its location. You can use the
+[page's supplement]($page.supplement) to modify the text before the page
+number. Unlike a `{\"normal\"}` reference, the label can be attached to any
+element."""
+
+[[main]]
+en = """# Example
+```example
+#set page(numbering: \"1\")
+#set heading(numbering: \"1.\")
+#set math.equation(numbering: \"(1)\")"""
+
+[[main]]
+en = """= Introduction <intro>
+Recent developments in
+typesetting software have
+rekindled hope in previously
+frustrated researchers. @distress
+As shown in @results (see
+#ref(<results>, form: \"page\")),
+we ..."""
+
+[[main]]
+en = """= Results <results>
+We discuss our approach in
+comparison with others."""
+
+[[main]]
+en = """== Performance <perf>
+@slow demonstrates what slow
+software looks like.
+$ T(n) = O(2^n) $ <slow>"""
+
+[[main]]
+en = """#bibliography(\"works.bib\")
+```"""
+
+[[main]]
+en = """# Syntax
+This function also has dedicated syntax: A `{\"normal\"}` reference to a
+label can be created by typing an `@` followed by the name of the label
+(e.g. `[= Introduction <intro>]` can be referenced by typing `[@intro]`)."""
+
+[[main]]
+en = """To customize the supplement, add content in square brackets after the
+reference: `[@intro[Chapter]]`."""
+
+[[main]]
+en = """# Customization
+If you write a show rule for references, you can access the referenced
+element through the `element` field of the reference. The `element` may
+be `{none}` even if it exists if Typst hasn't discovered it yet, so you
+always need to handle that case in your code."""
+
+[[main]]
+en = """```example
+#set heading(numbering: \"1.\")
+#set math.equation(numbering: \"(1)\")"""
+
+[[main]]
+en = """#show ref: it => {
+  let eq = math.equation
+  let el = it.element
+  if el != none and el.func() == eq {
+    // Override equation references.
+    link(el.location(),numbering(
+      el.numbering,
+      ..counter(eq).at(el.location())
+    ))
+  } else {
+    // Other references as usual.
+    it
+  }
+}"""
+
+[[main]]
+en = """= Beginnings <beginning>
+In @beginning we prove @pythagoras.
+$ a^2 + b^2 = c^2 $ <pythagoras>
+```"""

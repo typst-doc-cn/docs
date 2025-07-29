@@ -1,0 +1,39 @@
+
+[[main]]
+en = """Displays a quote alongside an optional attribution."""
+
+[[main]]
+en = """# Example
+```example
+Plato is often misquoted as the author of #quote[I know that I know
+nothing], however, this is a derivation form his original quote:"""
+
+[[main]]
+en = """#set quote(block: true)"""
+
+[[main]]
+en = """#quote(attribution: [Plato])[
+  ... ἔοικα γοῦν τούτου γε σμικρῷ τινι αὐτῷ τούτῳ σοφώτερος εἶναι, ὅτι
+  ἃ μὴ οἶδα οὐδὲ οἴομαι εἰδέναι.
+]
+#quote(attribution: [from the Henry Cary literal translation of 1897])[
+  ... I seem, then, in just this little thing to be wiser than this man at
+  any rate, that what I do not know I do not think I know either.
+]
+```"""
+
+[[main]]
+en = """By default block quotes are padded left and right by `{1em}`, alignment and
+padding can be controlled with show rules:
+```example
+#set quote(block: true)
+#show quote: set align(center)
+#show quote: set pad(x: 5em)"""
+
+[[main]]
+en = """#quote[
+  You cannot pass... I am a servant of the Secret Fire, wielder of the
+  flame of Anor. You cannot pass. The dark fire will not avail you,
+  flame of Udûn. Go back to the Shadow! You cannot pass.
+]
+```"""

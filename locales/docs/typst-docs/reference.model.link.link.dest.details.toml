@@ -1,0 +1,28 @@
+
+[[main]]
+en = """The destination the link points to."""
+
+[[main]]
+en = """- To link to web pages, `dest` should be a valid URL string. If the URL
+  is in the `mailto:` or `tel:` scheme and the `body` parameter is
+  omitted, the email address or phone number will be the link's body,
+  without the scheme."""
+
+[[main]]
+en = """- To link to another part of the document, `dest` can take one of three
+  forms:
+  - A [label] attached to an element. If you also want automatic text
+    for the link based on the element, consider using a
+    [reference]($ref) instead."""
+
+[[main]]
+en = """  - A [`location`] (typically retrieved from [`here`], [`locate`] or
+    [`query`])."""
+
+[[main]]
+en = """  - A dictionary with a `page` key of type [integer]($int) and `x` and
+    `y` coordinates of type [length]. Pages are counted from one, and
+    the coordinates are relative to the page's top left corner."""
+
+[[main]]
+en = """"""

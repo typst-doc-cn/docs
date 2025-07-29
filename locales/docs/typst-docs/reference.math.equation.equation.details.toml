@@ -1,0 +1,36 @@
+
+[[main]]
+en = """A mathematical equation."""
+
+[[main]]
+en = """Can be displayed inline with text or as a separate block. An equation
+becomes block-level through the presence of at least one space after the
+opening dollar sign and one space before the closing dollar sign."""
+
+[[main]]
+en = """# Example
+```example
+#set text(font: \"New Computer Modern\")"""
+
+[[main]]
+en = """Let $a$, $b$, and $c$ be the side
+lengths of right-angled triangle.
+Then, we know that:
+$ a^2 + b^2 = c^2 $"""
+
+[[main]]
+en = """Prove by induction:
+$ sum_(k=1)^n k = (n(n+1)) / 2 $
+```"""
+
+[[main]]
+en = """By default, block-level equations will not break across pages. This can be
+changed through `{show math.equation: set block(breakable: true)}`."""
+
+[[main]]
+en = """# Syntax
+This function also has dedicated syntax: Write mathematical markup within
+dollar signs to create an equation. Starting and ending the equation with at
+least one space lifts it into a separate block that is centered
+horizontally. For more details about math syntax, see the
+[main math page]($category/math)."""

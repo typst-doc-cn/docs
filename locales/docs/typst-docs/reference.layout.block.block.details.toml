@@ -1,0 +1,40 @@
+
+[[main]]
+en = """A block-level container."""
+
+[[main]]
+en = """Such a container can be used to separate content, size it, and give it a
+background or border."""
+
+[[main]]
+en = """Blocks are also the primary way to control whether text becomes part of a
+paragraph or not. See [the paragraph documentation]($par/#what-becomes-a-paragraph)
+for more details."""
+
+[[main]]
+en = """# Examples
+With a block, you can give a background to content while still allowing it
+to break across multiple pages.
+```example
+#set page(height: 100pt)
+#block(
+  fill: luma(230),
+  inset: 8pt,
+  radius: 4pt,
+  lorem(30),
+)
+```"""
+
+[[main]]
+en = """Blocks are also useful to force elements that would otherwise be inline to
+become block-level, especially when writing show rules.
+```example
+#show heading: it => it.body
+= Blockless
+More text."""
+
+[[main]]
+en = """#show heading: it => block(it.body)
+= Blocky
+More text.
+```"""

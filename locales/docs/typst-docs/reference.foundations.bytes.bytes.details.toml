@@ -1,0 +1,36 @@
+
+[[main]]
+en = """A sequence of bytes."""
+
+[[main]]
+en = """This is conceptually similar to an array of [integers]($int) between `{0}`
+and `{255}`, but represented much more efficiently. You can iterate over it
+using a [for loop]($scripting/#loops)."""
+
+[[main]]
+en = """You can convert
+- a [string]($str) or an [array] of integers to bytes with the [`bytes`]
+  constructor
+- bytes to a string with the [`str`] constructor, with UTF-8 encoding
+- bytes to an array of integers with the [`array`] constructor"""
+
+[[main]]
+en = """When [reading]($read) data from a file, you can decide whether to load it
+as a string or as raw bytes."""
+
+[[main]]
+en = """```example
+#bytes((123, 160, 22, 0)) \\
+#bytes(\"Hello 😃\")"""
+
+[[main]]
+en = """#let data = read(
+  \"rhino.png\",
+  encoding: none,
+)"""
+
+[[main]]
+en = """// Magic bytes.
+#array(data.slice(0, 4)) \\
+#str(data.slice(1, 4))
+```"""
