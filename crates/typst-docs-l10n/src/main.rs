@@ -348,7 +348,7 @@ fn init_large_translation(path: &Path, pars: &[&str]) -> anyhow::Result<()> {
             write!(file, "\n[[main]]\nen = {content}\n")?;
         } else {
             let content = serde_json::to_string(par).unwrap();
-            let content = content.replace("\\n", "\n").replace("\\\"", "\"");
+            let content = unescape(content);
             write!(file, "\n[[main]]\nen = \"\"{content}\"\"\n")?;
         }
     }
@@ -370,7 +370,7 @@ fn store_large_translation_file(path: &Path, pars: &[TranslationMap]) -> anyhow:
                 writeln!(file, "{lang} = {content:?}")?;
             } else {
                 let content = serde_json::to_string(content).unwrap();
-                let content = content.replace("\\n", "\n").replace("\\\"", "\"");
+                let content = unescape(content);
                 writeln!(file, "{lang} = \"\"{content}\"\"")?;
             }
             anyhow::Ok(())
@@ -381,4 +381,30 @@ fn store_large_translation_file(path: &Path, pars: &[TranslationMap]) -> anyhow:
     }
 
     Ok(())
+}
+
+/// Unescapes a string by removing toml-safe escape characters.
+fn unescape(s: String) -> String {
+    let mut is_escaped = false;
+    let mut output = vec![];
+    for ch in s.chars() {
+        if is_escaped {
+            if ch == 'n' {
+                output.push('\n');
+            } else if ch == '"' {
+                output.push('"');
+            } else {
+                output.push('\\');
+                output.push(ch);
+            }
+
+            is_escaped = false;
+        } else if ch == '\\' {
+            is_escaped = true;
+        } else {
+            output.push(ch);
+        }
+    }
+
+    output.into_iter().collect::<String>()
 }

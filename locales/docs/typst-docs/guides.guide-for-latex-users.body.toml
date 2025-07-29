@@ -260,8 +260,7 @@ en = """You can also store values, including functions, in your own
 [variables]($scripting/#bindings). This can be useful to perform computations on
 them, create reusable automations, or reference a value multiple times. The
 variable binding is accomplished with the let keyword, which works similar to
-`\
-ewcommand`:"""
+`\\newcommand`:"""
 
 [[main]]
 en = """```example
