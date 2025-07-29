@@ -1,0 +1,26 @@
+[[main]]
+en = """Create a CMYK color."""
+
+[[main]]
+en = """This is useful if you want to target a specific printer. The conversion
+to RGB for display preview might differ from how your printer reproduces
+the color."""
+
+[[main]]
+en = """A CMYK color is represented internally by an array of four components:
+- cyan ([`ratio`])
+- magenta ([`ratio`])
+- yellow ([`ratio`])
+- key ([`ratio`])"""
+
+[[main]]
+en = """These components are also available using the
+[`components`]($color.components) method."""
+
+[[main]]
+en = """Note that CMYK colors are not currently supported when PDF/A output is
+enabled."""
+
+[[main]]
+en = """"""
+

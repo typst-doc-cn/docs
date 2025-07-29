@@ -1,0 +1,25 @@
+[[main]]
+en = """A regular expression."""
+
+[[main]]
+en = """Can be used as a [show rule selector]($styling/#show-rules) and with
+[string methods]($str) like `find`, `split`, and `replace`."""
+
+[[main]]
+en = """[See here](https://docs.rs/regex/latest/regex/#syntax) for a specification
+of the supported syntax."""
+
+[[main]]
+en = """# Example
+```example
+// Works with string methods.
+#\"a,b;c\".split(regex(\"[,;]\"))"""
+
+[[main]]
+en = """// Works with show rules.
+#show regex(\"\\d+\"): set text(red)"""
+
+[[main]]
+en = """The numbers 1 to 10.
+```"""
+

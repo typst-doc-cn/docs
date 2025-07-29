@@ -3,10 +3,12 @@
 //! This is a documentation localization project for the Typst project.
 
 use std::fs;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
+use anyhow::Context;
 use clap::Parser;
-use rayon::iter::{IntoParallelIterator, ParallelIterator};
+use rayon::iter::{IntoParallelIterator, IntoParallelRefMutIterator, ParallelIterator};
+use std::io::Write;
 use tinymist_l10n::{load_translations, update_disk_translations, TranslationMapSet};
 use typst_docs::provide;
 use typst_docs_l10n::generate::GenContext;
@@ -120,19 +122,32 @@ struct TranslateArgs {
     translation_dir: PathBuf,
 }
 
+const MARKDOWN_PAR_SEP: &str = "\n\n";
+
 /// Updates the translations of the documentation.
 fn translate(args: TranslateArgs) -> anyhow::Result<()> {
     let json = fs::read_to_string(&args.docs_file)?;
     let pages: Vec<PageMdModel> = serde_json::from_str(&json)?;
 
+    let sub_docs = args.translation_dir.join("typst-docs");
+    std::fs::create_dir_all(&sub_docs)
+        .with_context(|| format!("Failed to create directory: {}", sub_docs.display()))?;
     let doc_translations = pages
         .into_par_iter()
         .flat_map(|page| {
             let mut translations = vec![];
             check_page(page, &mut translations);
-            for (_k, v) in translations.iter_mut() {
-                *v = serde_json::to_string(v).unwrap();
-            }
+
+            translations.par_iter_mut().for_each(|(k, v)| {
+                let count_pars = v.matches(MARKDOWN_PAR_SEP).take(5).count();
+
+                if count_pars < 5 {
+                    *v = serde_json::to_string(v).unwrap();
+                } else {
+                    write_large_translate(&sub_docs, k, v);
+                }
+            });
+
             translations
         })
         .collect::<Vec<_>>();
@@ -144,6 +159,37 @@ fn translate(args: TranslateArgs) -> anyhow::Result<()> {
     )?;
 
     Ok(())
+}
+
+/// Writes a large translation text to a file.
+fn write_large_translate(sub_docs: &Path, k: &str, v: &mut String) {
+    let mut path = sub_docs.join(k);
+    path.set_extension("toml");
+    let mut rel_path = Path::new("typst-docs").join(k);
+    rel_path.set_extension("toml");
+
+    println!("Writing large translation to {path:?}");
+
+    let mut file = fs::File::create(&path)
+        .with_context(|| {
+            format!(
+                "Failed to create file for large translation: {}",
+                path.display()
+            )
+        })
+        .unwrap();
+
+    let pars = v.split(MARKDOWN_PAR_SEP).collect::<Vec<_>>();
+    for par in pars.iter() {
+        if par.contains("\"\"\"") {
+            write!(file, "[[main]]\nen = {par:?}\n\n").unwrap();
+        } else {
+            let part = format!("{par:?}").replace("\\n", "\n");
+            write!(file, "[[main]]\nen = \"\"{part}\"\"\n\n").unwrap();
+        }
+    }
+
+    *v = serde_json::to_string(&format!("{{{{{}}}}}", rel_path.display())).unwrap();
 }
 
 /// Arguments to make a typst document.

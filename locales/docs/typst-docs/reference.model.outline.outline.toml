@@ -1,0 +1,151 @@
+[[main]]
+en = """A table of contents, figures, or other elements."""
+
+[[main]]
+en = """This function generates a list of all occurrences of an element in the
+document, up to a given [`depth`]($outline.depth). The element's numbering
+and page number will be displayed in the outline alongside its title or
+caption."""
+
+[[main]]
+en = """# Example
+```example
+#set heading(numbering: \"1.\")
+#outline()"""
+
+[[main]]
+en = """= Introduction
+#lorem(5)"""
+
+[[main]]
+en = """= Methods
+== Setup
+#lorem(10)
+```"""
+
+[[main]]
+en = """# Alternative outlines
+In its default configuration, this function generates a table of contents.
+By setting the `target` parameter, the outline can be used to generate a
+list of other kinds of elements than headings."""
+
+[[main]]
+en = """In the example below, we list all figures containing images by setting
+`target` to `{figure.where(kind: image)}`. Just the same, we could have set
+it to `{figure.where(kind: table)}` to generate a list of tables."""
+
+[[main]]
+en = """We could also set it to just `figure`, without using a [`where`]($function.where)
+selector, but then the list would contain _all_ figures, be it ones
+containing images, tables, or other material."""
+
+[[main]]
+en = """```example
+#outline(
+  title: [List of Figures],
+  target: figure.where(kind: image),
+)"""
+
+[[main]]
+en = """#figure(
+  image(\"tiger.jpg\"),
+  caption: [A nice figure!],
+)
+```"""
+
+[[main]]
+en = """# Styling the outline
+At the most basic level, you can style the outline by setting properties on
+it and its entries. This way, you can customize the outline's
+[title]($outline.title), how outline entries are
+[indented]($outline.indent), and how the space between an entry's text and
+its page number should be [filled]($outline.entry.fill)."""
+
+[[main]]
+en = """Richer customization is possible through configuration of the outline's
+[entries]($outline.entry). The outline generates one entry for each outlined
+element."""
+
+[[main]]
+en = """## Spacing the entries { #entry-spacing }
+Outline entries are [blocks]($block), so you can adjust the spacing between
+them with normal block-spacing rules:"""
+
+[[main]]
+en = """```example
+#show outline.entry.where(
+  level: 1
+): set block(above: 1.2em)"""
+
+[[main]]
+en = """#outline()"""
+
+[[main]]
+en = """= About ACME Corp.
+== History
+=== Origins
+= Products
+== ACME Tools
+```"""
+
+[[main]]
+en = """## Building an outline entry from its parts { #building-an-entry }
+For full control, you can also write a transformational show rule on
+`outline.entry`. However, the logic for properly formatting and indenting
+outline entries is quite complex and the outline entry itself only contains
+two fields: The level and the outlined element."""
+
+[[main]]
+en = """For this reason, various helper functions are provided. You can mix and
+match these to compose an entry from just the parts you like."""
+
+[[main]]
+en = """The default show rule for an outline entry looks like this[^1]:
+```typ
+#show outline.entry: it => link(
+  it.element.location(),
+  it.indented(it.prefix(), it.inner()),
+)
+```"""
+
+[[main]]
+en = """- The [`indented`]($outline.entry.indented) function takes an optional
+  prefix and inner content and automatically applies the proper indentation
+  to it, such that different entries align nicely and long headings wrap
+  properly."""
+
+[[main]]
+en = """- The [`prefix`]($outline.entry.prefix) function formats the element's
+  numbering (if any). It also appends a supplement for certain elements."""
+
+[[main]]
+en = """- The [`inner`]($outline.entry.inner) function combines the element's
+  [`body`]($outline.entry.body), the filler, and the
+  [`page` number]($outline.entry.page)."""
+
+[[main]]
+en = """You can use these individual functions to format the outline entry in
+different ways. Let's say, you'd like to fully remove the filler and page
+numbers. To achieve this, you could write a show rule like this:"""
+
+[[main]]
+en = """```example
+#show outline.entry: it => link(
+  it.element.location(),
+  // Keep just the body, dropping
+  // the fill and the page.
+  it.indented(it.prefix(), it.body()),
+)"""
+
+[[main]]
+en = """#outline()"""
+
+[[main]]
+en = """= About ACME Corp.
+== History
+```"""
+
+[[main]]
+en = """[^1]: The outline of equations is the exception to this rule as it does not
+      have a body and thus does not use indented layout."""
+

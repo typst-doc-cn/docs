@@ -1,0 +1,32 @@
+[[main]]
+en = """Calls a plugin function that has side effects and returns a new module
+with plugin functions that are guaranteed to have observed the results
+of the mutable call."""
+
+[[main]]
+en = """Note that calling an impure function through a normal function call
+(without use of the transition API) is forbidden and leads to
+unpredictable behaviour. Read the [section on purity]($plugin/#purity)
+for more details."""
+
+[[main]]
+en = """In the example below, we load the plugin `hello-mut.wasm` which exports
+two functions: The `get()` function retrieves a global array as a
+string. The `add(value)` function adds a value to the global array."""
+
+[[main]]
+en = """We call `add` via the transition API. The call `mutated.get()` on the
+derived module will observe the addition. Meanwhile the original module
+remains untouched as demonstrated by the `base.get()` call."""
+
+[[main]]
+en = """_Note:_ Due to limitations in the internal WebAssembly implementation,
+the transition API can only guarantee to reflect changes in the plugin's
+memory, not in WebAssembly globals. If your plugin relies on changes to
+globals being visible after transition, you might want to avoid use of
+the transition API for now. We hope to lift this limitation in the
+future."""
+
+[[main]]
+en = """"""
+

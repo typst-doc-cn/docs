@@ -1,0 +1,32 @@
+[[main]]
+en = """The image's format."""
+
+[[main]]
+en = """By default, the format is detected automatically. Typically, you thus
+only need to specify this when providing raw bytes as the
+[`source`]($image.source) (even then, Typst will try to figure out the
+format automatically, but that's not always possible)."""
+
+[[main]]
+en = """Supported formats are `{\"png\"}`, `{\"jpg\"}`, `{\"gif\"}`, `{\"svg\"}` as well
+as raw pixel data. Embedding PDFs as images is
+[not currently supported](https://github.com/typst/typst/issues/145)."""
+
+[[main]]
+en = """When providing raw pixel data as the `source`, you must specify a
+dictionary with the following keys as the `format`:
+- `encoding` ([str]): The encoding of the pixel data. One of:
+  - `{\"rgb8\"}` (three 8-bit channels: red, green, blue)
+  - `{\"rgba8\"}` (four 8-bit channels: red, green, blue, alpha)
+  - `{\"luma8\"}` (one 8-bit channel)
+  - `{\"lumaa8\"}` (two 8-bit channels: luma and alpha)
+- `width` ([int]): The pixel width of the image.
+- `height` ([int]): The pixel height of the image."""
+
+[[main]]
+en = """The pixel width multiplied by the height multiplied by the channel count
+for the specified encoding must then match the `source` data."""
+
+[[main]]
+en = """"""
+

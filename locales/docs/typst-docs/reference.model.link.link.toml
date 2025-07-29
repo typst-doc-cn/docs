@@ -1,0 +1,33 @@
+[[main]]
+en = """Links to a URL or a location in the document."""
+
+[[main]]
+en = """By default, links do not look any different from normal text. However,
+you can easily apply a style of your choice with a show rule."""
+
+[[main]]
+en = """# Example
+```example
+#show link: underline"""
+
+[[main]]
+en = """https://example.com \\"""
+
+[[main]]
+en = """#link(\"https://example.com\") \\
+#link(\"https://example.com\")[
+  See example.com
+]
+```"""
+
+[[main]]
+en = """# Hyphenation
+If you enable hyphenation or justification, by default, it will not apply to
+links to prevent unwanted hyphenation in URLs. You can opt out of this
+default via `{show link: set text(hyphenate: true)}`."""
+
+[[main]]
+en = """# Syntax
+This function also has dedicated syntax: Text that starts with `http://` or
+`https://` is automatically turned into a link."""
+
