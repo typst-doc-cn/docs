@@ -11,26 +11,42 @@ import {
   HISTORY_MERGE_TAG,
   LexicalEditor,
 } from "lexical";
-import { convertChange } from "./convert";
+import {
+  convertTranslated as convertTranslated,
+  convertTranslating as convertTranslating,
+} from "./convert";
 import { TranslationNode } from "./TranslationNode";
 import { $generateNodesFromSerializedNodes } from "@lexical/clipboard";
 import {
   $convertFromMarkdownString,
   $convertToMarkdownString,
+  registerMarkdownShortcuts,
   TRANSFORMERS,
 } from "@lexical/markdown";
+import { CodeNode } from "@lexical/code";
+import { LinkNode } from "@lexical/link";
 
 const fileSelect = document.getElementById("files") as HTMLInputElement;
+const translating = document.getElementById(
+  "translating-editor"
+) as HTMLDivElement;
 const fileContent = document.getElementById("file-editor") as HTMLDivElement;
 const saveButton = document.getElementById("save-button") as HTMLButtonElement;
 
-initEditor();
-
-function initEditor() {
+function createTranslateEditor(attachTo: HTMLElement) {
   const initialConfig = {
     namespace: "Translate Editor",
     // Register nodes specific for @lexical/rich-text
-    nodes: [HeadingNode, QuoteNode, ListItemNode, ListNode, TranslationNode],
+    nodes: [
+      // HorizontalRuleNode,
+      CodeNode,
+      HeadingNode,
+      LinkNode,
+      ListNode,
+      ListItemNode,
+      QuoteNode,
+      TranslationNode,
+    ],
     onError: (error: Error) => {
       throw error;
     },
@@ -40,19 +56,30 @@ function initEditor() {
     },
   };
   const editor = createEditor(initialConfig);
-  editor.setRootElement(fileContent);
+  editor.setRootElement(attachTo);
 
   // Registering Plugins
   mergeRegister(
     registerRichText(editor),
     registerDragonSupport(editor),
     registerList(editor),
+    registerMarkdownShortcuts(editor),
     registerHistory(editor, createEmptyHistoryState(), 300)
   );
 
+  return editor;
+}
+
+initEditor();
+
+function initEditor() {
+  const translatingEditor = createTranslateEditor(translating);
+  const translatedEditor = createTranslateEditor(fileContent);
+  translatingEditor.setEditable(false);
+
   const translatesRef = { current: {} };
 
-  registerSave(editor, translatesRef);
+  registerSave(translatedEditor, translatesRef);
   fetchData(translatesRef).then(() => {
     const files = Object.keys(translatesRef.current).sort((a, b) =>
       a.localeCompare(b)
@@ -66,8 +93,14 @@ function initEditor() {
     }
 
     const handleChange = (fileName: string) => {
-      editor.update(
-        () => convertChange(translatesRef.current[fileName] || ""),
+      translatingEditor.update(
+        () => convertTranslating(translatesRef.current[fileName] || ""),
+        {
+          tag: HISTORY_MERGE_TAG,
+        }
+      );
+      translatedEditor.update(
+        () => convertTranslated(translatesRef.current[fileName] || ""),
         {
           tag: HISTORY_MERGE_TAG,
         }

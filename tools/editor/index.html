@@ -18,6 +18,18 @@
         font-family: monospace;
         font-size: 14px;
       }
+      .editors {
+        display: flex;
+        gap: 20px;
+      }
+      #translating-editor,
+      #file-editor {
+        flex: 1;
+      }
+      #translating-editor:focus {
+        outline: none;
+        border: none;
+      }
       #file-editor:focus {
         outline: none;
         border: none;
@@ -55,7 +67,10 @@
       <select name="files" id="files"></select>
       <button name="save" id="save-button" disabled>Save</button>
     </div>
-    <div id="file-editor" contenteditable></div>
+    <div class="editors">
+      <div id="translating-editor"></div>
+      <div id="file-editor" contenteditable></div>
+    </div>
 
     <script type="module" src="src/main.ts"></script>
   </body>

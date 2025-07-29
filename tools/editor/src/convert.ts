@@ -10,8 +10,9 @@ import { $createListItemNode, $createListNode } from "@lexical/list";
 import { $createParagraphNode, $createTextNode, $getRoot } from "lexical";
 import { load } from "js-toml";
 import { $createTranslationNode } from "./TranslationNode";
+import { $convertFromMarkdownString } from "@lexical/markdown";
 
-export function convertChange(toml: string) {
+export function convertTranslated(toml: string) {
   const data = load(toml) as TranslateData;
   const root = $getRoot();
   root.clear();
@@ -19,22 +20,20 @@ export function convertChange(toml: string) {
   console.log(data);
 
   createTranslateArea(root, data, []);
+}
 
-  // const quote = $createQuoteNode();
-  // quote.append($createTextNode(toml));
-  // //   root.append(quote);
-  // const paragraph = $createParagraphNode();
-  // paragraph.append(
-  //   $createTextNode(toml)
-  //   // $createTextNode("lexical").toggleFormat("code"),
-  //   // $createTextNode("."),
-  //   // $createTextNode(" Try typing in "),
-  //   // $createTextNode("some text").toggleFormat("bold"),
-  //   // $createTextNode(" with "),
-  //   // $createTextNode("different").toggleFormat("italic"),
-  //   // $createTextNode(" formats.")
-  // );
-  // root.append(paragraph);
+export function convertTranslating(toml: string) {
+  const data = load(toml) as TranslateData;
+  const root = $getRoot();
+  root.clear();
+
+  console.log(data);
+
+  // createTranslateArea(root, data, []);
+  const texts = [];
+  createTranslateArea2(texts, data, []);
+  const markdown = texts.join("\n\n");
+  $convertFromMarkdownString(markdown, undefined, undefined, false, true);
 }
 
 interface TranslationMap {
@@ -71,6 +70,25 @@ function createTranslateArea(root: any, data: TranslateData, path: string[]) {
     for (const key of Object.keys(data)) {
       path.push(key);
       createTranslateArea(root, data[key], path);
+      path.pop();
+    }
+  }
+}
+
+function createTranslateArea2(
+  root: string[],
+  data: TranslateData,
+  path: string[]
+) {
+  if (isTranslationMap(data)) {
+    root.push(data.en);
+    root.push("\n\n");
+
+    return;
+  } else {
+    for (const key of Object.keys(data)) {
+      path.push(key);
+      createTranslateArea2(root, data[key], path);
       path.pop();
     }
   }

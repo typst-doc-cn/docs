@@ -11,10 +11,16 @@ importers:
       '@lexical/clipboard':
         specifier: ^0.33.1
         version: 0.33.1
+      '@lexical/code':
+        specifier: 0.33.1
+        version: 0.33.1
       '@lexical/dragon':
         specifier: 0.33.1
         version: 0.33.1
       '@lexical/history':
+        specifier: 0.33.1
+        version: 0.33.1
+      '@lexical/link':
         specifier: 0.33.1
         version: 0.33.1
       '@lexical/list':
