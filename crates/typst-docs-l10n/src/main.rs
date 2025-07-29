@@ -182,10 +182,10 @@ fn write_large_translate(sub_docs: &Path, k: &str, v: &mut String) {
     let pars = v.split(MARKDOWN_PAR_SEP).collect::<Vec<_>>();
     for par in pars.iter() {
         if par.contains("\"\"\"") {
-            write!(file, "[[main]]\nen = {par:?}\n\n").unwrap();
+            write!(file, "\n[[main]]\nen = {par:?}\n").unwrap();
         } else {
             let part = format!("{par:?}").replace("\\n", "\n");
-            write!(file, "[[main]]\nen = \"\"{part}\"\"\n\n").unwrap();
+            write!(file, "\n[[main]]\nen = \"\"{part}\"\"\n").unwrap();
         }
     }
 
