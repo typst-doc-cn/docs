@@ -1770,72 +1770,95 @@ zh = "要提取最大值的值序列。\n不能为空。"
 
 [reference.foundations.calc.calc.min.details]
 en = "Determines the minimum of a sequence of values.\n\n"
+zh = "确定值序列的最小值。\n\n"
 
 [reference.foundations.calc.calc.min.oneliner]
 en = "Determines the minimum of a sequence of values."
+zh = "确定值序列的最小值。"
 
 [reference.foundations.calc.calc.min.title]
 en = "Minimum"
+zh = "最小值"
 
 [reference.foundations.calc.calc.min.values.details]
 en = "The sequence of values from which to extract the minimum.\nMust not be empty."
+zh = "要提取最小值的值序列。\n不能为空。"
 
 [reference.foundations.calc.calc.norm.details]
 en = "Calculates the p-norm of a sequence of values.\n\n"
+zh = "计算值序列的 p-范数。\n\n"
 
 [reference.foundations.calc.calc.norm.oneliner]
 en = "Calculates the p-norm of a sequence of values."
+zh = "计算值序列的 p-范数。"
 
 [reference.foundations.calc.calc.norm.p.details]
 en = "The p value to calculate the p-norm of."
+zh = "计算 p-范数的 p 值。"
 
 [reference.foundations.calc.calc.norm.title]
 en = "𝑝-Norm"
+zh = "𝑝-范数"
 
 [reference.foundations.calc.calc.norm.values.details]
 en = "The sequence of values from which to calculate the p-norm.\nReturns `0.0` if empty."
+zh = "要计算 p-范数的值序列。\n如果为空则返回 `0.0`。"
 
 [reference.foundations.calc.calc.odd.details]
 en = "Determines whether an integer is odd.\n\n"
+zh = "确定整数是否为奇数。\n\n"
 
 [reference.foundations.calc.calc.odd.oneliner]
 en = "Determines whether an integer is odd."
+zh = "确定整数是否为奇数。"
 
 [reference.foundations.calc.calc.odd.title]
 en = "Odd"
+zh = "奇数"
 
 [reference.foundations.calc.calc.odd.value.details]
 en = "The number to check for oddness."
+zh = "要检查是否为奇数的数字。"
 
 [reference.foundations.calc.calc.perm.base.details]
 en = "The base number. Must be non-negative."
+zh = "基数。必须为非负数。"
 
 [reference.foundations.calc.calc.perm.details]
 en = "Calculates a permutation.\n\nReturns the `k`-permutation of `n`, or the number of ways to choose `k`\nitems from a set of `n` with regard to order.\n\n"
+zh = "计算排列。\n\n返回 `n` 的 `k`-排列，即从 `n` 个元素的集合中选择 `k` 个元素的方法数（考虑顺序）。\n\n"
 
 [reference.foundations.calc.calc.perm.numbers.details]
 en = "The number of permutations. Must be non-negative."
+zh = "排列的数量。必须为非负数。"
 
 [reference.foundations.calc.calc.perm.oneliner]
 en = "Calculates a permutation."
+zh = "计算排列。"
 
 [reference.foundations.calc.calc.perm.title]
 en = "Permutation"
+zh = "排列"
 
 [reference.foundations.calc.calc.pow.base.details]
 en = "The base of the power.\n\nIf this is a [`decimal`], the exponent can only be an [integer]($int)."
+zh = "幂的底数。\n\n如果这是一个 [`decimal`]，则指数只能是[整数]($int)。"
 
 [reference.foundations.calc.calc.pow.details]
 en = "Raises a value to some exponent.\n\n"
+zh = "将值提升到某个指数。\n\n"
 
 [reference.foundations.calc.calc.pow.exponent.details]
 en = "The exponent of the power."
+zh = "幂的指数。"
 
 [reference.foundations.calc.calc.pow.oneliner]
 en = "Raises a value to some exponent."
+zh = "将值提升到某个指数。"
 
 [reference.foundations.calc.calc.pow.title]
 en = "Power"
+zh = "幂"
 
 [reference.foundations.calc.calc.quo.details]
 en = "Calculates the quotient (floored division) of two numbers.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
@@ -1992,108 +2015,142 @@ en = "Documentation for the calc functions."
 
 [reference.foundations.calc.oneliner]
 en = "Module for calculations and processing of numeric values."
+zh = "用于计算和处理数值的模块。"
 
 [reference.foundations.calc.title]
 en = "Calculation"
+zh = "计算"
 
 [reference.foundations.content.content.at.default.details]
 en = "A default value to return if the field does not exist."
+zh = "如果字段不存在时返回的默认值。"
 
 [reference.foundations.content.content.at.details]
 en = "Access the specified field on the content. Returns the default value if\nthe field does not exist or fails with an error if no default value was\nspecified."
+zh = "访问内容上的指定字段。如果字段不存在则返回默认值，如果没有指定默认值则失败并报错。"
 
 [reference.foundations.content.content.at.field.details]
 en = "The field to access."
+zh = "要访问的字段。"
 
 [reference.foundations.content.content.at.oneliner]
 en = "Access the specified field on the content. Returns the default value if"
+zh = "访问内容上的指定字段。如果"
 
 [reference.foundations.content.content.at.title]
 en = "At"
+zh = "获取字段"
 
 [reference.foundations.content.content.details]
 en = "{{typst-docs/reference.foundations.content.content.details.toml}}"
 
 [reference.foundations.content.content.fields.details]
 en = "Returns the fields of this content.\n\n"
+zh = "返回此内容的字段。\n\n"
 
 [reference.foundations.content.content.fields.oneliner]
 en = "Returns the fields of this content."
+zh = "返回此内容的字段。"
 
 [reference.foundations.content.content.fields.title]
 en = "Fields"
+zh = "字段"
 
 [reference.foundations.content.content.func.details]
 en = "The content's element function. This function can be used to create the element\ncontained in this content. It can be used in set and show rules for the\nelement. Can be compared with global functions to check whether you have\na specific\nkind of element."
+zh = "内容的元素函数。此函数可用于创建此内容中包含的元素。它可以在元素的 set 和 show 规则中使用。可以与全局函数进行比较，以检查您是否有特定类型的元素。"
 
 [reference.foundations.content.content.func.oneliner]
 en = "The content's element function. This function can be used to create the element"
+zh = "内容的元素函数。此函数可用于创建元素"
 
 [reference.foundations.content.content.func.title]
 en = "Func"
+zh = "函数"
 
 [reference.foundations.content.content.has.details]
 en = "Whether the content has the specified field."
+zh = "内容是否具有指定的字段。"
 
 [reference.foundations.content.content.has.field.details]
 en = "The field to look for."
+zh = "要查找的字段。"
 
 [reference.foundations.content.content.has.oneliner]
 en = "Whether the content has the specified field."
+zh = "内容是否具有指定的字段。"
 
 [reference.foundations.content.content.has.title]
 en = "Has"
+zh = "拥有"
 
 [reference.foundations.content.content.location.details]
 en = "The location of the content. This is only available on content returned\nby [query] or provided by a [show rule]($reference/styling/#show-rules),\nfor other content it will be `{none}`. The resulting location can be\nused with [counters]($counter), [state] and [queries]($query)."
+zh = "内容的位置。这仅在通过[查询]或[显示规则]($reference/styling/#show-rules)提供的内容上可用，对于其他内容，它将是 `{none}`。结果位置可以与[计数器]($counter)、[状态]和[查询]($query)一起使用。"
 
 [reference.foundations.content.content.location.oneliner]
 en = "The location of the content. This is only available on content returned"
+zh = "内容的位置。这仅在返回的内容上可用"
 
 [reference.foundations.content.content.location.title]
 en = "Location"
+zh = "位置"
 
 [reference.foundations.content.content.oneliner]
 en = "A piece of document content."
+zh = "一段文档内容。"
 
 [reference.foundations.content.content.title]
 en = "Content"
+zh = "内容"
 
 [reference.foundations.content.description]
 en = "Documentation for the Content type."
+zh = "Content 类型的文档。"
 
 [reference.foundations.content.oneliner]
 en = "A piece of document content."
+zh = "一段文档内容。"
 
 [reference.foundations.content.title]
 en = "Content"
+zh = "内容"
 
 [reference.foundations.datetime.datetime.datetime.day.details]
 en = "The day of the datetime."
+zh = "日期时间的天。"
 
 [reference.foundations.datetime.datetime.datetime.details]
 en = "Creates a new datetime.\n\nYou can specify the [datetime] using a year, month, day, hour, minute,\nand second.\n\n_Note_: Depending on which components of the datetime you specify, Typst\nwill store it in one of the following three ways:\n* If you specify year, month and day, Typst will store just a date.\n* If you specify hour, minute and second, Typst will store just a time.\n* If you specify all of year, month, day, hour, minute and second, Typst\n  will store a full datetime.\n\nDepending on how it is stored, the [`display`]($datetime.display) method\nwill choose a different formatting by default.\n\n"
+zh = "创建新的日期时间。\n\n您可以使用年、月、日、时、分和秒来指定[日期时间]。\n\n_注意_：根据您指定的日期时间组件，Typst 将以以下三种方式之一存储它：\n* 如果您指定年、月和日，Typst 将仅存储日期。\n* 如果您指定时、分和秒，Typst 将仅存储时间。\n* 如果您指定所有的年、月、日、时、分和秒，Typst 将存储完整的日期时间。\n\n根据存储方式，[`display`]($datetime.display) 方法将默认选择不同的格式。\n\n"
 
 [reference.foundations.datetime.datetime.datetime.hour.details]
 en = "The hour of the datetime."
+zh = "日期时间的小时。"
 
 [reference.foundations.datetime.datetime.datetime.minute.details]
 en = "The minute of the datetime."
+zh = "日期时间的分钟。"
 
 [reference.foundations.datetime.datetime.datetime.month.details]
 en = "The month of the datetime."
+zh = "日期时间的月份。"
 
 [reference.foundations.datetime.datetime.datetime.oneliner]
 en = "Creates a new datetime."
+zh = "创建新的日期时间。"
 
 [reference.foundations.datetime.datetime.datetime.second.details]
 en = "The second of the datetime."
+zh = "日期时间的秒。"
 
 [reference.foundations.datetime.datetime.datetime.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.datetime.datetime.datetime.year.details]
 en = "The year of the datetime."
+zh = "日期时间的年份。"
 
 [reference.foundations.datetime.datetime.day.details]
 en = "The day if it was specified, or `{none}` for times without a date."
