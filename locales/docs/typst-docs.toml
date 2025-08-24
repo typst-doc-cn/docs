@@ -1398,135 +1398,179 @@ zh = "字节"
 
 [reference.foundations.calc.calc.abs.details]
 en = "Calculates the absolute value of a numeric value.\n\n"
+zh = "计算数值的绝对值。\n\n"
 
 [reference.foundations.calc.calc.abs.oneliner]
 en = "Calculates the absolute value of a numeric value."
+zh = "计算数值的绝对值。"
 
 [reference.foundations.calc.calc.abs.title]
 en = "Absolute"
+zh = "绝对值"
 
 [reference.foundations.calc.calc.abs.value.details]
 en = "The value whose absolute value to calculate."
+zh = "要计算绝对值的数值。"
 
 [reference.foundations.calc.calc.acos.details]
 en = "Calculates the arccosine of a number.\n\n"
+zh = "计算数字的反余弦值。\n\n"
 
 [reference.foundations.calc.calc.acos.oneliner]
 en = "Calculates the arccosine of a number."
+zh = "计算数字的反余弦值。"
 
 [reference.foundations.calc.calc.acos.title]
 en = "Arccosine"
+zh = "反余弦"
 
 [reference.foundations.calc.calc.acos.value.details]
 en = "The number whose arcsine to calculate. Must be between -1 and 1."
+zh = "要计算反余弦值的数字。必须在 -1 和 1 之间。"
 
 [reference.foundations.calc.calc.asin.details]
 en = "Calculates the arcsine of a number.\n\n"
+zh = "计算数字的反正弦值。\n\n"
 
 [reference.foundations.calc.calc.asin.oneliner]
 en = "Calculates the arcsine of a number."
+zh = "计算数字的反正弦值。"
 
 [reference.foundations.calc.calc.asin.title]
 en = "Arcsine"
+zh = "反正弦"
 
 [reference.foundations.calc.calc.asin.value.details]
 en = "The number whose arcsine to calculate. Must be between -1 and 1."
+zh = "要计算反正弦值的数字。必须在 -1 和 1 之间。"
 
 [reference.foundations.calc.calc.atan.details]
 en = "Calculates the arctangent of a number.\n\n"
+zh = "计算数字的反正切值。\n\n"
 
 [reference.foundations.calc.calc.atan.oneliner]
 en = "Calculates the arctangent of a number."
+zh = "计算数字的反正切值。"
 
 [reference.foundations.calc.calc.atan.title]
 en = "Arctangent"
+zh = "反正切"
 
 [reference.foundations.calc.calc.atan.value.details]
 en = "The number whose arctangent to calculate."
+zh = "要计算反正切值的数字。"
 
 [reference.foundations.calc.calc.atan2.details]
 en = "Calculates the four-quadrant arctangent of a coordinate.\n\nThe arguments are `(x, y)`, not `(y, x)`.\n\n"
+zh = "计算坐标的四象限反正切值。\n\n参数是 `(x, y)`，而不是 `(y, x)`。\n\n"
 
 [reference.foundations.calc.calc.atan2.oneliner]
 en = "Calculates the four-quadrant arctangent of a coordinate."
+zh = "计算坐标的四象限反正切值。"
 
 [reference.foundations.calc.calc.atan2.title]
 en = "Four-quadrant Arctangent"
+zh = "四象限反正切"
 
 [reference.foundations.calc.calc.atan2.x.details]
 en = "The X coordinate."
+zh = "X 坐标。"
 
 [reference.foundations.calc.calc.atan2.y.details]
 en = "The Y coordinate."
+zh = "Y 坐标。"
 
 [reference.foundations.calc.calc.binom.details]
 en = "Calculates a binomial coefficient.\n\nReturns the `k`-combination of `n`, or the number of ways to choose `k`\nitems from a set of `n` without regard to order.\n\n"
+zh = "计算二项式系数。\n\n返回 `n` 的 `k`-组合，即从 `n` 个元素的集合中选择 `k` 个元素的方法数（不考虑顺序）。\n\n"
 
 [reference.foundations.calc.calc.binom.k.details]
 en = "The lower coefficient. Must be non-negative."
+zh = "下系数。必须为非负数。"
 
 [reference.foundations.calc.calc.binom.n.details]
 en = "The upper coefficient. Must be non-negative."
+zh = "上系数。必须为非负数。"
 
 [reference.foundations.calc.calc.binom.oneliner]
 en = "Calculates a binomial coefficient."
+zh = "计算二项式系数。"
 
 [reference.foundations.calc.calc.binom.title]
 en = "Binomial"
+zh = "二项式"
 
 [reference.foundations.calc.calc.ceil.details]
 en = "Rounds a number up to the nearest integer.\n\nIf the number is already an integer, it is returned unchanged.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
+zh = "将数字向上舍入到最近的整数。\n\n如果数字已经是整数，则返回原值。\n\n请注意，此函数始终返回一个[整数]($int)，如果结果的 [`float`] 或 [`decimal`] 大于最大 64 位有符号整数或小于该类型的最小值，则会出错。\n\n"
 
 [reference.foundations.calc.calc.ceil.oneliner]
 en = "Rounds a number up to the nearest integer."
+zh = "将数字向上舍入到最近的整数。"
 
 [reference.foundations.calc.calc.ceil.title]
 en = "Ceil"
+zh = "向上取整"
 
 [reference.foundations.calc.calc.ceil.value.details]
 en = "The number to round up."
+zh = "要向上舍入的数字。"
 
 [reference.foundations.calc.calc.clamp.details]
 en = "Clamps a number between a minimum and maximum value.\n\n"
+zh = "将数字限制在最小值和最大值之间。\n\n"
 
 [reference.foundations.calc.calc.clamp.max.details]
 en = "The inclusive maximum value."
+zh = "包含的最大值。"
 
 [reference.foundations.calc.calc.clamp.min.details]
 en = "The inclusive minimum value."
+zh = "包含的最小值。"
 
 [reference.foundations.calc.calc.clamp.oneliner]
 en = "Clamps a number between a minimum and maximum value."
+zh = "将数字限制在最小值和最大值之间。"
 
 [reference.foundations.calc.calc.clamp.title]
 en = "Clamp"
+zh = "限制"
 
 [reference.foundations.calc.calc.clamp.value.details]
 en = "The number to clamp."
+zh = "要限制的数字。"
 
 [reference.foundations.calc.calc.cos.angle.details]
 en = "The angle whose cosine to calculate."
+zh = "要计算余弦值的角度。"
 
 [reference.foundations.calc.calc.cos.details]
 en = "Calculates the cosine of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
+zh = "计算角度的余弦值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
 
 [reference.foundations.calc.calc.cos.oneliner]
 en = "Calculates the cosine of an angle."
+zh = "计算角度的余弦值。"
 
 [reference.foundations.calc.calc.cos.title]
 en = "Cosine"
+zh = "余弦"
 
 [reference.foundations.calc.calc.cosh.details]
 en = "Calculates the hyperbolic cosine of a hyperbolic angle.\n\n"
+zh = "计算双曲角的双曲余弦值。\n\n"
 
 [reference.foundations.calc.calc.cosh.oneliner]
 en = "Calculates the hyperbolic cosine of a hyperbolic angle."
+zh = "计算双曲角的双曲余弦值。"
 
 [reference.foundations.calc.calc.cosh.title]
 en = "Hyperbolic Cosine"
+zh = "双曲余弦"
 
 [reference.foundations.calc.calc.cosh.value.details]
 en = "The hyperbolic angle whose hyperbolic cosine to calculate."
+zh = "要计算双曲余弦值的双曲角。"
 
 [reference.foundations.calc.calc.details]
 en = "Module for calculations and processing of numeric values.\n\nThese definitions are part of the `calc` module and not imported by default.\nIn addition to the functions listed below, the `calc` module also defines\nthe constants `pi`, `tau`, `e`, and `inf`.\n"
