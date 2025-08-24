@@ -2,6 +2,25 @@
 
 This document provides comprehensive guidance for maintaining localization (l10n) in the Typst Documentation project. These instructions are specifically designed for AI assistants (Claude/Copilot) to ensure consistent and proper handling of translations.
 
+## Keep Good PR Title
+
+Determine a good PR prefix **only** by the PR description before work. Add a prefix to indicate what kind of release this pull request corresponds to. For reference, see https://www.conventionalcommits.org/
+
+Available types:
+
+- dev
+- feat
+- fix
+- docs
+- style
+- refactor
+- perf
+- test
+- build
+- ci
+- chore
+- revert
+
 ## Project Structure
 
 The localization files are stored in the `locales/docs/` directory:
