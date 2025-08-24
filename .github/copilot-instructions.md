@@ -5,6 +5,7 @@ This document provides comprehensive guidance for maintaining localization (l10n
 ## Project Structure
 
 The localization files are stored in the `locales/docs/` directory:
+
 - **Main file**: `locales/docs/typst-docs.toml` - Contains the primary translations
 - **Detailed files**: `locales/docs/typst-docs/` - Contains detailed documentation sections
 
@@ -42,12 +43,14 @@ zh = "了解如何使用 Typst 更快地撰写文档。通过教程入门，或�
 When you find an entry that has only English text, add the Chinese translation:
 
 **Before:**
+
 ```toml
 [Export.part]
 en = "Export"
 ```
 
 **After:**
+
 ```toml
 [Export.part]
 en = "Export"
@@ -59,6 +62,7 @@ zh = "导出"
 To add support for a new language (e.g., French):
 
 **Example 1: Adding French Translation**
+
 ```toml
 [index.title]
 en = "Overview"
@@ -67,6 +71,7 @@ fr = "Aperçu"  # Add this line
 ```
 
 **Example 2: Adding Multiple Languages**
+
 ```toml
 [guides.title]
 en = "Guides"
@@ -80,11 +85,13 @@ ja = "ガイド"      # Japanese
 ## Translation Guidelines
 
 ### 1. Maintain TOML Format
+
 - Always preserve the exact TOML structure
 - Keep proper indentation and formatting
 - Ensure proper escaping of special characters
 
 ### 2. Handle Multiline Text
+
 For multiline text, use TOML multiline strings:
 
 ```toml
@@ -94,6 +101,7 @@ zh = "\n# 标题\n这是一个段落。\n\n这是另一个段落。"
 ```
 
 ### 3. Preserve Markdown and Links
+
 Maintain Markdown syntax and internal links:
 
 ```toml
@@ -103,19 +111,20 @@ zh = "\n# 指南\n欢迎来到指南部分！\n\n## 指南列表\n- [LaTeX 用�
 ```
 
 ### 4. Handle Special References
+
 Some entries reference external files:
 
 ```toml
 [guides.guide-for-latex-users.body]
 en = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
-zh = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
 ```
 
-**Note**: Keep file references unchanged, as they point to separate detailed translation files.
+All translations will then be loaded from the `typst-docs/guides.guide-for-latex-users.body.toml` file.
 
 ## Language Codes
 
 Use ISO 639-1 language codes:
+
 - `en` - English
 - `zh` - Chinese
 - `fr` - French
@@ -130,23 +139,28 @@ Use ISO 639-1 language codes:
 ## Workflow for AI Assistants
 
 ### Step 1: Identify Missing Translations
+
 Look for entries that have `en = "..."` but are missing translations for the target language.
 
 ### Step 2: Add Translations
+
 Add the appropriate language code with proper translation while maintaining the TOML structure.
 
 ### Step 3: Validate Format
+
 Ensure the TOML remains valid and properly formatted.
 
 ### Example Workflow
 
 **Find untranslated entry:**
+
 ```toml
 [Language.part]
 en = "Language"
 ```
 
 **Add Chinese translation:**
+
 ```toml
 [Language.part]
 en = "Language"
@@ -154,6 +168,7 @@ zh = "语言"
 ```
 
 **Add multiple languages:**
+
 ```toml
 [Language.part]
 en = "Language"
@@ -166,42 +181,30 @@ es = "Idioma"
 ## Translation Quality Guidelines
 
 ### 1. Consistency
+
 - Use consistent terminology throughout the project
 - Maintain the same translation for repeated terms
 
 ### 2. Technical Accuracy
+
 - Preserve technical terms when appropriate
 - Maintain the meaning and context of the original text
 
 ### 3. Cultural Adaptation
+
 - Adapt text to be culturally appropriate for the target language
 - Consider regional variations when necessary
 
 ### 4. Formatting Preservation
+
 - Keep all markdown formatting intact
 - Preserve line breaks and spacing
 - Maintain internal link structure
 
-## Tools and Automation
-
-The project includes a Rust CLI tool for managing translations:
-
-```bash
-# Generate translations structure
-cargo run --bin typst-docs-l10n -- generate
-
-# Update translations
-cargo run --bin typst-docs-l10n -- translate
-
-# Save translations
-cargo run --bin typst-docs-l10n -- save
-```
-
-**Note**: Translators typically only need to edit the TOML files directly. The CLI tools are used by maintainers for generating and managing the translation structure.
-
 ## Common Patterns
 
 ### 1. Page Parts
+
 ```toml
 [SectionName.part]
 en = "Section Name"
@@ -209,6 +212,7 @@ zh = "部分名称"
 ```
 
 ### 2. Titles
+
 ```toml
 [section.title]
 en = "Title"
@@ -216,6 +220,7 @@ zh = "标题"
 ```
 
 ### 3. Descriptions
+
 ```toml
 [section.description]
 en = "Description text."
@@ -223,6 +228,7 @@ zh = "描述文本。"
 ```
 
 ### 4. Function Documentation
+
 ```toml
 [reference.category.function.title]
 en = "Function Name"
@@ -251,28 +257,31 @@ zh = "函数的详细说明。"
 ### Common Mistakes to Avoid
 
 1. **Breaking TOML syntax**:
+
    ```toml
    # WRONG - missing quotes
    zh = 这是错误的
-   
+
    # CORRECT
    zh = "这是正确的"
    ```
 
 2. **Changing section names**:
+
    ```toml
    # WRONG - modifying section name
    [index.标题]
-   
+
    # CORRECT - keep section name in English
    [index.title]
    ```
 
 3. **Breaking markdown links**:
+
    ```toml
    # WRONG - translating link targets
    zh = "[指南]($guides/guide-for-latex-users-zh)"
-   
+
    # CORRECT - keeping link targets unchanged
    zh = "[指南]($guides/guide-for-latex-users)"
    ```
