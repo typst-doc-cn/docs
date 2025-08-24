@@ -1574,150 +1574,199 @@ zh = "要计算双曲余弦值的双曲角。"
 
 [reference.foundations.calc.calc.details]
 en = "Module for calculations and processing of numeric values.\n\nThese definitions are part of the `calc` module and not imported by default.\nIn addition to the functions listed below, the `calc` module also defines\nthe constants `pi`, `tau`, `e`, and `inf`.\n"
+zh = "用于计算和处理数值的模块。\n\n这些定义属于 `calc` 模块，默认情况下不会导入。除了下面列出的函数外，`calc` 模块还定义了常量 `pi`、`tau`、`e` 和 `inf`。\n"
 
 [reference.foundations.calc.calc.div-euclid.details]
 en = "Performs euclidean division of two numbers.\n\nThe result of this computation is that of a division rounded to the integer\n`{n}` such that the dividend is greater than or equal to `{n}` times the divisor.\n\n"
+zh = "执行两个数字的欧几里得除法。\n\n此计算的结果是将除法舍入到整数 `{n}`，使得被除数大于或等于 `{n}` 倍的除数。\n\n"
 
 [reference.foundations.calc.calc.div-euclid.dividend.details]
 en = "The dividend of the division."
+zh = "除法的被除数。"
 
 [reference.foundations.calc.calc.div-euclid.divisor.details]
 en = "The divisor of the division."
+zh = "除法的除数。"
 
 [reference.foundations.calc.calc.div-euclid.oneliner]
 en = "Performs euclidean division of two numbers."
+zh = "执行两个数字的欧几里得除法。"
 
 [reference.foundations.calc.calc.div-euclid.title]
 en = "Euclidean Division"
+zh = "欧几里得除法"
 
 [reference.foundations.calc.calc.even.details]
 en = "Determines whether an integer is even.\n\n"
+zh = "确定整数是否为偶数。\n\n"
 
 [reference.foundations.calc.calc.even.oneliner]
 en = "Determines whether an integer is even."
+zh = "确定整数是否为偶数。"
 
 [reference.foundations.calc.calc.even.title]
 en = "Even"
+zh = "偶数"
 
 [reference.foundations.calc.calc.even.value.details]
 en = "The number to check for evenness."
+zh = "要检查是否为偶数的数字。"
 
 [reference.foundations.calc.calc.exp.details]
 en = "Raises a value to some exponent of e.\n\n"
+zh = "将值提升到 e 的某个指数。\n\n"
 
 [reference.foundations.calc.calc.exp.exponent.details]
 en = "The exponent of the power."
+zh = "幂的指数。"
 
 [reference.foundations.calc.calc.exp.oneliner]
 en = "Raises a value to some exponent of e."
+zh = "将值提升到 e 的某个指数。"
 
 [reference.foundations.calc.calc.exp.title]
 en = "Exponential"
+zh = "指数"
 
 [reference.foundations.calc.calc.fact.details]
 en = "Calculates the factorial of a number.\n\n"
+zh = "计算数字的阶乘。\n\n"
 
 [reference.foundations.calc.calc.fact.number.details]
 en = "The number whose factorial to calculate. Must be non-negative."
+zh = "要计算阶乘的数字。必须为非负数。"
 
 [reference.foundations.calc.calc.fact.oneliner]
 en = "Calculates the factorial of a number."
+zh = "计算数字的阶乘。"
 
 [reference.foundations.calc.calc.fact.title]
 en = "Factorial"
+zh = "阶乘"
 
 [reference.foundations.calc.calc.floor.details]
 en = "Rounds a number down to the nearest integer.\n\nIf the number is already an integer, it is returned unchanged.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
+zh = "将数字向下舍入到最近的整数。\n\n如果数字已经是整数，则返回原值。\n\n请注意，此函数始终返回一个[整数]($int)，如果结果的 [`float`] 或 [`decimal`] 大于最大 64 位有符号整数或小于该类型的最小值，则会出错。\n\n"
 
 [reference.foundations.calc.calc.floor.oneliner]
 en = "Rounds a number down to the nearest integer."
+zh = "将数字向下舍入到最近的整数。"
 
 [reference.foundations.calc.calc.floor.title]
 en = "Floor"
+zh = "向下取整"
 
 [reference.foundations.calc.calc.floor.value.details]
 en = "The number to round down."
+zh = "要向下舍入的数字。"
 
 [reference.foundations.calc.calc.fract.details]
 en = "Returns the fractional part of a number.\n\nIf the number is an integer, returns `0`.\n\n"
+zh = "返回数字的小数部分。\n\n如果数字是整数，返回 `0`。\n\n"
 
 [reference.foundations.calc.calc.fract.oneliner]
 en = "Returns the fractional part of a number."
+zh = "返回数字的小数部分。"
 
 [reference.foundations.calc.calc.fract.title]
 en = "Fractional"
+zh = "小数部分"
 
 [reference.foundations.calc.calc.fract.value.details]
 en = "The number to truncate."
+zh = "要截取的数字。"
 
 [reference.foundations.calc.calc.gcd.a.details]
 en = "The first integer."
+zh = "第一个整数。"
 
 [reference.foundations.calc.calc.gcd.b.details]
 en = "The second integer."
+zh = "第二个整数。"
 
 [reference.foundations.calc.calc.gcd.details]
 en = "Calculates the greatest common divisor of two integers.\n\n"
+zh = "计算两个整数的最大公约数。\n\n"
 
 [reference.foundations.calc.calc.gcd.oneliner]
 en = "Calculates the greatest common divisor of two integers."
+zh = "计算两个整数的最大公约数。"
 
 [reference.foundations.calc.calc.gcd.title]
 en = "Greatest Common Divisor"
+zh = "最大公约数"
 
 [reference.foundations.calc.calc.lcm.a.details]
 en = "The first integer."
+zh = "第一个整数。"
 
 [reference.foundations.calc.calc.lcm.b.details]
 en = "The second integer."
+zh = "第二个整数。"
 
 [reference.foundations.calc.calc.lcm.details]
 en = "Calculates the least common multiple of two integers.\n\n"
+zh = "计算两个整数的最小公倍数。\n\n"
 
 [reference.foundations.calc.calc.lcm.oneliner]
 en = "Calculates the least common multiple of two integers."
+zh = "计算两个整数的最小公倍数。"
 
 [reference.foundations.calc.calc.lcm.title]
 en = "Least Common Multiple"
+zh = "最小公倍数"
 
 [reference.foundations.calc.calc.ln.details]
 en = "Calculates the natural logarithm of a number.\n\n"
+zh = "计算数字的自然对数。\n\n"
 
 [reference.foundations.calc.calc.ln.oneliner]
 en = "Calculates the natural logarithm of a number."
+zh = "计算数字的自然对数。"
 
 [reference.foundations.calc.calc.ln.title]
 en = "Natural Logarithm"
+zh = "自然对数"
 
 [reference.foundations.calc.calc.ln.value.details]
 en = "The number whose logarithm to calculate. Must be strictly positive."
+zh = "要计算对数的数字。必须严格为正数。"
 
 [reference.foundations.calc.calc.log.base.details]
 en = "The base of the logarithm. May not be zero."
+zh = "对数的底数。不可以为零。"
 
 [reference.foundations.calc.calc.log.details]
 en = "Calculates the logarithm of a number.\n\nIf the base is not specified, the logarithm is calculated in base 10.\n\n"
+zh = "计算数字的对数。\n\n如果未指定底数，则以 10 为底计算对数。\n\n"
 
 [reference.foundations.calc.calc.log.oneliner]
 en = "Calculates the logarithm of a number."
+zh = "计算数字的对数。"
 
 [reference.foundations.calc.calc.log.title]
 en = "Logarithm"
+zh = "对数"
 
 [reference.foundations.calc.calc.log.value.details]
 en = "The number whose logarithm to calculate. Must be strictly positive."
+zh = "要计算对数的数字。必须严格为正数。"
 
 [reference.foundations.calc.calc.max.details]
 en = "Determines the maximum of a sequence of values.\n\n"
+zh = "确定值序列的最大值。\n\n"
 
 [reference.foundations.calc.calc.max.oneliner]
 en = "Determines the maximum of a sequence of values."
+zh = "确定值序列的最大值。"
 
 [reference.foundations.calc.calc.max.title]
 en = "Maximum"
+zh = "最大值"
 
 [reference.foundations.calc.calc.max.values.details]
 en = "The sequence of values from which to extract the maximum.\nMust not be empty."
+zh = "要提取最大值的值序列。\n不能为空。"
 
 [reference.foundations.calc.calc.min.details]
 en = "Determines the minimum of a sequence of values.\n\n"
