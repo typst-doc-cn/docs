@@ -3,12 +3,15 @@
 
 [Export.part]
 en = "Export"
+fr = "Exporter"
 
 [Language.part]
 en = "Language"
+fr = "Langue"
 
 [Library.part]
 en = "Library"
+fr = "Bibliothèque"
 
 [guides.body]
 en = "\n# Guides\nWelcome to the Guides section! Here, you'll find helpful material for specific\nuser groups or use cases. Currently, two guides are available: An introduction\nto Typst for LaTeX users, and a detailed look at page setup. Feel free to\npropose other topics for guides!\n\n## List of Guides\n- [Guide for LaTeX users]($guides/guide-for-latex-users)\n- [Page setup guide]($guides/page-setup-guide)\n- [Table guide]($guides/table-guide)"
