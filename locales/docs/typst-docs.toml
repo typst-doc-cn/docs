@@ -4,50 +4,62 @@
 [Export.part]
 en = "Export"
 fr = "Exporter"
+zh = "导出"
 
 [Language.part]
 en = "Language"
 fr = "Langue"
+zh = "语言"
 
 [Library.part]
 en = "Library"
 fr = "Bibliothèque"
+zh = "库"
 
 [guides.body]
 en = "\n# Guides\nWelcome to the Guides section! Here, you'll find helpful material for specific\nuser groups or use cases. Currently, two guides are available: An introduction\nto Typst for LaTeX users, and a detailed look at page setup. Feel free to\npropose other topics for guides!\n\n## List of Guides\n- [Guide for LaTeX users]($guides/guide-for-latex-users)\n- [Page setup guide]($guides/page-setup-guide)\n- [Table guide]($guides/table-guide)"
+zh = "\n# 指南\n欢迎来到指南部分！在这里，您将找到针对特定用户群体或用例的有用材料。目前提供两个指南：面向 LaTeX 用户的 Typst 介绍，以及页面设置的详细说明。欢迎为指南提出其他主题！\n\n## 指南列表\n- [LaTeX 用户指南]($guides/guide-for-latex-users)\n- [页面设置指南]($guides/page-setup-guide)\n- [表格指南]($guides/table-guide)"
 
 [guides.description]
 en = "Guides for Typst."
+zh = "Typst 指南。"
 
 [guides.guide-for-latex-users.body]
 en = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
 
 [guides.guide-for-latex-users.description]
 en = "Are you a LaTeX user? This guide explains the differences and\nsimilarities between Typst and LaTeX so you can get started quickly.\n"
+zh = "您是 LaTeX 用户吗？本指南解释了 Typst 和 LaTeX 之间的差异和相似之处，让您能够快速上手。\n"
 
 [guides.guide-for-latex-users.title]
 en = "Guide for LaTeX users"
+zh = "LaTeX 用户指南"
 
 [guides.page-setup-guide.body]
 en = "{{typst-docs/guides.page-setup-guide.body.toml}}"
 
 [guides.page-setup-guide.description]
 en = "An in-depth guide to setting page dimensions, margins, and page numbers in\nTypst. Learn how to create appealing and clear layouts and get there quickly.\n"
+zh = "关于在 Typst 中设置页面尺寸、边距和页码的深入指南。学习如何创建吸引人且清晰的布局，并快速实现。\n"
 
 [guides.page-setup-guide.title]
 en = "Page setup guide"
+zh = "页面设置指南"
 
 [guides.table-guide.body]
 en = "{{typst-docs/guides.table-guide.body.toml}}"
 
 [guides.table-guide.description]
 en = "Not sure how to change table strokes? Need to rotate a table? This guide\nexplains all you need to know about tables in Typst.\n"
+zh = "不知道如何更改表格边框？需要旋转表格？本指南解释了您需要了解的有关 Typst 中表格的所有信息。\n"
 
 [guides.table-guide.title]
 en = "Table guide"
+zh = "表格指南"
 
 [guides.title]
 en = "Guides"
+zh = "指南"
 
 [index.body]
 en = "\n# Overview\nWelcome to Typst's documentation! Typst is a new markup-based typesetting system\nfor the sciences. It is designed to be an alternative both to advanced tools\nlike LaTeX and simpler tools like Word and Google Docs. Our goal with Typst is\nto build a typesetting tool that is highly capable _and_ a pleasure to use.\n\nThis documentation is split into two parts: A beginner-friendly tutorial that\nintroduces Typst through a practical use case and a comprehensive reference that\nexplains all of Typst's concepts and features.\n\nWe also invite you to join the community we're building around Typst. Typst is\nstill a very young project, so your feedback is more than valuable."
@@ -2665,663 +2677,874 @@ zh = "`eval` 函数的文档。"
 
 [reference.foundations.eval.eval.details]
 en = "Evaluates a string as Typst code.\n\nThis function should only be used as a last resort.\n\n# Example\n```example\n#eval(\"1 + 1\") \\\n#eval(\"(1, 2, 3, 4)\").len() \\\n#eval(\"*Markup!*\", mode: \"markup\") \\\n```"
+zh = "将字符串作为 Typst 代码进行求值。\n\n此函数应仅作为最后手段使用。\n\n# 示例\n```example\n#eval(\"1 + 1\") \\\n#eval(\"(1, 2, 3, 4)\").len() \\\n#eval(\"*Markup!*\", mode: \"markup\") \\\n```"
 
 [reference.foundations.eval.eval.mode.details]
 en = "The [syntactical mode]($reference/syntax/#modes) in which the string is\nparsed.\n\n"
+zh = "解析字符串的[语法模式]($reference/syntax/#modes)。\n\n"
 
 [reference.foundations.eval.eval.oneliner]
 en = "Evaluates a string as Typst code."
+zh = "将字符串作为 Typst 代码进行求值。"
 
 [reference.foundations.eval.eval.scope.details]
 en = "A scope of definitions that are made available.\n\n"
+zh = "提供可用定义的作用域。\n\n"
 
 [reference.foundations.eval.eval.source.details]
 en = "A string of Typst code to evaluate."
+zh = "要求值的 Typst 代码字符串。"
 
 [reference.foundations.eval.eval.title]
 en = "Evaluate"
+zh = "求值"
 
 [reference.foundations.eval.oneliner]
 en = "Evaluates a string as Typst code."
+zh = "将字符串作为 Typst 代码进行求值。"
 
 [reference.foundations.eval.title]
 en = "Evaluate"
+zh = "求值"
 
 [reference.foundations.float.description]
 en = "Documentation for the Float type."
+zh = "Float 类型的文档。"
 
 [reference.foundations.float.float.details]
 en = "A floating-point number.\n\nA limited-precision representation of a real number. Typst uses 64 bits to\nstore floats. Wherever a float is expected, you can also pass an\n[integer]($int).\n\nYou can convert a value to a float with this type's constructor.\n\nNaN and positive infinity are available as `{float.nan}` and `{float.inf}`\nrespectively.\n\n# Example\n```example\n#3.14 \\\n#1e4 \\\n#(10 / 4)\n```"
+zh = "浮点数。\n\n实数的有限精度表示。Typst 使用 64 位存储浮点数。任何需要浮点数的地方，您也可以传递[整数]($int)。\n\n您可以使用此类型的构造函数将值转换为浮点数。\n\nNaN 和正无穷大分别可用作 `{float.nan}` 和 `{float.inf}`。\n\n# 示例\n```example\n#3.14 \\\n#1e4 \\\n#(10 / 4)\n```"
 
 [reference.foundations.float.float.float.details]
 en = "Converts a value to a float.\n\n- Booleans are converted to `0.0` or `1.0`.\n- Integers are converted to the closest 64-bit float. For integers with\n  absolute value less than `{calc.pow(2, 53)}`, this conversion is\n  exact.\n- Ratios are divided by 100%.\n- Strings are parsed in base 10 to the closest 64-bit float. Exponential\n  notation is supported.\n\n"
+zh = "将值转换为浮点数。\n\n- 布尔值转换为 `0.0` 或 `1.0`。\n- 整数转换为最接近的 64 位浮点数。对于绝对值小于 `{calc.pow(2, 53)}` 的整数，此转换是精确的。\n- 比例除以 100%。\n- 字符串以 10 进制解析为最接近的 64 位浮点数。支持指数表示法。\n\n"
 
 [reference.foundations.float.float.float.oneliner]
 en = "Converts a value to a float."
+zh = "将值转换为浮点数。"
 
 [reference.foundations.float.float.float.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.float.float.float.value.details]
 en = "The value that should be converted to a float."
+zh = "应转换为浮点数的值。"
 
 [reference.foundations.float.float.from-bytes.bytes.details]
 en = "The bytes that should be converted to a float.\n\nMust have a length of either 4 or 8. The bytes are then\ninterpreted in [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)'s\nbinary32 (single-precision) or binary64 (double-precision) format\ndepending on the length of the bytes."
+zh = "应转换为浮点数的「字节」（[bytes](#x-term-bytes)）。\n\n必须具有 4 或 8 的长度。然后根据字节的长度，将这些字节解释为 [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) 的 binary32（单精度）或 binary64（双精度）格式。"
 
 [reference.foundations.float.float.from-bytes.details]
 en = "Interprets bytes as a float.\n\n"
+zh = "将字节解释为浮点数。\n\n"
 
 [reference.foundations.float.float.from-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.float.float.from-bytes.oneliner]
 en = "Interprets bytes as a float."
+zh = "将字节解释为浮点数。"
 
 [reference.foundations.float.float.from-bytes.title]
 en = "From Bytes"
+zh = "从字节"
 
 [reference.foundations.float.float.is-infinite.details]
 en = "Checks if a float is infinite.\n\nFloats can represent positive infinity and negative infinity. This\nfunction returns `{true}` if the float is an infinity.\n\n"
+zh = "检查浮点数是否为无穷大。\n\n浮点数可以表示正无穷大和负无穷大。如果浮点数是无穷大，此函数返回 `{true}`。\n\n"
 
 [reference.foundations.float.float.is-infinite.oneliner]
 en = "Checks if a float is infinite."
+zh = "检查浮点数是否为无穷大。"
 
 [reference.foundations.float.float.is-infinite.title]
 en = "Is Infinite"
+zh = "是否无穷大"
 
 [reference.foundations.float.float.is-nan.details]
 en = "Checks if a float is not a number.\n\nIn IEEE 754, more than one bit pattern represents a NaN. This function\nreturns `true` if the float is any of those bit patterns.\n\n"
+zh = "检查浮点数是否不是数字（NaN）。\n\n在 IEEE 754 中，多个位模式表示 NaN。如果浮点数是这些位模式中的任何一个，此函数返回 `true`。\n\n"
 
 [reference.foundations.float.float.is-nan.oneliner]
 en = "Checks if a float is not a number."
+zh = "检查浮点数是否不是数字（NaN）。"
 
 [reference.foundations.float.float.is-nan.title]
 en = "Is Nan"
+zh = "是否 NaN"
 
 [reference.foundations.float.float.oneliner]
 en = "A floating-point number."
+zh = "浮点数。"
 
 [reference.foundations.float.float.signum.details]
 en = "Calculates the sign of a floating point number.\n\n- If the number is positive (including `{+0.0}`), returns `{1.0}`.\n- If the number is negative (including `{-0.0}`), returns `{-1.0}`.\n- If the number is NaN, returns `{float.nan}`.\n\n"
+zh = "计算浮点数的符号。\n\n- 如果数字为正（包括 `{+0.0}`），返回 `{1.0}`。\n- 如果数字为负（包括 `{-0.0}`），返回 `{-1.0}`。\n- 如果数字为 NaN，返回 `{float.nan}`。\n\n"
 
 [reference.foundations.float.float.signum.oneliner]
 en = "Calculates the sign of a floating point number."
+zh = "计算浮点数的符号。"
 
 [reference.foundations.float.float.signum.title]
 en = "Signum"
+zh = "符号函数"
 
 [reference.foundations.float.float.title]
 en = "Float"
+zh = "浮点数"
 
 [reference.foundations.float.float.to-bytes.details]
 en = "Converts a float to bytes.\n\n"
+zh = "将浮点数转换为字节。\n\n"
 
 [reference.foundations.float.float.to-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.float.float.to-bytes.oneliner]
 en = "Converts a float to bytes."
+zh = "将浮点数转换为字节。"
 
 [reference.foundations.float.float.to-bytes.size.details]
 en = "The size of the resulting bytes.\n\nThis must be either 4 or 8. The call will return the\nrepresentation of this float in either\n[IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)'s binary32\n(single-precision) or binary64 (double-precision) format\ndepending on the provided size."
+zh = "结果字节的大小。\n\n这必须是 4 或 8。调用将根据提供的大小返回此浮点数在 [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) 的 binary32（单精度）或 binary64（双精度）格式中的表示。"
 
 [reference.foundations.float.float.to-bytes.title]
 en = "To Bytes"
+zh = "转为字节"
 
 [reference.foundations.float.oneliner]
 en = "A floating-point number."
+zh = "浮点数。"
 
 [reference.foundations.float.title]
 en = "Float"
+zh = "浮点数"
 
 [reference.foundations.foundations.details]
 en = "Foundational types and functions.\n\nHere, you'll find documentation for basic data types like [integers]($int) and\n[strings]($str) as well as details about core computational functions.\n"
+zh = "基础类型和函数。\n\n在这里，您将找到基本数据类型（如[整数]($int)和[字符串]($str)）的文档，以及核心计算函数的详细信息。\n"
 
 [reference.foundations.foundations.title]
 en = "Foundations"
+zh = "基础"
 
 [reference.foundations.function.description]
 en = "Documentation for the Function type."
+zh = "Function 类型的文档。"
 
 [reference.foundations.function.function.details]
 en = "{{typst-docs/reference.foundations.function.function.details.toml}}"
 
 [reference.foundations.function.function.oneliner]
 en = "A mapping from argument values to a return value."
+zh = "从参数值到返回值的映射。"
 
 [reference.foundations.function.function.title]
 en = "Function"
+zh = "函数"
 
 [reference.foundations.function.function.where.details]
 en = "Returns a selector that filters for elements belonging to this function\nwhose fields have the values of the given arguments.\n\n"
+zh = "返回一个选择器，用于筛选属于此函数且其字段具有给定参数值的元素。\n\n"
 
 [reference.foundations.function.function.where.fields.details]
 en = "The fields to filter for."
+zh = "要筛选的字段。"
 
 [reference.foundations.function.function.where.oneliner]
 en = "Returns a selector that filters for elements belonging to this function"
+zh = "返回一个选择器，用于筛选属于此函数的元素"
 
 [reference.foundations.function.function.where.title]
 en = "Where"
+zh = "筛选条件"
 
 [reference.foundations.function.function.with.arguments.details]
 en = "The arguments to apply to the function."
+zh = "应用于函数的参数。"
 
 [reference.foundations.function.function.with.details]
 en = "Returns a new function that has the given arguments pre-applied."
+zh = "返回一个新函数，该函数已预先应用了给定的参数。"
 
 [reference.foundations.function.function.with.oneliner]
 en = "Returns a new function that has the given arguments pre-applied."
+zh = "返回一个新函数，该函数已预先应用了给定的参数。"
 
 [reference.foundations.function.function.with.title]
 en = "With"
+zh = "应用参数"
 
 [reference.foundations.function.oneliner]
 en = "A mapping from argument values to a return value."
+zh = "从参数值到返回值的映射。"
 
 [reference.foundations.function.title]
 en = "Function"
+zh = "函数"
 
 [reference.foundations.int.description]
 en = "Documentation for the Integer type."
+zh = "Integer 类型的文档。"
 
 [reference.foundations.int.int.bit-and.details]
 en = "Calculates the bitwise AND between two integers.\n\nFor the purposes of this function, the operands are treated as signed\nintegers of 64 bits.\n\n"
+zh = "计算两个整数之间的按位与运算。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-and.oneliner]
 en = "Calculates the bitwise AND between two integers."
+zh = "计算两个整数之间的按位与运算。"
 
 [reference.foundations.int.int.bit-and.rhs.details]
 en = "The right-hand operand of the bitwise AND."
+zh = "按位与运算的右操作数。"
 
 [reference.foundations.int.int.bit-and.title]
 en = "Bitwise AND"
+zh = "按位与"
 
 [reference.foundations.int.int.bit-lshift.details]
 en = "Shifts the operand's bits to the left by the specified amount.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits. An error will occur if the result is too large to\nfit in a 64-bit integer.\n\n"
+zh = "将操作数的位向左移动指定的数量。\n\n对于此函数，操作数被视为 64 位有符号整数。如果结果太大而无法适应 64 位整数，将发生错误。\n\n"
 
 [reference.foundations.int.int.bit-lshift.oneliner]
 en = "Shifts the operand's bits to the left by the specified amount."
+zh = "将操作数的位向左移动指定的数量。"
 
 [reference.foundations.int.int.bit-lshift.shift.details]
 en = "The amount of bits to shift. Must not be negative."
+zh = "要移动的位数。不能为负数。"
 
 [reference.foundations.int.int.bit-lshift.title]
 en = "Bitwise Left Shift"
+zh = "按位左移"
 
 [reference.foundations.int.int.bit-not.details]
 en = "Calculates the bitwise NOT of an integer.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits.\n\n"
+zh = "计算整数的按位取反。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-not.oneliner]
 en = "Calculates the bitwise NOT of an integer."
+zh = "计算整数的按位取反。"
 
 [reference.foundations.int.int.bit-not.title]
 en = "Bitwise NOT"
+zh = "按位取反"
 
 [reference.foundations.int.int.bit-or.details]
 en = "Calculates the bitwise OR between two integers.\n\nFor the purposes of this function, the operands are treated as signed\nintegers of 64 bits.\n\n"
+zh = "计算两个整数之间的按位或运算。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-or.oneliner]
 en = "Calculates the bitwise OR between two integers."
+zh = "计算两个整数之间的按位或运算。"
 
 [reference.foundations.int.int.bit-or.rhs.details]
 en = "The right-hand operand of the bitwise OR."
+zh = "按位或运算的右操作数。"
 
 [reference.foundations.int.int.bit-or.title]
 en = "Bitwise OR"
+zh = "按位或"
 
 [reference.foundations.int.int.bit-rshift.details]
 en = "Shifts the operand's bits to the right by the specified amount.\nPerforms an arithmetic shift by default (extends the sign bit to the left,\nsuch that negative numbers stay negative), but that can be changed by the\n`logical` parameter.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits.\n\n"
+zh = "将操作数的位向右移动指定的数量。\n默认执行算术移位（将符号位扩展到左侧，使负数保持负数），但可以通过 `logical` 参数更改。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-rshift.logical.details]
 en = "Toggles whether a logical (unsigned) right shift should be performed\ninstead of arithmetic right shift.\nIf this is `{true}`, negative operands will not preserve their sign\nbit, and bits which appear to the left after the shift will be\n`{0}`. This parameter has no effect on non-negative operands."
+zh = "切换是否应执行逻辑（无符号）右移而不是算术右移。\n如果为 `{true}`，负操作数将不会保留其符号位，移位后出现在左侧的位将为 `{0}`。此参数对非负操作数没有影响。"
 
 [reference.foundations.int.int.bit-rshift.oneliner]
 en = "Shifts the operand's bits to the right by the specified amount."
+zh = "将操作数的位向右移动指定的数量。"
 
 [reference.foundations.int.int.bit-rshift.shift.details]
 en = "The amount of bits to shift. Must not be negative.\n\nShifts larger than 63 are allowed and will cause the return value to\nsaturate. For non-negative numbers, the return value saturates at\n`{0}`, while, for negative numbers, it saturates at `{-1}` if\n`logical` is set to `{false}`, or `{0}` if it is `{true}`. This\nbehavior is consistent with just applying this operation multiple\ntimes. Therefore, the shift will always succeed."
+zh = "要移位的位数。不能为负数。\n\n允许大于 63 的移位，会导致返回值饱和。对于非负数，返回值在 `{0}` 处饱和，而对于负数，如果 `logical` 设置为 `{false}`，则在 `{-1}` 处饱和，如果设置为 `{true}`，则在 `{0}` 处饱和。此行为与多次应用此操作一致。因此，移位总是会成功。"
 
 [reference.foundations.int.int.bit-rshift.title]
 en = "Bitwise Right Shift"
+zh = "按位右移"
 
 [reference.foundations.int.int.bit-xor.details]
 en = "Calculates the bitwise XOR between two integers.\n\nFor the purposes of this function, the operands are treated as signed\nintegers of 64 bits.\n\n"
+zh = "计算两个整数之间的按位异或。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-xor.oneliner]
 en = "Calculates the bitwise XOR between two integers."
+zh = "计算两个整数之间的按位异或。"
 
 [reference.foundations.int.int.bit-xor.rhs.details]
 en = "The right-hand operand of the bitwise XOR."
+zh = "按位异或的右操作数。"
 
 [reference.foundations.int.int.bit-xor.title]
 en = "Bitwise XOR"
+zh = "按位异或"
 
 [reference.foundations.int.int.details]
 en = "{{typst-docs/reference.foundations.int.int.details.toml}}"
 
 [reference.foundations.int.int.from-bytes.bytes.details]
 en = "The bytes that should be converted to an integer.\n\nMust be of length at most 8 so that the result fits into a 64-bit\nsigned integer."
+zh = "应该转换为整数的「字节」（[bytes](#x-term-bytes)）。\n\n「长度」（[length](#x-term-length)）最多为 8，以便结果适合 64 位有符号整数。"
 
 [reference.foundations.int.int.from-bytes.details]
 en = "Converts bytes to an integer.\n\n"
+zh = "将「字节」（[bytes](#x-term-bytes)）转换为整数。\n\n"
 
 [reference.foundations.int.int.from-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.int.int.from-bytes.oneliner]
 en = "Converts bytes to an integer."
+zh = "将「字节」（[bytes](#x-term-bytes)）转换为整数。"
 
 [reference.foundations.int.int.from-bytes.signed.details]
 en = "Whether the bytes should be treated as a signed integer. If this is\n`{true}` and the most significant bit is set, the resulting number\nwill negative."
+zh = "是否应将「字节」（[bytes](#x-term-bytes)）视为有符号整数。如果这是 `{true}` 并且设置了最高有效位，则结果数字将为负数。"
 
 [reference.foundations.int.int.from-bytes.title]
 en = "From Bytes"
+zh = "从字节创建"
 
 [reference.foundations.int.int.int.details]
 en = "Converts a value to an integer. Raises an error if there is an attempt\nto produce an integer larger than the maximum 64-bit signed integer\nor smaller than the minimum 64-bit signed integer.\n\n- Booleans are converted to `0` or `1`.\n- Floats and decimals are truncated to the next 64-bit integer.\n- Strings are parsed in base 10.\n\n"
+zh = "将值转换为整数。如果尝试生成大于最大 64 位有符号整数或小于最小 64 位有符号整数的整数，则会引发错误。\n\n- 「布尔值」（[Booleans](#x-term-boolean)）转换为 `0` 或 `1`。\n- 浮点数和十进制数被截断为下一个 64 位整数。\n- 「字符串」（[Strings](#x-term-string)）以 10 进制解析。\n\n"
 
 [reference.foundations.int.int.int.oneliner]
 en = "Converts a value to an integer. Raises an error if there is an attempt"
+zh = "将值转换为整数。如果尝试"
 
 [reference.foundations.int.int.int.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.int.int.int.value.details]
 en = "The value that should be converted to an integer."
+zh = "应该转换为整数的值。"
 
 [reference.foundations.int.int.oneliner]
 en = "A whole number."
+zh = "整数。"
 
 [reference.foundations.int.int.signum.details]
 en = "Calculates the sign of an integer.\n\n- If the number is positive, returns `{1}`.\n- If the number is negative, returns `{-1}`.\n- If the number is zero, returns `{0}`.\n\n"
+zh = "计算整数的符号。\n\n- 如果数字为正数，返回 `{1}`。\n- 如果数字为负数，返回 `{-1}`。\n- 如果数字为零，返回 `{0}`。\n\n"
 
 [reference.foundations.int.int.signum.oneliner]
 en = "Calculates the sign of an integer."
+zh = "计算整数的符号。"
 
 [reference.foundations.int.int.signum.title]
 en = "Signum"
+zh = "符号"
 
 [reference.foundations.int.int.title]
 en = "Integer"
+zh = "整数"
 
 [reference.foundations.int.int.to-bytes.details]
 en = "Converts an integer to bytes.\n\n"
+zh = "将整数转换为「字节」（[bytes](#x-term-bytes)）。\n\n"
 
 [reference.foundations.int.int.to-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.int.int.to-bytes.oneliner]
 en = "Converts an integer to bytes."
+zh = "将整数转换为「字节」（[bytes](#x-term-bytes)）。"
 
 [reference.foundations.int.int.to-bytes.size.details]
 en = "The size in bytes of the resulting bytes (must be at least zero). If\nthe integer is too large to fit in the specified size, the\nconversion will truncate the remaining bytes based on the\nendianness. To keep the same resulting value, if the endianness is\nbig-endian, the truncation will happen at the rightmost bytes.\nOtherwise, if the endianness is little-endian, the truncation will\nhappen at the leftmost bytes.\n\nBe aware that if the integer is negative and the size is not enough\nto make the number fit, when passing the resulting bytes to\n`int.from-bytes`, the resulting number might be positive, as the\nmost significant bit might not be set to 1."
+zh = "结果「字节」（[bytes](#x-term-bytes)）的大小（字节数，必须至少为零）。如果整数太大无法适合指定的大小，转换将根据字节序截断剩余的「字节」（[bytes](#x-term-bytes)）。为了保持相同的结果值，如果字节序是大端序，截断将发生在最右侧的「字节」（[bytes](#x-term-bytes)）。否则，如果字节序是小端序，截断将发生在最左侧的「字节」（[bytes](#x-term-bytes)）。\n\n请注意，如果整数为负数且大小不足以容纳该数字，当将结果「字节」（[bytes](#x-term-bytes)）传递给 `int.from-bytes` 时，结果数字可能为正数，因为最高有效位可能未设置为 1。"
 
 [reference.foundations.int.int.to-bytes.title]
 en = "To Bytes"
+zh = "转换为字节"
 
 [reference.foundations.int.oneliner]
 en = "A whole number."
+zh = "整数。"
 
 [reference.foundations.int.title]
 en = "Integer"
+zh = "整数"
 
 [reference.foundations.label.description]
 en = "Documentation for the Label type."
+zh = "Label「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.label.label.details]
 en = "{{typst-docs/reference.foundations.label.label.details.toml}}"
 
 [reference.foundations.label.label.label.details]
 en = "Creates a label from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建标签。"
 
 [reference.foundations.label.label.label.name.details]
 en = "The name of the label."
+zh = "标签的名称。"
 
 [reference.foundations.label.label.label.oneliner]
 en = "Creates a label from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建标签。"
 
 [reference.foundations.label.label.label.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.label.label.oneliner]
 en = "A label for an element."
+zh = "元素的标签。"
 
 [reference.foundations.label.label.title]
 en = "Label"
+zh = "标签"
 
 [reference.foundations.label.oneliner]
 en = "A label for an element."
+zh = "元素的标签。"
 
 [reference.foundations.label.title]
 en = "Label"
+zh = "标签"
 
 [reference.foundations.module.description]
 en = "Documentation for the Module type."
+zh = "Module「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.module.module.details]
 en = "An module of definitions.\n\nA module\n- be built-in\n- stem from a [file import]($scripting/#modules)\n- stem from a [package import]($scripting/#packages) (and thus indirectly\n  its entrypoint file)\n- result from a call to the [plugin]($plugin) function\n\nYou can access definitions from the module using [field access\nnotation]($scripting/#fields) and interact with it using the [import and\ninclude syntaxes]($scripting/#modules). Alternatively, it is possible to\nconvert a module to a dictionary, and therefore access its contents\ndynamically, using the [dictionary constructor]($dictionary/#constructor).\n\n# Example\n```example\n<<< #import \"utils.typ\"\n<<< #utils.add(2, 5)\n\n<<< #import utils: sub\n<<< #sub(1, 4)\n>>> #7\n>>>\n>>> #(-3)\n```"
+zh = "定义的模块。\n\n模块可以\n- 是内置的\n- 来自「文件导入」（[file import]($scripting/#modules)）\n- 来自「包导入」（[package import]($scripting/#packages)）（因此间接来自其入口点文件）\n- 来自对「插件」（[plugin]($plugin)）函数的调用结果\n\n您可以使用「字段访问语法」（[field access notation]($scripting/#fields)）从模块访问定义，并使用「导入和包含语法」（[import and include syntaxes]($scripting/#modules)）与其交互。或者，可以将模块转换为「字典」（[dictionary](#x-term-dictionary)），因此可以使用「字典构造器」（[dictionary constructor]($dictionary/#constructor)）动态访问其内容。\n\n# 示例\n```example\n<<< #import \"utils.typ\"\n<<< #utils.add(2, 5)\n\n<<< #import utils: sub\n<<< #sub(1, 4)\n>>> #7\n>>>\n>>> #(-3)\n```"
 
 [reference.foundations.module.module.oneliner]
 en = "An module of definitions."
+zh = "定义的模块。"
 
 [reference.foundations.module.module.title]
 en = "Module"
+zh = "模块"
 
 [reference.foundations.module.oneliner]
 en = "An module of definitions."
+zh = "定义的模块。"
 
 [reference.foundations.module.title]
 en = "Module"
+zh = "模块"
 
 [reference.foundations.none.description]
 en = "Documentation for the None type."
+zh = "None「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.none.none.details]
 en = "A value that indicates the absence of any other value.\n\nThe none type has exactly one value: `{none}`.\n\nWhen inserted into the document, it is not visible. This is also the value\nthat is produced by empty code blocks. It can be\n[joined]($scripting/#blocks) with any value, yielding the other value.\n\n# Example\n```example\nNot visible: #none\n```"
+zh = "表示没有任何其他值的值。\n\nnone「类型」（[type](#x-term-type)）恰好有一个值：`{none}`。\n\n当插入到文档中时，它是不可见的。这也是由空代码块产生的值。它可以与任何值「连接」（[joined]($scripting/#blocks)），产生另一个值。\n\n# 示例\n```example\nNot visible: #none\n```"
 
 [reference.foundations.none.none.oneliner]
 en = "A value that indicates the absence of any other value."
+zh = "表示没有任何其他值的值。"
 
 [reference.foundations.none.none.title]
 en = "None"
+zh = "None"
 
 [reference.foundations.none.oneliner]
 en = "A value that indicates the absence of any other value."
+zh = "表示没有任何其他值的值。"
 
 [reference.foundations.none.title]
 en = "None"
+zh = "None"
 
 [reference.foundations.panic.description]
 en = "Documentation for the `panic` function."
+zh = "`panic` 函数的文档。"
 
 [reference.foundations.panic.oneliner]
 en = "Fails with an error."
+zh = "以错误失败。"
 
 [reference.foundations.panic.panic.details]
 en = "Fails with an error.\n\nArguments are displayed to the user (not rendered in the document) as\nstrings, converting with `repr` if necessary.\n\n# Example\nThe code below produces the error `panicked with: \"this is wrong\"`.\n```typ\n#panic(\"this is wrong\")\n```"
+zh = "以错误失败。\n\n参数作为「字符串」（[strings](#x-term-string)）显示给用户（不在文档中呈现），必要时使用 `repr` 转换。\n\n# 示例\n下面的代码产生错误 `panicked with: \"this is wrong\"`。\n```typ\n#panic(\"this is wrong\")\n```"
 
 [reference.foundations.panic.panic.oneliner]
 en = "Fails with an error."
+zh = "以错误失败。"
 
 [reference.foundations.panic.panic.title]
 en = "Panic"
+zh = "Panic"
 
 [reference.foundations.panic.panic.values.details]
 en = "The values to panic with and display to the user."
+zh = "要与之 panic 并显示给用户的值。"
 
 [reference.foundations.panic.title]
 en = "Panic"
+zh = "Panic"
 
 [reference.foundations.plugin.description]
 en = "Documentation for the `plugin` function."
+zh = "`plugin` 函数的文档。"
 
 [reference.foundations.plugin.oneliner]
 en = "Loads a WebAssembly module."
+zh = "加载 WebAssembly 模块。"
 
 [reference.foundations.plugin.plugin.details]
 en = "{{typst-docs/reference.foundations.plugin.plugin.details.toml}}"
 
 [reference.foundations.plugin.plugin.oneliner]
 en = "Loads a WebAssembly module."
+zh = "加载 WebAssembly 模块。"
 
 [reference.foundations.plugin.plugin.source.details]
 en = "A [path]($syntax/#paths) to a WebAssembly file or raw WebAssembly bytes."
+zh = "WebAssembly 文件的「路径」（[path]($syntax/#paths)）或原始 WebAssembly「字节」（[bytes](#x-term-bytes)）。"
 
 [reference.foundations.plugin.plugin.title]
 en = "Plugin"
+zh = "插件"
 
 [reference.foundations.plugin.plugin.transition.arguments.details]
 en = "The byte buffers to call the function with."
+zh = "调用函数时使用的字节缓冲区。"
 
 [reference.foundations.plugin.plugin.transition.details]
 en = "{{typst-docs/reference.foundations.plugin.plugin.transition.details.toml}}"
 
 [reference.foundations.plugin.plugin.transition.func.details]
 en = "The plugin function to call."
+zh = "要调用的插件函数。"
 
 [reference.foundations.plugin.plugin.transition.oneliner]
 en = "Calls a plugin function that has side effects and returns a new module"
+zh = "调用具有副作用并返回新模块的插件函数"
 
 [reference.foundations.plugin.plugin.transition.title]
 en = "Transition"
+zh = "过渡"
 
 [reference.foundations.plugin.title]
 en = "Plugin"
+zh = "插件"
 
 [reference.foundations.regex.description]
 en = "Documentation for the Regex type."
+zh = "Regex「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.regex.oneliner]
 en = "A regular expression."
+zh = "正则表达式。"
 
 [reference.foundations.regex.regex.details]
 en = "{{typst-docs/reference.foundations.regex.regex.details.toml}}"
 
 [reference.foundations.regex.regex.oneliner]
 en = "A regular expression."
+zh = "正则表达式。"
 
 [reference.foundations.regex.regex.regex.details]
 en = "Create a regular expression from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建正则表达式。"
 
 [reference.foundations.regex.regex.regex.oneliner]
 en = "Create a regular expression from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建正则表达式。"
 
 [reference.foundations.regex.regex.regex.regex.details]
 en = "The regular expression as a string.\n\nMost regex escape sequences just work because they are not valid Typst\nescape sequences. To produce regex escape sequences that are also valid in\nTypst (e.g. `[\\\\]`), you need to escape twice. Thus, to match a verbatim\nbackslash, you would need to write `{regex(\"\\\\\\\\\")}`.\n\nIf you need many escape sequences, you can also create a raw element\nand extract its text to use it for your regular expressions:\n"
+zh = "正则表达式作为「字符串」（[string](#x-term-string)）。\n\n大多数正则表达式转义序列都可以正常工作，因为它们不是有效的 Typst 转义序列。要生成在 Typst 中也有效的正则表达式转义序列（例如 `[\\\\]`），您需要转义两次。因此，要匹配逐字反斜杠，您需要编写 `{regex(\"\\\\\\\\\")}`。\n\n如果您需要许多转义序列，您也可以创建一个原始元素并提取其文本以将其用于您的正则表达式：\n"
 
 [reference.foundations.regex.regex.regex.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.regex.regex.title]
 en = "Regex"
+zh = "正则表达式"
 
 [reference.foundations.regex.title]
 en = "Regex"
+zh = "正则表达式"
 
 [reference.foundations.repr.description]
 en = "Documentation for the `repr` function."
+zh = "`repr` 函数的文档。"
 
 [reference.foundations.repr.oneliner]
 en = "Returns the string representation of a value."
+zh = "返回值的字符串表示。"
 
 [reference.foundations.repr.repr.details]
 en = "Returns the string representation of a value.\n\nWhen inserted into content, most values are displayed as this representation\nin monospace with syntax-highlighting. The exceptions are `{none}`,\nintegers, floats, strings, content, and functions.\n\n**Note:** This function is for debugging purposes. Its output should not be\nconsidered stable and may change at any time!\n\n# Example\n```example\n#none vs #repr(none) \\\n#\"hello\" vs #repr(\"hello\") \\\n#(1, 2) vs #repr((1, 2)) \\\n#[*Hi*] vs #repr([*Hi*])\n```"
+zh = "返回值的字符串表示。\n\n当插入到内容中时，大多数值都会以等宽字体和语法高亮显示这种表示。例外是 `{none}`、整数、浮点数、「字符串」（[strings](#x-term-string)）、内容和函数。\n\n**注意：** 此函数用于调试目的。其输出不应被视为稳定，可能随时更改！\n\n# 示例\n```example\n#none vs #repr(none) \\\n#\"hello\" vs #repr(\"hello\") \\\n#(1, 2) vs #repr((1, 2)) \\\n#[*Hi*] vs #repr([*Hi*])\n```"
 
 [reference.foundations.repr.repr.oneliner]
 en = "Returns the string representation of a value."
+zh = "返回值的字符串表示。"
 
 [reference.foundations.repr.repr.title]
 en = "Representation"
+zh = "表示"
 
 [reference.foundations.repr.repr.value.details]
 en = "The value whose string representation to produce."
+zh = "要生成字符串表示的值。"
 
 [reference.foundations.repr.title]
 en = "Representation"
+zh = "表示"
 
 [reference.foundations.selector.description]
 en = "Documentation for the Selector type."
+zh = "Selector「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.selector.oneliner]
 en = "A filter for selecting elements within the document."
+zh = "用于在文档中选择元素的过滤器。"
 
 [reference.foundations.selector.selector.after.details]
 en = "Returns a modified selector that will only match elements that occur\nafter the first match of `start`."
+zh = "返回一个修改后的「选择器」（[selector](#x-term-selector)），该选择器只匹配在 `start` 的第一个匹配项之后出现的元素。"
 
 [reference.foundations.selector.selector.after.inclusive.details]
 en = "Whether `start` itself should match or not. This is only relevant\n if both selectors match the same type of element. Defaults to\n `{true}`."
+zh = "`start` 本身是否应该匹配。这仅在两个「选择器」（[selector](#x-term-selector)）匹配相同类型的元素时才相关。默认为 `{true}`。"
 
 [reference.foundations.selector.selector.after.oneliner]
 en = "Returns a modified selector that will only match elements that occur"
+zh = "返回一个修改后的选择器，该选择器只匹配在指定匹配项之后出现的元素。"
 
 [reference.foundations.selector.selector.after.start.details]
 en = "The original selection will start at the first match of `start`."
+zh = "原始选择将从 `start` 的第一个匹配项开始。"
 
 [reference.foundations.selector.selector.after.title]
 en = "After"
+zh = "之后"
 
 [reference.foundations.selector.selector.and.details]
 en = "Selects all elements that match this and all of the other selectors."
+zh = "选择同时匹配此「选择器」（[selector](#x-term-selector)）和所有其他选择器的元素。"
 
 [reference.foundations.selector.selector.and.oneliner]
 en = "Selects all elements that match this and all of the other selectors."
+zh = "选择同时匹配此选择器和所有其他选择器的元素。"
 
 [reference.foundations.selector.selector.and.others.details]
 en = "The other selectors to match on."
+zh = "要匹配的其他「选择器」（[selector](#x-term-selector)）。"
 
 [reference.foundations.selector.selector.and.title]
 en = "And"
+zh = "且"
 
 [reference.foundations.selector.selector.before.details]
 en = "Returns a modified selector that will only match elements that occur\nbefore the first match of `end`."
+zh = "返回一个修改后的「选择器」（[selector](#x-term-selector)），该选择器只匹配在 `end` 的第一个匹配项之前出现的元素。"
 
 [reference.foundations.selector.selector.before.end.details]
 en = "The original selection will end at the first match of `end`."
+zh = "原始选择将在 `end` 的第一个匹配项处结束。"
 
 [reference.foundations.selector.selector.before.inclusive.details]
 en = "Whether `end` itself should match or not. This is only relevant if\nboth selectors match the same type of element. Defaults to `{true}`."
+zh = "`end` 本身是否应该匹配。这仅在两个「选择器」（[selector](#x-term-selector)）匹配相同类型的元素时才相关。默认为 `{true}`。"
 
 [reference.foundations.selector.selector.before.oneliner]
 en = "Returns a modified selector that will only match elements that occur"
+zh = "返回一个修改后的选择器，该选择器只匹配在指定匹配项之前出现的元素。"
 
 [reference.foundations.selector.selector.before.title]
 en = "Before"
+zh = "之前"
 
 [reference.foundations.selector.selector.details]
 en = "{{typst-docs/reference.foundations.selector.selector.details.toml}}"
 
 [reference.foundations.selector.selector.oneliner]
 en = "A filter for selecting elements within the document."
+zh = "用于在文档中选择元素的过滤器。"
 
 [reference.foundations.selector.selector.or.details]
 en = "Selects all elements that match this or any of the other selectors."
+zh = "选择匹配此「选择器」（[selector](#x-term-selector)）或任何其他选择器的元素。"
 
 [reference.foundations.selector.selector.or.oneliner]
 en = "Selects all elements that match this or any of the other selectors."
+zh = "选择匹配此选择器或任何其他选择器的元素。"
 
 [reference.foundations.selector.selector.or.others.details]
 en = "The other selectors to match on."
+zh = "要匹配的其他「选择器」（[selector](#x-term-selector)）。"
 
 [reference.foundations.selector.selector.or.title]
 en = "Or"
+zh = "或"
 
 [reference.foundations.selector.selector.selector.details]
 en = "Turns a value into a selector. The following values are accepted:\n- An element function like a `heading` or `figure`.\n- A `{<label>}`.\n- A more complex selector like `{heading.where(level: 1)}`."
+zh = "将值转换为选择器。接受以下值：\n- 像 `heading` 或 `figure` 这样的元素函数。\n- 一个 `{<label>}`。\n- 更复杂的选择器，如 `{heading.where(level: 1)}`。"
 
 [reference.foundations.selector.selector.selector.oneliner]
 en = "Turns a value into a selector. The following values are accepted:"
+zh = "将值转换为选择器。接受以下值："
 
 [reference.foundations.selector.selector.selector.target.details]
 en = "Can be an element function like a `heading` or `figure`, a `{<label>}`\nor a more complex selector like `{heading.where(level: 1)}`."
 
 [reference.foundations.selector.selector.selector.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.selector.selector.title]
 en = "Selector"
+zh = "选择器"
 
 [reference.foundations.selector.title]
 en = "Selector"
+zh = "选择器"
 
 [reference.foundations.str.description]
 en = "Documentation for the String type."
+zh = "String「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.str.oneliner]
 en = "A sequence of Unicode codepoints."
+zh = "Unicode 码点序列。"
 
 [reference.foundations.str.str.at.default.details]
 en = "A default value to return if the index is out of bounds."
+zh = "如果索引超出范围，则返回的默认值。"
 
 [reference.foundations.str.str.at.details]
 en = "Extracts the first grapheme cluster after the specified index. Returns\nthe default value if the index is out of bounds or fails with an error\nif no default value was specified."
+zh = "提取指定索引后的第一个字形簇。如果索引超出范围，则返回默认值，如果未指定默认值，则失败并报错。"
 
 [reference.foundations.str.str.at.index.details]
 en = "The byte index. If negative, indexes from the back."
+zh = "字节索引。如果为负数，则从后面索引。"
 
 [reference.foundations.str.str.at.oneliner]
 en = "Extracts the first grapheme cluster after the specified index. Returns"
+zh = "提取指定索引后的第一个字形簇。返回"
 
 [reference.foundations.str.str.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.str.str.clusters.details]
 en = "Returns the grapheme clusters of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的字形簇作为子字符串「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.str.str.clusters.oneliner]
 en = "Returns the grapheme clusters of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的字形簇作为子字符串「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.str.str.clusters.title]
 en = "Clusters"
+zh = "簇"
 
 [reference.foundations.str.str.codepoints.details]
 en = "Returns the Unicode codepoints of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的 Unicode 码点作为子字符串「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.str.str.codepoints.oneliner]
 en = "Returns the Unicode codepoints of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的 Unicode 码点作为子字符串数组返回。"
 
 [reference.foundations.str.str.codepoints.title]
 en = "Codepoints"
+zh = "码点"
 
 [reference.foundations.str.str.contains.details]
 en = "Whether the string contains the specified pattern.\n\nThis method also has dedicated syntax: You can write `{\"bc\" in \"abcd\"}`\ninstead of `{\"abcd\".contains(\"bc\")}`."
+zh = "「字符串」（[string](#x-term-string)）是否包含指定的模式。\n\n此方法还有专用语法：您可以写 `{\"bc\" in \"abcd\"}` 而不是 `{\"abcd\".contains(\"bc\")}`。"
 
 [reference.foundations.str.str.contains.oneliner]
 en = "Whether the string contains the specified pattern."
+zh = "字符串是否包含指定的模式。"
 
 [reference.foundations.str.str.contains.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.contains.title]
 en = "Contains"
+zh = "包含"
 
 [reference.foundations.str.str.details]
 en = "{{typst-docs/reference.foundations.str.str.details.toml}}"
 
 [reference.foundations.str.str.ends-with.details]
 en = "Whether the string ends with the specified pattern."
+zh = "「字符串」（[string](#x-term-string)）是否以指定模式结尾。"
 
 [reference.foundations.str.str.ends-with.oneliner]
 en = "Whether the string ends with the specified pattern."
+zh = "字符串是否以指定模式结尾。"
 
 [reference.foundations.str.str.ends-with.pattern.details]
 en = "The pattern the string might end with."
+zh = "字符串可能以此模式结尾。"
 
 [reference.foundations.str.str.ends-with.title]
 en = "Ends With"
+zh = "以...结尾"
 
 [reference.foundations.str.str.find.details]
 en = "Searches for the specified pattern in the string and returns the first\nmatch as a string or `{none}` if there is no match."
+zh = "在「字符串」（[string](#x-term-string)）中搜索指定模式，如果有匹配则返回第一个匹配项作为字符串，如果没有匹配则返回 `{none}`。"
 
 [reference.foundations.str.str.find.oneliner]
 en = "Searches for the specified pattern in the string and returns the first"
+zh = "在字符串中搜索指定模式并返回第一个匹配项。"
 
 [reference.foundations.str.str.find.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.find.title]
 en = "Find"
+zh = "查找"
 
 [reference.foundations.str.str.first.details]
 en = "Extracts the first grapheme cluster of the string.\nFails with an error if the string is empty."
+zh = "提取「字符串」（[string](#x-term-string)）的第一个字形簇。\n如果字符串为空，则会出现错误。"
 
 [reference.foundations.str.str.first.oneliner]
 en = "Extracts the first grapheme cluster of the string."
+zh = "提取字符串的第一个字形簇。"
 
 [reference.foundations.str.str.first.title]
 en = "First"
+zh = "第一个"
 
 [reference.foundations.str.str.from-unicode.details]
 en = "Converts a unicode code point into its corresponding string.\n\n"
+zh = "将 Unicode 码点转换为其对应的「字符串」（[string](#x-term-string)）。\n\n"
 
 [reference.foundations.str.str.from-unicode.oneliner]
 en = "Converts a unicode code point into its corresponding string."
+zh = "将 Unicode 码点转换为其对应的字符串。"
 
 [reference.foundations.str.str.from-unicode.title]
 en = "From Unicode"
+zh = "来自 Unicode"
 
 [reference.foundations.str.str.from-unicode.value.details]
 en = "The code point that should be converted."
+zh = "应该转换的码点。"
 
 [reference.foundations.str.str.last.details]
 en = "Extracts the last grapheme cluster of the string.\nFails with an error if the string is empty."
@@ -3502,9 +3725,11 @@ en = "String"
 
 [reference.foundations.symbol.description]
 en = "Documentation for the Symbol type."
+zh = "Symbol「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.symbol.oneliner]
 en = "A Unicode symbol."
+zh = "一个 Unicode 符号。"
 
 [reference.foundations.symbol.symbol.details]
 en = "{{typst-docs/reference.foundations.symbol.symbol.details.toml}}"
@@ -3532,9 +3757,11 @@ en = "Symbol"
 
 [reference.foundations.sys.description]
 en = "Documentation for the sys functions."
+zh = "sys 函数的文档。"
 
 [reference.foundations.sys.oneliner]
 en = "Module for system interactions."
+zh = "用于系统交互的模块。"
 
 [reference.foundations.sys.sys.details]
 en = "Module for system interactions.\n\nThis module defines the following items:\n\n- The `sys.version` constant (of type [`version`]) that specifies\n  the currently active Typst compiler version.\n\n- The `sys.inputs` [dictionary], which makes external inputs\n  available to the project. An input specified in the command line as\n  `--input key=value` becomes available under `sys.inputs.key` as\n  `{\"value\"}`. To include spaces in the value, it may be enclosed with\n  single or double quotes.\n\n  The value is always of type [string]($str). More complex data\n  may be parsed manually using functions like [`json.decode`]($json.decode).\n"
@@ -3544,36 +3771,46 @@ en = "System"
 
 [reference.foundations.sys.title]
 en = "System"
+zh = "系统"
 
 [reference.foundations.target.description]
 en = "Documentation for the `target` function."
+zh = "`target` 函数的文档。"
 
 [reference.foundations.target.oneliner]
 en = "Returns the current export target."
+zh = "返回当前导出目标。"
 
 [reference.foundations.target.target.details]
 en = "{{typst-docs/reference.foundations.target.target.details.toml}}"
 
 [reference.foundations.target.target.oneliner]
 en = "Returns the current export target."
+zh = "返回当前导出目标。"
 
 [reference.foundations.target.target.title]
 en = "Target"
+zh = "目标"
 
 [reference.foundations.target.title]
 en = "Target"
+zh = "目标"
 
 [reference.foundations.title]
 en = "Foundations"
+zh = "基础"
 
 [reference.foundations.type.description]
 en = "Documentation for the Type type."
+zh = "Type「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.type.oneliner]
 en = "Describes a kind of value."
+zh = "描述一种值的类型。"
 
 [reference.foundations.type.title]
 en = "Type"
+zh = "类型"
 
 [reference.foundations.type.type.details]
 en = "{{typst-docs/reference.foundations.type.type.details.toml}}"
@@ -3586,57 +3823,75 @@ en = "Type"
 
 [reference.foundations.type.type.type.details]
 en = "Determines a value's type.\n\n"
+zh = "确定值的「类型」（[type](#x-term-type)）。\n\n"
 
 [reference.foundations.type.type.type.oneliner]
 en = "Determines a value's type."
+zh = "确定值的类型。"
 
 [reference.foundations.type.type.type.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.type.type.type.value.details]
 en = "The value whose type's to determine."
+zh = "要确定类型的值。"
 
 [reference.foundations.version.description]
 en = "Documentation for the Version type."
+zh = "Version「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.version.oneliner]
 en = "A version with an arbitrary number of components."
+zh = "具有任意数量组件的版本。"
 
 [reference.foundations.version.title]
 en = "Version"
+zh = "版本"
 
 [reference.foundations.version.version.at.details]
 en = "Retrieves a component of a version.\n\nThe returned integer is always non-negative. Returns `0` if the version\nisn't specified to the necessary length."
+zh = "检索版本的一个组件。\n\n返回的整数总是非负的。如果版本没有指定到必要的长度，则返回 `0`。"
 
 [reference.foundations.version.version.at.index.details]
 en = "The index at which to retrieve the component. If negative, indexes\nfrom the back of the explicitly given components."
+zh = "要检索组件的索引。如果为负数，则从显式给定组件的末尾开始索引。"
 
 [reference.foundations.version.version.at.oneliner]
 en = "Retrieves a component of a version."
+zh = "检索版本的一个组件。"
 
 [reference.foundations.version.version.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.version.version.details]
 en = "A version with an arbitrary number of components.\n\nThe first three components have names that can be used as fields: `major`,\n`minor`, `patch`. All following components do not have names.\n\nThe list of components is semantically extended by an infinite list of\nzeros. This means that, for example, `0.8` is the same as `0.8.0`. As a\nspecial case, the empty version (that has no components at all) is the same\nas `0`, `0.0`, `0.0.0`, and so on.\n\nThe current version of the Typst compiler is available as `sys.version`.\n\nYou can convert a version to an array of explicitly given components using\nthe [`array`] constructor."
+zh = "具有任意数量组件的版本。\n\n前三个组件有可以用作字段的名称：`major`、`minor`、`patch`。所有后续组件都没有名称。\n\n组件列表在语义上由无限的零列表扩展。这意味着，例如，`0.8` 与 `0.8.0` 相同。作为特殊情况，空版本（根本没有组件）与 `0`、`0.0`、`0.0.0` 等相同。\n\nTypst 编译器的当前版本可以通过 `sys.version` 获得。\n\n您可以使用 [`array`] 构造函数将版本转换为显式给定组件的「数组」（[array](#x-term-array)）。"
 
 [reference.foundations.version.version.oneliner]
 en = "A version with an arbitrary number of components."
+zh = "具有任意数量组件的版本。"
 
 [reference.foundations.version.version.title]
 en = "Version"
+zh = "版本"
 
 [reference.foundations.version.version.version.components.details]
 en = "The components of the version (array arguments are flattened)"
+zh = "版本的组件（「数组」（[array](#x-term-array)）参数会被展平）"
 
 [reference.foundations.version.version.version.details]
 en = "Creates a new version.\n\nIt can have any number of components (even zero).\n\n"
+zh = "创建一个新版本。\n\n它可以有任意数量的组件（甚至零个）。\n\n"
 
 [reference.foundations.version.version.version.oneliner]
 en = "Creates a new version."
+zh = "创建一个新版本。"
 
 [reference.foundations.version.version.version.title]
 en = "Construct"
+zh = "构造"
 
 [reference.html.description]
 en = "Documentation for functions related to HTML in Typst."
@@ -4021,90 +4276,118 @@ en = "{{typst-docs/reference.layout.align.align.details.toml}}"
 
 [reference.layout.align.align.oneliner]
 en = "Aligns content horizontally and vertically."
+zh = "水平和垂直对齐内容。"
 
 [reference.layout.align.align.title]
 en = "Align"
+zh = "对齐"
 
 [reference.layout.align.description]
 en = "Documentation for the `align` function."
+zh = "`align` 函数的文档。"
 
 [reference.layout.align.oneliner]
 en = "Aligns content horizontally and vertically."
+zh = "水平和垂直对齐内容。"
 
 [reference.layout.align.title]
 en = "Align"
+zh = "对齐"
 
 [reference.layout.alignment.alignment.axis.details]
 en = "The axis this alignment belongs to.\n- `{\"horizontal\"}` for `start`, `left`, `center`, `right`, and `end`\n- `{\"vertical\"}` for `top`, `horizon`, and `bottom`\n- `{none}` for 2-dimensional alignments\n\n"
+zh = "此对齐所属的轴。\n- `{\"horizontal\"}` 对应 `start`、`left`、`center`、`right` 和 `end`\n- `{\"vertical\"}` 对应 `top`、`horizon` 和 `bottom`\n- `{none}` 对应二维对齐\n\n"
 
 [reference.layout.alignment.alignment.axis.oneliner]
 en = "The axis this alignment belongs to."
+zh = "此对齐所属的轴。"
 
 [reference.layout.alignment.alignment.axis.title]
 en = "Axis"
+zh = "轴"
 
 [reference.layout.alignment.alignment.details]
 en = "{{typst-docs/reference.layout.alignment.alignment.details.toml}}"
 
 [reference.layout.alignment.alignment.inv.details]
 en = "The inverse alignment.\n\n"
+zh = "反向对齐。\n\n"
 
 [reference.layout.alignment.alignment.inv.oneliner]
 en = "The inverse alignment."
+zh = "反向对齐。"
 
 [reference.layout.alignment.alignment.inv.title]
 en = "Inverse"
+zh = "反向"
 
 [reference.layout.alignment.alignment.oneliner]
 en = "Where to [align] something along an axis."
+zh = "沿轴「对齐」（[align](#x-term-align)）某物的位置。"
 
 [reference.layout.alignment.alignment.title]
 en = "Alignment"
+zh = "对齐"
 
 [reference.layout.alignment.description]
 en = "Documentation for the Alignment type."
+zh = "Alignment「类型」（[type](#x-term-type)）的文档。"
 
 [reference.layout.alignment.oneliner]
 en = "Where to [align] something along an axis."
+zh = "沿轴对齐某物的位置。"
 
 [reference.layout.alignment.title]
 en = "Alignment"
+zh = "对齐"
 
 [reference.layout.angle.angle.deg.details]
 en = "Converts this angle to degrees."
+zh = "将此角度转换为度数。"
 
 [reference.layout.angle.angle.deg.oneliner]
 en = "Converts this angle to degrees."
+zh = "将此角度转换为度数。"
 
 [reference.layout.angle.angle.deg.title]
 en = "Degrees"
+zh = "度数"
 
 [reference.layout.angle.angle.details]
 en = "An angle describing a rotation.\n\nTypst supports the following angular units:\n\n- Degrees: `{180deg}`\n- Radians: `{3.14rad}`\n\n# Example\n```example\n#rotate(10deg)[Hello there!]\n```"
+zh = "描述旋转的角度。\n\nTypst 支持以下角度单位：\n\n- 度数：`{180deg}`\n- 弧度：`{3.14rad}`\n\n# 示例\n```example\n#rotate(10deg)[Hello there!]\n```"
 
 [reference.layout.angle.angle.oneliner]
 en = "An angle describing a rotation."
+zh = "描述旋转的角度。"
 
 [reference.layout.angle.angle.rad.details]
 en = "Converts this angle to radians."
+zh = "将此角度转换为弧度。"
 
 [reference.layout.angle.angle.rad.oneliner]
 en = "Converts this angle to radians."
+zh = "将此角度转换为弧度。"
 
 [reference.layout.angle.angle.rad.title]
 en = "Radians"
+zh = "弧度"
 
 [reference.layout.angle.angle.title]
 en = "Angle"
+zh = "角度"
 
 [reference.layout.angle.description]
 en = "Documentation for the Angle type."
+zh = "Angle「类型」（[type](#x-term-type)）的文档。"
 
 [reference.layout.angle.oneliner]
 en = "An angle describing a rotation."
+zh = "描述旋转的角度。"
 
 [reference.layout.angle.title]
 en = "Angle"
+zh = "角度"
 
 [reference.layout.block.block.above.details]
 en = "The spacing between this block and its predecessor."
@@ -7126,9 +7409,11 @@ en = "Syntax"
 
 [reference.text.description]
 en = "Documentation for functions related to Text in Typst."
+zh = "Typst 中与文本相关的函数文档。"
 
 [reference.text.highlight.description]
 en = "Documentation for the `highlight` function."
+zh = "`highlight` 函数的文档。"
 
 [reference.text.highlight.highlight.body.details]
 en = "The content that should be highlighted."
@@ -7147,6 +7432,7 @@ en = "The color to highlight the text with.\n\n"
 
 [reference.text.highlight.highlight.oneliner]
 en = "Highlights text with a background color."
+zh = "用背景颜色突出显示文本。"
 
 [reference.text.highlight.highlight.radius.details]
 en = "How much to round the highlight's corners. See the\n[rectangle's documentation]($rect.radius) for more details.\n\n"
@@ -7156,18 +7442,22 @@ en = "The highlight's border color. See the\n[rectangle's documentation]($rect.s
 
 [reference.text.highlight.highlight.title]
 en = "Highlight"
+zh = "高亮"
 
 [reference.text.highlight.highlight.top-edge.details]
 en = "The top end of the background rectangle.\n\n"
 
 [reference.text.highlight.oneliner]
 en = "Highlights text with a background color."
+zh = "用背景颜色突出显示文本。"
 
 [reference.text.highlight.title]
 en = "Highlight"
+zh = "高亮"
 
 [reference.text.linebreak.description]
 en = "Documentation for the `linebreak` function."
+zh = "`linebreak` 函数的文档。"
 
 [reference.text.linebreak.linebreak.details]
 en = "Inserts a line break.\n\nAdvances the paragraph to the next line. A single trailing line break at the\nend of a paragraph is ignored, but more than one creates additional empty\nlines.\n\n# Example\n```example\n*Date:* 26.12.2022 \\\n*Topic:* Infrastructure Test \\\n*Severity:* High \\\n```\n\n# Syntax\nThis function also has dedicated syntax: To insert a line break, simply write\na backslash followed by whitespace. This always creates an unjustified\nbreak."
@@ -7177,36 +7467,45 @@ en = "Whether to justify the line before the break.\n\nThis is useful if you fou
 
 [reference.text.linebreak.linebreak.oneliner]
 en = "Inserts a line break."
+zh = "插入换行符。"
 
 [reference.text.linebreak.linebreak.title]
 en = "Line Break"
+zh = "换行符"
 
 [reference.text.linebreak.oneliner]
 en = "Inserts a line break."
+zh = "插入换行符。"
 
 [reference.text.linebreak.title]
 en = "Line Break"
+zh = "换行符"
 
 [reference.text.lorem.description]
 en = "Documentation for the `lorem` function."
+zh = "`lorem` 函数的文档。"
 
 [reference.text.lorem.lorem.details]
 en = "Creates blind text.\n\nThis function yields a Latin-like _Lorem Ipsum_ blind text with the given\nnumber of words. The sequence of words generated by the function is always\nthe same but randomly chosen. As usual for blind texts, it does not make any\nsense. Use it as a placeholder to try layouts.\n\n# Example\n```example\n= Blind Text\n#lorem(30)\n\n= More Blind Text\n#lorem(15)\n```"
 
 [reference.text.lorem.lorem.oneliner]
 en = "Creates blind text."
+zh = "创建占位文本。"
 
 [reference.text.lorem.lorem.title]
 en = "Lorem"
+zh = "Lorem"
 
 [reference.text.lorem.lorem.words.details]
 en = "The length of the blind text in words."
 
 [reference.text.lorem.oneliner]
 en = "Creates blind text."
+zh = "创建占位文本。"
 
 [reference.text.lorem.title]
 en = "Lorem"
+zh = "Lorem"
 
 [reference.text.lower.description]
 en = "Documentation for the `lower` function."
