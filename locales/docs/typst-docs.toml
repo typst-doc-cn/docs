@@ -4,50 +4,62 @@
 [Export.part]
 en = "Export"
 fr = "Exporter"
+zh = "导出"
 
 [Language.part]
 en = "Language"
 fr = "Langue"
+zh = "语言"
 
 [Library.part]
 en = "Library"
 fr = "Bibliothèque"
+zh = "库"
 
 [guides.body]
 en = "\n# Guides\nWelcome to the Guides section! Here, you'll find helpful material for specific\nuser groups or use cases. Currently, two guides are available: An introduction\nto Typst for LaTeX users, and a detailed look at page setup. Feel free to\npropose other topics for guides!\n\n## List of Guides\n- [Guide for LaTeX users]($guides/guide-for-latex-users)\n- [Page setup guide]($guides/page-setup-guide)\n- [Table guide]($guides/table-guide)"
+zh = "\n# 指南\n欢迎来到指南部分！在这里，您将找到针对特定用户群体或用例的有用材料。目前提供两个指南：面向 LaTeX 用户的 Typst 介绍，以及页面设置的详细说明。欢迎为指南提出其他主题！\n\n## 指南列表\n- [LaTeX 用户指南]($guides/guide-for-latex-users)\n- [页面设置指南]($guides/page-setup-guide)\n- [表格指南]($guides/table-guide)"
 
 [guides.description]
 en = "Guides for Typst."
+zh = "Typst 指南。"
 
 [guides.guide-for-latex-users.body]
 en = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
 
 [guides.guide-for-latex-users.description]
 en = "Are you a LaTeX user? This guide explains the differences and\nsimilarities between Typst and LaTeX so you can get started quickly.\n"
+zh = "您是 LaTeX 用户吗？本指南解释了 Typst 和 LaTeX 之间的差异和相似之处，让您能够快速上手。\n"
 
 [guides.guide-for-latex-users.title]
 en = "Guide for LaTeX users"
+zh = "LaTeX 用户指南"
 
 [guides.page-setup-guide.body]
 en = "{{typst-docs/guides.page-setup-guide.body.toml}}"
 
 [guides.page-setup-guide.description]
 en = "An in-depth guide to setting page dimensions, margins, and page numbers in\nTypst. Learn how to create appealing and clear layouts and get there quickly.\n"
+zh = "关于在 Typst 中设置页面尺寸、边距和页码的深入指南。学习如何创建吸引人且清晰的布局，并快速实现。\n"
 
 [guides.page-setup-guide.title]
 en = "Page setup guide"
+zh = "页面设置指南"
 
 [guides.table-guide.body]
 en = "{{typst-docs/guides.table-guide.body.toml}}"
 
 [guides.table-guide.description]
 en = "Not sure how to change table strokes? Need to rotate a table? This guide\nexplains all you need to know about tables in Typst.\n"
+zh = "不知道如何更改表格边框？需要旋转表格？本指南解释了您需要了解的有关 Typst 中表格的所有信息。\n"
 
 [guides.table-guide.title]
 en = "Table guide"
+zh = "表格指南"
 
 [guides.title]
 en = "Guides"
+zh = "指南"
 
 [index.body]
 en = "\n# Overview\nWelcome to Typst's documentation! Typst is a new markup-based typesetting system\nfor the sciences. It is designed to be an alternative both to advanced tools\nlike LaTeX and simpler tools like Word and Google Docs. Our goal with Typst is\nto build a typesetting tool that is highly capable _and_ a pleasure to use.\n\nThis documentation is split into two parts: A beginner-friendly tutorial that\nintroduces Typst through a practical use case and a comprehensive reference that\nexplains all of Typst's concepts and features.\n\nWe also invite you to join the community we're building around Typst. Typst is\nstill a very young project, so your feedback is more than valuable."
@@ -2665,66 +2677,87 @@ zh = "`eval` 函数的文档。"
 
 [reference.foundations.eval.eval.details]
 en = "Evaluates a string as Typst code.\n\nThis function should only be used as a last resort.\n\n# Example\n```example\n#eval(\"1 + 1\") \\\n#eval(\"(1, 2, 3, 4)\").len() \\\n#eval(\"*Markup!*\", mode: \"markup\") \\\n```"
+zh = "将字符串作为 Typst 代码进行求值。\n\n此函数应仅作为最后手段使用。\n\n# 示例\n```example\n#eval(\"1 + 1\") \\\n#eval(\"(1, 2, 3, 4)\").len() \\\n#eval(\"*Markup!*\", mode: \"markup\") \\\n```"
 
 [reference.foundations.eval.eval.mode.details]
 en = "The [syntactical mode]($reference/syntax/#modes) in which the string is\nparsed.\n\n"
+zh = "解析字符串的[语法模式]($reference/syntax/#modes)。\n\n"
 
 [reference.foundations.eval.eval.oneliner]
 en = "Evaluates a string as Typst code."
+zh = "将字符串作为 Typst 代码进行求值。"
 
 [reference.foundations.eval.eval.scope.details]
 en = "A scope of definitions that are made available.\n\n"
+zh = "提供可用定义的作用域。\n\n"
 
 [reference.foundations.eval.eval.source.details]
 en = "A string of Typst code to evaluate."
+zh = "要求值的 Typst 代码字符串。"
 
 [reference.foundations.eval.eval.title]
 en = "Evaluate"
+zh = "求值"
 
 [reference.foundations.eval.oneliner]
 en = "Evaluates a string as Typst code."
+zh = "将字符串作为 Typst 代码进行求值。"
 
 [reference.foundations.eval.title]
 en = "Evaluate"
+zh = "求值"
 
 [reference.foundations.float.description]
 en = "Documentation for the Float type."
+zh = "Float 类型的文档。"
 
 [reference.foundations.float.float.details]
 en = "A floating-point number.\n\nA limited-precision representation of a real number. Typst uses 64 bits to\nstore floats. Wherever a float is expected, you can also pass an\n[integer]($int).\n\nYou can convert a value to a float with this type's constructor.\n\nNaN and positive infinity are available as `{float.nan}` and `{float.inf}`\nrespectively.\n\n# Example\n```example\n#3.14 \\\n#1e4 \\\n#(10 / 4)\n```"
+zh = "浮点数。\n\n实数的有限精度表示。Typst 使用 64 位存储浮点数。任何需要浮点数的地方，您也可以传递[整数]($int)。\n\n您可以使用此类型的构造函数将值转换为浮点数。\n\nNaN 和正无穷大分别可用作 `{float.nan}` 和 `{float.inf}`。\n\n# 示例\n```example\n#3.14 \\\n#1e4 \\\n#(10 / 4)\n```"
 
 [reference.foundations.float.float.float.details]
 en = "Converts a value to a float.\n\n- Booleans are converted to `0.0` or `1.0`.\n- Integers are converted to the closest 64-bit float. For integers with\n  absolute value less than `{calc.pow(2, 53)}`, this conversion is\n  exact.\n- Ratios are divided by 100%.\n- Strings are parsed in base 10 to the closest 64-bit float. Exponential\n  notation is supported.\n\n"
+zh = "将值转换为浮点数。\n\n- 布尔值转换为 `0.0` 或 `1.0`。\n- 整数转换为最接近的 64 位浮点数。对于绝对值小于 `{calc.pow(2, 53)}` 的整数，此转换是精确的。\n- 比例除以 100%。\n- 字符串以 10 进制解析为最接近的 64 位浮点数。支持指数表示法。\n\n"
 
 [reference.foundations.float.float.float.oneliner]
 en = "Converts a value to a float."
+zh = "将值转换为浮点数。"
 
 [reference.foundations.float.float.float.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.float.float.float.value.details]
 en = "The value that should be converted to a float."
+zh = "应转换为浮点数的值。"
 
 [reference.foundations.float.float.from-bytes.bytes.details]
 en = "The bytes that should be converted to a float.\n\nMust have a length of either 4 or 8. The bytes are then\ninterpreted in [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)'s\nbinary32 (single-precision) or binary64 (double-precision) format\ndepending on the length of the bytes."
+zh = "应转换为浮点数的「字节」（[bytes](#x-term-bytes)）。\n\n必须具有 4 或 8 的长度。然后根据字节的长度，将这些字节解释为 [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) 的 binary32（单精度）或 binary64（双精度）格式。"
 
 [reference.foundations.float.float.from-bytes.details]
 en = "Interprets bytes as a float.\n\n"
+zh = "将字节解释为浮点数。\n\n"
 
 [reference.foundations.float.float.from-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.float.float.from-bytes.oneliner]
 en = "Interprets bytes as a float."
+zh = "将字节解释为浮点数。"
 
 [reference.foundations.float.float.from-bytes.title]
 en = "From Bytes"
+zh = "从字节"
 
 [reference.foundations.float.float.is-infinite.details]
 en = "Checks if a float is infinite.\n\nFloats can represent positive infinity and negative infinity. This\nfunction returns `{true}` if the float is an infinity.\n\n"
+zh = "检查浮点数是否为无穷大。\n\n浮点数可以表示正无穷大和负无穷大。如果浮点数是无穷大，此函数返回 `{true}`。\n\n"
 
 [reference.foundations.float.float.is-infinite.oneliner]
 en = "Checks if a float is infinite."
+zh = "检查浮点数是否为无穷大。"
 
 [reference.foundations.float.float.is-infinite.title]
 en = "Is Infinite"
