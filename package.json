@@ -1,0 +1,15 @@
+{
+  "name": "docs",
+  "private": true,
+  "version": "1.0.0",
+  "main": "scripts/main.js",
+  "repository": "https://github.com/typst-doc-cn/docs.git",
+  "author": "Myriad-Dreamin <camiyoru@gmail.com>",
+  "license": "Apache-2.0",
+  "scripts": {
+    "validate": "node ./scripts/main.js"
+  },
+  "dependencies": {
+    "toml": "^3.0.0"
+  }
+}

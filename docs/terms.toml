@@ -56,3 +56,18 @@ description = "A value that is either true or false"
 en = "bytes"
 zh = "字节"
 description = "A sequence of raw bytes"
+
+[integer]
+en = "integer"
+zh = "整数"
+description = "A whole number without fractional part"
+
+[radians]
+en = "radians"
+zh = "弧度"
+description = "A unit of angular measure"
+
+[ordinal]
+en = "ordinal"
+zh = "序数"
+description = "A number indicating position or order in a sequence"
