@@ -1114,15 +1114,15 @@ zh = "数组"
 
 [reference.foundations.array.array.to-dict.details]
 en = "Converts an array of pairs into a dictionary.\nThe first value of each pair is the key, the second the value.\n\nIf the same key occurs multiple times, the last value is selected.\n\n"
-zh = "将一对对数组转换为字典。\n每对的第一个值是键，第二个是值。\n\n如果同一个键出现多次，则选择最后一个值。\n\n"
+zh = "将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。\n每对的第一个值是键，第二个是值。\n\n如果同一个键出现多次，则选择最后一个值。\n\n"
 
 [reference.foundations.array.array.to-dict.oneliner]
 en = "Converts an array of pairs into a dictionary."
-zh = "将一对对数组转换为字典。"
+zh = "将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。"
 
 [reference.foundations.array.array.to-dict.title]
 en = "To Dict"
-zh = "转换为字典"
+zh = "转换为「字典」（[dictionary](#x-term-dictionary)）"
 
 [reference.foundations.array.array.windows.details]
 en = "Returns sliding windows of `window-size` elements over an array.\n\nIf the array length is less than `window-size`, this will return an empty array.\n\n"
@@ -1142,23 +1142,23 @@ zh = "每个窗口包含多少元素。"
 
 [reference.foundations.array.array.zip.details]
 en = "Zips the array with other arrays.\n\nReturns an array of arrays, where the `i`th inner array contains all the\n`i`th elements from each original array.\n\nIf the arrays to be zipped have different lengths, they are zipped up to\nthe last element of the shortest array and all remaining elements are\nignored.\n\nThis function is variadic, meaning that you can zip multiple arrays\ntogether at once: `{(1, 2).zip((\"A\", \"B\"), (10, 20))}` yields\n`{((1, \"A\", 10), (2, \"B\", 20))}`."
-zh = "将数组与其他数组拉链。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要拉链的数组长度不同，则拉链到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此函数是可变参数的，意味着您可以一次将多个数组拉链在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
+zh = "将「数组」（[array](#x-term-array)）与其他「数组」（[array](#x-term-array)）「同时迭代」（[zip](#x-term-zip)）。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要「同时迭代」（[zip](#x-term-zip)）的数组长度不同，则迭代到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此「函数」（[function](#x-term-function)）是可变参数的，意味着您可以一次将多个数组「同时迭代」（[zip](#x-term-zip)）在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
 
 [reference.foundations.array.array.zip.exact.details]
 en = "Whether all arrays have to have the same length.\nFor example, `{(1, 2).zip((1, 2, 3), exact: true)}` produces an\nerror."
-zh = "是否所有数组必须具有相同的长度。\n例如，`{(1, 2).zip((1, 2, 3), exact: true)}` 会产生错误。"
+zh = "是否所有「数组」（[array](#x-term-array)）必须具有相同的「长度」（[length](#x-term-length)）。\n例如，`{(1, 2).zip((1, 2, 3), exact: true)}` 会产生错误。"
 
 [reference.foundations.array.array.zip.oneliner]
 en = "Zips the array with other arrays."
-zh = "将数组与其他数组拉链。"
+zh = "将「数组」（[array](#x-term-array)）与其他「数组」（[array](#x-term-array)）「同时迭代」（[zip](#x-term-zip)）。"
 
 [reference.foundations.array.array.zip.others.details]
 en = "The arrays to zip with."
-zh = "要拉链的数组。"
+zh = "被「同时迭代」（[zip](#x-term-zip)）的「数组」（[array](#x-term-array)）。"
 
 [reference.foundations.array.array.zip.title]
 en = "Zip"
-zh = "拉链"
+zh = "「同时迭代」（[zip](#x-term-zip)）"
 
 [reference.foundations.array.description]
 en = "Documentation for the Array type."

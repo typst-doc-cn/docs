@@ -140,6 +140,45 @@ en = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
 
 All translations will then be loaded from the `typst-docs/guides.guide-for-latex-users.body.toml` file.
 
+### 5. Use Terms Reference File
+
+- `docs/terms.toml` file contains the terms used in the documentation, for future reference.
+- When translating technical terms, include the original term with proper linking.
+- Use the format: `「translated_term」（[original_term](#x-term-original_term)）`
+
+**Example for array conversion:**
+```
+Converts an array of pairs into a dictionary.
+```
+should be translated as:
+```
+将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。
+```
+
+**Example for exclusive boundary:**
+```
+end index (exclusive)
+```
+should be translated as:
+```
+结束索引且「不包括本身」（[exclusive](#x-term-exclusive)）
+```
+
+### 6. Follow AWS Translation Best Practices
+
+When translating, use this three-step process:
+
+1. **Direct Translation**: Translate content directly while maintaining original format and not omitting any information.
+
+2. **Quality Check**: Based on the first step, identify specific issues:
+   - Non-conforming expressions to target language habits
+   - Unclear or ambiguous sentences
+   - Technical terms that need proper reference
+
+3. **Refined Translation**: Re-translate ensuring original meaning while making it easier to understand and more natural in the target language.
+
+**Important**: Only output the final translation in the target language, avoiding mixing source and target languages.
+
 ## Language Codes
 
 Use ISO 639-1 language codes:
