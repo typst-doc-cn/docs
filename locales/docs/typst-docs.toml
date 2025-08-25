@@ -1042,15 +1042,15 @@ zh = "要提取的项数。这相当于传递 `start + count` 作为 `end` 位�
 
 [reference.foundations.array.array.slice.details]
 en = "Extracts a subslice of the array. Fails with an error if the start or end\nindex is out of bounds."
-zh = "提取数组的子切片。如果开始或结束索引超出范围，则失败并报错。"
+zh = "提取「数组」（[array](#x-term-array)）的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.array.array.slice.end.details]
 en = "The end index (exclusive). If omitted, the whole slice until the end\nof the array is extracted. If negative, indexes from the back."
-zh = "结束索引（不包括）。如果省略，则提取直到数组末尾的整个切片。如果为负数，则从后面开始索引。"
+zh = "结束索引且「不包括本身」（[exclusive](#x-term-exclusive)）。如果省略，则提取直到「数组」（[array](#x-term-array)）末尾的整个切片。如果为负数，则从后面开始索引。"
 
 [reference.foundations.array.array.slice.oneliner]
 en = "Extracts a subslice of the array. Fails with an error if the start or end"
-zh = "提取数组的子切片。如果开始或结束索引超出范围，则失败并报错。"
+zh = "提取「数组」（[array](#x-term-array)）的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.array.array.slice.start.details]
 en = "The start index (inclusive). If negative, indexes from the back."
@@ -1362,15 +1362,15 @@ zh = "要提取的项数。这相当于传递 `start + count` 作为 `end` 位�
 
 [reference.foundations.bytes.bytes.slice.details]
 en = "Extracts a subslice of the bytes. Fails with an error if the start or\nend index is out of bounds."
-zh = "提取字节的子切片。如果开始或结束索引超出范围，则失败并报错。"
+zh = "提取「字节」（[bytes](#x-term-bytes)）的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.bytes.bytes.slice.end.details]
 en = "The end index (exclusive). If omitted, the whole slice until the end\nis extracted."
-zh = "结束索引（不包括）。如果省略，则提取直到末尾的整个切片。"
+zh = "结束索引且「不包括本身」（[exclusive](#x-term-exclusive)）。如果省略，则提取直到末尾的整个切片。"
 
 [reference.foundations.bytes.bytes.slice.oneliner]
 en = "Extracts a subslice of the bytes. Fails with an error if the start or"
-zh = "提取字节的子切片。如果开始或结束索引超出范围，则失败并报错。"
+zh = "提取「字节」（[bytes](#x-term-bytes)）的子切片。如果开始或结束索引超出范围，则失败并报错。"
 
 [reference.foundations.bytes.bytes.slice.start.details]
 en = "The start index (inclusive)."

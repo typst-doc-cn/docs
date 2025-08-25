@@ -51,3 +51,8 @@ description = "A sequence of characters"
 en = "boolean"
 zh = "布尔值"
 description = "A value that is either true or false"
+
+[bytes]
+en = "bytes"
+zh = "字节"
+description = "A sequence of raw bytes"
