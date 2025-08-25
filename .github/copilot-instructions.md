@@ -146,7 +146,7 @@ All translations will then be loaded from the `typst-docs/guides.guide-for-latex
 - When translating technical terms, include the original term with proper linking.
 - Use the format: `「translated_term」（[original_term](#x-term-original_term)）`
 
-**Example for array conversion:**
+**Example of basic format (array conversion):**
 
 ```
 Converts an array of pairs into a dictionary.
@@ -158,7 +158,7 @@ should be translated as:
 将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。
 ```
 
-**Example for exclusive boundary:**
+**Example of avoiding nested parentheses, i.e. make fluent translation (exclusive boundary)**
 
 ```
 end index (exclusive)
@@ -168,6 +168,18 @@ should be translated as:
 
 ```
 结束索引且「不包括本身」（[exclusive](#x-term-exclusive)）
+```
+
+**Example of avoiding flooding the translation with too many terms (array conversion only first occurrence)**
+
+```
+Zips the array with other arrays.
+```
+
+should be translated as:
+
+```
+将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。
 ```
 
 ### 6. Follow Translation Best Practices
