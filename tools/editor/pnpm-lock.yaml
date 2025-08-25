@@ -36,8 +36,8 @@ importers:
         specifier: 0.33.1
         version: 0.33.1
       js-toml:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.2
+        version: 1.0.2
       lexical:
         specifier: ^0.33.1
         version: 0.33.1
@@ -391,8 +391,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  js-toml@1.0.1:
-    resolution: {integrity: sha512-rHd/IolpFm2V5BmHCEY8CckHs8NDsYZZ64H5RNgA6Opsr9vX4QyTiQPplgtqg7b3ztqYShZC38nl6CUg7QuhXg==}
+  js-toml@1.0.2:
+    resolution: {integrity: sha512-/7IQ//bzn2a/5IDazPUNzlW7bsjxS51cxciYZDR+Z+3Le60yzT0YfI8KOWqTtBcZkXXVklhWd2OuGd8ZksB0wQ==}
 
   lexical@0.33.1:
     resolution: {integrity: sha512-+kiCS/GshQmCs/meMb8MQT4AMvw3S3Ef0lSCv2Xi6Itvs59OD+NjQWNfYkDteIbKtVE/w0Yiqh56VyGwIb8UcA==}
@@ -772,7 +772,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  js-toml@1.0.1:
+  js-toml@1.0.2:
     dependencies:
       chevrotain: 11.0.3
       xregexp: 5.1.2
