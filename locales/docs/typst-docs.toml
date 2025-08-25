@@ -3035,15 +3035,19 @@ zh = "整数。"
 
 [reference.foundations.int.int.signum.details]
 en = "Calculates the sign of an integer.\n\n- If the number is positive, returns `{1}`.\n- If the number is negative, returns `{-1}`.\n- If the number is zero, returns `{0}`.\n\n"
+zh = "计算整数的符号。\n\n- 如果数字为正数，返回 `{1}`。\n- 如果数字为负数，返回 `{-1}`。\n- 如果数字为零，返回 `{0}`。\n\n"
 
 [reference.foundations.int.int.signum.oneliner]
 en = "Calculates the sign of an integer."
+zh = "计算整数的符号。"
 
 [reference.foundations.int.int.signum.title]
 en = "Signum"
+zh = "符号"
 
 [reference.foundations.int.int.title]
 en = "Integer"
+zh = "整数"
 
 [reference.foundations.int.int.to-bytes.details]
 en = "Converts an integer to bytes.\n\n"
@@ -3311,45 +3315,59 @@ zh = "用于在文档中选择元素的过滤器。"
 
 [reference.foundations.selector.selector.after.details]
 en = "Returns a modified selector that will only match elements that occur\nafter the first match of `start`."
+zh = "返回一个修改后的「选择器」（[selector](#x-term-selector)），该选择器只匹配在 `start` 的第一个匹配项之后出现的元素。"
 
 [reference.foundations.selector.selector.after.inclusive.details]
 en = "Whether `start` itself should match or not. This is only relevant\n if both selectors match the same type of element. Defaults to\n `{true}`."
+zh = "`start` 本身是否应该匹配。这仅在两个「选择器」（[selector](#x-term-selector)）匹配相同类型的元素时才相关。默认为 `{true}`。"
 
 [reference.foundations.selector.selector.after.oneliner]
 en = "Returns a modified selector that will only match elements that occur"
+zh = "返回一个修改后的选择器，该选择器只匹配在指定匹配项之后出现的元素。"
 
 [reference.foundations.selector.selector.after.start.details]
 en = "The original selection will start at the first match of `start`."
+zh = "原始选择将从 `start` 的第一个匹配项开始。"
 
 [reference.foundations.selector.selector.after.title]
 en = "After"
+zh = "之后"
 
 [reference.foundations.selector.selector.and.details]
 en = "Selects all elements that match this and all of the other selectors."
+zh = "选择同时匹配此「选择器」（[selector](#x-term-selector)）和所有其他选择器的元素。"
 
 [reference.foundations.selector.selector.and.oneliner]
 en = "Selects all elements that match this and all of the other selectors."
+zh = "选择同时匹配此选择器和所有其他选择器的元素。"
 
 [reference.foundations.selector.selector.and.others.details]
 en = "The other selectors to match on."
+zh = "要匹配的其他「选择器」（[selector](#x-term-selector)）。"
 
 [reference.foundations.selector.selector.and.title]
 en = "And"
+zh = "且"
 
 [reference.foundations.selector.selector.before.details]
 en = "Returns a modified selector that will only match elements that occur\nbefore the first match of `end`."
+zh = "返回一个修改后的「选择器」（[selector](#x-term-selector)），该选择器只匹配在 `end` 的第一个匹配项之前出现的元素。"
 
 [reference.foundations.selector.selector.before.end.details]
 en = "The original selection will end at the first match of `end`."
+zh = "原始选择将在 `end` 的第一个匹配项处结束。"
 
 [reference.foundations.selector.selector.before.inclusive.details]
 en = "Whether `end` itself should match or not. This is only relevant if\nboth selectors match the same type of element. Defaults to `{true}`."
+zh = "`end` 本身是否应该匹配。这仅在两个「选择器」（[selector](#x-term-selector)）匹配相同类型的元素时才相关。默认为 `{true}`。"
 
 [reference.foundations.selector.selector.before.oneliner]
 en = "Returns a modified selector that will only match elements that occur"
+zh = "返回一个修改后的选择器，该选择器只匹配在指定匹配项之前出现的元素。"
 
 [reference.foundations.selector.selector.before.title]
 en = "Before"
+zh = "之前"
 
 [reference.foundations.selector.selector.details]
 en = "{{typst-docs/reference.foundations.selector.selector.details.toml}}"
@@ -3360,15 +3378,19 @@ zh = "用于在文档中选择元素的过滤器。"
 
 [reference.foundations.selector.selector.or.details]
 en = "Selects all elements that match this or any of the other selectors."
+zh = "选择匹配此「选择器」（[selector](#x-term-selector)）或任何其他选择器的元素。"
 
 [reference.foundations.selector.selector.or.oneliner]
 en = "Selects all elements that match this or any of the other selectors."
+zh = "选择匹配此选择器或任何其他选择器的元素。"
 
 [reference.foundations.selector.selector.or.others.details]
 en = "The other selectors to match on."
+zh = "要匹配的其他「选择器」（[selector](#x-term-selector)）。"
 
 [reference.foundations.selector.selector.or.title]
 en = "Or"
+zh = "或"
 
 [reference.foundations.selector.selector.selector.details]
 en = "Turns a value into a selector. The following values are accepted:\n- An element function like a `heading` or `figure`.\n- A `{<label>}`.\n- A more complex selector like `{heading.where(level: 1)}`."
@@ -3431,75 +3453,98 @@ zh = "将「字符串」（[string](#x-term-string)）的字形簇作为子字�
 
 [reference.foundations.str.str.clusters.title]
 en = "Clusters"
+zh = "簇"
 
 [reference.foundations.str.str.codepoints.details]
 en = "Returns the Unicode codepoints of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的 Unicode 码点作为子字符串「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.str.str.codepoints.oneliner]
 en = "Returns the Unicode codepoints of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的 Unicode 码点作为子字符串数组返回。"
 
 [reference.foundations.str.str.codepoints.title]
 en = "Codepoints"
+zh = "码点"
 
 [reference.foundations.str.str.contains.details]
 en = "Whether the string contains the specified pattern.\n\nThis method also has dedicated syntax: You can write `{\"bc\" in \"abcd\"}`\ninstead of `{\"abcd\".contains(\"bc\")}`."
+zh = "「字符串」（[string](#x-term-string)）是否包含指定的模式。\n\n此方法还有专用语法：您可以写 `{\"bc\" in \"abcd\"}` 而不是 `{\"abcd\".contains(\"bc\")}`。"
 
 [reference.foundations.str.str.contains.oneliner]
 en = "Whether the string contains the specified pattern."
+zh = "字符串是否包含指定的模式。"
 
 [reference.foundations.str.str.contains.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.contains.title]
 en = "Contains"
+zh = "包含"
 
 [reference.foundations.str.str.details]
 en = "{{typst-docs/reference.foundations.str.str.details.toml}}"
 
 [reference.foundations.str.str.ends-with.details]
 en = "Whether the string ends with the specified pattern."
+zh = "「字符串」（[string](#x-term-string)）是否以指定模式结尾。"
 
 [reference.foundations.str.str.ends-with.oneliner]
 en = "Whether the string ends with the specified pattern."
+zh = "字符串是否以指定模式结尾。"
 
 [reference.foundations.str.str.ends-with.pattern.details]
 en = "The pattern the string might end with."
+zh = "字符串可能以此模式结尾。"
 
 [reference.foundations.str.str.ends-with.title]
 en = "Ends With"
+zh = "以...结尾"
 
 [reference.foundations.str.str.find.details]
 en = "Searches for the specified pattern in the string and returns the first\nmatch as a string or `{none}` if there is no match."
+zh = "在「字符串」（[string](#x-term-string)）中搜索指定模式，如果有匹配则返回第一个匹配项作为字符串，如果没有匹配则返回 `{none}`。"
 
 [reference.foundations.str.str.find.oneliner]
 en = "Searches for the specified pattern in the string and returns the first"
+zh = "在字符串中搜索指定模式并返回第一个匹配项。"
 
 [reference.foundations.str.str.find.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.find.title]
 en = "Find"
+zh = "查找"
 
 [reference.foundations.str.str.first.details]
 en = "Extracts the first grapheme cluster of the string.\nFails with an error if the string is empty."
+zh = "提取「字符串」（[string](#x-term-string)）的第一个字形簇。\n如果字符串为空，则会出现错误。"
 
 [reference.foundations.str.str.first.oneliner]
 en = "Extracts the first grapheme cluster of the string."
+zh = "提取字符串的第一个字形簇。"
 
 [reference.foundations.str.str.first.title]
 en = "First"
+zh = "第一个"
 
 [reference.foundations.str.str.from-unicode.details]
 en = "Converts a unicode code point into its corresponding string.\n\n"
+zh = "将 Unicode 码点转换为其对应的「字符串」（[string](#x-term-string)）。\n\n"
 
 [reference.foundations.str.str.from-unicode.oneliner]
 en = "Converts a unicode code point into its corresponding string."
+zh = "将 Unicode 码点转换为其对应的字符串。"
 
 [reference.foundations.str.str.from-unicode.title]
 en = "From Unicode"
+zh = "来自 Unicode"
 
 [reference.foundations.str.str.from-unicode.value.details]
 en = "The code point that should be converted."
+zh = "应该转换的码点。"
 
 [reference.foundations.str.str.last.details]
 en = "Extracts the last grapheme cluster of the string.\nFails with an error if the string is empty."
@@ -3680,9 +3725,11 @@ en = "String"
 
 [reference.foundations.symbol.description]
 en = "Documentation for the Symbol type."
+zh = "Symbol「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.symbol.oneliner]
 en = "A Unicode symbol."
+zh = "一个 Unicode 符号。"
 
 [reference.foundations.symbol.symbol.details]
 en = "{{typst-docs/reference.foundations.symbol.symbol.details.toml}}"
@@ -3710,9 +3757,11 @@ en = "Symbol"
 
 [reference.foundations.sys.description]
 en = "Documentation for the sys functions."
+zh = "sys 函数的文档。"
 
 [reference.foundations.sys.oneliner]
 en = "Module for system interactions."
+zh = "用于系统交互的模块。"
 
 [reference.foundations.sys.sys.details]
 en = "Module for system interactions.\n\nThis module defines the following items:\n\n- The `sys.version` constant (of type [`version`]) that specifies\n  the currently active Typst compiler version.\n\n- The `sys.inputs` [dictionary], which makes external inputs\n  available to the project. An input specified in the command line as\n  `--input key=value` becomes available under `sys.inputs.key` as\n  `{\"value\"}`. To include spaces in the value, it may be enclosed with\n  single or double quotes.\n\n  The value is always of type [string]($str). More complex data\n  may be parsed manually using functions like [`json.decode`]($json.decode).\n"
@@ -3722,36 +3771,46 @@ en = "System"
 
 [reference.foundations.sys.title]
 en = "System"
+zh = "系统"
 
 [reference.foundations.target.description]
 en = "Documentation for the `target` function."
+zh = "`target` 函数的文档。"
 
 [reference.foundations.target.oneliner]
 en = "Returns the current export target."
+zh = "返回当前导出目标。"
 
 [reference.foundations.target.target.details]
 en = "{{typst-docs/reference.foundations.target.target.details.toml}}"
 
 [reference.foundations.target.target.oneliner]
 en = "Returns the current export target."
+zh = "返回当前导出目标。"
 
 [reference.foundations.target.target.title]
 en = "Target"
+zh = "目标"
 
 [reference.foundations.target.title]
 en = "Target"
+zh = "目标"
 
 [reference.foundations.title]
 en = "Foundations"
+zh = "基础"
 
 [reference.foundations.type.description]
 en = "Documentation for the Type type."
+zh = "Type「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.type.oneliner]
 en = "Describes a kind of value."
+zh = "描述一种值的类型。"
 
 [reference.foundations.type.title]
 en = "Type"
+zh = "类型"
 
 [reference.foundations.type.type.details]
 en = "{{typst-docs/reference.foundations.type.type.details.toml}}"
@@ -3764,57 +3823,75 @@ en = "Type"
 
 [reference.foundations.type.type.type.details]
 en = "Determines a value's type.\n\n"
+zh = "确定值的「类型」（[type](#x-term-type)）。\n\n"
 
 [reference.foundations.type.type.type.oneliner]
 en = "Determines a value's type."
+zh = "确定值的类型。"
 
 [reference.foundations.type.type.type.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.type.type.type.value.details]
 en = "The value whose type's to determine."
+zh = "要确定类型的值。"
 
 [reference.foundations.version.description]
 en = "Documentation for the Version type."
+zh = "Version「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.version.oneliner]
 en = "A version with an arbitrary number of components."
+zh = "具有任意数量组件的版本。"
 
 [reference.foundations.version.title]
 en = "Version"
+zh = "版本"
 
 [reference.foundations.version.version.at.details]
 en = "Retrieves a component of a version.\n\nThe returned integer is always non-negative. Returns `0` if the version\nisn't specified to the necessary length."
+zh = "检索版本的一个组件。\n\n返回的整数总是非负的。如果版本没有指定到必要的长度，则返回 `0`。"
 
 [reference.foundations.version.version.at.index.details]
 en = "The index at which to retrieve the component. If negative, indexes\nfrom the back of the explicitly given components."
+zh = "要检索组件的索引。如果为负数，则从显式给定组件的末尾开始索引。"
 
 [reference.foundations.version.version.at.oneliner]
 en = "Retrieves a component of a version."
+zh = "检索版本的一个组件。"
 
 [reference.foundations.version.version.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.version.version.details]
 en = "A version with an arbitrary number of components.\n\nThe first three components have names that can be used as fields: `major`,\n`minor`, `patch`. All following components do not have names.\n\nThe list of components is semantically extended by an infinite list of\nzeros. This means that, for example, `0.8` is the same as `0.8.0`. As a\nspecial case, the empty version (that has no components at all) is the same\nas `0`, `0.0`, `0.0.0`, and so on.\n\nThe current version of the Typst compiler is available as `sys.version`.\n\nYou can convert a version to an array of explicitly given components using\nthe [`array`] constructor."
+zh = "具有任意数量组件的版本。\n\n前三个组件有可以用作字段的名称：`major`、`minor`、`patch`。所有后续组件都没有名称。\n\n组件列表在语义上由无限的零列表扩展。这意味着，例如，`0.8` 与 `0.8.0` 相同。作为特殊情况，空版本（根本没有组件）与 `0`、`0.0`、`0.0.0` 等相同。\n\nTypst 编译器的当前版本可以通过 `sys.version` 获得。\n\n您可以使用 [`array`] 构造函数将版本转换为显式给定组件的「数组」（[array](#x-term-array)）。"
 
 [reference.foundations.version.version.oneliner]
 en = "A version with an arbitrary number of components."
+zh = "具有任意数量组件的版本。"
 
 [reference.foundations.version.version.title]
 en = "Version"
+zh = "版本"
 
 [reference.foundations.version.version.version.components.details]
 en = "The components of the version (array arguments are flattened)"
+zh = "版本的组件（「数组」（[array](#x-term-array)）参数会被展平）"
 
 [reference.foundations.version.version.version.details]
 en = "Creates a new version.\n\nIt can have any number of components (even zero).\n\n"
+zh = "创建一个新版本。\n\n它可以有任意数量的组件（甚至零个）。\n\n"
 
 [reference.foundations.version.version.version.oneliner]
 en = "Creates a new version."
+zh = "创建一个新版本。"
 
 [reference.foundations.version.version.version.title]
 en = "Construct"
+zh = "构造"
 
 [reference.html.description]
 en = "Documentation for functions related to HTML in Typst."
@@ -4199,90 +4276,118 @@ en = "{{typst-docs/reference.layout.align.align.details.toml}}"
 
 [reference.layout.align.align.oneliner]
 en = "Aligns content horizontally and vertically."
+zh = "水平和垂直对齐内容。"
 
 [reference.layout.align.align.title]
 en = "Align"
+zh = "对齐"
 
 [reference.layout.align.description]
 en = "Documentation for the `align` function."
+zh = "`align` 函数的文档。"
 
 [reference.layout.align.oneliner]
 en = "Aligns content horizontally and vertically."
+zh = "水平和垂直对齐内容。"
 
 [reference.layout.align.title]
 en = "Align"
+zh = "对齐"
 
 [reference.layout.alignment.alignment.axis.details]
 en = "The axis this alignment belongs to.\n- `{\"horizontal\"}` for `start`, `left`, `center`, `right`, and `end`\n- `{\"vertical\"}` for `top`, `horizon`, and `bottom`\n- `{none}` for 2-dimensional alignments\n\n"
+zh = "此对齐所属的轴。\n- `{\"horizontal\"}` 对应 `start`、`left`、`center`、`right` 和 `end`\n- `{\"vertical\"}` 对应 `top`、`horizon` 和 `bottom`\n- `{none}` 对应二维对齐\n\n"
 
 [reference.layout.alignment.alignment.axis.oneliner]
 en = "The axis this alignment belongs to."
+zh = "此对齐所属的轴。"
 
 [reference.layout.alignment.alignment.axis.title]
 en = "Axis"
+zh = "轴"
 
 [reference.layout.alignment.alignment.details]
 en = "{{typst-docs/reference.layout.alignment.alignment.details.toml}}"
 
 [reference.layout.alignment.alignment.inv.details]
 en = "The inverse alignment.\n\n"
+zh = "反向对齐。\n\n"
 
 [reference.layout.alignment.alignment.inv.oneliner]
 en = "The inverse alignment."
+zh = "反向对齐。"
 
 [reference.layout.alignment.alignment.inv.title]
 en = "Inverse"
+zh = "反向"
 
 [reference.layout.alignment.alignment.oneliner]
 en = "Where to [align] something along an axis."
+zh = "沿轴「对齐」（[align](#x-term-align)）某物的位置。"
 
 [reference.layout.alignment.alignment.title]
 en = "Alignment"
+zh = "对齐"
 
 [reference.layout.alignment.description]
 en = "Documentation for the Alignment type."
+zh = "Alignment「类型」（[type](#x-term-type)）的文档。"
 
 [reference.layout.alignment.oneliner]
 en = "Where to [align] something along an axis."
+zh = "沿轴对齐某物的位置。"
 
 [reference.layout.alignment.title]
 en = "Alignment"
+zh = "对齐"
 
 [reference.layout.angle.angle.deg.details]
 en = "Converts this angle to degrees."
+zh = "将此角度转换为度数。"
 
 [reference.layout.angle.angle.deg.oneliner]
 en = "Converts this angle to degrees."
+zh = "将此角度转换为度数。"
 
 [reference.layout.angle.angle.deg.title]
 en = "Degrees"
+zh = "度数"
 
 [reference.layout.angle.angle.details]
 en = "An angle describing a rotation.\n\nTypst supports the following angular units:\n\n- Degrees: `{180deg}`\n- Radians: `{3.14rad}`\n\n# Example\n```example\n#rotate(10deg)[Hello there!]\n```"
+zh = "描述旋转的角度。\n\nTypst 支持以下角度单位：\n\n- 度数：`{180deg}`\n- 弧度：`{3.14rad}`\n\n# 示例\n```example\n#rotate(10deg)[Hello there!]\n```"
 
 [reference.layout.angle.angle.oneliner]
 en = "An angle describing a rotation."
+zh = "描述旋转的角度。"
 
 [reference.layout.angle.angle.rad.details]
 en = "Converts this angle to radians."
+zh = "将此角度转换为弧度。"
 
 [reference.layout.angle.angle.rad.oneliner]
 en = "Converts this angle to radians."
+zh = "将此角度转换为弧度。"
 
 [reference.layout.angle.angle.rad.title]
 en = "Radians"
+zh = "弧度"
 
 [reference.layout.angle.angle.title]
 en = "Angle"
+zh = "角度"
 
 [reference.layout.angle.description]
 en = "Documentation for the Angle type."
+zh = "Angle「类型」（[type](#x-term-type)）的文档。"
 
 [reference.layout.angle.oneliner]
 en = "An angle describing a rotation."
+zh = "描述旋转的角度。"
 
 [reference.layout.angle.title]
 en = "Angle"
+zh = "角度"
 
 [reference.layout.block.block.above.details]
 en = "The spacing between this block and its predecessor."
@@ -7304,9 +7409,11 @@ en = "Syntax"
 
 [reference.text.description]
 en = "Documentation for functions related to Text in Typst."
+zh = "Typst 中与文本相关的函数文档。"
 
 [reference.text.highlight.description]
 en = "Documentation for the `highlight` function."
+zh = "`highlight` 函数的文档。"
 
 [reference.text.highlight.highlight.body.details]
 en = "The content that should be highlighted."
@@ -7325,6 +7432,7 @@ en = "The color to highlight the text with.\n\n"
 
 [reference.text.highlight.highlight.oneliner]
 en = "Highlights text with a background color."
+zh = "用背景颜色突出显示文本。"
 
 [reference.text.highlight.highlight.radius.details]
 en = "How much to round the highlight's corners. See the\n[rectangle's documentation]($rect.radius) for more details.\n\n"
@@ -7334,18 +7442,22 @@ en = "The highlight's border color. See the\n[rectangle's documentation]($rect.s
 
 [reference.text.highlight.highlight.title]
 en = "Highlight"
+zh = "高亮"
 
 [reference.text.highlight.highlight.top-edge.details]
 en = "The top end of the background rectangle.\n\n"
 
 [reference.text.highlight.oneliner]
 en = "Highlights text with a background color."
+zh = "用背景颜色突出显示文本。"
 
 [reference.text.highlight.title]
 en = "Highlight"
+zh = "高亮"
 
 [reference.text.linebreak.description]
 en = "Documentation for the `linebreak` function."
+zh = "`linebreak` 函数的文档。"
 
 [reference.text.linebreak.linebreak.details]
 en = "Inserts a line break.\n\nAdvances the paragraph to the next line. A single trailing line break at the\nend of a paragraph is ignored, but more than one creates additional empty\nlines.\n\n# Example\n```example\n*Date:* 26.12.2022 \\\n*Topic:* Infrastructure Test \\\n*Severity:* High \\\n```\n\n# Syntax\nThis function also has dedicated syntax: To insert a line break, simply write\na backslash followed by whitespace. This always creates an unjustified\nbreak."
@@ -7355,36 +7467,45 @@ en = "Whether to justify the line before the break.\n\nThis is useful if you fou
 
 [reference.text.linebreak.linebreak.oneliner]
 en = "Inserts a line break."
+zh = "插入换行符。"
 
 [reference.text.linebreak.linebreak.title]
 en = "Line Break"
+zh = "换行符"
 
 [reference.text.linebreak.oneliner]
 en = "Inserts a line break."
+zh = "插入换行符。"
 
 [reference.text.linebreak.title]
 en = "Line Break"
+zh = "换行符"
 
 [reference.text.lorem.description]
 en = "Documentation for the `lorem` function."
+zh = "`lorem` 函数的文档。"
 
 [reference.text.lorem.lorem.details]
 en = "Creates blind text.\n\nThis function yields a Latin-like _Lorem Ipsum_ blind text with the given\nnumber of words. The sequence of words generated by the function is always\nthe same but randomly chosen. As usual for blind texts, it does not make any\nsense. Use it as a placeholder to try layouts.\n\n# Example\n```example\n= Blind Text\n#lorem(30)\n\n= More Blind Text\n#lorem(15)\n```"
 
 [reference.text.lorem.lorem.oneliner]
 en = "Creates blind text."
+zh = "创建占位文本。"
 
 [reference.text.lorem.lorem.title]
 en = "Lorem"
+zh = "Lorem"
 
 [reference.text.lorem.lorem.words.details]
 en = "The length of the blind text in words."
 
 [reference.text.lorem.oneliner]
 en = "Creates blind text."
+zh = "创建占位文本。"
 
 [reference.text.lorem.title]
 en = "Lorem"
+zh = "Lorem"
 
 [reference.text.lower.description]
 en = "Documentation for the `lower` function."
