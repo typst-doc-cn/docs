@@ -2908,45 +2908,59 @@ zh = "按位与"
 
 [reference.foundations.int.int.bit-lshift.details]
 en = "Shifts the operand's bits to the left by the specified amount.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits. An error will occur if the result is too large to\nfit in a 64-bit integer.\n\n"
+zh = "将操作数的位向左移动指定的数量。\n\n对于此函数，操作数被视为 64 位有符号整数。如果结果太大而无法适应 64 位整数，将发生错误。\n\n"
 
 [reference.foundations.int.int.bit-lshift.oneliner]
 en = "Shifts the operand's bits to the left by the specified amount."
+zh = "将操作数的位向左移动指定的数量。"
 
 [reference.foundations.int.int.bit-lshift.shift.details]
 en = "The amount of bits to shift. Must not be negative."
+zh = "要移动的位数。不能为负数。"
 
 [reference.foundations.int.int.bit-lshift.title]
 en = "Bitwise Left Shift"
+zh = "按位左移"
 
 [reference.foundations.int.int.bit-not.details]
 en = "Calculates the bitwise NOT of an integer.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits.\n\n"
+zh = "计算整数的按位取反。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-not.oneliner]
 en = "Calculates the bitwise NOT of an integer."
+zh = "计算整数的按位取反。"
 
 [reference.foundations.int.int.bit-not.title]
 en = "Bitwise NOT"
+zh = "按位取反"
 
 [reference.foundations.int.int.bit-or.details]
 en = "Calculates the bitwise OR between two integers.\n\nFor the purposes of this function, the operands are treated as signed\nintegers of 64 bits.\n\n"
+zh = "计算两个整数之间的按位或运算。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-or.oneliner]
 en = "Calculates the bitwise OR between two integers."
+zh = "计算两个整数之间的按位或运算。"
 
 [reference.foundations.int.int.bit-or.rhs.details]
 en = "The right-hand operand of the bitwise OR."
+zh = "按位或运算的右操作数。"
 
 [reference.foundations.int.int.bit-or.title]
 en = "Bitwise OR"
+zh = "按位或"
 
 [reference.foundations.int.int.bit-rshift.details]
 en = "Shifts the operand's bits to the right by the specified amount.\nPerforms an arithmetic shift by default (extends the sign bit to the left,\nsuch that negative numbers stay negative), but that can be changed by the\n`logical` parameter.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits.\n\n"
+zh = "将操作数的位向右移动指定的数量。\n默认执行算术移位（将符号位扩展到左侧，使负数保持负数），但可以通过 `logical` 参数更改。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-rshift.logical.details]
 en = "Toggles whether a logical (unsigned) right shift should be performed\ninstead of arithmetic right shift.\nIf this is `{true}`, negative operands will not preserve their sign\nbit, and bits which appear to the left after the shift will be\n`{0}`. This parameter has no effect on non-negative operands."
+zh = "切换是否应执行逻辑（无符号）右移而不是算术右移。\n如果为 `{true}`，负操作数将不会保留其符号位，移位后出现在左侧的位将为 `{0}`。此参数对非负操作数没有影响。"
 
 [reference.foundations.int.int.bit-rshift.oneliner]
 en = "Shifts the operand's bits to the right by the specified amount."
+zh = "将操作数的位向右移动指定的数量。"
 
 [reference.foundations.int.int.bit-rshift.shift.details]
 en = "The amount of bits to shift. Must not be negative.\n\nShifts larger than 63 are allowed and will cause the return value to\nsaturate. For non-negative numbers, the return value saturates at\n`{0}`, while, for negative numbers, it saturates at `{-1}` if\n`logical` is set to `{false}`, or `{0}` if it is `{true}`. This\nbehavior is consistent with just applying this operation multiple\ntimes. Therefore, the shift will always succeed."
