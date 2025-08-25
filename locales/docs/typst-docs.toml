@@ -2964,57 +2964,74 @@ zh = "将操作数的位向右移动指定的数量。"
 
 [reference.foundations.int.int.bit-rshift.shift.details]
 en = "The amount of bits to shift. Must not be negative.\n\nShifts larger than 63 are allowed and will cause the return value to\nsaturate. For non-negative numbers, the return value saturates at\n`{0}`, while, for negative numbers, it saturates at `{-1}` if\n`logical` is set to `{false}`, or `{0}` if it is `{true}`. This\nbehavior is consistent with just applying this operation multiple\ntimes. Therefore, the shift will always succeed."
+zh = "要移位的位数。不能为负数。\n\n允许大于 63 的移位，会导致返回值饱和。对于非负数，返回值在 `{0}` 处饱和，而对于负数，如果 `logical` 设置为 `{false}`，则在 `{-1}` 处饱和，如果设置为 `{true}`，则在 `{0}` 处饱和。此行为与多次应用此操作一致。因此，移位总是会成功。"
 
 [reference.foundations.int.int.bit-rshift.title]
 en = "Bitwise Right Shift"
+zh = "按位右移"
 
 [reference.foundations.int.int.bit-xor.details]
 en = "Calculates the bitwise XOR between two integers.\n\nFor the purposes of this function, the operands are treated as signed\nintegers of 64 bits.\n\n"
+zh = "计算两个整数之间的按位异或。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-xor.oneliner]
 en = "Calculates the bitwise XOR between two integers."
+zh = "计算两个整数之间的按位异或。"
 
 [reference.foundations.int.int.bit-xor.rhs.details]
 en = "The right-hand operand of the bitwise XOR."
+zh = "按位异或的右操作数。"
 
 [reference.foundations.int.int.bit-xor.title]
 en = "Bitwise XOR"
+zh = "按位异或"
 
 [reference.foundations.int.int.details]
 en = "{{typst-docs/reference.foundations.int.int.details.toml}}"
 
 [reference.foundations.int.int.from-bytes.bytes.details]
 en = "The bytes that should be converted to an integer.\n\nMust be of length at most 8 so that the result fits into a 64-bit\nsigned integer."
+zh = "应该转换为整数的「字节」（[bytes](#x-term-bytes)）。\n\n「长度」（[length](#x-term-length)）最多为 8，以便结果适合 64 位有符号整数。"
 
 [reference.foundations.int.int.from-bytes.details]
 en = "Converts bytes to an integer.\n\n"
+zh = "将「字节」（[bytes](#x-term-bytes)）转换为整数。\n\n"
 
 [reference.foundations.int.int.from-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.int.int.from-bytes.oneliner]
 en = "Converts bytes to an integer."
+zh = "将「字节」（[bytes](#x-term-bytes)）转换为整数。"
 
 [reference.foundations.int.int.from-bytes.signed.details]
 en = "Whether the bytes should be treated as a signed integer. If this is\n`{true}` and the most significant bit is set, the resulting number\nwill negative."
+zh = "是否应将「字节」（[bytes](#x-term-bytes)）视为有符号整数。如果这是 `{true}` 并且设置了最高有效位，则结果数字将为负数。"
 
 [reference.foundations.int.int.from-bytes.title]
 en = "From Bytes"
+zh = "从字节创建"
 
 [reference.foundations.int.int.int.details]
 en = "Converts a value to an integer. Raises an error if there is an attempt\nto produce an integer larger than the maximum 64-bit signed integer\nor smaller than the minimum 64-bit signed integer.\n\n- Booleans are converted to `0` or `1`.\n- Floats and decimals are truncated to the next 64-bit integer.\n- Strings are parsed in base 10.\n\n"
+zh = "将值转换为整数。如果尝试生成大于最大 64 位有符号整数或小于最小 64 位有符号整数的整数，则会引发错误。\n\n- 「布尔值」（[Booleans](#x-term-boolean)）转换为 `0` 或 `1`。\n- 浮点数和十进制数被截断为下一个 64 位整数。\n- 「字符串」（[Strings](#x-term-string)）以 10 进制解析。\n\n"
 
 [reference.foundations.int.int.int.oneliner]
 en = "Converts a value to an integer. Raises an error if there is an attempt"
+zh = "将值转换为整数。如果尝试"
 
 [reference.foundations.int.int.int.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.int.int.int.value.details]
 en = "The value that should be converted to an integer."
+zh = "应该转换为整数的值。"
 
 [reference.foundations.int.int.oneliner]
 en = "A whole number."
+zh = "整数。"
 
 [reference.foundations.int.int.signum.details]
 en = "Calculates the sign of an integer.\n\n- If the number is positive, returns `{1}`.\n- If the number is negative, returns `{-1}`.\n- If the number is zero, returns `{0}`.\n\n"
@@ -3030,90 +3047,118 @@ en = "Integer"
 
 [reference.foundations.int.int.to-bytes.details]
 en = "Converts an integer to bytes.\n\n"
+zh = "将整数转换为「字节」（[bytes](#x-term-bytes)）。\n\n"
 
 [reference.foundations.int.int.to-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.int.int.to-bytes.oneliner]
 en = "Converts an integer to bytes."
+zh = "将整数转换为「字节」（[bytes](#x-term-bytes)）。"
 
 [reference.foundations.int.int.to-bytes.size.details]
 en = "The size in bytes of the resulting bytes (must be at least zero). If\nthe integer is too large to fit in the specified size, the\nconversion will truncate the remaining bytes based on the\nendianness. To keep the same resulting value, if the endianness is\nbig-endian, the truncation will happen at the rightmost bytes.\nOtherwise, if the endianness is little-endian, the truncation will\nhappen at the leftmost bytes.\n\nBe aware that if the integer is negative and the size is not enough\nto make the number fit, when passing the resulting bytes to\n`int.from-bytes`, the resulting number might be positive, as the\nmost significant bit might not be set to 1."
+zh = "结果「字节」（[bytes](#x-term-bytes)）的大小（字节数，必须至少为零）。如果整数太大无法适合指定的大小，转换将根据字节序截断剩余的「字节」（[bytes](#x-term-bytes)）。为了保持相同的结果值，如果字节序是大端序，截断将发生在最右侧的「字节」（[bytes](#x-term-bytes)）。否则，如果字节序是小端序，截断将发生在最左侧的「字节」（[bytes](#x-term-bytes)）。\n\n请注意，如果整数为负数且大小不足以容纳该数字，当将结果「字节」（[bytes](#x-term-bytes)）传递给 `int.from-bytes` 时，结果数字可能为正数，因为最高有效位可能未设置为 1。"
 
 [reference.foundations.int.int.to-bytes.title]
 en = "To Bytes"
+zh = "转换为字节"
 
 [reference.foundations.int.oneliner]
 en = "A whole number."
+zh = "整数。"
 
 [reference.foundations.int.title]
 en = "Integer"
+zh = "整数"
 
 [reference.foundations.label.description]
 en = "Documentation for the Label type."
+zh = "Label「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.label.label.details]
 en = "{{typst-docs/reference.foundations.label.label.details.toml}}"
 
 [reference.foundations.label.label.label.details]
 en = "Creates a label from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建标签。"
 
 [reference.foundations.label.label.label.name.details]
 en = "The name of the label."
+zh = "标签的名称。"
 
 [reference.foundations.label.label.label.oneliner]
 en = "Creates a label from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建标签。"
 
 [reference.foundations.label.label.label.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.label.label.oneliner]
 en = "A label for an element."
+zh = "元素的标签。"
 
 [reference.foundations.label.label.title]
 en = "Label"
+zh = "标签"
 
 [reference.foundations.label.oneliner]
 en = "A label for an element."
+zh = "元素的标签。"
 
 [reference.foundations.label.title]
 en = "Label"
+zh = "标签"
 
 [reference.foundations.module.description]
 en = "Documentation for the Module type."
+zh = "Module「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.module.module.details]
 en = "An module of definitions.\n\nA module\n- be built-in\n- stem from a [file import]($scripting/#modules)\n- stem from a [package import]($scripting/#packages) (and thus indirectly\n  its entrypoint file)\n- result from a call to the [plugin]($plugin) function\n\nYou can access definitions from the module using [field access\nnotation]($scripting/#fields) and interact with it using the [import and\ninclude syntaxes]($scripting/#modules). Alternatively, it is possible to\nconvert a module to a dictionary, and therefore access its contents\ndynamically, using the [dictionary constructor]($dictionary/#constructor).\n\n# Example\n```example\n<<< #import \"utils.typ\"\n<<< #utils.add(2, 5)\n\n<<< #import utils: sub\n<<< #sub(1, 4)\n>>> #7\n>>>\n>>> #(-3)\n```"
+zh = "定义的模块。\n\n模块可以\n- 是内置的\n- 来自「文件导入」（[file import]($scripting/#modules)）\n- 来自「包导入」（[package import]($scripting/#packages)）（因此间接来自其入口点文件）\n- 来自对「插件」（[plugin]($plugin)）函数的调用结果\n\n您可以使用「字段访问语法」（[field access notation]($scripting/#fields)）从模块访问定义，并使用「导入和包含语法」（[import and include syntaxes]($scripting/#modules)）与其交互。或者，可以将模块转换为「字典」（[dictionary](#x-term-dictionary)），因此可以使用「字典构造器」（[dictionary constructor]($dictionary/#constructor)）动态访问其内容。\n\n# 示例\n```example\n<<< #import \"utils.typ\"\n<<< #utils.add(2, 5)\n\n<<< #import utils: sub\n<<< #sub(1, 4)\n>>> #7\n>>>\n>>> #(-3)\n```"
 
 [reference.foundations.module.module.oneliner]
 en = "An module of definitions."
+zh = "定义的模块。"
 
 [reference.foundations.module.module.title]
 en = "Module"
+zh = "模块"
 
 [reference.foundations.module.oneliner]
 en = "An module of definitions."
+zh = "定义的模块。"
 
 [reference.foundations.module.title]
 en = "Module"
+zh = "模块"
 
 [reference.foundations.none.description]
 en = "Documentation for the None type."
+zh = "None「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.none.none.details]
 en = "A value that indicates the absence of any other value.\n\nThe none type has exactly one value: `{none}`.\n\nWhen inserted into the document, it is not visible. This is also the value\nthat is produced by empty code blocks. It can be\n[joined]($scripting/#blocks) with any value, yielding the other value.\n\n# Example\n```example\nNot visible: #none\n```"
+zh = "表示没有任何其他值的值。\n\nnone「类型」（[type](#x-term-type)）恰好有一个值：`{none}`。\n\n当插入到文档中时，它是不可见的。这也是由空代码块产生的值。它可以与任何值「连接」（[joined]($scripting/#blocks)），产生另一个值。\n\n# 示例\n```example\nNot visible: #none\n```"
 
 [reference.foundations.none.none.oneliner]
 en = "A value that indicates the absence of any other value."
+zh = "表示没有任何其他值的值。"
 
 [reference.foundations.none.none.title]
 en = "None"
+zh = "None"
 
 [reference.foundations.none.oneliner]
 en = "A value that indicates the absence of any other value."
+zh = "表示没有任何其他值的值。"
 
 [reference.foundations.none.title]
 en = "None"
+zh = "None"
 
 [reference.foundations.panic.description]
 en = "Documentation for the `panic` function."
