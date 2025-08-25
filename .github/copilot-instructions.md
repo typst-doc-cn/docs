@@ -182,6 +182,15 @@ should be translated as:
 将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。
 ```
 
+**Example of common terms that don't need term references**
+
+Very common terms like `function` and `integer` are used frequently and don't need the full term reference format. Instead:
+
+- `function` → `函数` (not `「函数」（[function](#x-term-function)）`)
+- `[integer]($int)` → `[整数]($int)` (not `「整数」（[integer]($int)）`)
+
+The term reference format should be reserved for less common technical terms that benefit from explicit reference linking.
+
 ### 6. Follow Translation Best Practices
 
 When translating, use this three-step process:

@@ -1142,7 +1142,7 @@ zh = "每个窗口包含多少元素。"
 
 [reference.foundations.array.array.zip.details]
 en = "Zips the array with other arrays.\n\nReturns an array of arrays, where the `i`th inner array contains all the\n`i`th elements from each original array.\n\nIf the arrays to be zipped have different lengths, they are zipped up to\nthe last element of the shortest array and all remaining elements are\nignored.\n\nThis function is variadic, meaning that you can zip multiple arrays\ntogether at once: `{(1, 2).zip((\"A\", \"B\"), (10, 20))}` yields\n`{((1, \"A\", 10), (2, \"B\", 20))}`."
-zh = "将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要「同时迭代」的数组长度不同，则迭代到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此「函数」（[function](#x-term-function)）是可变参数的，意味着您可以一次将多个数组「同时迭代」在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
+zh = "将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要「同时迭代」的数组长度不同，则迭代到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此函数是可变参数的，意味着您可以一次将多个数组「同时迭代」在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
 
 [reference.foundations.array.array.zip.exact.details]
 en = "Whether all arrays have to have the same length.\nFor example, `{(1, 2).zip((1, 2, 3), exact: true)}` produces an\nerror."
@@ -1546,7 +1546,7 @@ zh = "要计算余弦值的角度。"
 
 [reference.foundations.calc.calc.cos.details]
 en = "Calculates the cosine of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
-zh = "计算角度的余弦值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
+zh = "计算角度的余弦值。\n\n当使用整数或浮点数调用时，它们将被解释为「弧度」（[radians](#x-term-radians)）。\n\n"
 
 [reference.foundations.calc.calc.cos.oneliner]
 en = "Calculates the cosine of an angle."
@@ -1862,7 +1862,7 @@ zh = "幂"
 
 [reference.foundations.calc.calc.quo.details]
 en = "Calculates the quotient (floored division) of two numbers.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
-zh = "计算两个数的商（向下除法）。\n\n注意此「函数」（[function](#x-term-function)）将始终返回一个「整数」（[integer]($int)），如果结果「浮点数」（[`float`]）或「十进制数」（[`decimal`]）大于最大64位有符号整数或小于该类型的最小值，则会报错。\n\n"
+zh = "计算两个数的商（向下除法）。\n\n注意此函数将始终返回一个[整数]($int)，如果结果「浮点数」（[`float`]）或「十进制数」（[`decimal`]）大于最大64位有符号整数或小于该类型的最小值，则会报错。\n\n"
 
 [reference.foundations.calc.calc.quo.dividend.details]
 en = "The dividend of the quotient."
@@ -1965,7 +1965,7 @@ zh = "要计算正弦值的角度。"
 
 [reference.foundations.calc.calc.sin.details]
 en = "Calculates the sine of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
-zh = "计算角度的正弦值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
+zh = "计算角度的正弦值。\n\n当使用整数或浮点数调用时，它们将被解释为「弧度」（[radians](#x-term-radians)）。\n\n"
 
 [reference.foundations.calc.calc.sin.oneliner]
 en = "Calculates the sine of an angle."
@@ -2013,7 +2013,7 @@ zh = "要计算正切值的角度。"
 
 [reference.foundations.calc.calc.tan.details]
 en = "Calculates the tangent of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
-zh = "计算角度的正切值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
+zh = "计算角度的正切值。\n\n当使用整数或浮点数调用时，它们将被解释为「弧度」（[radians](#x-term-radians)）。\n\n"
 
 [reference.foundations.calc.calc.tan.oneliner]
 en = "Calculates the tangent of an angle."
@@ -2045,7 +2045,7 @@ zh = "计算"
 
 [reference.foundations.calc.calc.trunc.details]
 en = "Returns the integer part of a number.\n\nIf the number is already an integer, it is returned unchanged.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
-zh = "返回数的整数部分。\n\n如果数已经是整数，则原样返回。\n\n注意此「函数」（[function](#x-term-function)）将始终返回一个「整数」（[integer]($int)），如果结果「浮点数」（[`float`]）或「十进制数」（[`decimal`]）大于最大64位有符号整数或小于该类型的最小值，则会报错。\n\n"
+zh = "返回数的整数部分。\n\n如果数已经是整数，则原样返回。\n\n注意此函数将始终返回一个[整数]($int)，如果结果「浮点数」（[`float`]）或「十进制数」（[`decimal`]）大于最大64位有符号整数或小于该类型的最小值，则会报错。\n\n"
 
 [reference.foundations.calc.calc.trunc.oneliner]
 en = "Returns the integer part of a number."
@@ -2061,7 +2061,7 @@ zh = "要截断的数。"
 
 [reference.foundations.calc.description]
 en = "Documentation for the calc functions."
-zh = "计算「函数」（[function](#x-term-function)）的文档。"
+zh = "计算函数的文档。"
 
 [reference.foundations.calc.oneliner]
 en = "Module for calculations and processing of numeric values."
@@ -2168,7 +2168,7 @@ zh = "内容"
 
 [reference.foundations.datetime.datetime.datetime.day.details]
 en = "The day of the datetime."
-zh = "日期时间的天。"
+zh = "日期时间中的"日"。"
 
 [reference.foundations.datetime.datetime.datetime.details]
 en = "Creates a new datetime.\n\nYou can specify the [datetime] using a year, month, day, hour, minute,\nand second.\n\n_Note_: Depending on which components of the datetime you specify, Typst\nwill store it in one of the following three ways:\n* If you specify year, month and day, Typst will store just a date.\n* If you specify hour, minute and second, Typst will store just a time.\n* If you specify all of year, month, day, hour, minute and second, Typst\n  will store a full datetime.\n\nDepending on how it is stored, the [`display`]($datetime.display) method\nwill choose a different formatting by default.\n\n"
@@ -2275,15 +2275,15 @@ zh = "表示日期、时间或两者的组合。"
 
 [reference.foundations.datetime.datetime.ordinal.details]
 en = "The ordinal (day of the year), or `{none}` for times without a date."
-zh = "序数（一年中的第几天），对于没有日期的时间，则为 `{none}`。"
+zh = "「序数」（[ordinal](#x-term-ordinal)）（一年中的第几天），对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.ordinal.oneliner]
 en = "The ordinal (day of the year), or `{none}` for times without a date."
-zh = "序数（一年中的第几天），对于没有日期的时间，则为 `{none}`。"
+zh = "「序数」（[ordinal](#x-term-ordinal)）（一年中的第几天），对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.ordinal.title]
 en = "Ordinal"
-zh = "序数"
+zh = "「序数」（[ordinal](#x-term-ordinal)）"
 
 [reference.foundations.datetime.datetime.second.details]
 en = "The second if it was specified, or `{none}` for dates without a time."
@@ -2355,7 +2355,7 @@ zh = "日期时间"
 
 [reference.foundations.decimal.decimal.decimal.details]
 en = "Converts a value to a `decimal`.\n\nIt is recommended to use a string to construct the decimal number, or an\n[integer]($int) (if desired). The string must contain a number in the\nformat `{\"3.14159\"}` (or `{\"-3.141519\"}` for negative numbers). The\nfractional digits are fully preserved; if that's not possible due to the\nlimit of significant digits (around 28 to 29) having been reached, an\nerror is raised as the given decimal number wouldn't be representable.\n\nWhile this constructor can be used with [floating-point numbers]($float)\nto cast them to `decimal`, doing so is **discouraged** as **this cast is\ninherently imprecise.** It is easy to accidentally perform this cast by\nwriting `{decimal(1.234)}` (note the lack of double quotes), which is\nwhy Typst will emit a warning in that case. Please write\n`{decimal(\"1.234\")}` instead for that particular case (initialization of\na constant decimal). Also note that floats that are NaN or infinite\ncannot be cast to decimals and will raise an error.\n\n"
-zh = "将值转换为「十进制数」（`decimal`）。\n\n建议使用「字符串」（[string](#x-term-string)）来构造十进制数，或者使用「整数」（[integer]($int)）（如果需要）。字符串必须包含格式为 `{\"3.14159\"}` 的数字（对于负数，则为 `{\"-3.141519\"}`）。小数位数完全保留；如果由于达到有效数字限制（约 28 到 29 位）而无法保留，则会引发错误，因为给定的十进制数将无法表示。\n\n虽然此构造「函数」（[function](#x-term-function)）可以与「浮点数」（[floating-point numbers]($float)）一起使用来将它们转换为 `decimal`，但**不建议这样做**，因为**此转换本质上是不精确的**。很容易通过编写 `{decimal(1.234)}`（注意缺少双引号）意外执行此转换，这就是 Typst 在这种情况下会发出警告的原因。对于该特定情况（常量十进制的初始化），请改写 `{decimal(\"1.234\")}`。另请注意，NaN 或无限的浮点数无法转换为十进制数，会引发错误。\n\n"
+zh = "将值转换为「十进制数」（`decimal`）。\n\n建议使用「字符串」（[string](#x-term-string)）来构造十进制数，或者使用[整数]($int)（如果需要）。字符串必须包含格式为 `{\"3.14159\"}` 的数字（对于负数，则为 `{\"-3.141519\"}`）。小数位数完全保留；如果由于达到有效数字限制（约 28 到 29 位）而无法保留，则会引发错误，因为给定的十进制数将无法表示。\n\n虽然此构造函数可以与「浮点数」（[floating-point numbers]($float)）一起使用来将它们转换为 `decimal`，但**不建议这样做**，因为**此转换本质上是不精确的**。很容易通过编写 `{decimal(1.234)}`（注意缺少双引号）意外执行此转换，这就是 Typst 在这种情况下会发出警告的原因。对于该特定情况（常量十进制的初始化），请改写 `{decimal(\"1.234\")}`。另请注意，NaN 或无限的浮点数无法转换为十进制数，会引发错误。\n\n"
 
 [reference.foundations.decimal.decimal.decimal.oneliner]
 en = "Converts a value to a `decimal`."
@@ -2394,7 +2394,7 @@ zh = "十进制数"
 
 [reference.foundations.description]
 en = "Documentation for functions related to Foundations in Typst."
-zh = "与 Typst 基础相关的「函数」（[function](#x-term-function)）文档。"
+zh = "与 Typst 基础相关的函数文档。"
 
 [reference.foundations.dictionary.description]
 en = "Documentation for the Dictionary type."
@@ -2425,7 +2425,7 @@ en = "{{typst-docs/reference.foundations.dictionary.dictionary.details.toml}}"
 
 [reference.foundations.dictionary.dictionary.dictionary.details]
 en = "Converts a value into a dictionary.\n\nNote that this function is only intended for conversion of a\ndictionary-like value to a dictionary, not for creation of a dictionary\nfrom individual pairs. Use the dictionary syntax `(key: value)` instead.\n\n"
-zh = "将值转换为「字典」（[dictionary](#x-term-dictionary)）。\n\n注意此「函数」（[function](#x-term-function)）仅用于将类似字典的值转换为字典，而不是从单独的键值对创建字典。请改用字典语法 `(key: value)`。\n\n"
+zh = "将值转换为「字典」（[dictionary](#x-term-dictionary)）。\n\n注意此函数仅用于将类似字典的值转换为字典，而不是从单独的键值对创建字典。请改用字典语法 `(key: value)`。\n\n"
 
 [reference.foundations.dictionary.dictionary.dictionary.oneliner]
 en = "Converts a value into a dictionary."
@@ -2549,7 +2549,7 @@ zh = "Duration「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.duration.duration.days.details]
 en = "The duration expressed in days.\n\nThis function returns the total duration represented in days as a\nfloating-point number rather than the second component of the duration."
-zh = "以天为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以天为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
+zh = "以天为单位表示的持续时间。\n\n此函数返回以天为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.days.oneliner]
 en = "The duration expressed in days."
@@ -2597,7 +2597,7 @@ zh = "周数。"
 
 [reference.foundations.duration.duration.hours.details]
 en = "The duration expressed in hours.\n\nThis function returns the total duration represented in hours as a\nfloating-point number rather than the second component of the duration."
-zh = "以小时为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以小时为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
+zh = "以小时为单位表示的持续时间。\n\n此函数返回以小时为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.hours.oneliner]
 en = "The duration expressed in hours."
@@ -2609,7 +2609,7 @@ zh = "小时"
 
 [reference.foundations.duration.duration.minutes.details]
 en = "The duration expressed in minutes.\n\nThis function returns the total duration represented in minutes as a\nfloating-point number rather than the second component of the duration."
-zh = "以分钟为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以分钟为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
+zh = "以分钟为单位表示的持续时间。\n\n此函数返回以分钟为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.minutes.oneliner]
 en = "The duration expressed in minutes."
@@ -2625,7 +2625,7 @@ zh = "表示正或负的时间跨度。"
 
 [reference.foundations.duration.duration.seconds.details]
 en = "The duration expressed in seconds.\n\nThis function returns the total duration represented in seconds as a\nfloating-point number rather than the second component of the duration."
-zh = "以秒为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以秒为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
+zh = "以秒为单位表示的持续时间。\n\n此函数返回以秒为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.seconds.oneliner]
 en = "The duration expressed in seconds."
@@ -2641,7 +2641,7 @@ zh = "持续时间"
 
 [reference.foundations.duration.duration.weeks.details]
 en = "The duration expressed in weeks.\n\nThis function returns the total duration represented in weeks as a\nfloating-point number rather than the second component of the duration."
-zh = "以周为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以周为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
+zh = "以周为单位表示的持续时间。\n\n此函数返回以周为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.weeks.oneliner]
 en = "The duration expressed in weeks."
@@ -2661,7 +2661,7 @@ zh = "持续时间"
 
 [reference.foundations.eval.description]
 en = "Documentation for the `eval` function."
-zh = "「评估」（`eval`）「函数」（[function](#x-term-function)）的文档。"
+zh = "`eval` 函数的文档。"
 
 [reference.foundations.eval.eval.details]
 en = "Evaluates a string as Typst code.\n\nThis function should only be used as a last resort.\n\n# Example\n```example\n#eval(\"1 + 1\") \\\n#eval(\"(1, 2, 3, 4)\").len() \\\n#eval(\"*Markup!*\", mode: \"markup\") \\\n```"
