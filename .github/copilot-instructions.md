@@ -43,7 +43,11 @@ en = "English text"
 zh = "Chinese translation"
 ```
 
+The keys are ISO 639-1 language codes, and the values are messages in Markdown format.
+
 ### Example Entry Structure
+
+**Example 1: Basic Entry**
 
 ```toml
 [index.title]
@@ -55,11 +59,32 @@ en = "Learn how to use Typst to compose documents faster. Get started with the\n
 zh = "了解如何使用 Typst 更快地撰写文档。通过教程入门，或深入参考。\n"
 ```
 
+**Example 2: Adding French Translation**
+
+```toml
+[index.title]
+en = "Overview"
+zh = "概述"
+fr = "Aperçu"  # Add this line
+```
+
+**Example 3: Adding Multiple Languages**
+
+```toml
+[guides.title]
+en = "Guides"
+zh = "指南"
+fr = "Guides"     # French
+de = "Anleitungen"  # German
+es = "Guías"       # Spanish
+ja = "ガイド"      # Japanese
+```
+
 ## How to Add Translations
 
 ### Adding Chinese Translations to Existing Entries
 
-When you find an entry that has only English text, add the Chinese translation:
+When you find an entry that doesn't have a translation for the target language, e.g. `zh`, add the translation:
 
 **Before:**
 
@@ -74,31 +99,6 @@ en = "Export"
 [Export.part]
 en = "Export"
 zh = "导出"
-```
-
-### Adding Translations for New Languages
-
-To add support for a new language (e.g., French):
-
-**Example 1: Adding French Translation**
-
-```toml
-[index.title]
-en = "Overview"
-zh = "概述"
-fr = "Aperçu"  # Add this line
-```
-
-**Example 2: Adding Multiple Languages**
-
-```toml
-[guides.title]
-en = "Guides"
-zh = "指南"
-fr = "Guides"     # French
-de = "Anleitungen"  # German
-es = "Guías"       # Spanish
-ja = "ガイド"      # Japanese
 ```
 
 ## Translation Guidelines
@@ -140,20 +140,79 @@ en = "{{typst-docs/guides.guide-for-latex-users.body.toml}}"
 
 All translations will then be loaded from the `typst-docs/guides.guide-for-latex-users.body.toml` file.
 
-## Language Codes
+### 5. Use Terms Reference File
 
-Use ISO 639-1 language codes:
+- `docs/terms.toml` file contains the terms used in the documentation, for future reference.
+- When translating technical terms, include the original term with proper linking.
+- Use the format: `「translated_term」（[original_term](#x-term-original_term)）`
 
-- `en` - English
-- `zh` - Chinese
-- `fr` - French
-- `de` - German
-- `es` - Spanish
-- `ja` - Japanese
-- `ko` - Korean
-- `pt` - Portuguese
-- `ru` - Russian
-- `it` - Italian
+**Example of basic format (array conversion):**
+
+```
+Converts an array of pairs into a dictionary.
+```
+
+should be translated as:
+
+```
+将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。
+```
+
+**Example of avoiding nested parentheses, i.e. make fluent translation (exclusive boundary)**
+
+```
+end index (exclusive)
+```
+
+should be translated as:
+
+```
+结束索引且「不包括本身」（[exclusive](#x-term-exclusive)）
+```
+
+**Example of avoiding flooding the translation with too many terms (array conversion only first occurrence)**
+
+```
+Zips the array with other arrays.
+```
+
+should be translated as:
+
+```
+将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。
+```
+
+### 6. Follow Translation Best Practices
+
+When translating, use this three-step process:
+
+1. **Direct Translation**: Translate content directly while maintaining original format and not omitting any information.
+
+2. **Quality Check**: Based on the first step, identify specific issues:
+
+   - Non-conforming expressions to target language habits
+   - Unclear or ambiguous sentences
+   - Technical terms that need proper reference
+
+3. **Refined Translation**: Re-translate ensuring original meaning while making it easier to understand and more natural in the target language.
+
+   1. **Consistency**: Use consistent terminology throughout the project
+
+   2. **Technical Accuracy**:
+
+   - Preserve technical terms when appropriate
+   - Maintain the meaning and context of the original text
+
+   3. **Cultural Adaptation**:
+
+   - Adapt text to be culturally appropriate for the target language
+   - Consider regional variations when necessary
+
+4. **Formatting Preservation**:
+
+- Keep all markdown formatting intact
+- Preserve line breaks and spacing
+- Maintain internal link structure
 
 ## Workflow for AI Assistants
 
@@ -196,29 +255,6 @@ fr = "Langue"
 de = "Sprache"
 es = "Idioma"
 ```
-
-## Translation Quality Guidelines
-
-### 1. Consistency
-
-- Use consistent terminology throughout the project
-- Maintain the same translation for repeated terms
-
-### 2. Technical Accuracy
-
-- Preserve technical terms when appropriate
-- Maintain the meaning and context of the original text
-
-### 3. Cultural Adaptation
-
-- Adapt text to be culturally appropriate for the target language
-- Consider regional variations when necessary
-
-### 4. Formatting Preservation
-
-- Keep all markdown formatting intact
-- Preserve line breaks and spacing
-- Maintain internal link structure
 
 ## Common Patterns
 

@@ -1,0 +1,58 @@
+# Terms used in the Typst documentation for translation reference
+# This file contains key terminology that should be consistently translated
+# across all documentation with proper term links (#x-term-<term>)
+
+[array]
+en = "array"
+zh = "数组"
+description = "A sequence of values"
+
+[dictionary]
+en = "dictionary" 
+zh = "字典"
+description = "A collection of key-value pairs"
+
+[zip]
+en = "zip"
+zh = "同时迭代"
+description = "Iterating over multiple arrays simultaneously"
+
+[exclusive]
+en = "exclusive"
+zh = "不包括本身"
+description = "Not including the specified boundary/value itself"
+
+[function]
+en = "function"
+zh = "函数"
+description = "A callable piece of code that takes parameters and returns a value"
+
+[parameter]
+en = "parameter"
+zh = "参数"
+description = "An input value to a function"
+
+[type]
+en = "type"
+zh = "类型"
+description = "A classification of data that determines what operations can be performed"
+
+[length]
+en = "length"
+zh = "长度"
+description = "The size or number of elements in a collection"
+
+[string]
+en = "string"
+zh = "字符串"
+description = "A sequence of characters"
+
+[boolean]
+en = "boolean"
+zh = "布尔值"
+description = "A value that is either true or false"
+
+[bytes]
+en = "bytes"
+zh = "字节"
+description = "A sequence of raw bytes"
