@@ -1398,351 +1398,467 @@ zh = "字节"
 
 [reference.foundations.calc.calc.abs.details]
 en = "Calculates the absolute value of a numeric value.\n\n"
+zh = "计算数值的绝对值。\n\n"
 
 [reference.foundations.calc.calc.abs.oneliner]
 en = "Calculates the absolute value of a numeric value."
+zh = "计算数值的绝对值。"
 
 [reference.foundations.calc.calc.abs.title]
 en = "Absolute"
+zh = "绝对值"
 
 [reference.foundations.calc.calc.abs.value.details]
 en = "The value whose absolute value to calculate."
+zh = "要计算绝对值的数值。"
 
 [reference.foundations.calc.calc.acos.details]
 en = "Calculates the arccosine of a number.\n\n"
+zh = "计算数字的反余弦值。\n\n"
 
 [reference.foundations.calc.calc.acos.oneliner]
 en = "Calculates the arccosine of a number."
+zh = "计算数字的反余弦值。"
 
 [reference.foundations.calc.calc.acos.title]
 en = "Arccosine"
+zh = "反余弦"
 
 [reference.foundations.calc.calc.acos.value.details]
 en = "The number whose arcsine to calculate. Must be between -1 and 1."
+zh = "要计算反余弦值的数字。必须在 -1 和 1 之间。"
 
 [reference.foundations.calc.calc.asin.details]
 en = "Calculates the arcsine of a number.\n\n"
+zh = "计算数字的反正弦值。\n\n"
 
 [reference.foundations.calc.calc.asin.oneliner]
 en = "Calculates the arcsine of a number."
+zh = "计算数字的反正弦值。"
 
 [reference.foundations.calc.calc.asin.title]
 en = "Arcsine"
+zh = "反正弦"
 
 [reference.foundations.calc.calc.asin.value.details]
 en = "The number whose arcsine to calculate. Must be between -1 and 1."
+zh = "要计算反正弦值的数字。必须在 -1 和 1 之间。"
 
 [reference.foundations.calc.calc.atan.details]
 en = "Calculates the arctangent of a number.\n\n"
+zh = "计算数字的反正切值。\n\n"
 
 [reference.foundations.calc.calc.atan.oneliner]
 en = "Calculates the arctangent of a number."
+zh = "计算数字的反正切值。"
 
 [reference.foundations.calc.calc.atan.title]
 en = "Arctangent"
+zh = "反正切"
 
 [reference.foundations.calc.calc.atan.value.details]
 en = "The number whose arctangent to calculate."
+zh = "要计算反正切值的数字。"
 
 [reference.foundations.calc.calc.atan2.details]
 en = "Calculates the four-quadrant arctangent of a coordinate.\n\nThe arguments are `(x, y)`, not `(y, x)`.\n\n"
+zh = "计算坐标的四象限反正切值。\n\n参数是 `(x, y)`，而不是 `(y, x)`。\n\n"
 
 [reference.foundations.calc.calc.atan2.oneliner]
 en = "Calculates the four-quadrant arctangent of a coordinate."
+zh = "计算坐标的四象限反正切值。"
 
 [reference.foundations.calc.calc.atan2.title]
 en = "Four-quadrant Arctangent"
+zh = "四象限反正切"
 
 [reference.foundations.calc.calc.atan2.x.details]
 en = "The X coordinate."
+zh = "X 坐标。"
 
 [reference.foundations.calc.calc.atan2.y.details]
 en = "The Y coordinate."
+zh = "Y 坐标。"
 
 [reference.foundations.calc.calc.binom.details]
 en = "Calculates a binomial coefficient.\n\nReturns the `k`-combination of `n`, or the number of ways to choose `k`\nitems from a set of `n` without regard to order.\n\n"
+zh = "计算二项式系数。\n\n返回 `n` 的 `k`-组合，即从 `n` 个元素的集合中选择 `k` 个元素的方法数（不考虑顺序）。\n\n"
 
 [reference.foundations.calc.calc.binom.k.details]
 en = "The lower coefficient. Must be non-negative."
+zh = "下系数。必须为非负数。"
 
 [reference.foundations.calc.calc.binom.n.details]
 en = "The upper coefficient. Must be non-negative."
+zh = "上系数。必须为非负数。"
 
 [reference.foundations.calc.calc.binom.oneliner]
 en = "Calculates a binomial coefficient."
+zh = "计算二项式系数。"
 
 [reference.foundations.calc.calc.binom.title]
 en = "Binomial"
+zh = "二项式"
 
 [reference.foundations.calc.calc.ceil.details]
 en = "Rounds a number up to the nearest integer.\n\nIf the number is already an integer, it is returned unchanged.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
+zh = "将数字向上舍入到最近的整数。\n\n如果数字已经是整数，则返回原值。\n\n请注意，此函数始终返回一个[整数]($int)，如果结果的 [`float`] 或 [`decimal`] 大于最大 64 位有符号整数或小于该类型的最小值，则会出错。\n\n"
 
 [reference.foundations.calc.calc.ceil.oneliner]
 en = "Rounds a number up to the nearest integer."
+zh = "将数字向上舍入到最近的整数。"
 
 [reference.foundations.calc.calc.ceil.title]
 en = "Ceil"
+zh = "向上取整"
 
 [reference.foundations.calc.calc.ceil.value.details]
 en = "The number to round up."
+zh = "要向上舍入的数字。"
 
 [reference.foundations.calc.calc.clamp.details]
 en = "Clamps a number between a minimum and maximum value.\n\n"
+zh = "将数字限制在最小值和最大值之间。\n\n"
 
 [reference.foundations.calc.calc.clamp.max.details]
 en = "The inclusive maximum value."
+zh = "包含的最大值。"
 
 [reference.foundations.calc.calc.clamp.min.details]
 en = "The inclusive minimum value."
+zh = "包含的最小值。"
 
 [reference.foundations.calc.calc.clamp.oneliner]
 en = "Clamps a number between a minimum and maximum value."
+zh = "将数字限制在最小值和最大值之间。"
 
 [reference.foundations.calc.calc.clamp.title]
 en = "Clamp"
+zh = "限制"
 
 [reference.foundations.calc.calc.clamp.value.details]
 en = "The number to clamp."
+zh = "要限制的数字。"
 
 [reference.foundations.calc.calc.cos.angle.details]
 en = "The angle whose cosine to calculate."
+zh = "要计算余弦值的角度。"
 
 [reference.foundations.calc.calc.cos.details]
 en = "Calculates the cosine of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
+zh = "计算角度的余弦值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
 
 [reference.foundations.calc.calc.cos.oneliner]
 en = "Calculates the cosine of an angle."
+zh = "计算角度的余弦值。"
 
 [reference.foundations.calc.calc.cos.title]
 en = "Cosine"
+zh = "余弦"
 
 [reference.foundations.calc.calc.cosh.details]
 en = "Calculates the hyperbolic cosine of a hyperbolic angle.\n\n"
+zh = "计算双曲角的双曲余弦值。\n\n"
 
 [reference.foundations.calc.calc.cosh.oneliner]
 en = "Calculates the hyperbolic cosine of a hyperbolic angle."
+zh = "计算双曲角的双曲余弦值。"
 
 [reference.foundations.calc.calc.cosh.title]
 en = "Hyperbolic Cosine"
+zh = "双曲余弦"
 
 [reference.foundations.calc.calc.cosh.value.details]
 en = "The hyperbolic angle whose hyperbolic cosine to calculate."
+zh = "要计算双曲余弦值的双曲角。"
 
 [reference.foundations.calc.calc.details]
 en = "Module for calculations and processing of numeric values.\n\nThese definitions are part of the `calc` module and not imported by default.\nIn addition to the functions listed below, the `calc` module also defines\nthe constants `pi`, `tau`, `e`, and `inf`.\n"
+zh = "用于计算和处理数值的模块。\n\n这些定义属于 `calc` 模块，默认情况下不会导入。除了下面列出的函数外，`calc` 模块还定义了常量 `pi`、`tau`、`e` 和 `inf`。\n"
 
 [reference.foundations.calc.calc.div-euclid.details]
 en = "Performs euclidean division of two numbers.\n\nThe result of this computation is that of a division rounded to the integer\n`{n}` such that the dividend is greater than or equal to `{n}` times the divisor.\n\n"
+zh = "执行两个数字的欧几里得除法。\n\n此计算的结果是将除法舍入到整数 `{n}`，使得被除数大于或等于 `{n}` 倍的除数。\n\n"
 
 [reference.foundations.calc.calc.div-euclid.dividend.details]
 en = "The dividend of the division."
+zh = "除法的被除数。"
 
 [reference.foundations.calc.calc.div-euclid.divisor.details]
 en = "The divisor of the division."
+zh = "除法的除数。"
 
 [reference.foundations.calc.calc.div-euclid.oneliner]
 en = "Performs euclidean division of two numbers."
+zh = "执行两个数字的欧几里得除法。"
 
 [reference.foundations.calc.calc.div-euclid.title]
 en = "Euclidean Division"
+zh = "欧几里得除法"
 
 [reference.foundations.calc.calc.even.details]
 en = "Determines whether an integer is even.\n\n"
+zh = "确定整数是否为偶数。\n\n"
 
 [reference.foundations.calc.calc.even.oneliner]
 en = "Determines whether an integer is even."
+zh = "确定整数是否为偶数。"
 
 [reference.foundations.calc.calc.even.title]
 en = "Even"
+zh = "偶数"
 
 [reference.foundations.calc.calc.even.value.details]
 en = "The number to check for evenness."
+zh = "要检查是否为偶数的数字。"
 
 [reference.foundations.calc.calc.exp.details]
 en = "Raises a value to some exponent of e.\n\n"
+zh = "将值提升到 e 的某个指数。\n\n"
 
 [reference.foundations.calc.calc.exp.exponent.details]
 en = "The exponent of the power."
+zh = "幂的指数。"
 
 [reference.foundations.calc.calc.exp.oneliner]
 en = "Raises a value to some exponent of e."
+zh = "将值提升到 e 的某个指数。"
 
 [reference.foundations.calc.calc.exp.title]
 en = "Exponential"
+zh = "指数"
 
 [reference.foundations.calc.calc.fact.details]
 en = "Calculates the factorial of a number.\n\n"
+zh = "计算数字的阶乘。\n\n"
 
 [reference.foundations.calc.calc.fact.number.details]
 en = "The number whose factorial to calculate. Must be non-negative."
+zh = "要计算阶乘的数字。必须为非负数。"
 
 [reference.foundations.calc.calc.fact.oneliner]
 en = "Calculates the factorial of a number."
+zh = "计算数字的阶乘。"
 
 [reference.foundations.calc.calc.fact.title]
 en = "Factorial"
+zh = "阶乘"
 
 [reference.foundations.calc.calc.floor.details]
 en = "Rounds a number down to the nearest integer.\n\nIf the number is already an integer, it is returned unchanged.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
+zh = "将数字向下舍入到最近的整数。\n\n如果数字已经是整数，则返回原值。\n\n请注意，此函数始终返回一个[整数]($int)，如果结果的 [`float`] 或 [`decimal`] 大于最大 64 位有符号整数或小于该类型的最小值，则会出错。\n\n"
 
 [reference.foundations.calc.calc.floor.oneliner]
 en = "Rounds a number down to the nearest integer."
+zh = "将数字向下舍入到最近的整数。"
 
 [reference.foundations.calc.calc.floor.title]
 en = "Floor"
+zh = "向下取整"
 
 [reference.foundations.calc.calc.floor.value.details]
 en = "The number to round down."
+zh = "要向下舍入的数字。"
 
 [reference.foundations.calc.calc.fract.details]
 en = "Returns the fractional part of a number.\n\nIf the number is an integer, returns `0`.\n\n"
+zh = "返回数字的小数部分。\n\n如果数字是整数，返回 `0`。\n\n"
 
 [reference.foundations.calc.calc.fract.oneliner]
 en = "Returns the fractional part of a number."
+zh = "返回数字的小数部分。"
 
 [reference.foundations.calc.calc.fract.title]
 en = "Fractional"
+zh = "小数部分"
 
 [reference.foundations.calc.calc.fract.value.details]
 en = "The number to truncate."
+zh = "要截取的数字。"
 
 [reference.foundations.calc.calc.gcd.a.details]
 en = "The first integer."
+zh = "第一个整数。"
 
 [reference.foundations.calc.calc.gcd.b.details]
 en = "The second integer."
+zh = "第二个整数。"
 
 [reference.foundations.calc.calc.gcd.details]
 en = "Calculates the greatest common divisor of two integers.\n\n"
+zh = "计算两个整数的最大公约数。\n\n"
 
 [reference.foundations.calc.calc.gcd.oneliner]
 en = "Calculates the greatest common divisor of two integers."
+zh = "计算两个整数的最大公约数。"
 
 [reference.foundations.calc.calc.gcd.title]
 en = "Greatest Common Divisor"
+zh = "最大公约数"
 
 [reference.foundations.calc.calc.lcm.a.details]
 en = "The first integer."
+zh = "第一个整数。"
 
 [reference.foundations.calc.calc.lcm.b.details]
 en = "The second integer."
+zh = "第二个整数。"
 
 [reference.foundations.calc.calc.lcm.details]
 en = "Calculates the least common multiple of two integers.\n\n"
+zh = "计算两个整数的最小公倍数。\n\n"
 
 [reference.foundations.calc.calc.lcm.oneliner]
 en = "Calculates the least common multiple of two integers."
+zh = "计算两个整数的最小公倍数。"
 
 [reference.foundations.calc.calc.lcm.title]
 en = "Least Common Multiple"
+zh = "最小公倍数"
 
 [reference.foundations.calc.calc.ln.details]
 en = "Calculates the natural logarithm of a number.\n\n"
+zh = "计算数字的自然对数。\n\n"
 
 [reference.foundations.calc.calc.ln.oneliner]
 en = "Calculates the natural logarithm of a number."
+zh = "计算数字的自然对数。"
 
 [reference.foundations.calc.calc.ln.title]
 en = "Natural Logarithm"
+zh = "自然对数"
 
 [reference.foundations.calc.calc.ln.value.details]
 en = "The number whose logarithm to calculate. Must be strictly positive."
+zh = "要计算对数的数字。必须严格为正数。"
 
 [reference.foundations.calc.calc.log.base.details]
 en = "The base of the logarithm. May not be zero."
+zh = "对数的底数。不可以为零。"
 
 [reference.foundations.calc.calc.log.details]
 en = "Calculates the logarithm of a number.\n\nIf the base is not specified, the logarithm is calculated in base 10.\n\n"
+zh = "计算数字的对数。\n\n如果未指定底数，则以 10 为底计算对数。\n\n"
 
 [reference.foundations.calc.calc.log.oneliner]
 en = "Calculates the logarithm of a number."
+zh = "计算数字的对数。"
 
 [reference.foundations.calc.calc.log.title]
 en = "Logarithm"
+zh = "对数"
 
 [reference.foundations.calc.calc.log.value.details]
 en = "The number whose logarithm to calculate. Must be strictly positive."
+zh = "要计算对数的数字。必须严格为正数。"
 
 [reference.foundations.calc.calc.max.details]
 en = "Determines the maximum of a sequence of values.\n\n"
+zh = "确定值序列的最大值。\n\n"
 
 [reference.foundations.calc.calc.max.oneliner]
 en = "Determines the maximum of a sequence of values."
+zh = "确定值序列的最大值。"
 
 [reference.foundations.calc.calc.max.title]
 en = "Maximum"
+zh = "最大值"
 
 [reference.foundations.calc.calc.max.values.details]
 en = "The sequence of values from which to extract the maximum.\nMust not be empty."
+zh = "要提取最大值的值序列。\n不能为空。"
 
 [reference.foundations.calc.calc.min.details]
 en = "Determines the minimum of a sequence of values.\n\n"
+zh = "确定值序列的最小值。\n\n"
 
 [reference.foundations.calc.calc.min.oneliner]
 en = "Determines the minimum of a sequence of values."
+zh = "确定值序列的最小值。"
 
 [reference.foundations.calc.calc.min.title]
 en = "Minimum"
+zh = "最小值"
 
 [reference.foundations.calc.calc.min.values.details]
 en = "The sequence of values from which to extract the minimum.\nMust not be empty."
+zh = "要提取最小值的值序列。\n不能为空。"
 
 [reference.foundations.calc.calc.norm.details]
 en = "Calculates the p-norm of a sequence of values.\n\n"
+zh = "计算值序列的 p-范数。\n\n"
 
 [reference.foundations.calc.calc.norm.oneliner]
 en = "Calculates the p-norm of a sequence of values."
+zh = "计算值序列的 p-范数。"
 
 [reference.foundations.calc.calc.norm.p.details]
 en = "The p value to calculate the p-norm of."
+zh = "计算 p-范数的 p 值。"
 
 [reference.foundations.calc.calc.norm.title]
 en = "𝑝-Norm"
+zh = "𝑝-范数"
 
 [reference.foundations.calc.calc.norm.values.details]
 en = "The sequence of values from which to calculate the p-norm.\nReturns `0.0` if empty."
+zh = "要计算 p-范数的值序列。\n如果为空则返回 `0.0`。"
 
 [reference.foundations.calc.calc.odd.details]
 en = "Determines whether an integer is odd.\n\n"
+zh = "确定整数是否为奇数。\n\n"
 
 [reference.foundations.calc.calc.odd.oneliner]
 en = "Determines whether an integer is odd."
+zh = "确定整数是否为奇数。"
 
 [reference.foundations.calc.calc.odd.title]
 en = "Odd"
+zh = "奇数"
 
 [reference.foundations.calc.calc.odd.value.details]
 en = "The number to check for oddness."
+zh = "要检查是否为奇数的数字。"
 
 [reference.foundations.calc.calc.perm.base.details]
 en = "The base number. Must be non-negative."
+zh = "基数。必须为非负数。"
 
 [reference.foundations.calc.calc.perm.details]
 en = "Calculates a permutation.\n\nReturns the `k`-permutation of `n`, or the number of ways to choose `k`\nitems from a set of `n` with regard to order.\n\n"
+zh = "计算排列。\n\n返回 `n` 的 `k`-排列，即从 `n` 个元素的集合中选择 `k` 个元素的方法数（考虑顺序）。\n\n"
 
 [reference.foundations.calc.calc.perm.numbers.details]
 en = "The number of permutations. Must be non-negative."
+zh = "排列的数量。必须为非负数。"
 
 [reference.foundations.calc.calc.perm.oneliner]
 en = "Calculates a permutation."
+zh = "计算排列。"
 
 [reference.foundations.calc.calc.perm.title]
 en = "Permutation"
+zh = "排列"
 
 [reference.foundations.calc.calc.pow.base.details]
 en = "The base of the power.\n\nIf this is a [`decimal`], the exponent can only be an [integer]($int)."
+zh = "幂的底数。\n\n如果这是一个 [`decimal`]，则指数只能是[整数]($int)。"
 
 [reference.foundations.calc.calc.pow.details]
 en = "Raises a value to some exponent.\n\n"
+zh = "将值提升到某个指数。\n\n"
 
 [reference.foundations.calc.calc.pow.exponent.details]
 en = "The exponent of the power."
+zh = "幂的指数。"
 
 [reference.foundations.calc.calc.pow.oneliner]
 en = "Raises a value to some exponent."
+zh = "将值提升到某个指数。"
 
 [reference.foundations.calc.calc.pow.title]
 en = "Power"
+zh = "幂"
 
 [reference.foundations.calc.calc.quo.details]
 en = "Calculates the quotient (floored division) of two numbers.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
@@ -1899,108 +2015,142 @@ en = "Documentation for the calc functions."
 
 [reference.foundations.calc.oneliner]
 en = "Module for calculations and processing of numeric values."
+zh = "用于计算和处理数值的模块。"
 
 [reference.foundations.calc.title]
 en = "Calculation"
+zh = "计算"
 
 [reference.foundations.content.content.at.default.details]
 en = "A default value to return if the field does not exist."
+zh = "如果字段不存在时返回的默认值。"
 
 [reference.foundations.content.content.at.details]
 en = "Access the specified field on the content. Returns the default value if\nthe field does not exist or fails with an error if no default value was\nspecified."
+zh = "访问内容上的指定字段。如果字段不存在则返回默认值，如果没有指定默认值则失败并报错。"
 
 [reference.foundations.content.content.at.field.details]
 en = "The field to access."
+zh = "要访问的字段。"
 
 [reference.foundations.content.content.at.oneliner]
 en = "Access the specified field on the content. Returns the default value if"
+zh = "访问内容上的指定字段。如果"
 
 [reference.foundations.content.content.at.title]
 en = "At"
+zh = "获取字段"
 
 [reference.foundations.content.content.details]
 en = "{{typst-docs/reference.foundations.content.content.details.toml}}"
 
 [reference.foundations.content.content.fields.details]
 en = "Returns the fields of this content.\n\n"
+zh = "返回此内容的字段。\n\n"
 
 [reference.foundations.content.content.fields.oneliner]
 en = "Returns the fields of this content."
+zh = "返回此内容的字段。"
 
 [reference.foundations.content.content.fields.title]
 en = "Fields"
+zh = "字段"
 
 [reference.foundations.content.content.func.details]
 en = "The content's element function. This function can be used to create the element\ncontained in this content. It can be used in set and show rules for the\nelement. Can be compared with global functions to check whether you have\na specific\nkind of element."
+zh = "内容的元素函数。此函数可用于创建此内容中包含的元素。它可以在元素的 set 和 show 规则中使用。可以与全局函数进行比较，以检查您是否有特定类型的元素。"
 
 [reference.foundations.content.content.func.oneliner]
 en = "The content's element function. This function can be used to create the element"
+zh = "内容的元素函数。此函数可用于创建元素"
 
 [reference.foundations.content.content.func.title]
 en = "Func"
+zh = "函数"
 
 [reference.foundations.content.content.has.details]
 en = "Whether the content has the specified field."
+zh = "内容是否具有指定的字段。"
 
 [reference.foundations.content.content.has.field.details]
 en = "The field to look for."
+zh = "要查找的字段。"
 
 [reference.foundations.content.content.has.oneliner]
 en = "Whether the content has the specified field."
+zh = "内容是否具有指定的字段。"
 
 [reference.foundations.content.content.has.title]
 en = "Has"
+zh = "拥有"
 
 [reference.foundations.content.content.location.details]
 en = "The location of the content. This is only available on content returned\nby [query] or provided by a [show rule]($reference/styling/#show-rules),\nfor other content it will be `{none}`. The resulting location can be\nused with [counters]($counter), [state] and [queries]($query)."
+zh = "内容的位置。这仅在通过[查询]或[显示规则]($reference/styling/#show-rules)提供的内容上可用，对于其他内容，它将是 `{none}`。结果位置可以与[计数器]($counter)、[状态]和[查询]($query)一起使用。"
 
 [reference.foundations.content.content.location.oneliner]
 en = "The location of the content. This is only available on content returned"
+zh = "内容的位置。这仅在返回的内容上可用"
 
 [reference.foundations.content.content.location.title]
 en = "Location"
+zh = "位置"
 
 [reference.foundations.content.content.oneliner]
 en = "A piece of document content."
+zh = "一段文档内容。"
 
 [reference.foundations.content.content.title]
 en = "Content"
+zh = "内容"
 
 [reference.foundations.content.description]
 en = "Documentation for the Content type."
+zh = "Content 类型的文档。"
 
 [reference.foundations.content.oneliner]
 en = "A piece of document content."
+zh = "一段文档内容。"
 
 [reference.foundations.content.title]
 en = "Content"
+zh = "内容"
 
 [reference.foundations.datetime.datetime.datetime.day.details]
 en = "The day of the datetime."
+zh = "日期时间的天。"
 
 [reference.foundations.datetime.datetime.datetime.details]
 en = "Creates a new datetime.\n\nYou can specify the [datetime] using a year, month, day, hour, minute,\nand second.\n\n_Note_: Depending on which components of the datetime you specify, Typst\nwill store it in one of the following three ways:\n* If you specify year, month and day, Typst will store just a date.\n* If you specify hour, minute and second, Typst will store just a time.\n* If you specify all of year, month, day, hour, minute and second, Typst\n  will store a full datetime.\n\nDepending on how it is stored, the [`display`]($datetime.display) method\nwill choose a different formatting by default.\n\n"
+zh = "创建新的日期时间。\n\n您可以使用年、月、日、时、分和秒来指定[日期时间]。\n\n_注意_：根据您指定的日期时间组件，Typst 将以以下三种方式之一存储它：\n* 如果您指定年、月和日，Typst 将仅存储日期。\n* 如果您指定时、分和秒，Typst 将仅存储时间。\n* 如果您指定所有的年、月、日、时、分和秒，Typst 将存储完整的日期时间。\n\n根据存储方式，[`display`]($datetime.display) 方法将默认选择不同的格式。\n\n"
 
 [reference.foundations.datetime.datetime.datetime.hour.details]
 en = "The hour of the datetime."
+zh = "日期时间的小时。"
 
 [reference.foundations.datetime.datetime.datetime.minute.details]
 en = "The minute of the datetime."
+zh = "日期时间的分钟。"
 
 [reference.foundations.datetime.datetime.datetime.month.details]
 en = "The month of the datetime."
+zh = "日期时间的月份。"
 
 [reference.foundations.datetime.datetime.datetime.oneliner]
 en = "Creates a new datetime."
+zh = "创建新的日期时间。"
 
 [reference.foundations.datetime.datetime.datetime.second.details]
 en = "The second of the datetime."
+zh = "日期时间的秒。"
 
 [reference.foundations.datetime.datetime.datetime.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.datetime.datetime.datetime.year.details]
 en = "The year of the datetime."
+zh = "日期时间的年份。"
 
 [reference.foundations.datetime.datetime.day.details]
 en = "The day if it was specified, or `{none}` for times without a date."
