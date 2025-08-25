@@ -3162,117 +3162,152 @@ zh = "None"
 
 [reference.foundations.panic.description]
 en = "Documentation for the `panic` function."
+zh = "`panic` 函数的文档。"
 
 [reference.foundations.panic.oneliner]
 en = "Fails with an error."
+zh = "以错误失败。"
 
 [reference.foundations.panic.panic.details]
 en = "Fails with an error.\n\nArguments are displayed to the user (not rendered in the document) as\nstrings, converting with `repr` if necessary.\n\n# Example\nThe code below produces the error `panicked with: \"this is wrong\"`.\n```typ\n#panic(\"this is wrong\")\n```"
+zh = "以错误失败。\n\n参数作为「字符串」（[strings](#x-term-string)）显示给用户（不在文档中呈现），必要时使用 `repr` 转换。\n\n# 示例\n下面的代码产生错误 `panicked with: \"this is wrong\"`。\n```typ\n#panic(\"this is wrong\")\n```"
 
 [reference.foundations.panic.panic.oneliner]
 en = "Fails with an error."
+zh = "以错误失败。"
 
 [reference.foundations.panic.panic.title]
 en = "Panic"
+zh = "Panic"
 
 [reference.foundations.panic.panic.values.details]
 en = "The values to panic with and display to the user."
+zh = "要与之 panic 并显示给用户的值。"
 
 [reference.foundations.panic.title]
 en = "Panic"
+zh = "Panic"
 
 [reference.foundations.plugin.description]
 en = "Documentation for the `plugin` function."
+zh = "`plugin` 函数的文档。"
 
 [reference.foundations.plugin.oneliner]
 en = "Loads a WebAssembly module."
+zh = "加载 WebAssembly 模块。"
 
 [reference.foundations.plugin.plugin.details]
 en = "{{typst-docs/reference.foundations.plugin.plugin.details.toml}}"
 
 [reference.foundations.plugin.plugin.oneliner]
 en = "Loads a WebAssembly module."
+zh = "加载 WebAssembly 模块。"
 
 [reference.foundations.plugin.plugin.source.details]
 en = "A [path]($syntax/#paths) to a WebAssembly file or raw WebAssembly bytes."
+zh = "WebAssembly 文件的「路径」（[path]($syntax/#paths)）或原始 WebAssembly「字节」（[bytes](#x-term-bytes)）。"
 
 [reference.foundations.plugin.plugin.title]
 en = "Plugin"
+zh = "插件"
 
 [reference.foundations.plugin.plugin.transition.arguments.details]
 en = "The byte buffers to call the function with."
+zh = "调用函数时使用的字节缓冲区。"
 
 [reference.foundations.plugin.plugin.transition.details]
 en = "{{typst-docs/reference.foundations.plugin.plugin.transition.details.toml}}"
 
 [reference.foundations.plugin.plugin.transition.func.details]
 en = "The plugin function to call."
+zh = "要调用的插件函数。"
 
 [reference.foundations.plugin.plugin.transition.oneliner]
 en = "Calls a plugin function that has side effects and returns a new module"
+zh = "调用具有副作用并返回新模块的插件函数"
 
 [reference.foundations.plugin.plugin.transition.title]
 en = "Transition"
+zh = "过渡"
 
 [reference.foundations.plugin.title]
 en = "Plugin"
+zh = "插件"
 
 [reference.foundations.regex.description]
 en = "Documentation for the Regex type."
+zh = "Regex「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.regex.oneliner]
 en = "A regular expression."
+zh = "正则表达式。"
 
 [reference.foundations.regex.regex.details]
 en = "{{typst-docs/reference.foundations.regex.regex.details.toml}}"
 
 [reference.foundations.regex.regex.oneliner]
 en = "A regular expression."
+zh = "正则表达式。"
 
 [reference.foundations.regex.regex.regex.details]
 en = "Create a regular expression from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建正则表达式。"
 
 [reference.foundations.regex.regex.regex.oneliner]
 en = "Create a regular expression from a string."
+zh = "从「字符串」（[string](#x-term-string)）创建正则表达式。"
 
 [reference.foundations.regex.regex.regex.regex.details]
 en = "The regular expression as a string.\n\nMost regex escape sequences just work because they are not valid Typst\nescape sequences. To produce regex escape sequences that are also valid in\nTypst (e.g. `[\\\\]`), you need to escape twice. Thus, to match a verbatim\nbackslash, you would need to write `{regex(\"\\\\\\\\\")}`.\n\nIf you need many escape sequences, you can also create a raw element\nand extract its text to use it for your regular expressions:\n"
+zh = "正则表达式作为「字符串」（[string](#x-term-string)）。\n\n大多数正则表达式转义序列都可以正常工作，因为它们不是有效的 Typst 转义序列。要生成在 Typst 中也有效的正则表达式转义序列（例如 `[\\\\]`），您需要转义两次。因此，要匹配逐字反斜杠，您需要编写 `{regex(\"\\\\\\\\\")}`。\n\n如果您需要许多转义序列，您也可以创建一个原始元素并提取其文本以将其用于您的正则表达式：\n"
 
 [reference.foundations.regex.regex.regex.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.regex.regex.title]
 en = "Regex"
+zh = "正则表达式"
 
 [reference.foundations.regex.title]
 en = "Regex"
+zh = "正则表达式"
 
 [reference.foundations.repr.description]
 en = "Documentation for the `repr` function."
+zh = "`repr` 函数的文档。"
 
 [reference.foundations.repr.oneliner]
 en = "Returns the string representation of a value."
+zh = "返回值的字符串表示。"
 
 [reference.foundations.repr.repr.details]
 en = "Returns the string representation of a value.\n\nWhen inserted into content, most values are displayed as this representation\nin monospace with syntax-highlighting. The exceptions are `{none}`,\nintegers, floats, strings, content, and functions.\n\n**Note:** This function is for debugging purposes. Its output should not be\nconsidered stable and may change at any time!\n\n# Example\n```example\n#none vs #repr(none) \\\n#\"hello\" vs #repr(\"hello\") \\\n#(1, 2) vs #repr((1, 2)) \\\n#[*Hi*] vs #repr([*Hi*])\n```"
+zh = "返回值的字符串表示。\n\n当插入到内容中时，大多数值都会以等宽字体和语法高亮显示这种表示。例外是 `{none}`、整数、浮点数、「字符串」（[strings](#x-term-string)）、内容和函数。\n\n**注意：** 此函数用于调试目的。其输出不应被视为稳定，可能随时更改！\n\n# 示例\n```example\n#none vs #repr(none) \\\n#\"hello\" vs #repr(\"hello\") \\\n#(1, 2) vs #repr((1, 2)) \\\n#[*Hi*] vs #repr([*Hi*])\n```"
 
 [reference.foundations.repr.repr.oneliner]
 en = "Returns the string representation of a value."
+zh = "返回值的字符串表示。"
 
 [reference.foundations.repr.repr.title]
 en = "Representation"
+zh = "表示"
 
 [reference.foundations.repr.repr.value.details]
 en = "The value whose string representation to produce."
+zh = "要生成字符串表示的值。"
 
 [reference.foundations.repr.title]
 en = "Representation"
+zh = "表示"
 
 [reference.foundations.selector.description]
 en = "Documentation for the Selector type."
+zh = "Selector「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.selector.oneliner]
 en = "A filter for selecting elements within the document."
+zh = "用于在文档中选择元素的过滤器。"
 
 [reference.foundations.selector.selector.after.details]
 en = "Returns a modified selector that will only match elements that occur\nafter the first match of `start`."
@@ -3321,6 +3356,7 @@ en = "{{typst-docs/reference.foundations.selector.selector.details.toml}}"
 
 [reference.foundations.selector.selector.oneliner]
 en = "A filter for selecting elements within the document."
+zh = "用于在文档中选择元素的过滤器。"
 
 [reference.foundations.selector.selector.or.details]
 en = "Selects all elements that match this or any of the other selectors."
@@ -3336,48 +3372,62 @@ en = "Or"
 
 [reference.foundations.selector.selector.selector.details]
 en = "Turns a value into a selector. The following values are accepted:\n- An element function like a `heading` or `figure`.\n- A `{<label>}`.\n- A more complex selector like `{heading.where(level: 1)}`."
+zh = "将值转换为选择器。接受以下值：\n- 像 `heading` 或 `figure` 这样的元素函数。\n- 一个 `{<label>}`。\n- 更复杂的选择器，如 `{heading.where(level: 1)}`。"
 
 [reference.foundations.selector.selector.selector.oneliner]
 en = "Turns a value into a selector. The following values are accepted:"
+zh = "将值转换为选择器。接受以下值："
 
 [reference.foundations.selector.selector.selector.target.details]
 en = "Can be an element function like a `heading` or `figure`, a `{<label>}`\nor a more complex selector like `{heading.where(level: 1)}`."
 
 [reference.foundations.selector.selector.selector.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.selector.selector.title]
 en = "Selector"
+zh = "选择器"
 
 [reference.foundations.selector.title]
 en = "Selector"
+zh = "选择器"
 
 [reference.foundations.str.description]
 en = "Documentation for the String type."
+zh = "String「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.str.oneliner]
 en = "A sequence of Unicode codepoints."
+zh = "Unicode 码点序列。"
 
 [reference.foundations.str.str.at.default.details]
 en = "A default value to return if the index is out of bounds."
+zh = "如果索引超出范围，则返回的默认值。"
 
 [reference.foundations.str.str.at.details]
 en = "Extracts the first grapheme cluster after the specified index. Returns\nthe default value if the index is out of bounds or fails with an error\nif no default value was specified."
+zh = "提取指定索引后的第一个字形簇。如果索引超出范围，则返回默认值，如果未指定默认值，则失败并报错。"
 
 [reference.foundations.str.str.at.index.details]
 en = "The byte index. If negative, indexes from the back."
+zh = "字节索引。如果为负数，则从后面索引。"
 
 [reference.foundations.str.str.at.oneliner]
 en = "Extracts the first grapheme cluster after the specified index. Returns"
+zh = "提取指定索引后的第一个字形簇。返回"
 
 [reference.foundations.str.str.at.title]
 en = "At"
+zh = "在"
 
 [reference.foundations.str.str.clusters.details]
 en = "Returns the grapheme clusters of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的字形簇作为子字符串「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.str.str.clusters.oneliner]
 en = "Returns the grapheme clusters of the string as an array of substrings."
+zh = "将「字符串」（[string](#x-term-string)）的字形簇作为子字符串「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.str.str.clusters.title]
 en = "Clusters"
