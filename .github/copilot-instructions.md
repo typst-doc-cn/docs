@@ -235,7 +235,11 @@ Add the appropriate language code with proper translation while maintaining the 
 
 ### Step 3: Validate Format
 
-Ensure the TOML remains valid and properly formatted.
+Ensure the TOML remains valid and properly formatted, using the command:
+
+```
+yarn validate
+```
 
 ### Example Workflow
 

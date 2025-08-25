@@ -18,7 +18,7 @@ floating point numbers, which may give an approximative value."""
 [[main]]
 en = """The YAML files in the example contain objects with authors as keys,
 each with a sequence of their own submapping with the keys
-"title" and "published""""
+"title" and \"published\""""
 
 [[main]]
 en = """# Example"""

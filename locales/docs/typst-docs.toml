@@ -2168,7 +2168,7 @@ zh = "内容"
 
 [reference.foundations.datetime.datetime.datetime.day.details]
 en = "The day of the datetime."
-zh = "日期时间中的"日"。"
+zh = "日期时间中的“日”。"
 
 [reference.foundations.datetime.datetime.datetime.details]
 en = "Creates a new datetime.\n\nYou can specify the [datetime] using a year, month, day, hour, minute,\nand second.\n\n_Note_: Depending on which components of the datetime you specify, Typst\nwill store it in one of the following three ways:\n* If you specify year, month and day, Typst will store just a date.\n* If you specify hour, minute and second, Typst will store just a time.\n* If you specify all of year, month, day, hour, minute and second, Typst\n  will store a full datetime.\n\nDepending on how it is stored, the [`display`]($datetime.display) method\nwill choose a different formatting by default.\n\n"
