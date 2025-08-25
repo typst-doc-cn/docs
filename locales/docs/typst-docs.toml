@@ -1142,7 +1142,7 @@ zh = "每个窗口包含多少元素。"
 
 [reference.foundations.array.array.zip.details]
 en = "Zips the array with other arrays.\n\nReturns an array of arrays, where the `i`th inner array contains all the\n`i`th elements from each original array.\n\nIf the arrays to be zipped have different lengths, they are zipped up to\nthe last element of the shortest array and all remaining elements are\nignored.\n\nThis function is variadic, meaning that you can zip multiple arrays\ntogether at once: `{(1, 2).zip((\"A\", \"B\"), (10, 20))}` yields\n`{((1, \"A\", 10), (2, \"B\", 20))}`."
-zh = "将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要「同时迭代」（[zip](#x-term-zip)）的数组长度不同，则迭代到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此「函数」（[function](#x-term-function)）是可变参数的，意味着您可以一次将多个数组「同时迭代」（[zip](#x-term-zip)）在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
+zh = "将「数组」（[array](#x-term-array)）与其他数组「同时迭代」（[zip](#x-term-zip)）。\n\n返回一个数组数组，其中第 `i` 个内部数组包含每个原始数组的第 `i` 个元素。\n\n如果要「同时迭代」的数组长度不同，则迭代到最短数组的最后一个元素，所有剩余元素将被忽略。\n\n此「函数」（[function](#x-term-function)）是可变参数的，意味着您可以一次将多个数组「同时迭代」在一起：`{(1, 2).zip((\"A\", \"B\"), (10, 20))}` 产生 `{((1, \"A\", 10), (2, \"B\", 20))}`。"
 
 [reference.foundations.array.array.zip.exact.details]
 en = "Whether all arrays have to have the same length.\nFor example, `{(1, 2).zip((1, 2, 3), exact: true)}` produces an\nerror."
