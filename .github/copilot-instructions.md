@@ -238,7 +238,7 @@ Add the appropriate language code with proper translation while maintaining the 
 Ensure the TOML remains valid and properly formatted, using the command:
 
 ```
-yarn validate
+pnpm run validate
 ```
 
 ### Example Workflow
