@@ -1862,156 +1862,206 @@ zh = "幂"
 
 [reference.foundations.calc.calc.quo.details]
 en = "Calculates the quotient (floored division) of two numbers.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
+zh = "计算两个数的商（向下除法）。\n\n注意此「函数」（[function](#x-term-function)）将始终返回一个「整数」（[integer]($int)），如果结果「浮点数」（[`float`]）或「十进制数」（[`decimal`]）大于最大64位有符号整数或小于该类型的最小值，则会报错。\n\n"
 
 [reference.foundations.calc.calc.quo.dividend.details]
 en = "The dividend of the quotient."
+zh = "商的被除数。"
 
 [reference.foundations.calc.calc.quo.divisor.details]
 en = "The divisor of the quotient."
+zh = "商的除数。"
 
 [reference.foundations.calc.calc.quo.oneliner]
 en = "Calculates the quotient (floored division) of two numbers."
+zh = "计算两个数的商（向下除法）。"
 
 [reference.foundations.calc.calc.quo.title]
 en = "Quotient"
+zh = "商"
 
 [reference.foundations.calc.calc.rem-euclid.details]
 en = "This calculates the least nonnegative remainder of a division.\n\nWarning: Due to a floating point round-off error, the remainder may equal\nthe absolute value of the divisor if the dividend is much smaller in\nmagnitude than the divisor and the dividend is negative. This only applies\nfor floating point inputs.\n\nIn addition, this can error if given a [`decimal`] input and the dividend is\ntoo small in magnitude compared to the divisor.\n\n"
+zh = "计算除法的最小非负余数。\n\n警告：由于浮点舍入误差，如果被除数的大小远小于除数且被除数为负数，余数可能等于除数的绝对值。这仅适用于浮点输入。\n\n此外，如果给定「十进制数」（[`decimal`]）输入且被除数的大小相对于除数太小，这可能会报错。\n\n"
 
 [reference.foundations.calc.calc.rem-euclid.dividend.details]
 en = "The dividend of the remainder."
+zh = "余数的被除数。"
 
 [reference.foundations.calc.calc.rem-euclid.divisor.details]
 en = "The divisor of the remainder."
+zh = "余数的除数。"
 
 [reference.foundations.calc.calc.rem-euclid.oneliner]
 en = "This calculates the least nonnegative remainder of a division."
+zh = "计算除法的最小非负余数。"
 
 [reference.foundations.calc.calc.rem-euclid.title]
 en = "Euclidean Remainder"
+zh = "欧几里得余数"
 
 [reference.foundations.calc.calc.rem.details]
 en = "Calculates the remainder of two numbers.\n\nThe value `calc.rem(x, y)` always has the same sign as `x`, and is smaller\nin magnitude than `y`.\n\nThis can error if given a [`decimal`] input and the dividend is too small in\nmagnitude compared to the divisor.\n\n"
+zh = "计算两个数的余数。\n\n值 `calc.rem(x, y)` 始终与 `x` 具有相同的符号，且大小小于 `y`。\n\n如果给定「十进制数」（[`decimal`]）输入且被除数的大小相对于除数太小，这可能会报错。\n\n"
 
 [reference.foundations.calc.calc.rem.dividend.details]
 en = "The dividend of the remainder."
+zh = "余数的被除数。"
 
 [reference.foundations.calc.calc.rem.divisor.details]
 en = "The divisor of the remainder."
+zh = "余数的除数。"
 
 [reference.foundations.calc.calc.rem.oneliner]
 en = "Calculates the remainder of two numbers."
+zh = "计算两个数的余数。"
 
 [reference.foundations.calc.calc.rem.title]
 en = "Remainder"
+zh = "余数"
 
 [reference.foundations.calc.calc.root.details]
 en = "Calculates the real nth root of a number.\n\nIf the number is negative, then n must be odd.\n\n"
+zh = "计算数的实数第 n 次方根。\n\n如果数为负数，则 n 必须为奇数。\n\n"
 
 [reference.foundations.calc.calc.root.index.details]
 en = "Which root of the radicand to take"
+zh = "要取的被开方数的根次"
 
 [reference.foundations.calc.calc.root.oneliner]
 en = "Calculates the real nth root of a number."
+zh = "计算数的实数第 n 次方根。"
 
 [reference.foundations.calc.calc.root.radicand.details]
 en = "The expression to take the root of"
+zh = "要开方的表达式"
 
 [reference.foundations.calc.calc.root.title]
 en = "Root"
+zh = "开方"
 
 [reference.foundations.calc.calc.round.details]
 en = "{{typst-docs/reference.foundations.calc.calc.round.details.toml}}"
 
 [reference.foundations.calc.calc.round.digits.details]
 en = "If positive, the number of decimal places.\n\nIf negative, the number of significant integer digits that should be\nremoved before the decimal point."
+zh = "如果为正数，则为小数位数。\n\n如果为负数，则为应在小数点前删除的有效整数位数。"
 
 [reference.foundations.calc.calc.round.oneliner]
 en = "Rounds a number to the nearest integer away from zero."
+zh = "将数字舍入到远离零的最近整数。"
 
 [reference.foundations.calc.calc.round.title]
 en = "Round"
+zh = "舍入"
 
 [reference.foundations.calc.calc.round.value.details]
 en = "The number to round."
+zh = "要舍入的数字。"
 
 [reference.foundations.calc.calc.sin.angle.details]
 en = "The angle whose sine to calculate."
+zh = "要计算正弦值的角度。"
 
 [reference.foundations.calc.calc.sin.details]
 en = "Calculates the sine of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
+zh = "计算角度的正弦值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
 
 [reference.foundations.calc.calc.sin.oneliner]
 en = "Calculates the sine of an angle."
+zh = "计算角度的正弦值。"
 
 [reference.foundations.calc.calc.sin.title]
 en = "Sine"
+zh = "正弦"
 
 [reference.foundations.calc.calc.sinh.details]
 en = "Calculates the hyperbolic sine of a hyperbolic angle.\n\n"
+zh = "计算双曲角的双曲正弦值。\n\n"
 
 [reference.foundations.calc.calc.sinh.oneliner]
 en = "Calculates the hyperbolic sine of a hyperbolic angle."
+zh = "计算双曲角的双曲正弦值。"
 
 [reference.foundations.calc.calc.sinh.title]
 en = "Hyperbolic Sine"
+zh = "双曲正弦"
 
 [reference.foundations.calc.calc.sinh.value.details]
 en = "The hyperbolic angle whose hyperbolic sine to calculate."
+zh = "要计算双曲正弦值的双曲角。"
 
 [reference.foundations.calc.calc.sqrt.details]
 en = "Calculates the square root of a number.\n\n"
+zh = "计算数的平方根。\n\n"
 
 [reference.foundations.calc.calc.sqrt.oneliner]
 en = "Calculates the square root of a number."
+zh = "计算数的平方根。"
 
 [reference.foundations.calc.calc.sqrt.title]
 en = "Square Root"
+zh = "平方根"
 
 [reference.foundations.calc.calc.sqrt.value.details]
 en = "The number whose square root to calculate. Must be non-negative."
+zh = "要计算平方根的数。必须为非负数。"
 
 [reference.foundations.calc.calc.tan.angle.details]
 en = "The angle whose tangent to calculate."
+zh = "要计算正切值的角度。"
 
 [reference.foundations.calc.calc.tan.details]
 en = "Calculates the tangent of an angle.\n\nWhen called with an integer or a float, they will be interpreted as\nradians.\n\n"
+zh = "计算角度的正切值。\n\n当使用整数或浮点数调用时，它们将被解释为弧度。\n\n"
 
 [reference.foundations.calc.calc.tan.oneliner]
 en = "Calculates the tangent of an angle."
+zh = "计算角度的正切值。"
 
 [reference.foundations.calc.calc.tan.title]
 en = "Tangent"
+zh = "正切"
 
 [reference.foundations.calc.calc.tanh.details]
 en = "Calculates the hyperbolic tangent of an hyperbolic angle.\n\n"
+zh = "计算双曲角的双曲正切值。\n\n"
 
 [reference.foundations.calc.calc.tanh.oneliner]
 en = "Calculates the hyperbolic tangent of an hyperbolic angle."
+zh = "计算双曲角的双曲正切值。"
 
 [reference.foundations.calc.calc.tanh.title]
 en = "Hyperbolic Tangent"
+zh = "双曲正切"
 
 [reference.foundations.calc.calc.tanh.value.details]
 en = "The hyperbolic angle whose hyperbolic tangent to calculate."
+zh = "要计算双曲正切值的双曲角。"
 
 [reference.foundations.calc.calc.title]
 en = "Calculation"
+zh = "计算"
 
 [reference.foundations.calc.calc.trunc.details]
 en = "Returns the integer part of a number.\n\nIf the number is already an integer, it is returned unchanged.\n\nNote that this function will always return an [integer]($int), and will\nerror if the resulting [`float`] or [`decimal`] is larger than the maximum\n64-bit signed integer or smaller than the minimum for that type.\n\n"
+zh = "返回数的整数部分。\n\n如果数已经是整数，则原样返回。\n\n注意此「函数」（[function](#x-term-function)）将始终返回一个「整数」（[integer]($int)），如果结果「浮点数」（[`float`]）或「十进制数」（[`decimal`]）大于最大64位有符号整数或小于该类型的最小值，则会报错。\n\n"
 
 [reference.foundations.calc.calc.trunc.oneliner]
 en = "Returns the integer part of a number."
+zh = "返回数的整数部分。"
 
 [reference.foundations.calc.calc.trunc.title]
 en = "Truncate"
+zh = "截断"
 
 [reference.foundations.calc.calc.trunc.value.details]
 en = "The number to truncate."
+zh = "要截断的数。"
 
 [reference.foundations.calc.description]
 en = "Documentation for the calc functions."
+zh = "计算「函数」（[function](#x-term-function)）的文档。"
 
 [reference.foundations.calc.oneliner]
 en = "Module for calculations and processing of numeric values."
@@ -2154,351 +2204,464 @@ zh = "日期时间的年份。"
 
 [reference.foundations.datetime.datetime.day.details]
 en = "The day if it was specified, or `{none}` for times without a date."
+zh = "如果指定了日期，则为天数，对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.day.oneliner]
 en = "The day if it was specified, or `{none}` for times without a date."
+zh = "如果指定了日期，则为天数，对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.day.title]
 en = "Day"
+zh = "日"
 
 [reference.foundations.datetime.datetime.details]
 en = "{{typst-docs/reference.foundations.datetime.datetime.details.toml}}"
 
 [reference.foundations.datetime.datetime.display.details]
 en = "Displays the datetime in a specified format.\n\nDepending on whether you have defined just a date, a time or both, the\ndefault format will be different. If you specified a date, it will be\n`[[year]-[month]-[day]]`. If you specified a time, it will be\n`[[hour]:[minute]:[second]]`. In the case of a datetime, it will be\n`[[year]-[month]-[day] [hour]:[minute]:[second]]`.\n\nSee the [format syntax]($datetime/#format) for more information."
+zh = "按指定格式显示日期时间。\n\n根据您是否仅定义了日期、时间或两者，默认格式会有所不同。如果您指定了日期，它将是 `[[year]-[month]-[day]]`。如果您指定了时间，它将是 `[[hour]:[minute]:[second]]`。对于日期时间，它将是 `[[year]-[month]-[day] [hour]:[minute]:[second]]`。\n\n有关更多信息，请参阅「格式语法」（[format syntax]($datetime/#format)）。"
 
 [reference.foundations.datetime.datetime.display.oneliner]
 en = "Displays the datetime in a specified format."
+zh = "按指定格式显示日期时间。"
 
 [reference.foundations.datetime.datetime.display.pattern.details]
 en = "The format used to display the datetime."
+zh = "用于显示日期时间的格式。"
 
 [reference.foundations.datetime.datetime.display.title]
 en = "Display"
+zh = "显示"
 
 [reference.foundations.datetime.datetime.hour.details]
 en = "The hour if it was specified, or `{none}` for dates without a time."
+zh = "如果指定了时间，则为小时，对于没有时间的日期，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.hour.oneliner]
 en = "The hour if it was specified, or `{none}` for dates without a time."
+zh = "如果指定了时间，则为小时，对于没有时间的日期，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.hour.title]
 en = "Hour"
+zh = "小时"
 
 [reference.foundations.datetime.datetime.minute.details]
 en = "The minute if it was specified, or `{none}` for dates without a time."
+zh = "如果指定了时间，则为分钟，对于没有时间的日期，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.minute.oneliner]
 en = "The minute if it was specified, or `{none}` for dates without a time."
+zh = "如果指定了时间，则为分钟，对于没有时间的日期，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.minute.title]
 en = "Minute"
+zh = "分钟"
 
 [reference.foundations.datetime.datetime.month.details]
 en = "The month if it was specified, or `{none}` for times without a date."
+zh = "如果指定了日期，则为月份，对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.month.oneliner]
 en = "The month if it was specified, or `{none}` for times without a date."
+zh = "如果指定了日期，则为月份，对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.month.title]
 en = "Month"
+zh = "月"
 
 [reference.foundations.datetime.datetime.oneliner]
 en = "Represents a date, a time, or a combination of both."
+zh = "表示日期、时间或两者的组合。"
 
 [reference.foundations.datetime.datetime.ordinal.details]
 en = "The ordinal (day of the year), or `{none}` for times without a date."
+zh = "序数（一年中的第几天），对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.ordinal.oneliner]
 en = "The ordinal (day of the year), or `{none}` for times without a date."
+zh = "序数（一年中的第几天），对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.ordinal.title]
 en = "Ordinal"
+zh = "序数"
 
 [reference.foundations.datetime.datetime.second.details]
 en = "The second if it was specified, or `{none}` for dates without a time."
+zh = "如果指定了时间，则为秒，对于没有时间的日期，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.second.oneliner]
 en = "The second if it was specified, or `{none}` for dates without a time."
+zh = "如果指定了时间，则为秒，对于没有时间的日期，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.second.title]
 en = "Second"
+zh = "秒"
 
 [reference.foundations.datetime.datetime.title]
 en = "Datetime"
+zh = "日期时间"
 
 [reference.foundations.datetime.datetime.today.details]
 en = "Returns the current date.\n\n"
+zh = "返回当前日期。\n\n"
 
 [reference.foundations.datetime.datetime.today.offset.details]
 en = "An offset to apply to the current UTC date. If set to `{auto}`, the\noffset will be the local offset."
+zh = "应用于当前 UTC 日期的偏移量。如果设置为 `{auto}`，偏移量将是本地偏移量。"
 
 [reference.foundations.datetime.datetime.today.oneliner]
 en = "Returns the current date."
+zh = "返回当前日期。"
 
 [reference.foundations.datetime.datetime.today.title]
 en = "Today"
+zh = "今天"
 
 [reference.foundations.datetime.datetime.weekday.details]
 en = "The weekday (counting Monday as 1) or `{none}` for times without a date."
+zh = "星期几（周一计为 1），对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.weekday.oneliner]
 en = "The weekday (counting Monday as 1) or `{none}` for times without a date."
+zh = "星期几（周一计为 1），对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.weekday.title]
 en = "Weekday"
+zh = "星期"
 
 [reference.foundations.datetime.datetime.year.details]
 en = "The year if it was specified, or `{none}` for times without a date."
+zh = "如果指定了日期，则为年份，对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.year.oneliner]
 en = "The year if it was specified, or `{none}` for times without a date."
+zh = "如果指定了日期，则为年份，对于没有日期的时间，则为 `{none}`。"
 
 [reference.foundations.datetime.datetime.year.title]
 en = "Year"
+zh = "年"
 
 [reference.foundations.datetime.description]
 en = "Documentation for the Datetime type."
+zh = "Datetime「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.datetime.oneliner]
 en = "Represents a date, a time, or a combination of both."
+zh = "表示日期、时间或两者的组合。"
 
 [reference.foundations.datetime.title]
 en = "Datetime"
+zh = "日期时间"
 
 [reference.foundations.decimal.decimal.decimal.details]
 en = "Converts a value to a `decimal`.\n\nIt is recommended to use a string to construct the decimal number, or an\n[integer]($int) (if desired). The string must contain a number in the\nformat `{\"3.14159\"}` (or `{\"-3.141519\"}` for negative numbers). The\nfractional digits are fully preserved; if that's not possible due to the\nlimit of significant digits (around 28 to 29) having been reached, an\nerror is raised as the given decimal number wouldn't be representable.\n\nWhile this constructor can be used with [floating-point numbers]($float)\nto cast them to `decimal`, doing so is **discouraged** as **this cast is\ninherently imprecise.** It is easy to accidentally perform this cast by\nwriting `{decimal(1.234)}` (note the lack of double quotes), which is\nwhy Typst will emit a warning in that case. Please write\n`{decimal(\"1.234\")}` instead for that particular case (initialization of\na constant decimal). Also note that floats that are NaN or infinite\ncannot be cast to decimals and will raise an error.\n\n"
+zh = "将值转换为「十进制数」（`decimal`）。\n\n建议使用「字符串」（[string](#x-term-string)）来构造十进制数，或者使用「整数」（[integer]($int)）（如果需要）。字符串必须包含格式为 `{\"3.14159\"}` 的数字（对于负数，则为 `{\"-3.141519\"}`）。小数位数完全保留；如果由于达到有效数字限制（约 28 到 29 位）而无法保留，则会引发错误，因为给定的十进制数将无法表示。\n\n虽然此构造「函数」（[function](#x-term-function)）可以与「浮点数」（[floating-point numbers]($float)）一起使用来将它们转换为 `decimal`，但**不建议这样做**，因为**此转换本质上是不精确的**。很容易通过编写 `{decimal(1.234)}`（注意缺少双引号）意外执行此转换，这就是 Typst 在这种情况下会发出警告的原因。对于该特定情况（常量十进制的初始化），请改写 `{decimal(\"1.234\")}`。另请注意，NaN 或无限的浮点数无法转换为十进制数，会引发错误。\n\n"
 
 [reference.foundations.decimal.decimal.decimal.oneliner]
 en = "Converts a value to a `decimal`."
+zh = "将值转换为「十进制数」（`decimal`）。"
 
 [reference.foundations.decimal.decimal.decimal.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.decimal.decimal.decimal.value.details]
 en = "The value that should be converted to a decimal."
+zh = "应转换为十进制数的值。"
 
 [reference.foundations.decimal.decimal.details]
 en = "{{typst-docs/reference.foundations.decimal.decimal.details.toml}}"
 
 [reference.foundations.decimal.decimal.oneliner]
 en = "A fixed-point decimal number type."
+zh = "定点十进制数「类型」（[type](#x-term-type)）。"
 
 [reference.foundations.decimal.decimal.title]
 en = "Decimal"
+zh = "十进制数"
 
 [reference.foundations.decimal.description]
 en = "Documentation for the Decimal type."
+zh = "Decimal「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.decimal.oneliner]
 en = "A fixed-point decimal number type."
+zh = "定点十进制数「类型」（[type](#x-term-type)）。"
 
 [reference.foundations.decimal.title]
 en = "Decimal"
+zh = "十进制数"
 
 [reference.foundations.description]
 en = "Documentation for functions related to Foundations in Typst."
+zh = "与 Typst 基础相关的「函数」（[function](#x-term-function)）文档。"
 
 [reference.foundations.dictionary.description]
 en = "Documentation for the Dictionary type."
+zh = "Dictionary「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.dictionary.dictionary.at.default.details]
 en = "A default value to return if the key is not part of the dictionary."
+zh = "如果键不是「字典」（[dictionary](#x-term-dictionary)）的一部分，则返回的默认值。"
 
 [reference.foundations.dictionary.dictionary.at.details]
 en = "Returns the value associated with the specified key in the dictionary.\nMay be used on the left-hand side of an assignment if the key is already\npresent in the dictionary. Returns the default value if the key is not\npart of the dictionary or fails with an error if no default value was\nspecified."
+zh = "返回「字典」（[dictionary](#x-term-dictionary)）中与指定键关联的值。\n如果键已经存在于字典中，则可用于赋值的左侧。如果键不是字典的一部分，则返回默认值，如果未指定默认值，则报错。"
 
 [reference.foundations.dictionary.dictionary.at.key.details]
 en = "The key at which to retrieve the item."
+zh = "用于检索项目的键。"
 
 [reference.foundations.dictionary.dictionary.at.oneliner]
 en = "Returns the value associated with the specified key in the dictionary."
+zh = "返回「字典」（[dictionary](#x-term-dictionary)）中与指定键关联的值。"
 
 [reference.foundations.dictionary.dictionary.at.title]
 en = "At"
+zh = "取值"
 
 [reference.foundations.dictionary.dictionary.details]
 en = "{{typst-docs/reference.foundations.dictionary.dictionary.details.toml}}"
 
 [reference.foundations.dictionary.dictionary.dictionary.details]
 en = "Converts a value into a dictionary.\n\nNote that this function is only intended for conversion of a\ndictionary-like value to a dictionary, not for creation of a dictionary\nfrom individual pairs. Use the dictionary syntax `(key: value)` instead.\n\n"
+zh = "将值转换为「字典」（[dictionary](#x-term-dictionary)）。\n\n注意此「函数」（[function](#x-term-function)）仅用于将类似字典的值转换为字典，而不是从单独的键值对创建字典。请改用字典语法 `(key: value)`。\n\n"
 
 [reference.foundations.dictionary.dictionary.dictionary.oneliner]
 en = "Converts a value into a dictionary."
+zh = "将值转换为「字典」（[dictionary](#x-term-dictionary)）。"
 
 [reference.foundations.dictionary.dictionary.dictionary.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.dictionary.dictionary.dictionary.value.details]
 en = "The value that should be converted to a dictionary."
+zh = "应转换为字典的值。"
 
 [reference.foundations.dictionary.dictionary.insert.details]
 en = "Inserts a new pair into the dictionary. If the dictionary already\ncontains this key, the value is updated."
+zh = "将新的键值对插入「字典」（[dictionary](#x-term-dictionary)）。如果字典已包含此键，则更新值。"
 
 [reference.foundations.dictionary.dictionary.insert.key.details]
 en = "The key of the pair that should be inserted."
+zh = "应插入的键值对的键。"
 
 [reference.foundations.dictionary.dictionary.insert.oneliner]
 en = "Inserts a new pair into the dictionary. If the dictionary already"
+zh = "将新的键值对插入「字典」（[dictionary](#x-term-dictionary)）。如果字典已"
 
 [reference.foundations.dictionary.dictionary.insert.title]
 en = "Insert"
+zh = "插入"
 
 [reference.foundations.dictionary.dictionary.insert.value.details]
 en = "The value of the pair that should be inserted."
+zh = "应插入的键值对的值。"
 
 [reference.foundations.dictionary.dictionary.keys.details]
 en = "Returns the keys of the dictionary as an array in insertion order."
+zh = "按插入顺序将「字典」（[dictionary](#x-term-dictionary)）的键作为「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.dictionary.dictionary.keys.oneliner]
 en = "Returns the keys of the dictionary as an array in insertion order."
+zh = "按插入顺序将「字典」（[dictionary](#x-term-dictionary)）的键作为「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.dictionary.dictionary.keys.title]
 en = "Keys"
+zh = "键"
 
 [reference.foundations.dictionary.dictionary.len.details]
 en = "The number of pairs in the dictionary."
+zh = "「字典」（[dictionary](#x-term-dictionary)）中键值对的数量。"
 
 [reference.foundations.dictionary.dictionary.len.oneliner]
 en = "The number of pairs in the dictionary."
+zh = "「字典」（[dictionary](#x-term-dictionary)）中键值对的数量。"
 
 [reference.foundations.dictionary.dictionary.len.title]
 en = "Length"
+zh = "「长度」（[length](#x-term-length)）"
 
 [reference.foundations.dictionary.dictionary.oneliner]
 en = "A map from string keys to values."
+zh = "从「字符串」（[string](#x-term-string)）键到值的映射。"
 
 [reference.foundations.dictionary.dictionary.pairs.details]
 en = "Returns the keys and values of the dictionary as an array of pairs. Each\npair is represented as an array of length two."
+zh = "将「字典」（[dictionary](#x-term-dictionary)）的键和值作为键值对「数组」（[array](#x-term-array)）返回。每个键值对表示为「长度」（[length](#x-term-length)）为 2 的数组。"
 
 [reference.foundations.dictionary.dictionary.pairs.oneliner]
 en = "Returns the keys and values of the dictionary as an array of pairs. Each"
+zh = "将「字典」（[dictionary](#x-term-dictionary)）的键和值作为键值对「数组」（[array](#x-term-array)）返回。每个"
 
 [reference.foundations.dictionary.dictionary.pairs.title]
 en = "Pairs"
+zh = "键值对"
 
 [reference.foundations.dictionary.dictionary.remove.default.details]
 en = "A default value to return if the key does not exist."
+zh = "如果键不存在，则返回的默认值。"
 
 [reference.foundations.dictionary.dictionary.remove.details]
 en = "Removes a pair from the dictionary by key and return the value."
+zh = "通过键从「字典」（[dictionary](#x-term-dictionary)）中删除键值对并返回值。"
 
 [reference.foundations.dictionary.dictionary.remove.key.details]
 en = "The key of the pair to remove."
+zh = "要删除的键值对的键。"
 
 [reference.foundations.dictionary.dictionary.remove.oneliner]
 en = "Removes a pair from the dictionary by key and return the value."
+zh = "通过键从「字典」（[dictionary](#x-term-dictionary)）中删除键值对并返回值。"
 
 [reference.foundations.dictionary.dictionary.remove.title]
 en = "Remove"
+zh = "删除"
 
 [reference.foundations.dictionary.dictionary.title]
 en = "Dictionary"
+zh = "字典"
 
 [reference.foundations.dictionary.dictionary.values.details]
 en = "Returns the values of the dictionary as an array in insertion order."
+zh = "按插入顺序将「字典」（[dictionary](#x-term-dictionary)）的值作为「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.dictionary.dictionary.values.oneliner]
 en = "Returns the values of the dictionary as an array in insertion order."
+zh = "按插入顺序将「字典」（[dictionary](#x-term-dictionary)）的值作为「数组」（[array](#x-term-array)）返回。"
 
 [reference.foundations.dictionary.dictionary.values.title]
 en = "Values"
+zh = "值"
 
 [reference.foundations.dictionary.oneliner]
 en = "A map from string keys to values."
+zh = "从「字符串」（[string](#x-term-string)）键到值的映射。"
 
 [reference.foundations.dictionary.title]
 en = "Dictionary"
+zh = "字典"
 
 [reference.foundations.duration.description]
 en = "Documentation for the Duration type."
+zh = "Duration「类型」（[type](#x-term-type)）的文档。"
 
 [reference.foundations.duration.duration.days.details]
 en = "The duration expressed in days.\n\nThis function returns the total duration represented in days as a\nfloating-point number rather than the second component of the duration."
+zh = "以天为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以天为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.days.oneliner]
 en = "The duration expressed in days."
+zh = "以天为单位表示的持续时间。"
 
 [reference.foundations.duration.duration.days.title]
 en = "Days"
+zh = "天"
 
 [reference.foundations.duration.duration.details]
 en = "Represents a positive or negative span of time."
+zh = "表示正或负的时间跨度。"
 
 [reference.foundations.duration.duration.duration.days.details]
 en = "The number of days."
+zh = "天数。"
 
 [reference.foundations.duration.duration.duration.details]
 en = "Creates a new duration.\n\nYou can specify the [duration] using weeks, days, hours, minutes and\nseconds. You can also get a duration by subtracting two\n[datetimes]($datetime).\n\n"
+zh = "创建新的持续时间。\n\n您可以使用周、天、小时、分钟和秒来指定持续时间。您也可以通过减去两个「日期时间」（[datetimes]($datetime)）来获得持续时间。\n\n"
 
 [reference.foundations.duration.duration.duration.hours.details]
 en = "The number of hours."
+zh = "小时数。"
 
 [reference.foundations.duration.duration.duration.minutes.details]
 en = "The number of minutes."
+zh = "分钟数。"
 
 [reference.foundations.duration.duration.duration.oneliner]
 en = "Creates a new duration."
+zh = "创建新的持续时间。"
 
 [reference.foundations.duration.duration.duration.seconds.details]
 en = "The number of seconds."
+zh = "秒数。"
 
 [reference.foundations.duration.duration.duration.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.duration.duration.duration.weeks.details]
 en = "The number of weeks."
+zh = "周数。"
 
 [reference.foundations.duration.duration.hours.details]
 en = "The duration expressed in hours.\n\nThis function returns the total duration represented in hours as a\nfloating-point number rather than the second component of the duration."
+zh = "以小时为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以小时为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.hours.oneliner]
 en = "The duration expressed in hours."
+zh = "以小时为单位表示的持续时间。"
 
 [reference.foundations.duration.duration.hours.title]
 en = "Hours"
+zh = "小时"
 
 [reference.foundations.duration.duration.minutes.details]
 en = "The duration expressed in minutes.\n\nThis function returns the total duration represented in minutes as a\nfloating-point number rather than the second component of the duration."
+zh = "以分钟为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以分钟为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.minutes.oneliner]
 en = "The duration expressed in minutes."
+zh = "以分钟为单位表示的持续时间。"
 
 [reference.foundations.duration.duration.minutes.title]
 en = "Minutes"
+zh = "分钟"
 
 [reference.foundations.duration.duration.oneliner]
 en = "Represents a positive or negative span of time."
+zh = "表示正或负的时间跨度。"
 
 [reference.foundations.duration.duration.seconds.details]
 en = "The duration expressed in seconds.\n\nThis function returns the total duration represented in seconds as a\nfloating-point number rather than the second component of the duration."
+zh = "以秒为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以秒为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.seconds.oneliner]
 en = "The duration expressed in seconds."
+zh = "以秒为单位表示的持续时间。"
 
 [reference.foundations.duration.duration.seconds.title]
 en = "Seconds"
+zh = "秒"
 
 [reference.foundations.duration.duration.title]
 en = "Duration"
+zh = "持续时间"
 
 [reference.foundations.duration.duration.weeks.details]
 en = "The duration expressed in weeks.\n\nThis function returns the total duration represented in weeks as a\nfloating-point number rather than the second component of the duration."
+zh = "以周为单位表示的持续时间。\n\n此「函数」（[function](#x-term-function)）返回以周为单位表示的总持续时间作为浮点数，而不是持续时间的第二个组成部分。"
 
 [reference.foundations.duration.duration.weeks.oneliner]
 en = "The duration expressed in weeks."
+zh = "以周为单位表示的持续时间。"
 
 [reference.foundations.duration.duration.weeks.title]
 en = "Weeks"
+zh = "周"
 
 [reference.foundations.duration.oneliner]
 en = "Represents a positive or negative span of time."
+zh = "表示正或负的时间跨度。"
 
 [reference.foundations.duration.title]
 en = "Duration"
+zh = "持续时间"
 
 [reference.foundations.eval.description]
 en = "Documentation for the `eval` function."
+zh = "「评估」（`eval`）「函数」（[function](#x-term-function)）的文档。"
 
 [reference.foundations.eval.eval.details]
 en = "Evaluates a string as Typst code.\n\nThis function should only be used as a last resort.\n\n# Example\n```example\n#eval(\"1 + 1\") \\\n#eval(\"(1, 2, 3, 4)\").len() \\\n#eval(\"*Markup!*\", mode: \"markup\") \\\n```"
