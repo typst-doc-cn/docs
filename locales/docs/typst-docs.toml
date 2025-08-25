@@ -2761,114 +2761,150 @@ zh = "检查浮点数是否为无穷大。"
 
 [reference.foundations.float.float.is-infinite.title]
 en = "Is Infinite"
+zh = "是否无穷大"
 
 [reference.foundations.float.float.is-nan.details]
 en = "Checks if a float is not a number.\n\nIn IEEE 754, more than one bit pattern represents a NaN. This function\nreturns `true` if the float is any of those bit patterns.\n\n"
+zh = "检查浮点数是否不是数字（NaN）。\n\n在 IEEE 754 中，多个位模式表示 NaN。如果浮点数是这些位模式中的任何一个，此函数返回 `true`。\n\n"
 
 [reference.foundations.float.float.is-nan.oneliner]
 en = "Checks if a float is not a number."
+zh = "检查浮点数是否不是数字（NaN）。"
 
 [reference.foundations.float.float.is-nan.title]
 en = "Is Nan"
+zh = "是否 NaN"
 
 [reference.foundations.float.float.oneliner]
 en = "A floating-point number."
+zh = "浮点数。"
 
 [reference.foundations.float.float.signum.details]
 en = "Calculates the sign of a floating point number.\n\n- If the number is positive (including `{+0.0}`), returns `{1.0}`.\n- If the number is negative (including `{-0.0}`), returns `{-1.0}`.\n- If the number is NaN, returns `{float.nan}`.\n\n"
+zh = "计算浮点数的符号。\n\n- 如果数字为正（包括 `{+0.0}`），返回 `{1.0}`。\n- 如果数字为负（包括 `{-0.0}`），返回 `{-1.0}`。\n- 如果数字为 NaN，返回 `{float.nan}`。\n\n"
 
 [reference.foundations.float.float.signum.oneliner]
 en = "Calculates the sign of a floating point number."
+zh = "计算浮点数的符号。"
 
 [reference.foundations.float.float.signum.title]
 en = "Signum"
+zh = "符号函数"
 
 [reference.foundations.float.float.title]
 en = "Float"
+zh = "浮点数"
 
 [reference.foundations.float.float.to-bytes.details]
 en = "Converts a float to bytes.\n\n"
+zh = "将浮点数转换为字节。\n\n"
 
 [reference.foundations.float.float.to-bytes.endian.details]
 en = "The endianness of the conversion."
+zh = "转换的字节序。"
 
 [reference.foundations.float.float.to-bytes.oneliner]
 en = "Converts a float to bytes."
+zh = "将浮点数转换为字节。"
 
 [reference.foundations.float.float.to-bytes.size.details]
 en = "The size of the resulting bytes.\n\nThis must be either 4 or 8. The call will return the\nrepresentation of this float in either\n[IEEE 754](https://en.wikipedia.org/wiki/IEEE_754)'s binary32\n(single-precision) or binary64 (double-precision) format\ndepending on the provided size."
+zh = "结果字节的大小。\n\n这必须是 4 或 8。调用将根据提供的大小返回此浮点数在 [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) 的 binary32（单精度）或 binary64（双精度）格式中的表示。"
 
 [reference.foundations.float.float.to-bytes.title]
 en = "To Bytes"
+zh = "转为字节"
 
 [reference.foundations.float.oneliner]
 en = "A floating-point number."
+zh = "浮点数。"
 
 [reference.foundations.float.title]
 en = "Float"
+zh = "浮点数"
 
 [reference.foundations.foundations.details]
 en = "Foundational types and functions.\n\nHere, you'll find documentation for basic data types like [integers]($int) and\n[strings]($str) as well as details about core computational functions.\n"
+zh = "基础类型和函数。\n\n在这里，您将找到基本数据类型（如[整数]($int)和[字符串]($str)）的文档，以及核心计算函数的详细信息。\n"
 
 [reference.foundations.foundations.title]
 en = "Foundations"
+zh = "基础"
 
 [reference.foundations.function.description]
 en = "Documentation for the Function type."
+zh = "Function 类型的文档。"
 
 [reference.foundations.function.function.details]
 en = "{{typst-docs/reference.foundations.function.function.details.toml}}"
 
 [reference.foundations.function.function.oneliner]
 en = "A mapping from argument values to a return value."
+zh = "从参数值到返回值的映射。"
 
 [reference.foundations.function.function.title]
 en = "Function"
+zh = "函数"
 
 [reference.foundations.function.function.where.details]
 en = "Returns a selector that filters for elements belonging to this function\nwhose fields have the values of the given arguments.\n\n"
+zh = "返回一个选择器，用于筛选属于此函数且其字段具有给定参数值的元素。\n\n"
 
 [reference.foundations.function.function.where.fields.details]
 en = "The fields to filter for."
+zh = "要筛选的字段。"
 
 [reference.foundations.function.function.where.oneliner]
 en = "Returns a selector that filters for elements belonging to this function"
+zh = "返回一个选择器，用于筛选属于此函数的元素"
 
 [reference.foundations.function.function.where.title]
 en = "Where"
+zh = "筛选条件"
 
 [reference.foundations.function.function.with.arguments.details]
 en = "The arguments to apply to the function."
+zh = "应用于函数的参数。"
 
 [reference.foundations.function.function.with.details]
 en = "Returns a new function that has the given arguments pre-applied."
+zh = "返回一个新函数，该函数已预先应用了给定的参数。"
 
 [reference.foundations.function.function.with.oneliner]
 en = "Returns a new function that has the given arguments pre-applied."
+zh = "返回一个新函数，该函数已预先应用了给定的参数。"
 
 [reference.foundations.function.function.with.title]
 en = "With"
+zh = "应用参数"
 
 [reference.foundations.function.oneliner]
 en = "A mapping from argument values to a return value."
+zh = "从参数值到返回值的映射。"
 
 [reference.foundations.function.title]
 en = "Function"
+zh = "函数"
 
 [reference.foundations.int.description]
 en = "Documentation for the Integer type."
+zh = "Integer 类型的文档。"
 
 [reference.foundations.int.int.bit-and.details]
 en = "Calculates the bitwise AND between two integers.\n\nFor the purposes of this function, the operands are treated as signed\nintegers of 64 bits.\n\n"
+zh = "计算两个整数之间的按位与运算。\n\n对于此函数，操作数被视为 64 位有符号整数。\n\n"
 
 [reference.foundations.int.int.bit-and.oneliner]
 en = "Calculates the bitwise AND between two integers."
+zh = "计算两个整数之间的按位与运算。"
 
 [reference.foundations.int.int.bit-and.rhs.details]
 en = "The right-hand operand of the bitwise AND."
+zh = "按位与运算的右操作数。"
 
 [reference.foundations.int.int.bit-and.title]
 en = "Bitwise AND"
+zh = "按位与"
 
 [reference.foundations.int.int.bit-lshift.details]
 en = "Shifts the operand's bits to the left by the specified amount.\n\nFor the purposes of this function, the operand is treated as a signed\ninteger of 64 bits. An error will occur if the result is too large to\nfit in a 64-bit integer.\n\n"
