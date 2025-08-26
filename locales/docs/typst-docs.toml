@@ -3548,159 +3548,211 @@ zh = "应该转换的码点。"
 
 [reference.foundations.str.str.last.details]
 en = "Extracts the last grapheme cluster of the string.\nFails with an error if the string is empty."
+zh = "提取「字符串」（[string](#x-term-string)）的最后一个字形簇。\n如果字符串为空会出错。"
 
 [reference.foundations.str.str.last.oneliner]
 en = "Extracts the last grapheme cluster of the string."
+zh = "提取字符串的最后一个字形簇。"
 
 [reference.foundations.str.str.last.title]
 en = "Last"
+zh = "获取最后一个字符"
 
 [reference.foundations.str.str.len.details]
 en = "The length of the string in UTF-8 encoded bytes."
+zh = "「字符串」（[string](#x-term-string)）的 UTF-8 编码字节「长度」（[length](#x-term-length)）。"
 
 [reference.foundations.str.str.len.oneliner]
 en = "The length of the string in UTF-8 encoded bytes."
+zh = "字符串的 UTF-8 编码字节长度。"
 
 [reference.foundations.str.str.len.title]
 en = "Length"
+zh = "长度"
 
 [reference.foundations.str.str.match.details]
 en = "Searches for the specified pattern in the string and returns a\ndictionary with details about the first match or `{none}` if there is no\nmatch.\n\nThe returned dictionary has the following keys:\n- `start`: The start offset of the match\n- `end`: The end offset of the match\n- `text`: The text that matched.\n- `captures`: An array containing a string for each matched capturing\n  group. The first item of the array contains the first matched\n  capturing, not the whole match! This is empty unless the `pattern` was\n  a regex with capturing groups."
+zh = "在「字符串」（[string](#x-term-string)）中搜索指定模式，返回包含第一个匹配详细信息的「字典」（[dictionary](#x-term-dictionary)），如果没有匹配则返回 `{none}`。\n\n返回的字典包含以下键：\n- `start`: 匹配的起始偏移量\n- `end`: 匹配的结束偏移量\n- `text`: 匹配的文本\n- `captures`: 包含每个匹配捕获组字符串的数组。数组的第一项包含第一个匹配的捕获，而不是整个匹配！除非 `pattern` 是带有捕获组的正则表达式，否则此项为空。"
 
 [reference.foundations.str.str.match.oneliner]
 en = "Searches for the specified pattern in the string and returns a"
+zh = "在字符串中搜索指定模式并返回匹配详情。"
 
 [reference.foundations.str.str.match.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.match.title]
 en = "Match"
+zh = "匹配"
 
 [reference.foundations.str.str.matches.details]
 en = "Searches for the specified pattern in the string and returns an array of\ndictionaries with details about all matches. For details about the\nreturned dictionaries, see above."
+zh = "在「字符串」（[string](#x-term-string)）中搜索指定模式，返回包含所有匹配详细信息的「字典」（[dictionary](#x-term-dictionary)）「数组」（[array](#x-term-array)）。有关返回字典的详细信息，请参见上文。"
 
 [reference.foundations.str.str.matches.oneliner]
 en = "Searches for the specified pattern in the string and returns an array of"
+zh = "在字符串中搜索指定模式并返回所有匹配的数组。"
 
 [reference.foundations.str.str.matches.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.matches.title]
 en = "Matches"
+zh = "多个匹配"
 
 [reference.foundations.str.str.oneliner]
 en = "A sequence of Unicode codepoints."
+zh = "Unicode 码点序列。"
 
 [reference.foundations.str.str.position.details]
 en = "Searches for the specified pattern in the string and returns the index\nof the first match as an integer or `{none}` if there is no match."
+zh = "在「字符串」（[string](#x-term-string)）中搜索指定模式，返回第一个匹配的索引作为「整数」（[integer](#x-term-integer)），如果没有匹配则返回 `{none}`。"
 
 [reference.foundations.str.str.position.oneliner]
 en = "Searches for the specified pattern in the string and returns the index"
+zh = "在字符串中搜索指定模式并返回索引。"
 
 [reference.foundations.str.str.position.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.position.title]
 en = "Position"
+zh = "位置"
 
 [reference.foundations.str.str.replace.count.details]
 en = "If given, only the first `count` matches of the pattern are placed."
+zh = "如果给定，只替换模式的前 `count` 个匹配。"
 
 [reference.foundations.str.str.replace.details]
 en = "Replace at most `count` occurrences of the given pattern with a\nreplacement string or function (beginning from the start). If no count\nis given, all occurrences are replaced."
+zh = "用替换字符串或「函数」（[function](#x-term-function)）替换给定模式的最多 `count` 个出现（从开头开始）。如果未给定计数，则替换所有出现。"
 
 [reference.foundations.str.str.replace.oneliner]
 en = "Replace at most `count` occurrences of the given pattern with a"
+zh = "用替换内容替换给定模式的最多指定次数出现。"
 
 [reference.foundations.str.str.replace.pattern.details]
 en = "The pattern to search for."
+zh = "要搜索的模式。"
 
 [reference.foundations.str.str.replace.replacement.details]
 en = "The string to replace the matches with or a function that gets a\ndictionary for each match and can return individual replacement\nstrings."
+zh = "用于替换匹配项的「字符串」（[string](#x-term-string)）或为每个匹配项获取「字典」（[dictionary](#x-term-dictionary)）并可返回个别替换字符串的函数。"
 
 [reference.foundations.str.str.replace.title]
 en = "Replace"
+zh = "替换"
 
 [reference.foundations.str.str.rev.details]
 en = "Reverse the string."
+zh = "反转「字符串」（[string](#x-term-string)）。"
 
 [reference.foundations.str.str.rev.oneliner]
 en = "Reverse the string."
+zh = "反转字符串。"
 
 [reference.foundations.str.str.rev.title]
 en = "Reverse"
+zh = "反转"
 
 [reference.foundations.str.str.slice.count.details]
 en = "The number of bytes to extract. This is equivalent to passing\n`start + count` as the `end` position. Mutually exclusive with `end`."
+zh = "要提取的字节数。这等同于将 `start + count` 作为 `end` 位置传递。与 `end` 互斥。"
 
 [reference.foundations.str.str.slice.details]
 en = "Extracts a substring of the string.\nFails with an error if the start or end index is out of bounds."
+zh = "提取「字符串」（[string](#x-term-string)）的子字符串。\n如果起始或结束索引超出边界会出错。"
 
 [reference.foundations.str.str.slice.end.details]
 en = "The end byte index (exclusive). If omitted, the whole slice until\nthe end of the string is extracted. If negative, indexes from the\nback."
+zh = "结束字节索引且「不包括本身」（[exclusive](#x-term-exclusive)）。如果省略，则提取到字符串末尾的整个切片。如果为负数，则从后面索引。"
 
 [reference.foundations.str.str.slice.oneliner]
 en = "Extracts a substring of the string."
+zh = "提取字符串的子字符串。"
 
 [reference.foundations.str.str.slice.start.details]
 en = "The start byte index (inclusive). If negative, indexes from the\nback."
+zh = "起始字节索引（包括）。如果为负数，则从后面索引。"
 
 [reference.foundations.str.str.slice.title]
 en = "Slice"
+zh = "切片"
 
 [reference.foundations.str.str.split.details]
 en = "Splits a string at matches of a specified pattern and returns an array\nof the resulting parts.\n\nWhen the empty string is used as a separator, it separates every\ncharacter (i.e., Unicode code point) in the string, along with the\nbeginning and end of the string. In practice, this means that the\nresulting list of parts will contain the empty string at the start\nand end of the list."
+zh = "在指定模式的匹配处分割「字符串」（[string](#x-term-string)），返回结果部分的「数组」（[array](#x-term-array)）。\n\n当使用空字符串作为分隔符时，它会分离字符串中的每个字符（即 Unicode 码点），以及字符串的开头和结尾。实际上，这意味着结果部分列表将在列表的开始和结尾包含空字符串。"
 
 [reference.foundations.str.str.split.oneliner]
 en = "Splits a string at matches of a specified pattern and returns an array"
+zh = "在指定模式的匹配处分割字符串并返回数组。"
 
 [reference.foundations.str.str.split.pattern.details]
 en = "The pattern to split at. Defaults to whitespace."
+zh = "分割的模式。默认为空白字符。"
 
 [reference.foundations.str.str.split.title]
 en = "Split"
+zh = "分割"
 
 [reference.foundations.str.str.starts-with.details]
 en = "Whether the string starts with the specified pattern."
+zh = "「字符串」（[string](#x-term-string)）是否以指定模式开头。"
 
 [reference.foundations.str.str.starts-with.oneliner]
 en = "Whether the string starts with the specified pattern."
+zh = "字符串是否以指定模式开头。"
 
 [reference.foundations.str.str.starts-with.pattern.details]
 en = "The pattern the string might start with."
+zh = "字符串可能开头的模式。"
 
 [reference.foundations.str.str.starts-with.title]
 en = "Starts With"
+zh = "以...开头"
 
 [reference.foundations.str.str.str.base.details]
 en = "The base (radix) to display integers in, between 2 and 36."
+zh = "显示「整数」（[integer](#x-term-integer)）的基数（进制），在 2 到 36 之间。"
 
 [reference.foundations.str.str.str.details]
 en = "Converts a value to a string.\n\n- Integers are formatted in base 10. This can be overridden with the\n  optional `base` parameter.\n- Floats are formatted in base 10 and never in exponential notation.\n- Negative integers and floats are formatted with the Unicode minus sign\n  (\"−\" U+2212) instead of the ASCII minus sign (\"-\" U+002D).\n- From labels the name is extracted.\n- Bytes are decoded as UTF-8.\n\nIf you wish to convert from and to Unicode code points, see the\n[`to-unicode`]($str.to-unicode) and [`from-unicode`]($str.from-unicode)\nfunctions.\n\n"
+zh = "将值转换为「字符串」（[string](#x-term-string)）。\n\n- 整数以 10 进制格式化。可以用可选的 `base` 参数覆盖此设置。\n- 浮点数以 10 进制格式化，且从不使用指数记法。\n- 负整数和浮点数使用 Unicode 减号（\"−\" U+2212）而不是 ASCII 减号（\"-\" U+002D）格式化。\n- 从标签中提取名称。\n- 字节以 UTF-8 解码。\n\n如果您希望在 Unicode 码点之间转换，请参见 [`to-unicode`]($str.to-unicode) 和 [`from-unicode`]($str.from-unicode) 函数。\n\n"
 
 [reference.foundations.str.str.str.oneliner]
 en = "Converts a value to a string."
+zh = "将值转换为字符串。"
 
 [reference.foundations.str.str.str.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.str.str.str.value.details]
 en = "The value that should be converted to a string."
+zh = "应该转换为字符串的值。"
 
 [reference.foundations.str.str.title]
 en = "String"
+zh = "字符串"
 
 [reference.foundations.str.str.to-unicode.character.details]
 en = "The character that should be converted."
+zh = "应该转换的字符。"
 
 [reference.foundations.str.str.to-unicode.details]
 en = "Converts a character into its corresponding code point.\n\n"
+zh = "将字符转换为其对应的码点。\n\n"
 
 [reference.foundations.str.str.to-unicode.oneliner]
 en = "Converts a character into its corresponding code point."
+zh = "将字符转换为其对应的码点。"
 
 [reference.foundations.str.str.to-unicode.title]
 en = "To Unicode"
+zh = "转为 Unicode"
 
 [reference.foundations.str.str.trim.at.details]
 en = "Can be `{start}` or `{end}` to only trim the start or end of the\nstring. If omitted, both sides are trimmed."
