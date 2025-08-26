@@ -3812,12 +3812,15 @@ zh = "构造"
 
 [reference.foundations.symbol.symbol.symbol.variants.details]
 en = "The variants of the symbol.\n\nCan be a just a string consisting of a single character for the\nmodifierless variant or an array with two strings specifying the modifiers\nand the symbol. Individual modifiers should be separated by dots. When\ndisplaying a symbol, Typst selects the first from the variants that have\nall attached modifiers and the minimum number of other modifiers."
+zh = "符号的变体。\n\n可以是包含单个字符的「字符串」（[string](#x-term-string)）用于无修饰符变体，或包含两个字符串的「数组」（[array](#x-term-array)）用于指定修饰符和符号。单个修饰符应以点分隔。显示符号时，Typst 从变体中选择具有所有附加修饰符且其他修饰符数量最少的第一个。"
 
 [reference.foundations.symbol.symbol.title]
 en = "Symbol"
+zh = "符号"
 
 [reference.foundations.symbol.title]
 en = "Symbol"
+zh = "符号"
 
 [reference.foundations.sys.description]
 en = "Documentation for the sys functions."
@@ -3829,9 +3832,11 @@ zh = "用于系统交互的模块。"
 
 [reference.foundations.sys.sys.details]
 en = "Module for system interactions.\n\nThis module defines the following items:\n\n- The `sys.version` constant (of type [`version`]) that specifies\n  the currently active Typst compiler version.\n\n- The `sys.inputs` [dictionary], which makes external inputs\n  available to the project. An input specified in the command line as\n  `--input key=value` becomes available under `sys.inputs.key` as\n  `{\"value\"}`. To include spaces in the value, it may be enclosed with\n  single or double quotes.\n\n  The value is always of type [string]($str). More complex data\n  may be parsed manually using functions like [`json.decode`]($json.decode).\n"
+zh = "用于系统交互的模块。\n\n此模块定义以下项目：\n\n- `sys.version` 常量（「类型」（[type](#x-term-type)）为 [`version`]）指定当前活动的 Typst 编译器版本。\n\n- `sys.inputs` 「字典」（[dictionary](#x-term-dictionary)），使外部输入对项目可用。在命令行中指定为 `--input key=value` 的输入在 `sys.inputs.key` 下作为 `{\"value\"}` 可用。要在值中包含空格，可以用单引号或双引号括起来。\n\n  值始终为 [字符串]($str) 类型。更复杂的数据可以使用像 [`json.decode`]($json.decode) 这样的函数手动解析。\n"
 
 [reference.foundations.sys.sys.title]
 en = "System"
+zh = "系统"
 
 [reference.foundations.sys.title]
 en = "System"
@@ -3881,9 +3886,11 @@ en = "{{typst-docs/reference.foundations.type.type.details.toml}}"
 
 [reference.foundations.type.type.oneliner]
 en = "Describes a kind of value."
+zh = "描述值的类型。"
 
 [reference.foundations.type.type.title]
 en = "Type"
+zh = "类型"
 
 [reference.foundations.type.type.type.details]
 en = "Determines a value's type.\n\n"
@@ -4097,21 +4104,27 @@ zh = "检索文档末尾的计数器值。总是返回「整数」（[integer](#
 
 [reference.introspection.counter.counter.final.oneliner]
 en = "Retrieves the value of the counter at the end of the document. Always"
+zh = "检索文档末尾的计数器值。"
 
 [reference.introspection.counter.counter.final.title]
 en = "Final"
+zh = "最终值"
 
 [reference.introspection.counter.counter.get.details]
 en = "Retrieves the value of the counter at the current location. Always\nreturns an array of integers, even if the counter has just one number.\n\nThis is equivalent to `{counter.at(here())}`."
+zh = "检索当前位置的计数器值。总是返回「整数」（[integer](#x-term-integer)）「数组」（[array](#x-term-array)），即使计数器只有一个数字。\n\n这等价于 `{counter.at(here())}`。"
 
 [reference.introspection.counter.counter.get.oneliner]
 en = "Retrieves the value of the counter at the current location. Always"
+zh = "检索当前位置的计数器值。"
 
 [reference.introspection.counter.counter.get.title]
 en = "Get"
+zh = "获取"
 
 [reference.introspection.counter.counter.oneliner]
 en = "Counts through pages, elements, and more."
+zh = "计算页面、元素等。"
 
 [reference.introspection.counter.counter.step.details]
 en = "Increases the value of the counter by one.\n\nThe update will be in effect at the position where the returned content\nis inserted into the document. If you don't put the output into the\ndocument, nothing happens! This would be the case, for example, if you\nwrite `{let _ = counter(page).step()}`. Counter updates are always\napplied in layout order and in that case, Typst wouldn't know when to\nstep the counter."
