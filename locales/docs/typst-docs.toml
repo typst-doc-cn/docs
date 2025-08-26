@@ -3402,6 +3402,7 @@ zh = "将值转换为选择器。接受以下值："
 
 [reference.foundations.selector.selector.selector.target.details]
 en = "Can be an element function like a `heading` or `figure`, a `{<label>}`\nor a more complex selector like `{heading.where(level: 1)}`."
+zh = "可以是像 `heading` 或 `figure` 这样的元素「函数」（[function](#x-term-function)），一个 `{<label>}`\n或者像 `{heading.where(level: 1)}` 这样更复杂的选择器。"
 
 [reference.foundations.selector.selector.selector.title]
 en = "Construct"
@@ -3756,24 +3757,31 @@ zh = "转为 Unicode"
 
 [reference.foundations.str.str.trim.at.details]
 en = "Can be `{start}` or `{end}` to only trim the start or end of the\nstring. If omitted, both sides are trimmed."
+zh = "可以是 `{start}` 或 `{end}` 来只修剪「字符串」（[string](#x-term-string)）的开始或结束。如果省略，则修剪两边。"
 
 [reference.foundations.str.str.trim.details]
 en = "Removes matches of a pattern from one or both sides of the string, once or\nrepeatedly and returns the resulting string."
+zh = "从字符串的一侧或两侧移除模式的匹配，一次或重复地，并返回结果字符串。"
 
 [reference.foundations.str.str.trim.oneliner]
 en = "Removes matches of a pattern from one or both sides of the string, once or"
+zh = "从字符串的一侧或两侧移除模式的匹配。"
 
 [reference.foundations.str.str.trim.pattern.details]
 en = "The pattern to search for. If `{none}`, trims white spaces."
+zh = "要搜索的模式。如果是 `{none}`，则修剪空白字符。"
 
 [reference.foundations.str.str.trim.repeat.details]
 en = "Whether to repeatedly removes matches of the pattern or just once.\nDefaults to `{true}`."
+zh = "是否重复移除模式的匹配或只移除一次。\n默认为 `{true}`。"
 
 [reference.foundations.str.str.trim.title]
 en = "Trim"
+zh = "修剪"
 
 [reference.foundations.str.title]
 en = "String"
+zh = "字符串"
 
 [reference.foundations.symbol.description]
 en = "Documentation for the Symbol type."
@@ -3788,15 +3796,19 @@ en = "{{typst-docs/reference.foundations.symbol.symbol.details.toml}}"
 
 [reference.foundations.symbol.symbol.oneliner]
 en = "A Unicode symbol."
+zh = "一个 Unicode 符号。"
 
 [reference.foundations.symbol.symbol.symbol.details]
 en = "Create a custom symbol with modifiers.\n\n"
+zh = "创建带有修饰符的自定义符号。\n\n"
 
 [reference.foundations.symbol.symbol.symbol.oneliner]
 en = "Create a custom symbol with modifiers."
+zh = "创建带有修饰符的自定义符号。"
 
 [reference.foundations.symbol.symbol.symbol.title]
 en = "Construct"
+zh = "构造"
 
 [reference.foundations.symbol.symbol.symbol.variants.details]
 en = "The variants of the symbol.\n\nCan be a just a string consisting of a single character for the\nmodifierless variant or an array with two strings specifying the modifiers\nand the symbol. Individual modifiers should be separated by dots. When\ndisplaying a symbol, Typst selects the first from the variants that have\nall attached modifiers and the minimum number of other modifiers."
@@ -3947,108 +3959,141 @@ zh = "构造"
 
 [reference.html.description]
 en = "Documentation for functions related to HTML in Typst."
+zh = "Typst 中与 HTML 相关的函数文档。"
 
 [reference.html.elem.description]
 en = "Documentation for the `elem` function."
+zh = "`elem` 函数的文档。"
 
 [reference.html.elem.elem.attrs.details]
 en = "The element's HTML attributes."
+zh = "元素的 HTML 属性。"
 
 [reference.html.elem.elem.body.details]
 en = "The contents of the HTML element.\n\nThe body can be arbitrary Typst content."
+zh = "HTML 元素的内容。\n\n主体可以是任意 Typst 内容。"
 
 [reference.html.elem.elem.details]
 en = "An HTML element that can contain Typst content.\n\nTypst's HTML export automatically generates the appropriate tags for most\nelements. However, sometimes, it is desirable to retain more control. For\nexample, when using Typst to generate your blog, you could use this function\nto wrap each article in an `<article>` tag.\n\nTypst is aware of what is valid HTML. A tag and its attributes must form\nsyntactically valid HTML. Some tags, like `meta` do not accept content.\nHence, you must not provide a body for them. We may add more checks in the\nfuture, so be sure that you are generating valid HTML when using this\nfunction.\n\nNormally, Typst will generate `html`, `head`, and `body` tags for you. If\nyou instead create them with this function, Typst will omit its own tags.\n\n```typ\n#html.elem(\"div\", attrs: (style: \"background: aqua\"))[\n  A div with _Typst content_ inside!\n]\n```"
+zh = "可以包含 Typst 内容的 HTML 元素。\n\nTypst 的 HTML 导出功能会自动为大多数元素生成适当的标签。但是，有时希望保持更多控制。例如，当使用 Typst 生成博客时，您可以使用此「函数」（[function](#x-term-function)）将每篇文章包装在 `<article>` 标签中。\n\nTypst 知道什么是有效的 HTML。标签及其属性必须形成语法上有效的 HTML。一些标签，如 `meta`，不接受内容。因此，您不能为它们提供主体。我们可能会在将来添加更多检查，所以在使用此函数时请确保您正在生成有效的 HTML。\n\n通常，Typst 会为您生成 `html`、`head` 和 `body` 标签。如果您使用此函数创建它们，Typst 将省略其自己的标签。\n\n```typ\n#html.elem(\"div\", attrs: (style: \"background: aqua\"))[\n  A div with _Typst content_ inside!\n]\n```"
 
 [reference.html.elem.elem.oneliner]
 en = "An HTML element that can contain Typst content."
+zh = "可以包含 Typst 内容的 HTML 元素。"
 
 [reference.html.elem.elem.tag.details]
 en = "The element's tag."
+zh = "元素的标签。"
 
 [reference.html.elem.elem.title]
 en = "Elem"
+zh = "元素"
 
 [reference.html.elem.oneliner]
 en = "An HTML element that can contain Typst content."
+zh = "可以包含 Typst 内容的 HTML 元素。"
 
 [reference.html.elem.title]
 en = "Elem"
+zh = "元素"
 
 [reference.html.frame.description]
 en = "Documentation for the `frame` function."
+zh = "`frame` 函数的文档。"
 
 [reference.html.frame.frame.body.details]
 en = "The content that shall be laid out."
+zh = "应该布局的内容。"
 
 [reference.html.frame.frame.details]
 en = "An element that lays out its content as an inline SVG.\n\nSometimes, converting Typst content to HTML is not desirable. This can be\nthe case for plots and other content that relies on positioning and styling\nto convey its message.\n\nThis function allows you to use the Typst layout engine that would also be\nused for PDF, SVG, and PNG export to render a part of your document exactly\nhow it would appear when exported in one of these formats. It embeds the\ncontent as an inline SVG."
+zh = "将其内容作为内联 SVG 布局的元素。\n\n有时，将 Typst 内容转换为 HTML 是不合适的。这可能是图表和其他依赖定位和样式传达信息的内容的情况。\n\n此「函数」（[function](#x-term-function)）允许您使用也将用于 PDF、SVG 和 PNG 导出的 Typst 布局引擎来呈现文档的一部分，使其完全像在这些格式之一中导出时的样子。它将内容嵌入为内联 SVG。"
 
 [reference.html.frame.frame.oneliner]
 en = "An element that lays out its content as an inline SVG."
+zh = "将其内容作为内联 SVG 布局的元素。"
 
 [reference.html.frame.frame.title]
 en = "Frame"
+zh = "框架"
 
 [reference.html.frame.oneliner]
 en = "An element that lays out its content as an inline SVG."
+zh = "将其内容作为内联 SVG 布局的元素。"
 
 [reference.html.frame.title]
 en = "Frame"
+zh = "框架"
 
 [reference.html.html.details]
 en = "{{typst-docs/reference.html.html.details.toml}}"
 
 [reference.html.html.title]
 en = "HTML"
+zh = "HTML"
 
 [reference.html.title]
 en = "HTML"
+zh = "HTML"
 
 [reference.introspection.counter.counter.at.details]
 en = "Retrieves the value of the counter at the given location. Always returns\nan array of integers, even if the counter has just one number.\n\nThe `selector` must match exactly one element in the document. The most\nuseful kinds of selectors for this are [labels]($label) and\n[locations]($location)."
+zh = "检索给定位置的计数器值。总是返回「整数」（[integer](#x-term-integer)）「数组」（[array](#x-term-array)），即使计数器只有一个数字。\n\n`selector` 必须在文档中完全匹配一个元素。最有用的选择器类型是 [标签]($label) 和 [位置]($location)。"
 
 [reference.introspection.counter.counter.at.oneliner]
 en = "Retrieves the value of the counter at the given location. Always returns"
+zh = "检索给定位置的计数器值。"
 
 [reference.introspection.counter.counter.at.selector.details]
 en = "The place at which the counter's value should be retrieved."
+zh = "应该检索计数器值的位置。"
 
 [reference.introspection.counter.counter.at.title]
 en = "At"
+zh = "在位置"
 
 [reference.introspection.counter.counter.counter.details]
 en = "Create a new counter identified by a key."
+zh = "创建由键标识的新计数器。"
 
 [reference.introspection.counter.counter.counter.key.details]
 en = "The key that identifies this counter.\n\n- If it is a string, creates a custom counter that is only affected\n  by manual updates,\n- If it is the [`page`] function, counts through pages,\n- If it is a [selector], counts through elements that matches with the\n  selector. For example,\n  - provide an element function: counts elements of that type,\n  - provide a [`{<label>}`]($label): counts elements with that label."
+zh = "标识此计数器的键。\n\n- 如果是「字符串」（[string](#x-term-string)），创建只受手动更新影响的自定义计数器，\n- 如果是 [`page`] 函数，则计算页面数，\n- 如果是选择器，则计算与选择器匹配的元素。例如，\n  - 提供元素函数：计算该类型的元素，\n  - 提供 [`{<label>}`]($label)：计算具有该标签的元素。"
 
 [reference.introspection.counter.counter.counter.oneliner]
 en = "Create a new counter identified by a key."
+zh = "创建由键标识的新计数器。"
 
 [reference.introspection.counter.counter.counter.title]
 en = "Construct"
+zh = "构造"
 
 [reference.introspection.counter.counter.details]
 en = "{{typst-docs/reference.introspection.counter.counter.details.toml}}"
 
 [reference.introspection.counter.counter.display.both.details]
 en = "If enabled, displays the current and final top-level count together.\nBoth can be styled through a single numbering pattern. This is used\nby the page numbering property to display the current and total\nnumber of pages when a pattern like `{\"1 / 1\"}` is given."
+zh = "如果启用，将当前和最终顶级计数一起显示。\n两者都可以通过单个编号模式设置样式。这用于\n页面编号属性，当给定像 `{\"1 / 1\"}` 这样的模式时显示当前和总页数。"
 
 [reference.introspection.counter.counter.display.details]
 en = "Displays the current value of the counter with a numbering and returns\nthe formatted output."
+zh = "显示计数器的当前值及其编号，并返回格式化的输出。"
 
 [reference.introspection.counter.counter.display.numbering.details]
 en = "A [numbering pattern or a function]($numbering), which specifies how\nto display the counter. If given a function, that function receives\neach number of the counter as a separate argument. If the amount of\nnumbers varies, e.g. for the heading argument, you can use an\n[argument sink]($arguments).\n\nIf this is omitted or set to `{auto}`, displays the counter with the\nnumbering style for the counted element or with the pattern\n`{\"1.1\"}` if no such style exists."
+zh = "[编号模式或函数]($numbering)，指定如何显示计数器。如果给定「函数」（[function](#x-term-function)），该函数会将计数器的每个数字作为单独的「参数」（[parameter](#x-term-parameter)）接收。如果数字数量变化，例如对于标题参数，您可以使用 [参数汇总]($arguments)。\n\n如果省略或设置为 `{auto}`，则使用被计数元素的编号样式显示计数器，如果不存在此样式，则使用模式 `{\"1.1\"}`。"
 
 [reference.introspection.counter.counter.display.oneliner]
 en = "Displays the current value of the counter with a numbering and returns"
+zh = "显示计数器的当前值及其编号。"
 
 [reference.introspection.counter.counter.display.title]
 en = "Display"
+zh = "显示"
 
 [reference.introspection.counter.counter.final.details]
 en = "Retrieves the value of the counter at the end of the document. Always\nreturns an array of integers, even if the counter has just one number."
+zh = "检索文档末尾的计数器值。总是返回「整数」（[integer](#x-term-integer)）「数组」（[array](#x-term-array)），即使计数器只有一个数字。"
 
 [reference.introspection.counter.counter.final.oneliner]
 en = "Retrieves the value of the counter at the end of the document. Always"
