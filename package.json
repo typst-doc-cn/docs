@@ -10,6 +10,7 @@
     "validate": "node ./scripts/main.js"
   },
   "dependencies": {
-    "js-toml": "^1.0.2"
+    "js-toml": "^1.0.2",
+    "toml": "^3.0.0"
   }
 }
