@@ -1126,11 +1126,11 @@ zh = "数组"
 
 [reference.foundations.array.array.to-dict.details]
 en = "Converts an array of pairs into a dictionary.\nThe first value of each pair is the key, the second the value.\n\nIf the same key occurs multiple times, the last value is selected.\n\n"
-zh = "将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。\n每对的第一个值是键，第二个是值。\n\n如果同一个键出现多次，则选择最后一个值。\n\n"
+zh = "将每一项都是「键值对」（[pair](#x-term-pair)）的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。\n每个键值对的第一个值是键，第二个是值。\n\n如果同一个键出现多次，则选择最后一个值。\n\n"
 
 [reference.foundations.array.array.to-dict.oneliner]
 en = "Converts an array of pairs into a dictionary."
-zh = "将每一项都是键值对的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。"
+zh = "将每一项都是「键值对」（[pair](#x-term-pair)）的「数组」（[array](#x-term-array)）转换为「字典」（[dictionary](#x-term-dictionary)）。"
 
 [reference.foundations.array.array.to-dict.title]
 en = "To Dict"
@@ -2453,15 +2453,15 @@ zh = "应转换为字典的值。"
 
 [reference.foundations.dictionary.dictionary.insert.details]
 en = "Inserts a new pair into the dictionary. If the dictionary already\ncontains this key, the value is updated."
-zh = "将新的键值对插入「字典」（[dictionary](#x-term-dictionary)）。如果字典已包含此键，则更新值。"
+zh = "将新的「键值对」（[pair](#x-term-pair)）插入「字典」（[dictionary](#x-term-dictionary)）。如果字典已包含此键，则更新值。"
 
 [reference.foundations.dictionary.dictionary.insert.key.details]
 en = "The key of the pair that should be inserted."
-zh = "应插入的键值对的键。"
+zh = "应插入的「键值对」（[pair](#x-term-pair)）的键。"
 
 [reference.foundations.dictionary.dictionary.insert.oneliner]
 en = "Inserts a new pair into the dictionary. If the dictionary already"
-zh = "将新的键值对插入「字典」（[dictionary](#x-term-dictionary)）。如果字典已"
+zh = "将新的「键值对」（[pair](#x-term-pair)）插入「字典」（[dictionary](#x-term-dictionary)）。如果字典已"
 
 [reference.foundations.dictionary.dictionary.insert.title]
 en = "Insert"
@@ -2469,7 +2469,7 @@ zh = "插入"
 
 [reference.foundations.dictionary.dictionary.insert.value.details]
 en = "The value of the pair that should be inserted."
-zh = "应插入的键值对的值。"
+zh = "应插入的「键值对」（[pair](#x-term-pair)）的值。"
 
 [reference.foundations.dictionary.dictionary.keys.details]
 en = "Returns the keys of the dictionary as an array in insertion order."
@@ -2485,11 +2485,11 @@ zh = "键"
 
 [reference.foundations.dictionary.dictionary.len.details]
 en = "The number of pairs in the dictionary."
-zh = "「字典」（[dictionary](#x-term-dictionary)）中键值对的数量。"
+zh = "「字典」（[dictionary](#x-term-dictionary)）中「键值对」（[pair](#x-term-pair)）的数量。"
 
 [reference.foundations.dictionary.dictionary.len.oneliner]
 en = "The number of pairs in the dictionary."
-zh = "「字典」（[dictionary](#x-term-dictionary)）中键值对的数量。"
+zh = "「字典」（[dictionary](#x-term-dictionary)）中「键值对」（[pair](#x-term-pair)）的数量。"
 
 [reference.foundations.dictionary.dictionary.len.title]
 en = "Length"
@@ -2501,11 +2501,11 @@ zh = "从「字符串」（[string](#x-term-string)）键到值的映射。"
 
 [reference.foundations.dictionary.dictionary.pairs.details]
 en = "Returns the keys and values of the dictionary as an array of pairs. Each\npair is represented as an array of length two."
-zh = "将「字典」（[dictionary](#x-term-dictionary)）的键和值作为键值对「数组」（[array](#x-term-array)）返回。每个键值对表示为「长度」（[length](#x-term-length)）为 2 的数组。"
+zh = "将「字典」（[dictionary](#x-term-dictionary)）的键和值作为「键值对」（[pair](#x-term-pair)）「数组」（[array](#x-term-array)）返回。每个键值对表示为「长度」（[length](#x-term-length)）为 2 的数组。"
 
 [reference.foundations.dictionary.dictionary.pairs.oneliner]
 en = "Returns the keys and values of the dictionary as an array of pairs. Each"
-zh = "将「字典」（[dictionary](#x-term-dictionary)）的键和值作为键值对「数组」（[array](#x-term-array)）返回。每个"
+zh = "将「字典」（[dictionary](#x-term-dictionary)）的键和值作为「键值对」（[pair](#x-term-pair)）「数组」（[array](#x-term-array)）返回。每个"
 
 [reference.foundations.dictionary.dictionary.pairs.title]
 en = "Pairs"
@@ -2517,15 +2517,15 @@ zh = "如果键不存在，则返回的默认值。"
 
 [reference.foundations.dictionary.dictionary.remove.details]
 en = "Removes a pair from the dictionary by key and return the value."
-zh = "通过键从「字典」（[dictionary](#x-term-dictionary)）中删除键值对并返回值。"
+zh = "通过键从「字典」（[dictionary](#x-term-dictionary)）中删除「键值对」（[pair](#x-term-pair)）并返回值。"
 
 [reference.foundations.dictionary.dictionary.remove.key.details]
 en = "The key of the pair to remove."
-zh = "要删除的键值对的键。"
+zh = "要删除的「键值对」（[pair](#x-term-pair)）的键。"
 
 [reference.foundations.dictionary.dictionary.remove.oneliner]
 en = "Removes a pair from the dictionary by key and return the value."
-zh = "通过键从「字典」（[dictionary](#x-term-dictionary)）中删除键值对并返回值。"
+zh = "通过键从「字典」（[dictionary](#x-term-dictionary)）中删除「键值对」（[pair](#x-term-pair)）并返回值。"
 
 [reference.foundations.dictionary.dictionary.remove.title]
 en = "Remove"
@@ -9551,7 +9551,7 @@ zh = "亮度"
 
 [reference.visualize.color.color.mix.colors.details]
 en = "The colors, optionally with weights, specified as a pair (array of\nlength two) of color and weight (float or ratio).\n\nThe weights do not need to add to `{100%}`, they are relative to the\nsum of all weights."
-zh = "颜色和权重，可选。权重不需要加到 `{100%}`，它们相对于所有权重的总和。"
+zh = "颜色，可选择带权重，指定为颜色和权重（浮点数或比率）的「对」（[pair](#x-term-pair)）（长度为 2 的「数组」（[array](#x-term-array)））。\n\n权重不需要加到 `{100%}`，它们相对于所有权重的总和。"
 
 [reference.visualize.color.color.mix.details]
 en = "Create a color by mixing two or more colors.\n\nIn color spaces with a hue component (hsl, hsv, oklch), only two colors\ncan be mixed at once. Mixing more than two colors in such a space will\nresult in an error!\n\n"
