@@ -142,7 +142,7 @@ All translations will then be loaded from the `typst-docs/guides.guide-for-latex
 
 ### 5. Use Terms Reference File
 
-- `docs/terms.toml` file contains the terms used in the documentation, for future reference.
+- `docs/terms.toml` file contains the terms used in the documentation, for future reference. If the reviewer or issuer gives the reference about translation, you should also add the reference to the `docs/terms.toml` file to help understanding the translation.
 - When translating technical terms, include the original term with proper linking.
 - Use the format: `「translated_term」（[original_term](#x-term-original_term)）`
 
