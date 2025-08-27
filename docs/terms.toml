@@ -71,3 +71,8 @@ description = "A unit of angular measure"
 en = "ordinal"
 zh = "序数"
 description = "A number indicating position or order in a sequence"
+
+[delimiter]
+en = "delimiter"
+zh = "分隔符"
+description = "A character or symbol used to separate or mark boundaries between elements"
