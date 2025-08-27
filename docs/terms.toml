@@ -92,3 +92,8 @@ en = "spreadable"
 zh = "可展开"
 description = "Arguments that can be spread/expanded in function calls"
 
+[named]
+en = "named"
+zh = "通过名称传入的"
+description = "Related to arguments or parameters passed by name rather than by position. When combined with 'argument' or 'parameter', translates to '命名参数'."
+
