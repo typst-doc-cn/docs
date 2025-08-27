@@ -1,7 +1,7 @@
 name: Review Translation
 description: Review the translation of the documentation.
 assignees:
-  - @copilot
+  - "@copilot"
 labels:
   - review
   - translation
@@ -17,5 +17,3 @@ body:
       - again, please following the copilot instructions, including but not limited to:
         - only the first term in a translation text is annotated.
         - also add or update the `delimiter` term in the `docs/terms.toml` file.
-
-
