@@ -554,7 +554,6 @@ zh = "在"
 
 [reference.foundations.arguments.arguments.details]
 en = "{{typst-docs/reference.foundations.arguments.arguments.details.toml}}"
-zh = "捕获函数的参数。\n\n# 参数接收器\n像内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数接收器_，它将所有多余的参数收集为 `..sink`。生成的 `sink` 值是 `arguments` 类型。它提供了访问位置参数和命名参数的方法。\n\n```example\n#let format(title, ..authors) = {\n  let by = authors\n    .pos()\n    .join(\", \", last: \" and \")\n\n  [*#title* \\ _Written by #by;_]\n}\n\n#format(\"ArtosFlow\", \"Jane\", \"Joe\")\n```\n\n# 展开\n与参数接收器相反，您可以使用 `..spread` 操作符将参数、数组和「字典」（[dictionary](#x-term-dictionary)）展开到函数调用中：\n\n```example\n#let array = (2, 3, 5)\n#calc.min(..array)\n#let dict = (fill: blue)\n#text(..dict)[Hello]\n```"
 
 [reference.foundations.arguments.arguments.named.details]
 en = "Returns the captured named arguments as a dictionary."
