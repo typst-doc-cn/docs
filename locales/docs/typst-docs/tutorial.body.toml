@@ -7,12 +7,15 @@ format documents in Typst. We will start with everyday tasks and gradually
 introduce more advanced features. This tutorial does not assume prior knowledge
 of Typst, other markup languages, or programming. We do assume that you know how
 to edit a text file."""
+zh = """# 教程
+欢迎来到 Typst 的教程！在本教程中，您将学习如何在 Typst 中编写和格式化文档。我们将从日常任务开始，逐步引入更多高级功能。本教程不假设您对 Typst、其他标记语言或编程有任何先验知识。我们假设您知道如何编辑文本文件。"""
 
 [[main]]
 en = """The best way to start is to sign up to the Typst app for free and follow along
 with the steps below. The app gives you instant preview, syntax highlighting and
 helpful autocompletions. Alternatively, you can follow along in your local text
 editor with the [open-source CLI](https://github.com/typst/typst)."""
+zh = """最好的入门方式是注册 Typst 应用并按照以下步骤操作。应用提供即时预览、语法高亮和有用的自动补全。或者，您可以在本地文本编辑器中使用 [开源 CLI](https://github.com/typst/typst) 进行操作。"""
 
 [[main]]
 en = """## When to use Typst { #when-typst }
@@ -20,6 +23,7 @@ Before we get started, let's check what Typst is and when to use it. Typst is a
 markup language for typesetting documents. It is designed to be easy to learn,
 fast, and versatile. Typst takes text files with markup in them and outputs
 PDFs."""
+zh = """Typst 是一个很好的选择，用于编写任何长篇文本，如论文、文章、科学论文、书籍、报告和作业。此外，Typst 非常适合包含数学符号的任何文档，如论文。此外，由于其强大的样式和自动化功能，它也是任何共享相同样式的文档集（如系列书籍）的绝佳选择。"""
 
 [[main]]
 en = """Typst is a good choice for writing any long form text such as essays, articles,
@@ -33,6 +37,8 @@ share a common style, such as a book series."""
 en = """## What you will learn { #learnings }
 This tutorial has four chapters. Each chapter builds on the previous one. Here
 is what you will learn in each of them:"""
+zh = """## 您将学习什么 { #learnings }
+本教程有四个章节。每个章节都建立在前面章节的基础上。以下是您将在每个章节中学到的内容："""
 
 [[main]]
 en = """1. [Writing in Typst:]($tutorial/writing-in-typst) Learn how to write text and
@@ -44,6 +50,11 @@ en = """1. [Writing in Typst:]($tutorial/writing-in-typst) Learn how to write te
    list and run-in headings.
 4. [Making a Template:]($tutorial/making-a-template) Build a reusable template
    from the paper you created in the previous chapter."""
+zh = """1. [在 Typst 中写作]($tutorial/writing-in-typst) 学习如何编写文本、插入图像、方程式和其他元素。
+2. [格式化]($tutorial/formatting) 学习如何调整文档的格式，包括字体大小、标题样式等。
+3. [高级样式]($tutorial/advanced-styling) 创建一个复杂的页面布局，包括作者列表和跑题标题。
+4. [制作模板]($tutorial/making-a-template) 构建一个可重用的模板，从您在上一章中创建的论文中创建。"""
 
 [[main]]
 en = """We hope you'll enjoy Typst!"""
+zh = """我们希望您会喜欢 Typst！"""

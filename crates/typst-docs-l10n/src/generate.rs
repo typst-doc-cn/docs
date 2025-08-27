@@ -166,7 +166,7 @@ impl<'a> GenContext<'a> {
         let k = format!("{k}.{}", category.name);
 
         let title = self.get_translation(&format!("{k}.title"), &category.title);
-        let heading = TypstContent::Typ(format!("== {title}"));
+        let heading = TypstContent::Typ(make_heading(title)?);
 
         let details_k = format!("{k}.details");
         let details = self.generate_html(&category.details, &details_k)?;
@@ -179,7 +179,7 @@ impl<'a> GenContext<'a> {
     fn generate_func(&mut self, func: &FuncMdModel, k: &str) -> anyhow::Result<TypstContent> {
         let k = format!("{k}.{}", func.name);
         let title = self.get_translation(&format!("{k}.title"), &func.title);
-        let heading = TypstContent::Typ(format!("== {title}"));
+        let heading = TypstContent::Typ(make_heading(title)?);
 
         let oneliner_k = format!("{k}.oneliner");
         let oneliner = self.get_translation(&oneliner_k, &func.oneliner);
@@ -197,7 +197,7 @@ impl<'a> GenContext<'a> {
     fn generate_group(&mut self, group: &GroupMdModel, k: &str) -> anyhow::Result<TypstContent> {
         let k = format!("{k}.{}", group.name);
         let title = self.get_translation(&format!("{k}.title"), &group.title);
-        let heading = TypstContent::Typ(format!("== {title}"));
+        let heading = TypstContent::Typ(make_heading(title)?);
 
         let details_k = format!("{k}.details");
         let details = self.generate_html(&group.details, &details_k)?;
@@ -210,7 +210,7 @@ impl<'a> GenContext<'a> {
     fn generate_type(&mut self, type_: &TypeMdModel, k: &str) -> anyhow::Result<TypstContent> {
         let k = format!("{k}.{}", type_.name);
         let title = self.get_translation(&format!("{k}.title"), &type_.title);
-        let heading = TypstContent::Typ(format!("== {title}"));
+        let heading = TypstContent::Typ(make_heading(title)?);
 
         let oneliner_k = format!("{k}.oneliner");
         let oneliner = self.get_translation(&oneliner_k, &type_.oneliner);
@@ -233,7 +233,7 @@ impl<'a> GenContext<'a> {
     ) -> anyhow::Result<TypstContent> {
         let k = format!("{k}.{}", symbols.name);
         let title = self.get_translation(&format!("{k}.title"), &symbols.title);
-        let heading = TypstContent::Typ(format!("== {title}"));
+        let heading = TypstContent::Typ(make_heading(title)?);
 
         let details_k = format!("{k}.details");
         let details = self.generate_html(&symbols.details, &details_k)?;
@@ -295,4 +295,10 @@ impl Writer for String {
     fn push(&mut self, c: char) {
         self.push(c);
     }
+}
+
+/// Makes a heading.
+fn make_heading(title: &str) -> std::io::Result<String> {
+    let t = md_to_typst(title)?;
+    Ok(format!("#heading(depth: 2)[{}]", t.trim()))
 }

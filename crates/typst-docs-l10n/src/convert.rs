@@ -1,6 +1,6 @@
 //! Markdown to Typst conversion.
 
-use pulldown_cmark as md;
+use pulldown_cmark::{self as md, LinkType};
 use typst::diag::StrResult;
 
 use std::io;
@@ -157,7 +157,31 @@ where
             Tag::Emphasis => self.write("#emph["),
             Tag::Strong => self.write("#strong["),
             Tag::Strikethrough => self.write("#strike["),
-            Tag::Link(_link_type, _dest, _title) => self.writer.write_fmt(format_args!("#[")),
+            Tag::Link(LinkType::Inline, dest, _title) => {
+                self.writer
+                    .write_fmt(format_args!("#link({:?})[", dest.as_ref()))?;
+                Ok(())
+            }
+            Tag::Link(
+                LinkType::Reference
+                | LinkType::ReferenceUnknown
+                | LinkType::Collapsed
+                | LinkType::CollapsedUnknown
+                | LinkType::Shortcut
+                | LinkType::ShortcutUnknown
+                | LinkType::Autolink,
+                dest,
+                _title,
+            ) => {
+                self.writer
+                    .write_fmt(format_args!("#link({:?})[", dest.as_ref()))?;
+                Ok(())
+            }
+            Tag::Link(LinkType::Email, dest, _title) => {
+                let mailto = format!("mailto:{}", dest.as_ref());
+                self.writer.write_fmt(format_args!("#link({mailto:?})["))?;
+                Ok(())
+            }
             Tag::Image(_link_type, _dest, _title) => Ok(()),
             // Tag::Link(_link_type, dest, _title) => self
             //     .writer
@@ -502,6 +526,14 @@ fn main() {
 ``````
 #heading(depth: 2)[Another Heading];"##;
 
+        let result = md_to_typst(input).unwrap();
+        assert_eq!(result, expected);
+
+        let input = r"「内联盒子」（[box](#x-term-box)）";
+        let expected = r##"
+
+「内联盒子」（#link("#x-term-box")[box];）
+"##;
         let result = md_to_typst(input).unwrap();
         assert_eq!(result, expected);
     }

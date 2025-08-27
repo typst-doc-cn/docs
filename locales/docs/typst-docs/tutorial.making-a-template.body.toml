@@ -9,12 +9,15 @@ follow-up article for the same conference. This time, you want to take the style
 you created in the previous chapter and turn it into a reusable template. In
 this chapter you will learn how to create a template that you and your team can
 use with just one show rule. Let's get started!"""
+zh = """# 创建模板
+在本教程的前三章中，您学习了如何在 Typst 中编写文档、应用基本样式以及深入定制其外观以符合出版商的风格指南。由于您在上一章中撰写的论文取得了巨大成功，您已被要求撰写同一会议的续篇。这一次，您想将您在前一章中创建的风格转化为可重用的模板。在本章中，您将学习如何创建一个模板，您和您的团队可以仅使用一个显示规则来使用它。让我们开始吧！"""
 
 [[main]]
 en = """## A toy template { #toy-template }
 In Typst, templates are functions in which you can wrap your whole document. To
 learn how to do that, let's first review how to write your very own functions.
 They can do anything you want them to, so why not go a bit crazy?"""
+zh = """在 Typst 中，模板是您可以包装整个文档的函数。为了学习如何做到这一点，让我们首先回顾如何编写您自己的函数。它们可以做任何您想让它们做的事情，所以为什么不疯狂一点呢？"""
 
 [[main]]
 en = """```example
@@ -22,11 +25,13 @@ en = """```example
 
 You are #amazed[beautiful]!
 ```"""
+zh = """这个函数接受一个参数，`term`，并返回一个内容块，其中包含一个围绕 `term` 的星号。我们还将其包装在一个框中，这样我们惊叹的术语就不会被行中断开。"""
 
 [[main]]
 en = """This function takes a single argument, `term`, and returns a content block with
 the `term` surrounded by sparkles. We also put the whole thing in a box so that
 the term we are amazed by cannot be separated from its sparkles by a line break."""
+zh = """许多 Typst 附带的功能都有可选的命名参数。我们的函数也可以有它们。让我们添加一个参数，让我们的函数选择文本的颜色。我们需要提供一个默认颜色，以防参数未给出。"""
 
 [[main]]
 en = """Many functions that come with Typst have optional named parameters. Our
@@ -53,6 +58,7 @@ show keyword and then provide a function. This function is given the rest of the
 document as a parameter. The function can then do anything with this content.
 Since the `amazed` function can be called with a single content argument, we can
 just pass it by name to the show rule. Let's try it:"""
+zh = """模板现在通过像 `amazed` 这样的自定义函数包装整个文档。但是将整个文档包装在一个巨大的函数调用中会很麻烦！相反，我们可以使用 "everything" 显示规则以更简洁的代码实现相同的效果。要编写这样的显示规则，在显示关键字后面直接放置一个冒号，然后提供一个函数。这个函数将文档的其余部分作为参数。然后，该函数可以对这些内容做任何事情。由于 `amazed` 函数可以只用一个内容参数调用，我们可以直接按名称将其传递给显示规则。让我们试试："""
 
 [[main]]
 en = """```example
@@ -71,12 +77,14 @@ en = """Our whole document will now be passed to the `amazed` function, as if we
 it around it. Of course, this is not especially useful with this particular
 function, but when combined with set rules and named arguments, it can be very
 powerful."""
+zh = """我们的整个文档现在将传递给 `amazed` 函数，就像我们包装它一样。当然，这对于这个特定的函数来说并不是特别有用，但当与设置规则和命名参数结合使用时，它可以非常强大。"""
 
 [[main]]
 en = """## Embedding set and show rules { #set-and-show-rules }
 To apply some set and show rules to our template, we can use `set` and `show`
 within a content block in our function and then insert the document into
 that content block."""
+zh = """要为我们的模板应用一些设置和显示规则，我们可以在函数内的内容块中使用 `set` 和 `show`。然后，我们将文档插入到该内容块中。"""
 
 [[main]]
 en = """```example
@@ -98,6 +106,7 @@ whole document to the `template` function, the text set rule and string show
 rule in our template will apply to the whole document. Let's use this knowledge
 to create a template that reproduces the body style of the paper we wrote in the
 previous chapter."""
+zh = """就像我们在上一章中已经发现的，设置规则将应用于它们内容块中的所有内容。由于整个显示规则将我们的整个文档传递给 `template` 函数，我们的模板中的文本设置规则和字符串显示规则将应用于整个文档。让我们使用这个知识来创建一个模板，复制我们在上一章中撰写的论文的正文样式。"""
 
 [[main]]
 en = """```example
@@ -167,16 +176,19 @@ en = """```example
 [[main]]
 en = """We copy-pasted most of that code from the previous chapter. The two differences
 are this:"""
+zh = """我们复制了上一章中的大部分代码。两个区别是："""
 
 [[main]]
 en = """1. We wrapped everything in the function `conf` using an everything show rule.
    The function applies a few set and show rules and echoes the content it has
    been passed at the end."""
+zh = """1. 我们使用一个 "everything" 显示规则包装了 `conf` 函数中的所有内容。该函数应用了一些设置和显示规则，并在最后回显传递给它的内容。"""
 
 [[main]]
 en = """2. Moreover, we used a curly-braced code block instead of a content block. This
    way, we don't need to prefix all set rules and function calls with a `#`. In
    exchange, we cannot write markup directly in the code block anymore."""
+zh = """2. 此外，我们使用了一个花括号包围的代码块，而不是一个内容块。这样，我们不需要在所有设置规则和函数调用之前添加 `#`。作为交换，我们现在不能在代码块中直接编写标记。"""
 
 [[main]]
 en = """Also note where the title comes from: We previously had it inside of a variable.
@@ -186,6 +198,7 @@ away) to the everything show rule. We did that because the `conf` function
 expects two positional arguments, the title and the body, but the show rule will
 only pass the body. Therefore, we add a new function definition that allows us
 to set a paper title and use the single parameter from the show rule."""
+zh = """还要注意标题的来源：我们之前将其放在一个变量中。现在，我们将其作为模板函数的第一个参数接收。为此，我们将一个闭包（即一个没有名称的函数，立即使用）传递给 "everything" 显示规则。我们这样做是因为 `conf` 函数期望两个位置参数，标题和正文，但显示规则只会传递正文。因此，我们添加了一个新的函数定义，允许我们设置论文标题并使用来自显示规则的单个参数。"""
 
 [[main]]
 en = """## Templates with named arguments { #named-arguments }
@@ -194,6 +207,7 @@ these things to our template. In addition to the title, we want our template to
 accept a list of authors with their affiliations and the paper's abstract. To
 keep things readable, we'll add those as named arguments. In the end, we want it
 to work like this:"""
+zh = """我们的论文在上一章有一个标题和一个作者列表。让我们将这些添加到我们的模板中。除了标题，我们还希望我们的模板接受一个包含作者及其隶属关系的列表以及论文的摘要。为了保持可读性，我们将这些作为命名参数添加。最后，我们希望它像这样工作："""
 
 [[main]]
 en = """```typ
@@ -225,6 +239,7 @@ We also add the named `authors` and `abstract` parameters with empty defaults.
 Next, we copy the code that generates title, abstract and authors from the
 previous chapter into the template, replacing the fixed details with the
 parameters."""
+zh = """我们添加了 `title` 参数的默认值。这样，我们可以在不指定标题的情况下调用模板。我们还添加了命名参数 `authors` 和 `abstract`，并提供了空默认值。接下来，我们将上一章生成标题、摘要和作者的代码复制到模板中，用参数替换固定细节。"""
 
 [[main]]
 en = """The new `authors` parameter expects an [array] of [dictionaries]($dictionary)
@@ -238,6 +253,7 @@ will be inserted instead. For this purpose, we have also added a `row-gutter`
 parameter to the `grid` function. Otherwise, the rows would be too close
 together. To extract the details about the authors from the dictionary, we use
 the [field access syntax]($scripting/#fields)."""
+zh = """新的 `authors` 参数期望一个 [数组]($array) 的 [字典]($dictionary)，其中包含 `name`、`affiliation` 和 `email` 键。因为我们可能有任意数量的作者，我们动态确定是否需要一个、两个或三个作者列表列。首先，我们使用 `authors` 数组上的 [`.len()`]($array.len) 方法确定作者的数量。然后，我们将列数设置为这个计数和三的最小值，这样我们就不会创建超过三列。如果有超过三个作者，将插入一个新行。为此，我们还添加了一个 `row-gutter` 参数到 `grid` 函数。否则，行会太近。要从字典中提取作者的详细信息，我们使用 [字段访问语法]($scripting/#fields)。"""
 
 [[main]]
 en = """We still have to provide an argument to the grid for each author: Here is where
@@ -248,9 +264,11 @@ content values. We've now got one array of values that we'd like to use as
 multiple arguments for the grid. We can do that by using the
 [`spread` operator]($arguments). It takes an array and applies each of its items
 as a separate argument to the function."""
+zh = """网格的 [`map` 方法]($array.map) 在这里派上了用场。它接受一个函数作为参数，该函数在数组的每个项目上被调用。我们传递一个函数，该函数为每个作者格式化详细信息并返回一个包含内容值的新数组。我们现在有一个我们希望用作多个参数的值数组。我们可以通过使用 [传播操作符]($arguments) 来做到这一点。它接受一个数组并将其每个项目作为单独的参数应用到函数。"""
 
 [[main]]
 en = """The resulting template function looks like this:"""
+zh = """生成的模板函数看起来像这样："""
 
 [[main]]
 en = """```typ
@@ -298,6 +316,7 @@ clicking the plus button and name it `conf.typ`. Move the `conf` function
 definition inside of that new file. Now you can access it from your main file by
 adding an import before the show rule. Specify the path of the file between the
 `{import}` keyword and a colon, then name the function that you want to import."""
+zh = """大多数时候，模板在不同的文件中指定，然后导入到文档中。这样，您编写的主要文件保持整洁，您的模板可以轻松重用。通过点击加号按钮创建一个新文本文件，并将其命名为 `conf.typ`。将 `conf` 函数定义移动到该新文件中。现在，您可以通过在显示规则之前添加一个导入来从您的主要文件中访问它。在 `{import}` 关键字和冒号之间指定文件的路径，然后命名您想要导入的函数。"""
 
 [[main]]
 en = """Another thing that you can do to make applying templates just a bit more elegant
@@ -306,6 +325,7 @@ the named arguments. This way, you can avoid spelling out a closure and
 appending the content argument at the bottom of your template list. Templates on
 [Typst Universe]($universe) are designed to work with this style of function
 call."""
+zh = """您还可以通过使用函数上的 [`.with`]($function.with) 方法为所有命名参数预填充内容来使应用模板稍微更优雅。这样，您可以避免编写闭包并附加内容参数到模板列表的底部。[Typst 宇宙]($universe) 中的模板旨在与这种类型的函数调用一起使用。"""
 
 [[main]]
 en = """```example:single
@@ -414,6 +434,7 @@ en = """We have now converted the conference paper into a reusable template for 
 conference! Why not share it in the [Forum](https://forum.typst.app/) or on
 [Typst's Discord server](https://discord.gg/2uDybryKPe) so that others can use
 it too?"""
+zh = """我们已经将会议论文转换为该会议的可重用模板！为什么不在 [论坛](https://forum.typst.app/) 或 [Typst 的 Discord 服务器](https://discord.gg/2uDybryKPe) 上分享它，以便其他人也可以使用它？"""
 
 [[main]]
 en = """## Review
@@ -421,6 +442,8 @@ Congratulations, you have completed Typst's Tutorial! In this section, you have
 learned how to define your own functions and how to create and apply templates
 that define reusable document styles. You've made it far and learned a lot. You
 can now use Typst to write your own documents and share them with others."""
+zh = """# 总结
+恭喜，您已经完成了 Typst 教程！在本节中，您学习了如何定义自己的函数以及如何创建和应用定义可重用文档样式的模板。您已经走得很远并学到了很多。您现在可以使用 Typst 编写自己的文档并与他人分享。"""
 
 [[main]]
 en = """We are still a super young project and are looking for feedback. If you have any
@@ -429,6 +452,8 @@ in the [Forum](https://forum.typst.app/),
 on our [Discord server](https://discord.gg/2uDybryKPe),
 on [GitHub](https://github.com/typst/typst/),
 or via the web app's feedback form (always available in the Help menu)."""
+zh = """我们仍然是一个非常年轻的项目，正在寻找反馈。如果您有任何问题、建议或您发现了一个错误，请在 [论坛](https://forum.typst.app/)、[Discord 服务器](https://discord.gg/2uDybryKPe)、[GitHub](https://github.com/typst/typst/) 或通过网络应用程序的反馈表单（始终在帮助菜单中可用）告诉我们。"""
 
 [[main]]
 en = """So what are you waiting for? [Sign up](https://typst.app) and write something!"""
+zh = """那么，您还在等什么？[注册](https://typst.app)并编写一些东西！"""

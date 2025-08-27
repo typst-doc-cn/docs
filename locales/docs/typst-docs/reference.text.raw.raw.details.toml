@@ -1,13 +1,19 @@
 
 [[main]]
 en = """Raw text with optional syntax highlighting."""
+zh = """原始文本，可选语法高亮。"""
 
 [[main]]
 en = """Displays the text verbatim and in a monospace font. This is typically used
 to embed computer code into your document."""
+zh = """以等宽字体显示文本。通常用于将计算机代码嵌入到文档中。"""
 
 [[main]]
 en = """# Example
+````example
+Adding `rbx` to `rcx` gives
+the desired result."""
+zh = """# 示例
 ````example
 Adding `rbx` to `rcx` gives
 the desired result."""
@@ -56,6 +62,7 @@ also trimmed.
 [[main]]
 en = """You can also construct a [`raw`] element programmatically from a string (and
 provide the language tag via the optional [`lang`]($raw.lang) argument)."""
+zh = """您还可以从字符串构造一个 [`raw`] 元素（并提供语言标签，通过可选的 [`lang`]($raw.lang) 参数）。"""
 
 [[main]]
 en = """```example
@@ -67,12 +74,15 @@ en = """# Syntax
 This function also has dedicated syntax. You can enclose text in 1 or 3+
 backticks (`` ` ``) to make it raw. Two backticks produce empty raw text.
 This works both in markup and code."""
+zh = """# 语法
+此函数也有专门的语法。您可以使用 1 或 3+ 个反引号（`` ` ``）将文本包裹起来，使其成为原始文本。两个反引号产生空原始文本。这在标记和代码中都有效。"""
 
 [[main]]
 en = """When you use three or more backticks, you can additionally specify a
 language tag for syntax highlighting directly after the opening backticks.
 Within raw blocks, everything (except for the language tag, if applicable)
 is rendered as is, in particular, there are no escape sequences."""
+zh = """当您使用三个或更多反引号时，您还可以直接在打开反引号后指定语法高亮语言标签。在原始块中，除了语言标签（如果适用）之外，所有内容都按原样渲染，特别是没有转义序列。"""
 
 [[main]]
 en = """The language tag is an identifier that directly follows the opening
@@ -81,3 +91,4 @@ with something that looks like an identifier, but no syntax highlighting is
 needed, start the text with a single space (which will be trimmed) or use
 the single backtick syntax. If your text should start or end with a
 backtick, put a space before or after it (it will be trimmed)."""
+zh = """语言标签是一个直接跟随打开反引号的标识符，只有当有三个或更多反引号时。如果您的文本以看起来像标识符的东西开头，但不需要语法高亮，请在文本开头使用单个空格（将被修剪）或使用单个反引号语法。如果您的文本应该以反引号开头或结尾，请在它之前或之后放置一个空格（将被修剪）。"""

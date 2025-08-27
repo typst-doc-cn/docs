@@ -6,6 +6,8 @@ However, it still looks very plain. Your teaching assistant does not yet know
 that you are using a new typesetting system, and you want your report to fit in
 with the other student's submissions. In this chapter, we will see how to format
 your report using Typst's styling system."""
+zh = """# 格式化
+到目前为止，您已经编写了一个报告，其中包含一些文本、几个方程式和图像。然而，它看起来仍然非常简单。您的教学助理还不知道您正在使用一种新的排版系统，并且您希望您的报告与其他学生的提交相匹配。在本章中，我们将学习如何使用 Typst 的样式系统来格式化您的报告。"""
 
 [[main]]
 en = """## Set rules
@@ -14,6 +16,8 @@ content (e.g. the [`image`] function) and others that _manipulate_ content that
 they received as arguments (e.g. the [`align`] function). The first impulse you
 might have when you want, for example, to justify the report, could be to look
 for a function that does that and wrap the complete document in it."""
+zh = """## 设置规则
+正如我们在上一章中看到的，Typst 具有 _插入_ 内容（例如 [`image`] 函数）和 _操纵_ 作为参数接收的内容（例如 [`align`] 函数）的函数。当您想要例如对报告进行排版时，您可能会首先想到找到一个执行此操作的函数并将整个文档包装在它里面。"""
 
 [[main]]
 en = """```example
@@ -37,17 +41,20 @@ The answer is that, as passing content to a function is such a common thing to
 do in Typst, there is special syntax for it: Instead of putting the content
 inside of the argument list, you can write it in square brackets directly after
 the normal arguments, saving on punctuation."""
+zh = """等等，难道函数的所有参数不应该放在括号里吗？为什么在括号后面还有一个方括号，里面有内容？答案是，由于将内容传递给函数在 Typst 中如此常见，因此有一种特殊的语法：不是将内容放在参数列表中，您可以直接在正常参数之后编写方括号中的内容，节省标点符号。"""
 
 [[main]]
 en = """As seen above, that works. The [`par`] function justifies all paragraphs within
 it. However, wrapping the document in countless functions and applying styles
 selectively and in-situ can quickly become cumbersome."""
+zh = """如上所示，这有效。[`par`] 函数对其中所有段落进行排版。然而，将文档包装在无数函数中，选择性地应用样式并在原地应用样式很快就会变得非常繁琐。"""
 
 [[main]]
 en = """Fortunately, Typst has a more elegant solution. With _set rules,_ you can apply
 style properties to all occurrences of some kind of content. You write a set
 rule by entering the `{set}` keyword, followed by the name of the function whose
 properties you want to set, and a list of arguments in parentheses."""
+zh = """幸运的是，Typst 有一个更优雅的解决方案。使用 _设置规则_，您可以为某些类型的内容的所有出现应用样式属性。您通过输入 `{set}` 关键字、要设置其属性的函数的名称以及括号中的参数列表来编写设置规则。"""
 
 [[main]]
 en = """```example
@@ -66,15 +73,18 @@ water).
 
 [[main]]
 en = """<div class="info-box">"""
+zh = """<div class="info-box">"""
 
 [[main]]
 en = """Want to know in more technical terms what is happening here?"""
+zh = """想知道这里发生了什么？"""
 
 [[main]]
 en = """Set rules can be conceptualized as setting default values
 for some of the parameters of a function for all future
 uses of that function.
 </div>"""
+zh = """设置规则可以被概念化为为某些函数的参数设置默认值，以便在未来的使用中应用。"""
 
 [[main]]
 en = """## The autocomplete panel { #autocomplete }
@@ -88,15 +98,20 @@ hitting the Escape key and opened again by typing `#` or hitting
 <kbd>Ctrl</kbd> + <kbd>Space</kbd>. Use the autocomplete panel to discover the
 right arguments for functions. Most suggestions come with a small description of
 what they do."""
+zh = """## 自动完成面板 { #autocomplete }
+如果您按照本教程操作并尝试了一些东西，您可能已经注意到，每当你输入一个 `#` 字符时，一个面板就会弹出，显示可用的函数，以及在参数列表中可用的参数。这就是自动完成面板。在您编写文档时，它非常有用：您可以通过按回车键或使用箭头键导航到所需的完成。面板可以通过按 Escape 键关闭，再次通过按 `#` 键或按 <kbd>Ctrl</kbd> + <kbd>Space</kbd> 键打开。使用自动完成面板发现函数的正确参数。大多数建议都带有小描述，说明它们的作用。"""
 
 [[main]]
 en = """![Autocomplete panel](2-formatting-autocomplete.png)"""
+zh = """![自动完成面板](2-formatting-autocomplete.png)"""
 
 [[main]]
 en = """## Set up the page { #page-setup }
 Back to set rules: When writing a rule, you choose the function depending on
 what type of element you want to style. Here is a list of some functions that
 are commonly used in set rules:"""
+zh = """## 设置页面 { #page-setup }
+回到设置规则：在编写规则时，您选择根据您想要样式的元素的类型来选择函数。以下是一些在设置规则中经常使用的函数列表："""
 
 [[main]]
 en = """- [`text`] to set font family, size, color, and other properties of text
@@ -105,15 +120,22 @@ en = """- [`text`] to set font family, size, color, and other properties of text
 - [`heading`] to set the appearance of headings and enable numbering
 - [`document`] to set the metadata contained in the PDF output, such as title
   and author"""
+zh = """- [`text`] 设置字体、大小、颜色和其他文本属性
+- [`page`] 设置页面大小、边距、页眉、启用列和页脚
+- [`par`] 设置段落对齐、行距等
+- [`heading`] 设置标题的外观并启用编号
+- [`document`] 设置 PDF 输出中包含的元数据，如标题和作者"""
 
 [[main]]
 en = """Not all function parameters can be set. In general, only parameters that tell
 a function _how_ to do something can be set, not those that tell it _what_ to
 do it with. The function reference pages indicate which parameters are settable."""
+zh = """并非所有函数参数都可以设置。一般来说，只有告诉函数 _如何_ 做某事的参数可以设置，而不是那些告诉它 _如何_ 做某事的参数。函数参考页面指示哪些参数可以设置。"""
 
 [[main]]
 en = """Let's add a few more styles to our document. We want larger margins and a serif
 font. For the purposes of the example, we'll also set another page size."""
+zh = """让我们为我们的文档添加一些更多的样式。我们想要更大的边距和衬线字体。为了本例的目的，我们还将设置另一个页面大小。"""
 
 [[main]]
 en = """```example
@@ -161,6 +183,7 @@ behaviour of these natural structures.
 
 [[main]]
 en = """There are a few things of note here."""
+zh = """这里有一些需要注意的地方。"""
 
 [[main]]
 en = """First is the [`page`] set rule. It receives two arguments: the page size and
@@ -171,28 +194,33 @@ collection of key-value pairs. In this case, the keys are `x` and `y`, and the
 values are the horizontal and vertical margins, respectively. We could also have
 specified separate margins for each side by passing a dictionary with the keys
 `{left}`, `{right}`, `{top}`, and `{bottom}`."""
+zh = """接下来是 [`text`] 设置规则。这里我们将字体大小设置为 `{10pt}` 并将字体家族设置为 `{"New Computer Modern"}`。Typst 应用附带了许多字体，您可以尝试用于您的文档。当您在文本函数的参数列表中时，您可以在自动完成面板中发现可用的字体。"""
 
 [[main]]
 en = """Next is the set [`text`] set rule. Here, we set the font size to `{10pt}` and
 font family to `{"New Computer Modern"}`. The Typst app comes with many fonts
 that you can try for your document. When you are in the text function's argument
 list, you can discover the available fonts in the autocomplete panel."""
+zh = """我们还设置了行间距（也称为行距）：它被指定为一个 [长度] 值，我们使用 `em` 单位来指定行距相对于字体大小：`{1em}` 等同于当前字体大小（默认为 `{11pt}`）。"""
 
 [[main]]
 en = """We have also set the spacing between lines (a.k.a. leading): It is specified as
 a [length] value, and we used the `em` unit to specify the leading relative to
 the size of the font: `{1em}` is equivalent to the current font size (which
 defaults to `{11pt}`)."""
+zh = """最后，我们通过添加垂直对齐来将我们的图像与底部对齐。垂直和水平对齐可以与 [`align`] 函数结合使用，以产生 2D 对齐。"""
 
 [[main]]
 en = """Finally, we have bottom aligned our image by adding a vertical alignment to our
 center alignment. Vertical and horizontal alignments can be combined with the
 `{+}` operator to yield a 2D alignment."""
+zh = """我们通过添加垂直对齐来将我们的图像与底部对齐。垂直和水平对齐可以与 [`align`] 函数结合使用，以产生 2D 对齐。"""
 
 [[main]]
 en = """## A hint of sophistication { #sophistication }
 To structure our document more clearly, we now want to number our headings. We
 can do this by setting the `numbering` parameter of the [`heading`] function."""
+zh = """为了更清楚地结构化我们的文档，我们现在想要为我们的标题添加编号。我们可以通过设置 [`heading`] 函数的 `numbering` 参数来实现。"""
 
 [[main]]
 en = """```example
@@ -214,6 +242,7 @@ en = """We specified the string `{"1."}` as the numbering parameter. This tells 
 number the headings with arabic numerals and to put a dot between the number of
 each level. We can also use [letters, roman numerals, and symbols]($numbering)
 for our headings:"""
+zh = """我们指定了字符串 `{"1."}` 作为编号参数。这告诉 Typst 使用阿拉伯数字为标题编号，并在每个级别之间放置一个点。我们还可以使用 [字母、罗马数字和符号]($numbering) 为我们的标题编号："""
 
 [[main]]
 en = """```example
@@ -234,6 +263,7 @@ en = """```example
 en = """This example also uses the [`lorem`] function to generate some placeholder text.
 This function takes a number as an argument and generates that many words of
 _Lorem Ipsum_ text."""
+zh = """这个示例还使用了 [`lorem`] 函数来生成一些占位文本。这个函数接受一个数字作为参数，并生成那么多 _Lorem Ipsum_ 文本的单词。"""
 
 [[main]]
 en = """<div class="info-box">"""
@@ -241,6 +271,7 @@ en = """<div class="info-box">"""
 [[main]]
 en = """Did you wonder why the headings and text set rules apply to all text and headings,
 even if they are not produced with the respective functions?"""
+zh = """您是否想知道为什么标题和文本设置规则适用于所有文本和标题，即使它们不是由相应的函数产生的？"""
 
 [[main]]
 en = """Typst internally calls the `heading` function every time you write
@@ -248,12 +279,15 @@ en = """Typst internally calls the `heading` function every time you write
 equivalent to the heading markup above. Other markup elements work similarly,
 they are only _syntax sugar_ for the corresponding function calls.
 </div>"""
+zh = """Typst 内部在您写 `[= Conclusion]` 时调用 `heading` 函数。事实上，函数调用 `[#heading[Conclusion]]` 与上面的标记等效。其他标记元素的工作方式类似，它们只是相应函数调用的 _语法糖_。"""
 
 [[main]]
 en = """## Show rules
 You are already pretty happy with how this turned out. But one last thing needs
 to be fixed: The report you are writing is intended for a larger project and
 that project's name should always be accompanied by a logo, even in prose."""
+zh = """## 显示规则
+您已经对结果非常满意。但最后一件事需要修复：您正在编写的报告是为一个更大的项目而写的，而这个项目的名称应该始终伴随一个标志，甚至在散文文本中。"""
 
 [[main]]
 en = """You consider your options. You could add an `[#image("logo.svg")]` call before
@@ -261,12 +295,15 @@ every instance of the logo using search and replace. That sounds very tedious.
 Instead, you could maybe
 [define a custom function]($function/#defining-functions) that always yields the
 logo with its image. However, there is an even easier way:"""
+zh = """您考虑您的选项。您可以在每次使用标志时使用搜索和替换添加一个 `[#image("logo.svg")]` 调用。这听起来非常繁琐。相反，您可能可以
+[定义一个自定义函数]($function/#defining-functions)，该函数总是产生带有其图像的标志。然而，还有更简单的方法："""
 
 [[main]]
 en = """With show rules, you can redefine how Typst displays certain elements. You
 specify which elements Typst should show differently and how they should look.
 Show rules can be applied to instances of text, many functions, and even the
 whole document."""
+zh = """使用显示规则，您可以重新定义 Typst 如何显示某些元素。您指定 Typst 应该以不同方式显示哪些元素以及它们应该如何显示。显示规则可以应用于文本、许多函数甚至整个文档的实例。"""
 
 [[main]]
 en = """```example
@@ -292,6 +329,7 @@ function's body to print the ArtosFlow name. Our show rule adds the logo image
 in front of the name and puts the result into a box to prevent linebreaks from
 occurring between logo and name. The image is also put inside of a box, so that
 it does not appear in its own paragraph."""
+zh = """这里有一些需要注意的地方。"""
 
 [[main]]
 en = """The calls to the first box function and the image function did not require a
@@ -299,6 +337,7 @@ leading `#` because they were not embedded directly in markup. When Typst
 expects code instead of markup, the leading `#` is not needed to access
 functions, keywords, and variables. This can be observed in parameter lists,
 function definitions, and [code blocks]($scripting)."""
+zh = """这些调用第一个框函数和图像函数不需要前导 `#`，因为它们不是直接嵌入标记的。当 Typst 期望代码而不是标记时，不需要前导 `#` 来访问函数、关键字和变量。这可以在参数列表、函数定义和 [代码块]($scripting) 中观察到。"""
 
 [[main]]
 en = """## Review
@@ -306,8 +345,10 @@ You now know how to apply basic formatting to your Typst documents. You learned
 how to set the font, justify your paragraphs, change the page dimensions, and
 add numbering to your headings with set rules. You also learned how to use a
 basic show rule to change how text appears throughout your document."""
+zh = """您现在知道如何将基本格式应用于您的 Typst 文档。您学会了如何设置字体、对齐段落、更改页面尺寸以及使用设置规则为您的标题添加编号。您还学会了如何使用基本显示规则来更改文本在整个文档中的显示方式。"""
 
 [[main]]
 en = """You have handed in your report. Your supervisor was so happy with it that they
 want to adapt it into a conference paper! In the next section, we will learn how
 to format your document as a paper using more advanced show rules and functions."""
+zh = """您已经提交了您的报告。您的导师非常高兴，他们想将其改编为一篇会议论文！在下一节中，我们将学习如何使用更高级的显示规则和函数将您的文档格式化为论文。"""

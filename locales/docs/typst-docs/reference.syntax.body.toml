@@ -6,16 +6,21 @@ accomplish common layout tasks. The lightweight markup syntax is complemented by
 set and show rules, which let you style your document easily and automatically.
 All this is backed by a tightly integrated scripting language with built-in and
 user-defined functions."""
+zh = """# 语法
+Typst 是一种标记语言。这意味着您可以使用简单的语法来完成常见的布局任务。轻量级标记语法由设置和显示规则补充，这些规则允许您轻松且自动地样式化您的文档。所有这些都由一个紧密集成的脚本语言支持，该语言具有内置和用户定义的函数。"""
 
 [[main]]
 en = """## Modes
 Typst has three syntactical modes: Markup, math, and code. Markup mode is the
 default in a Typst document, math mode lets you write mathematical formulas, and
 code mode lets you use Typst's scripting features."""
+zh = """## 模式
+Typst 有三种语法模式：标记、数学和代码。标记模式是 Typst 文档中的默认模式，数学模式允许您编写数学公式，代码模式允许您使用 Typst 的脚本功能。"""
 
 [[main]]
 en = """You can switch to a specific mode at any point by referring to the following
 table:"""
+zh = """您可以通过参考以下表格在任何时候切换到特定模式："""
 
 [[main]]
 en = """| New mode | Syntax                          | Example                         |
@@ -23,10 +28,16 @@ en = """| New mode | Syntax                          | Example                  
 | Code     | Prefix the code with `#`        | `[Number: #(1 + 2)]`            |
 | Math     | Surround equation with `[$..$]` | `[$-x$ is the opposite of $x$]` |
 | Markup   | Surround markup with `[[..]]`   | `{let name = [*Typst!*]}`       |"""
+zh = """| 新模式 | 语法                          | 示例                         |
+|----------|---------------------------------|---------------------------------|
+| 代码     | 前缀代码为 `#`                 | `[Number: #(1 + 2)]`            |
+| 数学     | 将方程括在 `[$..$]` 中         | `[$-x$ is the opposite of $x$]` |
+| 标记     | 将标记括在 `[[..]]` 中         | `{let name = [*Typst!*]}`       |"""
 
 [[main]]
 en = """Once you have entered code mode with `#`, you don't need to use further hashes
 unless you switched back to markup or math mode in between."""
+zh = """一旦您使用 `#` 进入代码模式，除非您在标记或数学模式之间切换，否则您不需要使用进一步的哈希。"""
 
 [[main]]
 en = """## Markup
@@ -34,6 +45,8 @@ Typst provides built-in markup for the most common document elements. Most of
 the syntax elements are just shortcuts for a corresponding function. The table
 below lists all markup that is available and links to the  best place to learn
 more about their syntax and usage."""
+zh = """## 标记
+Typst 提供了内置的标记，用于最常见的文档元素。大多数语法元素只是相应函数的快捷方式。下表列出了所有可用的标记，并链接了有关其语法和用法的最佳学习位置。"""
 
 [[main]]
 en = """| Name               | Example                      | See                      |
@@ -56,6 +69,26 @@ en = """| Name               | Example                      | See               
 | Code expression    | `[#rect(width: 1cm)]`        | [Scripting]($scripting/#expressions) |
 | Character escape   | `[Tweet at us \\#ad]`         | [Below](#escapes)        |
 | Comment            | `[/* block */]`, `[// line]` | [Below](#comments)       |"""
+zh = """| 名称               | 示例                         | 参见                       |
+| ------------------ | ---------------------------- | ------------------------ |
+| 段落换行         | 空行                         | [`parbreak`]             |
+| 粗体强调         | `[*strong*]`                 | [`strong`]               |
+| 强调             | `[_emphasis_]`               | [`emph`]                 |
+| 原始文本         | ``[`print(1)`]``             | [`raw`]                  |
+| 链接             | `[https://typst.app/]`       | [`link`]                 |
+| 标签             | `[<intro>]`                  | [`label`]                |
+| 引用             | `[@intro]`                   | [`ref`]                  |
+| 标题             | `[= Heading]`                | [`heading`]              |
+| 无序列表         | `[- item]`                   | [`list`]                 |
+| 有序列表         | `[+ item]`                   | [`enum`]                 |
+| 术语列表         | `[/ Term: description]`      | [`terms`]                |
+| 数学             | `[$x^2$]`                    | [Math]($category/math)   |
+| 换行             | `[\\]`                        | [`linebreak`]            |
+| 智能引号         | `['single' or "double"]`     | [`smartquote`]           |
+| 符号缩写         | `[~]`, `[---]`               | [Symbols]($category/symbols/sym) |
+| 代码表达式      | `[#rect(width: 1cm)]`        | [Scripting]($scripting/#expressions) |
+| 字符转义         | `[Tweet at us \\#ad]`         | [Below](#escapes)        |
+| 注释             | `[/* block */]`, `[// line]` | [Below](#comments)       |"""
 
 [[main]]
 en = """## Math mode { #math }
@@ -65,6 +98,8 @@ both in markup and code. The equation will be typeset into its own block if it
 starts and ends with at least one space (e.g. `[$ x^2 $]`). Inline math can be
 produced by omitting the whitespace (e.g. `[$x^2$]`). An overview over the
 syntax specific to math mode follows:"""
+zh = """## 数学模式 { #math }
+数学模式是一种特殊的标记模式，用于排版数学公式。它通过将方程括在 `[$]` 字符中进入。这在标记和代码中都有效。如果方程以至少一个空格开始和结束（例如 `[$ x^2 $]`），则方程将排版到其自己的块中。省略空白可以产生内联数学（例如 `[$x^2$]`）。以下是数学模式特有的语法概述："""
 
 [[main]]
 en = """| Name                   | Example                  | See                      |
@@ -85,12 +120,32 @@ en = """| Name                   | Example                  | See               
 | Code expression        | `[$#rect(width: 1cm)$]`  | [Scripting]($scripting/#expressions) |
 | Character escape       | `[$x\\^2$]`               | [Below](#escapes)        |
 | Comment                | `[$/* comment */$]`      | [Below](#comments)       |"""
+zh = """| 名称                   | 示例                   | 参见                       |
+| ---------------------- | ---------------------- | ------------------------ |
+| 内联数学             | `[$x^2$]`              | [Math]($category/math)   |
+| 块级数学             | `[$ x^2 $]`            | [Math]($category/math)   |
+| 底部附件             | `[$x_1$]`              | [`attach`]($category/math/attach) |
+| 顶部附件             | `[$x^2$]`              | [`attach`]($category/math/attach) |
+| 分数                 | `[$1 + (a+b)/5$]`      | [`frac`]($math.frac)     |
+| 换行                 | `[$x \\ y$]`          | [`linebreak`]            |
+| 对齐点               | `[$x &= 2 \\ &= 3$]`  | [Math]($category/math)   |
+| 变量访问             | `[$#x$, $pi$]`        | [Math]($category/math)   |
+| 字段访问             | `[$arrow.r.long$]`    | [Scripting]($scripting/#fields) |
+| 隐式乘法             | `[$x y$]`              | [Math]($category/math)   |
+| 符号缩写             | `[$->$]`, `[$!=$]`    | [Symbols]($category/symbols/sym) |
+| 数学文本/字符串     | `[$a "is natural"$]`  | [Math]($category/math)   |
+| 数学函数调用         | `[$floor(x)$]`        | [Math]($category/math)   |
+| 代码表达式           | `[$#rect(width: 1cm)$]`| [Scripting]($scripting/#expressions) |
+| 字符转义             | `[$x\\^2$]`           | [Below](#escapes)        |
+| 注释                 | `[$/* comment */$]`   | [Below](#comments)       |"""
 
 [[main]]
 en = """## Code mode { #code }
 Within code blocks and expressions, new expressions can start without a leading
 `#` character. Many syntactic elements are specific to expressions. Below is
 a table listing all syntax that is available in code mode:"""
+zh = """## 代码模式 { #code }
+在代码块和表达式中，新表达式可以不带前导 `#` 字符开始。许多语法元素特定于表达式。以下是代码模式中可用的所有语法的表格："""
 
 [[main]]
 en = """| Name                     | Example                       | See                                |
@@ -139,12 +194,59 @@ en = """| Name                     | Example                       | See        
 | Import module            | `{import "bar.typ"}`          | [Scripting]($scripting/#modules)   |
 | Import items from module | `{import "bar.typ": a, b, c}` | [Scripting]($scripting/#modules)   |
 | Comment                  | `{/* block */}`, `{// line}`  | [Below](#comments)                 |"""
+zh = """| 名称                     | 示例                           | 参见                               |
+| ------------------------ | ----------------------------- | ---------------------------------- |
+| 无                       | `{none}`                      | [`none`]                           |
+| 自动                     | `{auto}`                      | [`auto`]                           |
+| 布尔值                   | `{false}`, `{true}`           | [`bool`]                           |
+| 整数                     | `{10}`, `{0xff}`              | [`int`]                            |
+| 浮点数                   | `{3.14}`, `{1e5}`             | [`float`]                          |
+| 长度                     | `{2pt}`, `{3mm}`, `{1em}`, .. | [`length`]                         |
+| 角度                     | `{90deg}`, `{1rad}`           | [`angle`]                          |
+| 分数                     | `{2fr}`                       | [`fraction`]                       |
+| 比率                     | `{50%}`                       | [`ratio`]                          |
+| 字符串                   | `{"hello"}`                   | [`str`]                            |
+| 标签                     | `{<intro>}`                   | [`label`]                          |
+| 数学                     | `[$x^2$]`                     | [Math]($category/math)             |
+| 原始文本                 | ``[`print(1)`]``              | [`raw`]                            |
+| 变量访问                 | `{x}`                         | [Scripting]($scripting/#blocks)    |
+| 代码块                   | `{{ let x = 1; x + 2 }}`      | [Scripting]($scripting/#blocks)    |
+| 内容块                  | `{[*Hello*]}`                 | [Scripting]($scripting/#blocks)    |
+| 括号表达式              | `{(1 + 2)}`                   | [Scripting]($scripting/#blocks)    |
+| 数组                     | `{(1, 2, 3)}`                 | [Array]($array)                    |
+| 字典                     | `{(a: "hi", b: 2)}`           | [Dictionary]($dictionary)          |
+| 一元运算符               | `{-x}`                        | [Scripting]($scripting/#operators) |
+| 二元运算符               | `{x + y}`                     | [Scripting]($scripting/#operators) |
+| 赋值                     | `{x = 1}`                     | [Scripting]($scripting/#operators) |
+| 字段访问                 | `{x.y}`                       | [Scripting]($scripting/#fields)    |
+| 方法调用                 | `{x.flatten()}`               | [Scripting]($scripting/#methods)   |
+| 函数调用                 | `{min(x, y)}`                 | [Function]($function)              |
+| 参数传播                 | `{min(..nums)}`               | [Arguments]($arguments)            |
+| 无名函数                 | `{(x, y) => x + y}`           | [Function]($function)              |
+| 绑定                     | `{let x = 1}`                 | [Scripting]($scripting/#bindings)  |
+| 命名函数                 | `{let f(x) = 2 * x}`          | [Function]($function)              |
+| 设置规则                 | `{set text(14pt)}`            | [Styling]($styling/#set-rules)     |
+| 设置-如果规则           | `{set text(..) if .. }`       | [Styling]($styling/#set-rules)     |
+| 显示-设置规则           | `{show heading: set block(..)}` | [Styling]($styling/#show-rules)  |
+| 显示规则与函数         | `{show raw: it => {..}}`      | [Styling]($styling/#show-rules)    |
+| 显示-所有规则           | `{show: template}`            | [Styling]($styling/#show-rules)    |
+| 上下文表达式           | `{context text.lang}`         | [Context]($context)                |
+| 条件                   | `{if x == 1 {..} else {..}}`  | [Scripting]($scripting/#conditionals) |
+| 循环                   | `{for x in (1, 2, 3) {..}}`   | [Scripting]($scripting/#loops)     |
+| 循环控制流             | `{break, continue}`           | [Scripting]($scripting/#loops)     |
+| 从函数返回             | `{return x}`                  | [Function]($function)              |
+| 包含模块               | `{include "bar.typ"}`         | [Scripting]($scripting/#modules)   |
+| 导入模块               | `{import "bar.typ"}`          | [Scripting]($scripting/#modules)   |
+| 从模块导入             | `{import "bar.typ": a, b, c}` | [Scripting]($scripting/#modules)   |
+| 注释                   | `{/* block */}`, `{// line}`  | [Below](#comments)                 |"""
 
 [[main]]
 en = """## Comments
 Comments are ignored by Typst and will not be included in the output. This is
 useful to exclude old versions or to add annotations. To comment out a single
 line, start it with `//`:"""
+zh = """## 注释
+注释被 Typst 忽略，不会包含在输出中。这对于排除旧版本或添加注释很有用。要注释单行，请以 `//` 开头："""
 
 [[main]]
 en = """```example
@@ -159,6 +261,7 @@ significant.
 [[main]]
 en = """Comments can also be wrapped between `/*` and `*/`. In this case, the comment
 can span over multiple lines:"""
+zh = """注释也可以用 `/*` 和 `*/` 包裹。在这种情况下，注释可以跨越多行："""
 
 [[main]]
 en = """```example
@@ -175,6 +278,8 @@ otherwise have special meaning in Typst. To escape a character, precede it with
 a backslash. To insert any Unicode codepoint, you can write a hexadecimal escape
 sequence: `[\\u{1f600}]`. The same kind of escape sequences also work in
 [strings]($str)."""
+zh = """## 转义序列 { #escapes }
+转义序列用于插入难以键入或具有特殊意义的特殊字符。要转义字符，请在其前面添加反斜杠。要插入任何 Unicode 代码点，您可以编写十六进制转义序列：`[\\u{1f600}]`。同样类型的转义序列也适用于 [字符串]($str)。"""
 
 [[main]]
 en = """```example
@@ -187,10 +292,13 @@ en = """## Paths
 Typst has various features that require a file path to reference external
 resources such as images, Typst files, or data files. Paths are represented as
 [strings]($str). There are two kinds of paths: Relative and absolute."""
+zh = """## 路径
+Typst 有许多功能需要文件路径来引用外部资源，例如图像、Typst 文件或数据文件。路径表示为 [字符串]($str)。有两种类型的路径：相对和绝对。"""
 
 [[main]]
 en = """- A **relative path** searches from the location of the Typst file where the
   feature is invoked. It is the default:"""
+zh = """- 一个 **相对路径** 从调用功能的 Typst 文件的位置开始搜索。它是默认的："""
 
 [[main]]
 en = """```typ
@@ -200,6 +308,7 @@ en = """```typ
 [[main]]
 en = """- An **absolute path** searches from the _root_ of the project. It starts with a
   leading `/`:"""
+zh = """- 一个 **绝对路径** 从项目 _根_ 开始搜索。它以一个前导 `/` 开始："""
 
 [[main]]
 en = """```typ
@@ -210,11 +319,14 @@ en = """```typ
 en = """### Project root
 By default, the project root is the parent directory of the main Typst file.
 For security reasons, you cannot read any files outside of the root directory."""
+zh = """### 项目根目录
+默认情况下，项目根目录是主 Typst 文件的父目录。出于安全原因，您无法读取根目录之外的任何文件。"""
 
 [[main]]
 en = """If you want to set a specific folder as the root of your project, you can use
 the CLI's `--root` flag. Make sure that the main file is contained in the
 folder's subtree!"""
+zh = """如果您想将特定文件夹设置为项目根目录，可以使用 CLI 的 `--root` 标志。确保主文件包含在文件夹的子树中！"""
 
 [[main]]
 en = """```bash
@@ -225,6 +337,7 @@ typst compile --root .. file.typ
 en = """In the web app, the project itself is the root directory. You can always read
 all files within it, no matter which one is previewed (via the eye toggle next
 to each Typst file in the file panel)."""
+zh = """在网络应用程序中，项目本身是根目录。您可以随时读取其中的所有文件，无论哪个文件被预览（通过文件面板中每个 Typst 文件旁边的眼睛切换）。"""
 
 [[main]]
 en = """### Paths and packages
@@ -235,9 +348,12 @@ resources from the project (such as a logo image), you must pass the already
 loaded image, e.g. as a named parameter `{logo: image("mylogo.svg")}`. Note that
 you can then still customize the image's appearance with a set rule within the
 package."""
+zh = """### 路径和包
+包只能从其自己的目录加载文件。在其中，绝对路径指向包根，而不是项目根。因此，它不能直接从项目目录加载文件。如果包需要项目资源（例如标志图像），您必须传递已经加载的图像，例如作为命名参数 `{logo: image("mylogo.svg")}`。请注意，您仍然可以在包内使用设置规则自定义图像的外观。"""
 
 [[main]]
 en = """In the future, paths might become a
 [distinct type from strings](https://github.com/typst/typst/issues/971), so that
 they can retain knowledge of where they were constructed. This way, resources
 could be loaded from a different root."""
+zh = """将来，路径可能会成为与字符串不同的[类型](https://github.com/typst/typst/issues/971)，以便它们可以保留它们被构造的位置的知识。这样，资源可以从不同的根加载。"""

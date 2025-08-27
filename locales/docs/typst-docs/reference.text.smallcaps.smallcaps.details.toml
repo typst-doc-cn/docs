@@ -1,9 +1,11 @@
 
 [[main]]
 en = """Displays text in small capitals."""
+zh = """以小写大写字母显示文本。"""
 
 [[main]]
 en = """# Example"""
+zh = """# 示例"""
 
 [[main]]
 en = """```example
@@ -18,6 +20,8 @@ Not all fonts support these features. Sometimes, smallcaps are part of a
 dedicated font. This is, for example, the case for the _Latin Modern_ family
 of fonts. In those cases, you can use a show-set rule to customize the
 appearance of the text in smallcaps:"""
+zh = """# 小写大写字体
+默认情况下，这使用字体上的 `smcp` 和 `c2sc` OpenType 功能。并非所有字体都支持这些功能。有时，小写大写字母是专门字体的一部分。例如，_Latin Modern_ 字体系列就是这种情况。在这些情况下，您可以使用显示-设置规则来自定义小写大写字母文本的外观："""
 
 [[main]]
 en = """```typ
@@ -27,12 +31,15 @@ en = """```typ
 [[main]]
 en = """In the future, this function will support synthesizing smallcaps from normal
 letters, but this is not yet implemented."""
+zh = """在将来，这个函数将支持从普通字母合成小写大写字母，但目前尚未实现。"""
 
 [[main]]
 en = """# Smallcaps headings
 You can use a [show rule]($styling/#show-rules) to apply smallcaps
 formatting to all your headings. In the example below, we also center-align
 our headings and disable the standard bold font."""
+zh = """# 小写大写字母标题
+您可以使用 [显示规则]($styling/#show-rules) 将小写大写字母格式应用于所有标题。在下面的示例中，我们还居中对齐标题并禁用标准粗体字体。"""
 
 [[main]]
 en = """```example

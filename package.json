@@ -7,7 +7,9 @@
   "author": "Myriad-Dreamin <camiyoru@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
-    "validate": "node ./scripts/main.js"
+    "validate": "node ./scripts/main.js",
+    "make": "cargo run --bin typst-docs-l10n -- make",
+    "build": "npm run make && typst compile --font-path assets/fonts ./target/typst-docs/docs.zh.typ \"./target/typst-docs/Typst Docs v0.13.1 zh version.pdf\""
   },
   "dependencies": {
     "js-toml": "^1.0.2",

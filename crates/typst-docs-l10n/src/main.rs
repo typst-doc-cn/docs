@@ -187,6 +187,23 @@ fn write_large_translate(sub_docs: &Path, k: &str, v: &mut String) {
     *v = serde_json::to_string(&format!("{{{{{}}}}}", rel_path.display())).unwrap();
 }
 
+/// Reads a large translation file.
+fn read_large_translation(path: &Path, lang: &str) -> anyhow::Result<Vec<String>> {
+    let content = fs::read_to_string(path)?;
+    let pars = toml::from_str::<LargeTranslationFile>(&content)?.main;
+
+    Ok(pars
+        .into_iter()
+        .map(|par| {
+            // zh or en
+            let Some(content) = par.get(lang) else {
+                return par.get("en").unwrap().to_string();
+            };
+            content.to_string()
+        })
+        .collect())
+}
+
 /// Arguments to make a typst document.
 #[derive(Parser, Debug)]
 struct MakeArgs {
@@ -216,6 +233,26 @@ fn make(args: MakeArgs) -> anyhow::Result<()> {
     let mut translations = TranslationMapSet::default();
     for (lang, value) in raw {
         for (key, value) in value {
+            if lang == "en" && value.starts_with("{{") && value.ends_with("}}") {
+                let path = args.translation_dir.join(&value[2..value.len() - 2]);
+                let en_par = read_large_translation(&path, "en")
+                    .with_context(|| format!("Failed to read large translation file: {path:?}"))?
+                    .join(MARKDOWN_PAR_SEP);
+                let zh_par = read_large_translation(&path, "zh")
+                    .with_context(|| format!("Failed to read large translation file: {path:?}"))?
+                    .join(MARKDOWN_PAR_SEP);
+
+                translations
+                    .entry(key.clone())
+                    .or_default()
+                    .insert("en".to_owned(), en_par);
+                translations
+                    .entry(key)
+                    .or_default()
+                    .insert("zh".to_owned(), zh_par);
+                continue;
+            }
+
             translations
                 .entry(key)
                 .or_default()

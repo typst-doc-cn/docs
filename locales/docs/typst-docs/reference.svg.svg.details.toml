@@ -8,6 +8,7 @@ bound to a specific resolution. Hence, you can print or view SVG files on any
 device without incurring a loss of quality. (Note that font printing quality may
 be better with a PDF.) In contrast to a PDF, an SVG cannot contain multiple
 pages. When exporting a multi-page document, Typst will emit multiple SVGs."""
+zh = """Typst 不仅可以创建 PDF，还可以直接渲染页面到可缩放的矢量图形（SVG），这是在网页中嵌入矢量图形的优选格式。与 PDF 文件一样，SVG 会精确显示您在 Typst 中布置的文档。同样，它们共享不绑定到特定分辨率的优点。因此，您可以在任何设备上打印或查看 SVG 文件，而不会损失质量。（请注意，使用 PDF 打印质量可能更好。）与 PDF 不同，SVG 不能包含多个页面。当导出多页文档时，Typst 将发出多个 SVG。"""
 
 [[main]]
 en = """SVGs can represent text in two ways: By embedding the text itself and rendering
@@ -17,18 +18,23 @@ file looks the same across all devices it is viewed on, Typst chooses the latter
 method. This means that the text in the SVG cannot be extracted automatically,
 for example by copy/paste or a screen reader. If you need the text to be
 accessible, export a PDF or HTML file instead."""
+zh = """SVG 可以以两种方式表示文本：通过嵌入文本本身并使用查看器计算机上可用的字体渲染它，或者通过嵌入创建文档时使用的字体中每个字形的形状。为了确保 SVG 文件在所有设备上看起来相同，Typst 选择后者方法。这意味着 SVG 中的文本不能自动提取，例如通过复制/粘贴或屏幕阅读器。如果您需要文本可访问，请导出 PDF 或 HTML 文件。"""
 
 [[main]]
 en = """SVGs can have transparent backgrounds. By default, Typst will output an SVG with
 an opaque white background. You can make the background transparent using
 `[#set page(fill: none)]`. Learn more on the
 [`page` function's reference page]($page.fill)."""
+zh = """SVG 可以有透明背景。默认情况下，Typst 将输出一个不透明的白色背景的 SVG。您可以使用 `[#set page(fill: none)]` 使背景透明。有关详细信息，请参阅 [`page` 函数参考页]($page.fill)。"""
 
 [[main]]
 en = """# Exporting as SVG
 ## Command Line
 Pass `--format svg` to the `compile` or `watch` subcommand or provide an output
 file name that ends with `.svg`."""
+zh = """# 导出为 SVG
+## 命令行
+通过 `--format svg` 向 `compile` 或 `watch` 子命令或提供一个以 `.svg` 结尾的输出文件名。"""
 
 [[main]]
 en = """If your document has more than one page, Typst will create multiple image files.
@@ -37,23 +43,32 @@ The output file name must then be a template string containing at least one of
 - `[{0p}]`, which will be replaced by the zero-padded page number (so that all
   numbers have the same length)
 - `[{t}]`, which will be replaced by the total number of pages"""
+zh = """如果您的文档有多页，Typst 将创建多个图像文件。然后，输出文件名必须是一个包含至少一个的模板字符串：
+- `[{p}]`，将被替换为页码
+- `[{0p}]`，将被替换为零填充的页码（以便所有数字具有相同的长度）
+- `[{t}]`，将被替换为总页数"""
 
 [[main]]
 en = """When exporting to SVG, you have the following configuration options:"""
+zh = """当导出为 SVG 时，您有以下配置选项："""
 
 [[main]]
 en = """- Which pages to export by specifying `--pages` followed by a comma-separated
   list of numbers or dash-separated number ranges. Ranges can be half-open.
   Example: `2,3,7-9,11-`."""
+zh = """- 要导出的页面，通过 `--pages` 后跟一个逗号分隔的数字或破折号分隔的数字范围列表。范围可以半开。示例：`2,3,7-9,11-`。"""
 
 [[main]]
 en = """## Web App
 Click "File" > "Export as" > "SVG" or click the downwards-facing arrow next to
 the quick download button and select "Export as SVG". When exporting to SVG, you
 have the following configuration options:"""
+zh = """## 网络应用
+点击 "文件" > "导出为" > "SVG" 或点击快速下载按钮旁边的向下箭头并选择 "导出为 SVG"。当导出为 SVG 时，您有以下配置选项："""
 
 [[main]]
 en = """- Which pages to export. Valid options are "All pages", "Current page", and
   "Custom ranges". Custom ranges are a comma-separated list of numbers or
   dash-separated number ranges. Ranges can be half-open. Example: `2,3,7-9,11-`.
 """
+zh = """- 要导出的页面。有效选项为 "所有页面"、"当前页面" 和 "自定义范围"。自定义范围是逗号分隔的数字或破折号分隔的数字范围列表。范围可以半开。示例：`2,3,7-9,11-`。"""

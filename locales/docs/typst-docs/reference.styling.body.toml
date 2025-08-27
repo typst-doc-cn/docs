@@ -7,6 +7,8 @@ properties of elements. This way, you create most common styles. However, there
 might not be a built-in property for everything you wish to do. For this reason,
 Typst further supports _show rules_ that can completely redefine the appearance
 of elements."""
+zh = """# 样式
+Typst 包含一个灵活的样式系统，可以自动将您选择的样式应用到您的文档中。使用 _设置规则_，您可以配置元素的基本属性。这样，您可以创建最常见的样式。然而，可能没有内置的属性来满足您想要做的事情。因此，Typst 进一步支持 _显示规则_，可以完全重新定义元素的外观。"""
 
 [[main]]
 en = """## Set rules
@@ -17,6 +19,8 @@ function]($function/#element-functions) preceded by the `{set}` keyword (or
 to the set rule. Refer to each function's documentation to see which parameters
 are optional. In the example below, we use two set rules to change the
 [font family]($text.font) and [heading numbering]($heading.numbering)."""
+zh = """## 设置规则
+使用设置规则，您可以自定义元素的外观。它们被写为一个 [函数调用]($function) 到一个 [元素函数]($function/#element-functions)，前面带有 `{set}` 关键字（或标记中的 `[#set]`）。只有该函数的可选参数可以提供给设置规则。参考每个函数的文档以查看哪些参数是可选的。在下面的示例中，我们使用两个设置规则来更改 [字体系列]($text.font) 和 [标题编号]($heading.numbering)。"""
 
 [[main]]
 en = """```example
@@ -36,6 +40,7 @@ inside of a block, it is only in effect until the end of that block. With a
 block, you can thus restrict the effect of a rule to a particular segment of
 your document. Below, we use a content block to scope the list styling to one
 particular list."""
+zh = """一个顶层设置规则在文件结束时生效。当嵌套在块中时，它只在块结束时生效。使用块，您可以限制规则对文档特定部分的影响。下面，我们使用一个内容块来限制列表样式的范围到一个特定的列表。"""
 
 [[main]]
 en = """```example
@@ -51,6 +56,7 @@ This one is not:
 [[main]]
 en = """Sometimes, you'll want to apply a set rule conditionally. For this, you can use
 a _set-if_ rule."""
+zh = """有时，您可能希望有条件地应用设置规则。为此，您可以使用 _设置-如果_ 规则。"""
 
 [[main]]
 en = """```example
@@ -71,6 +77,8 @@ most basic form of show rule is a _show-set rule._ Such a rule is written as the
 basic form of selector is an [element function]($function/#element-functions).
 This lets the set rule only apply to the selected element. In the example below,
 headings become dark blue while all other text stays black."""
+zh = """## 显示规则
+使用显示规则，您可以深入定制一种元素的外观。最基本的显示规则形式是 _显示设置规则_。这样的规则写为 `{show}` 关键字，后跟一个 [选择器]，一个冒号，然后是一个设置规则。最基本的选择器是 [元素函数]($function/#element-functions)。这使得设置规则只应用于选定的元素。在下面的示例中，标题变为深蓝色，而所有其他文本保持黑色。"""
 
 [[main]]
 en = """```example
@@ -90,6 +98,7 @@ receives the element in question and can return arbitrary content. The available
 [fields]($scripting/#fields) on the element passed to the function again match
 the parameters of the respective element function. Below, we define a show rule
 that formats headings for a fantasy encyclopedia."""
+zh = """使用显示-设置规则，您可以混合和匹配来自不同函数的属性，以实现许多不同的效果。但它们仍然限制您只能在 Typst 中预定义的内容。为了最大灵活性，您可以编写一个显示规则，定义如何从头开始格式化一个元素。要编写这样的显示规则，将冒号后的设置规则替换为任意 [函数]。该函数接收相应元素并可以返回任意内容。传递给函数的元素上的可用 [字段]($scripting/#fields) 再次与相应元素函数的参数匹配。下面，我们定义一个显示规则，格式化幻想百科全书的标题。"""
 
 [[main]]
 en = """```example
@@ -117,6 +126,7 @@ extra style points.
 [[main]]
 en = """Like set rules, show rules are in effect until the end of the current block or
 file."""
+zh = """与设置规则一样，显示规则在当前块或文件结束时生效。"""
 
 [[main]]
 en = """Instead of a function, the right-hand side of a show rule can also take a
@@ -124,31 +134,42 @@ literal string or content block that should be directly substituted for the
 element. And apart from a function, the left-hand side of a show rule can also
 take a number of other _selectors_ that define what to apply the transformation
 to:"""
+zh = """除了函数，显示规则的右侧还可以接受一个直接替换元素的文字字符串或内容块。此外，除了函数，显示规则的左侧还可以接受多个其他 _选择器_，定义要应用转换的内容："""
 
 [[main]]
 en = """- **Everything:** `{show: rest => ..}` \\
   Transform everything after the show rule. This is useful to apply a more
   complex layout to your whole document without wrapping everything in a giant
   function call."""
+zh = """- **所有内容：** `{show: rest => ..}` \\
+  转换显示规则后的所有内容。这对于将更复杂的布局应用到整个文档而不将所有内容包装在一个巨大的函数调用中很有用。"""
 
 [[main]]
 en = """- **Text:** `{show "Text": ..}` \\
   Style, transform or replace text."""
+zh = """- **文本：** `{show "Text": ..}` \\
+  样式、转换或替换文本。"""
 
 [[main]]
 en = """- **Regex:** `{show regex("\\w+"): ..}` \\
   Select and transform text with a regular expression for even more flexibility.
   See the documentation of the [`regex` type]($regex) for details."""
+zh = """- **正则表达式：** `{show regex("\\w+"): ..}` \\
+  使用正则表达式选择和转换文本，以获得更大的灵活性。有关详细信息，请参阅 [`regex` 类型]($regex) 的文档。"""
 
 [[main]]
 en = """- **Function with fields:** `{show heading.where(level: 1): ..}` \\
   Transform only elements that have the specified fields. For example, you might
   want to only change the style of level-1 headings."""
+zh = """- **带字段的函数：** `{show heading.where(level: 1): ..}` \\
+  仅转换具有指定字段的元素。例如，您可能只想更改一级标题的样式。"""
 
 [[main]]
 en = """- **Label:** `{show <intro>: ..}` \\
   Select and transform elements that have the specified label. See the
   documentation of the [`label` type]($label) for more details."""
+zh = """- **标签：** `{show <intro>: ..}` \\
+  选择并转换具有指定标签的元素。有关详细信息，请参阅 [`label` 类型]($label) 的文档。"""
 
 [[main]]
 en = """```example

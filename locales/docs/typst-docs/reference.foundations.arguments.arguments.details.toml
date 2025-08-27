@@ -1,6 +1,8 @@
+zh = """捕获的函数参数。"""
 
 [[main]]
 en = """Captured arguments to a function."""
+zh = """捕获的函数参数。"""
 
 [[main]]
 en = """# Argument Sinks
@@ -8,6 +10,8 @@ Like built-in functions, custom functions can also take a variable number of
 arguments. You can specify an _argument sink_ which collects all excess
 arguments as `..sink`. The resulting `sink` value is of the `arguments`
 type. It exposes methods to access the positional and named arguments."""
+zh = """# 参数收集器
+与内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数收集器_，将所有多余参数收集为 `..sink`。生成的 `sink` 值的类型为 `arguments`。它暴露了访问位置参数和命名参数的方法。"""
 
 [[main]]
 en = """```example
@@ -26,6 +30,8 @@ en = """```example
 en = """# Spreading
 Inversely to an argument sink, you can _spread_ arguments, arrays and
 dictionaries into a function call with the `..spread` operator:"""
+zh = """# 展开
+与参数收集器相反，您可以 _展开_ 参数、数组和字典，使用 `..spread` 运算符："""
 
 [[main]]
 en = """```example

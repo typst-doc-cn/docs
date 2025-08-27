@@ -6,14 +6,18 @@ university. It will contain prose, maths, headings, and figures. To get started,
 you create a new project on the Typst app. You'll be taken to the editor where
 you see two panels: A source panel where you compose your document and a
 preview panel where you see the rendered document."""
+zh = """# 在 Typst 中写作
+让我们开始吧！假设您被分配撰写一篇技术报告。它将包含散文、数学、标题和图表。要开始，您在 Typst 应用中创建一个新项目。您将被带到编辑器，您将看到两个面板：一个源面板，您可以在其中编写文档，一个预览面板，您可以在其中看到渲染后的文档。"""
 
 [[main]]
 en = """![Typst app screenshot](1-writing-app.png)"""
+zh = """![Typst 应用截图](1-writing-app.png)"""
 
 [[main]]
 en = """You already have a good angle for your report in mind. So let's start by writing
 the introduction. Enter some text in the editor panel. You'll notice that the
 text immediately appears on the previewed page."""
+zh = """您已经有一个关于报告的好想法。所以让我们从编写介绍开始。在编辑器面板中输入一些文本。您会注意到文本立即出现在预览页面上。"""
 
 [[main]]
 en = """```example
@@ -26,12 +30,14 @@ behaviour of these natural structures.
 
 [[main]]
 en = """_Throughout this tutorial, we'll show code examples like this one. Just like in the app, the first panel contains markup and the second panel shows a preview. We shrunk the page to fit the examples so you can see what's going on._"""
+zh = """_在整个教程中，我们将展示这样的代码示例。就像在应用中一样，第一个面板包含标记，第二个面板显示预览。我们缩小了页面以适应示例，以便您可以看到发生了什么。_"""
 
 [[main]]
 en = """The next step is to add a heading and emphasize some text. Typst uses simple
 markup for the most common formatting tasks. To add a heading, enter the `=`
 character and to emphasize some text with italics, enclose it in
 `[_underscores_]`."""
+zh = """下一步是添加一个标题并强调一些文本。Typst 使用简单的标记来完成最常见的格式化任务。要添加一个标题，输入 `=` 字符，要强调一些文本，用斜体括起来，使用 `[_下划线_]`。"""
 
 [[main]]
 en = """```example
@@ -48,12 +54,14 @@ en = """That was easy! To add a new paragraph, just add a blank line in between 
 lines of text. If that paragraph needs a subheading, produce it by typing `==`
 instead of `=`. The number of `=` characters determines the nesting level of the
 heading."""
+zh = """这很简单！要添加一个新段落，只需在两行文本之间添加一个空行。如果该段落需要一个副标题，请使用 `==` 而不是 `=`。`=` 字符的数量决定了标题的嵌套级别。"""
 
 [[main]]
 en = """Now we want to list a few of the circumstances that influence glacier dynamics.
 To do that, we use a numbered list. For each item of the list, we type a `+`
 character at the beginning of the line. Typst will automatically number the
 items."""
+zh = """现在我们想列出一些影响冰川动态的因素。为此，我们使用一个编号列表。对于列表中的每一项，我们在行的开头输入一个 `+` 字符。Typst 会自动编号这些项目。"""
 
 [[main]]
 en = """```example
@@ -66,6 +74,7 @@ en = """```example
 en = """If we wanted to add a bulleted list, we would use the `-` character instead of
 the `+` character. We can also nest lists: For example, we can add a sub-list to
 the first item of the list above by indenting it."""
+zh = """如果我们想添加一个无序列表，我们使用 `-` 字符而不是 `+` 字符。我们还可以嵌套列表：例如，我们可以通过缩进添加一个子列表到上面的列表的第一项。"""
 
 [[main]]
 en = """```example
@@ -86,9 +95,12 @@ is only one: The main Typst file you are writing in. To upload another file,
 click the button with the arrow in the top-right corner. This opens the upload
 dialog, in which you can pick files to upload from your computer. Select an
 image file for your report."""
+zh = """## 添加一个图表 { #figure }
+您认为您的报告需要一个图表。让我们添加一个。Typst 支持 PNG、JPEG、GIF 和 SVG 格式的图像。要将图像文件添加到您的项目中，首先点击左侧边栏中的框图标以打开 _文件面板_。在这里，您可以看到项目中所有文件的列表。目前，只有一个文件：您正在编写的主 Typst 文件。要上传另一个文件，请点击右上角的箭头按钮。这将打开上传对话框，您可以在其中从计算机中选择要上传的文件。为您的报告选择一个图像文件。"""
 
 [[main]]
 en = """![Upload dialog](1-writing-upload.png)"""
+zh = """![上传对话框](1-writing-upload.png)"""
 
 [[main]]
 en = """We have seen before that specific symbols (called _markup_) have specific
@@ -98,6 +110,7 @@ everything we want to insert into our document would soon become cryptic and
 unwieldy. For this reason, Typst reserves markup symbols only for the most
 common things. Everything else is inserted with _functions._ For our image to
 show up on the page, we use Typst's [`image`] function."""
+zh = """我们之前已经看到，特定的符号（称为 _标记_）在 Typst 中具有特定的含义。我们可以使用 `=`, `-`, `+`, 和 `_` 分别创建标题、列表和强调的文本。然而，对于我们想要插入到文档中的每一件事，使用一个特殊的符号很快就会变得难以理解且难以使用。因此，Typst 只为最常见的事情保留标记符号。其他所有内容都使用 _函数_ 插入。为了使我们的图像出现在页面上，我们使用 Typst 的 [`image`] 函数。"""
 
 [[main]]
 en = """```example
@@ -114,12 +127,14 @@ followed by the name of the function. Then, we enclose the arguments in
 parentheses. Typst recognizes many different data types within argument lists.
 Our file path is a short [string of text]($str), so we need to enclose it in
 double quotes."""
+zh = """一般来说，函数为一组 _参数_ 产生一些输出。当您在标记中 _调用_ 一个函数时，您提供参数并将 Typst 将结果（函数的 _返回值_）插入到文档中。在我们的例子中，`image` 函数接受一个参数：图像文件的路径。要在标记中调用一个函数，我们首先需要输入 `#` 字符，紧接着是函数名。然后，我们将参数括在括号中。Typst 在参数列表中识别许多不同的数据类型。我们的文件路径是一个短 [文本字符串]($str)，所以我们需要用双引号括起来。"""
 
 [[main]]
 en = """The inserted image uses the whole width of the page. To change that, pass the
 `width` argument to the `image` function. This is a _named_ argument and
 therefore specified as a `name: value` pair. If there are multiple arguments,
 they are separated by commas, so we first need to put a comma behind the path."""
+zh = """`width` 参数是一个 [相对长度]($relative)。在我们的例子中，我们指定了一个百分比，确定图像应占据页面宽度的 `{70%}`。我们还可以指定一个绝对值，如 `{1cm}` 或 `{0.7in}`。"""
 
 [[main]]
 en = """```example
@@ -131,22 +146,26 @@ en = """The `width` argument is a [relative length]($relative). In our case, we
 specified a percentage, determining that the image shall take up `{70%}` of the
 page's width. We also could have specified an absolute value like `{1cm}` or
 `{0.7in}`."""
+zh = """`width` 参数是一个 [相对长度]($relative)。在我们的例子中，我们指定了一个百分比，确定图像应占据页面宽度的 `{70%}`。我们还可以指定一个绝对值，如 `{1cm}` 或 `{0.7in}`。"""
 
 [[main]]
 en = """Just like text, the image is now aligned at the left side of the page by
 default. It's also lacking a caption. Let's fix that by using the [figure]
 function. This function takes the figure's contents as a positional argument and
 an optional caption as a named argument."""
+zh = """就像文本一样，图像现在默认情况下是左对齐的。它也缺少一个标题。让我们通过使用 [figure] 函数来修复这个问题。这个函数将图表的内容作为位置参数，并可选地作为命名参数提供一个标题。"""
 
 [[main]]
 en = """Within the argument list of the `figure` function, Typst is already in code
 mode. This means, you now have to remove the hash before the image function call.
 The hash is only needed directly in markup (to disambiguate text from function
 calls)."""
+zh = """在 `figure` 函数的参数列表中，Typst 现在处于代码模式。这意味着您现在必须删除图像函数调用前的哈希。哈希仅在标记中需要（用于区分文本和函数调用）。"""
 
 [[main]]
 en = """The caption consists of arbitrary markup. To give markup to a function, we
 enclose it in square brackets. This construct is called a _content block._"""
+zh = """标题由任意标记组成。要为函数提供标记，我们将其括在方括号中。这种结构称为 _内容块_。"""
 
 [[main]]
 en = """```example
@@ -166,6 +185,7 @@ your document. Add one after the figure by enclosing some name in angle
 brackets. You can then reference the figure in your text by writing an `[@]`
 symbol followed by that name. Headings and equations can also be labelled to
 make them referenceable."""
+zh = """您继续编写您的报告，现在想要引用该图表。为此，首先为图表添加一个标签。标签唯一标识文档中的一个元素。在图表后添加一个名称，并用尖括号括起来。然后，您可以通过写一个 `[@]` 符号并跟随该名称来引用该图表。标题和方程式也可以被标记，以便它们可以被引用。"""
 
 [[main]]
 en = """```example
@@ -189,11 +209,13 @@ en = """<div class="info-box">"""
 en = """So far, we've passed content blocks (markup in square brackets) and strings
 (text in double quotes) to our functions. Both seem to contain text. What's the
 difference?"""
+zh = """到目前为止，我们向函数传递了内容块（方括号中的标记）和字符串（双引号中的文本）。两者似乎都包含文本。有什么区别？"""
 
 [[main]]
 en = """A content block can contain text, but also any other kind of markup, function
 calls, and more, whereas a string is really just a _sequence of characters_ and
 nothing else."""
+zh = """内容块可以包含文本，还可以包含任何其他类型的标记、函数调用等，而字符串实际上只是一个 _字符序列_ 并且没有其他内容。"""
 
 [[main]]
 en = """For example, the image function expects a path to an image file.
@@ -202,12 +224,15 @@ the image's path parameter. That's why only strings are allowed here.
 On the contrary, strings work wherever content is expected because text is a
 valid kind of content.
 </div>"""
+zh = """例如，图像函数期望一个图像文件的路径。将文本段落或另一个图像作为图像路径参数传递是没有意义的。这就是为什么这里只允许字符串。相反，字符串在任何需要内容的地方都有效，因为文本是一种有效的内容类型。"""
 
 [[main]]
 en = """## Adding a bibliography { #bibliography }
 As you write up your report, you need to back up some of your claims. You can
 add a bibliography to your document with the [`bibliography`] function. This
 function expects a path to a bibliography file."""
+zh = """## 添加一个参考文献 { #bibliography }
+随着您编写报告，您需要支持一些您的声明。您可以使用 [`bibliography`] 函数将参考文献添加到文档中。此函数期望一个参考文献文件的路径。"""
 
 [[main]]
 en = """Typst's native bibliography format is
@@ -215,6 +240,7 @@ en = """Typst's native bibliography format is
 but for compatibility you can also use BibLaTeX files. As your classmate has
 already done a literature survey and sent you a `.bib` file, you'll use that
 one. Upload the file through the file panel to access it in Typst."""
+zh = """Typst 的原生参考文献格式是 [Hayagriva](https://github.com/typst/hayagriva/blob/main/docs/file-format.md)，但为了兼容性，您也可以使用 BibLaTeX 文件。正如您的同学已经完成了文献综述并发送给您一个 `.bib` 文件，您将使用那个。通过文件面板上传文件以在 Typst 中访问它。"""
 
 [[main]]
 en = """Once the document contains a bibliography, you can start citing from it.
@@ -222,6 +248,7 @@ Citations use the same syntax as references to a label. As soon as you cite a
 source for the first time, it will appear in the bibliography section of your
 document. Typst supports different citation and bibliography styles. Consult the
 [reference]($bibliography.style) for more details."""
+zh = """一旦文档包含参考文献，您就可以开始引用它。引用使用与引用标签相同的语法。一旦您第一次引用一个来源，它将出现在文档的参考文献部分。Typst 支持不同的引用和参考文献样式。有关更多详细信息，请参阅 [参考文献]($bibliography.style)。"""
 
 [[main]]
 en = """```example
@@ -238,6 +265,8 @@ After fleshing out the methods section, you move on to the meat of the document:
 Your equations. Typst has built-in mathematical typesetting and uses its own
 math notation. Let's start with a simple equation. We wrap it in `[$]` signs
 to let Typst know it should expect a mathematical expression:"""
+zh = """## 数学
+在充实方法部分后，您继续编写文档的核心：您的方程式。Typst 内置了数学排版并使用自己的数学符号。让我们从一个简单的方程开始。我们用 `[$]` 符号将其包裹起来，让 Typst 知道它应该期望一个数学表达式："""
 
 [[main]]
 en = """```example
@@ -249,6 +278,7 @@ defines the glacial flow rate.
 en = """The equation is typeset inline, on the same line as the surrounding text. If you
 want to have it on its own line instead, you should insert a single space at its
 start and end:"""
+zh = """方程式是内联排版的，与周围文本在同一行上。如果您希望它单独一行，您应该在它的开始和结束处插入一个空格："""
 
 [[main]]
 en = """```example
@@ -264,10 +294,12 @@ while it translated `rho` into a Greek letter. Math mode will always show single
 letters verbatim. Multiple letters, however, are interpreted as symbols,
 variables, or function names. To imply a multiplication between single letters,
 put spaces between them."""
+zh = """我们可以看到，Typst 将单个字母 `Q`, `A`, `v`, 和 `C` 原样显示，而将 `rho` 翻译成一个希腊字母。数学模式总是会原样显示单个字母。然而，多个字母被解释为符号、变量或函数名。要在单个字母之间插入乘法，请在它们之间插入空格。"""
 
 [[main]]
 en = """If you want to have a variable that consists of multiple letters, you can
 enclose it in quotes:"""
+zh = """如果您想要一个由多个字母组成的变量，您可以用引号括起来："""
 
 [[main]]
 en = """```example
@@ -280,6 +312,7 @@ $ Q = rho A v + "time offset" $
 [[main]]
 en = """You'll also need a sum formula in your paper. We can use the `sum` symbol and
 then specify the range of the summation in sub- and superscripts:"""
+zh = """您还需要在您的论文中添加一个求和公式。我们可以使用 `sum` 符号，然后指定求和的范围，使用下标和上标："""
 
 [[main]]
 en = """```example
@@ -294,6 +327,7 @@ en = """To add a subscript to a symbol or variable, type a `_` character and the
 subscript. Similarly, use the `^` character for a superscript. If your
 sub- or superscript consists of multiple things, you must enclose them
 in round parentheses."""
+zh = """要为符号或变量添加下标，输入一个 `_` 字符，然后是下标。同样，使用 `^` 字符添加上标。如果您的下标或上标由多个部分组成，您必须将它们括在圆括号中。"""
 
 [[main]]
 en = """The above example also showed us how to insert fractions: Simply put a `/`
@@ -301,6 +335,7 @@ character between the numerator and the denominator and Typst will automatically
 turn it into a fraction. Parentheses are smartly resolved, so you can enter your
 expression as you would into a calculator and Typst will replace parenthesized
 sub-expressions with the appropriate notation."""
+zh = """上面的示例还向我们展示了如何插入分数：只需在分子和分母之间插入一个 `/` 字符，Typst 会自动将其转换为分数。括号被智能地解析，因此您可以像输入计算器一样输入表达式，Typst 会用适当的符号替换括号内的子表达式。"""
 
 [[main]]
 en = """```example
@@ -316,6 +351,7 @@ en = """Not all math constructs have special syntax. Instead, we use functions, 
 like the `image` function we have seen before. For example, to insert a column
 vector, we can use the [`vec`]($math.vec) function. Within math mode, function
 calls don't need to start with the `#` character."""
+zh = """并非所有数学构造都有特殊的语法。相反，我们使用函数，就像我们之前看到的 `image` 函数一样。例如，要插入一个列向量，我们可以使用 [`vec`]($math.vec) 函数。在数学模式中，函数调用不需要以 `#` 字符开头。"""
 
 [[main]]
 en = """```example
@@ -327,11 +363,13 @@ en = """Some functions are only available within math mode. For example, the
 [`cal`]($math.cal) function is used to typeset calligraphic letters commonly
 used for sets. The [math section of the reference]($category/math) provides a
 complete list of all functions that math mode makes available."""
+zh = """有些函数只能在数学模式下使用。例如，[`cal`]($math.cal) 函数用于排版通常用于集合的草体字母。[参考文献的数学部分]($category/math) 提供了一个完整的可用函数列表。"""
 
 [[main]]
 en = """One more thing: Many symbols, such as the arrow, have a lot of variants. You can
 select among these variants by appending a dot and a modifier name to a symbol's
 name:"""
+zh = """还有一件事：许多符号，如箭头，有许多变体。您可以通过在符号名后附加一个点和一个修饰符名称来选择这些变体："""
 
 [[main]]
 en = """```example
@@ -342,6 +380,7 @@ $ a arrow.squiggly b $
 en = """This notation is also available in markup mode, but the symbol name must be
 preceded with `#sym.` there. See the [symbols section]($category/symbols/sym)
 for a list of all available symbols."""
+zh = """这种表示法在标记模式中也可用，但符号名必须以 `#sym.` 开头。有关所有可用符号的列表，请参阅 [符号部分]($category/symbols/sym)。"""
 
 [[main]]
 en = """## Review
@@ -351,9 +390,11 @@ mathematical expressions. You also learned about Typst's functions. There are
 many more kinds of content that Typst lets you insert into your document, such
 as [tables]($table), [shapes]($category/visualize), and [code blocks]($raw). You
 can peruse the [reference] to learn more about these and other features."""
+zh = """现在，您已经了解了如何在 Typst 中编写基本文档。您学会了如何强调文本、编写列表、插入图像、对齐内容以及排版数学表达式。您还了解了 Typst 的函数。Typst 还允许您插入许多其他类型的内容，如 [表格]($table)、[形状]($category/visualize) 和 [代码块]($raw)。您可以浏览 [参考文献] 以了解更多关于这些和其他功能的信息。"""
 
 [[main]]
 en = """For the moment, you have completed writing your report. You have already saved a
 PDF by clicking on the download button in the top right corner. However, you
 think the report could look a bit less plain. In the next section, we'll learn
 how to customize the look of our document."""
+zh = """目前，您已经完成了报告的写作。您已经通过点击右上角的下载按钮保存了一个 PDF。然而，您认为报告看起来有点单调。在下一节中，我们将学习如何自定义文档的外观。"""
