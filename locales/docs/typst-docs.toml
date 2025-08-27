@@ -158,7 +158,7 @@ zh = "CSV 数据。"
 
 [reference.data-loading.csv.csv.decode.delimiter.details]
 en = "The delimiter that separates columns in the CSV file.\nMust be a single ASCII character."
-zh = "分隔 CSV 文件中列的分隔符。\n必须是单个 ASCII 字符。"
+zh = "分隔 CSV 文件中列的「分隔符」（[delimiter](#x-term-delimiter)）。\n必须是单个 ASCII 字符。"
 
 [reference.data-loading.csv.csv.decode.deprecation]
 en = "`csv.decode` is deprecated, directly pass bytes to `csv` instead"
@@ -182,7 +182,7 @@ zh = "解码 CSV"
 
 [reference.data-loading.csv.csv.delimiter.details]
 en = "The delimiter that separates columns in the CSV file.\nMust be a single ASCII character."
-zh = "分隔 CSV 文件中列的分隔符。\n必须是单个 ASCII 字符。"
+zh = "分隔 CSV 文件中列的「分隔符」（[delimiter](#x-term-delimiter)）。\n必须是单个 ASCII 字符。"
 
 [reference.data-loading.csv.csv.details]
 en = "Reads structured data from a CSV file.\n\nThe CSV file will be read and parsed into a 2-dimensional array of strings:\nEach row in the CSV file will be represented as an array of strings, and all\nrows will be collected into a single array. Header rows will not be\nstripped.\n\n# Example\n```example\n#let results = csv(\"example.csv\")\n\n#table(\n  columns: 2,\n  [*Condition*], [*Result*],\n  ..results.flatten(),\n)\n```"
@@ -6100,7 +6100,7 @@ zh = "情况区分的分支。"
 
 [reference.math.cases.cases.delim.details]
 en = "The delimiter to use.\n\nCan be a single character specifying the left delimiter, in which case\nthe right delimiter is inferred. Otherwise, can be an array containing a\nleft and a right delimiter.\n\n"
-zh = "要使用的分隔符。\n\n可以是单个字符，指定左分隔符，在这种情况下，右分隔符是推断的。否则，可以是包含左和右分隔符的数组。\n\n"
+zh = "要使用的「分隔符」（[delimiter](#x-term-delimiter)）。\n\n可以是单个字符，指定「左分隔符」（#x-term-delimiter），在这种情况下，右分隔符是推断的。否则，可以是包含左和右分隔符的数组。\n\n"
 
 [reference.math.cases.cases.details]
 en = "A case distinction.\n\nContent across different branches can be aligned with the `&` symbol.\n\n# Example\n```example\n$ f(x, y) := cases(\n  1 \"if\" (x dot y)/2 <= 0,\n  2 \"if\" x \"is even\",\n  3 \"if\" x in NN,\n  4 \"else\",\n) $\n```"
@@ -6291,7 +6291,7 @@ zh = "上整"
 
 [reference.math.lr.lr.details]
 en = "Delimiter matching.\n\nThe `lr` function allows you to match two delimiters and scale them with the\ncontent they contain. While this also happens automatically for delimiters\nthat match syntactically, `lr` allows you to match two arbitrary delimiters\nand control their size exactly. Apart from the `lr` function, Typst provides\na few more functions that create delimiter pairings for absolute, ceiled,\nand floored values as well as norms.\n\n# Example\n```example\n$ [a, b/2] $\n$ lr(]sum_(x=1)^n], size: #50%) x $\n$ abs((x + y) / 2) $\n```\n"
-zh = "分隔符匹配。\n\n`lr` 函数允许你匹配两个分隔符，并根据它们包含的内容缩放它们。虽然这也会自动为语法匹配的分隔符发生，但 `lr` 允许你匹配两个任意分隔符，并精确控制它们的大小。除了 `lr` 函数，Typst 还提供了几个其他函数，用于创建绝对值、上整和下整值以及范数的分隔符配对。\n\n# 示例\n```example\n$ [a, b/2] $\n$ lr(]sum_(x=1)^n], size: #50%) x $\n$ abs((x + y) / 2) $\n```\n"
+zh = "「分隔符」（[delimiter](#x-term-delimiter)）匹配。\n\n`lr` 函数允许你匹配两个分隔符，并根据它们包含的内容缩放它们。虽然这也会自动为语法匹配的分隔符发生，但 `lr` 允许你匹配两个任意分隔符，并精确控制它们的大小。除了 `lr` 函数，Typst 还提供了几个其他函数，用于创建绝对值、上整和下整值以及范数的分隔符配对。\n\n# 示例\n```example\n$ [a, b/2] $\n$ lr(]sum_(x=1)^n], size: #50%) x $\n$ abs((x + y) / 2) $\n```\n"
 
 [reference.math.lr.lr.floor.body.details]
 en = "The expression to floor."
@@ -6315,15 +6315,15 @@ zh = "下整"
 
 [reference.math.lr.lr.lr.body.details]
 en = "The delimited content, including the delimiters."
-zh = "包含分隔符的内容。"
+zh = "包含「分隔符」（[delimiter](#x-term-delimiter)）的内容。"
 
 [reference.math.lr.lr.lr.details]
 en = "Scales delimiters.\n\nWhile matched delimiters scale by default, this can be used to scale\nunmatched delimiters and to control the delimiter scaling more precisely."
-zh = "缩放分隔符。\n\n虽然匹配的分隔符默认会缩放，但可以用于缩放未匹配的分隔符，并更精确地控制分隔符的缩放。"
+zh = "缩放「分隔符」（[delimiter](#x-term-delimiter)）。\n\n虽然匹配的分隔符默认会缩放，但可以用于缩放未匹配的分隔符，并更精确地控制分隔符的缩放。"
 
 [reference.math.lr.lr.lr.oneliner]
 en = "Scales delimiters."
-zh = "缩放分隔符。"
+zh = "缩放「分隔符」（[delimiter](#x-term-delimiter)）。"
 
 [reference.math.lr.lr.lr.size.details]
 en = "The size of the brackets, relative to the height of the wrapped content."
@@ -6339,11 +6339,11 @@ zh = "要缩放的内容。"
 
 [reference.math.lr.lr.mid.details]
 en = "Scales delimiters vertically to the nearest surrounding `{lr()}` group.\n\n"
-zh = "垂直缩放分隔符到最近的 `{lr()}` 组。\n\n"
+zh = "垂直缩放「分隔符」（[delimiter](#x-term-delimiter)）到最近的 `{lr()}` 组。\n\n"
 
 [reference.math.lr.lr.mid.oneliner]
 en = "Scales delimiters vertically to the nearest surrounding `{lr()}` group."
-zh = "垂直缩放分隔符到最近的 `{lr()}` 组。"
+zh = "垂直缩放「分隔符」（[delimiter](#x-term-delimiter)）到最近的 `{lr()}` 组。"
 
 [reference.math.lr.lr.mid.title]
 en = "Mid"
@@ -6395,7 +6395,7 @@ zh = "左/右"
 
 [reference.math.lr.oneliner]
 en = "Delimiter matching."
-zh = "分隔符匹配。"
+zh = "「分隔符」（[delimiter](#x-term-delimiter)）匹配。"
 
 [reference.math.lr.title]
 en = "Left/Right"
@@ -6419,7 +6419,7 @@ zh = "列之间的间距。\n\n"
 
 [reference.math.mat.mat.delim.details]
 en = "The delimiter to use.\n\nCan be a single character specifying the left delimiter, in which case\nthe right delimiter is inferred. Otherwise, can be an array containing a\nleft and a right delimiter.\n\n"
-zh = "要使用的分隔符。\n\n可以是一个指定左分隔符的单个字符，在这种情况下，右分隔符会被推断出来。否则，可以是一个包含左和右分隔符的数组。\n\n"
+zh = "要使用的「分隔符」（[delimiter](#x-term-delimiter)）。\n\n可以是一个指定「左分隔符」（#x-term-delimiter）的单个字符，在这种情况下，右分隔符会被推断出来。否则，可以是一个包含左和右分隔符的数组。\n\n"
 
 [reference.math.mat.mat.details]
 en = "A matrix.\n\nThe elements of a row should be separated by commas, while the rows\nthemselves should be separated by semicolons. The semicolon syntax merges\npreceding arguments separated by commas into an array. You can also use this\nspecial syntax of math function calls to define custom functions that take\n2D data.\n\nContent in cells can be aligned with the [`align`]($math.mat.align)\nparameter, or content in cells that are in the same row can be aligned with\nthe `&` symbol.\n\n# Example\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
@@ -6786,7 +6786,7 @@ zh = "`underover` 函数的文档。"
 
 [reference.math.underover.oneliner]
 en = "Delimiters above or below parts of an equation."
-zh = "方程部分上方或下方的分隔符。"
+zh = "方程部分上方或下方的「分隔符」（[delimiter](#x-term-delimiter)）。"
 
 [reference.math.underover.title]
 en = "Under/Over"
@@ -6794,7 +6794,7 @@ zh = "下/上"
 
 [reference.math.underover.underover.details]
 en = "Delimiters above or below parts of an equation.\n\nThe braces and brackets further allow you to add an optional annotation\nbelow or above themselves.\n"
-zh = "方程部分上方或下方的分隔符。\n\n括号和方括号进一步允许您添加一个可选的注释，位于它们下方或上方。\n"
+zh = "方程部分上方或下方的「分隔符」（[delimiter](#x-term-delimiter)）。\n\n括号和方括号进一步允许您添加一个可选的注释，位于它们下方或上方。\n"
 
 [reference.math.underover.underover.overbrace.annotation.details]
 en = "The optional content above the brace."
@@ -7130,7 +7130,7 @@ zh = "向量的元素。"
 
 [reference.math.vec.vec.delim.details]
 en = "The delimiter to use.\n\nCan be a single character specifying the left delimiter, in which case\nthe right delimiter is inferred. Otherwise, can be an array containing a\nleft and a right delimiter.\n\n"
-zh = "使用的分隔符。\n\n可以是一个指定左分隔符的单个字符，在这种情况下，右分隔符被推断。否则，可以是一个包含左和右分隔符的数组。\n\n"
+zh = "使用的「分隔符」（[delimiter](#x-term-delimiter)）。\n\n可以是一个指定「左分隔符」（#x-term-delimiter）的单个字符，在这种情况下，右分隔符被推断。否则，可以是一个包含左和右分隔符的数组。\n\n"
 
 [reference.math.vec.vec.details]
 en = "A column vector.\n\nContent in the vector's elements can be aligned with the\n[`align`]($math.vec.align) parameter, or the `&` symbol.\n\n# Example\n```example\n$ vec(a, b, c) dot vec(1, 2, 3)\n    = a + 2b + 3c $\n```"
