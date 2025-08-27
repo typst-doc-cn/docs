@@ -9,9 +9,7 @@ title: "Review `locales/docs/typst-docs.toml` - delimiter term"
 body:
 - type: textarea
   attributes:
-    label: Body
     description: Enter description.
-    render: markdown
     value: |
       Continue reviewing the `locales/docs/typst-docs.toml`.
 
