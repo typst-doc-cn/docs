@@ -8,7 +8,7 @@ zh = "数组"
 description = "A sequence of values"
 
 [dictionary]
-en = "dictionary" 
+en = "dictionary"
 zh = "字典"
 description = "A collection of key-value pairs"
 
@@ -81,3 +81,8 @@ description = "A character or symbol used to separate or mark boundaries between
 en = "pair"
 zh = "键值对"
 description = "A key-value pair in dictionary contexts; two related elements grouped together"
+
+[spreadable]
+en = "spreadable"
+zh = "可展开"
+description = "Arguments that can be spread/expanded in function calls"

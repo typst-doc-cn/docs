@@ -522,11 +522,11 @@ zh = "构造的参数。"
 
 [reference.foundations.arguments.arguments.arguments.details]
 en = "Construct spreadable arguments in place.\n\nThis function behaves like `{let args(..sink) = sink}`.\n\n"
-zh = "在原地构造可展开的参数。\n\n此函数的行为类似于 `{let args(..sink) = sink}`。\n\n"
+zh = "在原地构造「可展开」（[spreadable](#x-term-spreadable)）的参数。\n\n此函数的行为类似于 `{let args(..sink) = sink}`。\n\n"
 
 [reference.foundations.arguments.arguments.arguments.oneliner]
 en = "Construct spreadable arguments in place."
-zh = "在原地构造可展开的参数。"
+zh = "在原地构造「可展开」（[spreadable](#x-term-spreadable)）的参数。"
 
 [reference.foundations.arguments.arguments.arguments.title]
 en = "Construct"
