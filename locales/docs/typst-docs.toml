@@ -110,7 +110,7 @@ zh = "解码 CBOR"
 
 [reference.data-loading.cbor.cbor.details]
 en = "Reads structured data from a CBOR file.\n\nThe file must contain a valid CBOR serialization. Mappings will be\nconverted into Typst dictionaries, and sequences will be converted into\nTypst arrays. Strings and booleans will be converted into the Typst\nequivalents, null-values (`null`, `~` or empty ``) will be converted into\n`{none}`, and numbers will be converted to floats or integers depending on\nwhether they are whole numbers.\n\nBe aware that integers larger than 2<sup>63</sup>-1 will be converted to\nfloating point numbers, which may result in an approximative value."
-zh = "从 CBOR 文件中读取结构化数据。\n\n文件必须包含有效的 CBOR 序列化。映射将被转换为 Typst 字典，序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。"
+zh = "从 CBOR 文件中读取结构化数据。\n\n文件必须包含有效的 CBOR 序列化。映射将被转换为 Typst 「字典」（[dictionary](#x-term-dictionary)），序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。"
 
 [reference.data-loading.cbor.cbor.encode.details]
 en = "Encode structured data into CBOR bytes."
@@ -174,7 +174,7 @@ zh = "从 CSV 字符串/字节中读取结构化数据。"
 
 [reference.data-loading.csv.csv.decode.row-type.details]
 en = "How to represent the file's rows.\n\n- If set to `array`, each row is represented as a plain array of\n  strings.\n- If set to `dictionary`, each row is represented as a dictionary\n  mapping from header keys to strings. This option only makes sense\n  when a header row is present in the CSV file."
-zh = "如何表示文件的行。\n\n- 如果设置为 `array`，每行表示为一个简单的字符串数组。\n- 如果设置为 `dictionary`，每行表示为一个字典，将标题键映射到字符串。这种选项仅在 CSV 文件中存在标题行时有意义。"
+zh = "如何表示文件的行。\n\n- 如果设置为 `array`，每行表示为一个简单的字符串数组。\n- 如果设置为 `dictionary`，每行表示为一个「字典」（[dictionary](#x-term-dictionary)），将标题键映射到字符串。这种选项仅在 CSV 文件中存在标题行时有意义。"
 
 [reference.data-loading.csv.csv.decode.title]
 en = "Decode CSV"
@@ -194,7 +194,7 @@ zh = "从 CSV 文件中读取结构化数据。"
 
 [reference.data-loading.csv.csv.row-type.details]
 en = "How to represent the file's rows.\n\n- If set to `array`, each row is represented as a plain array of\n  strings.\n- If set to `dictionary`, each row is represented as a dictionary\n  mapping from header keys to strings. This option only makes sense when\n  a header row is present in the CSV file."
-zh = "如何表示文件的行。\n\n- 如果设置为 `array`，每行表示为一个简单的字符串数组。\n- 如果设置为 `dictionary`，每行表示为一个字典，将标题键映射到字符串。这种选项仅在 CSV 文件中存在标题行时有意义。"
+zh = "如何表示文件的行。\n\n- 如果设置为 `array`，每行表示为一个简单的字符串数组。\n- 如果设置为 `dictionary`，每行表示为一个「字典」（[dictionary](#x-term-dictionary)），将标题键映射到字符串。这种选项仅在 CSV 文件中存在标题行时有意义。"
 
 [reference.data-loading.csv.csv.source.details]
 en = "A [path]($syntax/#paths) to a CSV file or raw CSV bytes."
@@ -254,7 +254,7 @@ zh = "解码 JSON"
 
 [reference.data-loading.json.json.details]
 en = "{{typst-docs/reference.data-loading.json.json.details.toml}}"
-zh = "从 JSON 文件中读取结构化数据。\n\n文件必须包含有效的 JSON 值，例如对象或数组。JSON 对象将被转换为 Typst 字典，JSON 数组将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，`null` 将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n该函数返回一个字典、数组或其他 JSON 数据类型，具体取决于 JSON 文件。\n\n示例中的 JSON 文件包含键 `temperature`、`unit` 和 `weather` 的对象。\n\n# 示例\n```example\n#let forecast(day) = block[\n  #box(square(\n    width: 2cm,\n    inset: 8pt,\n    fill: if day.weather == \"sunny\" {\n      yellow\n    } else {\n      aqua\n    },\n    align(\n      bottom + right,\n      strong(day.weather),\n    ),\n  ))\n  #h(6pt)\n  #set text(22pt, baseline: -8pt)\n  #day.temperature °#day.unit\n]\n\n#forecast(json(\"monday.json\"))\n#forecast(json(\"tuesday.json\"))\n```"
+zh = "从 JSON 文件中读取结构化数据。\n\n文件必须包含有效的 JSON 值，例如对象或数组。JSON 对象将被转换为 Typst 「字典」（[dictionary](#x-term-dictionary)），JSON 数组将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，`null` 将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n该函数返回一个字典、数组或其他 JSON 数据类型，具体取决于 JSON 文件。\n\n示例中的 JSON 文件包含键 `temperature`、`unit` 和 `weather` 的对象。\n\n# 示例\n```example\n#let forecast(day) = block[\n  #box(square(\n    width: 2cm,\n    inset: 8pt,\n    fill: if day.weather == \"sunny\" {\n      yellow\n    } else {\n      aqua\n    },\n    align(\n      bottom + right,\n      strong(day.weather),\n    ),\n  ))\n  #h(6pt)\n  #set text(22pt, baseline: -8pt)\n  #day.temperature °#day.unit\n]\n\n#forecast(json(\"monday.json\"))\n#forecast(json(\"tuesday.json\"))\n```"
 
 [reference.data-loading.json.json.encode.details]
 en = "Encodes structured data into a JSON string."
@@ -366,7 +366,7 @@ zh = "解码 TOML"
 
 [reference.data-loading.toml.toml.details]
 en = "Reads structured data from a TOML file.\n\nThe file must contain a valid TOML table. TOML tables will be converted into\nTypst dictionaries, and TOML arrays will be converted into Typst arrays.\nStrings, booleans and datetimes will be converted into the Typst equivalents\nand numbers will be converted to floats or integers depending on whether\nthey are whole numbers.\n\nThe TOML file in the example consists of a table with the keys `title`,\n`version`, and `authors`.\n\n# Example\n```example\n#let details = toml(\"details.toml\")\n\nTitle: #details.title \\\nVersion: #details.version \\\nAuthors: #(details.authors\n  .join(\", \", last: \" and \"))\n```"
-zh = "从 TOML 文件中读取结构化数据。\n\n文件必须包含有效的 TOML 表。TOML 表将被转换为 Typst 字典，TOML 数组将被转换为 Typst 数组。字符串、布尔值和日期时间将被转换为 Typst 等效值，数字将根据是否为整数转换为浮点数或整数。\n\n示例中的 TOML 文件包含 `title`、`version` 和 `authors` 键的表。\n\n# 示例\n```example\n#let details = toml(\"details.toml\")\n\nTitle: #details.title \\\nVersion: #details.version \\\nAuthors: #(details.authors\n  .join(\", \", last: \" and \"))\n```"
+zh = "从 TOML 文件中读取结构化数据。\n\n文件必须包含有效的 TOML 表。TOML 表将被转换为 Typst 「字典」（[dictionary](#x-term-dictionary)），TOML 数组将被转换为 Typst 数组。字符串、布尔值和日期时间将被转换为 Typst 等效值，数字将根据是否为整数转换为浮点数或整数。\n\n示例中的 TOML 文件包含 `title`、`version` 和 `authors` 键的表。\n\n# 示例\n```example\n#let details = toml(\"details.toml\")\n\nTitle: #details.title \\\nVersion: #details.version \\\nAuthors: #(details.authors\n  .join(\", \", last: \" and \"))\n```"
 
 [reference.data-loading.toml.toml.encode.details]
 en = "Encodes structured data into a TOML string."
@@ -434,7 +434,7 @@ zh = "解码 XML"
 
 [reference.data-loading.xml.xml.details]
 en = "{{typst-docs/reference.data-loading.xml.xml.details.toml}}"
-zh = "从 XML 文件中读取结构化数据。\n\nXML 文件被解析为字典和字符串数组。XML 节点可以是元素或字符串。元素表示为具有以下键的字典：\n\n- `tag`：元素的名称，字符串类型。\n- `attrs`：元素属性的字典，字符串类型。\n- `children`：元素子节点的数组。\n\n示例中的 XML 文件包含一个根 `news` 标签，其中有多个 `article` 标签。每个文章都有一个 `title`、`author` 和 `content` 标签。`content` 标签包含一个或多个段落，表示为 `p` 标签。\n\n# 示例\n```example\n#let find-child(elem, tag) = {\n  elem.children\n    .find(e => \"tag\" in e and e.tag == tag)\n}\n\n#let article(elem) = {\n  let title = find-child(elem, \"title\")\n  let author = find-child(elem, \"author\")\n  let pars = find-child(elem, \"content\")\n\n  heading(title.children.first())\n  text(10pt, weight: \"medium\")[\n    Published by\n    #author.children.first()\n  ]\n\n  for p in pars.children {\n    if (type(p) == \"dictionary\") {\n      parbreak()\n      p.children.first()\n    }\n  }\n}\n\n#let data = xml(\"example.xml\")\n#for elem in data.first().children {\n  if (type(elem) == \"dictionary\") {\n    article(elem)\n  }\n}\n```"
+zh = "从 XML 文件中读取结构化数据。\n\nXML 文件被解析为「字典」（[dictionary](#x-term-dictionary)）和字符串数组。XML 节点可以是元素或字符串。元素表示为具有以下键的字典：\n\n- `tag`：元素的名称，字符串类型。\n- `attrs`：元素属性的字典，字符串类型。\n- `children`：元素子节点的数组。\n\n示例中的 XML 文件包含一个根 `news` 标签，其中有多个 `article` 标签。每个文章都有一个 `title`、`author` 和 `content` 标签。`content` 标签包含一个或多个段落，表示为 `p` 标签。\n\n# 示例\n```example\n#let find-child(elem, tag) = {\n  elem.children\n    .find(e => \"tag\" in e and e.tag == tag)\n}\n\n#let article(elem) = {\n  let title = find-child(elem, \"title\")\n  let author = find-child(elem, \"author\")\n  let pars = find-child(elem, \"content\")\n\n  heading(title.children.first())\n  text(10pt, weight: \"medium\")[\n    Published by\n    #author.children.first()\n  ]\n\n  for p in pars.children {\n    if (type(p) == \"dictionary\") {\n      parbreak()\n      p.children.first()\n    }\n  }\n}\n\n#let data = xml(\"example.xml\")\n#for elem in data.first().children {\n  if (type(elem) == \"dictionary\") {\n    article(elem)\n  }\n}\n```"
 
 [reference.data-loading.xml.xml.oneliner]
 en = "Reads structured data from an XML file."
@@ -482,7 +482,7 @@ zh = "解码 YAML"
 
 [reference.data-loading.yaml.yaml.details]
 en = "{{typst-docs/reference.data-loading.yaml.yaml.details.toml}}"
-zh = "从 YAML 文件中读取结构化数据。\n\n文件必须包含有效的 YAML 对象或数组。YAML 映射将被转换为 Typst 字典，YAML 序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。自定义 YAML 标签将被忽略，但加载的值仍然存在。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n示例中的 YAML 文件包含以作者为键的对象，每个作者都有一个包含键 \"title\" 和 \"published\" 的子映射序列。\n\n# 示例\n```example\n#let bookshelf(contents) = {\n  for (author, works) in contents {\n    author\n    for work in works [\n      - #work.title (#work.published)\n    ]\n  }\n}\n\n#bookshelf(\n  yaml(\"scifi-authors.yaml\")\n)\n```"
+zh = "从 YAML 文件中读取结构化数据。\n\n文件必须包含有效的 YAML 对象或数组。YAML 映射将被转换为 Typst 「字典」（[dictionary](#x-term-dictionary)），YAML 序列将被转换为 Typst 数组。字符串和布尔值将被转换为 Typst 等效值，空值（`null`、`~` 或空 ``）将被转换为 `{none}`，数字将根据是否为整数转换为浮点数或整数。自定义 YAML 标签将被忽略，但加载的值仍然存在。\n\n请注意，大于 2<sup>63</sup>-1 的整数将被转换为浮点数，这可能会导致近似值。\n\n示例中的 YAML 文件包含以作者为键的对象，每个作者都有一个包含键 \"title\" 和 \"published\" 的子映射序列。\n\n# 示例\n```example\n#let bookshelf(contents) = {\n  for (author, works) in contents {\n    author\n    for work in works [\n      - #work.title (#work.published)\n    ]\n  }\n}\n\n#bookshelf(\n  yaml(\"scifi-authors.yaml\")\n)\n```"
 
 [reference.data-loading.yaml.yaml.encode.details]
 en = "Encode structured data into a YAML string."
@@ -554,15 +554,15 @@ zh = "在"
 
 [reference.foundations.arguments.arguments.details]
 en = "{{typst-docs/reference.foundations.arguments.arguments.details.toml}}"
-zh = "捕获函数的参数。\n\n# 参数接收器\n像内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数接收器_，它将所有多余的参数收集为 `..sink`。生成的 `sink` 值是 `arguments` 类型。它提供了访问位置参数和命名参数的方法。\n\n```example\n#let format(title, ..authors) = {\n  let by = authors\n    .pos()\n    .join(\", \", last: \" and \")\n\n  [*#title* \\ _Written by #by;_]\n}\n\n#format(\"ArtosFlow\", \"Jane\", \"Joe\")\n```\n\n# 展开\n与参数接收器相反，您可以使用 `..spread` 操作符将参数、数组和字典展开到函数调用中：\n\n```example\n#let array = (2, 3, 5)\n#calc.min(..array)\n#let dict = (fill: blue)\n#text(..dict)[Hello]\n```"
+zh = "捕获函数的参数。\n\n# 参数接收器\n像内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数接收器_，它将所有多余的参数收集为 `..sink`。生成的 `sink` 值是 `arguments` 类型。它提供了访问位置参数和命名参数的方法。\n\n```example\n#let format(title, ..authors) = {\n  let by = authors\n    .pos()\n    .join(\", \", last: \" and \")\n\n  [*#title* \\ _Written by #by;_]\n}\n\n#format(\"ArtosFlow\", \"Jane\", \"Joe\")\n```\n\n# 展开\n与参数接收器相反，您可以使用 `..spread` 操作符将参数、数组和「字典」（[dictionary](#x-term-dictionary)）展开到函数调用中：\n\n```example\n#let array = (2, 3, 5)\n#calc.min(..array)\n#let dict = (fill: blue)\n#text(..dict)[Hello]\n```"
 
 [reference.foundations.arguments.arguments.named.details]
 en = "Returns the captured named arguments as a dictionary."
-zh = "将捕获的命名参数作为字典返回。"
+zh = "将捕获的命名参数作为「字典」（[dictionary](#x-term-dictionary)）返回。"
 
 [reference.foundations.arguments.arguments.named.oneliner]
 en = "Returns the captured named arguments as a dictionary."
-zh = "将捕获的命名参数作为字典返回。"
+zh = "将捕获的命名参数作为「字典」（[dictionary](#x-term-dictionary)）返回。"
 
 [reference.foundations.arguments.arguments.named.title]
 en = "Named"
@@ -2449,7 +2449,7 @@ zh = "构造"
 
 [reference.foundations.dictionary.dictionary.dictionary.value.details]
 en = "The value that should be converted to a dictionary."
-zh = "应转换为字典的值。"
+zh = "应转换为「字典」（[dictionary](#x-term-dictionary)）的值。"
 
 [reference.foundations.dictionary.dictionary.insert.details]
 en = "Inserts a new pair into the dictionary. If the dictionary already\ncontains this key, the value is updated."
@@ -2533,7 +2533,7 @@ zh = "删除"
 
 [reference.foundations.dictionary.dictionary.title]
 en = "Dictionary"
-zh = "字典"
+zh = "「字典」（[dictionary](#x-term-dictionary)）"
 
 [reference.foundations.dictionary.dictionary.values.details]
 en = "Returns the values of the dictionary as an array in insertion order."
@@ -2553,7 +2553,7 @@ zh = "从「字符串」（[string](#x-term-string)）键到值的映射。"
 
 [reference.foundations.dictionary.title]
 en = "Dictionary"
-zh = "字典"
+zh = "「字典」（[dictionary](#x-term-dictionary)）"
 
 [reference.foundations.duration.description]
 en = "Documentation for the Duration type."
@@ -4275,11 +4275,11 @@ zh = "页面"
 
 [reference.introspection.location.location.position.details]
 en = "Returns a dictionary with the page number and the x, y position for this\nlocation. The page number starts at one and the coordinates are measured\nfrom the top-left of the page.\n\nIf you only need the page number, use `page()` instead as it allows\nTypst to skip unnecessary work."
-zh = "返回一个包含此位置的页面编号和 x、y 位置的字典。页面编号从一开始，坐标从页面的左上角开始测量。\n\n如果您只需要页面编号，请使用 `page()` 代替，因为它允许 Typst 跳过不必要的计算。"
+zh = "返回一个包含此位置的页面编号和 x、y 位置的「字典」（[dictionary](#x-term-dictionary)）。页面编号从一开始，坐标从页面的左上角开始测量。\n\n如果您只需要页面编号，请使用 `page()` 代替，因为它允许 Typst 跳过不必要的计算。"
 
 [reference.introspection.location.location.position.oneliner]
 en = "Returns a dictionary with the page number and the x, y position for this"
-zh = "返回一个包含此位置的页面编号和 x、y 位置的字典。"
+zh = "返回一个包含此位置的页面编号和 x、y 位置的「字典」（[dictionary](#x-term-dictionary)）。"
 
 [reference.introspection.location.location.position.title]
 en = "Position"
@@ -5178,7 +5178,7 @@ en = "{{typst-docs/reference.layout.layout.layout.details.toml}}"
 
 [reference.layout.layout.layout.func.details]
 en = "A function to call with the outer container's size. Its return value is\ndisplayed in the document.\n\nThe container's size is given as a [dictionary] with the keys `width`\nand `height`.\n\nThis function is called once for each time the content returned by\n`layout` appears in the document. This makes it possible to generate\ncontent that depends on the dimensions of its container."
-zh = "一个函数，用于调用外部容器的尺寸。其返回值显示在文档中。\n\n外部容器的尺寸以 [字典] 形式给出，键为 `width` 和 `height`。\n\n每次 `layout` 返回的内容出现在文档中时，都会调用此函数。这使得可以生成依赖于其容器尺寸的内容。"
+zh = "一个函数，用于调用外部容器的尺寸。其返回值显示在文档中。\n\n外部容器的尺寸以「字典」（[dictionary](#x-term-dictionary)）形式给出，键为 `width` 和 `height`。\n\n每次 `layout` 返回的内容出现在文档中时，都会调用此函数。这使得可以生成依赖于其容器尺寸的内容。"
 
 [reference.layout.layout.layout.oneliner]
 en = "Provides access to the current outer container's (or page's, if none)"
@@ -5467,7 +5467,7 @@ zh = "页面高度。\n\n如果设置为 `{auto}`，则只能通过插入 [分�
 
 [reference.layout.page.page.margin.details]
 en = "The page's margins.\n\n- `{auto}`: The margins are set automatically to 2.5/21 times the smaller\n  dimension of the page. This results in 2.5cm margins for an A4 page.\n- A single length: The same margin on all sides.\n- A dictionary: With a dictionary, the margins can be set individually.\n  The dictionary can contain the following keys in order of precedence:\n  - `top`: The top margin.\n  - `right`: The right margin.\n  - `bottom`: The bottom margin.\n  - `left`: The left margin.\n  - `inside`: The margin at the inner side of the page (where the\n    [binding]($page.binding) is).\n  - `outside`: The margin at the outer side of the page (opposite to the\n    [binding]($page.binding)).\n  - `x`: The horizontal margins.\n  - `y`: The vertical margins.\n  - `rest`: The margins on all sides except those for which the\n    dictionary explicitly sets a size.\n\nThe values for `left` and `right` are mutually exclusive with\nthe values for `inside` and `outside`.\n\n"
-zh = "页面边距。\n\n- `{auto}`: 边距自动设置为页面较小尺寸的 2.5/21 倍。这将产生 A4 页面的 2.5cm 边距。\n- 单个长度: 所有边都使用相同的边距。\n- 字典: 使用字典可以单独设置边距。字典可以包含以下键，按优先级顺序排列：\n  - `top`: 上边距。\n  - `right`: 右边距。\n  - `bottom`: 下边距。\n  - `left`: 左边距。\n  - `inside`: 页面内侧的边距（[绑定]($page.binding) 所在的一侧）。\n  - `outside`: 页面外侧的边距（与 [绑定]($page.binding) 相反的一侧）。\n  - `x`: 水平边距。\n  - `y`: 垂直边距。\n  - `rest`: 所有边距，除了字典显式设置大小的边。\n\n`left` 和 `right` 的值与 `inside` 和 `outside` 的值是互斥的。\n\n"
+zh = "页面边距。\n\n- `{auto}`: 边距自动设置为页面较小尺寸的 2.5/21 倍。这将产生 A4 页面的 2.5cm 边距。\n- 单个长度: 所有边都使用相同的边距。\n- 「字典」（[dictionary](#x-term-dictionary)）: 使用字典可以单独设置边距。字典可以包含以下键，按优先级顺序排列：\n  - `top`: 上边距。\n  - `right`: 右边距。\n  - `bottom`: 下边距。\n  - `left`: 左边距。\n  - `inside`: 页面内侧的边距（[绑定]($page.binding) 所在的一侧）。\n  - `outside`: 页面外侧的边距（与 [绑定]($page.binding) 相反的一侧）。\n  - `x`: 水平边距。\n  - `y`: 垂直边距。\n  - `rest`: 所有边距，除了字典显式设置大小的边。\n\n`left` 和 `right` 的值与 `inside` 和 `outside` 的值是互斥的。\n\n"
 
 [reference.layout.page.page.number-align.details]
 en = "The alignment of the page numbering.\n\nIf the vertical component is `top`, the numbering is placed into the\nheader and if it is `bottom`, it is placed in the footer. Horizon\nalignment is forbidden. If an explicit matching `header` or `footer` is\ngiven, the numbering is ignored.\n\n"
@@ -6411,7 +6411,7 @@ zh = "每个单元格的水平对齐方式。\n\n"
 
 [reference.math.mat.mat.augment.details]
 en = "Draws augmentation lines in a matrix.\n\n- `{none}`: No lines are drawn.\n- A single number: A vertical augmentation line is drawn\n  after the specified column number. Negative numbers start from the end.\n- A dictionary: With a dictionary, multiple augmentation lines can be\n  drawn both horizontally and vertically. Additionally, the style of the\n  lines can be set. The dictionary can contain the following keys:\n  - `hline`: The offsets at which horizontal lines should be drawn.\n    For example, an offset of `2` would result in a horizontal line\n    being drawn after the second row of the matrix. Accepts either an\n    integer for a single line, or an array of integers\n    for multiple lines. Like for a single number, negative numbers start from the end.\n  - `vline`: The offsets at which vertical lines should be drawn.\n    For example, an offset of `2` would result in a vertical line being\n    drawn after the second column of the matrix. Accepts either an\n    integer for a single line, or an array of integers\n    for multiple lines. Like for a single number, negative numbers start from the end.\n  - `stroke`: How to [stroke]($stroke) the line. If set to `{auto}`,\n    takes on a thickness of 0.05em and square line caps.\n\n"
-zh = "在矩阵中绘制增广线。\n\n- `{none}`: 不绘制线。\n- 单个数字: 在指定的列号之后绘制垂直增广线。负数从末尾开始。\n- 字典: 使用字典，可以同时绘制水平和垂直的增广线。此外，还可以设置线的样式。字典可以包含以下键:\n  - `hline`: 水平线应该绘制的偏移量。例如，偏移量为 `2` 将导致在矩阵的第二行之后绘制一条水平线。接受单个整数或整数数组。与单个数字一样，负数从末尾开始。\n  - `vline`: 垂直线应该绘制的偏移量。例如，偏移量为 `2` 将导致在矩阵的第二列之后绘制一条垂直线。接受单个整数或整数数组。与单个数字一样，负数从末尾开始。\n  - `stroke`: 如何 [stroke]($stroke) 线。如果设置为 `{auto}`，则采用 0.05em 的厚度并使用方形线帽。\n\n"
+zh = "在矩阵中绘制增广线。\n\n- `{none}`: 不绘制线。\n- 单个数字: 在指定的列号之后绘制垂直增广线。负数从末尾开始。\n- 「字典」（[dictionary](#x-term-dictionary)）: 使用字典，可以同时绘制水平和垂直的增广线。此外，还可以设置线的样式。字典可以包含以下键:\n  - `hline`: 水平线应该绘制的偏移量。例如，偏移量为 `2` 将导致在矩阵的第二行之后绘制一条水平线。接受单个整数或整数数组。与单个数字一样，负数从末尾开始。\n  - `vline`: 垂直线应该绘制的偏移量。例如，偏移量为 `2` 将导致在矩阵的第二列之后绘制一条垂直线。接受单个整数或整数数组。与单个数字一样，负数从末尾开始。\n  - `stroke`: 如何 [stroke]($stroke) 线。如果设置为 `{auto}`，则采用 0.05em 的厚度并使用方形线帽。\n\n"
 
 [reference.math.mat.mat.column-gap.details]
 en = "The gap between columns.\n\n"
@@ -8895,7 +8895,7 @@ zh = "一种语言感知的引用，会根据其上下文做出反应。"
 
 [reference.text.smartquote.smartquote.quotes.details]
 en = "The quotes to use.\n\n- When set to `{auto}`, the appropriate single quotes for the\n  [text language]($text.lang) will be used. This is the default.\n- Custom quotes can be passed as a string, array, or dictionary of either\n  - [string]($str): a string consisting of two characters containing the\n    opening and closing double quotes (characters here refer to Unicode\n    grapheme clusters)\n  - [array]: an array containing the opening and closing double quotes\n  - [dictionary]: an array containing the double and single quotes, each\n    specified as either `{auto}`, string, or array\n\n"
-zh = "要使用的引号。\n\n- 当设置为 `{auto}` 时，将使用与 [文本语言]($text.lang) 相适应的单引号。这是默认值。\n- 自定义引号可以作为字符串、数组或字典传递，其中包含以下内容：\n  - [string]($str): 一个包含两个字符的字符串，分别包含开闭双引号（此处字符指的是 Unicode 字形簇）\n  - [array]: 一个包含开闭双引号的数组\n  - [dictionary]: 一个包含双引号和单引号的数组，每个引号指定为 `{auto}`、字符串或数组\n\n"
+zh = "要使用的引号。\n\n- 当设置为 `{auto}` 时，将使用与 [文本语言]($text.lang) 相适应的单引号。这是默认值。\n- 自定义引号可以作为字符串、数组或「字典」（[dictionary](#x-term-dictionary)）传递，其中包含以下内容：\n  - [string]($str): 一个包含两个字符的字符串，分别包含开闭双引号（此处字符指的是 Unicode 字形簇）\n  - [array]: 一个包含开闭双引号的数组\n  - [dictionary]: 一个包含双引号和单引号的数组，每个引号指定为 `{auto}`、字符串或数组\n\n"
 
 [reference.text.smartquote.smartquote.title]
 en = "Smartquote"
@@ -9082,7 +9082,7 @@ zh = "是否允许在主字体列表中没有匹配时使用后备字体。这�
 
 [reference.text.text.text.features.details]
 en = "Raw OpenType features to apply.\n\n- If given an array of strings, sets the features identified by the\n  strings to `{1}`.\n- If given a dictionary mapping to numbers, sets the features\n  identified by the keys to the values.\n\n"
-zh = "要应用的原始 OpenType 功能。\n\n- 如果给定一个字符串数组，将字符串标识的功能设置为 `{1}`。\n- 如果给定一个映射到数字的字典，将字符串标识的功能设置为值。\n\n"
+zh = "要应用的原始 OpenType 功能。\n\n- 如果给定一个字符串数组，将字符串标识的功能设置为 `{1}`。\n- 如果给定一个映射到数字的「字典」（[dictionary](#x-term-dictionary)），将字符串标识的功能设置为值。\n\n"
 
 [reference.text.text.text.fill.details]
 en = "The glyph fill paint.\n\n"
@@ -10604,11 +10604,11 @@ zh = "如何扩展矩形的大小而不影响布局。\n请参阅 [box 文档]($
 
 [reference.visualize.rect.rect.radius.details]
 en = "How much to round the rectangle's corners, relative to the minimum of\nthe width and height divided by two. This can be:\n\n- A relative length for a uniform corner radius.\n- A dictionary: With a dictionary, the stroke for each side can be set\n  individually. The dictionary can contain the following keys in order\n  of precedence:\n  - `top-left`: The top-left corner radius.\n  - `top-right`: The top-right corner radius.\n  - `bottom-right`: The bottom-right corner radius.\n  - `bottom-left`: The bottom-left corner radius.\n  - `left`: The top-left and bottom-left corner radii.\n  - `top`: The top-left and top-right corner radii.\n  - `right`: The top-right and bottom-right corner radii.\n  - `bottom`: The bottom-left and bottom-right corner radii.\n  - `rest`: The radii for all corners except those for which the\n    dictionary explicitly sets a size.\n\n"
-zh = "如何圆化矩形的角，相对于宽度和高度除以二的最小值。这可以是：\n\n- 一个相对长度的统一圆角。\n- 一个字典：使用字典，可以单独设置每条边的描边。字典可以包含以下键，按优先级顺序排列：\n  - `top-left`: 左上角的圆角。\n  - `top-right`: 右上角的圆角。\n  - `bottom-right`: 右下角的圆角。\n  - `bottom-left`: 左下角的圆角。\n  - `left`: 左上角和左下角的圆角。\n  - `top`: 左上角和右上角的圆角。\n  - `right`: 右上角和右下角的圆角。\n  - `bottom`: 左下角和右下角的圆角。\n  - `rest`: 所有圆角，除了那些字典明确设置大小的圆角。\n\n"
+zh = "如何圆化矩形的角，相对于宽度和高度除以二的最小值。这可以是：\n\n- 一个相对长度的统一圆角。\n- 一个「字典」（[dictionary](#x-term-dictionary)）：使用字典，可以单独设置每条边的描边。字典可以包含以下键，按优先级顺序排列：\n  - `top-left`: 左上角的圆角。\n  - `top-right`: 右上角的圆角。\n  - `bottom-right`: 右下角的圆角。\n  - `bottom-left`: 左下角的圆角。\n  - `left`: 左上角和左下角的圆角。\n  - `top`: 左上角和右上角的圆角。\n  - `right`: 右上角和右下角的圆角。\n  - `bottom`: 左下角和右下角的圆角。\n  - `rest`: 所有圆角，除了那些字典明确设置大小的圆角。\n\n"
 
 [reference.visualize.rect.rect.stroke.details]
 en = "How to stroke the rectangle. This can be:\n\n- `{none}` to disable stroking\n- `{auto}` for a stroke of `{1pt + black}` if and if only if no fill is\n  given.\n- Any kind of [stroke]\n- A dictionary describing the stroke for each side individually. The\n  dictionary can contain the following keys in order of precedence:\n  - `top`: The top stroke.\n  - `right`: The right stroke.\n  - `bottom`: The bottom stroke.\n  - `left`: The left stroke.\n  - `x`: The horizontal stroke.\n  - `y`: The vertical stroke.\n  - `rest`: The stroke on all sides except those for which the\n    dictionary explicitly sets a size.\n\n"
-zh = "如何描边矩形。这可以是：\n\n- `{none}` 来禁用描边\n- `{auto}` 为没有填充的描边设置 `{1pt + black}`\n- 任何类型的 [stroke]\n- 一个字典，描述每条边的描边。字典可以包含以下键，按优先级顺序排列：\n  - `top`: 顶部描边。\n  - `right`: 右侧描边。\n  - `bottom`: 底部描边。\n  - `left`: 左侧描边。\n  - `x`: 水平描边。\n  - `y`: 垂直描边。\n  - `rest`: 所有边，除了那些字典明确设置大小的边。\n\n"
+zh = "如何描边矩形。这可以是：\n\n- `{none}` 来禁用描边\n- `{auto}` 为没有填充的描边设置 `{1pt + black}`\n- 任何类型的 [stroke]\n- 一个「字典」（[dictionary](#x-term-dictionary)），描述每条边的描边。字典可以包含以下键，按优先级顺序排列：\n  - `top`: 顶部描边。\n  - `right`: 右侧描边。\n  - `bottom`: 底部描边。\n  - `left`: 左侧描边。\n  - `x`: 水平描边。\n  - `y`: 垂直描边。\n  - `rest`: 所有边，除了那些字典明确设置大小的边。\n\n"
 
 [reference.visualize.rect.rect.title]
 en = "Rectangle"
