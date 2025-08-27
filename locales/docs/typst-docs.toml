@@ -8474,7 +8474,7 @@ zh = "`emoji` 模块的文档。"
 
 [reference.symbols.emoji.emoji.details]
 en = "Named emoji.\n\nFor example, `#emoji.face` produces the 😀 emoji. If you frequently use\ncertain emojis, you can also import them from the `emoji` module (`[#import\nemoji: face]`) to use them without the `#emoji.` prefix.\n"
-zh = "命名的表情符号。\n\n例如，`#emoji.face` 产生 😀 表情符号。如果您经常使用某些表情符号，您还可以从 `emoji` 模块导入它们（[#import emoji: face]），这样您就可以使用它们而无需 `#emoji.` 前缀。\n"
+zh = "「命名的」（[named](#x-term-named)）表情符号。\n\n例如，`#emoji.face` 产生 😀 表情符号。如果您经常使用某些表情符号，您还可以从 `emoji` 模块导入它们（[#import emoji: face]），这样您就可以使用它们而无需 `#emoji.` 前缀。\n"
 
 [reference.symbols.emoji.emoji.title]
 en = "Emoji"
@@ -8534,7 +8534,7 @@ zh = "`sect` 已弃用，请使用 `inter` 代替"
 
 [reference.symbols.sym.sym.details]
 en = "Named general symbols.\n\nFor example, `#sym.arrow` produces the → symbol. Within\n[formulas]($category/math), these symbols can be used without the `#sym.`\nprefix.\n\nThe `d` in an integral's `dx` can be written as `[$dif x$]`.\nOutside math formulas, `dif` can be accessed as `math.dif`.\n"
-zh = "命名的通用符号。\n\n例如，`#sym.arrow` 产生 → 符号。在 [公式]($category/math) 中，这些符号可以不使用 `#sym.` 前缀使用。\n\n积分中的 `dx` 中的 `d` 可以写为 `[$dif x$]`。\n在数学公式之外，`dif` 可以访问为 `math.dif`。\n"
+zh = "「命名的」（[named](#x-term-named)）通用符号。\n\n例如，`#sym.arrow` 产生 → 符号。在 [公式]($category/math) 中，这些符号可以不使用 `#sym.` 前缀使用。\n\n积分中的 `dx` 中的 `d` 可以写为 `[$dif x$]`。\n在数学公式之外，`dif` 可以访问为 `math.dif`。\n"
 
 [reference.symbols.sym.sym.title]
 en = "General"
