@@ -1,0 +1,18 @@
+name: Review Translation
+description: Review the translation of the documentation.
+assignees:
+  - @copilot
+labels:
+  - review
+  - translation
+title: "Review `locales/docs/typst-docs.toml` - delimiter term"
+body:
+  - type: markdown
+    content: |
+      Continue reviewing the `locales/docs/typst-docs.toml`.
+
+      - The `delimiter` term should be translated to "分隔符".
+      - find all `delimiter` in the file, and annotate the them by specific syntax mentioned in the copilot instructions.
+      - for varaints like `left delimiter`, annotate them by `「左分隔符」(#x-term-delimiter)`.
+      - again, only the first term in a translation text is annotated.
+
