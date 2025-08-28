@@ -538,7 +538,7 @@ zh = "如果键无效，则返回默认值。"
 
 [reference.foundations.arguments.arguments.at.details]
 en = "Returns the positional argument at the specified index, or the named\nargument with the specified name.\n\nIf the key is an [integer]($int), this is equivalent to first calling\n[`pos`]($arguments.pos) and then [`array.at`]. If it is a [string]($str),\nthis is equivalent to first calling [`named`]($arguments.named) and then\n[`dictionary.at`]."
-zh = "返回指定索引处的「位置参数」（[positional](#x-term-positional)），或具有指定名称的命名参数。\n\n如果键是 [整数]($int)，这相当于先调用 [`pos`]($arguments.pos)，然后调用 [`array.at`]。如果是 [字符串]($str)，这相当于先调用 [`named`]($arguments.named)，然后调用 [`dictionary.at`]。"
+zh = "返回指定索引处的「位置参数」（[positional](#x-term-positional)），或具有指定名称的「通过名称传入的」（[named](#x-term-named)）参数。\n\n如果键是 [整数]($int)，这相当于先调用 [`pos`]($arguments.pos)，然后调用 [`array.at`]。如果是 [字符串]($str)，这相当于先调用 [`named`]($arguments.named)，然后调用 [`dictionary.at`]。"
 
 [reference.foundations.arguments.arguments.at.key.details]
 en = "The index or name of the argument to get."
@@ -546,7 +546,7 @@ zh = "要获取的参数的索引或名称。"
 
 [reference.foundations.arguments.arguments.at.oneliner]
 en = "Returns the positional argument at the specified index, or the named"
-zh = "返回指定索引处的「位置参数」（[positional](#x-term-positional)），或具有指定名称的命名参数。"
+zh = "返回指定索引处的「位置参数」（[positional](#x-term-positional)），或具有指定名称的「通过名称传入的」（[named](#x-term-named)）参数。"
 
 [reference.foundations.arguments.arguments.at.title]
 en = "At"
@@ -557,15 +557,15 @@ en = "{{typst-docs/reference.foundations.arguments.arguments.details.toml}}"
 
 [reference.foundations.arguments.arguments.named.details]
 en = "Returns the captured named arguments as a dictionary."
-zh = "将捕获的命名参数作为「字典」（[dictionary](#x-term-dictionary)）返回。"
+zh = "将捕获的「通过名称传入的」（[named](#x-term-named)）参数作为「字典」（[dictionary](#x-term-dictionary)）返回。"
 
 [reference.foundations.arguments.arguments.named.oneliner]
 en = "Returns the captured named arguments as a dictionary."
-zh = "将捕获的命名参数作为「字典」（[dictionary](#x-term-dictionary)）返回。"
+zh = "将捕获的「通过名称传入的」（[named](#x-term-named)）参数作为「字典」（[dictionary](#x-term-dictionary)）返回。"
 
 [reference.foundations.arguments.arguments.named.title]
 en = "Named"
-zh = "命名"
+zh = "通过名称传入的"
 
 [reference.foundations.arguments.arguments.oneliner]
 en = "Captured arguments to a function."

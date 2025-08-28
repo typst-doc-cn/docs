@@ -153,7 +153,7 @@ en = """Just like text, the image is now aligned at the left side of the page by
 default. It's also lacking a caption. Let's fix that by using the [figure]
 function. This function takes the figure's contents as a positional argument and
 an optional caption as a named argument."""
-zh = """就像文本一样，图像现在默认情况下是左对齐的。它也缺少一个标题。让我们通过使用 [figure] 函数来修复这个问题。这个函数将图表的内容作为位置参数，并可选地作为命名参数提供一个标题。"""
+zh = """就像文本一样，图像现在默认情况下是左对齐的。它也缺少一个标题。让我们通过使用 [figure] 函数来修复这个问题。这个函数将图表的内容作为位置参数，并可选地作为「通过名称传入的」（[named](#x-term-named)）参数提供一个标题。"""
 
 [[main]]
 en = """Within the argument list of the `figure` function, Typst is already in code
