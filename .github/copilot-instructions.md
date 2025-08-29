@@ -215,6 +215,10 @@ When translating, use this three-step process:
    3. **Cultural Adaptation**:
 
    - Adapt text to be culturally appropriate for the target language
+     - 少用被动句，人造形容词等使人感觉有翻译腔的表达
+     - 当术语处于语境下，需要适度改变术语的情态。例如：
+       - 原文是标题“Named”：「通过名称传入的」（[Named](#x-term-named)）
+       - 原文有固定搭配：「命名参数」（[named parameter](#x-term-named)）
    - Consider regional variations when necessary
 
 4. **Formatting Preservation**:
