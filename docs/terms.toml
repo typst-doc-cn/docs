@@ -107,3 +107,8 @@ en = "chunk"
 zh = "分块"
 description = "A portion or piece of data, especially when breaking data into smaller manageable pieces"
 
+
+[separator]
+en = "separator"
+zh = "分隔符"
+description = "A character or item used to separate or mark boundaries between elements"
