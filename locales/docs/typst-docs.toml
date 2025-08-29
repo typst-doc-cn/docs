@@ -75,7 +75,7 @@ zh = "概述"
 
 [reference.body]
 en = "\n# Reference\nThis reference documentation is a comprehensive guide to all of Typst's syntax,\nconcepts, types, and functions. If you are completely new to Typst, we recommend\nstarting with the [tutorial] and then coming back to the reference to learn more\nabout Typst's features as you need them.\n\n## Language\nThe reference starts with a language part that gives an overview over\n[Typst's syntax]($syntax) and contains information about concepts involved in\n[styling documents,]($styling) using\n[Typst's scripting capabilities.]($scripting)\n\n## Functions\nThe second part includes chapters on all functions used to insert, style, transform,\nand layout content in Typst documents. Each function is documented with a\ndescription of its purpose, a list of its parameters, and examples of how to use\nit.\n\nThe final part of the reference explains all functions that are used within\nTypst's code mode to manipulate and transform data. Just as in the previous\npart, each function is documented with a description of its purpose, a list of\nits parameters, and examples of how to use it."
-zh = "\n# 参考\n本参考文档是对 Typst 所有语法、概念、类型和函数的全面指南。如果您完全不熟悉 Typst，我们建议您从 [教程] 开始，然后返回参考以根据需要了解更多关于 Typst 的功能。\n\n## 语言\n参考文献部分介绍了 [Typst 的语法]($syntax) 并包含有关涉及到的概念的信息\n[样式文档,]($styling) 使用\n[Typst 的脚本功能.]($scripting)\n\n## 函数\n第二部分包括关于用于插入、样式、转换和布局内容的所有函数的章节\n和 Typst 文档中的内容。每个函数都用其目的的描述进行文档编制，参数列表，以及如何使用它的示例。\n\n参考文献的最后一部分解释了在 Typst 的代码模式中使用的所有函数，以操纵和转换数据。与前面的部分一样，每个函数都用其目的的描述进行文档编制，参数列表，以及如何使用它的示例。"
+zh = "\n# 参考\n本参考文档是对 Typst 所有语法、概念、类型和函数的全面指南。如果您完全不熟悉 Typst，我们建议您从 [教程] 开始，然后返回参考以根据需要了解更多关于 Typst 的功能。\n\n## 语言\n参考文献部分介绍了 [Typst 的语法]($syntax) 并包含有关涉及到的概念的信息\n[样式文档,]($styling) 使用\n[Typst 的脚本功能.]($scripting)\n\n## 函数\n第二部分包括关于用于插入、样式、转换和布局内容的所有函数的章节\n和 Typst 文档中的内容。每个函数都用其目的的描述进行文档编制，「参数」（[parameter](#x-term-parameter)）列表，以及如何使用它的示例。\n\n参考文献的最后一部分解释了在 Typst 的代码模式中使用的所有函数，以操纵和转换数据。与前面的部分一样，每个函数都用其目的的描述进行文档编制，参数列表，以及如何使用它的示例。"
 
 [reference.context.body]
 en = "{{typst-docs/reference.context.body.toml}}"
@@ -1265,7 +1265,7 @@ zh = "断言"
 
 [reference.foundations.auto.auto.details]
 en = "A value that indicates a smart default.\n\nThe auto type has exactly one value: `{auto}`.\n\nParameters that support the `{auto}` value have some smart default or\ncontextual behaviour. A good example is the [text direction]($text.dir)\nparameter. Setting it to `{auto}` lets Typst automatically determine the\ndirection from the [text language]($text.lang)."
-zh = "表示智能默认值的值。\n\nauto 类型只有一个值：`{auto}`。\n\n支持 `{auto}` 值的参数具有一些智能默认或上下文行为。一个很好的例子是 [文本方向]($text.dir) 参数。将其设置为 `{auto}` 让 Typst 自动从 [文本语言]($text.lang) 中确定方向。"
+zh = "表示智能默认值的值。\n\nauto 类型只有一个值：`{auto}`。\n\n支持 `{auto}` 值的「参数」（[parameter](#x-term-parameter)）具有一些智能默认或上下文行为。一个很好的例子是 [文本方向]($text.dir) 参数。将其设置为 `{auto}` 让 Typst 自动从 [文本语言]($text.lang) 中确定方向。"
 
 [reference.foundations.auto.auto.oneliner]
 en = "A value that indicates a smart default."
@@ -1473,7 +1473,7 @@ zh = "要计算反正切值的数字。"
 
 [reference.foundations.calc.calc.atan2.details]
 en = "Calculates the four-quadrant arctangent of a coordinate.\n\nThe arguments are `(x, y)`, not `(y, x)`.\n\n"
-zh = "计算坐标的四象限反正切值。\n\n参数是 `(x, y)`，而不是 `(y, x)`。\n\n"
+zh = "计算坐标的四象限反正切值。\n\n「参数」（[argument](#x-term-argument)）是 `(x, y)`，而不是 `(y, x)`。\n\n"
 
 [reference.foundations.calc.calc.atan2.oneliner]
 en = "Calculates the four-quadrant arctangent of a coordinate."
@@ -3173,7 +3173,7 @@ zh = "以错误失败。"
 
 [reference.foundations.panic.panic.details]
 en = "Fails with an error.\n\nArguments are displayed to the user (not rendered in the document) as\nstrings, converting with `repr` if necessary.\n\n# Example\nThe code below produces the error `panicked with: \"this is wrong\"`.\n```typ\n#panic(\"this is wrong\")\n```"
-zh = "以错误失败。\n\n参数作为「字符串」（[strings](#x-term-string)）显示给用户（不在文档中呈现），必要时使用 `repr` 转换。\n\n# 示例\n下面的代码产生错误 `panicked with: \"this is wrong\"`。\n```typ\n#panic(\"this is wrong\")\n```"
+zh = "以错误失败。\n\n「参数」（[argument](#x-term-argument)）作为「字符串」（[string](#x-term-string)）显示给用户（不在文档中呈现），必要时使用 `repr` 转换。\n\n# 示例\n下面的代码产生错误 `panicked with: \"this is wrong\"`。\n```typ\n#panic(\"this is wrong\")\n```"
 
 [reference.foundations.panic.panic.oneliner]
 en = "Fails with an error."
@@ -5755,11 +5755,11 @@ zh = "缩放"
 
 [reference.layout.scale.scale.x.details]
 en = "The horizontal scaling factor.\n\nThe body will be mirrored horizontally if the parameter is negative."
-zh = "水平缩放因子。\n\n如果参数为负，则内容将水平镜像。"
+zh = "水平缩放因子。\n\n如果「参数」（[parameter](#x-term-parameter)）为负，则内容将水平镜像。"
 
 [reference.layout.scale.scale.y.details]
 en = "The vertical scaling factor.\n\nThe body will be mirrored vertically if the parameter is negative."
-zh = "垂直缩放因子。\n\n如果参数为负，则内容将垂直镜像。"
+zh = "垂直缩放因子。\n\n如果「参数」（[parameter](#x-term-parameter)）为负，则内容将垂直镜像。"
 
 [reference.layout.scale.title]
 en = "Scale"
@@ -10706,7 +10706,7 @@ zh = "要使用的虚线模式。这可以是：\n\n- 一个预定义的模式�
 
 [reference.visualize.stroke.stroke.stroke.details]
 en = "Converts a value to a stroke or constructs a stroke with the given\nparameters.\n\nNote that in most cases you do not need to convert values to strokes in\norder to use them, as they will be converted automatically. However,\nthis constructor can be useful to ensure a value has all the fields of a\nstroke.\n\n"
-zh = "将一个值转换为描边或使用给定的参数构造一个描边。\n\n请注意，在大多数情况下，你不需要将值转换为描边来使用它们，因为它们会自动转换。然而，这个构造函数可以用于确保一个值具有描边的所有字段。\n\n"
+zh = "将一个值转换为描边或使用给定的「参数」（[parameter](#x-term-parameter)）构造一个描边。\n\n请注意，在大多数情况下，你不需要将值转换为描边来使用它们，因为它们会自动转换。然而，这个构造函数可以用于确保一个值具有描边的所有字段。\n\n"
 
 [reference.visualize.stroke.stroke.stroke.join.details]
 en = "How sharp turns are rendered.\n\nIf set to `{auto}`, the value is inherited, defaulting to `{\"miter\"}`."
