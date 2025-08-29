@@ -773,11 +773,11 @@ zh = "查找"
 
 [reference.foundations.array.array.first.details]
 en = "Returns the first item in the array. May be used on the left-hand side\nof an assignment. Fails with an error if the array is empty."
-zh = "返回数组中的第一个项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
+zh = "返回数组中的第一个项。可以置于赋值号的左侧（例如：`arr.first() = 0`）。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.first.oneliner]
 en = "Returns the first item in the array. May be used on the left-hand side"
-zh = "返回数组中的第一个项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
+zh = "返回数组中的第一个项。可以置于赋值号的左侧（例如：`arr.first() = 0`）。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.first.title]
 en = "First"
@@ -797,7 +797,7 @@ zh = "扁平化"
 
 [reference.foundations.array.array.fold.details]
 en = "Folds all items into a single value using an accumulator function."
-zh = "使用累加器函数将所有项折叠为一个值。"
+zh = "使用累加器函数（即传入的函数参数）将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.folder.details]
 en = "The folding function. Must have two parameters: One for the\naccumulated value and one for an item."
@@ -809,7 +809,7 @@ zh = "开始时的初始值。"
 
 [reference.foundations.array.array.fold.oneliner]
 en = "Folds all items into a single value using an accumulator function."
-zh = "使用累加器函数将所有项折叠为一个值。"
+zh = "使用累加器函数（即传入的函数参数）将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.title]
 en = "Fold"
@@ -873,11 +873,11 @@ zh = "连接"
 
 [reference.foundations.array.array.last.details]
 en = "Returns the last item in the array. May be used on the left-hand side of\nan assignment. Fails with an error if the array is empty."
-zh = "返回数组中的最后一项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
+zh = "返回数组中的最后一项。可以置于赋值号的左侧（例如：`arr.last() = 0`）。如果数组中没有项，则失败并报错。"
 
 [reference.foundations.array.array.last.oneliner]
 en = "Returns the last item in the array. May be used on the left-hand side of"
-zh = "返回数组中的最后一项。可以用于赋值的左侧。"
+zh = "返回数组中的最后一项。可以置于赋值号的左侧（例如：`arr.last() = 0`）。"
 
 [reference.foundations.array.array.last.title]
 en = "Last"
@@ -941,11 +941,11 @@ zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.position.title]
 en = "Position"
-zh = "位置"
+zh = "查找项的位置"
 
 [reference.foundations.array.array.product.default.details]
 en = "What to return if the array is empty. Must be set if the array can\nbe empty."
-zh = "如果数组为空，则返回什么。如果数组可能为空，则必须设置。"
+zh = "如果数组为空，则返回默认值。当数组可能为空时，必须设置此参数。"
 
 [reference.foundations.array.array.product.details]
 en = "Calculates the product all items (works for all types that can be\nmultiplied)."
@@ -977,7 +977,7 @@ zh = "要插入数组末尾的值。"
 
 [reference.foundations.array.array.range.details]
 en = "Create an array consisting of a sequence of numbers.\n\nIf you pass just one positional parameter, it is interpreted as the\n`end` of the range. If you pass two, they describe the `start` and `end`\nof the range.\n\nThis function is available both in the array function's scope and\nglobally.\n\n"
-zh = "创建一个由一系列数字组成的数组。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则将其解释为范围的 `end`。如果传递两个参数，则它们描述范围的 `start` 和 `end`。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
+zh = "创建一个由一串数字组成的数组。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则参数确定所创建范围的 `end`（范围截止的整数）。如果传递两个参数，则参数分别确定范围的 `start` 和 `end`（范围起始和截止的整数）。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
 
 [reference.foundations.array.array.range.end.details]
 en = "The end of the range (exclusive)."
@@ -985,7 +985,7 @@ zh = "范围的结束（不包括）。"
 
 [reference.foundations.array.array.range.oneliner]
 en = "Create an array consisting of a sequence of numbers."
-zh = "创建一个由一系列数字组成的数组。"
+zh = "创建一个由一串数字组成的数组。"
 
 [reference.foundations.array.array.range.start.details]
 en = "The start of the range (inclusive)."
