@@ -116,3 +116,18 @@ description = "The distance between consecutive elements in a sequence"
 en = "separator"
 zh = "分隔符"
 description = "A character or item used to separate or mark boundaries between elements"
+
+[destructure]
+en = "destructure"
+zh = "解构"
+description = "The process of extracting values from arrays or dictionaries into individual variables"
+
+[destructured]
+en = "destructured"
+zh = "被解构的"
+description = "Having been processed through destructuring; past participle of destructure"
+
+[binding]
+en = "binding"
+zh = "绑定"
+description = "The association of a value with a variable name (let binding) or the physical binding of pages in a book (page binding)"

@@ -8,7 +8,7 @@ bound to a specific resolution. Hence, you can print or view SVG files on any
 device without incurring a loss of quality. (Note that font printing quality may
 be better with a PDF.) In contrast to a PDF, an SVG cannot contain multiple
 pages. When exporting a multi-page document, Typst will emit multiple SVGs."""
-zh = """Typst 不仅可以创建 PDF，还可以直接渲染页面到可缩放的矢量图形（SVG），这是在网页中嵌入矢量图形的优选格式。与 PDF 文件一样，SVG 会精确显示您在 Typst 中布置的文档。同样，它们共享不绑定到特定分辨率的优点。因此，您可以在任何设备上打印或查看 SVG 文件，而不会损失质量。（请注意，使用 PDF 打印质量可能更好。）与 PDF 不同，SVG 不能包含多个页面。当导出多页文档时，Typst 将发出多个 SVG。"""
+zh = """Typst 不仅可以创建 PDF，还可以直接渲染页面到可缩放的矢量图形（SVG），这是在网页中嵌入矢量图形的优选格式。与 PDF 文件一样，SVG 会精确显示您在 Typst 中布置的文档。同样，它们共享不「绑定」（[binding](#x-term-binding)）到特定分辨率的优点。因此，您可以在任何设备上打印或查看 SVG 文件，而不会损失质量。（请注意，使用 PDF 打印质量可能更好。）与 PDF 不同，SVG 不能包含多个页面。当导出多页文档时，Typst 将发出多个 SVG。"""
 
 [[main]]
 en = """SVGs can represent text in two ways: By embedding the text itself and rendering
