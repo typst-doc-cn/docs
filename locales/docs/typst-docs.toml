@@ -4892,7 +4892,7 @@ zh = "`grid` 函数的文档。"
 
 [reference.layout.grid.grid.align.details]
 en = "How to align the cells' content.\n\nThis can either be a single alignment, an array of alignments\n(corresponding to each column) or a function that returns an alignment.\nThe function receives the cells' column and row indices, starting from\nzero. If set to `{auto}`, the outer alignment is used.\n\nYou can find an example for this argument at the\n[`table.align`]($table.align) parameter."
-zh = "如何对齐单元格内容。\n\n这可以是单个对齐方式，也可以是对应每个列的对齐方式数组，或者返回对齐方式的函数。\n该函数接收单元格的列和行索引，从零开始。如果设置为 `{auto}`，则使用外部对齐方式。\n\n你可以在 [`table.align`]($table.align) 「形式参数」（[parameter](#x-term-parameter)）中找到此「实际参数」（[argument](#x-term-argument)）的示例。"
+zh = "如何对齐单元格内容。\n\n这可以是单个对齐方式，也可以是对应每个列的对齐方式数组，或者返回对齐方式的函数。\n该函数接收单元格的列和行索引，从零开始。如果设置为 `{auto}`，则使用外部对齐方式。\n\n你可以在 [`table.align`]($table.align) 「参数」（[parameter](#x-term-parameter)）中找到此「参数」（[argument](#x-term-argument)）的示例。"
 
 [reference.layout.grid.grid.cell.align.details]
 en = "The cell's [alignment]($grid.align) override."
@@ -5043,7 +5043,7 @@ zh = "水平线放置的行（零索引）。\n如果 `position` 字段设置为
 
 [reference.layout.grid.grid.inset.details]
 en = "How much to pad the cells' content.\n\nYou can find an example for this argument at the\n[`table.inset`]($table.inset) parameter."
-zh = "单元格内容填充多少。\n\n你可以在 [`table.inset`]($table.inset) 「形式参数」（[parameter](#x-term-parameter)）中找到此「实际参数」（[argument](#x-term-argument)）的示例。"
+zh = "单元格内容填充多少。\n\n你可以在 [`table.inset`]($table.inset) 「参数」（[parameter](#x-term-parameter)）中找到此「参数」（[argument](#x-term-argument)）的示例。"
 
 [reference.layout.grid.grid.oneliner]
 en = "Arranges content in a grid."
@@ -6422,7 +6422,7 @@ zh = "要使用的「分隔符」（[delimiter](#x-term-delimiter)）。\n\n可�
 
 [reference.math.mat.mat.details]
 en = "A matrix.\n\nThe elements of a row should be separated by commas, while the rows\nthemselves should be separated by semicolons. The semicolon syntax merges\npreceding arguments separated by commas into an array. You can also use this\nspecial syntax of math function calls to define custom functions that take\n2D data.\n\nContent in cells can be aligned with the [`align`]($math.mat.align)\nparameter, or content in cells that are in the same row can be aligned with\nthe `&` symbol.\n\n# Example\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
-zh = "一个矩阵。\n\n行中的元素应该用逗号分隔，而行本身应该用分号分隔。分号语法将逗号分隔的先前「实际参数」（[argument](#x-term-argument)）合并为一个数组。你还可以使用这种特殊的数学函数调用语法来定义自定义函数，这些函数接受二维数据。\n\n单元格中的内容可以使用 [`align`]($math.mat.align) 「形式参数」（[parameter](#x-term-parameter)）进行对齐，或者同一行中的单元格内容可以使用 `&` 符号进行对齐。\n\n# 示例\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
+zh = "一个矩阵。\n\n行中的元素应该用逗号分隔，而行本身应该用分号分隔。分号语法将逗号分隔的先前「参数」（[argument](#x-term-argument)）合并为一个数组。你还可以使用这种特殊的数学函数调用语法来定义自定义函数，这些函数接受二维数据。\n\n单元格中的内容可以使用 [`align`]($math.mat.align) 「参数」（[parameter](#x-term-parameter)）进行对齐，或者同一行中的单元格内容可以使用 `&` 符号进行对齐。\n\n# 示例\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
 
 [reference.math.mat.mat.gap.details]
 en = "The gap between rows and columns.\n\nThis is a shorthand to set `row-gap` and `column-gap` to the same value.\n\n"
