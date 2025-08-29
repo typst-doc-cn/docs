@@ -538,7 +538,7 @@ zh = "如果键无效，则返回默认值。"
 
 [reference.foundations.arguments.arguments.at.details]
 en = "Returns the positional argument at the specified index, or the named\nargument with the specified name.\n\nIf the key is an [integer]($int), this is equivalent to first calling\n[`pos`]($arguments.pos) and then [`array.at`]. If it is a [string]($str),\nthis is equivalent to first calling [`named`]($arguments.named) and then\n[`dictionary.at`]."
-zh = "返回指定索引处的「位置参数」（[positional](#x-term-positional)），或具有指定名称的「命名参数」（[named parameter](#x-term-named)）。\n\n如果键是 [整数]($int)，这相当于先调用 [`pos`]($arguments.pos)，然后调用 [`array.at`]。如果是 [字符串]($str)，这相当于先调用 [`named`]($arguments.named)，然后调用 [`dictionary.at`]。"
+zh = "返回指定索引处的「位置参数」（[positional argument](#x-term-positional)），或具有指定名称的「命名参数」（[named parameter](#x-term-named)）。\n\n如果键是 [整数]($int)，这相当于先调用 [`pos`]($arguments.pos)，然后调用 [`array.at`]。如果是 [字符串]($str)，这相当于先调用 [`named`]($arguments.named)，然后调用 [`dictionary.at`]。"
 
 [reference.foundations.arguments.arguments.at.key.details]
 en = "The index or name of the argument to get."
@@ -546,7 +546,7 @@ zh = "要获取的参数的索引或名称。"
 
 [reference.foundations.arguments.arguments.at.oneliner]
 en = "Returns the positional argument at the specified index, or the named"
-zh = "返回指定索引处的「位置参数」（[positional](#x-term-positional)），或具有指定名称的「命名参数」（[named parameter](#x-term-named)）。"
+zh = "返回指定索引处的「位置参数」（[positional argument](#x-term-positional)），或具有指定名称的「命名参数」（[named parameter](#x-term-named)）。"
 
 [reference.foundations.arguments.arguments.at.title]
 en = "At"
@@ -573,11 +573,11 @@ zh = "捕获函数的「参数」（[argument](#x-term-argument)）。"
 
 [reference.foundations.arguments.arguments.pos.details]
 en = "Returns the captured positional arguments as an array."
-zh = "将捕获的「位置参数」（[positional](#x-term-positional)）作为数组返回。"
+zh = "将捕获的「位置参数」（[positional argument](#x-term-positional)）作为数组返回。"
 
 [reference.foundations.arguments.arguments.pos.oneliner]
 en = "Returns the captured positional arguments as an array."
-zh = "将捕获的「位置参数」（[positional](#x-term-positional)）作为数组返回。"
+zh = "将捕获的「位置参数」（[positional argument](#x-term-positional)）作为数组返回。"
 
 [reference.foundations.arguments.arguments.pos.title]
 en = "Positional"
@@ -977,7 +977,7 @@ zh = "要插入数组末尾的值。"
 
 [reference.foundations.array.array.range.details]
 en = "Create an array consisting of a sequence of numbers.\n\nIf you pass just one positional parameter, it is interpreted as the\n`end` of the range. If you pass two, they describe the `start` and `end`\nof the range.\n\nThis function is available both in the array function's scope and\nglobally.\n\n"
-zh = "创建一个由一系列数字组成的数组。\n\n如果只传递一个「位置参数」（[positional](#x-term-positional)），则将其解释为范围的 `end`。如果传递两个参数，则它们描述范围的 `start` 和 `end`。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
+zh = "创建一个由一系列数字组成的数组。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则将其解释为范围的 `end`。如果传递两个参数，则它们描述范围的 `start` 和 `end`。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
 
 [reference.foundations.array.array.range.end.details]
 en = "The end of the range (exclusive)."
@@ -5367,7 +5367,7 @@ zh = "底部边距。"
 
 [reference.layout.pad.pad.details]
 en = "Adds spacing around content.\n\nThe spacing can be specified for each side individually, or for all sides at\nonce by specifying a positional argument.\n\n# Example\n```example\n#set align(center)\n\n#pad(x: 16pt, image(\"typing.jpg\"))\n_Typing speeds can be\n measured in words per minute._\n```"
-zh = "在内容周围添加间距。\n\n间距可以单独为每边指定，也可以通过指定一个「位置参数」（[positional](#x-term-positional)）为所有边指定。\n\n# 示例\n```example\n#set align(center)\n\n#pad(x: 16pt, image(\"typing.jpg\"))\n_Typing speeds can be\n measured in words per minute._\n```"
+zh = "在内容周围添加间距。\n\n间距可以单独为每边指定，也可以通过指定一个「位置参数」（[positional argument](#x-term-positional)）为所有边指定。\n\n# 示例\n```example\n#set align(center)\n\n#pad(x: 16pt, image(\"typing.jpg\"))\n_Typing speeds can be\n measured in words per minute._\n```"
 
 [reference.layout.pad.pad.left.details]
 en = "The padding at the left side."
@@ -5735,7 +5735,7 @@ zh = "缩放内容而不影响布局。\n\n允许您通过在单个轴上指定�
 
 [reference.layout.scale.scale.factor.details]
 en = "The scaling factor for both axes, as a positional argument. This is just\nan optional shorthand notation for setting `x` and `y` to the same\nvalue."
-zh = "两个轴的缩放因子，作为「位置参数」（[positional](#x-term-positional)）。这只是设置 `x` 和 `y` 的简写，因此无法在上下文表达式中检索。"
+zh = "两个轴的缩放因子，作为「位置参数」（[positional argument](#x-term-positional)）。这只是设置 `x` 和 `y` 的简写，因此无法在上下文表达式中检索。"
 
 [reference.layout.scale.scale.oneliner]
 en = "Scales content without affecting layout."
