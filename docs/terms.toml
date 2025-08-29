@@ -27,10 +27,15 @@ en = "function"
 zh = "函数"
 description = "A callable piece of code that takes parameters and returns a value"
 
+[argument]
+en = "argument"
+zh = "实际参数"
+description = "A value passed to a function when it is called; when used alone or in general contexts, translated as '参数'"
+
 [parameter]
 en = "parameter"
-zh = "参数"
-description = "An input value to a function"
+zh = "形式参数"
+description = "A variable in a function definition that receives a value when the function is called; when used alone or in general contexts, translated as '参数'"
 
 [type]
 en = "type"
