@@ -11,7 +11,7 @@ arguments. You can specify an _argument sink_ which collects all excess
 arguments as `..sink`. The resulting `sink` value is of the `arguments`
 type. It exposes methods to access the positional and named arguments."""
 zh = """# 参数收集器
-与内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数收集器_，将所有多余参数收集为 `..sink`。生成的 `sink` 值的类型为 `arguments`。它暴露了访问位置参数和命名参数的方法。"""
+与内置函数一样，自定义函数也可以接受可变数量的参数。您可以指定一个 _参数收集器_，将所有多余参数收集为 `..sink`。生成的 `sink` 值的类型为 `arguments`。它暴露了访问位置参数和「通过名称传入的」（[named](#x-term-named)）参数的方法。"""
 
 [[main]]
 en = """```example

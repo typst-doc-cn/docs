@@ -349,7 +349,7 @@ loaded image, e.g. as a named parameter `{logo: image("mylogo.svg")}`. Note that
 you can then still customize the image's appearance with a set rule within the
 package."""
 zh = """### 路径和包
-包只能从其自己的目录加载文件。在其中，绝对路径指向包根，而不是项目根。因此，它不能直接从项目目录加载文件。如果包需要项目资源（例如标志图像），您必须传递已经加载的图像，例如作为命名参数 `{logo: image("mylogo.svg")}`。请注意，您仍然可以在包内使用设置规则自定义图像的外观。"""
+包只能从其自己的目录加载文件。在其中，绝对路径指向包根，而不是项目根。因此，它不能直接从项目目录加载文件。如果包需要项目资源（例如标志图像），您必须传递已经加载的图像，例如作为「命名参数」（[named parameter](#x-term-named)） `{logo: image("mylogo.svg")}`。请注意，您仍然可以在包内使用设置规则自定义图像的外观。"""
 
 [[main]]
 en = """In the future, paths might become a
