@@ -522,11 +522,11 @@ zh = "构造的参数。"
 
 [reference.foundations.arguments.arguments.arguments.details]
 en = "Construct spreadable arguments in place.\n\nThis function behaves like `{let args(..sink) = sink}`.\n\n"
-zh = "在原地构造「可展开」（[spreadable](#x-term-spreadable)）的参数。\n\n此函数的行为类似于 `{let args(..sink) = sink}`。\n\n"
+zh = "在原地构造「可展开」（[spreadable](#x-term-spreadable)）的「参数」（[argument](#x-term-argument)）。\n\n此函数的行为类似于 `{let args(..sink) = sink}`。\n\n"
 
 [reference.foundations.arguments.arguments.arguments.oneliner]
 en = "Construct spreadable arguments in place."
-zh = "在原地构造「可展开」（[spreadable](#x-term-spreadable)）的参数。"
+zh = "在原地构造「可展开」（[spreadable](#x-term-spreadable)）的「参数」（[argument](#x-term-argument)）。"
 
 [reference.foundations.arguments.arguments.arguments.title]
 en = "Construct"
@@ -569,7 +569,7 @@ zh = "「通过名称传入的」（[named](#x-term-named)）"
 
 [reference.foundations.arguments.arguments.oneliner]
 en = "Captured arguments to a function."
-zh = "捕获函数的参数。"
+zh = "捕获函数的「参数」（[argument](#x-term-argument)）。"
 
 [reference.foundations.arguments.arguments.pos.details]
 en = "Returns the captured positional arguments as an array."
@@ -593,7 +593,7 @@ zh = "Arguments 类型的文档。"
 
 [reference.foundations.arguments.oneliner]
 en = "Captured arguments to a function."
-zh = "捕获函数的参数。"
+zh = "捕获函数的「参数」（[argument](#x-term-argument)）。"
 
 [reference.foundations.arguments.title]
 en = "Arguments"
@@ -801,7 +801,7 @@ zh = "使用累加器函数将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.folder.details]
 en = "The folding function. Must have two parameters: One for the\naccumulated value and one for an item."
-zh = "折叠函数。必须有两个参数：一个用于累加值，一个用于项。"
+zh = "折叠函数。必须有两个「参数」（[parameter](#x-term-parameter)）：一个用于累加值，一个用于项。"
 
 [reference.foundations.array.array.fold.init.details]
 en = "The initial value to start with."
@@ -1009,7 +1009,7 @@ zh = "通过反复应用减少操作，将元素减少为一个。"
 
 [reference.foundations.array.array.reduce.reducer.details]
 en = "The reducing function. Must have two parameters: One for the\naccumulated value and one for an item."
-zh = "减少函数。必须有两个参数：一个用于累加值，一个用于项。"
+zh = "减少函数。必须有两个「参数」（[parameter](#x-term-parameter)）：一个用于累加值，一个用于项。"
 
 [reference.foundations.array.array.reduce.title]
 en = "Reduce"
@@ -2839,7 +2839,7 @@ en = "{{typst-docs/reference.foundations.function.function.details.toml}}"
 
 [reference.foundations.function.function.oneliner]
 en = "A mapping from argument values to a return value."
-zh = "从参数值到返回值的映射。"
+zh = "从「参数」（[argument](#x-term-argument)）值到返回值的映射。"
 
 [reference.foundations.function.function.title]
 en = "Function"
@@ -2867,11 +2867,11 @@ zh = "应用于函数的参数。"
 
 [reference.foundations.function.function.with.details]
 en = "Returns a new function that has the given arguments pre-applied."
-zh = "返回一个新函数，该函数已预先应用了给定的参数。"
+zh = "返回一个新函数，该函数已预先应用了给定的「参数」（[argument](#x-term-argument)）。"
 
 [reference.foundations.function.function.with.oneliner]
 en = "Returns a new function that has the given arguments pre-applied."
-zh = "返回一个新函数，该函数已预先应用了给定的参数。"
+zh = "返回一个新函数，该函数已预先应用了给定的「参数」（[argument](#x-term-argument)）。"
 
 [reference.foundations.function.function.with.title]
 en = "With"
@@ -2879,7 +2879,7 @@ zh = "应用参数"
 
 [reference.foundations.function.oneliner]
 en = "A mapping from argument values to a return value."
-zh = "从参数值到返回值的映射。"
+zh = "从「参数」（[argument](#x-term-argument)）值到返回值的映射。"
 
 [reference.foundations.function.title]
 en = "Function"
@@ -4892,7 +4892,7 @@ zh = "`grid` 函数的文档。"
 
 [reference.layout.grid.grid.align.details]
 en = "How to align the cells' content.\n\nThis can either be a single alignment, an array of alignments\n(corresponding to each column) or a function that returns an alignment.\nThe function receives the cells' column and row indices, starting from\nzero. If set to `{auto}`, the outer alignment is used.\n\nYou can find an example for this argument at the\n[`table.align`]($table.align) parameter."
-zh = "如何对齐单元格内容。\n\n这可以是单个对齐方式，也可以是对应每个列的对齐方式数组，或者返回对齐方式的函数。\n该函数接收单元格的列和行索引，从零开始。如果设置为 `{auto}`，则使用外部对齐方式。\n\n你可以在 [`table.align`]($table.align) 参数中找到此参数的示例。"
+zh = "如何对齐单元格内容。\n\n这可以是单个对齐方式，也可以是对应每个列的对齐方式数组，或者返回对齐方式的函数。\n该函数接收单元格的列和行索引，从零开始。如果设置为 `{auto}`，则使用外部对齐方式。\n\n你可以在 [`table.align`]($table.align) 「形式参数」（[parameter](#x-term-parameter)）中找到此「实际参数」（[argument](#x-term-argument)）的示例。"
 
 [reference.layout.grid.grid.cell.align.details]
 en = "The cell's [alignment]($grid.align) override."
@@ -5043,7 +5043,7 @@ zh = "水平线放置的行（零索引）。\n如果 `position` 字段设置为
 
 [reference.layout.grid.grid.inset.details]
 en = "How much to pad the cells' content.\n\nYou can find an example for this argument at the\n[`table.inset`]($table.inset) parameter."
-zh = "单元格内容填充多少。\n\n你可以在 [`table.inset`]($table.inset) 参数中找到此参数的示例。"
+zh = "单元格内容填充多少。\n\n你可以在 [`table.inset`]($table.inset) 「形式参数」（[parameter](#x-term-parameter)）中找到此「实际参数」（[argument](#x-term-argument)）的示例。"
 
 [reference.layout.grid.grid.oneliner]
 en = "Arranges content in a grid."
@@ -6422,7 +6422,7 @@ zh = "要使用的「分隔符」（[delimiter](#x-term-delimiter)）。\n\n可�
 
 [reference.math.mat.mat.details]
 en = "A matrix.\n\nThe elements of a row should be separated by commas, while the rows\nthemselves should be separated by semicolons. The semicolon syntax merges\npreceding arguments separated by commas into an array. You can also use this\nspecial syntax of math function calls to define custom functions that take\n2D data.\n\nContent in cells can be aligned with the [`align`]($math.mat.align)\nparameter, or content in cells that are in the same row can be aligned with\nthe `&` symbol.\n\n# Example\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
-zh = "一个矩阵。\n\n行中的元素应该用逗号分隔，而行本身应该用分号分隔。分号语法将逗号分隔的先前参数合并为一个数组。你还可以使用这种特殊的数学函数调用语法来定义自定义函数，这些函数接受二维数据。\n\n单元格中的内容可以使用 [`align`]($math.mat.align) 参数进行对齐，或者同一行中的单元格内容可以使用 `&` 符号进行对齐。\n\n# 示例\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
+zh = "一个矩阵。\n\n行中的元素应该用逗号分隔，而行本身应该用分号分隔。分号语法将逗号分隔的先前「实际参数」（[argument](#x-term-argument)）合并为一个数组。你还可以使用这种特殊的数学函数调用语法来定义自定义函数，这些函数接受二维数据。\n\n单元格中的内容可以使用 [`align`]($math.mat.align) 「形式参数」（[parameter](#x-term-parameter)）进行对齐，或者同一行中的单元格内容可以使用 `&` 符号进行对齐。\n\n# 示例\n```example\n$ mat(\n  1, 2, ..., 10;\n  2, 2, ..., 10;\n  dots.v, dots.v, dots.down, dots.v;\n  10, 10, ..., 10;\n) $\n```"
 
 [reference.math.mat.mat.gap.details]
 en = "The gap between rows and columns.\n\nThis is a shorthand to set `row-gap` and `column-gap` to the same value.\n\n"
@@ -7589,7 +7589,7 @@ zh = "`link` 函数的文档。"
 
 [reference.model.link.link.body.details]
 en = "The content that should become a link.\n\nIf `dest` is an URL string, the parameter can be omitted. In this case,\nthe URL will be shown as the link."
-zh = "应该成为链接的内容。\n\n如果 `dest` 是一个 URL 字符串，则参数可以省略。在这种情况下，URL 将显示为链接。"
+zh = "应该成为链接的内容。\n\n如果 `dest` 是一个 URL 字符串，则「参数」（[parameter](#x-term-parameter)）可以省略。在这种情况下，URL 将显示为链接。"
 
 [reference.model.link.link.dest.details]
 en = "{{typst-docs/reference.model.link.link.dest.details.toml}}"
