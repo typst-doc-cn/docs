@@ -837,19 +837,19 @@ zh = "要插入数组的值。"
 
 [reference.foundations.array.array.intersperse.details]
 en = "Returns an array with a copy of the separator value placed between\nadjacent elements."
-zh = "返回一个数组，在相邻元素之间放置分隔符值的副本。"
+zh = "返回一个数组，在相邻元素之间放置分隔符值（separator）的副本。"
 
 [reference.foundations.array.array.intersperse.oneliner]
 en = "Returns an array with a copy of the separator value placed between"
-zh = "返回一个数组，在相邻元素之间放置分隔符值的副本。"
+zh = "返回一个数组，在相邻元素之间放置分隔符值（separator）的副本。"
 
 [reference.foundations.array.array.intersperse.separator.details]
 en = "The value that will be placed between each adjacent element."
-zh = "将放置在每个相邻元素之间的值。"
+zh = "分隔符值（separator），将放置在每个相邻元素之间的值。"
 
 [reference.foundations.array.array.intersperse.title]
 en = "Intersperse"
-zh = "间隔"
+zh = "Intersperse"
 
 [reference.foundations.array.array.join.details]
 en = "Combine all items in the array into one."
