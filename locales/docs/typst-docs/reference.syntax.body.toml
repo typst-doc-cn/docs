@@ -223,7 +223,7 @@ zh = """| 名称                     | 示例                           | 参见
 | 函数调用                 | `{min(x, y)}`                 | [Function]($function)              |
 | 参数传播                 | `{min(..nums)}`               | [Arguments]($arguments)            |
 | 无名函数                 | `{(x, y) => x + y}`           | [Function]($function)              |
-| 绑定                     | `{let x = 1}`                 | [Scripting]($scripting/#bindings)  |
+| 「绑定」（[binding](#x-term-binding)）              | `{let x = 1}`                 | [Scripting]($scripting/#bindings)  |
 | 命名函数                 | `{let f(x) = 2 * x}`          | [Function]($function)              |
 | 设置规则                 | `{set text(14pt)}`            | [Styling]($styling/#set-rules)     |
 | 设置-如果规则           | `{set text(..) if .. }`       | [Styling]($styling/#set-rules)     |

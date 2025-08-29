@@ -52,7 +52,7 @@ en = """- **Code block:** `{{ let x = 1; x + 2 }}` \\
   determine the block's value. Expressions without useful output, like `{let}`
   bindings yield `{none}`, which can be joined with any value without effect."""
 zh = """- **代码块：** `{{ let x = 1; x + 2 }}` \\
-  在编写代码时，您可能希望将计算分成多个语句，创建一些中间变量等等。代码块允许您在需要一个表达式的地方写多个表达式。代码块中的各个表达式应该用换行符或分号分隔。代码块中各个表达式的输出值被连接起来以确定块的值。没有有用输出的表达式，如 `{let}` 绑定，产生 `{none}`，可以与任何值连接而没有效果。"""
+  在编写代码时，您可能希望将计算分成多个语句，创建一些中间变量等等。代码块允许您在需要一个表达式的地方写多个表达式。代码块中的各个表达式应该用换行符或分号分隔。代码块中各个表达式的输出值被连接起来以确定块的值。没有有用输出的表达式，如 `{let}` 「绑定」（[bindings](#x-term-binding)），产生 `{none}`，可以与任何值连接而没有效果。"""
 
 [[main]]
 en = """- **Content block:** `{[*Hey* there!]}` \\
@@ -90,7 +90,7 @@ will be initialized as `{none}`. The `{let}` keyword can also be used to create
 a [custom named function]($function/#defining-functions). Variables can be
 accessed for the rest of the containing block (or the rest of the file if there
 is no containing block)."""
-zh = """## 绑定和解构 { #bindings }
+zh = """## 「绑定」（[binding](#x-term-binding)）和「解构」（[destructure](#x-term-destructure)） { #bindings }
 如上所示，变量可以用 `{let}` 绑定定义。变量被赋值为等号后面的表达式的值。赋值是可选的，如果没有赋值，变量将被初始化为 `{none}`。`{let}` 关键字也可以用于创建 [自定义命名函数]($function/#defining-functions)。变量可以在包含块（或文件中没有包含块时为整个文件）的剩余部分访问。"""
 
 [[main]]
@@ -109,7 +109,7 @@ en = """Let bindings can also be used to destructure [arrays]($array) and
 assignment should mirror an array or dictionary. The `..` operator can be used
 once in the pattern to collect the remainder of the array's or dictionary's
 items."""
-zh = """Let 绑定也可以用于解构 [数组]($array) 和 [字典]($dictionary)。在这种情况下，赋值的左侧应该与数组或字典匹配。`..` 操作符可以用于一次在模式中收集数组或字典的其余部分。"""
+zh = """Let 绑定也可以用于「解构」（[destructure](#x-term-destructure)） [数组]($array) 和 [字典]($dictionary)。在这种情况下，赋值的左侧应该与数组或字典匹配。`..` 操作符可以用于一次在模式中收集数组或字典的其余部分。"""
 
 [[main]]
 en = """```example
@@ -140,7 +140,7 @@ Homer wrote #h.
 
 [[main]]
 en = """You can use the underscore to discard elements in a destructuring pattern:"""
-zh = """您可以使用下划线来丢弃解构模式中的元素："""
+zh = """您可以使用下划线来丢弃「解构」（[destructuring](#x-term-destructure)）模式中的元素："""
 
 [[main]]
 en = """```example
@@ -150,7 +150,7 @@ The y coordinate is #y.
 
 [[main]]
 en = """Destructuring also works in argument lists of functions ..."""
-zh = """解构也适用于函数的参数列表 ..."""
+zh = """「解构」（[destructuring](#x-term-destructure)）也适用于函数的参数列表 ..."""
 
 [[main]]
 en = """```example
@@ -243,7 +243,7 @@ en = """- `{for value in array {..}}` \\
   Iterates over the items in the [array]. The destructuring syntax described in
   [Let binding]($scripting/#bindings) can also be used here."""
 zh = """- `{for value in array {..}}` \\
-  迭代 [数组] 中的项目。[Let 绑定]($scripting/#bindings) 中描述的解构语法也可以在这里使用。"""
+  迭代 [数组] 中的项目。[Let 绑定]($scripting/#bindings) 中描述的「解构」（[destructuring](#x-term-destructure)）语法也可以在这里使用。"""
 
 [[main]]
 en = """- `{for pair in dict {..}}` \\
@@ -252,7 +252,7 @@ en = """- `{for pair in dict {..}}` \\
   than `{for pair in dict.pairs() {..}}` because it doesn't create a temporary
   array of all key-value pairs."""
 zh = """- `{for pair in dict {..}}` \\
-  迭代 [字典] 中的键值对。键值对也可以通过使用 `{for (key, value) in dict {..}}` 进行解构。它比 `{for pair in dict.pairs() {..}}` 更高效，因为它不创建所有键值对的临时数组。"""
+  迭代 [字典] 中的键值对。键值对也可以通过使用 `{for (key, value) in dict {..}}` 进行「解构」（[destructured](#x-term-destructured)）。它比 `{for pair in dict.pairs() {..}}` 更高效，因为它不创建所有键值对的临时数组。"""
 
 [[main]]
 en = """- `{for letter in "abc" {..}}` \\
@@ -380,7 +380,7 @@ en = """There are a few special functions that modify the value they are called 
 In some cases, when the method is only called for its side effect, its return
 value should be ignored (and not participate in joining). The canonical way to
 discard a value is with a let binding: `{let _ = array.remove(1)}`."""
-zh = """有一些特殊的函数会修改它们被调用的值（例如 [`array.push`]($array.push)）。这些函数 _必须_ 以方法形式调用。在某些情况下，当方法仅用于其副作用时，其返回值应被忽略（且不参与连接）。丢弃值的规范方法是使用 let 绑定：`{let _ = array.remove(1)}`。"""
+zh = """有一些特殊的函数会修改它们被调用的值（例如 [`array.push`]($array.push)）。这些函数 _必须_ 以方法形式调用。在某些情况下，当方法仅用于其副作用时，其返回值应被忽略（且不参与连接）。丢弃值的规范方法是使用 let「绑定」（[binding](#x-term-binding)）：`{let _ = array.remove(1)}`。"""
 
 [[main]]
 en = """## Modules
@@ -413,7 +413,7 @@ en = """- **Import items:** `{import "bar.typ": a, b}` \\
   loads all variables defined in a module. You can use the `as` keyword to
   rename the individual items: `{import "bar.typ": a as one, b as two}`"""
 zh = """- **导入项：** `{import "bar.typ": a, b}` \\
-  评估路径 `bar.typ` 处的文件，提取变量 `a` 和 `b` 的值（需要定义在 `bar.typ` 中，例如通过 `{let}` 绑定），并在当前文件中定义它们。将 `a, b` 替换为 `*` 加载模块中定义的所有变量。您可以使用 `as` 关键字重命名各个项：`{import "bar.typ": a as one, b as two}`"""
+  评估路径 `bar.typ` 处的文件，提取变量 `a` 和 `b` 的值（需要定义在 `bar.typ` 中，例如通过 `{let}` 「绑定」（[bindings](#x-term-binding)）），并在当前文件中定义它们。将 `a, b` 替换为 `*` 加载模块中定义的所有变量。您可以使用 `as` 关键字重命名各个项：`{import "bar.typ": a as one, b as two}`"""
 
 [[main]]
 en = """Instead of a path, you can also use a [module value]($module), as shown in the
@@ -460,7 +460,7 @@ operations, such as [modulus]($calc.rem-euclid), do not have a special syntax
 and can be achieved using functions from the
 [`calc`]($category/foundations/calc) module."""
 zh = """## 运算符
-以下表格列出了所有可用的单目和双目运算符及其效果、元数（单目、双目）和优先级（更高绑定更强）。一些操作，例如 [取模]($calc.rem-euclid)，没有特殊的语法，可以使用 [`calc`]($category/foundations/calc) 模块中的函数来实现。"""
+以下表格列出了所有可用的单目和双目运算符及其效果、元数（单目、双目）和优先级（更高「绑定」（[binding](#x-term-binding)）更强）。一些操作，例如 [取模]($calc.rem-euclid)，没有特殊的语法，可以使用 [`calc`]($category/foundations/calc) 模块中的函数来实现。"""
 
 [[main]]
 en = """| Operator   | Effect                          | Arity  | Precedence |

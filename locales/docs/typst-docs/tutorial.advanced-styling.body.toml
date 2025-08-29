@@ -295,7 +295,7 @@ en = """```example:single
 en = """After we bound the content to the `title` variable, we can use it in functions
 and also within markup (prefixed by `#`, like functions). This way, if we decide
 on another title, we can easily change it in one place."""
-zh = """绑定到 `title` 变量后，我们可以在函数和标记中使用它（前缀为 `#`，如函数）。这样，如果我们决定使用另一个标题，我们可以在一个地方轻松更改它。"""
+zh = """「绑定」（[bound](#x-term-binding)）到 `title` 变量后，我们可以在函数和标记中使用它（前缀为 `#`，如函数）。这样，如果我们决定使用另一个标题，我们可以在一个地方轻松更改它。"""
 
 [[main]]
 en = """## Adding columns and headings { #columns-and-headings }
