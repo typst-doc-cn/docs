@@ -107,6 +107,10 @@ en = "chunk"
 zh = "分块"
 description = "A portion or piece of data, especially when breaking data into smaller manageable pieces"
 
+[step]
+en = "step"
+zh = "步长"
+description = "The distance between consecutive elements in a sequence"
 
 [separator]
 en = "separator"

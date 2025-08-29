@@ -977,11 +977,11 @@ zh = "要插入数组末尾的值。"
 
 [reference.foundations.array.array.range.details]
 en = "Create an array consisting of a sequence of numbers.\n\nIf you pass just one positional parameter, it is interpreted as the\n`end` of the range. If you pass two, they describe the `start` and `end`\nof the range.\n\nThis function is available both in the array function's scope and\nglobally.\n\n"
-zh = "生成一系列连续的整数。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则参数确定所创建范围的 `end`（范围截止的整数），且 `start` 为 0。如果传递两个参数，则参数分别确定范围的 `start` 和 `end`（范围起始和截止的整数）。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
+zh = "生成一系列连续的整数。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则参数确定所创建范围的 `end`（范围结束的整数），且 `start` 为 0。如果传递两个参数，则参数分别确定范围的 `start` 和 `end`（范围起始和结束的整数）。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
 
 [reference.foundations.array.array.range.end.details]
 en = "The end of the range (exclusive)."
-zh = "范围的结束（不包括）。"
+zh = "范围结束的位置（不包括`end`本身）。"
 
 [reference.foundations.array.array.range.oneliner]
 en = "Create an array consisting of a sequence of numbers."
@@ -989,11 +989,11 @@ zh = "生成一系列连续的整数。"
 
 [reference.foundations.array.array.range.start.details]
 en = "The start of the range (inclusive)."
-zh = "范围的开始（包括）。"
+zh = "范围起始的整数（包括`start`本身）。"
 
 [reference.foundations.array.array.range.step.details]
 en = "The distance between the generated numbers."
-zh = "生成的数字之间的距离。"
+zh = "生成的数字的「步长」（[step](#x-term-step)），即相邻两个整数之间的差值，默认为 1。"
 
 [reference.foundations.array.array.range.title]
 en = "Range"
