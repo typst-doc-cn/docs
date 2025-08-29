@@ -102,3 +102,17 @@ en = "named"
 zh = "通过名称传入的"
 description = "Related to arguments or parameters passed by name rather than by position; can also mean 'named' in general contexts"
 
+[chunk]
+en = "chunk"
+zh = "分块"
+description = "A portion or piece of data, especially when breaking data into smaller manageable pieces"
+
+[step]
+en = "step"
+zh = "步长"
+description = "The distance between consecutive elements in a sequence"
+
+[separator]
+en = "separator"
+zh = "分隔符"
+description = "A character or item used to separate or mark boundaries between elements"

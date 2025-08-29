@@ -669,23 +669,23 @@ zh = "在"
 
 [reference.foundations.array.array.chunks.chunk-size.details]
 en = "How many elements each chunk may at most contain."
-zh = "每个块最多可以包含多少元素。"
+zh = "每个「分块」（[chunk](#x-term-chunk)）最多可以包含多少元素。"
 
 [reference.foundations.array.array.chunks.details]
 en = "Splits an array into non-overlapping chunks, starting at the beginning,\nending with a single remainder chunk.\n\nAll chunks but the last have `chunk-size` elements.\nIf `exact` is set to `{true}`, the remainder is dropped if it\ncontains less than `chunk-size` elements.\n\n"
-zh = "将数组拆分为不重叠的块，从头开始，以一个剩余块结束。\n\n除最后一个块外，所有块都具有 `chunk-size` 元素。\n如果 `exact` 设置为 `{true}`，则如果剩余块包含的元素少于 `chunk-size`，则将其丢弃。\n\n"
+zh = "将数组拆分为不重叠的「分块」（[chunk](#x-term-chunk)），从头开始，以一个剩余分块结束。\n\n除最后一个分块外，所有分块都具有 `chunk-size` 元素。\n如果 `exact` 设置为 `{true}`，则如果剩余分块包含的元素少于 `chunk-size`，则将其丢弃。\n\n"
 
 [reference.foundations.array.array.chunks.exact.details]
 en = "Whether to keep the remainder if its size is less than `chunk-size`."
-zh = "如果剩余块的大小小于 `chunk-size`，是否保留它。"
+zh = "如果剩余「分块」（[chunk](#x-term-chunk)）的大小小于 `chunk-size`，是否保留它。"
 
 [reference.foundations.array.array.chunks.oneliner]
 en = "Splits an array into non-overlapping chunks, starting at the beginning,"
-zh = "将数组拆分为不重叠的块，从头开始，"
+zh = "将数组拆分为不重叠的「分块」（[chunk](#x-term-chunk)），从头开始，"
 
 [reference.foundations.array.array.chunks.title]
 en = "Chunks"
-zh = "块"
+zh = "分块"
 
 [reference.foundations.array.array.contains.details]
 en = "Whether the array contains the specified value.\n\nThis method also has dedicated syntax: You can write `{2 in (1, 2, 3)}`\ninstead of `{(1, 2, 3).contains(2)}`."
@@ -773,11 +773,11 @@ zh = "查找"
 
 [reference.foundations.array.array.first.details]
 en = "Returns the first item in the array. May be used on the left-hand side\nof an assignment. Fails with an error if the array is empty."
-zh = "返回数组中的第一个项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
+zh = "返回数组中的第一个项。可以置于赋值号的左侧（例如：`arr.first() = 0`）。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.first.oneliner]
 en = "Returns the first item in the array. May be used on the left-hand side"
-zh = "返回数组中的第一个项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
+zh = "返回数组中的第一个项。可以置于赋值号的左侧（例如：`arr.first() = 0`）。如果数组为空，则失败并报错。"
 
 [reference.foundations.array.array.first.title]
 en = "First"
@@ -797,7 +797,7 @@ zh = "扁平化"
 
 [reference.foundations.array.array.fold.details]
 en = "Folds all items into a single value using an accumulator function."
-zh = "使用累加器函数将所有项折叠为一个值。"
+zh = "使用累加器函数（即传入的函数参数）将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.folder.details]
 en = "The folding function. Must have two parameters: One for the\naccumulated value and one for an item."
@@ -809,7 +809,7 @@ zh = "开始时的初始值。"
 
 [reference.foundations.array.array.fold.oneliner]
 en = "Folds all items into a single value using an accumulator function."
-zh = "使用累加器函数将所有项折叠为一个值。"
+zh = "使用累加器函数（即传入的函数参数）将所有项折叠为一个值。"
 
 [reference.foundations.array.array.fold.title]
 en = "Fold"
@@ -837,19 +837,19 @@ zh = "要插入数组的值。"
 
 [reference.foundations.array.array.intersperse.details]
 en = "Returns an array with a copy of the separator value placed between\nadjacent elements."
-zh = "返回一个数组，在相邻元素之间放置分隔符值的副本。"
+zh = "返回一个数组，在相邻元素之间放置分隔符值（[separator](#x-term-separator)）的副本。"
 
 [reference.foundations.array.array.intersperse.oneliner]
 en = "Returns an array with a copy of the separator value placed between"
-zh = "返回一个数组，在相邻元素之间放置分隔符值的副本。"
+zh = "返回一个数组，在相邻元素之间放置分隔符值（[separator](#x-term-separator)）的副本。"
 
 [reference.foundations.array.array.intersperse.separator.details]
 en = "The value that will be placed between each adjacent element."
-zh = "将放置在每个相邻元素之间的值。"
+zh = "分隔符值（[separator](#x-term-separator)），即将放置在每个相邻元素之间的值。"
 
 [reference.foundations.array.array.intersperse.title]
 en = "Intersperse"
-zh = "间隔"
+zh = "Intersperse"
 
 [reference.foundations.array.array.join.details]
 en = "Combine all items in the array into one."
@@ -857,7 +857,7 @@ zh = "将数组中的所有项组合成一个。"
 
 [reference.foundations.array.array.join.last.details]
 en = "An alternative separator between the last two items."
-zh = "最后两项之间的替代分隔符。"
+zh = "使用此参数值而非 `separator` 作为最后两项之间的替代分隔符（[separator](#x-term-separator)）。"
 
 [reference.foundations.array.array.join.oneliner]
 en = "Combine all items in the array into one."
@@ -865,7 +865,7 @@ zh = "将数组中的所有项组合成一个。"
 
 [reference.foundations.array.array.join.separator.details]
 en = "A value to insert between each item of the array."
-zh = "要插入数组每项之间的值。"
+zh = "分隔符值（[separator](#x-term-separator)），即要插入数组每项之间的值。"
 
 [reference.foundations.array.array.join.title]
 en = "Join"
@@ -873,15 +873,15 @@ zh = "连接"
 
 [reference.foundations.array.array.last.details]
 en = "Returns the last item in the array. May be used on the left-hand side of\nan assignment. Fails with an error if the array is empty."
-zh = "返回数组中的最后一项。可以用于赋值的左侧。如果数组为空，则失败并报错。"
+zh = "返回数组中的最后一项。可以置于赋值号的左侧（例如：`arr.last() = 0`）。如果数组中没有项，则失败并报错。"
 
 [reference.foundations.array.array.last.oneliner]
 en = "Returns the last item in the array. May be used on the left-hand side of"
-zh = "返回数组中的最后一项。可以用于赋值的左侧。"
+zh = "返回数组中的最后一项。可以置于赋值号的左侧（例如：`arr.last() = 0`）。"
 
 [reference.foundations.array.array.last.title]
 en = "Last"
-zh = "最后"
+zh = "最后一项"
 
 [reference.foundations.array.array.len.details]
 en = "The number of values in the array."
@@ -897,7 +897,7 @@ zh = "长度"
 
 [reference.foundations.array.array.map.details]
 en = "Produces a new array in which all items from the original one were\ntransformed with the given function."
-zh = "生成一个新数组，其中原始数组中的所有项都通过给定函数进行了转换。"
+zh = "生成一个新数组，其中原数组中的每一项都通过给定函数进行了转换。"
 
 [reference.foundations.array.array.map.mapper.details]
 en = "The function to apply to each item."
@@ -905,7 +905,7 @@ zh = "应用于每个项的函数。"
 
 [reference.foundations.array.array.map.oneliner]
 en = "Produces a new array in which all items from the original one were"
-zh = "生成一个新数组，其中原始数组中的所有项都"
+zh = "生成一个新数组，其中原数组中的每一项都"
 
 [reference.foundations.array.array.map.title]
 en = "Map"
@@ -941,11 +941,11 @@ zh = "应用于每个项的函数。必须返回布尔值。"
 
 [reference.foundations.array.array.position.title]
 en = "Position"
-zh = "位置"
+zh = "查找项的位置"
 
 [reference.foundations.array.array.product.default.details]
 en = "What to return if the array is empty. Must be set if the array can\nbe empty."
-zh = "如果数组为空，则返回什么。如果数组可能为空，则必须设置。"
+zh = "如果数组为空，则返回默认值。当数组可能为空时，必须设置此参数。"
 
 [reference.foundations.array.array.product.details]
 en = "Calculates the product all items (works for all types that can be\nmultiplied)."
@@ -977,23 +977,23 @@ zh = "要插入数组末尾的值。"
 
 [reference.foundations.array.array.range.details]
 en = "Create an array consisting of a sequence of numbers.\n\nIf you pass just one positional parameter, it is interpreted as the\n`end` of the range. If you pass two, they describe the `start` and `end`\nof the range.\n\nThis function is available both in the array function's scope and\nglobally.\n\n"
-zh = "创建一个由一系列数字组成的数组。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则将其解释为范围的 `end`。如果传递两个参数，则它们描述范围的 `start` 和 `end`。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
+zh = "生成一系列连续的整数。\n\n如果只传递一个「位置参数」（[positional parameter](#x-term-positional)），则参数确定所创建范围的 `end`（范围结束的整数），且 `start` 为 0。如果传递两个参数，则参数分别确定范围的 `start` 和 `end`（范围起始和结束的整数）。\n\n此函数在数组函数的作用域和全局范围内均可用。\n\n"
 
 [reference.foundations.array.array.range.end.details]
 en = "The end of the range (exclusive)."
-zh = "范围的结束（不包括）。"
+zh = "范围结束的位置（不包括`end`本身）。"
 
 [reference.foundations.array.array.range.oneliner]
 en = "Create an array consisting of a sequence of numbers."
-zh = "创建一个由一系列数字组成的数组。"
+zh = "生成一系列连续的整数。"
 
 [reference.foundations.array.array.range.start.details]
 en = "The start of the range (inclusive)."
-zh = "范围的开始（包括）。"
+zh = "范围起始的整数（包括`start`本身）。"
 
 [reference.foundations.array.array.range.step.details]
 en = "The distance between the generated numbers."
-zh = "生成的数字之间的距离。"
+zh = "生成的数字的「步长」（[step](#x-term-step)），即相邻两个整数之间的差值，默认为 1。"
 
 [reference.foundations.array.array.range.title]
 en = "Range"
@@ -3684,7 +3684,7 @@ zh = "切片"
 
 [reference.foundations.str.str.split.details]
 en = "Splits a string at matches of a specified pattern and returns an array\nof the resulting parts.\n\nWhen the empty string is used as a separator, it separates every\ncharacter (i.e., Unicode code point) in the string, along with the\nbeginning and end of the string. In practice, this means that the\nresulting list of parts will contain the empty string at the start\nand end of the list."
-zh = "在指定模式的匹配处分割「字符串」（[string](#x-term-string)），返回结果部分的「数组」（[array](#x-term-array)）。\n\n当使用空字符串作为分隔符时，它会分离字符串中的每个字符（即 Unicode 码点），以及字符串的开头和结尾。实际上，这意味着结果部分列表将在列表的开始和结尾包含空字符串。"
+zh = "在指定模式的匹配处分割「字符串」（[string](#x-term-string)），返回结果部分的「数组」（[array](#x-term-array)）。\n\n当使用空字符串作为「分隔符」（[separator](#x-term-separator)）时，它会分离字符串中的每个字符（即 Unicode 码点），以及字符串的开头和结尾。实际上，这意味着结果部分列表将在列表的开始和结尾包含空字符串。"
 
 [reference.foundations.str.str.split.oneliner]
 en = "Splits a string at matches of a specified pattern and returns an array"
@@ -7409,7 +7409,7 @@ zh = "标题在图中的位置。`{top}` 或 `{bottom}`。\n\n"
 
 [reference.model.figure.figure.caption.separator.details]
 en = "The separator which will appear between the number and body.\n\nIf set to `{auto}`, the separator will be adapted to the current\n[language]($text.lang) and [region]($text.region).\n\n"
-zh = "出现在编号和内容之间的分隔符。\n\n如果设置为 `{auto}`，则分隔符将适应当前的 [语言]($text.lang) 和 [区域]($text.region)。\n\n"
+zh = "出现在编号和内容之间的分隔符。\n\n如果设置为 `{auto}`，则「分隔符」（[separator](#x-term-separator)）将适应当前的 [语言]($text.lang) 和 [区域]($text.region)。\n\n"
 
 [reference.model.figure.figure.caption.title]
 en = "Caption"
@@ -7474,7 +7474,7 @@ en = "{{typst-docs/reference.model.footnote.footnote.details.toml}}"
 
 [reference.model.footnote.footnote.entry.clearance.details]
 en = "The amount of clearance between the document body and the separator.\n\n"
-zh = "文档主体和分隔符之间的间距。\n\n"
+zh = "文档主体和「分隔符」（[separator](#x-term-separator)）之间的间距。\n\n"
 
 [reference.model.footnote.footnote.entry.details]
 en = "An entry in a footnote list.\n\nThis function is not intended to be called directly. Instead, it is used in\nset and show rules to customize footnote listings.\n\n"
@@ -7498,7 +7498,7 @@ zh = "一个脚注列表中的条目。"
 
 [reference.model.footnote.footnote.entry.separator.details]
 en = "The separator between the document body and the footnote listing.\n\n"
-zh = "文档主体和脚注列表之间的分隔符。\n\n"
+zh = "文档主体和脚注列表之间的「分隔符」（[separator](#x-term-separator)）。\n\n"
 
 [reference.model.footnote.footnote.entry.title]
 en = "Footnote Entry"
@@ -8331,7 +8331,7 @@ zh = "一个术语列表及其描述。"
 
 [reference.model.terms.terms.separator.details]
 en = "The separator between the item and the description.\n\nIf you want to just separate them with a certain amount of space, use\n`{h(2cm, weak: true)}` as the separator and replace `{2cm}` with your\ndesired amount of space.\n\n"
-zh = "术语和描述之间的分隔符。\n\n如果您只想用一定的间距分开它们，请使用 `{h(2cm, weak: true)}` 作为分隔符，并替换 `{2cm}` 为您想要的间距量。\n\n"
+zh = "术语和描述之间的「分隔符」（[separator](#x-term-separator)）。\n\n如果您只想用一定的间距分开它们，请使用 `{h(2cm, weak: true)}` 作为分隔符，并替换 `{2cm}` 为您想要的间距量。\n\n"
 
 [reference.model.terms.terms.spacing.details]
 en = "The spacing between the items of the term list.\n\nIf set to `{auto}`, uses paragraph [`leading`]($par.leading) for tight\nterm lists and paragraph [`spacing`]($par.spacing) for wide\n(non-tight) term lists."
