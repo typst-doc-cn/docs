@@ -102,3 +102,8 @@ en = "named"
 zh = "通过名称传入的"
 description = "Related to arguments or parameters passed by name rather than by position; can also mean 'named' in general contexts"
 
+[chunk]
+en = "chunk"
+zh = "分块"
+description = "A portion or piece of data, especially when breaking data into smaller manageable pieces"
+

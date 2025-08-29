@@ -669,23 +669,23 @@ zh = "在"
 
 [reference.foundations.array.array.chunks.chunk-size.details]
 en = "How many elements each chunk may at most contain."
-zh = "每个块最多可以包含多少元素。"
+zh = "每个「分块」（[chunk](#x-term-chunk)）最多可以包含多少元素。"
 
 [reference.foundations.array.array.chunks.details]
 en = "Splits an array into non-overlapping chunks, starting at the beginning,\nending with a single remainder chunk.\n\nAll chunks but the last have `chunk-size` elements.\nIf `exact` is set to `{true}`, the remainder is dropped if it\ncontains less than `chunk-size` elements.\n\n"
-zh = "将数组拆分为不重叠的块，从头开始，以一个剩余块结束。\n\n除最后一个块外，所有块都具有 `chunk-size` 元素。\n如果 `exact` 设置为 `{true}`，则如果剩余块包含的元素少于 `chunk-size`，则将其丢弃。\n\n"
+zh = "将数组拆分为不重叠的「分块」（[chunk](#x-term-chunk)），从头开始，以一个剩余分块结束。\n\n除最后一个分块外，所有分块都具有 `chunk-size` 元素。\n如果 `exact` 设置为 `{true}`，则如果剩余分块包含的元素少于 `chunk-size`，则将其丢弃。\n\n"
 
 [reference.foundations.array.array.chunks.exact.details]
 en = "Whether to keep the remainder if its size is less than `chunk-size`."
-zh = "如果剩余块的大小小于 `chunk-size`，是否保留它。"
+zh = "如果剩余「分块」（[chunk](#x-term-chunk)）的大小小于 `chunk-size`，是否保留它。"
 
 [reference.foundations.array.array.chunks.oneliner]
 en = "Splits an array into non-overlapping chunks, starting at the beginning,"
-zh = "将数组拆分为不重叠的块，从头开始，"
+zh = "将数组拆分为不重叠的「分块」（[chunk](#x-term-chunk)），从头开始，"
 
 [reference.foundations.array.array.chunks.title]
 en = "Chunks"
-zh = "块"
+zh = "分块"
 
 [reference.foundations.array.array.contains.details]
 en = "Whether the array contains the specified value.\n\nThis method also has dedicated syntax: You can write `{2 in (1, 2, 3)}`\ninstead of `{(1, 2, 3).contains(2)}`."
