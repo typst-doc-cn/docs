@@ -1952,6 +1952,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "translate"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "insta",
+ "serde",
+ "serde_json",
+ "tinymist-l10n",
+ "toml",
+ "typst",
+ "typst-docs",
+ "typst-docs-l10n",
+]
+
+[[package]]
 name = "ttf-parser"
 version = "0.24.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

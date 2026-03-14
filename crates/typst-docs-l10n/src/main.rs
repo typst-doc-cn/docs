@@ -15,13 +15,10 @@ use tinymist_l10n::{
 };
 use typst_docs::provide;
 use typst_docs_l10n::generate::GenContext;
+use typst_docs_l10n::markdown::split_markdown;
 use typst_docs_l10n::resolve::CliResolver;
 use typst_docs_l10n::translate::check_page;
 use typst_docs_l10n::PageMdModel;
-
-use crate::split::split_markdown;
-
-mod split;
 
 /// The main function
 fn main() -> anyhow::Result<()> {
