@@ -1,0 +1,29 @@
+[package]
+name = "translate"
+description = "Scan Typst documentation translations for missing or stale entries."
+categories = ["command-line-utilities", "development-tools"]
+keywords = ["translation", "typst", "docs"]
+authors.workspace = true
+version.workspace = true
+license.workspace = true
+edition.workspace = true
+homepage.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+clap = { workspace = true, features = ["wrap_help"] }
+serde.workspace = true
+serde_json.workspace = true
+typst.workspace = true
+typst-docs.workspace = true
+tinymist-l10n.workspace = true
+typst-docs-l10n = { path = "../typst-docs-l10n" }
+toml = "0.8"
+
+[dev-dependencies]
+insta.workspace = true
+
+[lints]
+workspace = true

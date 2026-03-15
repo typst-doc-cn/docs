@@ -9,6 +9,7 @@ use typst_docs::{
 
 pub mod convert;
 pub mod generate;
+pub mod markdown;
 pub mod resolve;
 pub mod translate;
 
