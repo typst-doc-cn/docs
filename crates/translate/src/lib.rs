@@ -394,7 +394,7 @@ fn collect_source_entries(base: &str) -> Result<Vec<SourceEntry>> {
         check_page(page, &mut translations);
     }
 
-    let mut entries = translations
+    let entries = translations
         .into_iter()
         .map(|(key, current_en)| {
             if should_split(&current_en) {
@@ -420,8 +420,74 @@ fn collect_source_entries(base: &str) -> Result<Vec<SourceEntry>> {
         })
         .collect::<Vec<_>>();
 
-    entries.sort_by(|left, right| left.key.cmp(&right.key));
-    Ok(entries)
+    Ok(dedupe_source_entries(entries))
+}
+
+/// Collapses duplicate source keys into a single deterministic entry.
+///
+/// The source walker can emit the same translation key more than once when
+/// documentation structures overlap, such as a nested page and a parameter
+/// sharing an identical dot path. In those cases, prefer the entry that keeps
+/// the most recoverable source information:
+/// - Split entries beat inline entries because they preserve paragraph shape.
+/// - Otherwise, longer English source wins over shorter summaries.
+/// - Remaining ties fall back to a lexical comparison for stability.
+fn dedupe_source_entries(entries: Vec<SourceEntry>) -> Vec<SourceEntry> {
+    let mut deduped = BTreeMap::new();
+
+    for entry in entries {
+        let key = entry.key.clone();
+        match deduped.entry(key) {
+            std::collections::btree_map::Entry::Vacant(slot) => {
+                slot.insert(entry);
+            }
+            std::collections::btree_map::Entry::Occupied(mut slot) => {
+                if prefers_source_entry(&entry, slot.get()) {
+                    slot.insert(entry);
+                }
+            }
+        }
+    }
+
+    deduped.into_values().collect()
+}
+
+/// Returns whether the candidate source entry should replace the existing one
+/// for the same translation key.
+fn prefers_source_entry(candidate: &SourceEntry, existing: &SourceEntry) -> bool {
+    match (
+        candidate_split_rank(candidate),
+        candidate_split_rank(existing),
+    ) {
+        (left, right) if left != right => left > right,
+        _ => match candidate
+            .current_en()
+            .len()
+            .cmp(&existing.current_en().len())
+        {
+            std::cmp::Ordering::Greater => true,
+            std::cmp::Ordering::Less => false,
+            std::cmp::Ordering::Equal => candidate.current_en() < existing.current_en(),
+        },
+    }
+}
+
+/// Returns the dedupe priority for the entry's storage shape.
+fn candidate_split_rank(entry: &SourceEntry) -> u8 {
+    match entry.content {
+        SourceContent::Split { .. } => 1,
+        SourceContent::Inline { .. } => 0,
+    }
+}
+
+impl SourceEntry {
+    /// Returns the current English source text regardless of storage mode.
+    fn current_en(&self) -> &str {
+        match &self.content {
+            SourceContent::Inline { current_en } => current_en,
+            SourceContent::Split { current_en, .. } => current_en,
+        }
+    }
 }
 
 /// Compares current English source entries against checked-in translations.
@@ -1054,5 +1120,44 @@ mod tests {
           ]
         }
         "###);
+    }
+
+    #[test]
+    fn dedupes_source_entries_deterministically() {
+        let entries = vec![
+            SourceEntry {
+                key: "alpha".to_owned(),
+                content: SourceContent::Inline {
+                    current_en: "Short".to_owned(),
+                },
+            },
+            SourceEntry {
+                key: "alpha".to_owned(),
+                content: SourceContent::Inline {
+                    current_en: "A much longer source entry".to_owned(),
+                },
+            },
+            SourceEntry {
+                key: "beta".to_owned(),
+                content: SourceContent::Inline {
+                    current_en: "Inline".to_owned(),
+                },
+            },
+            SourceEntry {
+                key: "beta".to_owned(),
+                content: SourceContent::Split {
+                    current_en: "Split body".to_owned(),
+                    file_name: "beta.toml".to_owned(),
+                    paragraphs: vec!["Split body".to_owned()],
+                },
+            },
+        ];
+
+        let deduped = dedupe_source_entries(entries);
+        assert_eq!(deduped.len(), 2);
+        assert_eq!(deduped[0].key, "alpha");
+        assert_eq!(deduped[0].current_en(), "A much longer source entry");
+        assert_eq!(deduped[1].key, "beta");
+        assert!(matches!(deduped[1].content, SourceContent::Split { .. }));
     }
 }
