@@ -2,7 +2,7 @@
 
 This repository already keeps detailed translation guidance in
 `.github/copilot-instructions.md`. Treat this file as the repo-local operating
-guide for coding agents working in `/home/kamiyoru/work/typst/docs`.
+guide for coding agents working in this repository.
 
 ## Primary References
 
