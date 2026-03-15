@@ -2,6 +2,10 @@
 
 This document provides comprehensive guidance for maintaining localization (l10n) in the Typst Documentation project. These instructions are specifically designed for AI assistants (Claude/Copilot) to ensure consistent and proper handling of translations.
 
+For translation work, treat `docs/translation-principle.md` as the canonical
+shared policy, `CONTRIBUTING.md` as the contributor workflow, and
+`docs/terms.toml` as the canonical glossary.
+
 ## Keep Good PR Title
 
 Determine a good PR prefix **only** by the PR description before work. Add a prefix to indicate what kind of release this pull request corresponds to. For reference, see https://www.conventionalcommits.org/
@@ -27,6 +31,8 @@ The localization files are stored in the `locales/docs/` directory:
 
 - **Main file**: `locales/docs/typst-docs.toml` - Contains the primary translations
 - **Detailed files**: `locales/docs/typst-docs/` - Contains detailed documentation sections
+- **Shared policy**: `docs/translation-principle.md` - Shared translation rules for humans and AI assistants
+- **Glossary**: `docs/terms.toml` - Canonical terminology for recurring or ambiguous terms
 
 ## Current Language Support
 
@@ -229,49 +235,59 @@ When translating, use this three-step process:
 
 ## Workflow for AI Assistants
 
-### Step 1: Identify Missing Translations
+Follow the same console-first loop documented in `CONTRIBUTING.md`, and use
+`docs/translation-principle.md` as the canonical source when this file and the
+shared policy overlap.
 
-Look for entries that have `en = "..."` but are missing translations for the target language.
+### Step 1: Scan for a review-sized target
 
-### Step 2: Add Translations
+Start with the local helper instead of manually hunting through the TOML files:
 
-Add the appropriate language code with proper translation while maintaining the TOML structure.
-
-### Step 3: Validate Format
-
-Ensure the TOML remains valid and properly formatted, using the command:
-
-```
-pnpm run validate
+```bash
+cargo run -p translate -- scan
 ```
 
-### Example Workflow
+Choose one review-sized target from the helper output. Prefer a single entry, a
+single included body file, or a small cluster of related keys over a broad
+backlog sweep.
 
-**Find untranslated entry:**
+### Step 2: Locate the correct translation storage
 
-```toml
-[Language.part]
-en = "Language"
+- If the helper reports a top-level key such as `key=index.title`, edit
+  `locales/docs/typst-docs.toml`.
+- If the matching `en` value in that file is `{{typst-docs/<file>.toml}}`, edit
+  the included body file under `locales/docs/typst-docs/`.
+- If the helper reports `paragraph=main.<index>`, edit only that `[[main]]`
+  entry in the included body file unless the task explicitly requires a wider
+  sync.
+
+### Step 3: Edit minimally using the shared policy
+
+- Preserve TOML structure, Markdown, Typst code, links, labels, placeholders,
+  and unrelated surrounding content.
+- Reuse `docs/terms.toml` for recurring or ambiguous terminology, and add or
+  refine glossary entries when the repository needs a canonical wording or a
+  clearer usage note.
+
+### Step 4: Validate and inspect the patch
+
+Use the current local validation and review commands:
+
+```
+npm run validate
+git diff -- <files>
 ```
 
-**Add Chinese translation:**
+Inspect the `npm run validate` output manually. The validator currently logs
+parse errors without enforcing a non-zero exit code.
 
-```toml
-[Language.part]
-en = "Language"
-zh = "语言"
+### Step 5: Prepare a pull request when requested
+
+```bash
+gh pr create
 ```
 
-**Add multiple languages:**
-
-```toml
-[Language.part]
-en = "Language"
-zh = "语言"
-fr = "Langue"
-de = "Sprache"
-es = "Idioma"
-```
+This step requires a working local GitHub CLI authentication setup.
 
 ## Common Patterns
 
@@ -358,4 +374,6 @@ zh = "函数的详细说明。"
    zh = "[指南]($guides/guide-for-latex-users)"
    ```
 
-This document should serve as a comprehensive reference for AI assistants working on localization tasks in this project. Always refer to existing translations for consistency and follow the established patterns.
+This document should serve as an AI-assistant supplement to the shared policy in
+`docs/translation-principle.md`. Always refer to existing translations for
+consistency and keep the workflow aligned with `CONTRIBUTING.md`.
