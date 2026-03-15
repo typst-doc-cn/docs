@@ -1,7 +1,7 @@
 # translation-review-skill Specification
 
 ## Purpose
-TBD - created by archiving change create-skill-to-translate-typst-docs. Update Purpose after archive.
+This skill defines how Codex should translate and review Typst documentation TOML in this repository. It is used whenever Codex is asked to work on `locales/docs/typst-docs.toml` or related included body files, ensuring that translations follow the repo-specific workflow, use the helper tool to locate and update missing or outdated entries, and present all changes as git-compatible patches for review.
 ## Requirements
 ### Requirement: Skill provides the repository-specific TOML translation workflow
 The repository SHALL provide a repo-local skill that teaches Codex how to
