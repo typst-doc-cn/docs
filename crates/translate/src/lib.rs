@@ -9,7 +9,7 @@ use serde::{Deserialize, Serialize};
 use tinymist_l10n::{deserialize, TranslationMap};
 use typst::layout::PagedDocument;
 use typst_docs::{provide, Html, Resolver};
-use typst_docs_l10n::{markdown::split_markdown, translate::check_page, PageMdModel};
+use typst_docs_l10n::{markdown::{split_markdown, MARKDOWN_PAR_SEP}, translate::check_page, PageMdModel};
 
 /// Default base URL used while deriving current English source entries.
 const DEFAULT_BASE: &str = "/";
@@ -17,8 +17,8 @@ const DEFAULT_BASE: &str = "/";
 pub const DEFAULT_ISSUE_LIMIT: usize = 50;
 /// Directory name used inside top-level `{{...}}` body-file markers.
 const INCLUDED_DIR_NAME: &str = "typst-docs";
-/// Separator used between Markdown paragraphs in translation files.
-const MARKDOWN_PAR_SEP: &str = "\n\n";
+
+
 
 /// Paths used by the translation scanner.
 #[derive(Debug, Clone)]
