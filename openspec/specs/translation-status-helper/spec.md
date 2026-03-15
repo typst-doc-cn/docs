@@ -1,7 +1,7 @@
 # translation-status-helper Specification
 
 ## Purpose
-TBD - created by archiving change create-skill-to-translate-typst-docs. Update Purpose after archive.
+Define the behavior of the translation-status-helper in `crates/translate`, which scans Typst documentation localization files to detect missing or outdated Chinese (`zh`) translations and emits human-readable and structured results suitable for patch-oriented editing and automation.
 ## Requirements
 ### Requirement: Helper detects untranslated translation targets
 The repository SHALL provide a helper program in `crates/translate` that can
