@@ -4,8 +4,6 @@ en = """# Scripting
 Typst embeds a powerful scripting language. You can automate your documents and
 create more sophisticated styles with code. Below is an overview over the
 scripting concepts."""
-zh = """# 脚本
-Typst 嵌入了一个强大的脚本语言。您可以使用代码自动化文档并创建更复杂的设计。以下是脚本概念的概述。"""
 
 [[main]]
 en = """## Expressions
@@ -16,8 +14,6 @@ introduced with a hash (`#`) and normal markup parsing resumes after the
 expression is finished. If a character would continue the expression but should
 be interpreted as text, the expression can forcibly be ended with a semicolon
 (`;`)."""
-zh = """## 表达式
-在 Typst 中，标记和代码被融合在一起。所有但最常见的元素都是通过 _函数_ 创建的。为了使这尽可能方便，Typst 提供了紧凑的语法来将代码表达式嵌入标记中：表达式以哈希 (`#`) 开头，正常标记解析在表达式结束后继续。如果一个字符应该继续表达式但应该被解释为文本，表达式可以强制以分号 (`;`) 结束。"""
 
 [[main]]
 en = """```example
@@ -33,14 +29,11 @@ en = """The example above shows a few of the available expressions, including
 discussed in the remainder of this chapter. A few kinds of expressions are not
 compatible with the hash syntax (e.g. binary operator expressions). To embed
 these into markup, you can use parentheses, as in `[#(1 + 2)]`."""
-zh = """[方法调用]($scripting/#methods)。更多类型的表达式将在本章的其余部分讨论。一些类型表达式与哈希语法不兼容（例如二元运算符表达式）。要嵌入这些表达式，可以使用括号，如 `[#(1 + 2)]`。"""
 
 [[main]]
 en = """## Blocks
 To structure your code and embed markup into it, Typst provides two kinds of
 _blocks:_"""
-zh = """## 块
-为了结构化您的代码并将其嵌入标记中，Typst 提供了两种类型的 _块_："""
 
 [[main]]
 en = """- **Code block:** `{{ let x = 1; x + 2 }}` \\
@@ -51,8 +44,6 @@ en = """- **Code block:** `{{ let x = 1; x + 2 }}` \\
   The output values of the individual expressions in a code block are joined to
   determine the block's value. Expressions without useful output, like `{let}`
   bindings yield `{none}`, which can be joined with any value without effect."""
-zh = """- **代码块：** `{{ let x = 1; x + 2 }}` \\
-  在编写代码时，您可能希望将计算分成多个语句，创建一些中间变量等等。代码块允许您在需要一个表达式的地方写多个表达式。代码块中的各个表达式应该用换行符或分号分隔。代码块中各个表达式的输出值被连接起来以确定块的值。没有有用输出的表达式，如 `{let}` 「绑定」（[bindings](#x-term-binding)），产生 `{none}`，可以与任何值连接而没有效果。"""
 
 [[main]]
 en = """- **Content block:** `{[*Hey* there!]}` \\
@@ -62,14 +53,11 @@ en = """- **Content block:** `{[*Hey* there!]}` \\
   content block results in a value of type [content]. An arbitrary number of
   content blocks can be passed as trailing arguments to functions. That is,
   `{list([A], [B])}` is equivalent to `{list[A][B]}`."""
-zh = """- **内容块：** `{[*Hey* there!]}` \\
-  使用内容块，您可以将标记/内容作为程序化值处理，存储在变量中并传递给 [函数]($function)。内容块由方括号分隔，可以包含任意标记。内容块的结果值为 [content] 类型。可以作为尾随参数传递任意数量的内容块到函数。也就是说，`{list([A], [B])}` 等同于 `{list[A][B]}`。"""
 
 [[main]]
 en = """Content and code blocks can be nested arbitrarily. In the example below,
 `{[hello ]}` is joined with the output of  `{a + [ the ] + b}` yielding
 `{[hello from the *world*]}`."""
-zh = """内容和代码块可以任意嵌套。在下面的示例中，`{[hello ]}` 与 `{a + [ the ] + b}` 的输出连接，产生 `{[hello from the *world*]}`。"""
 
 [[main]]
 en = """```example
@@ -90,8 +78,6 @@ will be initialized as `{none}`. The `{let}` keyword can also be used to create
 a [custom named function]($function/#defining-functions). Variables can be
 accessed for the rest of the containing block (or the rest of the file if there
 is no containing block)."""
-zh = """## 「绑定」（[binding](#x-term-binding)）和「解构」（[destructure](#x-term-destructure)） { #bindings }
-如上所示，变量可以用 `{let}` 绑定定义。变量被赋值为等号后面的表达式的值。赋值是可选的，如果没有赋值，变量将被初始化为 `{none}`。`{let}` 关键字也可以用于创建 [自定义命名函数]($function/#defining-functions)。变量可以在包含块（或文件中没有包含块时为整个文件）的剩余部分访问。"""
 
 [[main]]
 en = """```example
@@ -109,7 +95,6 @@ en = """Let bindings can also be used to destructure [arrays]($array) and
 assignment should mirror an array or dictionary. The `..` operator can be used
 once in the pattern to collect the remainder of the array's or dictionary's
 items."""
-zh = """Let 绑定也可以用于「解构」（[destructure](#x-term-destructure)） [数组]($array) 和 [字典]($dictionary)。在这种情况下，赋值的左侧应该与数组或字典匹配。`..` 操作符可以用于一次在模式中收集数组或字典的其余部分。"""
 
 [[main]]
 en = """```example
@@ -140,7 +125,6 @@ Homer wrote #h.
 
 [[main]]
 en = """You can use the underscore to discard elements in a destructuring pattern:"""
-zh = """您可以使用下划线来丢弃「解构」（[destructuring](#x-term-destructure)）模式中的元素："""
 
 [[main]]
 en = """```example
@@ -150,7 +134,6 @@ The y coordinate is #y.
 
 [[main]]
 en = """Destructuring also works in argument lists of functions ..."""
-zh = """「解构」（[destructuring](#x-term-destructure)）也适用于函数的参数列表 ..."""
 
 [[main]]
 en = """```example
@@ -164,7 +147,6 @@ en = """```example
 [[main]]
 en = """... and on the left-hand side of normal assignments. This can be useful to
 swap variables among other things."""
-zh = """... 和普通赋值的左侧。这可用于交换变量等。"""
 
 [[main]]
 en = """```example
@@ -183,8 +165,6 @@ whether some condition is fulfilled. Typst supports `{if}`, `{else if}` and
 `{else}` expressions. When the condition evaluates to `{true}`, the conditional
 yields the value resulting from the if's body, otherwise yields the value
 resulting from the else's body."""
-zh = """## 条件
-通过条件，您可以根据某些条件显示或计算不同的内容。Typst 支持 `{if}`、`{else if}` 和 `{else}` 表达式。当条件评估为 `{true}` 时，条件产生 `{if}` 主体的结果值，否则产生 `{else}` 主体的结果值。"""
 
 [[main]]
 en = """```example
@@ -197,7 +177,6 @@ en = """```example
 
 [[main]]
 en = """Each branch can have a code or content block as its body."""
-zh = """每个分支可以有一个代码或内容块作为其主体。"""
 
 [[main]]
 en = """- `{if condition {..}}`
@@ -212,14 +191,11 @@ supports two types of loops: `{for}` and `{while}` loops. The former iterate
 over a specified collection whereas the latter iterate as long as a condition
 stays fulfilled. Just like blocks, loops _join_ the results from each iteration
 into one value."""
-zh = """## 循环
-通过循环，您可以重复内容或迭代计算某些内容。Typst 支持两种类型的循环：`{for}` 和 `{while}` 循环。前者迭代指定集合，后者迭代直到条件不再满足。就像块一样，循环将每次迭代的结果连接成一个值。"""
 
 [[main]]
 en = """In the example below, the three sentences created by the for loop join together
 into a single content value and the length-1 arrays in the while loop join
 together into one larger array."""
-zh = """在下面的示例中，for 循环创建的三个句子连接成一个内容值，而 while 循环连接的 length-1 数组连接成一个更大的数组。"""
 
 [[main]]
 en = """```example
@@ -236,14 +212,11 @@ en = """```example
 
 [[main]]
 en = """For loops can iterate over a variety of collections:"""
-zh = """For 循环可以迭代各种集合："""
 
 [[main]]
 en = """- `{for value in array {..}}` \\
   Iterates over the items in the [array]. The destructuring syntax described in
   [Let binding]($scripting/#bindings) can also be used here."""
-zh = """- `{for value in array {..}}` \\
-  迭代 [数组] 中的项目。[Let 绑定]($scripting/#bindings) 中描述的「解构」（[destructuring](#x-term-destructure)）语法也可以在这里使用。"""
 
 [[main]]
 en = """- `{for pair in dict {..}}` \\
@@ -251,8 +224,6 @@ en = """- `{for pair in dict {..}}` \\
   destructured by using `{for (key, value) in dict {..}}`. It is more efficient
   than `{for pair in dict.pairs() {..}}` because it doesn't create a temporary
   array of all key-value pairs."""
-zh = """- `{for pair in dict {..}}` \\
-  迭代 [字典] 中的键值对。键值对也可以通过使用 `{for (key, value) in dict {..}}` 进行「解构」（[destructured](#x-term-destructured)）。它比 `{for pair in dict.pairs() {..}}` 更高效，因为它不创建所有键值对的临时数组。"""
 
 [[main]]
 en = """- `{for letter in "abc" {..}}` \\
@@ -260,22 +231,17 @@ en = """- `{for letter in "abc" {..}}` \\
   over the grapheme clusters of the string. Most of the time, a grapheme cluster
   is just a single codepoint. However, a grapheme cluster could contain multiple
   codepoints, like a flag emoji."""
-zh = """- `{for letter in "abc" {..}}` \\
-  迭代 [字符串]($str) 中的字符。技术上讲，它迭代字符串的 grapheme 集群。大多数情况下，grapheme 集群只是一个 codepoint。然而，grapheme 集群可能包含多个 codepoint，例如旗帜表情符号。"""
 
 [[main]]
 en = """- `{for byte in bytes("😀") {..}}` \\
   Iterates over the [bytes], which can be converted from a [string]($str) or
   [read] from a file without encoding. Each byte value is an [integer]($int)
   between `{0}` and `{255}`."""
-zh = """- `{for byte in bytes("😀") {..}}` \\
-  迭代 [字节]，可以从 [字符串]($str) 或 [读取] 文件而不进行编码。每个字节值是一个 `{0}` 和 `{255}` 之间的 [整数]($int)。"""
 
 [[main]]
 en = """To control the execution of the loop, Typst provides the `{break}` and
 `{continue}` statements. The former performs an early exit from the loop while
 the latter skips ahead to the next iteration of the loop."""
-zh = """要控制循环的执行，Typst 提供了 `{break}` 和 `{continue}` 语句。前者执行早于循环的退出，后者跳转到循环的下一个迭代。"""
 
 [[main]]
 en = """```example
@@ -290,14 +256,9 @@ en = """```example
 
 [[main]]
 en = """The body of a loop can be a code or content block:"""
-zh = """循环的主体可以是代码或内容块："""
 
 [[main]]
 en = """- `{for .. in collection {..}}`
-- `{for .. in collection [..]}`
-- `{while condition {..}}`
-- `{while condition [..]}`"""
-zh = """- `{for .. in collection {..}}`
 - `{for .. in collection [..]}`
 - `{while condition {..}}`
 - `{while condition [..]}`"""
@@ -307,8 +268,6 @@ en = """## Fields
 You can use _dot notation_ to access fields on a value. For values of type
 [`content`], you can also use the [`fields`]($content.fields) function to list
 the fields."""
-zh = """## 字段
-您可以使用 _点表示法_ 访问值的字段。对于 [content] 类型的值，您还可以使用 [`fields`]($content.fields) 函数列出字段。"""
 
 [[main]]
 en = """The value in question can be either:
@@ -319,12 +278,6 @@ en = """The value in question can be either:
   available fields match the arguments of the
   [element function]($function/#element-functions) that were given when the
   element was constructed."""
-zh = """问题中的值可以是：
-- 具有指定键的 [字典]，
-- 具有指定修饰符的 [符号]，
-- 包含指定定义的 [模块]，
-- 由具有指定字段的元素组成的 [content]。
-可用字段与构造元素时给出的 [元素函数]($function/#element-functions) 的参数匹配。"""
 
 [[main]]
 en = """```example
@@ -344,8 +297,6 @@ en = """## Methods
 A _method call_ is a convenient way to call a function that is scoped to a
 value's [type]. For example, we can call the [`str.len`]($str.len) function in
 the following two equivalent ways:"""
-zh = """## 方法
-_方法调用_ 是一种方便的方式来调用一个作用于值 [类型] 的函数。例如，我们可以以两种等价的方式调用 [`str.len`]($str.len) 函数："""
 
 [[main]]
 en = """```example
@@ -358,7 +309,6 @@ en = """The structure of a method call is `{value.method(..args)}` and its equiv
 full function call is `{type(value).method(value, ..args)}`. The documentation
 of each type lists its scoped functions. You cannot currently define your own
 methods."""
-zh = """方法调用的结构是 `{value.method(..args)}` 和其等价的完整函数调用是 `{type(value).method(value, ..args)}`。每个类型的文档列出了其作用域函数。目前您无法定义自己的方法。"""
 
 [[main]]
 en = """```example
@@ -380,21 +330,16 @@ en = """There are a few special functions that modify the value they are called 
 In some cases, when the method is only called for its side effect, its return
 value should be ignored (and not participate in joining). The canonical way to
 discard a value is with a let binding: `{let _ = array.remove(1)}`."""
-zh = """有一些特殊的函数会修改它们被调用的值（例如 [`array.push`]($array.push)）。这些函数 _必须_ 以方法形式调用。在某些情况下，当方法仅用于其副作用时，其返回值应被忽略（且不参与连接）。丢弃值的规范方法是使用 let「绑定」（[binding](#x-term-binding)）：`{let _ = array.remove(1)}`。"""
 
 [[main]]
 en = """## Modules
 You can split up your Typst projects into multiple files called _modules._ A
 module can refer to the content and definitions of another module in multiple
 ways:"""
-zh = """## 模块
-您可以将 Typst 项目拆分为多个称为 _模块_ 的文件。模块可以通过多种方式引用另一个模块的内容和定义："""
 
 [[main]]
 en = """- **Including:** `{include "bar.typ"}` \\
   Evaluates the file at the path `bar.typ` and returns the resulting [content]."""
-zh = """- **包含：** `{include "bar.typ"}` \\
-  评估路径 `bar.typ` 处的文件并返回结果 [content]。"""
 
 [[main]]
 en = """- **Import:** `{import "bar.typ"}` \\
@@ -402,8 +347,6 @@ en = """- **Import:** `{import "bar.typ"}` \\
   into the current scope as `bar` (filename without extension). You can use the
   `as` keyword to rename the imported module: `{import "bar.typ" as baz}`. You
   can import nested items using dot notation: `{import "bar.typ": baz.a}`."""
-zh = """- **导入：** `{import "bar.typ"}` \\
-  评估路径 `bar.typ` 处的文件，并将结果 [模块] 插入当前作用域作为 `bar`（文件名不带扩展名）。您可以使用 `as` 关键字重命名导入的模块：`{import "bar.typ" as baz}`。您可以使用点表示法导入嵌套项：`{import "bar.typ": baz.a}`。"""
 
 [[main]]
 en = """- **Import items:** `{import "bar.typ": a, b}` \\
@@ -412,13 +355,10 @@ en = """- **Import items:** `{import "bar.typ": a, b}` \\
   bindings) and defines them in the current file. Replacing `a, b` with `*`
   loads all variables defined in a module. You can use the `as` keyword to
   rename the individual items: `{import "bar.typ": a as one, b as two}`"""
-zh = """- **导入项：** `{import "bar.typ": a, b}` \\
-  评估路径 `bar.typ` 处的文件，提取变量 `a` 和 `b` 的值（需要定义在 `bar.typ` 中，例如通过 `{let}` 「绑定」（[bindings](#x-term-binding)）），并在当前文件中定义它们。将 `a, b` 替换为 `*` 加载模块中定义的所有变量。您可以使用 `as` 关键字重命名各个项：`{import "bar.typ": a as one, b as two}`"""
 
 [[main]]
 en = """Instead of a path, you can also use a [module value]($module), as shown in the
 following example:"""
-zh = """除了路径，您还可以使用 [模块值]($module)，如下例所示："""
 
 [[main]]
 en = """```example
@@ -431,8 +371,6 @@ en = """## Packages
 To reuse building blocks across projects, you can also create and import Typst
 _packages._ A package import is specified as a triple of a namespace, a name,
 and a version."""
-zh = """## 包
-为了在项目之间重用构建块，您还可以创建和导入 Typst _包_。包导入指定为命名空间、名称和版本的三元组。"""
 
 [[main]]
 en = """```example
@@ -444,13 +382,11 @@ en = """```example
 [[main]]
 en = """The `preview` namespace contains packages shared by the community. You can find
 all available community packages on [Typst Universe]($universe)."""
-zh = """`preview` 命名空间包含社区共享的包。您可以在 [Typst Universe]($universe) 上找到所有可用的社区包。"""
 
 [[main]]
 en = """If you are using Typst locally, you can also create your own system-local
 packages. For more details on this, see the
 [package repository](https://github.com/typst/packages)."""
-zh = """如果您在本地使用 Typst，您还可以创建自己的系统本地包。有关更多详细信息，请参阅 [包存储库](https://github.com/typst/packages)。"""
 
 [[main]]
 en = """## Operators
@@ -459,8 +395,6 @@ arity (unary, binary) and precedence level (higher binds stronger). Some
 operations, such as [modulus]($calc.rem-euclid), do not have a special syntax
 and can be achieved using functions from the
 [`calc`]($category/foundations/calc) module."""
-zh = """## 运算符
-以下表格列出了所有可用的单目和双目运算符及其效果、元数（单目、双目）和优先级（更高「绑定」（[binding](#x-term-binding)）更强）。一些操作，例如 [取模]($calc.rem-euclid)，没有特殊的语法，可以使用 [`calc`]($category/foundations/calc) 模块中的函数来实现。"""
 
 [[main]]
 en = """| Operator   | Effect                          | Arity  | Precedence |
@@ -487,30 +421,6 @@ en = """| Operator   | Effect                          | Arity  | Precedence |
 |  `{-=}`    | Subtraction-Assignment          | Binary |     1      |
 |  `{*=}`    | Multiplication-Assignment       | Binary |     1      |
 |  `{/=}`    | Division-Assignment             | Binary |     1      |"""
-zh = """| 运算符   | 效果                            | 元数   | 优先级     |
-|:----------:|---------------------------------|:------:|:----------:|
-|  `{-}`     | 否定                          | 单目   |     7      |
-|  `{+}`     | 无效果（存在对称性）          | 单目   |     7      |
-|  `{*}`     | 乘法                          | 双目   |     6      |
-|  `{/}`     | 除法                          | 双目   |     6      |
-|  `{+}`     | 加法                          | 双目   |     5      |
-|  `{-}`     | 减法                          | 双目   |     5      |
-|  `{==}`    | 检查相等                      | 双目   |     4      |
-|  `{!=}`    | 检查不相等                    | 双目   |     4      |
-|  `{<}`     | 检查小于                      | 双目   |     4      |
-|  `{<=}`    | 检查小于或等于                | 双目   |     4      |
-|  `{>}`     | 检查大于                      | 双目   |     4      |
-|  `{>=}`    | 检查大于或等于                | 双目   |     4      |
-|  `{in}`    | 检查是否在集合中              | 双目   |     4      |
-| `{not in}` | 检查是否不在集合中            | 双目   |     4      |
-|  `{not}`   | 逻辑 "非"                     | 单目   |     3      |
-|  `{and}`   | 短路逻辑 "与"                 | 双目   |     3      |
-|  `{or}`    | 短路逻辑 "或"                 | 双目   |     2      |
-|  `{=}`     | 赋值                          | 双目   |     1      |
-|  `{+=}`    | 加赋值                        | 双目   |     1      |
-|  `{-=}`    | 减赋值                        | 双目   |     1      |
-|  `{*=}`    | 乘赋值                        | 双目   |     1      |
-|  `{/=}`    | 除赋值                        | 双目   |     1      |"""
 
 [[main]]
 en = """[semver]: https://semver.org/"""
