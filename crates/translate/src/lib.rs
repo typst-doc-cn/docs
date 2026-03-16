@@ -1,5 +1,6 @@
 //! Translation status scanning for Typst documentation files.
 
+use std::cmp::Ordering;
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -550,22 +551,48 @@ fn compare_source_entries(
         });
     }
 
-    issues.sort_by(|left, right| {
-        (
-            left.file.as_str(),
-            left.key.as_str(),
-            left.paragraph.as_deref(),
-            left.kind,
-        )
-            .cmp(&(
-                right.file.as_str(),
-                right.key.as_str(),
-                right.paragraph.as_deref(),
-                right.kind,
-            ))
-    });
+    sort_issues(&mut issues);
 
     issues
+}
+
+/// Sorts issues into a stable patch-oriented order.
+fn sort_issues(issues: &mut [Issue]) {
+    issues.sort_by(|left, right| {
+        (left.file.as_str(), left.key.as_str())
+            .cmp(&(right.file.as_str(), right.key.as_str()))
+            .then_with(|| {
+                compare_paragraph_targets(left.paragraph.as_deref(), right.paragraph.as_deref())
+            })
+            .then_with(|| left.kind.cmp(&right.kind))
+    });
+}
+
+/// Compares optional paragraph targets, keeping non-paragraph issues first.
+fn compare_paragraph_targets(left: Option<&str>, right: Option<&str>) -> Ordering {
+    match (left, right) {
+        (None, None) => Ordering::Equal,
+        (None, Some(_)) => Ordering::Less,
+        (Some(_), None) => Ordering::Greater,
+        (Some(left), Some(right)) => compare_paragraph_target(left, right),
+    }
+}
+
+/// Compares paragraph targets such as `main.2` in numeric index order.
+fn compare_paragraph_target(left: &str, right: &str) -> Ordering {
+    match (parse_paragraph_target(left), parse_paragraph_target(right)) {
+        (Some((left_prefix, left_index)), Some((right_prefix, right_index))) => left_prefix
+            .cmp(right_prefix)
+            .then_with(|| left_index.cmp(&right_index))
+            .then_with(|| left.cmp(right)),
+        _ => left.cmp(right),
+    }
+}
+
+/// Splits a paragraph target into its prefix and numeric index.
+fn parse_paragraph_target(paragraph: &str) -> Option<(&str, usize)> {
+    let (prefix, index) = paragraph.rsplit_once('.')?;
+    Some((prefix, index.parse().ok()?))
 }
 
 /// Compares one inline top-level translation entry.
@@ -1120,6 +1147,67 @@ mod tests {
           ]
         }
         "###);
+    }
+
+    #[test]
+    fn limits_body_paragraphs_in_numeric_order() {
+        let mut issues = vec![
+            Issue {
+                kind: IssueKind::MissingZhBody,
+                file: "locales/docs/typst-docs/body.toml".to_owned(),
+                key: "body".to_owned(),
+                paragraph: Some("main.10".to_owned()),
+                detail: None,
+                checked_in_en: None,
+                current_source_en: None,
+            },
+            Issue {
+                kind: IssueKind::MissingZhBody,
+                file: "locales/docs/typst-docs/body.toml".to_owned(),
+                key: "body".to_owned(),
+                paragraph: Some("main.2".to_owned()),
+                detail: None,
+                checked_in_en: None,
+                current_source_en: None,
+            },
+            Issue {
+                kind: IssueKind::MissingZhBody,
+                file: "locales/docs/typst-docs/body.toml".to_owned(),
+                key: "body".to_owned(),
+                paragraph: Some("main.1".to_owned()),
+                detail: None,
+                checked_in_en: None,
+                current_source_en: None,
+            },
+            Issue {
+                kind: IssueKind::MissingZhBody,
+                file: "locales/docs/typst-docs/body.toml".to_owned(),
+                key: "body".to_owned(),
+                paragraph: Some("main.0".to_owned()),
+                detail: None,
+                checked_in_en: None,
+                current_source_en: None,
+            },
+        ];
+        sort_issues(&mut issues);
+
+        let report = ScanReport {
+            scanned_entries: 1,
+            issue_count: issues.len(),
+            displayed_issue_count: issues.len(),
+            omitted_issue_count: 0,
+            issues,
+        }
+        .with_issue_limit(Some(3));
+
+        let paragraphs = report
+            .issues
+            .iter()
+            .map(|issue| issue.paragraph.as_deref().unwrap())
+            .collect::<Vec<_>>();
+        assert_eq!(paragraphs, vec!["main.0", "main.1", "main.2"]);
+        assert_eq!(report.displayed_issue_count, 3);
+        assert_eq!(report.omitted_issue_count, 1);
     }
 
     #[test]

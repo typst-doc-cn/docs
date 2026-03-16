@@ -35,6 +35,11 @@ canonical terminology.
   intact.
 - Preserve Markdown, Typst code, code fences, links, labels, anchors,
   placeholders, and line breaks that are part of the stored source.
+- Do not translate code blocks, example source, identifiers, or string literals
+  inside code samples just to localize their wording.
+- If code samples contain natural-language text that benefits from explanation,
+  keep the code unchanged and add a short translator note outside the code block
+  to explain the foreign-language text instead of rewriting the code.
 - Do not translate link targets, section keys, placeholders, or checked-in
   English source text unless the task is explicitly about source synchronization.
 
